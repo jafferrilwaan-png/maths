@@ -35,8 +35,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Setup</span>
+                <div class="explain-line-title">Definition of Vector Space $V(F)$</div>
+                <div class="explain-line-desc">A vector space requires two mathematical entities: a set of objects (vectors $V$) and a number field (scalars $F$, usually $\mathbb{R}$). Without defining the scalar field, scaling operations cannot exist.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Abelian Group</span>
+                <div class="explain-line-title">5 Vector Addition Axioms ($A_1$ to $A_5$)</div>
+                <div class="explain-line-desc">Closure ($u+v \in V$), Associativity, Zero Vector ($u+0=u$), Additive Inverse ($u+(-u)=0$), and Commutativity. This guarantees $(V, +)$ behaves like ordinary addition where you can cancel, invert, and reorder terms.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scalar Laws</span>
+                <div class="explain-line-title">5 Scalar Multiplication Axioms ($M_1$ to $M_5$)</div>
+                <div class="explain-line-desc">Scalar closure ($\alpha u \in V$), two Distributive laws ($\alpha(u+v)$ and $(\alpha+\beta)u$), Scalar Associativity, and Unit scaling ($1 \cdot u = u$). This couples the field $F$ with vectors $V$ consistently.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Exam Tip</span>
+                <div class="explain-line-title">Scoring Rubric (2 Marks)</div>
+                <div class="explain-line-desc">Anna University evaluators award 1 mark for stating $(V, +)$ is an Abelian group and 1 mark for stating the scalar multiplication closure and distributive axioms.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -98,8 +117,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Axiom Use</span>
+                <div class="explain-line-title">State Additive Inverse $-z \in V$</div>
+                <div class="explain-line-desc">In abstract algebra, you cannot just 'cross out' or subtract terms without proving the inverse exists. Axiom $A_4$ ensures every $z$ has a unique element $-z$ such that $z + (-z) = 0$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Operation</span>
+                <div class="explain-line-title">Add $(-z)$ to both sides of $x + z = y + z$</div>
+                <div class="explain-line-desc">Since equality is preserved under identical operations, $(x + z) + (-z) = (y + z) + (-z)$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Associativity</span>
+                <div class="explain-line-title">Regroup terms: $x + (z + (-z)) = y + (z + (-z))$</div>
+                <div class="explain-line-desc">By Associative Law $A_2$, we regroup parentheses so that each vector meets its inverse.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">Apply Identity: $x + 0 = y + 0 \implies x = y$</div>
+                <div class="explain-line-desc">By Identity Law $A_3$, adding $0$ leaves vectors unchanged, completing the formal proof.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -160,8 +198,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Inspection</span>
+                <div class="explain-line-title">Identify the defining condition $a_1 \ge 0$</div>
+                <div class="explain-line-desc">Subspaces in $\mathbb{R}^3$ must be closed under multiplication by ANY scalar in the field $\mathbb{R}$ (positive, zero, or negative).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Counterexample</span>
+                <div class="explain-line-title">Choose $u = (1, 0, 0) \in W$ and scalar $\alpha = -1 \in \mathbb{R}$</div>
+                <div class="explain-line-desc">Since $a_1 = 1 \ge 0$, vector $u$ is inside $W$. Since field is $\mathbb{R}$, $-1$ is a valid scalar.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Contradiction</span>
+                <div class="explain-line-title">Compute $\alpha u = -1 \cdot (1,0,0) = (-1, 0, 0)$</div>
+                <div class="explain-line-desc">The first coordinate is now $-1 < 0$, which violates the requirement $a_1 \ge 0$. Thus $\alpha u \notin W$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">Fails Scalar Closure $\implies$ Not a Subspace</div>
+                <div class="explain-line-desc">A single counterexample is sufficient in mathematics to disprove subspace status.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -218,8 +275,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Formal Definition</span>
+                <div class="explain-line-title">Subset forming Vector Space on its own</div>
+                <div class="explain-line-desc">A non-empty subset $W \subseteq V(F)$ is a subspace if it satisfies all vector space axioms using the exact same addition and scalar multiplication defined on $V$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Two-Step Test</span>
+                <div class="explain-line-title">Closure under $+$ and $\cdot$</div>
+                <div class="explain-line-desc">(i) For all $u, v \in W \implies u + v \in W$. (ii) For all $\alpha \in F, u \in W \implies \alpha u \in W$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • One-Step Criterion</span>
+                <div class="explain-line-title">Single Linear Combination $\alpha u + \beta v \in W$</div>
+                <div class="explain-line-desc">Combining both closures into $\alpha u + \beta v \in W$ for all $\alpha, \beta \in F$ is faster and preferred by university evaluators.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Zero Vector Rule</span>
+                <div class="explain-line-title">Zero vector $0 \in W$ is mandatory</div>
+                <div class="explain-line-desc">If $(0,0,\dots,0) \notin W$, the set can NEVER be a subspace.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -274,8 +350,22 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Formula</span>
+                <div class="explain-line-title">Mathematical Expression $v = c_1 v_1 + c_2 v_2 + \dots + c_k v_k$</div>
+                <div class="explain-line-desc">A vector $v$ is a linear combination of a set $S = \{v_1, \dots, v_k\}$ if it can be built by multiplying each vector by a scalar $c_i \in F$ and summing them up.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Geometric Meaning</span>
+                <div class="explain-line-title">Directional Stretching and Superposition</div>
+                <div class="explain-line-desc">Geometrically, scalar multiples stretch/shrink vectors along their axes, and vector addition joins them tip-to-tail to reach new points in space.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Span Connection</span>
+                <div class="explain-line-title">Generates the Subspace $L(S)$</div>
+                <div class="explain-line-desc">The collection of all possible linear combinations of $S$ is called the Linear Span $L(S)$, which is always a valid subspace.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -331,8 +421,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Setup</span>
+                <div class="explain-line-title">Matrix Determinant Formulation $|A|$</div>
+                <div class="explain-line-desc">For $n$ vectors in $\mathbb{R}^n$ (here 3 vectors in $\mathbb{R}^3$), the determinant $|A|$ immediately reveals dependence. If $|A| = 0$, the vectors lie in a lower-dimensional plane.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Calculation</span>
+                <div class="explain-line-title">Row 1 Expansion: $1(8) - (-2)(8) + 3(-8) = 8 + 16 - 24 = 0$</div>
+                <div class="explain-line-desc">Expanding the $3 \times 3$ determinant yields exactly 0.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Linear Relation</span>
+                <div class="explain-line-title">Non-trivial scalars exist ($c_1, c_2, c_3 \neq 0$)</div>
+                <div class="explain-line-desc">Because $|A| = 0$, the homogeneous system $Ac = 0$ has infinitely many non-zero solutions. Specifically, $v_2 = 2v_1 + v_3$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">Vectors are Linearly Dependent</div>
+                <div class="explain-line-desc">Always state $|A|=0 \implies$ Linearly Dependent for full 2 marks.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -388,8 +497,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Definition</span>
+                <div class="explain-line-title">Minimal Spanning Set (Basis $B$)</div>
+                <div class="explain-line-desc">A set $B = \{v_1, \dots, v_n\}$ in $V$ is a basis if it serves as a coordinate frame from which EVERY vector in $V$ can be built uniquely.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Condition 1</span>
+                <div class="explain-line-title">Linear Independence (No Redundancy)</div>
+                <div class="explain-line-desc">No vector in $B$ can be formed from the others; $c_1 v_1 + \dots + c_n v_n = 0 \implies c_1 = \dots = c_n = 0$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Condition 2</span>
+                <div class="explain-line-title">Spans the entire space: $L(B) = V$</div>
+                <div class="explain-line-desc">Every vector $x \in V$ can be represented as a linear combination of elements in $B$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Dimension</span>
+                <div class="explain-line-title">Number of vectors $|B| = \dim V$</div>
+                <div class="explain-line-desc">The number of elements in any basis of $V$ is invariant and defines the dimension of $V$.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -446,8 +574,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Constraint</span>
+                <div class="explain-line-title">Constraint equation $x_1 + x_2 + x_3 = 0$</div>
+                <div class="explain-line-desc">This single linear equation in 3 variables removes 1 degree of freedom from $\mathbb{R}^3$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Free Variables</span>
+                <div class="explain-line-title">Express dependent variable: $x_1 = -x_2 - x_3$</div>
+                <div class="explain-line-desc">Variables $x_2$ and $x_3$ are independent parameters (free variables).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Vector Decomposition</span>
+                <div class="explain-line-title">$(x_1, x_2, x_3) = x_2(-1, 1, 0) + x_3(-1, 0, 1)$</div>
+                <div class="explain-line-desc">Separating variables into vector components reveals the generating vectors $\{(-1,1,0), (-1,0,1)\}$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Dimension</span>
+                <div class="explain-line-title">Dimension = 2 (A 2D plane through origin)</div>
+                <div class="explain-line-desc">Formula: $\dim W = \text{Total variables } (3) - \text{Independent constraints } (1) = 2$.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -502,8 +649,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Matrix Setup</span>
+                <div class="explain-line-title">Construct square matrix from vectors as rows</div>
+                <div class="explain-line-desc">Form matrix $A = \begin{bmatrix} 1 & 2 & 1 \\ 2 & 1 & 0 \\ 1 & -1 & 2 \end{bmatrix}$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Determinant</span>
+                <div class="explain-line-title">Compute $|A| = 1(2-0) - 2(4-0) + 1(-2-1) = -9$</div>
+                <div class="explain-line-desc">Expanding along row 1 gives $2 - 8 - 3 = -9$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Independence Law</span>
+                <div class="explain-line-title">Since $|A| = -9 \neq 0$, rank is 3</div>
+                <div class="explain-line-desc">A non-zero determinant means the matrix is invertible, so the only solution to $Ac = 0$ is the trivial solution $c_1 = c_2 = c_3 = 0$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">Set is Linearly Independent</div>
+                <div class="explain-line-desc">Full marks require showing $|A| \neq 0$ and concluding Linearly Independent.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -562,8 +728,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Direct Sum Definition</span>
+                <div class="explain-line-title">Direct Sum means $V = A + B$ and $A \cap B = \{0\}$</div>
+                <div class="explain-line-desc">The symbol $\oplus$ denotes that every vector $v \in V$ decomposes uniquely as $v = a + b$ with $a \in A, b \in B$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • General Formula</span>
+                <div class="explain-line-title">Dimension Theorem: $\dim(A+B) = \dim A + \dim B - \dim(A \cap B)$</div>
+                <div class="explain-line-desc">This is the fundamental dimension theorem for the sum of two subspaces.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Substitution</span>
+                <div class="explain-line-title">Substitute $\dim(A \cap B) = \dim\{0\} = 0$</div>
+                <div class="explain-line-desc">The zero subspace $\{0\}$ contains only the zero vector, which has dimension 0.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Result</span>
+                <div class="explain-line-title">$\dim(A \oplus B) = \dim A + \dim B$</div>
+                <div class="explain-line-desc">Subtracting 0 completes the required derivation.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -620,8 +805,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Zero Vector Rule</span>
+                <div class="explain-line-title">Check whether origin $(0,0,0) \in W$</div>
+                <div class="explain-line-desc">Substitute $(x,y,z) = (0,0,0)$ into $x + 2y + 3z = 4$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Evaluation</span>
+                <div class="explain-line-title">LHS $= 0 + 2(0) + 3(0) = 0 \neq 4$ (RHS)</div>
+                <div class="explain-line-desc">The zero vector does not satisfy the constraint equation.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Subspace Axiom</span>
+                <div class="explain-line-title">Zero vector existence is mandatory ($0 \in W$)</div>
+                <div class="explain-line-desc">Every vector space and subspace MUST contain the additive identity. Since $(0,0,0) \notin W$, $W$ cannot be a subspace.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">Not a subspace (Affine plane, not vector subspace)</div>
+                <div class="explain-line-desc">Any plane not passing through $(0,0,0)$ fails immediately.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -684,8 +888,22 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • $\mathbb{R}^2$ Subspaces</span>
+                <div class="explain-line-title">3 Geometric Types in 2D Plane</div>
+                <div class="explain-line-desc">1. $\{0\}$ (Dimension 0, the origin point). 2. Any line passing through $(0,0)$ of form $ax + by = 0$ (Dimension 1). 3. $\mathbb{R}^2$ itself (Dimension 2).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • $\mathbb{R}^3$ Subspaces</span>
+                <div class="explain-line-title">4 Geometric Types in 3D Space</div>
+                <div class="explain-line-desc">1. $\{0\}$ (Dim 0). 2. Any straight line passing through $(0,0,0)$ (Dim 1). 3. Any plane passing through $(0,0,0)$ of form $ax + by + cz = 0$ (Dim 2). 4. $\mathbb{R}^3$ itself (Dim 3).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • The Golden Rule</span>
+                <div class="explain-line-title">Must pass through the origin</div>
+                <div class="explain-line-desc">Lines and planes that do not pass through the origin do not contain the zero vector and therefore are never subspaces.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -741,8 +959,22 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Euclidean Space $\mathbb{R}^n$</span>
+                <div class="explain-line-title">Standard Basis: $\{e_1, \dots, e_n\}$ | $\dim = n$</div>
+                <div class="explain-line-desc">$e_1=(1,0,\dots,0), e_2=(0,1,\dots,0), \dots, e_n=(0,\dots,0,1)$. Exactly $n$ orthogonal unit vectors.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Matrices $M_{2\times 2}(\mathbb{R})$</span>
+                <div class="explain-line-title">Standard Basis: $\{E_{11}, E_{12}, E_{21}, E_{22}\}$ | $\dim = 4$</div>
+                <div class="explain-line-desc">The 4 elementary matrices each having a 1 in one cell and 0 elsewhere. $\dim = 2 \times 2 = 4$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Polynomials $P_n[x]$</span>
+                <div class="explain-line-title">Standard Basis: $\{1, x, x^2, \dots, x^n\}$ | $\dim = n + 1$</div>
+                <div class="explain-line-desc">Notice $\dim = n+1$ because the constant term ($x^0 = 1$) counts as a degree-0 basis vector.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -799,8 +1031,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Matrix Setup</span>
+                <div class="explain-line-title">Form matrix with vectors as rows, set $|A| = 0$</div>
+                <div class="explain-line-desc">Linearly dependent vectors produce a singular matrix with determinant 0.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Expansion</span>
+                <div class="explain-line-title">Expand along Row 3: $k(1-12) - 1(-2-9) + 1(8 - (-3)) = 0$</div>
+                <div class="explain-line-desc">$-11k + 11 + 11 = -11k + 22 = 0$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Solve for $k$</span>
+                <div class="explain-line-title">$-11k = -22 \implies k = 2$</div>
+                <div class="explain-line-desc">Equating the determinant to zero directly isolates the unknown $k$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">When $k = 2$, the vectors are Linearly Dependent</div>
+                <div class="explain-line-desc">For any $k \neq 2$, the vectors are Linearly Independent.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -856,8 +1107,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Definitions</span>
+                <div class="explain-line-title">Vector set $\mathbb{R}$, Scalar field $\mathbb{C}$</div>
+                <div class="explain-line-desc">In $V(F) = \mathbb{R}(\mathbb{C})$, vectors are real numbers, but scalars are complex numbers.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Scalar Multiplication Test</span>
+                <div class="explain-line-title">Take $u = 1 \in \mathbb{R}$ and scalar $\alpha = i \in \mathbb{C}$</div>
+                <div class="explain-line-desc">The imaginary unit $i = \sqrt{-1}$ is an allowed scalar from $\mathbb{C}$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Product Evaluation</span>
+                <div class="explain-line-title">$\alpha \cdot u = i \cdot 1 = i \notin \mathbb{R}$</div>
+                <div class="explain-line-desc">The result $i$ is not a real number; it falls outside the set $\mathbb{R}$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">Fails Closure under Scalar Multiplication</div>
+                <div class="explain-line-desc">Hence $\mathbb{R}$ is NOT a vector space over $\mathbb{C}$. (Note: $\mathbb{C}$ over $\mathbb{R}$ IS a vector space with dimension 2).</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -915,8 +1185,27 @@ window.UNIT1_DATA = {
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
-              <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Non-Empty Proof</span>
+                <div class="explain-line-title">Both contain zero vector $\implies 0 \in W_1 \cap W_2$</div>
+                <div class="explain-line-desc">Since $W_1$ and $W_2$ are subspaces, $0 \in W_1$ and $0 \in W_2$. Thus $0 \in W_1 \cap W_2$, so the intersection is non-empty.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Test Setup</span>
+                <div class="explain-line-title">Let $u, v \in W_1 \cap W_2$ and $\alpha, \beta \in F$</div>
+                <div class="explain-line-desc">We must verify whether $\alpha u + \beta v \in W_1 \cap W_2$ using the single-step criterion.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Subspace Membership</span>
+                <div class="explain-line-title">$u, v \in W_1 \implies \alpha u + \beta v \in W_1$, and $u, v \in W_2 \implies \alpha u + \beta v \in W_2$</div>
+                <div class="explain-line-desc">Since each is individually a subspace, each is individually closed under linear combinations.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">$\alpha u + \beta v \in W_1 \cap W_2 \implies$ Subspace</div>
+                <div class="explain-line-desc">Being in both sets means being in the intersection. Q.E.D.</div>
+              </div>
+<div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1028,7 +1317,64 @@ window.UNIT1_DATA = {
               <span class="why-icon">▼</span>
             </button>
             <div class="why-content">
-              In standard arithmetic, 0 is the additive identity because $x+0=x$. In this problem, addition is redefined as multiplication ($x \oplus y = xy$). The number that leaves $x$ unchanged under multiplication is 1 ($x \cdot 1 = x$), which makes 1 the "zero vector". Similarly, the "negative" $-x$ is the element that brings you to the identity, which means $x \cdot x' = 1 \implies x' = 1/x$!
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Non-Standard Operations</span>
+                <div class="explain-line-title">Addition as multiplication ($x \oplus y = xy$) and Scalar multiplication as power ($k \odot x = x^k$)</div>
+                <div class="explain-line-desc">Understand that abstract vector spaces do not require ordinary addition. Any binary operations satisfying the 10 axioms constitute a valid vector space.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Additive Identity &amp; Inverse</span>
+                <div class="explain-line-title">Zero vector $\mathbf{0} = 1$ and Additive Inverse $-x = 1/x$</div>
+                <div class="explain-line-desc">Since $x \oplus e = x \implies x \cdot e = x \implies e = 1 \in \mathbb{R}^+$. The inverse satisfies $x \oplus x' = 1 \implies x \cdot x' = 1 \implies x' = 1/x \in \mathbb{R}^+$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scalar Distributive Laws</span>
+                <div class="explain-line-title">$(k+m) \odot x = x^{k+m} = x^k \cdot x^m = (k \odot x) \oplus (m \odot x)$</div>
+                <div class="explain-line-desc">Exponent rules of real numbers establish the vector space distributive axioms identically without exceptions.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">6 marks for 5 abelian addition axioms (especially identity and inverse), 8 marks for 5 scalar axioms, 2 marks for final affirmative conclusion.</div>
+              </div>
+
+        <div class="inline-ai-section">
+          <div class="inline-ai-header">
+            <div class="inline-ai-title-wrap">
+              <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+              <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+            </div>
+            <div class="inline-ai-controls">
+              <select class="inline-ai-model" aria-label="Select Model">
+                <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                  <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                  <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                  <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                  <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                  <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                  <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                  <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                </optgroup>
+                <optgroup label="OpenRouter Free Endpoints">
+                  <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                  <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                  <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                  <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                  <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                  <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                  <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="inline-ai-chat-history"></div>
+          <div class="inline-ai-input-wrap">
+            <input type="text" class="inline-ai-input" placeholder="Type your doubt about this problem (e.g. explain step 2 in simple terms)..." onkeydown="if(event.key==='Enter') window.sendInlineQuery(this)">
+            <button class="inline-ai-send" onclick="window.sendInlineQuery(this)">Ask AI</button>
+          </div>
+        </div>
             </div>
           </div>
         </div>
@@ -1088,24 +1434,28 @@ window.UNIT1_DATA = {
         </button>
         <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 1</span>
-          <div class="explain-line-title">Identify Key Axioms and Setup</div>
-          <div class="explain-line-desc">Establish standard vector space/subspace definitions for Part B • Q2 (16 Marks).</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 2</span>
-          <div class="explain-line-title">Rigorous Verification of Operations</div>
-          <div class="explain-line-desc">Check addition closure, scalar multiplication, and field compatibility.</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 3</span>
-          <div class="explain-line-title">Final Conclusion and Scoring Strategy</div>
-          <div class="explain-line-desc">State clear Q.E.D. or final coordinates for maximum university credit.</div>
-        </div>
-          
-      <div class="inline-ai-section">
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Matrix Structure</span>
+                <div class="explain-line-title">Matrices of form $\begin{bmatrix} a & a+b \\ a+b & b \end{bmatrix}$ with $a, b \in \mathbb{R}$</div>
+                <div class="explain-line-desc">Notice the key pattern: both off-diagonal entries must equal the sum of the two diagonal entries ($a+b$).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Addition Closure</span>
+                <div class="explain-line-title">$A + B = \begin{bmatrix} a_1+a_2 & (a_1+a_2)+(b_1+b_2) \\ (a_1+a_2)+(b_1+b_2) & b_1+b_2 \end{bmatrix}$</div>
+                <div class="explain-line-desc">Adding two matrices produces diagonal sums that match the new off-diagonals, proving closure under addition.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scalar Closure</span>
+                <div class="explain-line-title">$kA = \begin{bmatrix} ka & ka+kb \\ ka+kb & kb \end{bmatrix} = \begin{bmatrix} ka & k(a+b) \\ k(a+b) & kb \end{bmatrix}$</div>
+                <div class="explain-line-desc">Multiplying by scalar $k$ preserves the property because $k(a+b) = ka + kb$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Subspace Criterion</span>
+                <div class="explain-line-title">Closed subset of $M_{2\times 2}(\mathbb{R}) \implies$ Vector Space</div>
+                <div class="explain-line-desc">Since $V$ is a non-empty subset of the known vector space $M_{2\times 2}(\mathbb{R})$ closed under addition and scalar multiplication, it is a Vector Space.</div>
+              </div>
+<div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1168,24 +1518,28 @@ window.UNIT1_DATA = {
         </button>
         <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 1</span>
-          <div class="explain-line-title">Identify Key Axioms and Setup</div>
-          <div class="explain-line-desc">Establish standard vector space/subspace definitions for Part B • Q3 (16 Marks).</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 2</span>
-          <div class="explain-line-title">Rigorous Verification of Operations</div>
-          <div class="explain-line-desc">Check addition closure, scalar multiplication, and field compatibility.</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 3</span>
-          <div class="explain-line-title">Final Conclusion and Scoring Strategy</div>
-          <div class="explain-line-desc">State clear Q.E.D. or final coordinates for maximum university credit.</div>
-        </div>
-          
-      <div class="inline-ai-section">
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Subspace Test Setup</span>
+                <div class="explain-line-title">Check if zero polynomial $0 \in V$</div>
+                <div class="explain-line-desc">For $p(x) = 0 + 0x + 0x^2$, $a_0 = 0, a_1 = 0, a_2 = 0$. Condition $a_0 = a_1 + a_2 \implies 0 = 0 + 0$ holds. Hence $0 \in V$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Linear Combination</span>
+                <div class="explain-line-title">Let $p(x), q(x) \in V$ and form $r(x) = \alpha p(x) + \beta q(x)$</div>
+                <div class="explain-line-desc">Coefficients of $r(x)$ are $c_0 = \alpha a_0 + \beta b_0$, $c_1 = \alpha a_1 + \beta b_1$, $c_2 = \alpha a_2 + \beta b_2$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Verify Condition</span>
+                <div class="explain-line-title">Check if $c_0 = c_1 + c_2$</div>
+                <div class="explain-line-desc">$c_1 + c_2 = (\alpha a_1 + \beta b_1) + (\alpha a_2 + \beta b_2) = \alpha(a_1 + a_2) + \beta(b_1 + b_2) = \alpha a_0 + \beta b_0 = c_0$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">Condition is satisfied $\implies V$ is a Subspace</div>
+                <div class="explain-line-desc">Since closure under linear combinations holds, $V$ is a vector subspace of $P_2[x]$.</div>
+              </div>
+<div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1278,24 +1632,28 @@ window.UNIT1_DATA = {
         </button>
         <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 1</span>
-          <div class="explain-line-title">Identify Key Axioms and Setup</div>
-          <div class="explain-line-desc">Establish standard vector space/subspace definitions for Part B • Q4 (16 Marks).</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 2</span>
-          <div class="explain-line-title">Rigorous Verification of Operations</div>
-          <div class="explain-line-desc">Check addition closure, scalar multiplication, and field compatibility.</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 3</span>
-          <div class="explain-line-title">Final Conclusion and Scoring Strategy</div>
-          <div class="explain-line-desc">State clear Q.E.D. or final coordinates for maximum university credit.</div>
-        </div>
-          
-      <div class="inline-ai-section">
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Linear Combination</span>
+                <div class="explain-line-title">Set $v = c_1 v_1 + c_2 v_2 + c_3 v_3$</div>
+                <div class="explain-line-desc">Write vector equation $(1, -2, 5) = c_1(1,1,1) + c_2(1,2,3) + c_3(2,-1,1)$ as a matrix system $Ac = v$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Augmented Matrix</span>
+                <div class="explain-line-title">Row reduction of $[A \mid v]$ to Row Echelon Form</div>
+                <div class="explain-line-desc">Perform row operations: $R_2 \to R_2 - R_1, R_3 \to R_3 - 2R_1$ to eliminate lower entries.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Back-Substitution</span>
+                <div class="explain-line-title">Solve for scalars $(c_1, c_2, c_3)$</div>
+                <div class="explain-line-desc">Compute exact values $c_1, c_2, c_3$ proving $v$ is an explicit linear combination.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Linear Independence</span>
+                <div class="explain-line-title">Compute determinant $|A|$</div>
+                <div class="explain-line-desc">If $|A| \neq 0$, the vectors are linearly independent; if $|A| = 0$, they are linearly dependent.</div>
+              </div>
+<div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1395,24 +1753,28 @@ window.UNIT1_DATA = {
         </button>
         <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 1</span>
-          <div class="explain-line-title">Identify Key Axioms and Setup</div>
-          <div class="explain-line-desc">Establish standard vector space/subspace definitions for Part B • Q5 (16 Marks).</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 2</span>
-          <div class="explain-line-title">Rigorous Verification of Operations</div>
-          <div class="explain-line-desc">Check addition closure, scalar multiplication, and field compatibility.</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 3</span>
-          <div class="explain-line-title">Final Conclusion and Scoring Strategy</div>
-          <div class="explain-line-desc">State clear Q.E.D. or final coordinates for maximum university credit.</div>
-        </div>
-          
-      <div class="inline-ai-section">
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Necessary Condition</span>
+                <div class="explain-line-title">Assume $W$ is a subspace $\implies \alpha u + \beta v \in W$</div>
+                <div class="explain-line-desc">Since $W$ is a subspace, it is closed under scalar multiplication ($\alpha u \in W, \beta v \in W$) and vector addition ($\alpha u + \beta v \in W$).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Sufficient Condition</span>
+                <div class="explain-line-title">Assume $\alpha u + \beta v \in W$, prove all 10 axioms</div>
+                <div class="explain-line-desc">Set $\alpha = 1, \beta = 1 \implies u + v \in W$ (Vector addition closure).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Zero & Inverse</span>
+                <div class="explain-line-title">Set $\alpha = 0 \implies 0 \in W$; set $\alpha = -1, \beta = 0 \implies -u \in W$</div>
+                <div class="explain-line-desc">Proves the existence of zero vector and additive inverse inside $W$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Scalar Closure & Axioms</span>
+                <div class="explain-line-title">Set $\beta = 0 \implies \alpha u \in W$</div>
+                <div class="explain-line-desc">All other 6 laws (commutativity, associativity, distributivity) are inherited automatically from parent space $V$. Hence $W$ is a subspace.</div>
+              </div>
+<div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1496,24 +1858,28 @@ window.UNIT1_DATA = {
         </button>
         <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 1</span>
-          <div class="explain-line-title">Identify Key Axioms and Setup</div>
-          <div class="explain-line-desc">Establish standard vector space/subspace definitions for Part B • Q6 (16 Marks).</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 2</span>
-          <div class="explain-line-title">Rigorous Verification of Operations</div>
-          <div class="explain-line-desc">Check addition closure, scalar multiplication, and field compatibility.</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 3</span>
-          <div class="explain-line-title">Final Conclusion and Scoring Strategy</div>
-          <div class="explain-line-desc">State clear Q.E.D. or final coordinates for maximum university credit.</div>
-        </div>
-          
-      <div class="inline-ai-section">
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • If Direction (Easy)</span>
+                <div class="explain-line-title">If $W_1 \subseteq W_2$, then $W_1 \cup W_2 = W_2$</div>
+                <div class="explain-line-desc">Since $W_2$ is already a subspace, its union with a smaller subset is also a subspace.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Only-If Direction (Contradiction)</span>
+                <div class="explain-line-title">Assume $W_1 \cup W_2$ is a subspace but $W_1 \not\subseteq W_2$ and $W_2 \not\subseteq W_1$</div>
+                <div class="explain-line-desc">This means there exists $u \in W_1 \setminus W_2$ and $v \in W_2 \setminus W_1$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Sum Vector</span>
+                <div class="explain-line-title">Since $u, v \in W_1 \cup W_2$, their sum $u + v \in W_1 \cup W_2$</div>
+                <div class="explain-line-desc">Therefore, $u + v \in W_1$ OR $u + v \in W_2$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Two Contradictions</span>
+                <div class="explain-line-title">If $u+v \in W_1 \implies (u+v)-u = v \in W_1$ (Contradiction!)</div>
+                <div class="explain-line-desc">Similarly if $u+v \in W_2 \implies (u+v)-v = u \in W_2$ (Contradiction!). Hence one subspace MUST be contained in the other.</div>
+              </div>
+<div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1599,24 +1965,28 @@ window.UNIT1_DATA = {
         </button>
         <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 1</span>
-          <div class="explain-line-title">Identify Key Axioms and Setup</div>
-          <div class="explain-line-desc">Establish standard vector space/subspace definitions for Part B • Q7 (16 Marks).</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 2</span>
-          <div class="explain-line-title">Rigorous Verification of Operations</div>
-          <div class="explain-line-desc">Check addition closure, scalar multiplication, and field compatibility.</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 3</span>
-          <div class="explain-line-title">Final Conclusion and Scoring Strategy</div>
-          <div class="explain-line-desc">State clear Q.E.D. or final coordinates for maximum university credit.</div>
-        </div>
-          
-      <div class="inline-ai-section">
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Linear Combination Setup</span>
+                <div class="explain-line-title">$V = c_1 v_1 + c_2 v_2 \implies (1, -2, k) = c_1(3,0,-2) + c_2(2,-1,-5)$</div>
+                <div class="explain-line-desc">Equating coordinates gives 3 simultaneous scalar equations.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Solve $c_2$ and $c_1$</span>
+                <div class="explain-line-title">Eq 2: $-c_2 = -2 \implies c_2 = 2$. Eq 1: $3c_1 + 2(2) = 1 \implies c_1 = -1$</div>
+                <div class="explain-line-desc">The first two coordinates uniquely determine both scalars $c_1$ and $c_2$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Substitute into Eq 3</span>
+                <div class="explain-line-title">$k = -2c_1 - 5c_2 = -2(-1) - 5(2) = 2 - 10 = -8$</div>
+                <div class="explain-line-desc">The third coordinate equation gives the exact value $k = -8$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Dependent Set</span>
+                <div class="explain-line-title">For dependence: $\det = 0 \implies k = -8$</div>
+                <div class="explain-line-desc">When $k = -8$, the vector lies in the plane spanned by $v_1$ and $v_2$.</div>
+              </div>
+<div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1711,24 +2081,28 @@ window.UNIT1_DATA = {
         </button>
         <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 1</span>
-          <div class="explain-line-title">Identify Key Axioms and Setup</div>
-          <div class="explain-line-desc">Establish standard vector space/subspace definitions for Part B • Q8 (16 Marks).</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 2</span>
-          <div class="explain-line-title">Rigorous Verification of Operations</div>
-          <div class="explain-line-desc">Check addition closure, scalar multiplication, and field compatibility.</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 3</span>
-          <div class="explain-line-title">Final Conclusion and Scoring Strategy</div>
-          <div class="explain-line-desc">State clear Q.E.D. or final coordinates for maximum university credit.</div>
-        </div>
-          
-      <div class="inline-ai-section">
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Constraint Equation</span>
+                <div class="explain-line-title">$a - 2b + c = 0 \implies a = 2b - c$</div>
+                <div class="explain-line-desc">Express the first variable in terms of the two independent free variables $b$ and $c$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Parameterization</span>
+                <div class="explain-line-title">$(a, b, c) = (2b - c, b, c) = b(2, 1, 0) + c(-1, 0, 1)$</div>
+                <div class="explain-line-desc">Factoring out free parameters $b$ and $c$ produces two spanning vectors $v_1 = (2,1,0)$ and $v_2 = (-1,0,1)$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Independence Check</span>
+                <div class="explain-line-title">$b(2,1,0) + c(-1,0,1) = (0,0,0) \implies b=0, c=0$</div>
+                <div class="explain-line-desc">The vectors are clearly non-proportional, hence linearly independent.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Basis and Dimension</span>
+                <div class="explain-line-title">Basis $B = \{(2,1,0), (-1,0,1)\}$ | Dimension $= 2$</div>
+                <div class="explain-line-desc">The dimension is 2, representing a 2D plane passing through the origin in $\mathbb{R}^3$.</div>
+              </div>
+<div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1811,24 +2185,28 @@ window.UNIT1_DATA = {
         </button>
         <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 1</span>
-          <div class="explain-line-title">Identify Key Axioms and Setup</div>
-          <div class="explain-line-desc">Establish standard vector space/subspace definitions for Part B • Q9 (16 Marks).</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 2</span>
-          <div class="explain-line-title">Rigorous Verification of Operations</div>
-          <div class="explain-line-desc">Check addition closure, scalar multiplication, and field compatibility.</div>
-        </div>
-        <div class="explain-line">
-          <span class="explain-line-badge">Step 3</span>
-          <div class="explain-line-title">Final Conclusion and Scoring Strategy</div>
-          <div class="explain-line-desc">State clear Q.E.D. or final coordinates for maximum university credit.</div>
-        </div>
-          
-      <div class="inline-ai-section">
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Matrix Formulation</span>
+                <div class="explain-line-title">Form $3 \times 3$ matrix with vectors as columns/rows</div>
+                <div class="explain-line-desc">To prove a set of 3 vectors forms a basis for $\mathbb{R}^3$, we must prove: (1) Linear Independence, and (2) Spanning $\mathbb{R}^3$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Determinant Test</span>
+                <div class="explain-line-title">Calculate $|A|$</div>
+                <div class="explain-line-desc">If $|A| \neq 0$, the vectors are linearly independent. By the Basis Theorem, any $n$ independent vectors in an $n$-dimensional space automatically span the space!</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Spanning Proof</span>
+                <div class="explain-line-title">Solve $A X = (x, y, z)$ for arbitrary vector in $\mathbb{R}^3$</div>
+                <div class="explain-line-desc">Using Cramer's Rule, since $|A| \neq 0$, unique scalars $c_1, c_2, c_3$ exist for ANY $(x,y,z) \in \mathbb{R}^3$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <div class="explain-line-title">Vectors satisfy both conditions $\implies$ Basis for $V_3(\mathbb{R})$</div>
+                <div class="explain-line-desc">Explicitly showing both Independence and Spanning satisfies all Anna University rubrics.</div>
+              </div>
+<div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1909,7 +2287,64 @@ window.UNIT1_DATA = {
               <span class="why-icon">▼</span>
             </button>
             <div class="why-content">
-              In Anna University examinations, if an $n$-dimensional space has exactly $n$ vectors (here $n=3$), proving $|A| \neq 0$ proves Linear Independence, which by the Dimension Theorem automatically guarantees Spanning. However, writing out both Step 1 (Independence) and Step 2 (Cramer's Rule Spanning) guarantees the full 16/16 marks from strict evaluators!
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Matrix Formulation</span>
+                <div class="explain-line-title">Form $3 \times 3$ matrix with vectors as rows or columns</div>
+                <div class="explain-line-desc">Form matrix $A = \begin{bmatrix} 2 & -3 & 1 \\ 0 & 1 & 2 \\ 1 & 1 & 2 \end{bmatrix}$. A set of $n$ vectors in $\mathbb{R}^n$ forms a basis iff $\det(A) \neq 0$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Determinant Evaluation</span>
+                <div class="explain-line-title">$\det(A) = 2(2-2) - (-3)(0-2) + 1(0-1) = -7 \neq 0$</div>
+                <div class="explain-line-desc">Non-zero determinant proves full rank (Rank = 3), confirming linear independence of the three vectors.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Spanning Proof via Cramer's Rule</span>
+                <div class="explain-line-title">Arbitrary vector $(x,y,z) = c_1 v_1 + c_2 v_2 + c_3 v_3$ has unique solution</div>
+                <div class="explain-line-desc">Because $|A| = -7 \neq 0$, the non-homogeneous linear system always has a unique solution for scalars $c_1, c_2, c_3$ by Cramer's Rule.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">8 marks for linear independence proof via determinant, 6 marks for spanning system, 2 marks for conclusion statement that $S$ is a basis.</div>
+              </div>
+
+        <div class="inline-ai-section">
+          <div class="inline-ai-header">
+            <div class="inline-ai-title-wrap">
+              <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+              <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+            </div>
+            <div class="inline-ai-controls">
+              <select class="inline-ai-model" aria-label="Select Model">
+                <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                  <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                  <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                  <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                  <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                  <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                  <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                  <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                </optgroup>
+                <optgroup label="OpenRouter Free Endpoints">
+                  <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                  <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                  <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                  <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                  <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                  <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                  <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="inline-ai-chat-history"></div>
+          <div class="inline-ai-input-wrap">
+            <input type="text" class="inline-ai-input" placeholder="Type your doubt about this problem (e.g. explain step 2 in simple terms)..." onkeydown="if(event.key==='Enter') window.sendInlineQuery(this)">
+            <button class="inline-ai-send" onclick="window.sendInlineQuery(this)">Ask AI</button>
+          </div>
+        </div>
             </div>
           </div>
         </div>
@@ -2024,7 +2459,7 @@ window.UNIT1_DATA = {
             <p>Standard basis of $\mathbb{R}^4$ is $\{e_1, e_2, e_3, e_4\}$. Form matrix with $v_1, v_2$ followed by standard basis vectors:
             $$A = \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
             Applying Gaussian row reduction:<br>
-            • $R_3 \to R_3 - R_1 = (0, 0, -1, 0) \to (0, 0, 1, 0)$ (Pivots in columns 1, 2, 3).<br>
+            • $R_3 \to R_3 - R_1 = (0, 0, -1, 0) \to (0, 0, 1, 0)$ (Piv\dots in columns 1, 2, 3).<br>
             • Pivot 4 is obtained by choosing $e_4 = (0, 0, 0, 1)$ or $e_1 = (1, 0, 0, 0)$.<br>
             We choose extended vectors $v_3 = (0, 0, 1, 0)$ and $v_4 = (0, 0, 0, 1)$.<br>
             Extended set $B = \{v_1, v_2, v_3, v_4\} = \{(1,0,1,0), (0,1,0,1), (0,0,1,0), (0,0,0,1)\}$.<br>

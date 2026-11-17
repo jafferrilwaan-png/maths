@@ -1,3 +1,7 @@
 test_*
 WhatsApp*
 *.py
+*.bak
+*.png
+*.txt
+__pycache__/
