@@ -2,7 +2,8 @@
 window.UNIT1_DATA = {
   title: "Unit-I: Vector Spaces",
   desc: "Complete Question Bank + Class Notes derivations with interactive step dropdowns and KaTeX math.",
-  partA: String.raw`<div class="section-badge">Part 1: Official Question Bank 2-Marks (Compulsory Q1–Q10)</div>
+  partA: String.raw`
+<div class="section-badge">Part 1: Official Question Bank 2-Marks (Compulsory Q1–Q10)</div>
 <!-- Q1 -->
 <div class="question-card" data-category="axioms">
 <div class="card-top">
@@ -69,6 +70,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Q2 -->
+</div>
 <div class="question-card" data-category="axioms">
 <div class="card-top">
 <span class="q-pill">QB • Q2</span>
@@ -131,6 +133,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Q3 -->
+</div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
 <span class="q-pill">QB • Q3</span>
@@ -192,6 +195,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Q4 -->
+</div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
 <span class="q-pill">QB • Q4</span>
@@ -249,6 +253,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Q5 -->
+</div>
 <div class="question-card" data-category="dependence">
 <div class="card-top">
 <span class="q-pill">QB • Q5</span>
@@ -304,6 +309,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Q6 -->
+</div>
 <div class="question-card" data-category="dependence">
 <div class="card-top">
 <span class="q-pill">QB • Q6</span>
@@ -360,6 +366,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Q7 -->
+</div>
 <div class="question-card" data-category="basis">
 <div class="card-top">
 <span class="q-pill">QB • Q7</span>
@@ -416,6 +423,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Q8 -->
+</div>
 <div class="question-card" data-category="basis">
 <div class="card-top">
 <span class="q-pill">QB • Q8</span>
@@ -473,6 +481,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Q9 -->
+</div>
 <div class="question-card" data-category="dependence">
 <div class="card-top">
 <span class="q-pill">QB • Q9</span>
@@ -528,6 +537,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Q10 -->
+</div>
 <div class="question-card" data-category="basis">
 <div class="card-top">
 <span class="q-pill">QB • Q10</span>
@@ -589,6 +599,7 @@ window.UNIT1_DATA = {
 <!-- EXTRA IMPORTANT 2-MARKS -->
 <div class="section-badge">Part 2: Extra High-Yield 2-Marks (Class Notes &amp; Tough Exam Questions)</div>
 <!-- Extra Q11 -->
+</div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
 <span class="q-pill extra">Extra • Q11</span>
@@ -644,6 +655,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Extra Q12 -->
+</div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
 <span class="q-pill extra">Extra • Q12</span>
@@ -707,6 +719,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Extra Q13 -->
+</div>
 <div class="question-card" data-category="basis">
 <div class="card-top">
 <span class="q-pill extra">Extra • Q13</span>
@@ -763,6 +776,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Extra Q14 -->
+</div>
 <div class="question-card" data-category="dependence">
 <div class="card-top">
 <span class="q-pill extra">Extra • Q14</span>
@@ -820,6 +834,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Extra Q15 -->
+</div>
 <div class="question-card" data-category="axioms">
 <div class="card-top">
 <span class="q-pill extra">Extra • Q15</span>
@@ -876,6 +891,7 @@ window.UNIT1_DATA = {
             </div>
 </div></div>
 <!-- Extra Q16 -->
+</div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
 <span class="q-pill extra">Extra • Q16</span>
@@ -935,7 +951,8 @@ window.UNIT1_DATA = {
 </div></div>
 </div>
 <!-- ================= PART B SECTION (ALL 10 COMPLETE QUESTIONS) ================= -->
-<!-- ================= PART B SECTION (ALL 10 COMPLETE 16-MARK QUESTIONS) ================= -->`,
+<!-- ================= PART B SECTION (ALL 10 COMPLETE 16-MARK QUESTIONS) ================= -->
+`,
   partB: String.raw`
 <div class="question-card" data-category="axioms">
         <div class="card-top">
@@ -1898,24 +1915,7 @@ window.UNIT1_DATA = {
         </div>
       </div>
 
-    </div>
-"""
-
-# Replace the old Part B section with the new massive, detailed Part B section
-start_tag = '<div id="sectionPartB"'
-end_tag = '<footer>'
-
-start_idx = current_html.find(start_tag)
-end_idx = current_html.find(end_tag)
-
-if start_idx != -1 and end_idx != -1:
-    new_html = current_html[:start_idx] + partb_massive_html.strip() + '\n\n    ' + current_html[end_idx:]
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(new_html)
-    print("Massive 16-Mark Part B successfully applied via string slicing! File length:", len(new_html))
-else:
-    print(f"Error: tags not found. start_idx={start_idx}, end_idx={end_idx}")
-
+    
 
 <!-- Part B • Extra Q11 (16 Marks) -->
       <div class="question-card" data-category="subspace">
@@ -2010,7 +2010,8 @@ else:
       </div>
 
       <!-- Part B • Extra Q12 (16 Marks) -->
-      <div class="question-card" data-category="basis">
+</div>
+<div class="question-card" data-category="basis">
         <div class="card-top">
           <span class="q-pill">Part B • Extra Q12 (16 Marks)</span>
           <div class="q-heading">Let $S = \{(1, 0, 1, 0), (0, 1, 0, 1)\}$ be a linearly independent subset of $\mathbb{R}^4$. Extend $S$ to form a complete basis of $\mathbb{R}^4$, and find the coordinates of $v = (2, 3, -1, 4)$ with respect to this extended basis.</div>
@@ -2089,5 +2090,116 @@ else:
         </div>
       </div>
 
+
+    <!-- Part B • Tough Challenge Q13 (16 Marks) -->
+</div>
+<div class="question-card" data-category="subspace">
+      <div class="card-top">
+        <span class="q-pill">Part B • Tough Challenge Q13 (16 Marks)</span>
+        <div class="q-heading">Let $W_1$ and $W_2$ be two subspaces of $\mathbb{R}^4$ defined by:
+        $$W_1 = \{(x_1, x_2, x_3, x_4) \in \mathbb{R}^4 \mid x_1 + x_2 - x_3 = 0, \; x_2 - x_4 = 0\}$$
+        $$W_2 = \{(x_1, x_2, x_3, x_4) \in \mathbb{R}^4 \mid x_1 - x_2 + x_4 = 0, \; x_3 + x_4 = 0\}$$
+        Find the basis and dimension for $W_1$, $W_2$, $W_1 \cap W_2$, and $W_1 + W_2$, and verify the dimension formula:
+        $$\dim(W_1 + W_2) = \dim W_1 + \dim W_2 - \dim(W_1 \cap W_2)$$</div>
+      </div>
+      <div class="solution-content">
+        <p><strong>Aim:</strong> Rigorously determine bases and dimensions of subspaces, their intersection, and their sum, and verify the dimension theorem for subspaces.</p>
+
+        <div class="partb-step">
+          <div class="step-title">Step 1: Basis and Dimension of $W_1$</div>
+          <p>For $x \in W_1$, the constraints are $x_3 = x_1 + x_2$ and $x_4 = x_2$. The free variables are $x_1$ and $x_2$:
+          $$\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = \begin{pmatrix} x_1 \\ x_2 \\ x_1 + x_2 \\ x_2 \end{pmatrix} = x_1 \begin{pmatrix} 1 \\ 0 \\ 1 \\ 0 \end{pmatrix} + x_2 \begin{pmatrix} 0 \\ 1 \\ 1 \\ 1 \end{pmatrix}$$
+          Basis for $W_1$: $B_1 = \left\{ (1, 0, 1, 0), (0, 1, 1, 1) \right\}$.<br>
+          Therefore, <strong>$\dim W_1 = 2$</strong>.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 2: Basis and Dimension of $W_2$</div>
+          <p>For $x \in W_2$, constraints are $x_1 = x_2 - x_4$ and $x_3 = -x_4$. Free variables are $x_2$ and $x_4$:
+          $$\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = \begin{pmatrix} x_2 - x_4 \\ x_2 \\ -x_4 \\ x_4 \end{pmatrix} = x_2 \begin{pmatrix} 1 \\ 1 \\ 0 \\ 0 \end{pmatrix} + x_4 \begin{pmatrix} -1 \\ 0 \\ -1 \\ 1 \end{pmatrix}$$
+          Basis for $W_2$: $B_2 = \left\{ (1, 1, 0, 0), (-1, 0, -1, 1) \right\}$.<br>
+          Therefore, <strong>$\dim W_2 = 2$</strong>.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 3: Basis and Dimension of Intersection $W_1 \cap W_2$</div>
+          <p>Vectors in $W_1 \cap W_2$ satisfy all 4 linear equations simultaneously:
+          $$\begin{cases}
+          x_1 + x_2 - x_3 = 0 \\
+          x_2 - x_4 = 0 \implies x_4 = x_2 \\
+          x_1 - x_2 + x_4 = 0 \implies x_1 - x_2 + x_2 = 0 \implies x_1 = 0 \\
+          x_3 + x_4 = 0 \implies x_3 = -x_4 = -x_2
+          \end{cases}$$
+          Substitute $x_1 = 0, x_3 = -x_2$ into equation 1: $0 + x_2 - (-x_2) = 0 \implies 2x_2 = 0 \implies x_2 = 0$.<br>
+          Consequently, $x_1 = x_2 = x_3 = x_4 = 0$.<br>
+          Therefore, $W_1 \cap W_2 = \{(0, 0, 0, 0)\} \implies$ <strong>$\dim(W_1 \cap W_2) = 0$</strong>.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 4: Basis and Dimension of Sum $W_1 + W_2$</div>
+          <p>$W_1 + W_2 = \text{span}(B_1 \cup B_2)$. Assemble the 4 basis vectors into a matrix and compute the determinant:
+          $$\det \begin{pmatrix} 1 & 0 & 1 & -1 \\ 0 & 1 & 1 & 0 \\ 1 & 1 & 0 & -1 \\ 0 & 1 & 0 & 1 \end{pmatrix} = -2 \neq 0$$
+          Since the determinant is non-zero, the 4 vectors are linearly independent in $\mathbb{R}^4$.<br>
+          Hence, <strong>$\dim(W_1 + W_2) = 4$</strong>, and $W_1 \oplus W_2 = \mathbb{R}^4$.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 5: Verification of Subspace Dimension Formula</div>
+          <p>$$\text{LHS} = \dim(W_1 + W_2) = 4$$
+          $$\text{RHS} = \dim W_1 + \dim W_2 - \dim(W_1 \cap W_2) = 2 + 2 - 0 = 4$$
+          $$\text{LHS} = \text{RHS} = 4 \quad \text{Verified!}$$</p>
+        </div>
+
+        <div class="tag-result">Conclusion: $\dim W_1 = 2$, $\dim W_2 = 2$, $\dim(W_1 \cap W_2) = 0$, $\dim(W_1 + W_2) = 4$. Verified!</div>
+      </div>
+      <div class="why-dropdown">
+        <button class="why-toggle-btn" onclick="toggleWhy(this)">
+          <span>Mathematical Explanation &amp; Step Reasoning</span>
+          <span class="why-icon">&#9660;</span>
+        </button>
+        <div class="why-content">
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 1</span>
+            <div class="explain-line-title">Systematic Kernel Parameterization</div>
+            <div class="explain-line-desc">Set homogeneous constraints to isolate free variables, writing arbitrary vectors as explicit linear combinations.</div>
+          </div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 2</span>
+            <div class="explain-line-title">Simultaneous System for Intersection</div>
+            <div class="explain-line-desc">Intersecting subspaces means solving all constraints simultaneously; finding only the trivial zero solution proves direct sum.</div>
+          </div>
+
+      <div class="inline-ai-section">
+        <div class="inline-ai-header">
+          <div class="inline-ai-title-wrap">
+            <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+            <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+          </div>
+          <div class="inline-ai-controls">
+            <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+              <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+              <option value="gemini">Google Gemini API</option>
+              <option value="ollama">Ollama (Local Offline)</option>
+            </select>
+            <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+              <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free - Recommended)</option>
+              <option value="openrouter/free">OpenRouter Auto Free (Fallback)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+              <option value="deepseek/deepseek-r1:free">DeepSeek R1 Reasoning (Free)</option>
+              <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-ai-chat-history"></div>
+        <div class="inline-ai-input-group">
+          <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </div>
 `
 };

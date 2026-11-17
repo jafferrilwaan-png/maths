@@ -3,7 +3,7 @@ window.UNIT3_DATA = {
   title: "Unit-III: Inner Product Spaces",
   desc: "Complete Question Bank + Class Notes derivations for Inner Products, Norms, Gram-Schmidt Orthogonalization, Cauchy-Schwarz, and Orthogonal Complements.",
   partA: String.raw`
-      <div class="section-badge">Part 1: Official Question Bank 2-Marks (Unit III)</div>
+<div class="section-badge">Part 1: Official Question Bank 2-Marks (Unit III)</div>
 
       <!-- Q1 -->
       <div class="question-card" data-category="innerproduct">
@@ -64,7 +64,8 @@ window.UNIT3_DATA = {
       </div>
 
       <!-- Q2 -->
-      <div class="question-card" data-category="orthogonality">
+</div>
+<div class="question-card" data-category="orthogonality">
         <div class="card-top">
           <span class="q-pill">QB • Q2</span>
           <div class="q-heading">Let $P_2$ have the inner product $\langle p, q \rangle = \int_{-1}^1 p(x)q(x)\,dx$. Find the angle between $p = x$ and $q = x^2$.</div>
@@ -125,7 +126,8 @@ window.UNIT3_DATA = {
       </div>
 
       <!-- Q3 -->
-      <div class="question-card" data-category="orthogonality">
+</div>
+<div class="question-card" data-category="orthogonality">
         <div class="card-top">
           <span class="q-pill">QB • Q3</span>
           <div class="q-heading">If $\{a, b\}$ is an orthonormal set, what is the distance between $a$ and $b$?</div>
@@ -186,7 +188,8 @@ window.UNIT3_DATA = {
       </div>
 
       <!-- Q4 -->
-      <div class="question-card" data-category="norm">
+</div>
+<div class="question-card" data-category="norm">
         <div class="card-top">
           <span class="q-pill">QB • Q4</span>
           <div class="q-heading">Define Norm and state its three defining properties.</div>
@@ -245,7 +248,8 @@ window.UNIT3_DATA = {
       </div>
 
       <!-- Q5 -->
-      <div class="question-card" data-category="norm">
+</div>
+<div class="question-card" data-category="norm">
         <div class="card-top">
           <span class="q-pill">QB • Q5</span>
           <div class="q-heading">State the Cauchy-Schwarz Inequality and condition for equality.</div>
@@ -301,7 +305,8 @@ window.UNIT3_DATA = {
       </div>
 
       <!-- Q6 -->
-      <div class="question-card" data-category="orthogonality">
+</div>
+<div class="question-card" data-category="orthogonality">
         <div class="card-top">
           <span class="q-pill">QB • Q6</span>
           <div class="q-heading">For any non-zero vector $x \in V$, prove that $y = \frac{x}{\|x\|}$ is a unit vector.</div>
@@ -361,7 +366,8 @@ window.UNIT3_DATA = {
       </div>
 
       <!-- Q7 -->
-      <div class="question-card" data-category="innerproduct">
+</div>
+<div class="question-card" data-category="innerproduct">
         <div class="card-top">
           <span class="q-pill">QB • Q7</span>
           <div class="q-heading">Let $\mathbb{R}^2$ have the weighted Euclidean inner product $\langle u, v \rangle = 2u_1 v_1 + 3u_2 v_2$. If $u = (1, 1), v = (3, 2), w = (0, -1)$, compute $\langle u + v, 3w \rangle$.</div>
@@ -420,10 +426,11 @@ window.UNIT3_DATA = {
           </div>
         </div>
       </div>
-  `,
+  
   
     <!-- QB • Q8 -->
-    <div class="question-card" data-category="orthogonality">
+</div>
+<div class="question-card" data-category="orthogonality">
       <div class="card-top">
         <span class="q-pill">QB • Q8</span>
         <div class="q-heading">For any non-zero vector $x \in V$, prove that $y = rac{x}{\|x\|}$ is a unit vector, i.e., $\|y\| = 1$.</div>
@@ -773,7 +780,7 @@ eq 0$, dividing by $\|v_i\|^2$ gives $c_i = 0$.<br>
         </div>
       </div>
     </div>
-
+`,
   partB: String.raw`
 <div class="question-card" data-category="orthogonality">
         <div class="card-top">
@@ -857,7 +864,7 @@ eq 0$, dividing by $\|v_i\|^2$ gives $c_i = 0$.<br>
       </div>
 
       <!-- Part B Q2 -->
-      
+</div>
 <div class="question-card" data-category="orthogonality">
         <div class="card-top">
           <span class="q-pill">Part B • Q2 (16 Marks)</span>
@@ -946,12 +953,12 @@ eq 0$, dividing by $\|v_i\|^2$ gives $c_i = 0$.<br>
           </div>
         </div>
       </div>
-  `
-};
+  
 
 
     <!-- Part B • Q3 (16 Marks) -->
-    <div class="question-card" data-category="orthogonality">
+</div>
+<div class="question-card" data-category="orthogonality">
       <div class="card-top">
         <span class="q-pill">Part B • Q3 (16 Marks)</span>
         <div class="q-heading">Let the vector space $P_2([-1, 1])$ have the inner product $\langle p, q 

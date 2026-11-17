@@ -3,7 +3,7 @@ window.UNIT2_DATA = {
   title: "Unit-II: Linear Transformations & Diagonalizations",
   desc: "Complete Question Bank + Class Notes derivations for Kernel, Range, Rank-Nullity Theorem, Matrix Representations, Eigenvalues & Diagonalization.",
   partA: String.raw`
-      <div class="section-badge">Part 1: Official Question Bank 2-Marks (Unit II)</div>
+<div class="section-badge">Part 1: Official Question Bank 2-Marks (Unit II)</div>
 
       <!-- Q1 -->
       <div class="question-card" data-category="transformation">
@@ -62,7 +62,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Q2 -->
-      <div class="question-card" data-category="kernel">
+</div>
+<div class="question-card" data-category="kernel">
         <div class="card-top">
           <span class="q-pill">QB • Q2</span>
           <div class="q-heading">Define Null Space (Kernel) and Nullity.</div>
@@ -118,7 +119,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Q3 -->
-      <div class="question-card" data-category="transformation">
+</div>
+<div class="question-card" data-category="transformation">
         <div class="card-top">
           <span class="q-pill">QB • Q3</span>
           <div class="q-heading">Verify whether $T: \mathbb{R}^3 \to \mathbb{R}$ defined by $T(u) = \|u\|$ is a linear transformation or not.</div>
@@ -177,7 +179,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Q4 -->
-      <div class="question-card" data-category="eigen">
+</div>
+<div class="question-card" data-category="eigen">
         <div class="card-top">
           <span class="q-pill">QB • Q4</span>
           <div class="q-heading">Define Algebraic Multiplicity and Geometric Multiplicity of an Eigenvalue.</div>
@@ -235,7 +238,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Q5 -->
-      <div class="question-card" data-category="transformation">
+</div>
+<div class="question-card" data-category="transformation">
         <div class="card-top">
           <span class="q-pill">QB • Q5</span>
           <div class="q-heading">Is there a linear transformation $T: \mathbb{R}^3 \to \mathbb{R}^2$ such that $T(1,0,3) = (1,1)$ and $T(-2,0,-6) = (2,1)$?</div>
@@ -294,7 +298,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Q6 -->
-      <div class="question-card" data-category="kernel">
+</div>
+<div class="question-card" data-category="kernel">
         <div class="card-top">
           <span class="q-pill">QB • Q6</span>
           <div class="q-heading">Prove that a linear transformation $T: V \to W$ is one-to-one (injective) if and only if $N(T) = \{0\}$.</div>
@@ -356,7 +361,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Q7 -->
-      <div class="question-card" data-category="transformation">
+</div>
+<div class="question-card" data-category="transformation">
         <div class="card-top">
           <span class="q-pill">QB • Q7</span>
           <div class="q-heading">Check whether $T: \mathbb{R}^2 \to \mathbb{R}^2$ defined by $T(a_1, a_2) = (2a_1 + a_2, a_1)$ is linear.</div>
@@ -416,7 +422,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Q8 -->
-      <div class="question-card" data-category="kernel">
+</div>
+<div class="question-card" data-category="kernel">
         <div class="card-top">
           <span class="q-pill">QB • Q8</span>
           <div class="q-heading">Verify the Dimension Theorem for $T: \mathbb{R}^3 \to \mathbb{R}^2$ defined by $T(a_1, a_2, a_3) = (a_1 - a_2, 2a_3)$.</div>
@@ -476,7 +483,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Q9 -->
-      <div class="question-card" data-category="kernel">
+</div>
+<div class="question-card" data-category="kernel">
         <div class="card-top">
           <span class="q-pill">QB • Q9</span>
           <div class="q-heading">Define Range Space and Rank of a Linear Transformation.</div>
@@ -535,7 +543,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Q10 -->
-      <div class="question-card" data-category="eigen">
+</div>
+<div class="question-card" data-category="eigen">
         <div class="card-top">
           <span class="q-pill">QB • Q10</span>
           <div class="q-heading">Test whether the matrix $A = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \in M_{2\times 2}(\mathbb{R})$ is diagonalizable.</div>
@@ -591,10 +600,11 @@ window.UNIT2_DATA = {
           </div>
         </div>
       </div>
-  `,
+  
   
     <!-- Extra • Q11 -->
-    <div class="question-card" data-category="transformation">
+</div>
+<div class="question-card" data-category="transformation">
       <div class="card-top">
         <span class="q-pill extra">Extra • Q11</span>
         <div class="q-heading">State Cayley-Hamilton Theorem and how to compute $A^{-1}$ using it.</div>
@@ -720,7 +730,7 @@ eq 0$, allowing direct inversion without computing classical adjoints.</div>
         </div>
       </div>
     </div>
-
+`,
   partB: String.raw`
 <div class="question-card" data-category="kernel">
         <div class="card-top">
@@ -814,7 +824,7 @@ eq 0$, allowing direct inversion without computing classical adjoints.</div>
       </div>
 
       <!-- Part B Q2 -->
-      
+</div>
 <div class="question-card" data-category="transformation">
         <div class="card-top">
           <span class="q-pill">Part B • Q2 (16 Marks)</span>
@@ -903,7 +913,7 @@ eq 0$, allowing direct inversion without computing classical adjoints.</div>
       </div>
 
       <!-- Part B Q3 -->
-      
+</div>
 <div class="question-card" data-category="eigen">
         <div class="card-top">
           <span class="q-pill">Part B • Q3 (16 Marks)</span>
@@ -1003,12 +1013,12 @@ eq 0$, allowing direct inversion without computing classical adjoints.</div>
           </div>
         </div>
       </div>
-  `
-};
+  
 
 
     <!-- Part B • Q4 (16 Marks) -->
-    <div class="question-card" data-category="transformation">
+</div>
+<div class="question-card" data-category="transformation">
       <div class="card-top">
         <span class="q-pill">Part B • Q4 (16 Marks)</span>
         <div class="q-heading">State and prove the Dimension Theorem (Rank-Nullity Theorem) for linear transformations.</div>
@@ -1334,6 +1344,97 @@ eq 0 \implies P$ is invertible, and $P^{-1} A P = D$.</p>
             <div class="explain-line-desc">Notice $D^n = \text{diag}(1^n, 2^n) = \text{diag}(1, 2^n)$, simplifying the three-matrix product into closed-form power.</div>
           </div>
           
+      <div class="inline-ai-section">
+        <div class="inline-ai-header">
+          <div class="inline-ai-title-wrap">
+            <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+            <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+          </div>
+          <div class="inline-ai-controls">
+            <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+              <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+              <option value="gemini">Google Gemini API</option>
+              <option value="ollama">Ollama (Local Offline)</option>
+            </select>
+            <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+              <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free - Recommended)</option>
+              <option value="openrouter/free">OpenRouter Auto Free (Fallback)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+              <option value="deepseek/deepseek-r1:free">DeepSeek R1 Reasoning (Free)</option>
+              <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-ai-chat-history"></div>
+        <div class="inline-ai-input-group">
+          <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Part B • Tough Challenge Q8 (16 Marks) -->
+    <div class="question-card" data-category="transformation">
+      <div class="card-top">
+        <span class="q-pill">Part B • Tough Challenge Q8 (16 Marks)</span>
+        <div class="q-heading">Test for diagonalizability of the matrix:
+        $$A = \begin{pmatrix} 7 & -4 & 0 \\ 8 & -5 & 0 \\ -6 & 6 & 0 \end{pmatrix}$$
+        Find the algebraic multiplicity (AM) and geometric multiplicity (GM) of each eigenvalue. If $A$ is diagonalizable, find the invertible modal matrix $P$ and diagonal matrix $D$ such that $P^{-1}AP = D$.</div>
+      </div>
+      <div class="solution-content">
+        <p><strong>Aim:</strong> Rigorously test diagonalizability via the fundamental criterion $\text{GM}(\lambda) = \text{AM}(\lambda)$ for all eigenvalues, and construct the diagonalizing transformation.</p>
+
+        <div class="partb-step">
+          <div class="step-title">Step 1: Characteristic Equation &amp; Eigenvalues</div>
+          <p>Expand $\det(A - \lambda I)$ along column 3 (since it has two zeros):
+          $$\det(A - \lambda I) = \begin{vmatrix} 7 - \lambda & -4 & 0 \\ 8 & -5 - \lambda & 0 \\ -6 & 6 & -\lambda \end{vmatrix} = (-\lambda) \begin{vmatrix} 7 - \lambda & -4 \\ 8 & -5 - \lambda \end{vmatrix}$$
+          $$(-\lambda) \left[ (7 - \lambda)(-5 - \lambda) - (-32) \right] = (-\lambda) \left[ \lambda^2 - 2\lambda - 35 + 32 \right] = (-\lambda)(\lambda^2 - 2\lambda - 3) = 0$$
+          $$(-\lambda)(\lambda - 3)(\lambda + 1) = 0$$
+          The eigenvalues of $A$ are:
+          $$\lambda_1 = 0, \quad \lambda_2 = 3, \quad \lambda_3 = -1$$
+          Since all three eigenvalues are <strong>distinct</strong> in $\mathbb{R}$ ($\text{AM} = \text{GM} = 1$ for all $\lambda$), the matrix $A$ is <strong>guaranteed to be diagonalizable</strong>.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 2: Eigenvector Computation</div>
+          <p><strong>(a) For $\lambda_1 = 0$:</strong> $(A - 0I)X = 0$:
+          $$\begin{pmatrix} 7 & -4 & 0 \\ 8 & -5 & 0 \\ -6 & 6 & 0 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \implies x_1 = 0, x_2 = 0, x_3 = 1 \implies v_1 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$$
+          <strong>(b) For $\lambda_2 = 3$:</strong> $(A - 3I)X = 0$:
+          $$\begin{pmatrix} 4 & -4 & 0 \\ 8 & -8 & 0 \\ -6 & 6 & -3 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \implies x_1 = x_2 = 1, x_3 = 0 \implies v_2 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}$$
+          <strong>(c) For $\lambda_3 = -1$:</strong> $(A + I)X = 0$:
+          $$\begin{pmatrix} 8 & -4 & 0 \\ 8 & -4 & 0 \\ -6 & 6 & 1 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \implies x_2 = 2x_1, x_3 = -6x_1 \implies v_3 = \begin{pmatrix} 1 \\ 2 \\ -6 \end{pmatrix}$$</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 3: Construct Modal Matrix $P$ and Diagonal Matrix $D$</div>
+          <p>Assemble the eigenvectors as columns:
+          $$P = \begin{pmatrix} 0 & 1 & 1 \\ 0 & 1 & 2 \\ 1 & 0 & -6 \end{pmatrix}, \quad D = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & -1 \end{pmatrix}$$
+          Verification: $\det P = 1 \cdot (2 - 1) = 1 \neq 0 \implies P$ is non-singular and $P^{-1}AP = D$.</p>
+        </div>
+
+        <div class="tag-result">Conclusion: Distinct eigenvalues $\lambda = 0, 3, -1 \implies$ diagonalizable with modal matrix $P$.</div>
+      </div>
+      <div class="why-dropdown">
+        <button class="why-toggle-btn" onclick="toggleWhy(this)">
+          <span>Mathematical Explanation &amp; Step Reasoning</span>
+          <span class="why-icon">&#9660;</span>
+        </button>
+        <div class="why-content">
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 1</span>
+            <div class="explain-line-title">Sparse Column Expansion</div>
+            <div class="explain-line-desc">Take advantage of column 3 containing zeroes in rows 1 and 2 to quickly factor out $-\lambda$.</div>
+          </div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 2</span>
+            <div class="explain-line-title">Independence of Eigenspaces</div>
+            <div class="explain-line-desc">Eigenvectors corresponding to distinct eigenvalues are automatically linearly independent, ensuring $\det P \neq 0$.</div>
+          </div>
+
       <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
