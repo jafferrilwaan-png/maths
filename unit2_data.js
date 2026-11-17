@@ -32,13 +32,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -48,17 +55,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Order Significance</span>
-                <div class="explain-line-title">Why order matters in coordinate vectors</div>
-                <div class="explain-line-desc">Coordinate representations are column vectors. Swapping the order of basis elements permutes the rows of the coordinate vector, altering matrix computations.</div>
-              </div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Key (2 Marks)</div>
-                <div class="explain-line-desc">1 mark for defining basis with specific sequence/order; 1 mark for specifying coordinate tuple $(v_1, \dots, v_n)$.</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -91,13 +88,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -107,17 +111,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Subspace Property</span>
-                <div class="explain-line-title">Why $N(T)$ is always a subspace of domain $V$</div>
-                <div class="explain-line-desc">Since $T(0) = 0$ and $T(\alpha u + \beta v) = \alpha T(u) + \beta T(v) = 0$, $N(T)$ is automatically closed under linear combinations.</div>
-              </div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Nullity Meaning</span>
-                <div class="explain-line-title">What nullity measures geometrically</div>
-                <div class="explain-line-desc">Nullity measures the number of independent dimensions that are collapsed to 0 by the transformation.</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -153,13 +147,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -169,12 +170,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Norm Property</span>
-                <div class="explain-line-title">Why norms fail linearity</div>
-                <div class="explain-line-desc">Norms are always non-negative ($\|u\| \ge 0$), whereas linear maps can produce negative outputs. For $k = -1$, $\|ku\| = |-1|\|u\| = \|u\| \neq -\|u\|$.</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -209,13 +205,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -225,12 +228,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Key Inequality</span>
-                <div class="explain-line-title">The fundamental relationship $1 \le GM \le AM$</div>
-                <div class="explain-line-desc">Geometric multiplicity is the number of linearly independent eigenvectors. It can never exceed the algebraic multiplicity.</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -266,13 +264,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -282,12 +287,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Proportionality Test</span>
-                <div class="explain-line-title">Why dependent inputs must yield proportional outputs</div>
-                <div class="explain-line-desc">A linear transformation maps scalar multiples of vectors to the exact same scalar multiples of their images ($T(cv) = cT(v)$).</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -326,13 +326,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -342,12 +349,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Both Directions</span>
-                <div class="explain-line-title">Why 'if and only if' requires two separate proofs</div>
-                <div class="explain-line-desc">Evaluators give 1 mark for the forward direction ($T \text{ 1-1} \implies N(T)=\{0\}$) and 1 mark for reverse ($N(T)=\{0\} \implies T(x-y)=0 \implies x=y$).</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -384,13 +386,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -400,12 +409,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Degree 1 Terms</span>
-                <div class="explain-line-title">Quick inspection rule for linearity</div>
-                <div class="explain-line-desc">All output coordinates are homogeneous polynomials of degree 1 (linear combinations of inputs with NO constant terms like $+1$ or products like $a_1 a_2$).</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -442,13 +446,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -458,12 +469,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Rank-Nullity Equation</span>
-                <div class="explain-line-title">Why $\operatorname{Rank} + \operatorname{Nullity} = 3$</div>
-                <div class="explain-line-desc">Total degrees of freedom in $\mathbb{R}^3$ equals 3. 1 dimension is lost to the kernel ($a_1 = a_2, a_3 = 0$), leaving 2 dimensions spanning $\mathbb{R}^2$.</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -499,13 +505,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -515,12 +528,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Spanning Property</span>
-                <div class="explain-line-title">How to compute $R(T)$ from a basis</div>
-                <div class="explain-line-desc">If $\{v_1, \dots, v_n\}$ is a basis of $V$, then $R(T) = \operatorname{span}\{T(v_1), \dots, T(v_n)\}$.</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -555,13 +563,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -571,12 +586,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Distinct Eigenvalue Theorem</span>
-                <div class="explain-line-title">Why distinct eigenvalues guarantee diagonalizability</div>
-                <div class="explain-line-desc">Eigenvectors corresponding to distinct eigenvalues are automatically linearly independent, immediately forming an eigenvector basis.</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -648,13 +658,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -664,22 +681,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Kernel Setup</span>
-                <div class="explain-line-title">Why equate $T(a_1, a_2, a_3) = (0, 0)$</div>
-                <div class="explain-line-desc">The kernel is precisely the solution space of the homogeneous system $T(x) = 0$. Solving $a_1=a_2$ and $a_3=0$ isolates the 1 free variable.</div>
-              </div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Range from Standard Basis</span>
-                <div class="explain-line-title">Why transform standard vectors $\{e_1, e_2, e_3\}$</div>
-                <div class="explain-line-desc">Linearity guarantees that the image of the domain basis always spans the range space ($R(T) = \operatorname{span}\{T(e_i)\}$).</div>
-              </div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • 1-1 and Onto Conditions</span>
-                <div class="explain-line-title">Why nullity > 0 kills injectivity</div>
-                <div class="explain-line-desc">Since multiple inputs like $(1,1,0)$ and $(0,0,0)$ produce the exact same output $(0,0)$, $T$ fails injectivity.</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -744,13 +746,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -760,17 +769,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Fundamental Theorem</span>
-                <div class="explain-line-title">Why a linear map is completely determined by basis values</div>
-                <div class="explain-line-desc">Knowing the image of every vector in a basis allows calculating $T(x)$ for ANY vector in the universe by expanding in that basis.</div>
-              </div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Upper Triangular System</span>
-                <div class="explain-line-title">Why solving $c_1, c_2, c_3$ took only 3 steps</div>
-                <div class="explain-line-desc">The basis vectors were chosen in triangular order ($(1,1,1), (1,1,0), (1,0,0)$), so the system immediately back-substituted from the bottom row up.</div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -848,13 +847,20 @@ window.UNIT2_DATA = {
                     <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
                   </div>
                   <div class="inline-ai-controls">
-                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+                      <option value="gemini">Google Gemini API</option>
+                      <option value="ollama">Ollama (Local Offline)</option>
+                    </select>
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
+                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
                       <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
                       <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
+                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
                       <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
                     </select>
                   </div>
                 </div>
@@ -864,17 +870,7 @@ window.UNIT2_DATA = {
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
-</div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Proof Architecture</span>
-                <div class="explain-line-title">Why extend $N(T)$ basis to $V$</div>
-                <div class="explain-line-desc">The kernel vectors vanish under $T$, leaving exactly the extended vectors $\{u_1, \dots, u_{n-k}\}$ to carry all the information of the range.</div>
-              </div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Independence Trick</span>
-                <div class="explain-line-title">Why $T(\sum c_j u_j) = 0 \implies \sum c_j u_j \in N(T)$</div>
-                <div class="explain-line-desc">This crucial bridge equates the combination of $u_j$ to a combination of $v_i$. Independence of the grand basis forces all $c_j = 0$.</div>
-              </div>
+
             </div>
           </div>
         </div>
