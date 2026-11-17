@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LANA • Unit 1 Vector Spaces Master App</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for Zero-Error Mathematical Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #dbeafe 0%, #eff6ff 40%, #f0f7ff 70%, #e0e7ff 100%);
+      --card-bg: #f8fafc;
+      --card-clay: rgba(255, 255, 255, 0.85);
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #60a5fa;
+      --clay-card-shadow: 14px 14px 28px rgba(186, 204, 226, 0.6), -12px -12px 28px rgba(255, 255, 255, 0.95);
+      --clay-card-inset: inset 2px 2px 3px rgba(255, 255, 255, 0.9), inset -2px -2px 3px rgba(186, 204, 226, 0.4);
+      --clay-btn-shadow: 6px 6px 14px rgba(186, 204, 226, 0.5), -4px -4px 12px rgba(255, 255, 255, 0.9);
+      --border-clay: rgba(255, 255, 255, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 70px;
+    }
+
+    /* Top Sticky Glass Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(240, 247, 255, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 6px 20px rgba(191, 207, 226, 0.35);
+    }
+
+    .nav-container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 4px 4px 12px rgba(37, 99, 235, 0.4), inset 1px 1px 2px rgba(255, 255, 255, 0.7);
+    }
+
+    .title-group h1 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    .title-group p {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Clay Switcher for Tabs */
+    .tab-switcher {
+      display: flex;
+      background: #e2ecf7;
+      padding: 5px;
+      border-radius: 999px;
+      box-shadow: inset 4px 4px 8px #cad8e8, inset -4px -4px 8px #ffffff;
+      gap: 4px;
+    }
+
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 9px 20px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+      color: var(--primary-dark);
+      box-shadow: 4px 4px 10px rgba(186, 204, 226, 0.5), -2px -2px 6px #ffffff;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 980px;
+      margin: 24px auto 0;
+      padding: 0 18px;
+    }
+
+    /* Hero Banner (Clay + Gradient) */
+    .hero-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #3b82f6 100%);
+      border-radius: 26px;
+      padding: 28px 32px;
+      color: white;
+      margin-bottom: 24px;
+      box-shadow: 14px 14px 30px rgba(37, 99, 235, 0.25), inset 1px 1px 2px rgba(255, 255, 255, 0.6);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-banner h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: -0.4px;
+    }
+
+    .hero-banner p {
+      font-size: 14px;
+      opacity: 0.92;
+      max-width: 700px;
+    }
+
+    /* Filter Chips */
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 22px;
+      scrollbar-width: none;
+    }
+    .filter-bar::-webkit-scrollbar { display: none; }
+
+    .chip {
+      background: var(--card-bg);
+      border: 1px solid var(--border-clay);
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      box-shadow: 4px 4px 10px #cad8e8, -4px -4px 10px #ffffff;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .chip.active, .chip:hover {
+      color: var(--primary-dark);
+      background: #eff6ff;
+      border-color: #93c5fd;
+      font-weight: 700;
+    }
+
+    /* Section Sub-Header */
+    .section-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 28px 0 16px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #1e40af;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .section-badge::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, #93c5fd 0%, transparent 100%);
+    }
+
+    /* Question Cards (Claymorphism Styling) */
+    .question-card {
+      background: var(--card-clay);
+      border: 1px solid var(--border-clay);
+      border-radius: 22px;
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: var(--clay-card-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .question-card:hover {
+      box-shadow: 16px 16px 32px #bacce2, -14px -14px 32px #ffffff;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .q-pill {
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      color: #1d4ed8;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 12px;
+      box-shadow: 3px 3px 6px #cad8e8, inset 1px 1px 2px #ffffff;
+      white-space: nowrap;
+    }
+
+    .q-pill.extra {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      color: #92400e;
+      box-shadow: 3px 3px 6px #e6d8a3, inset 1px 1px 2px #ffffff;
+    }
+
+    .q-heading {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.45;
+    }
+
+    .solution-content {
+      font-size: 14.5px;
+      color: #334155;
+    }
+
+    .math-panel {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 12px 18px;
+      margin: 12px 0;
+      box-shadow: inset 2px 2px 6px #d8e4f2, inset -2px -2px 6px #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      overflow-x: auto;
+    }
+
+    /* Step Boxes for Part B */
+    .partb-step {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px 18px;
+      margin: 12px 0;
+    }
+    .step-title {
+      font-weight: 800;
+      color: #1e3a8a;
+      margin-bottom: 6px;
+      font-size: 14.5px;
+    }
+
+    /* Interactive "Why We Do This Step" Accordion */
+    .why-dropdown {
+      margin-top: 14px;
+      border-radius: 14px;
+      background: #fefce8;
+      border: 1px solid #fef08a;
+      overflow: hidden;
+      box-shadow: 3px 3px 8px rgba(254, 240, 138, 0.4);
+    }
+
+    .why-toggle-btn {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: #a16207;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .why-toggle-btn span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .why-icon {
+      transition: transform 0.25s ease;
+      font-size: 12px;
+    }
+
+    .why-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+      padding: 0 16px;
+      font-size: 13.5px;
+      color: #854d0e;
+      line-height: 1.55;
+    }
+
+    .why-dropdown.open .why-content {
+      max-height: 800px;
+      transition: max-height 0.35s ease-in-out;
+      padding: 4px 16px 14px;
+    }
+
+    .why-dropdown.open .why-icon {
+      transform: rotate(180deg);
+    }
+
+    .tag-result {
+      display: inline-block;
+      background: #ecfdf5;
+      color: #065f46;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 10px;
+      border: 1px solid #a7f3d0;
+      margin-top: 10px;
+      box-shadow: 2px 2px 6px #d0e4da;
+      font-size: 13px;
+    }
+
+    .tag-result.fail {
+      background: #fef2f2;
+      color: #b91c1c;
+      border-color: #fecaca;
+      box-shadow: 2px 2px 6px #f2dcdc;
+    }
+
+    .axiom-item {
+      padding: 7px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .axiom-item:last-child { border-bottom: none; }
+    .axiom-name { font-weight: 700; color: #1e3a8a; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      .nav-container { flex-direction: column; align-items: stretch; }
+      .tab-switcher { justify-content: center; }
+      .hero-banner { padding: 22px 20px; }
+      .hero-banner h2 { font-size: 20px; }
+      .question-card { padding: 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Glass Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-area">
+        <div class="logo-badge">LA</div>
+        <div class="title-group">
+          <h1>23MA1302 • Linear Algebra &amp; Numerical Analysis</h1>
+          <p>Panimalar Autonomous (ECE) • Unit-I Master App</p>
+        </div>
+      </div>
+      <div class="tab-switcher">
+        <button class="tab-btn active" id="tabPartA" onclick="switchTab('partA')">Part A (2-Mark)</button>
+        <button class="tab-btn" id="tabPartB" onclick="switchTab('partB')">Part B (16-Mark)</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+      <div class="hero-tag">Unit-I: Vector Spaces</div>
+      <h2 id="bannerTitle">Part A: Compulsory &amp; Extra High-Yield 2-Marks</h2>
+      <p id="bannerDesc">Complete Question Bank + Class Notes 2-mark answers with interactive "Why We Do This Step" dropdowns and error-free KaTeX math.</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <button class="chip active" onclick="filterCards('all')">All Questions</button>
+      <button class="chip" onclick="filterCards('axioms')">Vector Space Axioms</button>
+      <button class="chip" onclick="filterCards('subspace')">Subspaces &amp; Theorems</button>
+      <button class="chip" onclick="filterCards('dependence')">Linear Independence &amp; Span</button>
+      <button class="chip" onclick="filterCards('basis')">Basis &amp; Dimension</button>
+    </div>
+
+    <!-- ================= PART A SECTION ================= -->
+    <div id="sectionPartA">
+
+      <div class="section-badge">Part 1: Official Question Bank 2-Marks (Compulsory Q1–Q10)</div>
+
+      <!-- Q1 -->
+      <div class="question-card" data-category="axioms">
+        <div class="card-top">
+          <span class="q-pill">QB • Q1</span>
+          <div class="q-heading">Define Vector Space.</div>
+        </div>
+        <div class="solution-content">
+          <p>A non-empty set $V$ is called a <strong>Vector Space</strong> over a field $F$, denoted $V(F)$, under vector addition ($+$) and scalar multiplication ($\cdot$), if for all $u, v, w \in V$ and $\alpha, \beta \in F$, the following 10 axioms hold:</p>
+          
+          <div class="math-panel">
+            <div class="axiom-item"><span class="axiom-name">A1. Closure under Addition:</span> $u + v \in V$</div>
+            <div class="axiom-item"><span class="axiom-name">A2. Associative Law:</span> $(u + v) + w = u + (v + w)$</div>
+            <div class="axiom-item"><span class="axiom-name">A3. Additive Identity:</span> $\exists\, 0 \in V$ such that $u + 0 = 0 + u = u$</div>
+            <div class="axiom-item"><span class="axiom-name">A4. Additive Inverse:</span> $\exists\, -u \in V$ such that $u + (-u) = 0$</div>
+            <div class="axiom-item"><span class="axiom-name">A5. Commutative Law:</span> $u + v = v + u$</div>
+            <div class="axiom-item"><span class="axiom-name">M1. Closure under Scalar Mult:</span> $\alpha \cdot u \in V$</div>
+            <div class="axiom-item"><span class="axiom-name">M2. Distributive over Vector Addition:</span> $\alpha(u + v) = \alpha u + \alpha v$</div>
+            <div class="axiom-item"><span class="axiom-name">M3. Distributive over Scalar Addition:</span> $(\alpha + \beta)u = \alpha u + \beta u$</div>
+            <div class="axiom-item"><span class="axiom-name">M4. Scalar Associative Law:</span> $(\alpha \beta)u = \alpha(\beta u)$</div>
+            <div class="axiom-item"><span class="axiom-name">M5. Unit Scalar:</span> $1 \cdot u = u$ (where $1$ is unity of $F$).</div>
+          </div>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>💡 Touch for Explanation: Why 10 axioms are needed</span>
+              <span class="why-icon">▼</span>
+            </button>
+            <div class="why-content">
+              A vector space bridges geometry and algebra. The first 5 axioms $(A_1-A_5)$ make $(V,+)$ an Abelian group (so you can add vectors and cancel them). The next 5 axioms $(M_1-M_5)$ guarantee scaling stretches or shrinks vectors predictably without escaping the space.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question-card" data-category="axioms">
+        <div class="card-top">
+          <span class="q-pill">QB • Q2</span>
+          <div class="q-heading">State and prove the cancellation law for vector addition.</div>
+        </div>
+        <div class="solution-content">
+          <p><strong>Statement:</strong> In any vector space $V(F)$, if $x, y, z \in V$ such that $x + z = y + z$, then <strong>$x = y$</strong>.</p>
+          <div class="math-panel">
+            $$\begin{aligned}
+            x &= x + 0 = x + (z + (-z)) && (\text{Identity \& Inverse}) \\
+              &= (x + z) + (-z) && (\text{Associative Law}) \\
+              &= (y + z) + (-z) && (\text{Given: } x + z = y + z) \\
+              &= y + (z + (-z)) = y + 0 = y
+            \end{aligned}$$
+          </div>
+          <div class="tag-result">Hence proved: $x = y$</div>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>💡 Touch for Explanation: Why we add $(-z)$ to both sides</span>
+              <span class="why-icon">▼</span>
+            </button>
+            <div class="why-content">
+              In abstract vector spaces, "subtraction" does not exist as a primitive operation. We can only add the additive inverse $(-z)$ guaranteed by Axiom A4 and use associativity (Axiom A2) to group $(z + (-z))$ into zero!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question-card" data-category="subspace">
+        <div class="card-top">
+          <span class="q-pill">QB • Q3</span>
+          <div class="q-heading">If $V = \mathbb{R}^3$, verify whether $W = \{(a_1, a_2, a_3) \mid 2a_1 - 7a_2 + a_3 = 0\}$ is a subspace.</div>
+        </div>
+        <div class="solution-content">
+          <p><strong>Step 1 (Zero Vector Check):</strong> Put $(0,0,0)$: $2(0) - 7(0) + (0) = 0 \implies (0,0,0) \in W$.</p>
+          <p><strong>Step 2 (Linear Combination Check):</strong> Let $u, v \in W$. For any scalars $\alpha, \beta \in \mathbb{R}$:</p>
+          <div class="math-panel">
+            $$\begin{aligned}
+            &2(\alpha a_1 + \beta b_1) - 7(\alpha a_2 + \beta b_2) + (\alpha a_3 + \beta b_3) \\
+            &= \alpha(2a_1 - 7a_2 + a_3) + \beta(2b_1 - 7b_2 + b_3) \\
+            &= \alpha(0) + \beta(0) = 0
+            \end{aligned}$$
+          </div>
+          <div class="tag-result">Conclusion: $W$ is a subspace of $\mathbb{R}^3$</div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question-card" data-category="subspace">
+        <div class="card-top">
+          <span class="q-pill">QB • Q4</span>
+          <div class="q-heading">Define Subspace.</div>
+        </div>
+        <div class="solution-content">
+          <p>Let $V$ be a vector space over field $F$. A non-empty subset $W \subseteq V$ is called a <strong>subspace</strong> of $V$ if $W$ is itself a vector space over $F$ under the operations of addition and scalar multiplication defined on $V$.</p>
+          <div class="math-panel">
+            <strong>Subspace Criterion:</strong> $W$ is a subspace iff:
+            <br>1. $0 \in W$
+            <br>2. $\alpha u + \beta v \in W$ for all $u, v \in W$ and $\alpha, \beta \in F$.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question-card" data-category="dependence">
+        <div class="card-top">
+          <span class="q-pill">QB • Q5</span>
+          <div class="q-heading">Define Linear Combination.</div>
+        </div>
+        <div class="solution-content">
+          <p>Let $V$ be a vector space over $F$ and $S = \{v_1, v_2, \dots, v_n\} \subseteq V$. A vector $v \in V$ is said to be a <strong>linear combination</strong> of $S$ if there exist scalars $c_1, c_2, \dots, c_n \in F$ such that:</p>
+          <div class="math-panel">
+            $$v = c_1 v_1 + c_2 v_2 + \dots + c_n v_n = \sum_{i=1}^n c_i v_i$$
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="question-card" data-category="dependence">
+        <div class="card-top">
+          <span class="q-pill">QB • Q6</span>
+          <div class="q-heading">Check if $v_1=(1,-2,3), v_2=(5,6,-1), v_3=(3,2,1)$ are Linearly Dependent or Independent.</div>
+        </div>
+        <div class="solution-content">
+          <p>Form matrix $A$ and evaluate determinant:</p>
+          <div class="math-panel">
+            $$|A| = \begin{vmatrix} 1 & -2 & 3 \\ 5 & 6 & -1 \\ 3 & 2 & 1 \end{vmatrix} = 1(6 + 2) + 2(5 + 3) + 3(10 - 18) = 8 + 16 - 24 = \mathbf{0}$$
+          </div>
+          <div class="tag-result fail">Since $|A| = 0$, the set is Linearly Dependent (LD).</div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question-card" data-category="basis">
+        <div class="card-top">
+          <span class="q-pill">QB • Q7</span>
+          <div class="q-heading">Define Basis.</div>
+        </div>
+        <div class="solution-content">
+          <p>A subset $S$ of a vector space $V$ is called a <strong>basis</strong> of $V$ if:</p>
+          <div class="math-panel">
+            1. $S$ is <strong>Linearly Independent</strong>.
+            <br>2. $S$ <strong>spans</strong> $V$ ($\operatorname{Span}(S) = V$).
+          </div>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question-card" data-category="basis">
+        <div class="card-top">
+          <span class="q-pill">QB • Q8</span>
+          <div class="q-heading">Find dimension of $W = \{(x_1, x_2, x_3) \mid x_1 + x_2 + x_3 = 0\}$.</div>
+        </div>
+        <div class="solution-content">
+          <p>Constraint gives $x_1 = -x_2 - x_3$. Any vector in $W$ is:</p>
+          <div class="math-panel">
+            $$(x_1, x_2, x_3) = (-x_2 - x_3, x_2, x_3) = x_2(-1, 1, 0) + x_3(-1, 0, 1)$$
+          </div>
+          <p>Basis is $B = \{(-1, 1, 0), (-1, 0, 1)\}$ (2 vectors).</p>
+          <div class="tag-result">Conclusion: $\dim(W) = 2$ (Formula: $3 - 1 = 2$)</div>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question-card" data-category="dependence">
+        <div class="card-top">
+          <span class="q-pill">QB • Q9</span>
+          <div class="q-heading">Is $\{(1,2,1), (2,1,0), (1,-1,2)\}$ Linearly Independent or Dependent?</div>
+        </div>
+        <div class="solution-content">
+          <div class="math-panel">
+            $$|A| = \begin{vmatrix} 1 & 2 & 1 \\ 2 & 1 & 0 \\ 1 & -1 & 2 \end{vmatrix} = 1(2 - 0) - 2(4 - 0) + 1(-2 - 1) = 2 - 8 - 3 = \mathbf{-9 \neq 0}$$
+          </div>
+          <div class="tag-result">Since $|A| \neq 0$, the set is Linearly Independent (LI).</div>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="question-card" data-category="basis">
+        <div class="card-top">
+          <span class="q-pill">QB • Q10</span>
+          <div class="q-heading">If $V = A \oplus B$, show that $\dim V = \dim A + \dim B$.</div>
+        </div>
+        <div class="solution-content">
+          <p>By dimension formula: $\dim(A + B) = \dim A + \dim B - \dim(A \cap B)$.</p>
+          <div class="math-panel">
+            Since $V = A \oplus B$ (Direct Sum):
+            <br>1. $A + B = V \implies \dim(A + B) = \dim V$
+            <br>2. $A \cap B = \{0\} \implies \dim(A \cap B) = 0$
+            $$\dim V = \dim A + \dim B - 0 \implies \mathbf{\dim V = \dim A + \dim B}$$
+          </div>
+          <div class="tag-result">Hence proved: $\dim V = \dim A + \dim B$</div>
+        </div>
+      </div>
+
+      <!-- EXTRA IMPORTANT 2-MARKS -->
+      <div class="section-badge">Part 2: Extra High-Yield 2-Marks (Class Notes &amp; Tough Exam Questions)</div>
+
+      <!-- Extra Q11 -->
+      <div class="question-card" data-category="subspace">
+        <div class="card-top">
+          <span class="q-pill extra">Extra • Q11</span>
+          <div class="q-heading">Verify whether $W = \{(x, y, z) \in \mathbb{R}^3 \mid x + 2y - 3z = 1\}$ is a subspace of $\mathbb{R}^3$.</div>
+        </div>
+        <div class="solution-content">
+          <p>Put $(x, y, z) = (0, 0, 0)$:</p>
+          <div class="math-panel">$$0 + 2(0) - 3(0) = 0 \neq 1 \implies (0,0,0) \notin W$$</div>
+          <div class="tag-result fail">Since zero vector $0 \notin W$, $W$ is NOT a subspace of $\mathbb{R}^3$.</div>
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>💡 Touch for Explanation: The origin rule</span>
+              <span class="why-icon">▼</span>
+            </button>
+            <div class="why-content">
+              Any plane or line equation with a non-zero constant ($= 1$) does not pass through the origin $(0,0,0)$. Since every subspace must contain the origin, it fails instantly!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra Q12 -->
+      <div class="question-card" data-category="subspace">
+        <div class="card-top">
+          <span class="q-pill extra">Extra • Q12</span>
+          <div class="q-heading">What are all the possible subspaces of $\mathbb{R}^2$ and $\mathbb{R}^3$?</div>
+        </div>
+        <div class="solution-content">
+          <div class="math-panel">
+            <strong>Subspaces of $\mathbb{R}^2$:</strong>
+            <br>1. The zero subspace $\{0\}$.
+            <br>2. Any straight line passing through the origin $(0,0)$.
+            <br>3. $\mathbb{R}^2$ itself.
+            <br><br>
+            <strong>Subspaces of $\mathbb{R}^3$:</strong>
+            <br>1. The zero subspace $\{0\}$.
+            <br>2. Any line passing through the origin.
+            <br>3. Any plane passing through the origin.
+            <br>4. $\mathbb{R}^3$ itself.
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra Q13 -->
+      <div class="question-card" data-category="basis">
+        <div class="card-top">
+          <span class="q-pill extra">Extra • Q13</span>
+          <div class="q-heading">Write the standard basis and dimension for $\mathbb{R}^n$, $P_n(\mathbb{R})$, and $M_{m \times n}(\mathbb{R})$.</div>
+        </div>
+        <div class="solution-content">
+          <div class="math-panel">
+            1. <strong>$\mathbb{R}^n$:</strong> Basis $S = \{e_1, e_2, \dots, e_n\} \implies \mathbf{\dim(\mathbb{R}^n) = n}$.
+            <br>2. <strong>$P_n(\mathbb{R})$</strong> (polynomials of degree $\le n$): Basis $S = \{1, x, x^2, \dots, x^n\} \implies \mathbf{\dim(P_n(\mathbb{R})) = n + 1}$.
+            <br>3. <strong>$M_{m \times n}(\mathbb{R})$</strong>: Matrices with single 1 and rest 0s $\implies \mathbf{\dim(M_{m \times n}) = mn}$.
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra Q14 -->
+      <div class="question-card" data-category="dependence">
+        <div class="card-top">
+          <span class="q-pill extra">Extra • Q14</span>
+          <div class="q-heading">For what value of $k$ will the set $\{(2,-1,3), (3,4,-1), (k,2,1)\}$ be linearly dependent?</div>
+        </div>
+        <div class="solution-content">
+          <p>Set determinant equal to zero:</p>
+          <div class="math-panel">
+            $$\begin{vmatrix} 2 & -1 & 3 \\ 3 & 4 & -1 \\ k & 2 & 1 \end{vmatrix} = 2(4 + 2) + 1(3 + k) + 3(6 - 4k) = 0$$
+            $$12 + 3 + k + 18 - 12k = 0 \implies 33 - 11k = 0 \implies \mathbf{k = 3}$$
+          </div>
+          <div class="tag-result">Answer: $k = 3$</div>
+        </div>
+      </div>
+
+      <!-- Extra Q15 -->
+      <div class="question-card" data-category="axioms">
+        <div class="card-top">
+          <span class="q-pill extra">Extra • Q15</span>
+          <div class="q-heading">Is $\mathbb{R}$ a vector space over $\mathbb{C}$? Justify.</div>
+        </div>
+        <div class="solution-content">
+          <p><strong>Answer:</strong> <strong>No</strong>, $\mathbb{R}$ is not a vector space over $\mathbb{C}$.</p>
+          <div class="math-panel">
+            <strong>Reason:</strong> Scalar multiplication closure fails.
+            <br>Take scalar $i \in \mathbb{C}$ and vector $1 \in \mathbb{R}$. Then $i \cdot 1 = i \notin \mathbb{R}$.
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra Q16 -->
+      <div class="question-card" data-category="subspace">
+        <div class="card-top">
+          <span class="q-pill extra">Extra • Q16</span>
+          <div class="q-heading">Prove that the intersection of two subspaces $W_1$ and $W_2$ of $V$ is also a subspace of $V$.</div>
+        </div>
+        <div class="solution-content">
+          <p>Let $u, v \in W_1 \cap W_2$ and $\alpha, \beta \in F$.</p>
+          <div class="math-panel">
+            1. Since $u, v \in W_1$ and $W_1$ is a subspace $\implies \alpha u + \beta v \in W_1$.
+            <br>2. Since $u, v \in W_2$ and $W_2$ is a subspace $\implies \alpha u + \beta v \in W_2$.
+            <br>Therefore, $\alpha u + \beta v \in W_1 \cap W_2$.
+          </div>
+          <div class="tag-result">Hence $W_1 \cap W_2$ is a subspace of $V$.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= PART B SECTION (ALL 10 COMPLETE QUESTIONS) ================= -->
+    <div id="sectionPartB" style="display: none;">
+
+      <div class="section-badge">Part B: Complete 16-Mark Core Question Bank (Q1 to Q10)</div>
+
+      <!-- Part B Q1 -->
+      <div class="question-card" data-category="axioms">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q1 (16 Marks)</span>
+          <div class="q-heading">Let $V$ be the set of all positive real numbers ($\mathbb{R}^+$). Define vector addition as $x \oplus y = xy$ and scalar multiplication as $k \odot x = x^k$ ($k \in \mathbb{R}$). Determine whether or not $V$ is a vector space over $\mathbb{R}$.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Step 1: Check Abelian Group Under Addition $(V, \oplus)$</div>
+            <p>1. <strong>Closure:</strong> For $x > 0, y > 0 \implies x \oplus y = xy > 0 \in V$.</p>
+            <p>2. <strong>Commutativity:</strong> $x \oplus y = xy = yx = y \oplus x$.</p>
+            <p>3. <strong>Associativity:</strong> $(x \oplus y) \oplus z = (xy)z = x(yz) = x \oplus (y \oplus z)$.</p>
+            <p>4. <strong>Additive Identity ($e$):</strong> $x \oplus e = x \implies x \cdot e = x \implies \mathbf{e = 1 \in V}$.</p>
+            <p>5. <strong>Additive Inverse ($x'$):</strong> $x \oplus x' = e = 1 \implies x \cdot x' = 1 \implies \mathbf{x' = \frac{1}{x} \in V}$ (since $x > 0 \implies 1/x > 0$).</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 2: Check Scalar Multiplication Axioms</div>
+            <p>6. <strong>Closure under Scalar Multiplication:</strong> For $k \in \mathbb{R}, x > 0 \implies k \odot x = x^k > 0 \in V$.</p>
+            <p>7. <strong>Distributive over Vector Addition:</strong> $k \odot (x \oplus y) = (xy)^k = x^k y^k = (k \odot x) \oplus (k \odot y)$.</p>
+            <p>8. <strong>Distributive over Scalar Addition:</strong> $(k + m) \odot x = x^{k+m} = x^k \cdot x^m = (k \odot x) \oplus (m \odot x)$.</p>
+            <p>9. <strong>Scalar Associative Law:</strong> $(km) \odot x = x^{km} = (x^m)^k = k \odot (m \odot x)$.</p>
+            <p>10. <strong>Unit Scalar Identity:</strong> $1 \odot x = x^1 = x$.</p>
+          </div>
+
+          <div class="tag-result">✅ All 10 axioms hold! $V = \mathbb{R}^+$ IS a Vector Space over $\mathbb{R}$.</div>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>💡 Touch for Explanation: Why 1 is the Zero Vector</span>
+              <span class="why-icon">▼</span>
+            </button>
+            <div class="why-content">
+              In this problem, the operation symbol $\oplus$ means real multiplication ($xy$). The identity for multiplication is $1$ (since $x \times 1 = x$). Thus, $1$ acts as the abstract "zero vector" of this space!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B Q2 -->
+      <div class="question-card" data-category="axioms">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q2 (16 Marks)</span>
+          <div class="q-heading">Determine whether the set of all $2 \times 2$ matrices of the form $\begin{bmatrix} a & a+b \\ a+b & b \end{bmatrix}$ ($a, b \in \mathbb{R}$) is a vector space under standard matrix operations.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Step 1: Check Closure Under Addition</div>
+            <p>Let $A = \begin{bmatrix} a_1 & a_1+b_1 \\ a_1+b_1 & b_1 \end{bmatrix}$ and $B = \begin{bmatrix} a_2 & a_2+b_2 \\ a_2+b_2 & b_2 \end{bmatrix}$:</p>
+            <div class="math-panel">
+              $$A + B = \begin{bmatrix} a_1+a_2 & (a_1+a_2)+(b_1+b_2) \\ (a_1+a_2)+(b_1+b_2) & b_1+b_2 \end{bmatrix} = \begin{bmatrix} a_3 & a_3+b_3 \\ a_3+b_3 & b_3 \end{bmatrix} \in V$$
+            </div>
+            <p>Since $a_3 = a_1 + a_2 \in \mathbb{R}$ and $b_3 = b_1 + b_2 \in \mathbb{R}$, $V$ is closed under addition.</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 2: Check Zero Matrix, Inverses, and Scalar Multiplication</div>
+            <p>• Zero matrix: Setting $a = 0, b = 0 \implies \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \in V$.</p>
+            <p>• Additive inverse: $-A = \begin{bmatrix} -a & -(a+b) \\ -(a+b) & -b \end{bmatrix} \in V$.</p>
+            <p>• Scalar multiplication: $c A = \begin{bmatrix} ca & c(a+b) \\ c(a+b) & cb \end{bmatrix} = \begin{bmatrix} ca & ca+cb \\ ca+cb & cb \end{bmatrix} \in V$.</p>
+          </div>
+
+          <div class="tag-result">✅ $V$ is a subspace of $M_{2 \times 2}(\mathbb{R})$ and therefore IS a Vector Space.</div>
+        </div>
+      </div>
+
+      <!-- Part B Q3 -->
+      <div class="question-card" data-category="axioms">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q3 (16 Marks)</span>
+          <div class="q-heading">Consider $V = P_2(\mathbb{R}) = \{a_0 + a_1 x + a_2 x^2 \mid a_0, a_1, a_2 \in \mathbb{R}\}$, the set of all polynomials of degree $\le 2$. Prove that $V$ is a vector space over $\mathbb{R}$ under usual addition and multiplication.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Proof Outline (All 10 Axioms for Polynomials)</div>
+            <p>Let $p(x) = a_0 + a_1 x + a_2 x^2$ and $q(x) = b_0 + b_1 x + b_2 x^2$:</p>
+            <div class="math-panel">
+              $$p(x) + q(x) = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 \in P_2(\mathbb{R})$$
+              $$c \cdot p(x) = (ca_0) + (ca_1)x + (ca_2)x^2 \in P_2(\mathbb{R})$$
+            </div>
+            <p>• <strong>Zero Polynomial:</strong> $0(x) = 0 + 0x + 0x^2 \in P_2(\mathbb{R})$.</p>
+            <p>• <strong>Inverse:</strong> $-p(x) = -a_0 - a_1 x - a_2 x^2 \in P_2(\mathbb{R})$.</p>
+            <p>• Associativity, commutativity, and distributive laws follow directly from real arithmetic on polynomial coefficients.</p>
+          </div>
+          <div class="tag-result">Hence proved: $P_2(\mathbb{R})$ is a vector space of dimension 3.</div>
+        </div>
+      </div>
+
+      <!-- Part B Q4 -->
+      <div class="question-card" data-category="dependence">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q4 (16 Marks)</span>
+          <div class="q-heading">(i) Let $V = \mathbb{R}^3, S = \{(1,2,0), (0,-5,-7)\}$ and $v = (2,-5,7)$. Verify whether $v$ is a linear combination of $S$.<br>(ii) Let $S = \{(1,-2,3,-1), (2,1,-1,2), (3,-1,2,1)\}$ in $V_4(\mathbb{R})$. Check whether $S$ is linearly independent.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Part (i) Solution: Linear Combination Test</div>
+            <p>Set $(2, -5, 7) = c_1(1, 2, 0) + c_2(0, -5, -7) = (c_1, \; 2c_1 - 5c_2, \; -7c_2)$:</p>
+            <div class="math-panel">
+              1. $c_1 = 2$
+              <br>2. $2(2) - 5c_2 = -5 \implies 4 - 5c_2 = -5 \implies -5c_2 = -9 \implies c_2 = \frac{9}{5}$
+              <br>3. Check 3rd equation: $-7c_2 = -7\left(\frac{9}{5}\right) = -\frac{63}{5} \neq 7$ <strong>(Contradiction!)</strong>
+            </div>
+            <div class="tag-result fail">Result: $v = (2,-5,7)$ CANNOT be expressed as a linear combination of $S$.</div>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Part (ii) Solution: Row Echelon Form Reduction</div>
+            <p>Set $c_1 v_1 + c_2 v_2 + c_3 v_3 = 0$. Form matrix with vectors as rows:</p>
+            <div class="math-panel">
+              $$A = \begin{bmatrix} 1 & -2 & 3 & -1 \\ 2 & 1 & -1 & 2 \\ 3 & -1 & 2 & 1 \end{bmatrix} \xrightarrow{R_2 - 2R_1,\; R_3 - 3R_1} \begin{bmatrix} 1 & -2 & 3 & -1 \\ 0 & 5 & -7 & 4 \\ 0 & 5 & -7 & 4 \end{bmatrix} \xrightarrow{R_3 - R_2} \begin{bmatrix} 1 & -2 & 3 & -1 \\ 0 & 5 & -7 & 4 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
+            </div>
+            <p>Since Row 3 is completely zero, $\operatorname{Rank}(A) = 2 < 3$ (number of vectors).</p>
+            <div class="tag-result fail">Result: The set $S$ is Linearly Dependent (LD).</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B Q5 -->
+      <div class="question-card" data-category="subspace">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q5 (16 Marks)</span>
+          <div class="q-heading">(i) State and prove necessary and sufficient conditions for a subspace.<br>(ii) Verify whether $x^3 - 8x^2 + 4x$ can be expressed as a linear combination of $x^3 - 2x^2 + 3x - 1$ and $x^3 - 2x + 3$ in $P_3(\mathbb{R})$.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Part (i): Subspace Criterion Theorem</div>
+            <p><strong>Statement:</strong> $W \subseteq V$ is a subspace iff $\mathbf{\alpha u + \beta v \in W}$ for all $u, v \in W, \alpha, \beta \in F$.</p>
+            <div class="math-panel">
+              <strong>Proof:</strong>
+              <br>• <strong>Necessary:</strong> Since $W$ is a subspace, it is closed under scalar mult and addition $\implies \alpha u + \beta v \in W$.
+              <br>• <strong>Sufficient:</strong> Given $\alpha u + \beta v \in W$:
+              <br>&nbsp;&nbsp;$\alpha = 0, \beta = 0 \implies 0 \in W$ (Identity).
+              <br>&nbsp;&nbsp;$\alpha = 1, \beta = 1 \implies u + v \in W$ (Closure under addition).
+              <br>&nbsp;&nbsp;$\alpha = -1, \beta = 0 \implies -u \in W$ (Inverse).
+              <br>&nbsp;&nbsp;$\alpha = c, \beta = 0 \implies cu \in W$ (Closure under scalar mult).
+            </div>
+            <div class="tag-result">Hence proved: $W$ is a subspace.</div>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Part (ii): Polynomial Linear Combination Test</div>
+            <p>Set $x^3 - 8x^2 + 4x = c_1(x^3 - 2x^2 + 3x - 1) + c_2(x^3 - 2x + 3)$:</p>
+            <div class="math-panel">
+              Equate coefficients:
+              <br>• $x^3$: $c_1 + c_2 = 1$
+              <br>• $x^2$: $-2c_1 = -8 \implies \mathbf{c_1 = 4}$
+              <br>From $c_1 = 4 \implies 4 + c_2 = 1 \implies \mathbf{c_2 = -3}$
+              <br>• Check $x^1$ coefficient: $3c_1 - 2c_2 = 3(4) - 2(-3) = 12 + 6 = 18 \neq 4$ <strong>(Contradiction!)</strong>
+            </div>
+            <div class="tag-result fail">Result: The polynomial CANNOT be expressed as a linear combination of the other two.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B Q6 -->
+      <div class="question-card" data-category="subspace">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q6 (16 Marks)</span>
+          <div class="q-heading">(i) If $W_1$ and $W_2$ are subspaces of $V$, prove that $W_1 \cup W_2$ is a subspace of $V$ if and only if $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$.<br>(ii) Verify whether any set of 5 matrices in $M_{2 \times 2}$ is linearly dependent.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Part (i): Proof by Contradiction</div>
+            <div class="math-panel">
+              • If $W_1 \subseteq W_2 \implies W_1 \cup W_2 = W_2$ (already a subspace).
+              <br>• Conversely, assume $W_1 \cup W_2$ is a subspace, but $W_1 \not\subseteq W_2$ and $W_2 \not\subseteq W_1$.
+              <br>Then $\exists\, x \in W_1 \setminus W_2$ and $y \in W_2 \setminus W_1$.
+              <br>By closure, $x + y \in W_1 \cup W_2$:
+              <br>&nbsp;&nbsp;If $x + y \in W_1 \implies y = (x + y) - x \in W_1$ (Contradiction!).
+              <br>&nbsp;&nbsp;If $x + y \in W_2 \implies x = (x + y) - y \in W_2$ (Contradiction!).
+              <br>Therefore, either $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$.
+            </div>
+          </div>
+          <div class="partb-step">
+            <div class="step-title">Part (ii): Dimension Bound in $M_{2 \times 2}$</div>
+            <p>The standard basis of $M_{2 \times 2}(\mathbb{R})$ has 4 matrices $\implies \dim(M_{2 \times 2}(\mathbb{R})) = 4$.</p>
+            <div class="tag-result fail">By the Fundamental Theorem: Any set of $m > n$ vectors in an $n$-dimensional space is always Linearly Dependent. Since $5 > 4$, any 5 matrices are strictly Linearly Dependent!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B Q7 -->
+      <div class="question-card" data-category="dependence">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q7 (16 Marks)</span>
+          <div class="q-heading">(i) For which values of $k$ will $v = (1,-2,k)$ be a linear combination of $u = (3,0,-2)$ and $w = (2,-1,-5)$?<br>(ii) Determine whether $\operatorname{span}\{(1,-1,0), (0,1,1), (3,-5,-2)\} = \mathbb{R}^3$.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Part (i) Solution: Solve for $k$</div>
+            <p>$(1, -2, k) = c_1(3, 0, -2) + c_2(2, -1, -5)$:</p>
+            <div class="math-panel">
+              1. $3c_1 + 2c_2 = 1$
+              <br>2. $-c_2 = -2 \implies \mathbf{c_2 = 2}$
+              <br>From (1): $3c_1 + 4 = 1 \implies \mathbf{c_1 = -1}$
+              <br>From 3rd coordinate: $k = -2c_1 - 5c_2 = -2(-1) - 5(2) = 2 - 10 = \mathbf{-8}$
+            </div>
+            <div class="tag-result">Part (i) Answer: $k = -8$</div>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Part (ii) Solution: Spanning Test of $\mathbb{R}^3$</div>
+            <p>Form matrix with the 3 vectors and find determinant:</p>
+            <div class="math-panel">
+              $$|A| = \begin{vmatrix} 1 & -1 & 0 \\ 0 & 1 & 1 \\ 3 & -5 & -2 \end{vmatrix} = 1(-2 + 5) + 1(0 - 3) + 0 = 3 - 3 = \mathbf{0}$$
+            </div>
+            <div class="tag-result fail">Since $|A| = 0$, the vectors are linearly dependent and span only a 2D plane. They do NOT span all of $\mathbb{R}^3$.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B Q8 -->
+      <div class="question-card" data-category="basis">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q8 (16 Marks)</span>
+          <div class="q-heading">(i) Find dimension of $W = \{(a,b,c) \mid 2a + 3b = c, \; 7c + 2b = a\}$.<br>(ii) Let $S = \{v_1, v_2, v_3\}$ where $v_1=(2,1,0), v_2=(-3,-3,1), v_3=(-2,1,-1)$. Show that $S$ is a basis of $\mathbb{R}^3$.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Part (i): Solve Homogeneous System for $W$</div>
+            <div class="math-panel">
+              Equations: (1) $2a + 3b - c = 0$, and (2) $a - 2b - 7c = 0 \implies a = 2b + 7c$.
+              <br>Substitute into (1): $2(2b + 7c) + 3b - c = 0 \implies 7b + 13c = 0 \implies b = -\frac{13}{7}c$.
+              <br>Then $a = 2\left(-\frac{13}{7}c\right) + 7c = \frac{23}{7}c$.
+              <br>Vector in $W$: $(a,b,c) = c\left(\frac{23}{7}, -\frac{13}{7}, 1\right)$.
+            </div>
+            <div class="tag-result">Part (i) Answer: Basis is $\{(23, -13, 7)\}$ and $\dim(W) = 1$.</div>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Part (ii): Basis Verification of $\mathbb{R}^3$</div>
+            <p>Evaluate determinant of the 3 vectors:</p>
+            <div class="math-panel">
+              $$|A| = \begin{vmatrix} 2 & 1 & 0 \\ -3 & -3 & 1 \\ -2 & 1 & -1 \end{vmatrix} = 2(3 - 1) - 1(3 + 2) + 0 = 4 - 5 = \mathbf{-1 \neq 0}$$
+            </div>
+            <div class="tag-result">Since $|A| = -1 \neq 0$, $S$ is Linearly Independent and spans $\mathbb{R}^3$. Thus $S$ is a Basis of $\mathbb{R}^3$.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B Q9 -->
+      <div class="question-card" data-category="basis">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q9 (16 Marks)</span>
+          <div class="q-heading">(i) Show that $\{(1,1,0), (0,1,1), (1,0,1)\}$ forms a basis for $V_3(\mathbb{R})$.<br>(ii) Determine the basis and dimension of the solution space of the system: $x + y - z = 0$; $-2x - y + 2z = 0$; $-x + z = 0$.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Part (i): Determinant Check</div>
+            <div class="math-panel">
+              $$|A| = \begin{vmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 1 & 0 & 1 \end{vmatrix} = 1(1 - 0) - 1(0 - 1) + 0 = 1 + 1 = \mathbf{2 \neq 0}$$
+            </div>
+            <div class="tag-result">Since $|A| = 2 \neq 0$, the set is linearly independent and forms a Basis for $V_3(\mathbb{R})$.</div>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Part (ii): Null Space / Solution Space Calculation</div>
+            <p>Perform row operations on the coefficient matrix:</p>
+            <div class="math-panel">
+              $$A = \begin{bmatrix} 1 & 1 & -1 \\ -2 & -1 & 2 \\ -1 & 0 & 1 \end{bmatrix} \xrightarrow{R_2 + 2R_1,\; R_3 + R_1} \begin{bmatrix} 1 & 1 & -1 \\ 0 & 1 & 0 \\ 0 & 1 & 0 \end{bmatrix} \xrightarrow{R_3 - R_2} \begin{bmatrix} 1 & 1 & -1 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
+              • Equation 2 gives: $\mathbf{y = 0}$.
+              <br>• Equation 1 gives: $x + 0 - z = 0 \implies \mathbf{x = z}$.
+              <br>Let $z = t$ (free variable). Solution vector: $(x, y, z) = (t, 0, t) = t(1, 0, 1)$.
+            </div>
+            <div class="tag-result">Part (ii) Answer: Basis of solution space is $\{(1, 0, 1)\}$ and $\dim(\text{Solution Space}) = 1$.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B Q10 -->
+      <div class="question-card" data-category="basis">
+        <div class="card-top">
+          <span class="q-pill">Part B • Q10 (16 Marks)</span>
+          <div class="q-heading">Show that the vectors $\{(2,-3,1), (0,1,2), (1,1,2)\}$ form a basis for $V_3(\mathbb{R})$.</div>
+        </div>
+        <div class="solution-content">
+          <div class="partb-step">
+            <div class="step-title">Step-by-Step Proof</div>
+            <p>We know $\dim(V_3(\mathbb{R})) = 3$. Any set of 3 linearly independent vectors forms a basis.</p>
+            <div class="math-panel">
+              $$|A| = \begin{vmatrix} 2 & -3 & 1 \\ 0 & 1 & 2 \\ 1 & 1 & 2 \end{vmatrix} = 2(2 - 2) - (-3)(0 - 2) + 1(0 - 1) = 0 - 6 - 1 = \mathbf{-7 \neq 0}$$
+            </div>
+            <p>1. Since $|A| = -7 \neq 0$, the set is <strong>Linearly Independent</strong>.</p>
+            <p>2. Since 3 linearly independent vectors exist in a 3-dimensional space, they also <strong>span</strong> $V_3(\mathbb{R})$.</p>
+          </div>
+          <div class="tag-result">✅ The vectors form a complete Basis for $V_3(\mathbb{R})$.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>Panimalar Engineering College (Autonomous) • Linear Algebra &amp; Numerical Analysis • 23MA1302</p>
+      <p style="margin-top: 4px; opacity: 0.7;">Unit-I Vector Spaces Complete Master Study App</p>
+    </footer>
+  </main>
+
+  <script>
+    // KaTeX auto-render on load
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\(", right: "\\)", display: false},
+          {left: "\\[", right: "\\]", display: true}
+        ],
+        throwOnError: false
+      });
+    });
+
+    // Tab switcher
+    function switchTab(tab) {
+      const partA = document.getElementById('sectionPartA');
+      const partB = document.getElementById('sectionPartB');
+      const btnA = document.getElementById('tabPartA');
+      const btnB = document.getElementById('tabPartB');
+      const title = document.getElementById('bannerTitle');
+      const desc = document.getElementById('bannerDesc');
+
+      if (tab === 'partA') {
+        partA.style.display = 'block';
+        partB.style.display = 'none';
+        btnA.classList.add('active');
+        btnB.classList.remove('active');
+        title.innerText = "Part A: Compulsory & Extra High-Yield 2-Marks";
+        desc.innerText = "Complete Question Bank + Class Notes 2-mark answers with interactive 'Why We Do This Step' dropdowns and error-free KaTeX math.";
+      } else {
+        partA.style.display = 'none';
+        partB.style.display = 'block';
+        btnB.classList.add('active');
+        btnA.classList.remove('active');
+        title.innerText = "Part B: Complete 16-Mark Core Questions (Q1 to Q10)";
+        desc.innerText = "All 10 Question Bank 16-mark problems fully worked out step-by-step with proofs, row echelon forms, and 'Why' dropdowns.";
+      }
+    }
+
+    // Interactive Why-Explanation Toggle
+    function toggleWhy(btn) {
+      const dropdown = btn.closest('.why-dropdown');
+      dropdown.classList.toggle('open');
+    }
+
+    // Filter cards
+    function filterCards(cat) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const activeSection = document.getElementById('sectionPartA').style.display !== 'none' 
+        ? document.getElementById('sectionPartA') 
+        : document.getElementById('sectionPartB');
+
+      activeSection.querySelectorAll('.question-card').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

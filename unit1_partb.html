@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Unit 1 - Vector Spaces (Part B 16-Marks)</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" id="MathJax-script" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #f8fafc;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1e293b;
+    line-height: 1.6;
+    padding: 24px;
+  }
+
+  .sheet-container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .header-card {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
+    color: white;
+    padding: 26px 30px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.3);
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .header-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .q-card {
+    background: white;
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .q-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 12px;
+  }
+  .q-badge {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1px solid #bfdbfe;
+    white-space: nowrap;
+  }
+  .q-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.4;
+  }
+
+  /* Step Block */
+  .step-box {
+    margin: 16px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .step-header {
+    background: #f1f5f9;
+    padding: 8px 16px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .step-body {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #334155;
+    background: white;
+  }
+
+  /* WHY CALLOUT */
+  .why-callout {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 10px 14px;
+    margin-top: 10px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: #92400e;
+  }
+  .why-title {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    color: #b45309;
+  }
+
+  .math-block {
+    background: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    padding: 10px 16px;
+    margin: 10px 0;
+    border-radius: 0 8px 8px 0;
+    overflow-x: auto;
+  }
+
+  .conclusion-badge {
+    display: inline-block;
+    background: #ecfdf5;
+    color: #047857;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid #a7f3d0;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  ul, ol {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .header-card { box-shadow: none; }
+    .q-card { box-shadow: none; border: 1px solid #cbd5e1; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet-container">
+
+  <div class="header-card">
+    <div class="header-badge">23MA1302 • Linear Algebra &amp; Numerical Analysis</div>
+    <div class="header-title">Unit-I: Vector Spaces — Part B (16-Mark Core Questions)</div>
+    <div class="header-subtitle">Detailed Step-by-Step Working with "Why We Do This Step" Explanations</div>
+  </div>
+
+  <!-- QUESTION 1 -->
+  <div class="q-card" id="partb_q1">
+    <div class="q-header">
+      <span class="q-badge">Q1 • 16 Marks</span>
+      <div class="q-title">Let $V$ be the set of all positive real numbers ($\mathbb{R}^+$). Define vector addition as $x \oplus y = xy$ and scalar multiplication as $k \odot x = x^k$ ($k \in \mathbb{R}$). Determine whether $V$ is a vector space over $\mathbb{R}$.</div>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step-box">
+      <div class="step-header">Part I: Verification of Abelian Group Under Addition $(V, \oplus)$</div>
+      <div class="step-body">
+        <ol>
+          <li><strong>Closure:</strong> For $x, y \in V$, $x > 0$ and $y > 0 \implies x \oplus y = xy > 0 \in V$.
+            <div class="why-callout">
+              <div class="why-title">💡 Why this step?</div>
+              We must verify that multiplying two positive real numbers never gives zero or a negative number. Since $(+) 	imes (+) = (+)$, closure holds.
+            </div>
+          </li>
+          <li><strong>Commutative:</strong> $x \oplus y = xy = yx = y \oplus x$. (Real multiplication is commutative).</li>
+          <li><strong>Associative:</strong> $(x \oplus y) \oplus z = (xy)z = x(yz) = x \oplus (y \oplus z)$.</li>
+          <li><strong>Identity Element ($e$):</strong> We require $x \oplus e = x \implies x \cdot e = x \implies \mathbf{e = 1}$.
+            <div class="why-callout">
+              <div class="why-title">💡 Why is the identity 1 instead of 0?</div>
+              Under normal addition, $x + 0 = x$. But here "addition" is defined as multiplication ($xy$). The number that leaves $x$ unchanged under multiplication is $1$. Since $1 > 0$, $1 \in V$. Thus, <strong>1 is the "zero vector"</strong> of this space!
+            </div>
+          </li>
+          <li><strong>Inverse Element ($x'$):</strong> We require $x \oplus x' = e = 1 \implies x \cdot x' = 1 \implies \mathbf{x' = rac{1}{x}}$.
+            <div class="why-callout">
+              <div class="why-title">💡 Why is the inverse 1/x?</div>
+              Since $e = 1$, we need $x \cdot x' = 1$. Since $x > 0$, $rac{1}{x}$ is always a positive real number ($rac{1}{x} \in V$).
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-box">
+      <div class="step-header">Part II: Verification of Scalar Multiplication Axioms</div>
+      <div class="step-body">
+        <ol start="6">
+          <li><strong>Closure under Scalar Multiplication:</strong> For $k \in \mathbb{R}$ and $x \in V$ ($x > 0$), $k \odot x = x^k > 0 \in V$. (Any positive real raised to any real power is strictly positive).</li>
+          <li><strong>Distributive over Vector Addition:</strong>
+            $$k \odot (x \oplus y) = (xy)^k = x^k \cdot y^k = (k \odot x) \oplus (k \odot y)$$
+          </li>
+          <li><strong>Distributive over Scalar Addition:</strong>
+            $$(k + m) \odot x = x^{k+m} = x^k \cdot x^m = (k \odot x) \oplus (m \odot x)$$
+            <div class="why-callout">
+              <div class="why-title">💡 Why this step works?</div>
+              By standard laws of exponents: $x^{a+b} = x^a \cdot x^b$. In our space, multiplication between elements is the vector addition operation $\oplus$, so $x^k \cdot x^m = (k \odot x) \oplus (m \odot x)$.
+            </div>
+          </li>
+          <li><strong>Scalar Associativity:</strong> $(km) \odot x = x^{km} = (x^m)^k = k \odot (m \odot x)$.</li>
+          <li><strong>Unit Scalar Identity:</strong> $1 \odot x = x^1 = x$.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="conclusion-badge">✅ All 10 axioms hold. Therefore, $V = \mathbb{R}^+$ IS a Vector Space over $\mathbb{R}$.</div>
+  </div>
+
+  <!-- QUESTION 2 -->
+  <div class="q-card" id="partb_q2">
+    <div class="q-header">
+      <span class="q-badge">Q2 • 16 Marks</span>
+      <div class="q-title">Determine whether the set of all $2 	imes 2$ matrices of the form $egin{bmatrix} a & a+b \ a+b & b \end{bmatrix}$ ($a, b \in \mathbb{R}$) is a vector space under standard matrix addition and scalar multiplication.</div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">Step 1: Check Closure Under Addition</div>
+      <div class="step-body">
+        <p>Let $A, B \in V$ with real parameters $(a_1, b_1)$ and $(a_2, b_2)$:</p>
+        <div class="math-block">
+          $$A = egin{bmatrix} a_1 & a_1+b_1 \ a_1+b_1 & b_1 \end{bmatrix}, \quad B = egin{bmatrix} a_2 & a_2+b_2 \ a_2+b_2 & b_2 \end{bmatrix}$$
+          $$A + B = egin{bmatrix} a_1+a_2 & (a_1+a_2)+(b_1+b_2) \ (a_1+a_2)+(b_1+b_2) & b_1+b_2 \end{bmatrix}$$
+        </div>
+        <p>Let $a_3 = a_1 + a_2 \in \mathbb{R}$ and $b_3 = b_1 + b_2 \in \mathbb{R}$. Then $A + B = egin{bmatrix} a_3 & a_3+b_3 \ a_3+b_3 & b_3 \end{bmatrix} \in V$.</p>
+        <div class="why-callout">
+          <div class="why-title">💡 Why this step?</div>
+          For a matrix set to be closed, the sum of two matrices must retain the <em>exact same algebraic pattern</em>: (top-left) + (bottom-right) must equal both off-diagonal entries. Here $a_3 + b_3$ matches both off-diagonals, so it stays in $V$.
+        </div>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">Step 2: Check Zero Matrix, Inverses, and Scalar Multiplication</div>
+      <div class="step-body">
+        <ul>
+          <li><strong>Zero Matrix:</strong> Setting $a = 0, b = 0 \implies egin{bmatrix} 0 & 0 \ 0 & 0 \end{bmatrix} \in V$.</li>
+          <li><strong>Additive Inverse:</strong> For $A$, $-A = egin{bmatrix} -a & -a-b \ -a-b & -b \end{bmatrix} \in V$ (parameters $-a, -b \in \mathbb{R}$).</li>
+          <li><strong>Scalar Multiplication:</strong> For any scalar $c \in \mathbb{R}$:
+            $$c A = egin{bmatrix} ca & c(a+b) \ c(a+b) & cb \end{bmatrix} = egin{bmatrix} (ca) & (ca)+(cb) \ (ca)+(cb) & (cb) \end{bmatrix} \in V$$
+          </li>
+        </ul>
+        <div class="why-callout">
+          <div class="why-title">💡 Why does this prove it is a vector space?</div>
+          Because $V$ is a subset of the known vector space $M_{2 	imes 2}(\mathbb{R})$ and is closed under addition and scalar multiplication containing $0$, $V$ is a <strong>subspace</strong> of $M_{2 	imes 2}(\mathbb{R})$. Every subspace is automatically a vector space in its own right!
+        </div>
+      </div>
+    </div>
+    <div class="conclusion-badge">✅ $V$ satisfies all axioms and IS a Vector Space over $\mathbb{R}$.</div>
+  </div>
+
+  <!-- QUESTION 4 -->
+  <div class="q-card" id="partb_q4">
+    <div class="q-header">
+      <span class="q-badge">Q4 • 16 Marks</span>
+      <div class="q-title">(i) Verify if $v=(2,-5,7)$ is a linear combination of $S = \{(1,2,0), (0,-5,-7)\}$ in $\mathbb{R}^3$.<br>(ii) Check if $S = \{(1,-2,3,-1), (2,1,-1,2), (3,-1,2,1)\}$ is linearly independent in $V_4(\mathbb{R})$.</div>
+    </div>
+
+    <!-- Part (i) -->
+    <div class="step-box">
+      <div class="step-header">Part (i) Solution: Linear Combination Test</div>
+      <div class="step-body">
+        <p>Set up the vector equation: $v = c_1 v_1 + c_2 v_2$</p>
+        <div class="math-block">
+          $$(2, -5, 7) = c_1(1, 2, 0) + c_2(0, -5, -7) = (c_1, \; 2c_1 - 5c_2, \; -7c_2)$$
+        </div>
+        <p>Equate corresponding components:</p>
+        <ol>
+          <li>$c_1 = 2$</li>
+          <li>$2c_1 - 5c_2 = -5 \implies 2(2) - 5c_2 = -5 \implies -5c_2 = -9 \implies c_2 = rac{9}{5}$</li>
+          <li>Check in equation 3: $-7c_2 = 7 \implies -7\left(rac{9}{5}ight) = -rac{63}{5} 
+eq 7$ <strong>(Contradiction!)</strong></li>
+        </ol>
+        <div class="why-callout">
+          <div class="why-title">💡 Why this step?</div>
+          A vector is a linear combination if and only if the system of equations has a consistent solution. Here, equation 3 demands $c_2 = -1$, but equation 2 demands $c_2 = 1.8$. Since no unique scalars exist, the system is inconsistent.
+        </div>
+        <div class="conclusion-badge" style="background:#fef2f2; color:#b91c1c; border-color:#fecaca;">❌ $v=(2,-5,7)$ CANNOT be expressed as a linear combination of $S$.</div>
+      </div>
+    </div>
+
+    <!-- Part (ii) -->
+    <div class="step-box">
+      <div class="step-header">Part (ii) Solution: Linear Independence Test (Row Reduction)</div>
+      <div class="step-body">
+        <p>Set $c_1 v_1 + c_2 v_2 + c_3 v_3 = 0$. Form the matrix with vectors as rows and reduce to Echelon form:</p>
+        <div class="math-block">
+          $$A = egin{bmatrix} 1 & -2 & 3 & -1 \ 2 & 1 & -1 & 2 \ 3 & -1 & 2 & 1 \end{bmatrix}$$
+          <p><strong>Row operations:</strong> $R_2 	o R_2 - 2R_1$ and $R_3 	o R_3 - 3R_1$:</p>
+          $$\sim egin{bmatrix} 1 & -2 & 3 & -1 \ 0 & 5 & -7 & 4 \ 0 & 5 & -7 & 4 \end{bmatrix}$$
+          <p><strong>Row operation:</strong> $R_3 	o R_3 - R_2$:</p>
+          $$\sim egin{bmatrix} 1 & -2 & 3 & -1 \ 0 & 5 & -7 & 4 \ 0 & 0 & 0 & 0 \end{bmatrix}$$
+        </div>
+        <div class="why-callout">
+          <div class="why-title">💡 Why does a zero row mean Linearly Dependent?</div>
+          The complete zero row in $R_3$ reveals that Row 3 is a direct combination of Row 1 and Row 2 ($v_3 = v_1 + v_2$). The rank of the matrix is $ho(A) = 2$, which is strictly less than the number of vectors (3). Thus non-zero scalar solutions exist!
+        </div>
+        <div class="conclusion-badge" style="background:#fef2f2; color:#b91c1c; border-color:#fecaca;">Result: The set $S$ is Linearly Dependent (LD).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUESTION 5(i) -->
+  <div class="q-card" id="partb_q5">
+    <div class="q-header">
+      <span class="q-badge">Q5(i) • 8 Marks</span>
+      <div class="q-title">State and prove the necessary and sufficient conditions for a non-empty subset $W$ of a vector space $V(F)$ to be a subspace.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-header">Statement</div>
+      <div class="step-body">
+        <p>A non-empty subset $W$ of a vector space $V(F)$ is a subspace of $V$ <strong>if and only if</strong>:</p>
+        <div class="math-block">$$lpha u + eta v \in W \quad 	ext{for all } u, v \in W 	ext{ and all scalars } lpha, eta \in F$$</div>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">Proof: Necessary Condition ($\implies$)</div>
+      <div class="step-body">
+        <p>Assume $W$ is a subspace of $V$.</p>
+        <p>By definition of a subspace, $W$ is closed under scalar multiplication and vector addition:</p>
+        <ul>
+          <li>For $lpha \in F$ and $u \in W \implies lpha u \in W$.</li>
+          <li>For $eta \in F$ and $v \in W \implies eta v \in W$.</li>
+        </ul>
+        <p>Since $W$ is closed under addition, $(lpha u) + (eta v) \in W$. Hence the condition is necessary.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">Proof: Sufficient Condition ($\impliedby$)</div>
+      <div class="step-body">
+        <p>Assume $lpha u + eta v \in W$ for all $u, v \in W$ and $lpha, eta \in F$. We must prove $W$ satisfies all subspace criteria:</p>
+        <ol>
+          <li><strong>Zero Vector ($0 \in W$):</strong> Choose $lpha = 0, eta = 0$. Then:
+            $$0 \cdot u + 0 \cdot v = 0 + 0 = 0 \in W$$
+          </li>
+          <li><strong>Closure under Addition:</strong> Choose $lpha = 1, eta = 1$. Then:
+            $$1 \cdot u + 1 \cdot v = u + v \in W$$
+          </li>
+          <li><strong>Additive Inverse:</strong> Choose $lpha = -1, eta = 0$. Then:
+            $$(-1)u + 0 \cdot v = -u \in W$$
+          </li>
+          <li><strong>Closure under Scalar Multiplication:</strong> Choose $lpha = c \in F, eta = 0$. Then:
+            $$c \cdot u + 0 \cdot v = c \cdot u \in W$$
+          </li>
+          <li><strong>Remaining axioms:</strong> Associativity, commutativity, and distributive laws hold automatically because $W \subseteq V$ inherits them from $V$.</li>
+        </ol>
+        <div class="why-callout">
+          <div class="why-title">💡 Why this step?</div>
+          Proving sufficiency requires showing that the single compact condition $lpha u + eta v \in W$ guarantees all the individual group axioms (Identity, Inverse, Closures) simply by selecting specific values for $lpha$ and $eta$.
+        </div>
+      </div>
+    </div>
+    <div class="conclusion-badge">Hence proved: $W$ is a subspace of $V$.</div>
+  </div>
+
+  <!-- QUESTION 6(i) -->
+  <div class="q-card" id="partb_q6">
+    <div class="q-header">
+      <span class="q-badge">Q6(i) • 8 Marks</span>
+      <div class="q-title">If $W_1$ and $W_2$ are subspaces of a vector space $V$, prove that $W_1 \cup W_2$ is a subspace of $V$ if and only if $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$.</div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">Part 1: Sufficient Condition ($\impliedby$)</div>
+      <div class="step-body">
+        <p>Assume $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$.</p>
+        <ul>
+          <li>If $W_1 \subseteq W_2 \implies W_1 \cup W_2 = W_2$. Since $W_2$ is a subspace, $W_1 \cup W_2$ is a subspace.</li>
+          <li>If $W_2 \subseteq W_1 \implies W_1 \cup W_2 = W_1$. Since $W_1$ is a subspace, $W_1 \cup W_2$ is a subspace.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">Part 2: Necessary Condition by Contradiction ($\implies$)</div>
+      <div class="step-body">
+        <p>Assume $W_1 \cup W_2$ is a subspace of $V$.</p>
+        <p>Suppose on the contrary that $W_1 
+ot\subseteq W_2$ and $W_2 
+ot\subseteq W_1$.</p>
+        <ol>
+          <li>Since $W_1 
+ot\subseteq W_2$, there exists a vector $x \in W_1$ such that $x 
+otin W_2$.</li>
+          <li>Since $W_2 
+ot\subseteq W_1$, there exists a vector $y \in W_2$ such that $y 
+otin W_1$.</li>
+          <li>Clearly, $x, y \in W_1 \cup W_2$. Since $W_1 \cup W_2$ is a subspace, it must be closed under addition:
+            $$x + y \in W_1 \cup W_2 \implies x + y \in W_1 \quad 	ext{or} \quad x + y \in W_2$$
+          </li>
+          <li><strong>Case 1:</strong> If $x + y \in W_1$:
+            $$y = (x + y) - x \in W_1 \quad (	ext{since both } x+y, x \in W_1)$$
+            This contradicts our choice that $y 
+otin W_1$!
+          </li>
+          <li><strong>Case 2:</strong> If $x + y \in W_2$:
+            $$x = (x + y) - y \in W_2 \quad (	ext{since both } x+y, y \in W_2)$$
+            This contradicts our choice that $x 
+otin W_2$!
+          </li>
+        </ol>
+        <div class="why-callout">
+          <div class="why-title">💡 Why Proof by Contradiction?</div>
+          The geometric intuition is that the union of two lines through the origin (like the x-axis and y-axis in $\mathbb{R}^2$) is not a subspace because adding a vector on the x-axis $(1,0)$ and a vector on the y-axis $(0,1)$ produces $(1,1)$, which leaves the union. Contradiction shows that the union can only be closed if one subspace completely contains the other.
+        </div>
+      </div>
+    </div>
+    <div class="conclusion-badge">Hence proved: $W_1 \cup W_2$ is a subspace iff $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$.</div>
+  </div>
+
+  <!-- QUESTION 7(i) -->
+  <div class="q-card" id="partb_q7">
+    <div class="q-header">
+      <span class="q-badge">Q7(i) • 8 Marks</span>
+      <div class="q-title">For which value of $k$ will the vector $v = (1, -2, k)$ in $\mathbb{R}^3$ be a linear combination of $u = (3, 0, -2)$ and $w = (2, -1, -5)$?</div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">Step-by-Step Solution</div>
+      <div class="step-body">
+        <p>Set up the linear combination equation: $v = c_1 u + c_2 w$</p>
+        <div class="math-block">
+          $$(1, -2, k) = c_1(3, 0, -2) + c_2(2, -1, -5) = (3c_1 + 2c_2, \; -c_2, \; -2c_1 - 5c_2)$$
+        </div>
+        <p>Equating components gives 3 equations:</p>
+        <ol>
+          <li>$3c_1 + 2c_2 = 1$</li>
+          <li>$-c_2 = -2 \implies \mathbf{c_2 = 2}$</li>
+          <li>$-2c_1 - 5c_2 = k$</li>
+        </ol>
+        <p>Substitute $c_2 = 2$ into equation (1):</p>
+        <div class="math-block">
+          $$3c_1 + 2(2) = 1 \implies 3c_1 + 4 = 1 \implies 3c_1 = -3 \implies \mathbf{c_1 = -1}$$
+        </div>
+        <p>Now substitute $c_1 = -1$ and $c_2 = 2$ into equation (3) to find $k$:</p>
+        <div class="math-block">
+          $$k = -2(-1) - 5(2) = 2 - 10 = \mathbf{-8}$$
+        </div>
+        <div class="why-callout">
+          <div class="why-title">💡 Why this step?</div>
+          The first two equations contain only two unknowns ($c_1, c_2$), allowing us to solve them directly. The third equation determines the exact third coordinate $k$ needed to make the vector lie in the 2D plane spanned by $u$ and $w$.
+        </div>
+      </div>
+    </div>
+    <div class="conclusion-badge">Answer: $k = -8$</div>
+  </div>
+
+  <!-- QUESTION 8(ii) -->
+  <div class="q-card" id="partb_q8">
+    <div class="q-header">
+      <span class="q-badge">Q8(ii) • 8 Marks</span>
+      <div class="q-title">Let $S = \{v_1, v_2, v_3\}$ where $v_1=(2,1,0), v_2=(-3,-3,1), v_3=(-2,1,-1)$. Show that $S$ is a basis of $\mathbb{R}^3$.</div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-header">Step-by-Step Solution</div>
+      <div class="step-body">
+        <p>We know that the dimension of the vector space $\mathbb{R}^3$ is $\dim(\mathbb{R}^3) = 3$.</p>
+        <div class="why-callout">
+          <div class="why-title">💡 Why the Dimension Theorem Shortcut saves 10 minutes in the exam?</div>
+          By the <strong>Basis Theorem</strong>: In an $n$-dimensional space, any set of exactly $n$ vectors that is <em>Linearly Independent</em> automatically spans the space! Therefore, we do NOT need to prove spanning separately—we only need to show $|A| 
+eq 0$!
+        </div>
+        <p>Construct the $3 	imes 3$ matrix $A$ with vectors as rows:</p>
+        <div class="math-block">
+          $$|A| = egin{vmatrix} 2 & 1 & 0 \ -3 & -3 & 1 \ -2 & 1 & -1 \end{vmatrix}$$
+          $$egin{aligned}
+          |A| &= 2[(-3)(-1) - (1)(1)] - 1[(-3)(-1) - (1)(-2)] + 0 \
+              &= 2(3 - 1) - 1(3 + 2) \
+              &= 2(2) - 1(5) = 4 - 5 = \mathbf{-1 
+eq 0}
+          \end{aligned}$$
+        </div>
+        <p>Since $|A| = -1 
+eq 0$:</p>
+        <ol>
+          <li>The vectors $v_1, v_2, v_3$ are <strong>Linearly Independent</strong>.</li>
+          <li>Since there are 3 linearly independent vectors in a 3-dimensional space ($\dim(\mathbb{R}^3) = 3$), $S$ also spans $\mathbb{R}^3$.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="conclusion-badge">✅ $S = \{v_1, v_2, v_3\}$ is a Basis of $\mathbb{R}^3$.</div>
+  </div>
+
+</div>
+</body>
+</html>
