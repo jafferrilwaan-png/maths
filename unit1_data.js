@@ -28,11 +28,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Setup</span>
 <div class="explain-line-title">Definition of Vector Space $V(F)$</div>
@@ -77,11 +103,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Axiom Use</span>
 <div class="explain-line-title">State Additive Inverse $-z \in V$</div>
@@ -125,11 +177,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Inspection</span>
 <div class="explain-line-title">Identify the defining condition $a_1 \ge 0$</div>
@@ -169,11 +247,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Formal Definition</span>
 <div class="explain-line-title">Subset forming Vector Space on its own</div>
@@ -211,11 +315,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Formula</span>
 <div class="explain-line-title">Mathematical Expression $v = c_1 v_1 + c_2 v_2 + \dots + c_k v_k$</div>
@@ -249,11 +379,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Setup</span>
 <div class="explain-line-title">Matrix Determinant Formulation $|A|$</div>
@@ -292,11 +448,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Definition</span>
 <div class="explain-line-title">Minimal Spanning Set (Basis $B$)</div>
@@ -336,11 +518,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Constraint</span>
 <div class="explain-line-title">Constraint equation $x_1 + x_2 + x_3 = 0$</div>
@@ -378,11 +586,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Matrix Setup</span>
 <div class="explain-line-title">Construct square matrix from vectors as rows</div>
@@ -424,11 +658,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Direct Sum Definition</span>
 <div class="explain-line-title">Direct Sum means $V = A + B$ and $A \cap B = \{0\}$</div>
@@ -468,11 +728,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Zero Vector Rule</span>
 <div class="explain-line-title">Check whether origin $(0,0,0) \in W$</div>
@@ -518,11 +804,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • $\mathbb{R}^2$ Subspaces</span>
 <div class="explain-line-title">3 Geometric Types in 2D Plane</div>
@@ -556,11 +868,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Euclidean Space $\mathbb{R}^n$</span>
 <div class="explain-line-title">Standard Basis: $\{e_1, \dots, e_n\}$ | $\dim = n$</div>
@@ -595,11 +933,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Matrix Setup</span>
 <div class="explain-line-title">Form matrix with vectors as rows, set $|A| = 0$</div>
@@ -638,11 +1002,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Definitions</span>
 <div class="explain-line-title">Vector set $\mathbb{R}$, Scalar field $\mathbb{C}$</div>
@@ -683,11 +1073,37 @@ window.UNIT1_DATA = {
 
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
-<span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+<span>Mathematical Explanation &amp; Step Reasoning</span>
 <span class="why-icon">▼</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
 <div class="explain-line">
 <span class="explain-line-badge">Line 1 • Non-Empty Proof</span>
 <div class="explain-line-title">Both contain zero vector $\implies 0 \in W_1 \cap W_2$</div>
@@ -764,11 +1180,37 @@ window.UNIT1_DATA = {
 
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
-              <span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
               <span class="why-icon">▼</span>
             </button>
             <div class="why-content">
-              <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+              <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
               <div class="explain-line">
                 <span class="explain-line-badge">Line 1 • Decomposition</span>
                 <div class="explain-line-title">Why write $A = \frac{A+A^T}{2} + \frac{A-A^T}{2}$</div>
@@ -826,11 +1268,37 @@ window.UNIT1_DATA = {
 
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
-              <span>💡 Touch for Line-by-Line Explanation &amp; Mathematical Reasoning</span>
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
               <span class="why-icon">▼</span>
             </button>
             <div class="why-content">
-              <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
+              <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+
+              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.updateModel(this.value)">
+                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash (Free)</option>
+                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder (Free)</option>
+                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+</div>
               <div class="explain-line">
                 <span class="explain-line-badge">Line 1 • Extension Theorem</span>
                 <div class="explain-line-title">Why we can add standard basis vectors</div>
