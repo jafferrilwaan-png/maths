@@ -571,44 +571,25 @@
     }
 
 
-    /* Responsive Auto-Adjust Fluid Layout & Width Modes */
+    /* Responsive Auto-Adjust Fluid Layout */
     main {
-      width: 95%;
-      max-width: 1200px;
-      margin: 18px auto 0;
-      padding: 0 12px;
-      transition: max-width 0.25s ease, width 0.25s ease;
-    }
-
-    body.layout-compact main, body.layout-compact .nav-container {
-      max-width: 820px;
-    }
-
-    body.layout-auto main, body.layout-auto .nav-container {
-      width: 95%;
-      max-width: 1200px;
-    }
-
-    body.layout-wide main, body.layout-wide .nav-container {
-      width: 96%;
-      max-width: 1480px;
-    }
-
-    body.layout-full main, body.layout-full .nav-container {
-      width: 98%;
-      max-width: 100%;
+      width: 100%;
+      max-width: 1100px;
+      margin: 14px auto 0;
+      padding: 0 16px 70px;
+      box-sizing: border-box;
     }
 
     .nav-container {
-      width: 95%;
-      max-width: 1200px;
+      width: 100%;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 8px 14px;
+      padding: 10px 16px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
       align-items: center;
-      transition: max-width 0.25s ease, width 0.25s ease;
     }
 
     .header-sub-row {
@@ -620,56 +601,94 @@
       width: 100%;
     }
 
-    /* Layout Width Control Pills */
-    .layout-bar {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      background: #e2ecf7;
-      padding: 3px 6px;
-      border-radius: 999px;
-      box-shadow: inset 2px 2px 5px #cad8e8, inset -2px -2px 5px #ffffff;
+    .question-card {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      padding: 20px 24px;
+      margin-bottom: 18px;
+      box-shadow: 6px 6px 20px rgba(160, 185, 215, 0.32), -4px -4px 16px rgba(255, 255, 255, 0.9);
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
-    .layout-label {
-      font-size: 11.5px;
+    .question-card:hover {
+      box-shadow: 10px 10px 28px rgba(150, 178, 210, 0.42), -6px -6px 20px #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .q-heading {
+      font-size: 15.5px;
       font-weight: 700;
-      color: var(--text-muted);
-      padding: 0 4px;
+      color: #0f172a;
+      line-height: 1.5;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
-    .size-btn {
-      border: none;
-      background: transparent;
-      padding: 5px 12px;
-      border-radius: 999px;
-      font-family: inherit;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s ease;
+    .solution-content {
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.65;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
-    .size-btn.active {
-      background: #ffffff;
-      color: var(--primary-dark);
-      box-shadow: 2px 2px 6px rgba(186, 204, 226, 0.5), -1px -1px 3px #ffffff;
-    }
-
-    /* KaTeX Display Auto-Scroll & Container Protection */
     .katex-display {
+      max-width: 100%;
       overflow-x: auto;
       overflow-y: hidden;
       padding: 6px 0;
       scrollbar-width: thin;
-      max-width: 100%;
+      -webkit-overflow-scrolling: touch;
+      margin: 8px 0;
     }
 
-    .question-card {
-      width: 100%;
-      box-sizing: border-box;
-      overflow: hidden;
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 40px;
+      }
+      main {
+        width: 100%;
+        max-width: 100%;
+        margin: 8px 0 0 0;
+        padding: 0 8px 40px;
+      }
+      .nav-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 8px 8px;
+      }
+      .question-card {
+        padding: 14px 14px;
+        border-radius: 14px;
+        margin-bottom: 12px;
+      }
+      .hero-banner {
+        padding: 18px 16px;
+        border-radius: 16px;
+        margin-bottom: 14px;
+      }
+      .unit-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+      .tab-btn {
+        padding: 6px 16px;
+        font-size: 12.5px;
+      }
+      .inline-ai-section {
+        padding: 12px;
+      }
+      .inline-ai-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
 </style>
@@ -696,13 +715,7 @@
         </div>
 
         <!-- Automatic Layout Size Adjuster -->
-        <div class="layout-bar">
-          <span class="layout-label">Width:</span>
-          <button class="size-btn" id="sizeCompact" onclick="setLayoutWidth('compact')">Compact</button>
-          <button class="size-btn active" id="sizeAuto" onclick="setLayoutWidth('auto')">Auto</button>
-          <button class="size-btn" id="sizeWide" onclick="setLayoutWidth('wide')">Wide</button>
-          <button class="size-btn" id="sizeFull" onclick="setLayoutWidth('full')">Full</button>
-        </div>
+        
       </div>
     </div>
   </header>

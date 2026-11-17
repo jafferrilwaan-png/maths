@@ -592,11 +592,137 @@ window.UNIT2_DATA = {
         </div>
       </div>
   `,
-  partB: String.raw`
-      <div class="section-badge">Part B: Complete 16-Mark University Exam Questions (Unit II)</div>
+  
+    <!-- Extra • Q11 -->
+    <div class="question-card" data-category="transformation">
+      <div class="card-top">
+        <span class="q-pill extra">Extra • Q11</span>
+        <div class="q-heading">State Cayley-Hamilton Theorem and how to compute $A^{-1}$ using it.</div>
+      </div>
+      <div class="solution-content">
+        <p><strong>Statement:</strong> Every square matrix $A \in M_{n 	imes n}(\mathbb{R})$ satisfies its own characteristic equation, i.e., if $p(\lambda) = \det(A - \lambda I) = (-1)^n \lambda^n + c_{n-1} \lambda^{n-1} + \dots + c_1 \lambda + c_0 = 0$, then:
+        $$(-1)^n A^n + c_{n-1} A^{n-1} + \dots + c_1 A + c_0 I = O$$</p>
+        <p style="margin-top:6px;"><strong>Computation of $A^{-1}$ (if $\det A 
+eq 0$):</strong> Multiply by $A^{-1}$ and solve:
+        $$A^{-1} = -rac{1}{c_0} \left[ (-1)^n A^{n-1} + c_{n-1} A^{n-2} + \dots + c_1 I 
+ight]$$</p>
+      </div>
+      <div class="why-dropdown">
+        <button class="why-toggle-btn" onclick="toggleWhy(this)">
+          <span>Mathematical Explanation &amp; Step Reasoning</span>
+          <span class="why-icon">&#9660;</span>
+        </button>
+        <div class="why-content">
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 1</span>
+            <div class="explain-line-title">Characteristic Polynomial Substitution</div>
+            <div class="explain-line-desc">Replace scalar variable $\lambda$ with matrix $A$ and constant term $c_0$ with scalar matrix $c_0 I$.</div>
+          </div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 2</span>
+            <div class="explain-line-title">Invertibility Condition</div>
+            <div class="explain-line-desc">$A^{-1}$ exists if and only if $\det A = c_0 
+eq 0$, allowing direct inversion without computing classical adjoints.</div>
+          </div>
+          
+      <div class="inline-ai-section">
+        <div class="inline-ai-header">
+          <div class="inline-ai-title-wrap">
+            <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+            <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+          </div>
+          <div class="inline-ai-controls">
+            <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+              <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+              <option value="gemini">Google Gemini API</option>
+              <option value="ollama">Ollama (Local Offline)</option>
+            </select>
+            <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+              <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free - Recommended)</option>
+              <option value="openrouter/free">OpenRouter Auto Free (Fallback)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+              <option value="deepseek/deepseek-r1:free">DeepSeek R1 Reasoning (Free)</option>
+              <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-ai-chat-history"></div>
+        <div class="inline-ai-input-group">
+          <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+        </div>
+      </div>
 
-      <!-- Part B Q1 -->
-      <div class="question-card" data-category="kernel">
+        </div>
+      </div>
+    </div>
+
+    <!-- Extra • Q12 -->
+    <div class="question-card" data-category="transformation">
+      <div class="card-top">
+        <span class="q-pill extra">Extra • Q12</span>
+        <div class="q-heading">Define Similar Matrices and state two properties invariant under similarity.</div>
+      </div>
+      <div class="solution-content">
+        <p><strong>Definition:</strong> Two square matrices $A, B \in M_{n 	imes n}(F)$ are called <em>similar</em> (written $A \sim B$) if there exists an invertible matrix $P$ such that:
+        $$B = P^{-1} A P$$</p>
+        <p style="margin-top:6px;"><strong>Invariant Properties:</strong><br>
+        1. <strong>Identical Determinant:</strong> $\det(B) = \det(P^{-1} A P) = \det(P^{-1})\det(A)\det(P) = \det(A)$.<br>
+        2. <strong>Identical Trace &amp; Eigenvalues:</strong> $	ext{tr}(B) = 	ext{tr}(A)$, and $A$ and $B$ share identical characteristic polynomials and eigenvalues.</p>
+      </div>
+      <div class="why-dropdown">
+        <button class="why-toggle-btn" onclick="toggleWhy(this)">
+          <span>Mathematical Explanation &amp; Step Reasoning</span>
+          <span class="why-icon">&#9660;</span>
+        </button>
+        <div class="why-content">
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 1</span>
+            <div class="explain-line-title">Change of Basis Interpretation</div>
+            <div class="explain-line-desc">Similar matrices represent the identical abstract linear operator under different coordinate bases.</div>
+          </div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 2</span>
+            <div class="explain-line-title">Spectral Invariance</div>
+            <div class="explain-line-desc">Because characteristic polynomial $\det(P^{-1}(A-\lambda I)P) = \det(A-\lambda I)$, algebraic and geometric multiplicities are preserved.</div>
+          </div>
+          
+      <div class="inline-ai-section">
+        <div class="inline-ai-header">
+          <div class="inline-ai-title-wrap">
+            <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+            <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+          </div>
+          <div class="inline-ai-controls">
+            <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+              <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+              <option value="gemini">Google Gemini API</option>
+              <option value="ollama">Ollama (Local Offline)</option>
+            </select>
+            <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+              <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free - Recommended)</option>
+              <option value="openrouter/free">OpenRouter Auto Free (Fallback)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+              <option value="deepseek/deepseek-r1:free">DeepSeek R1 Reasoning (Free)</option>
+              <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-ai-chat-history"></div>
+        <div class="inline-ai-input-group">
+          <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </div>
+
+  partB: String.raw`
+<div class="question-card" data-category="kernel">
         <div class="card-top">
           <span class="q-pill">Part B • Q1 (16 Marks)</span>
           <div class="q-heading">Let $T: \mathbb{R}^3 \to \mathbb{R}^2$ be defined by $T(a_1, a_2, a_3) = (a_1 - a_2, 2a_3)$. Find the basis and dimension for $N(T)$ and $R(T)$. Determine whether $T$ is one-to-one or onto, and verify the Dimension Theorem.</div>
@@ -688,7 +814,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Part B Q2 -->
-      <div class="question-card" data-category="transformation">
+      
+<div class="question-card" data-category="transformation">
         <div class="card-top">
           <span class="q-pill">Part B • Q2 (16 Marks)</span>
           <div class="q-heading">Consider the basis $S = \{v_1, v_2, v_3\}$ for $\mathbb{R}^3$, where $v_1 = (1,1,1), v_2 = (1,1,0), v_3 = (1,0,0)$. Let $T: \mathbb{R}^3 \to \mathbb{R}^2$ be the linear transformation such that $T(v_1) = (1,0), T(v_2) = (2,-1)$, and $T(v_3) = (4,3)$. Find the general formula for $T(x_1, x_2, x_3)$ and compute $T(2, -3, 5)$.</div>
@@ -776,7 +903,8 @@ window.UNIT2_DATA = {
       </div>
 
       <!-- Part B Q3 -->
-      <div class="question-card" data-category="eigen">
+      
+<div class="question-card" data-category="eigen">
         <div class="card-top">
           <span class="q-pill">Part B • Q3 (16 Marks)</span>
           <div class="q-heading">State and prove the Dimension Theorem (Rank-Nullity Theorem) for finite-dimensional vector spaces.</div>
@@ -876,4 +1004,366 @@ window.UNIT2_DATA = {
         </div>
       </div>
   `
+};
+
+
+    <!-- Part B • Q4 (16 Marks) -->
+    <div class="question-card" data-category="transformation">
+      <div class="card-top">
+        <span class="q-pill">Part B • Q4 (16 Marks)</span>
+        <div class="q-heading">State and prove the Dimension Theorem (Rank-Nullity Theorem) for linear transformations.</div>
+      </div>
+      <div class="solution-content">
+        <p><strong>Theorem Statement:</strong> Let $V$ and $W$ be vector spaces over field $F$ such that $V$ is finite-dimensional. If $T: V 	o W$ is a linear transformation, then:
+        $$\dim V = 	ext{nullity}(T) + 	ext{rank}(T) = \dim N(T) + \dim R(T)$$</p>
+
+        <div class="partb-step">
+          <div class="step-title">Step 1: Basis of Null Space $N(T)$</div>
+          <p>Let $\dim V = n$ and let $\dim N(T) = k$, where $k \le n$.<br>
+          Let $S = \{v_1, v_2, \dots, v_k\}$ be an ordered basis for $N(T)$.<br>
+          Since $S$ is a linearly independent subset of $V$, by the Basis Extension Theorem, $S$ can be extended to an ordered basis $eta$ for $V$:
+          $$eta = \{v_1, v_2, \dots, v_k, v_{k+1}, \dots, v_n\}$$
+          To prove the theorem, we must prove that the set $S' = \{T(v_{k+1}), T(v_{k+2}), \dots, T(v_n)\}$ forms a basis for the range space $R(T)$. If so, $\dim R(T) = n - k$, which immediately yields $\dim V = k + (n - k) = 	ext{nullity}(T) + 	ext{rank}(T)$.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 2: Proof that $S'$ Spans $R(T)$</div>
+          <p>Let $w \in R(T)$. By definition of range, there exists $v \in V$ such that $T(v) = w$.<br>
+          Since $eta$ is a basis for $V$, express $v$ as a linear combination:
+          $$v = c_1 v_1 + \dots + c_k v_k + c_{k+1} v_{k+1} + \dots + c_n v_n$$
+          Applying the linear transformation $T$:
+          $$T(v) = c_1 T(v_1) + \dots + c_k T(v_k) + c_{k+1} T(v_{k+1}) + \dots + c_n T(v_n)$$
+          Since $v_1, \dots, v_k \in N(T)$, we have $T(v_1) = \dots = T(v_k) = 0_W$:
+          $$w = T(v) = 0 + \dots + 0 + c_{k+1} T(v_{k+1}) + \dots + c_n T(v_n)$$
+          Therefore, $w \in 	ext{span}(S')$. Hence, $S'$ spans $R(T)$.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 3: Proof that $S'$ is Linearly Independent</div>
+          <p>Consider the scalar linear combination:
+          $$a_{k+1} T(v_{k+1}) + a_{k+2} T(v_{k+2}) + \dots + a_n T(v_n) = 0_W$$
+          By linearity of $T$:
+          $$T\left(a_{k+1} v_{k+1} + \dots + a_n v_n
+ight) = 0_W$$
+          This implies that the vector $u = a_{k+1} v_{k+1} + \dots + a_n v_n$ lies in $N(T)$.<br>
+          Since $\{v_1, \dots, v_k\}$ is a basis for $N(T)$, $u$ must be expressible as a linear combination:
+          $$a_{k+1} v_{k+1} + \dots + a_n v_n = b_1 v_1 + \dots + b_k v_k$$
+          $$\implies b_1 v_1 + \dots + b_k v_k - a_{k+1} v_{k+1} - \dots - a_n v_n = 0_V$$
+          Since $eta = \{v_1, \dots, v_n\}$ is a basis for $V$, all coefficients must vanish:
+          $$b_1 = \dots = b_k = a_{k+1} = \dots = a_n = 0$$
+          Since all $a_i = 0$, $S'$ is linearly independent.</p>
+        </div>
+
+        <div class="tag-result">Conclusion: $S'$ is a basis for $R(T) \implies 	ext{rank}(T) = n - k \implies \dim V = 	ext{nullity}(T) + 	ext{rank}(T)$. Q.E.D.</div>
+      </div>
+      <div class="why-dropdown">
+        <button class="why-toggle-btn" onclick="toggleWhy(this)">
+          <span>Mathematical Explanation &amp; Step Reasoning</span>
+          <span class="why-icon">&#9660;</span>
+        </button>
+        <div class="why-content">
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 1</span>
+            <div class="explain-line-title">Basis Extension Strategy</div>
+            <div class="explain-line-desc">Start with the kernel basis of size k and extend to the domain of size n using the fundamental extension theorem.</div>
+          </div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 2</span>
+            <div class="explain-line-title">Image Set Characterization</div>
+            <div class="explain-line-desc">Show that T mapped onto the n-k extended vectors spans R(T) and has zero linear dependencies.</div>
+          </div>
+          
+      <div class="inline-ai-section">
+        <div class="inline-ai-header">
+          <div class="inline-ai-title-wrap">
+            <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+            <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+          </div>
+          <div class="inline-ai-controls">
+            <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+              <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+              <option value="gemini">Google Gemini API</option>
+              <option value="ollama">Ollama (Local Offline)</option>
+            </select>
+            <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+              <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free - Recommended)</option>
+              <option value="openrouter/free">OpenRouter Auto Free (Fallback)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+              <option value="deepseek/deepseek-r1:free">DeepSeek R1 Reasoning (Free)</option>
+              <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-ai-chat-history"></div>
+        <div class="inline-ai-input-group">
+          <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Part B • Q5 (16 Marks) -->
+    <div class="question-card" data-category="transformation">
+      <div class="card-top">
+        <span class="q-pill">Part B • Q5 (16 Marks)</span>
+        <div class="q-heading">Let $T: M_{2 	imes 3}(\mathbb{R}) 	o M_{2 	imes 2}(\mathbb{R})$ be defined by:
+        $$Tegin{pmatrix} a_{11} &amp; a_{12} &amp; a_{13} \ a_{21} &amp; a_{22} &amp; a_{23} \end{pmatrix} = egin{pmatrix} 2a_{11} - a_{12} &amp; a_{13} + 2a_{12} \ 0 &amp; 0 \end{pmatrix}$$
+        Find a basis and dimension for $N(T)$ and $R(T)$, check if $T$ is 1-1 or onto, and verify the Dimension Theorem.</div>
+      </div>
+      <div class="solution-content">
+        <p><strong>Aim:</strong> Compute kernel $N(T)$, range $R(T)$, check injectivity/surjectivity, and verify $\dim V = 	ext{nullity}(T) + 	ext{rank}(T)$.</p>
+
+        <div class="partb-step">
+          <div class="step-title">Step 1: Domain Dimension &amp; Kernel Equations</div>
+          <p>$\dim M_{2 	imes 3}(\mathbb{R}) = 2 	imes 3 = 6$.<br>
+          For $A \in N(T)$, $T(A) = egin{pmatrix} 0 &amp; 0 \ 0 &amp; 0 \end{pmatrix}$:
+          $$2a_{11} - a_{12} = 0 \implies a_{12} = 2a_{11}$$
+          $$a_{13} + 2a_{12} = 0 \implies a_{13} = -2(2a_{11}) = -4a_{11}$$
+          Notice $a_{21}, a_{22}, a_{23}$ are completely free parameters.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 2: Basis and Dimension of $N(T)$</div>
+          <p>Any matrix in $N(T)$ takes the form:
+          $$egin{pmatrix} a_{11} &amp; 2a_{11} &amp; -4a_{11} \ a_{21} &amp; a_{22} &amp; a_{23} \end{pmatrix} = a_{11}egin{pmatrix} 1 &amp; 2 &amp; -4 \ 0 &amp; 0 &amp; 0 \end{pmatrix} + a_{21}egin{pmatrix} 0 &amp; 0 &amp; 0 \ 1 &amp; 0 &amp; 0 \end{pmatrix} + a_{22}egin{pmatrix} 0 &amp; 0 &amp; 0 \ 0 &amp; 1 &amp; 0 \end{pmatrix} + a_{23}egin{pmatrix} 0 &amp; 0 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{pmatrix}$$
+          Therefore, $	ext{nullity}(T) = \dim N(T) = 4$.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 3: Basis and Dimension of $R(T)$ &amp; Verification</div>
+          <p>Any matrix in $R(T)$ has second row zero:
+          $$T(A) = (2a_{11}-a_{12})egin{pmatrix} 1 &amp; 0 \ 0 &amp; 0 \end{pmatrix} + (a_{13}+2a_{12})egin{pmatrix} 0 &amp; 1 \ 0 &amp; 0 \end{pmatrix}$$
+          Hence $	ext{rank}(T) = \dim R(T) = 2$.<br>
+          • <strong>1-1 Check:</strong> Since $	ext{nullity}(T) = 4 
+eq 0$, $T$ is <strong>NOT 1-to-1</strong>.<br>
+          • <strong>Onto Check:</strong> $\dim R(T) = 2 
+eq \dim M_{2 	imes 2} = 4$, so $T$ is <strong>NOT onto</strong>.<br>
+          • <strong>Dimension Theorem:</strong> $	ext{nullity}(T) + 	ext{rank}(T) = 4 + 2 = 6 = \dim M_{2 	imes 3}$. Verified!</p>
+        </div>
+
+        <div class="tag-result">Conclusion: $\dim N(T) = 4$, $\dim R(T) = 2$, not 1-1, not onto. $\dim V = 6 = 4 + 2$.</div>
+      </div>
+      <div class="why-dropdown">
+        <button class="why-toggle-btn" onclick="toggleWhy(this)">
+          <span>Mathematical Explanation &amp; Step Reasoning</span>
+          <span class="why-icon">&#9660;</span>
+        </button>
+        <div class="why-content">
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 1</span>
+            <div class="explain-line-title">System of Homogeneous Constraints</div>
+            <div class="explain-line-desc">Express dependent entries in terms of independent parameters and identify all free matrix positions.</div>
+          </div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 2</span>
+            <div class="explain-line-title">Rank Computation from Image Rows</div>
+            <div class="explain-line-desc">Observe that row 2 of output is identically zero, strictly bounding rank to 2.</div>
+          </div>
+          
+      <div class="inline-ai-section">
+        <div class="inline-ai-header">
+          <div class="inline-ai-title-wrap">
+            <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+            <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+          </div>
+          <div class="inline-ai-controls">
+            <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+              <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+              <option value="gemini">Google Gemini API</option>
+              <option value="ollama">Ollama (Local Offline)</option>
+            </select>
+            <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+              <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free - Recommended)</option>
+              <option value="openrouter/free">OpenRouter Auto Free (Fallback)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+              <option value="deepseek/deepseek-r1:free">DeepSeek R1 Reasoning (Free)</option>
+              <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-ai-chat-history"></div>
+        <div class="inline-ai-input-group">
+          <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Part B • Q6 (16 Marks) -->
+    <div class="question-card" data-category="transformation">
+      <div class="card-top">
+        <span class="q-pill">Part B • Q6 (16 Marks)</span>
+        <div class="q-heading">Find the eigenvalues and a basis of eigenvectors for the matrix:
+        $$A = egin{pmatrix} 1 &amp; 1 &amp; 1 \ 0 &amp; 2 &amp; 2 \ 0 &amp; 0 &amp; 3 \end{pmatrix}$$
+        Test whether $A$ is diagonalizable, and if so, find an invertible matrix $P$ and diagonal matrix $D$ such that $P^{-1}AP = D$.</div>
+      </div>
+      <div class="solution-content">
+        <p><strong>Aim:</strong> Compute spectrum of triangular matrix $A$, verify geometric multiplicities, and diagonalize.</p>
+
+        <div class="partb-step">
+          <div class="step-title">Step 1: Eigenvalues of Upper Triangular Matrix</div>
+          <p>Since $A$ is upper triangular, its characteristic polynomial is:
+          $$\det(A - \lambda I) = (1 - \lambda)(2 - \lambda)(3 - \lambda) = 0$$
+          The eigenvalues are distinct:
+          $$\lambda_1 = 1, \quad \lambda_2 = 2, \quad \lambda_3 = 3$$
+          Since an $n 	imes n$ matrix with $n$ distinct eigenvalues is always diagonalizable, $A$ is <strong>diagonalizable</strong>.</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 2: Eigenvectors for Each Distinct Eigenvalue</div>
+          <p><strong>For $\lambda_1 = 1$:</strong> $(A - I)X = 0 \implies egin{pmatrix} 0 &amp; 1 &amp; 1 \ 0 &amp; 1 &amp; 2 \ 0 &amp; 0 &amp; 2 \end{pmatrix}egin{pmatrix} x_1 \ x_2 \ x_3 \end{pmatrix} = 0 \implies x_2 = 0, x_3 = 0, x_1 	ext{ free}$.
+          $$v_1 = egin{pmatrix} 1 \ 0 \ 0 \end{pmatrix}$$
+          <strong>For $\lambda_2 = 2$:</strong> $(A - 2I)X = 0 \implies egin{pmatrix} -1 &amp; 1 &amp; 1 \ 0 &amp; 0 &amp; 2 \ 0 &amp; 0 &amp; 1 \end{pmatrix}egin{pmatrix} x_1 \ x_2 \ x_3 \end{pmatrix} = 0 \implies x_3 = 0, -x_1 + x_2 = 0 \implies x_1 = x_2$.
+          $$v_2 = egin{pmatrix} 1 \ 1 \ 0 \end{pmatrix}$$
+          <strong>For $\lambda_3 = 3$:</strong> $(A - 3I)X = 0 \implies egin{pmatrix} -2 &amp; 1 &amp; 1 \ 0 &amp; -1 &amp; 2 \ 0 &amp; 0 &amp; 0 \end{pmatrix}egin{pmatrix} x_1 \ x_2 \ x_3 \end{pmatrix} = 0$.
+          From row 2: $-x_2 + 2x_3 = 0 \implies x_2 = 2x_3$. From row 1: $-2x_1 + 2x_3 + x_3 = 0 \implies x_1 = rac{3}{2}x_3$. Choosing $x_3 = 2$:
+          $$v_3 = egin{pmatrix} 3 \ 4 \ 2 \end{pmatrix}$$</p>
+        </div>
+
+        <div class="partb-step">
+          <div class="step-title">Step 3: Construct Modal Matrix $P$ and Diagonal Matrix $D$</div>
+          <p>$$P = egin{pmatrix} 1 &amp; 1 &amp; 3 \ 0 &amp; 1 &amp; 4 \ 0 &amp; 0 &amp; 2 \end{pmatrix}, \quad D = egin{pmatrix} 1 &amp; 0 &amp; 0 \ 0 &amp; 2 &amp; 0 \ 0 &amp; 0 &amp; 3 \end{pmatrix}$$
+          Verification: $\det P = 1 \cdot 1 \cdot 2 = 2 
+eq 0 \implies P$ is invertible, and $P^{-1} A P = D$.</p>
+        </div>
+
+        <div class="tag-result">Conclusion: Distinct eigenvalues $\lambda = 1, 2, 3 \implies$ diagonalizable with modal matrix $P$.</div>
+      </div>
+      <div class="why-dropdown">
+        <button class="why-toggle-btn" onclick="toggleWhy(this)">
+          <span>Mathematical Explanation &amp; Step Reasoning</span>
+          <span class="why-icon">&#9660;</span>
+        </button>
+        <div class="why-content">
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 1</span>
+            <div class="explain-line-title">Diagonal Property of Triangular Systems</div>
+            <div class="explain-line-desc">Eigenvalues of triangular matrices are always the exact main diagonal entries.</div>
+          </div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 2</span>
+            <div class="explain-line-title">Modal Inversion Check</div>
+            <div class="explain-line-desc">Independent eigenvectors column-assembled create non-singular P satisfying AP = PD.</div>
+          </div>
+          
+      <div class="inline-ai-section">
+        <div class="inline-ai-header">
+          <div class="inline-ai-title-wrap">
+            <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+            <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+          </div>
+          <div class="inline-ai-controls">
+            <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+              <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+              <option value="gemini">Google Gemini API</option>
+              <option value="ollama">Ollama (Local Offline)</option>
+            </select>
+            <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+              <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free - Recommended)</option>
+              <option value="openrouter/free">OpenRouter Auto Free (Fallback)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+              <option value="deepseek/deepseek-r1:free">DeepSeek R1 Reasoning (Free)</option>
+              <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-ai-chat-history"></div>
+        <div class="inline-ai-input-group">
+          <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Part B • Q7 (16 Marks) -->
+    <div class="question-card" data-category="transformation">
+      <div class="card-top">
+        <span class="q-pill">Part B • Q7 (16 Marks)</span>
+        <div class="q-heading">Test the matrix $A = \begin{pmatrix} 0 &amp; 1 \\ -2 &amp; 3 \end{pmatrix}$ for diagonalizability. If diagonalizable, find the invertible matrix $Q$ such that $Q^{-1}AQ = D$, and compute $A^n$.</div>
+      </div>
+      <div class="solution-content">
+        <p><strong>Aim:</strong> Diagonalize $A$ and obtain the closed-form power formula $A^n = Q D^n Q^{-1}$.</p>
+        <div class="partb-step">
+          <div class="step-title">Step 1: Characteristic Equation &amp; Eigenvalues</div>
+          <p>$$\det(A - \lambda I) = \begin{vmatrix} -\lambda &amp; 1 \\ -2 &amp; 3 - \lambda \end{vmatrix} = -\lambda(3 - \lambda) - (-2)(1) = \lambda^2 - 3\lambda + 2 = 0$$
+          $$(\lambda - 1)(\lambda - 2) = 0 \implies \lambda_1 = 1, \quad \lambda_2 = 2$$
+          Since eigenvalues are distinct, $A$ is <strong>diagonalizable</strong>.</p>
+        </div>
+        <div class="partb-step">
+          <div class="step-title">Step 2: Eigenvectors and Matrix $Q$</div>
+          <p>• For $\lambda_1 = 1$: $\begin{pmatrix} -1 &amp; 1 \\ -2 &amp; 2 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = 0 \implies x_1 = x_2 \implies v_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.<br>
+          • For $\lambda_2 = 2$: $\begin{pmatrix} -2 &amp; 1 \\ -2 &amp; 1 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = 0 \implies 2x_1 = x_2 \implies v_2 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.<br>
+          Modal matrix $Q = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}$.<br>
+          Inverse: $\det Q = 2 - 1 = 1 \implies Q^{-1} = \begin{pmatrix} 2 &amp; -1 \\ -1 &amp; 1 \end{pmatrix}$.</p>
+        </div>
+        <div class="partb-step">
+          <div class="step-title">Step 3: Power Computation $A^n = Q D^n Q^{-1}$</div>
+          <p>$$A^n = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} \begin{pmatrix} 1^n &amp; 0 \\ 0 &amp; 2^n \end{pmatrix} \begin{pmatrix} 2 &amp; -1 \\ -1 &amp; 1 \end{pmatrix} = \begin{pmatrix} 1 &amp; 2^n \\ 1 &amp; 2^{n+1} \end{pmatrix} \begin{pmatrix} 2 &amp; -1 \\ -1 &amp; 1 \end{pmatrix}$$
+          $$A^n = \begin{pmatrix} 2 - 2^n &amp; -1 + 2^n \\ 2 - 2^{n+1} &amp; -1 + 2^{n+1} \end{pmatrix}$$</p>
+        </div>
+        <div class="tag-result">Result: $A^n = \begin{pmatrix} 2 - 2^n &amp; 2^n - 1 \\ 2 - 2^{n+1} &amp; 2^{n+1} - 1 \end{pmatrix}$. Q.E.D.</div>
+      </div>
+      <div class="why-dropdown">
+        <button class="why-toggle-btn" onclick="toggleWhy(this)">
+          <span>Mathematical Explanation &amp; Step Reasoning</span>
+          <span class="why-icon">&#9660;</span>
+        </button>
+        <div class="why-content">
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 1</span>
+            <div class="explain-line-title">Eigenpair Computation</div>
+            <div class="explain-line-desc">Solve $(\lambda-1)(\lambda-2)=0$ and construct independent column eigenvectors into modal matrix Q.</div>
+          </div>
+          <div class="explain-line">
+            <span class="explain-line-badge">Step 2</span>
+            <div class="explain-line-title">Matrix Multiplication Simplification</div>
+            <div class="explain-line-desc">Notice $D^n = \text{diag}(1^n, 2^n) = \text{diag}(1, 2^n)$, simplifying the three-matrix product into closed-form power.</div>
+          </div>
+          
+      <div class="inline-ai-section">
+        <div class="inline-ai-header">
+          <div class="inline-ai-title-wrap">
+            <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
+            <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+          </div>
+          <div class="inline-ai-controls">
+            <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
+              <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
+              <option value="gemini">Google Gemini API</option>
+              <option value="ollama">Ollama (Local Offline)</option>
+            </select>
+            <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+              <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free - Recommended)</option>
+              <option value="openrouter/free">OpenRouter Auto Free (Fallback)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
+              <option value="deepseek/deepseek-r1:free">DeepSeek R1 Reasoning (Free)</option>
+              <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-ai-chat-history"></div>
+        <div class="inline-ai-input-group">
+          <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </div>
+`
 };
