@@ -320,6 +320,10 @@
       transition: all 0.3s ease;
     }
 
+    .why-toggle-btn:focus, .why-toggle-btn:focus-visible {
+      outline: none !important;
+      box-shadow: none !important;
+    }
     .why-toggle-btn {
       width: 100%;
       background: transparent;
@@ -728,14 +732,12 @@
       <p id="bannerDesc">Complete Question Bank + Class Notes derivations with interactive step dropdowns and KaTeX math.</p>
     </div>
 
-    <!-- Filter Bar -->
+        <!-- Filter Bar -->
     <div class="filter-bar">
-      <button class="chip active" onclick="filterCards('all')">All Questions</button>
-      <button class="chip" onclick="filterCards('axioms')">Vector Space Axioms</button>
-      <button class="chip" onclick="filterCards('subspace')">Subspaces &amp; Theorems</button>
-      <button class="chip" onclick="filterCards('transformation')">Linear Transformations</button>
-      <button class="chip" onclick="filterCards('kernel')">Kernel &amp; Range</button>
-      <button class="chip" onclick="filterCards('orthogonality')">Gram-Schmidt &amp; Orthogonality</button>
+      <button class="chip active" data-filter="all" onclick="filterCards('all', this)">All Questions</button>
+      <button class="chip" data-filter="qb" onclick="filterCards('qb', this)">Question Bank (QB)</button>
+      <button class="chip" data-filter="extra" onclick="filterCards('extra', this)">Extra High-Yield</button>
+      <button class="chip" data-filter="16m" onclick="filterCards('16m', this)">Complete 16-Mark Derivations</button>
     </div>
 
     <!-- Active Unit Container -->
@@ -771,7 +773,7 @@
       document.getElementById('sectionPartB').innerHTML = data.partB;
 
       // Render math
-      renderKaTeX();
+      resetFilter(); renderKaTeX();
     }
 
     
@@ -808,18 +810,36 @@
       dropdown.classList.toggle('open');
     }
 
-    function filterCards(category) {
+        function filterCards(category, btn) {
       document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      event.target.classList.add('active');
+      if (btn) btn.classList.add('active');
 
-      const cards = document.querySelectorAll('.question-card');
+      const visibleArea = (currentTab === 'partA' ? document.getElementById('sectionPartA') : document.getElementById('sectionPartB'));
+      const cards = visibleArea.querySelectorAll('.question-card');
+
       cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
+        const pillText = (card.querySelector('.q-pill')?.textContent || '').toLowerCase();
+        const headingText = (card.querySelector('.q-heading')?.textContent || '').toLowerCase();
+
+        if (category === 'all') {
           card.style.display = 'block';
+        } else if (category === 'qb') {
+          card.style.display = (pillText.includes('qb') ? 'block' : 'none');
+        } else if (category === 'extra') {
+          card.style.display = (pillText.includes('extra') ? 'block' : 'none');
+        } else if (category === '16m') {
+          card.style.display = (pillText.includes('16 mark') || currentTab === 'partB' ? 'block' : 'none');
         } else {
-          card.style.display = 'none';
+          card.style.display = 'block';
         }
       });
+    }
+
+    function resetFilter() {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      const allBtn = document.querySelector('.chip[data-filter="all"]');
+      if (allBtn) allBtn.classList.add('active');
+      document.querySelectorAll('.question-card').forEach(card => card.style.display = 'block');
     }
 
     function renderKaTeX() {
