@@ -38,15 +38,7 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    body {
-      background: var(--bg-gradient);
-      background-attachment: fixed;
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      color: var(--text-main);
-      line-height: 1.6;
-      min-height: 100vh;
-      padding-bottom: 70px;
-    }
+    
 
     /* Top Sticky Glass Navigation */
     header {
@@ -416,9 +408,67 @@
       .hero-banner h2 { font-size: 20px; }
       .question-card { padding: 18px 16px; }
     }
-  </style>
+  
+    /* Fluid Physics Gas Canvas */
+    #gas-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    body {
+      background: #e2edfa;
+      background-attachment: fixed;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 70px;
+      overflow-x: hidden;
+    }
+
+    /* Enhanced Frosted Claymorphism over Moving Gas */
+    .question-card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 22px;
+      padding: 24px 26px;
+      margin-bottom: 24px;
+      box-shadow: 14px 14px 30px rgba(150, 178, 208, 0.45), -12px -12px 28px rgba(255, 255, 255, 0.95);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .question-card:hover {
+      box-shadow: 18px 18px 36px rgba(140, 170, 205, 0.55), -14px -14px 32px #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.92) 0%, rgba(37, 99, 235, 0.9) 55%, rgba(59, 130, 246, 0.88) 100%);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 26px;
+      padding: 28px 32px;
+      color: white;
+      margin-bottom: 24px;
+      box-shadow: 14px 14px 32px rgba(37, 99, 235, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.6);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+</style>
 </head>
 <body>
+  <!-- Real-world Physics Moving Gas Canvas -->
+  <canvas id="gas-canvas"></canvas>
+
 
   <!-- Sticky Glass Navigation -->
   <header>
@@ -1130,5 +1180,169 @@
       });
     }
   </script>
+
+  <!-- Real Physics Fluid Gas Simulation Script -->
+  <script>
+    (function() {
+      const canvas = document.getElementById('gas-canvas');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      // Interactive mouse & touch fluid velocity tracker
+      const mouse = { x: -1000, y: -1000, vx: 0, vy: 0, lastX: 0, lastY: 0, active: false };
+      let lastMoveTime = 0;
+
+      function updatePointer(clientX, clientY) {
+        const now = performance.now();
+        const dt = Math.max(1, now - lastMoveTime);
+        mouse.vx = (clientX - mouse.lastX) / dt * 15;
+        mouse.vy = (clientY - mouse.lastY) / dt * 15;
+        mouse.lastX = mouse.x = clientX;
+        mouse.lastY = mouse.y = clientY;
+        mouse.active = true;
+        lastMoveTime = now;
+      }
+
+      window.addEventListener('pointermove', function(e) {
+        updatePointer(e.clientX, e.clientY);
+      });
+      window.addEventListener('touchmove', function(e) {
+        if (e.touches && e.touches[0]) {
+          updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      // Gas Voxel (Fluid particle with vorticity, buoyant thermal lift, and curl diffusion)
+      class GasVoxel {
+        constructor() {
+          this.reset(true);
+        }
+
+        reset(init = false) {
+          this.x = Math.random() * (width + 200) - 100;
+          this.y = init ? Math.random() * (height + 200) - 100 : height + 160;
+          this.baseRadius = 180 + Math.random() * 240;
+          this.radius = this.baseRadius;
+          this.vx = (Math.random() - 0.5) * 0.7;
+          this.vy = -0.4 - Math.random() * 1.1; // Gentle thermal rise
+          this.alpha = 0.22 + Math.random() * 0.35;
+          this.phase = Math.random() * Math.PI * 2;
+          this.phaseSpeed = 0.008 + Math.random() * 0.012;
+          this.colorType = Math.floor(Math.random() * 4);
+        }
+
+        update(time) {
+          this.phase += this.phaseSpeed;
+          this.radius = this.baseRadius + Math.sin(this.phase) * 45;
+
+          // Curl noise & atmospheric vortex field (Navier-Stokes fluid approximation)
+          const curlX = Math.sin(this.y * 0.0016 + time * 0.0007) * 0.45 + Math.cos(this.x * 0.002 - time * 0.0009) * 0.35;
+          const curlY = Math.cos(this.x * 0.0016 + time * 0.0007) * 0.35 - 0.4; // Upward convection
+
+          this.vx += (curlX - this.vx * 0.05) * 0.15;
+          this.vy += (curlY - this.vy * 0.05) * 0.15;
+
+          // Interactive fluid wake from pointer motion
+          if (mouse.active) {
+            const dx = this.x - mouse.x;
+            const dy = this.y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 340 && dist > 1) {
+              const force = (1 - dist / 340) * 2.2;
+              // Swirling vortex impulse
+              this.vx += (dx / dist) * force * 1.4 - (dy / dist) * force * 0.9 + mouse.vx * 0.15;
+              this.vy += (dy / dist) * force * 1.4 + (dx / dist) * force * 0.9 + mouse.vy * 0.15;
+            }
+          }
+
+          // Viscous fluid damping
+          this.vx *= 0.982;
+          this.vy *= 0.982;
+
+          this.x += this.vx;
+          this.y += this.vy;
+
+          // Boundary wraps
+          if (this.x < -this.radius) this.x = width + this.radius;
+          if (this.x > width + this.radius) this.x = -this.radius;
+          if (this.y < -this.radius) this.reset();
+        }
+
+        draw(ctx) {
+          const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+          if (this.colorType === 0) {
+            // Luminous Misty White Gas
+            grad.addColorStop(0, `rgba(255, 255, 255, ${this.alpha * 0.95})`);
+            grad.addColorStop(0.45, `rgba(240, 248, 255, ${this.alpha * 0.5})`);
+            grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+          } else if (this.colorType === 1) {
+            // Soft Sky-Blue Gaseous Vapor
+            grad.addColorStop(0, `rgba(186, 230, 253, ${this.alpha * 0.85})`);
+            grad.addColorStop(0.5, `rgba(147, 197, 253, ${this.alpha * 0.4})`);
+            grad.addColorStop(1, 'rgba(147, 197, 253, 0)');
+          } else if (this.colorType === 2) {
+            // Electric Royal Blue Fluid Stream
+            grad.addColorStop(0, `rgba(96, 165, 250, ${this.alpha * 0.65})`);
+            grad.addColorStop(0.55, `rgba(59, 130, 246, ${this.alpha * 0.28})`);
+            grad.addColorStop(1, 'rgba(59, 130, 246, 0)');
+          } else {
+            // Frosted Ice Cyan-White Glow
+            grad.addColorStop(0, `rgba(255, 255, 255, ${this.alpha * 0.9})`);
+            grad.addColorStop(0.4, `rgba(224, 242, 254, ${this.alpha * 0.6})`);
+            grad.addColorStop(1, 'rgba(224, 242, 254, 0)');
+          }
+
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      // Initialize 40 fluid gas voxels
+      const gasParticles = [];
+      for (let i = 0; i < 42; i++) {
+        gasParticles.push(new GasVoxel());
+      }
+
+      let startTime = performance.now();
+      function animate(now) {
+        const time = now - startTime;
+
+        // Base gradient background
+        const bgGrad = ctx.createLinearGradient(0, 0, width, height);
+        bgGrad.addColorStop(0, '#dbeafe');
+        bgGrad.addColorStop(0.5, '#eff6ff');
+        bgGrad.addColorStop(1, '#e0e7ff');
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, width, height);
+
+        // Render fluid gas with blend mode
+        for (let i = 0; i < gasParticles.length; i++) {
+          gasParticles[i].update(time);
+          gasParticles[i].draw(ctx);
+        }
+
+        // Pointer decay
+        if (now - lastMoveTime > 300) {
+          mouse.vx *= 0.9;
+          mouse.vy *= 0.9;
+          if (now - lastMoveTime > 1200) mouse.active = false;
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+    })();
+  </script>
+
 </body>
 </html>
