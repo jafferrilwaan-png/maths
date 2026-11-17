@@ -30,7 +30,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -82,7 +82,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -112,7 +112,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -164,7 +164,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -193,7 +193,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -245,7 +245,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -270,7 +270,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -322,7 +322,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -345,7 +345,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -392,7 +392,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -416,7 +416,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -468,7 +468,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -492,7 +492,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -544,7 +544,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -569,7 +569,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -621,7 +621,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -644,7 +644,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -696,7 +696,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -723,7 +723,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -775,7 +775,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -800,7 +800,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -852,7 +852,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -883,7 +883,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -930,7 +930,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -954,7 +954,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -1001,7 +1001,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -1026,7 +1026,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -1078,7 +1078,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -1102,7 +1102,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -1154,7 +1154,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -1180,7 +1180,7 @@ window.UNIT1_DATA = {
 <div class="why-dropdown">
 <button class="why-toggle-btn" onclick="toggleWhy(this)">
 <span>Mathematical Explanation &amp; Step Reasoning</span>
-<span class="why-icon">▼</span>
+<span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -1232,7 +1232,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -1314,7 +1314,7 @@ window.UNIT1_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span> Touch for Explanation: Why 1 is Zero Vector &amp; 1/x is Negative</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
@@ -1479,7 +1479,7 @@ window.UNIT1_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -1563,7 +1563,7 @@ window.UNIT1_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -1677,7 +1677,7 @@ window.UNIT1_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -1798,7 +1798,7 @@ window.UNIT1_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -1903,7 +1903,7 @@ window.UNIT1_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -2010,7 +2010,7 @@ window.UNIT1_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -2126,7 +2126,7 @@ window.UNIT1_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -2230,7 +2230,7 @@ window.UNIT1_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -2284,7 +2284,7 @@ window.UNIT1_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span> Touch for Explanation: The Basis Theorem Shortcut</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
@@ -2402,7 +2402,7 @@ window.UNIT1_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -2435,7 +2435,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -2483,7 +2483,7 @@ window.UNIT1_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -2516,7 +2516,7 @@ window.UNIT1_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -2629,7 +2629,7 @@ window.UNIT1_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 

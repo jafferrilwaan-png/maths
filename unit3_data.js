@@ -21,7 +21,7 @@ window.UNIT3_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -73,7 +73,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -102,7 +102,7 @@ window.UNIT3_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -120,7 +120,8 @@ window.UNIT3_DATA = {
               <div class="explain-line">
                 <span class="explain-line-badge">Exam Tip</span>
                 <div class="explain-line-title">Scoring Rubric (2 Marks)</div>
-                <div class="explain-line-desc">1 mark for defining orthogonal ($\langle u, v angle = 0$), 1 mark for orthonormal ($\|u\|=1, \|v\|=1$).</div>
+                <div class="explain-line-desc">1 mark for defining orthogonal ($\langle u, v 
+angle = 0$), 1 mark for orthonormal ($\|u\|=1, \|v\|=1$).</div>
               </div>
 <div class="inline-ai-section">
                 <div class="inline-ai-header">
@@ -149,7 +150,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -178,7 +179,7 @@ window.UNIT3_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -225,7 +226,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -252,7 +253,7 @@ window.UNIT3_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -299,7 +300,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -323,7 +324,7 @@ window.UNIT3_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -370,7 +371,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -398,7 +399,7 @@ window.UNIT3_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -445,7 +446,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -474,7 +475,7 @@ window.UNIT3_DATA = {
           <div class="why-dropdown">
             <button class="why-toggle-btn" onclick="toggleWhy(this)">
               <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">▼</span>
+              <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
@@ -521,7 +522,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
 
@@ -594,7 +595,7 @@ window.UNIT3_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -660,7 +661,7 @@ window.UNIT3_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -729,7 +730,7 @@ window.UNIT3_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -800,7 +801,7 @@ window.UNIT3_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -874,7 +875,7 @@ window.UNIT3_DATA = {
         <div class="inline-ai-chat-history"></div>
         <div class="inline-ai-input-group">
           <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
         </div>
       </div>
 
@@ -969,7 +970,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
@@ -1058,7 +1059,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
@@ -1142,7 +1143,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
@@ -1232,7 +1233,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
@@ -1329,7 +1330,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
@@ -1418,7 +1419,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
@@ -1508,7 +1509,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
@@ -1599,7 +1600,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
@@ -1683,7 +1684,7 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
@@ -1774,11 +1775,277 @@ window.UNIT3_DATA = {
                 <div class="inline-ai-chat-history"></div>
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
         </div>
       </div>
     </div>
+
+<!-- Part B Extra Q11 -->
+      <div class="question-card" data-category="gram_schmidt">
+        <div class="card-top">
+          <span class="q-pill extra">Part B • Extra Q11 (16 Marks)</span>
+        </div>
+        <div class="q-heading">
+          Using the Gram-Schmidt Orthogonalization Process, find the $QR$ decomposition of the matrix:
+          $$A = \begin{bmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{bmatrix}$$
+          where $Q$ is an orthogonal matrix ($Q^T Q = I$) and $R$ is an upper triangular invertible matrix with positive diagonal entries.
+        </div>
+        <div class="solution-content">
+          <p><strong>Aim:</strong> Apply Gram-Schmidt to the columns of $A$ to obtain orthonormal columns of $Q$, then compute upper triangular matrix $R = Q^T A$ such that $A = QR$.</p>
+
+          <div class="partb-step">
+            <div class="step-title">Step 1: Extract Columns and Orthonormalize First Vector $a_1$</div>
+            <p>Let columns of $A$ be $a_1 = (1, 1, 0)^T, \; a_2 = (1, 0, 1)^T, \; a_3 = (0, 1, 1)^T$.<br>
+            • First orthogonal vector:
+            $$u_1 = a_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \quad \|u_1\| = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{2}$$
+            • First orthonormal column of $Q$:
+            $$q_1 = \frac{u_1}{\|u_1\|} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1/\sqrt{2} \\ 1/\sqrt{2} \\ 0 \end{bmatrix}$$
+            $r_{11} = \|u_1\| = \sqrt{2}$.</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 2: Orthogonalize Second Vector $a_2$</div>
+            <p>• Component of $a_2$ along $q_1$:
+            $$r_{12} = q_1^T a_2 = \frac{1}{\sqrt{2}}(1 \cdot 1 + 1 \cdot 0 + 0 \cdot 1) = \frac{1}{\sqrt{2}}$$
+            • Subtract projection:
+            $$u_2 = a_2 - r_{12} q_1 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} - \frac{1}{\sqrt{2}} \begin{bmatrix} 1/\sqrt{2} \\ 1/\sqrt{2} \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} - \begin{bmatrix} 1/2 \\ 1/2 \\ 0 \end{bmatrix} = \begin{bmatrix} 1/2 \\ -1/2 \\ 1 \end{bmatrix}$$
+            • Norm: $\|u_2\| = \sqrt{(1/2)^2 + (-1/2)^2 + 1^2} = \sqrt{1/4 + 1/4 + 1} = \sqrt{6/4} = \frac{\sqrt{6}}{2}$.<br>
+            $r_{22} = \|u_2\| = \frac{\sqrt{6}}{2}$.<br>
+            • Second orthonormal column:
+            $$q_2 = \frac{u_2}{\|u_2\|} = \frac{2}{\sqrt{6}} \begin{bmatrix} 1/2 \\ -1/2 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{6}} \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}$$</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 3: Orthogonalize Third Vector $a_3$</div>
+            <p>• Projection components:
+            $$r_{13} = q_1^T a_3 = \frac{1}{\sqrt{2}}(1 \cdot 0 + 1 \cdot 1 + 0 \cdot 1) = \frac{1}{\sqrt{2}}$$
+            $$r_{23} = q_2^T a_3 = \frac{1}{\sqrt{6}}(1 \cdot 0 + (-1) \cdot 1 + 2 \cdot 1) = \frac{1}{\sqrt{6}}$$
+            • Subtract projections:
+            $$u_3 = a_3 - r_{13} q_1 - r_{23} q_2 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} - \frac{1}{2} \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} - \frac{1}{6} \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}$$
+            • Component 1: $0 - 1/2 - 1/6 = -4/6 = -2/3$.<br>
+            • Component 2: $1 - 1/2 - (-1/6) = 1/2 + 1/6 = 4/6 = 2/3$.<br>
+            • Component 3: $1 - 0 - 2/6 = 4/6 = 2/3$.<br>
+            $$u_3 = \begin{bmatrix} -2/3 \\ 2/3 \\ 2/3 \end{bmatrix} = \frac{2}{3} \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}$$
+            • Norm: $\|u_3\| = \frac{2}{3}\sqrt{(-1)^2 + 1^2 + 1^2} = \frac{2\sqrt{3}}{3} = \frac{2}{\sqrt{3}}$.<br>
+            $r_{33} = \|u_3\| = \frac{2}{\sqrt{3}}$.<br>
+            • Third orthonormal column:
+            $$q_3 = \frac{u_3}{\|u_3\|} = \frac{\sqrt{3}}{2} \cdot \frac{2}{3} \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{3}} \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}$$</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 4: Assembling $Q$ and $R$ and Verification</div>
+            <p>The orthonormal matrix $Q = [q_1 \; q_2 \; q_3]$:
+            $$Q = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} \\ 0 & \frac{2}{\sqrt{6}} & \frac{1}{\sqrt{3}} \end{bmatrix}$$
+            The upper triangular matrix $R$:
+            $$R = \begin{bmatrix} r_{11} & r_{12} & r_{13} \\ 0 & r_{22} & r_{23} \\ 0 & 0 & r_{33} \end{bmatrix} = \begin{bmatrix} \sqrt{2} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 0 & \frac{\sqrt{6}}{2} & \frac{1}{\sqrt{6}} \\ 0 & 0 & \frac{2}{\sqrt{3}} \end{bmatrix}$$
+            Verification of $QR$:
+            $$QR = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} \\ 0 & \frac{2}{\sqrt{6}} & \frac{1}{\sqrt{3}} \end{bmatrix} \begin{bmatrix} \sqrt{2} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 0 & \frac{\sqrt{6}}{2} & \frac{1}{\sqrt{6}} \\ 0 & 0 & \frac{2}{\sqrt{3}} \end{bmatrix} = \begin{bmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{bmatrix} = A$$
+            The $QR$ decomposition is verified!</p>
+          </div>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Columns to Orthonormal Basis</span>
+                <div class="explain-line-title">Gram-Schmidt converts columns $a_j$ into unit vectors $q_j$</div>
+                <div class="explain-line-desc">Every matrix with linearly independent columns has a unique $QR$ decomposition with positive diagonal entries $r_{jj} = \|u_j\| > 0$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Upper Triangular Entries</span>
+                <div class="explain-line-title">$r_{ij} = q_i^T a_j$ for $i < j$</div>
+                <div class="explain-line-desc">The scalar projections calculated during Gram-Schmidt directly populate the upper triangular entries of $R$ without needing separate matrix multiplication.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Orthogonality Guarantee</span>
+                <div class="explain-line-title">$Q^T Q = I$ and $\det(Q) = \pm 1$</div>
+                <div class="explain-line-desc">Because the columns are orthonormal, $Q^{-1} = Q^T$, making $QR$ factorization the gold standard for solving least squares and eigenvalue algorithms.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">4 marks for $q_1$ and $r_{11}$, 5 marks for $q_2, r_{12}, r_{22}$, 5 marks for $q_3, r_{13}, r_{23}, r_{33}$, 2 marks for assembling $Q, R$ and verifying $QR = A$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part B Extra Q12 -->
+      <div class="question-card" data-category="inner_product">
+        <div class="card-top">
+          <span class="q-pill extra">Part B • Extra Q12 (16 Marks)</span>
+        </div>
+        <div class="q-heading">
+          Let $W$ be the subspace of $\mathbb{R}^4$ spanned by $v_1 = (1, 2, 0, -1)$ and $v_2 = (2, 0, 1, 1)$. Given vector $x = (1, 3, -2, 2) \in \mathbb{R}^4$:<br>
+          (a) Find an orthogonal basis for $W$.<br>
+          (b) Find the orthogonal projection $\text{proj}_W(x)$ of $x$ onto $W$.<br>
+          (c) Find the component $x^\perp = x - \text{proj}_W(x)$ orthogonal to $W$.<br>
+          (d) Compute the minimum distance from $x$ to subspace $W$.
+        </div>
+        <div class="solution-content">
+          <p><strong>Aim:</strong> Construct an orthogonal basis $\{u_1, u_2\}$ for $W$, evaluate orthogonal projection $\hat{x}$, orthogonal complement component $x^\perp$, and the Euclidean distance $\|x - \hat{x}\|$.</p>
+
+          <div class="partb-step">
+            <div class="step-title">Step 1: Orthogonal Basis for $W$</div>
+            <p>Apply Gram-Schmidt to $\{v_1, v_2\}$:<br>
+            • First vector:
+            $$u_1 = v_1 = (1, 2, 0, -1)$$
+            $\|u_1\|^2 = 1^2 + 2^2 + 0^2 + (-1)^2 = 1 + 4 + 0 + 1 = 6$.<br>
+            • Second vector:
+            $$\langle v_2, u_1 \rangle = (2)(1) + (0)(2) + (1)(0) + (1)(-1) = 2 - 1 = 1$$
+            $$u_2 = v_2 - \frac{\langle v_2, u_1 \rangle}{\|u_1\|^2} u_1 = (2, 0, 1, 1) - \frac{1}{6}(1, 2, 0, -1)$$
+            $$u_2 = \left(2 - \frac{1}{6}, \; 0 - \frac{2}{6}, \; 1 - 0, \; 1 - \left(-\frac{1}{6}\right)\right) = \left(\frac{11}{6}, -\frac{1}{3}, 1, \frac{7}{6}\right)$$
+            Clearing fractions, scale by $6$ (orthogonal basis direction is preserved):
+            $$u_2' = (11, -2, 6, 7)$$
+            Check orthogonality: $\langle u_1, u_2' \rangle = (1)(11) + (2)(-2) + (0)(6) + (-1)(7) = 11 - 4 - 7 = 0$. Orthogonal!</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 2: Orthogonal Projection $\text{proj}_W(x)$</div>
+            <p>Using the orthogonal basis $\{u_1, u_2'\}$:
+            $$\hat{x} = \text{proj}_W(x) = \frac{\langle x, u_1 \rangle}{\|u_1\|^2} u_1 + \frac{\langle x, u_2' \rangle}{\|u_2'\|^2} u_2'$$
+            1. For $u_1 = (1, 2, 0, -1)$:
+            $$\langle x, u_1 \rangle = (1)(1) + (3)(2) + (-2)(0) + (2)(-1) = 1 + 6 + 0 - 2 = 5$$
+            $$\|u_1\|^2 = 6 \implies \text{proj}_{u_1}(x) = \frac{5}{6}(1, 2, 0, -1) = \left(\frac{5}{6}, \frac{5}{3}, 0, -\frac{5}{6}\right)$$
+            2. For $u_2' = (11, -2, 6, 7)$:
+            $$\langle x, u_2' \rangle = (1)(11) + (3)(-2) + (-2)(6) + (2)(7) = 11 - 6 - 12 + 14 = 7$$
+            $$\|u_2'\|^2 = 11^2 + (-2)^2 + 6^2 + 7^2 = 121 + 4 + 36 + 49 = 210$$
+            $$\text{proj}_{u_2'}(x) = \frac{7}{210} u_2' = \frac{1}{30}(11, -2, 6, 7) = \left(\frac{11}{30}, -\frac{1}{15}, \frac{1}{5}, \frac{7}{30}\right)$$
+            3. Sum of projections:
+            $$\hat{x} = \left(\frac{25}{30} + \frac{11}{30}, \; \frac{50}{30} - \frac{2}{30}, \; 0 + \frac{6}{30}, \; -\frac{25}{30} + \frac{7}{30}\right) = \left(\frac{36}{30}, \frac{48}{30}, \frac{6}{30}, -\frac{18}{30}\right) = \left(\frac{6}{5}, \frac{8}{5}, \frac{1}{5}, -\frac{3}{5}\right)$$</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 3: Orthogonal Component $x^\perp$</div>
+            <p>$$x^\perp = x - \hat{x} = (1, 3, -2, 2) - \left(\frac{6}{5}, \frac{8}{5}, \frac{1}{5}, -\frac{3}{5}\right)$$
+            $$x^\perp = \left(1 - \frac{6}{5}, \; 3 - \frac{8}{5}, \; -2 - \frac{1}{5}, \; 2 - \left(-\frac{3}{5}\right)\right) = \left(-\frac{1}{5}, \frac{7}{5}, -\frac{11}{5}, \frac{13}{5}\right) = \frac{1}{5}(-1, 7, -11, 13)$$
+            Verify orthogonality to $u_1$:
+            $$\langle x^\perp, u_1 \rangle = \frac{1}{5}[(-1)(1) + (7)(2) + (-11)(0) + (13)(-1)] = \frac{1}{5}[-1 + 14 - 13] = 0$$
+            Verify orthogonality to $v_2 = (2, 0, 1, 1)$:
+            $$\langle x^\perp, v_2 \rangle = \frac{1}{5}[(-1)(2) + (7)(0) + (-11)(1) + (13)(1)] = \frac{1}{5}[-2 - 11 + 13] = 0$$
+            Orthogonality to entire subspace $W$ holds!</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 4: Shortest Distance from $x$ to $W$</div>
+            <p>By the Best Approximation Theorem, the minimum distance is the Euclidean norm of the orthogonal component $\|x^\perp\|$:
+            $$d(x, W) = \|x - \hat{x}\| = \|x^\perp\|$$
+            $$\|x^\perp\| = \frac{1}{5} \sqrt{(-1)^2 + 7^2 + (-11)^2 + 13^2} = \frac{1}{5} \sqrt{1 + 49 + 121 + 169} = \frac{1}{5} \sqrt{340} = \frac{2\sqrt{85}}{5} \approx 3.6878$$</p>
+          </div>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Orthogonal Decomposition Theorem</span>
+                <div class="explain-line-title">$x = \hat{x} + x^\perp$ where $\hat{x} \in W$ and $x^\perp \in W^\perp$</div>
+                <div class="explain-line-desc">Any vector in an inner product space decomposes uniquely into a component in the subspace and a component orthogonal to the subspace.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Direct Sum Distance Minimization</span>
+                <div class="explain-line-title">$\|x - \hat{x}\| \le \|x - w\|$ for all $w \in W$</div>
+                <div class="explain-line-desc">By Pythagoras' Theorem, $\|x - w\|^2 = \|x - \hat{x}\|^2 + \|\hat{x} - w\|^2 \ge \|x - \hat{x}\|^2$. The projection $\hat{x}$ is the unique best approximation.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scaling Trick for Integer Arithmetic</span>
+                <div class="explain-line-title">Scaling $u_2$ by 6 gives integer basis $(11, -2, 6, 7)$</div>
+                <div class="explain-line-desc">Notice that multiplying an orthogonal vector by a non-zero scalar preserves the orthogonal 1D subspace, completely eliminating nested fractional algebra!</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">4 marks for orthogonal basis $\{u_1, u_2'\}$, 5 marks for orthogonal projection $\hat{x}$, 4 marks for orthogonal component $x^\perp$ with verification, 3 marks for computing distance $\|x^\perp\| = \frac{2\sqrt{85}}{5}$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
 `
 };

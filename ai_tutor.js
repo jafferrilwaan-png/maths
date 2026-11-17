@@ -1,6 +1,6 @@
 // LANA Production AI Math Tutor
 // Zero-404 Cross-Cascade Architecture (Google Gemini + OpenRouter Free)
-// Auto-failover across 30+ endpoints with real mathematical answers (Zero Fake Thinking)
+// Full Markdown Table & LaTeX Parser with Animated Pulsing Analyzing Dots
 
 window.AITutor = (function() {
   const DEFAULT_GEMINI_KEY = atob("QVEuQWI4Uk42SmxpXzlJZWNxV01TaXVtRFMzb3RQNzZOTl9GbVNKMGR6dUphdXRJNHhSdlE=");
@@ -91,12 +91,12 @@ window.AITutor = (function() {
 
   const SYSTEM_PROMPT = `You are an expert mathematics professor for course 23MA1302 - Linear Algebra and Numerical Analysis.
 Provide the direct, real answer immediately.
-Do NOT include internal reasoning, do NOT write "thinking process" logs, and do NOT use emojis.
-Explain all mathematical steps with rigor, displaying math in clean LaTeX ($...$ inline, $$...$$ display).
-Highlight essential formulas and university exam mark allocation.`;
+Do NOT output internal reasoning, do NOT write "thinking process" logs, and do NOT use emojis.
+Use Markdown tables (| Col 1 | Col 2 |) when presenting properties, comparisons, or step summaries.
+Format all mathematical symbols and equations using LaTeX ($...$ inline, $$...$$ display equations).
+Explain mathematical steps with rigor and highlight university exam mark allocation.`;
 
   function syncDropdowns() {
-    // Determine provider automatically if model belongs to a specific catalog
     if (selectedModel.includes('/') || selectedModel.endsWith(':free')) {
       selectedProvider = 'openrouter';
     } else if (selectedModel.startsWith('gemini-') || selectedModel.startsWith('gemma-')) {
@@ -151,6 +151,11 @@ Highlight essential formulas and university exam mark allocation.`;
     const section = btnElem.closest('.inline-ai-section');
     if (!section) return;
 
+    const modelSel = section.querySelector('.inline-ai-model-select, .inline-ai-model');
+    if (modelSel && modelSel.value) {
+      selectedModel = modelSel.value;
+    }
+
     const input = section.querySelector('.inline-ai-input');
     const query = input.value.trim();
     if (!query) return;
@@ -170,11 +175,12 @@ Highlight essential formulas and university exam mark allocation.`;
     const loadingMsg = document.createElement('div');
     loadingMsg.className = 'inline-ai-msg inline-ai-msg-bot';
     loadingMsg.id = loadingId;
-    loadingMsg.innerHTML = `<div class="inline-ai-bubble"><em>Analyzing with ${selectedModel} (Zero-404 Cascade Active)...</em></div>`;
+    // Elegant pulsing 3 dots indicator
+    loadingMsg.innerHTML = `<div class="inline-ai-bubble ai-analyzing-bubble">Analyzing<span class="ai-typing-dots"><span>.</span><span>.</span><span>.</span></span></div>`;
     history.appendChild(loadingMsg);
     history.scrollTop = history.scrollHeight;
 
-    const contextPrompt = `Subject: Linear Algebra and Numerical Analysis (23MA1302)\nTopic / Question: ${qTitle}\nSummary: ${qSolution.substring(0, 400)}\n\nStudent Doubt / Query: ${query}`;
+    const contextPrompt = `Course: Linear Algebra and Numerical Analysis (23MA1302)\nQuestion: ${qTitle}\nSummary: ${qSolution.substring(0, 400)}\n\nStudent Query: ${query}`;
 
     try {
       const responseText = await callAIWithCascade(contextPrompt);
@@ -194,7 +200,7 @@ Highlight essential formulas and university exam mark allocation.`;
     } catch (err) {
       const target = document.getElementById(loadingId);
       if (target) {
-        target.innerHTML = `<div class="inline-ai-bubble inline-ai-error" style="color:#b91c1c; background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:10px;">Notice: ${escapeHtml(err.message)}</div>`;
+        target.innerHTML = `<div class="inline-ai-bubble inline-ai-error" style="color:#b91c1c; background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:10px;">Please try again. (${escapeHtml(err.message)})</div>`;
       }
     }
 
@@ -202,20 +208,16 @@ Highlight essential formulas and university exam mark allocation.`;
   }
 
   async function callAIWithCascade(userQuery) {
-    // If user chose OpenRouter, try OpenRouter first; if it fails or rate-limits, fall back to Gemini
     if (selectedProvider === 'openrouter') {
       try {
         return await callOpenRouterCascade(userQuery);
-      } catch (openRouterErr) {
-        // Auto-failover to Gemini
+      } catch (e) {
         return await callGeminiCascade(userQuery);
       }
     } else {
-      // Primary Gemini cascade
       try {
         return await callGeminiCascade(userQuery);
-      } catch (geminiErr) {
-        // Auto-failover to OpenRouter
+      } catch (e) {
         return await callOpenRouterCascade(userQuery);
       }
     }
@@ -241,7 +243,7 @@ Highlight essential formulas and university exam mark allocation.`;
           body: JSON.stringify({
             contents: [{ role: 'user', parts: [{ text: `${SYSTEM_PROMPT}\n\n${userQuery}` }] }],
             generationConfig: {
-              maxOutputTokens: 380,
+              maxOutputTokens: 420,
               temperature: 0.2
             }
           }),
@@ -256,12 +258,12 @@ Highlight essential formulas and university exam mark allocation.`;
             return cleanAIOutput(rawText);
           }
         }
-        lastError = new Error(`Gemini ${m} returned HTTP ${res.status}`);
+        lastError = new Error(`HTTP ${res.status}`);
       } catch (e) {
         lastError = e;
       }
     }
-    throw lastError || new Error("All Gemini cascade endpoints busy.");
+    throw lastError || new Error("Connection busy.");
   }
 
   async function callOpenRouterCascade(userQuery) {
@@ -287,7 +289,7 @@ Highlight essential formulas and university exam mark allocation.`;
           },
           body: JSON.stringify({
             model: m,
-            max_tokens: 380,
+            max_tokens: 420,
             temperature: 0.2,
             messages: [
               { role: 'system', content: SYSTEM_PROMPT },
@@ -309,23 +311,22 @@ Highlight essential formulas and university exam mark allocation.`;
             return cleanAIOutput(rawText);
           }
         }
-        lastError = new Error(`OpenRouter ${m} returned HTTP ${res.status}`);
+        lastError = new Error(`HTTP ${res.status}`);
       } catch (e) {
         lastError = e;
       }
     }
-    throw lastError || new Error("All OpenRouter free models busy.");
+    throw lastError || new Error("Connection busy.");
   }
 
-  // Strip internal thinking tags or reasoning boilerplate
   function cleanAIOutput(text) {
     if (!text) return "";
     let cleaned = text;
 
-    // Remove <think>...</think> blocks
+    // Strip internal thinking tags <think>...</think>
     cleaned = cleaned.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
 
-    // Remove "Here's a thinking process: ..." blocks
+    // Strip "Here's a thinking process: ..."
     if (cleaned.startsWith("Here's a thinking process:")) {
       const doubleBreak = cleaned.indexOf("\n\n");
       if (doubleBreak !== -1) {
@@ -333,15 +334,99 @@ Highlight essential formulas and university exam mark allocation.`;
       }
     }
 
-    // If cleaned text is empty, fall back to original
     return cleaned || text;
   }
 
+  // Full Rich Markdown, Table, and Prose Formatter (preserves LaTeX $...$ and $$...$$)
   function formatResponse(text) {
-    return text
-      .replace(/\n\n/g, '<br><br>')
-      .replace(/\n/g, '<br>')
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    if (!text) return "";
+
+    // 1. Stash Math blocks ($$...$$ and $...$) so regex doesn't interfere
+    const mathBlocks = [];
+    let processed = text.replace(/\$\$[\s\S]*?\$\$/g, (match) => {
+      mathBlocks.push(match);
+      return `%%%MATHBLOCK_${mathBlocks.length - 1}%%%`;
+    });
+    processed = processed.replace(/\$[^\$\n]+?\$/g, (match) => {
+      mathBlocks.push(match);
+      return `%%%MATHBLOCK_${mathBlocks.length - 1}%%%`;
+    });
+
+    // 2. Parse Markdown Tables
+    const lines = processed.split('\n');
+    const newLines = [];
+    let inTable = false;
+    let tableRows = [];
+
+    function flushTable() {
+      if (!tableRows.length) return "";
+      let html = '<div class="ai-table-wrap"><table class="ai-table">';
+      let isHeader = true;
+      for (const row of tableRows) {
+        // Separator row (| --- | --- |)
+        if (/^\s*\|?(\s*:?-+:?\s*\|)+\s*:?-+:?\s*\|?\s*$/.test(row)) {
+          isHeader = false;
+          continue;
+        }
+        const cells = row.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+        const tag = isHeader ? 'th' : 'td';
+        html += '<tr>' + cells.map(c => `<${tag}>${c}</${tag}>`).join('') + '</tr>';
+      }
+      html += '</table></div>';
+      return html;
+    }
+
+    for (const line of lines) {
+      if (line.trim().startsWith('|') && line.trim().endsWith('|')) {
+        inTable = true;
+        tableRows.push(line);
+      } else {
+        if (inTable) {
+          newLines.push(flushTable());
+          inTable = false;
+          tableRows = [];
+        }
+        newLines.push(line);
+      }
+    }
+    if (inTable) {
+      newLines.push(flushTable());
+    }
+
+    processed = newLines.join('\n');
+
+    // 3. Headings
+    processed = processed.replace(/^###\s+(.*?)$/gm, '<h4 class="ai-h4">$1</h4>');
+    processed = processed.replace(/^##\s+(.*?)$/gm, '<h3 class="ai-h3">$1</h3>');
+    processed = processed.replace(/^#\s+(.*?)$/gm, '<h2 class="ai-h2">$1</h2>');
+
+    // 4. Horizontal Rules
+    processed = processed.replace(/^---+\s*$/gm, '<hr class="ai-hr">');
+
+    // 5. Bold & Italic
+    processed = processed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    processed = processed.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+    // 6. Bullet lists
+    processed = processed.replace(/^[*\-]\s+(.*?)$/gm, '<li class="ai-li">$1</li>');
+    processed = processed.replace(/((?:<li class="ai-li">.*?<\/li>\s*)+)/g, '<ul class="ai-ul">$1</ul>');
+
+    // 7. Numbered lists
+    processed = processed.replace(/^\d+\.\s+(.*?)$/gm, '<li class="ai-oli">$1</li>');
+    processed = processed.replace(/((?:<li class="ai-oli">.*?<\/li>\s*)+)/g, '<ol class="ai-ol">$1</ol>');
+
+    // 8. Paragraph spacing & clean breaks
+    processed = processed.replace(/\n{2,}/g, '<br><br>');
+    processed = processed.replace(/(?<!<br>)\n/g, '<br>');
+    processed = processed.replace(/<br>\s*<(h[2-4]|ul|ol|div|hr)/g, '<$1');
+    processed = processed.replace(/<\/(h[2-4]|ul|ol|div|hr)>\s*<br>/g, '</$1>');
+
+    // 9. Restore Math blocks
+    mathBlocks.forEach((block, idx) => {
+      processed = processed.replace(`%%%MATHBLOCK_${idx}%%%`, block);
+    });
+
+    return processed;
   }
 
   function escapeHtml(str) {
@@ -361,6 +446,16 @@ Highlight essential formulas and university exam mark allocation.`;
     askInline,
     syncDropdowns,
     callAIWithCascade,
+    formatResponse,
     MODEL_CATALOG
   };
 })();
+
+
+// Global wrappers for onclick/onkeypress events in HTML cards
+window.sendInlineQuery = function(elem) {
+  if (window.AITutor && window.AITutor.askInline) {
+    window.AITutor.askInline(elem);
+  }
+};
+window.askInlineAI = window.sendInlineQuery;
