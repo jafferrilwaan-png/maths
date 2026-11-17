@@ -76,15 +76,7 @@
       box-shadow: 0 6px 20px rgba(191, 207, 226, 0.35);
     }
 
-    .nav-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 10px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
-    }
+    
 
     /* Unit Switcher Tabs */
     .unit-switcher {
@@ -149,12 +141,7 @@
       box-shadow: 4px 4px 10px rgba(186, 204, 226, 0.5), -2px -2px 6px #ffffff;
     }
 
-    /* Main Container */
-    main {
-      max-width: 980px;
-      margin: 20px auto 0;
-      padding: 0 18px;
-    }
+    
 
     /* Hero Banner */
     .hero-banner {
@@ -583,6 +570,108 @@
       border-color: #2563eb;
     }
 
+
+    /* Responsive Auto-Adjust Fluid Layout & Width Modes */
+    main {
+      width: 95%;
+      max-width: 1200px;
+      margin: 18px auto 0;
+      padding: 0 12px;
+      transition: max-width 0.25s ease, width 0.25s ease;
+    }
+
+    body.layout-compact main, body.layout-compact .nav-container {
+      max-width: 820px;
+    }
+
+    body.layout-auto main, body.layout-auto .nav-container {
+      width: 95%;
+      max-width: 1200px;
+    }
+
+    body.layout-wide main, body.layout-wide .nav-container {
+      width: 96%;
+      max-width: 1480px;
+    }
+
+    body.layout-full main, body.layout-full .nav-container {
+      width: 98%;
+      max-width: 100%;
+    }
+
+    .nav-container {
+      width: 95%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      transition: max-width 0.25s ease, width 0.25s ease;
+    }
+
+    .header-sub-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    /* Layout Width Control Pills */
+    .layout-bar {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #e2ecf7;
+      padding: 3px 6px;
+      border-radius: 999px;
+      box-shadow: inset 2px 2px 5px #cad8e8, inset -2px -2px 5px #ffffff;
+    }
+
+    .layout-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      padding: 0 4px;
+    }
+
+    .size-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .size-btn.active {
+      background: #ffffff;
+      color: var(--primary-dark);
+      box-shadow: 2px 2px 6px rgba(186, 204, 226, 0.5), -1px -1px 3px #ffffff;
+    }
+
+    /* KaTeX Display Auto-Scroll & Container Protection */
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 6px 0;
+      scrollbar-width: thin;
+      max-width: 100%;
+    }
+
+    .question-card {
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
 </style>
 </head>
 <body>
@@ -599,10 +688,21 @@
         <button class="unit-btn" id="unitBtn3" onclick="switchUnit(3)">Unit III: Inner Product Spaces</button>
       </div>
 
-      <!-- Part A / Part B Tabs -->
-      <div class="tab-switcher">
-        <button class="tab-btn active" id="tabPartA" onclick="switchTab('partA')">Part A (2-Mark)</button>
-        <button class="tab-btn" id="tabPartB" onclick="switchTab('partB')">Part B (16-Mark)</button>
+      <div class="header-sub-row">
+        <!-- Part A / Part B Tabs -->
+        <div class="tab-switcher">
+          <button class="tab-btn active" id="tabPartA" onclick="switchTab('partA')">Part A (2-Mark)</button>
+          <button class="tab-btn" id="tabPartB" onclick="switchTab('partB')">Part B (16-Mark)</button>
+        </div>
+
+        <!-- Automatic Layout Size Adjuster -->
+        <div class="layout-bar">
+          <span class="layout-label">Width:</span>
+          <button class="size-btn" id="sizeCompact" onclick="setLayoutWidth('compact')">Compact</button>
+          <button class="size-btn active" id="sizeAuto" onclick="setLayoutWidth('auto')">Auto</button>
+          <button class="size-btn" id="sizeWide" onclick="setLayoutWidth('wide')">Wide</button>
+          <button class="size-btn" id="sizeFull" onclick="setLayoutWidth('full')">Full</button>
+        </div>
       </div>
     </div>
   </header>
@@ -660,6 +760,23 @@
       // Render math
       renderKaTeX();
     }
+
+    
+    function setLayoutWidth(mode) {
+      document.body.classList.remove('layout-compact', 'layout-auto', 'layout-wide', 'layout-full');
+      document.body.classList.add('layout-' + mode);
+      localStorage.setItem('lana_layout_width', mode);
+
+      document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('size' + mode.charAt(0).toUpperCase() + mode.slice(1));
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    // Restore saved layout width or default to auto
+    (function initLayoutWidth() {
+      const saved = localStorage.getItem('lana_layout_width') || 'auto';
+      setLayoutWidth(saved);
+    })();
 
     function switchTab(tab) {
       currentTab = tab;
