@@ -91,16 +91,20 @@ window.AITutor = (function() {
     ]
   };
 
-  const SYSTEM_PROMPT = `You are a helpful, versatile, and intelligent AI chatbot tutor for university mathematics (Course 23MA1302 - Linear Algebra and Numerical Analysis).
+  const SYSTEM_PROMPT = `You are an expert, versatile, and helpful AI mathematics tutor for university course 23MA1302 - Linear Algebra and Numerical Analysis.
 
-Core Principle:
-Whatever the user asks or tells you, do it for them helpfully, accurately, and naturally like an intelligent AI chatbot:
-- If they ask something simple, give a simple, direct, straightforward answer.
-- If they ask something complex, or say they don't understand, patiently break it down, use intuitive explanations and analogies, and try your best to make them truly understand.
-- If they ask for derivations, proofs, or calculations, provide the complete, step-by-step mathematical working without truncating.
-- Adapt your tone and depth directly to what the user asks for.
-- Format all mathematical expressions using clean LaTeX ($...$ inline, $$...$$ display).
-- Do not output internal thinking processes, scratchpad logs, or <think> tags. All responses should be your genuine, helpful assistance.`;
+Core Guidelines:
+1. Focus on the Specific Sum:
+   - When a conversation is started on a problem or sum, focus specifically on that sum and its mathematical properties.
+   - Use verified university curriculum knowledge and standard mathematical theorems to ensure high accuracy.
+2. Adapt to the Student:
+   - Whatever the student asks about this sum, help them naturally and thoroughly:
+     - If they ask something simple, give a simple, direct, straightforward answer.
+     - If they ask something complex, or say they don't understand, patiently break it down, use intuitive explanations and analogies, and try your best to make them truly understand.
+     - If they ask for derivations, proofs, or calculations, provide the complete, step-by-step mathematical working without truncating.
+3. Clean Formatting:
+   - Format all mathematical expressions using clean LaTeX ($...$ inline, $$...$$ display).
+   - Do not output internal thinking processes, scratchpad logs, or <think> tags. All responses should be your genuine, helpful assistance.`;
 
   function buildModelSelectHTML(currentModel) {
     let html = `<optgroup label="Direct Google Gemini Production Cascade">`;
@@ -208,25 +212,31 @@ Whatever the user asks or tells you, do it for them helpfully, accurately, and n
 
     let contextPrompt = '';
 
-    // Include prior conversation in this thread naturally
+    // 1. Establish the current sum / problem under study for this specific card
+    if (qTitle) {
+      contextPrompt += `Target Problem / Sum Under Study:\n"${qTitle.trim()}"\n\n`;
+    }
+    if (qSolution) {
+      contextPrompt += `Verified Reference Steps & Mathematics for this Sum:\n${qSolution.trim().substring(0, 700)}\n\n`;
+    }
+
+    // 2. Include prior conversation on this specific sum
     if (priorMsgs.length > 0) {
-      contextPrompt += `Conversation History:\n`;
+      contextPrompt += `Prior Discussion on this Sum:\n`;
       priorMsgs.slice(-4).forEach(m => {
-        contextPrompt += `${m.role === 'student' ? 'User' : 'Assistant'}: ${m.text}\n`;
+        contextPrompt += `${m.role === 'student' ? 'Student' : 'Tutor'}: ${m.text}\n`;
       });
       contextPrompt += `\n`;
     }
 
-    // Only attach card context if the user's message refers to the card or step
-    const refersToCard = /(this|step|problem|here|card|above|solution|prove|verify)/i.test(trimmedQuery);
-    if (qTitle && refersToCard) {
-      contextPrompt += `[Reference topic: ${qTitle}]\n`;
-      if (qSolution) {
-        contextPrompt += `[Reference working: ${qSolution.substring(0, 350)}]\n\n`;
-      }
-    }
-
-    contextPrompt += `User: ${trimmedQuery}`;
+    // 3. User's query and tutor guidance
+    contextPrompt += `Student's Question on this Sum: "${trimmedQuery}"\n\n`;
+    contextPrompt += `Tutor Action Required:
+- Focus specifically on this problem/sum and answer what the student is asking.
+- Draw from verified university mathematics curriculum data (Linear Algebra and Numerical Analysis, 23MA1302) to verify steps and calculations.
+- If the student asks something simple, answer directly and simply.
+- If they say they don't understand, break it down step-by-step with intuitive insight so they truly understand.
+- If they ask for working, derivations, or calculations, provide complete, step-by-step mathematical working without truncating.`;
 
     try {
       const responseText = await callAIWithCascade(contextPrompt);
