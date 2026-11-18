@@ -91,23 +91,16 @@ window.AITutor = (function() {
     ]
   };
 
-  const SYSTEM_PROMPT = `You are an expert, direct, and helpful AI mathematics tutor for university course 23MA1302 - Linear Algebra and Numerical Analysis.
+  const SYSTEM_PROMPT = `You are a helpful, versatile, and intelligent AI chatbot tutor for university mathematics (Course 23MA1302 - Linear Algebra and Numerical Analysis).
 
-CRITICAL INSTRUCTIONS:
-1. ANSWER ONLY WHAT THE STUDENT ASKS:
-   - Give a direct, focused, and precise answer to the student's exact question or doubt.
-   - Do NOT blabber, do NOT add unsolicited lectures, and do NOT drift into unrelated topics.
-   - Do NOT add "Exam Tips", "Mark Allocation", or "Scoring Rubrics" unless the student explicitly asks for them.
-   - Answer their specific question first, in clear, simple language.
-2. BE GENUINELY HELPFUL & INTUITIVE:
-   - If the student says "I don't understand", "explain simpler", or "why", explain the concept simply with clear intuition and real understanding. No unnecessary jargon.
-   - If the student asks for a solution or calculation, provide the exact step-by-step working directly, fully finished without truncation.
-3. CONVERSATIONAL & CONCISE:
-   - If the student greets you ("hi", "hello"), greet them warmly in 1-2 friendly sentences and ask how you can help.
-   - Keep answers well-structured and easy to read.
-4. CLEAN FORMATTING:
-   - Never output internal reasoning scratchpads or <think> tags.
-   - Use standard LaTeX ($...$ inline, $$...$$ display) with lowercase syntax (\\alpha, \\frac, etc.).`;
+Core Principle:
+Whatever the user asks or tells you, do it for them helpfully, accurately, and naturally like an intelligent AI chatbot:
+- If they ask something simple, give a simple, direct, straightforward answer.
+- If they ask something complex, or say they don't understand, patiently break it down, use intuitive explanations and analogies, and try your best to make them truly understand.
+- If they ask for derivations, proofs, or calculations, provide the complete, step-by-step mathematical working without truncating.
+- Adapt your tone and depth directly to what the user asks for.
+- Format all mathematical expressions using clean LaTeX ($...$ inline, $$...$$ display).
+- Do not output internal thinking processes, scratchpad logs, or <think> tags. All responses should be your genuine, helpful assistance.`;
 
   function buildModelSelectHTML(currentModel) {
     let html = `<optgroup label="Direct Google Gemini Production Cascade">`;
@@ -212,32 +205,28 @@ CRITICAL INSTRUCTIONS:
     history.scrollTop = history.scrollHeight;
 
     const trimmedQuery = query.trim();
-    const isGreeting = /^(hi|hello|hey|hola|good\s*(morning|afternoon|evening)|sup)\b/i.test(trimmedQuery);
 
     let contextPrompt = '';
-    if (isGreeting) {
-      contextPrompt = `Student says: "${trimmedQuery}".
-Respond warmly in 1-2 friendly sentences. Ask what math doubt or concept they need help with. Do not lecture or explain anything unprompted.`;
-    } else {
-      contextPrompt = `Student's Question: "${trimmedQuery}"\n\n`;
 
-      if (priorMsgs.length > 0) {
-        contextPrompt += `Prior Thread Context:\n`;
-        priorMsgs.slice(-3).forEach(m => {
-          contextPrompt += `${m.role === 'student' ? 'Student' : 'Tutor'}: ${m.text}\n`;
-        });
-        contextPrompt += `\n`;
-      }
-
-      if (qTitle && (trimmedQuery.toLowerCase().includes('this') || trimmedQuery.toLowerCase().includes('problem') || trimmedQuery.toLowerCase().includes('step') || trimmedQuery.toLowerCase().includes('here'))) {
-        contextPrompt += `Card Context: Topic is "${qTitle}"\n`;
-        if (qSolution) {
-          contextPrompt += `Card Steps:\n${qSolution.substring(0, 400)}\n\n`;
-        }
-      }
-
-      contextPrompt += `Strict Rule: Answer ONLY what the student asked above directly, clearly, and concisely. No filler, no unsolicited exam marks, and no blabber.`;
+    // Include prior conversation in this thread naturally
+    if (priorMsgs.length > 0) {
+      contextPrompt += `Conversation History:\n`;
+      priorMsgs.slice(-4).forEach(m => {
+        contextPrompt += `${m.role === 'student' ? 'User' : 'Assistant'}: ${m.text}\n`;
+      });
+      contextPrompt += `\n`;
     }
+
+    // Only attach card context if the user's message refers to the card or step
+    const refersToCard = /(this|step|problem|here|card|above|solution|prove|verify)/i.test(trimmedQuery);
+    if (qTitle && refersToCard) {
+      contextPrompt += `[Reference topic: ${qTitle}]\n`;
+      if (qSolution) {
+        contextPrompt += `[Reference working: ${qSolution.substring(0, 350)}]\n\n`;
+      }
+    }
+
+    contextPrompt += `User: ${trimmedQuery}`;
 
     try {
       const responseText = await callAIWithCascade(contextPrompt);
