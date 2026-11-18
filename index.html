@@ -17,10 +17,10 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 
   <!-- Unit Data & AI Tutor Scripts -->
-  <script src="unit1_data.js?v=3.2"></script>
-  <script src="unit2_data.js?v=3.2"></script>
-  <script src="unit3_data.js?v=3.2"></script>
-  <script src="ai_tutor.js?v=3.2"></script>
+  <script src="unit1_data.js?v=3.3"></script>
+  <script src="unit2_data.js?v=3.3"></script>
+  <script src="unit3_data.js?v=3.3"></script>
+  <script src="ai_tutor.js?v=3.3"></script>
 
   <style>
     :root {
@@ -608,13 +608,15 @@
     }
 
     /* AI Bubble Markdown & Table Styling */
-    .inline-ai-bubble .ai-h2, .inline-ai-bubble .ai-h3, .inline-ai-bubble .ai-h4 {
+    .inline-ai-bubble .ai-h2, .inline-ai-bubble .ai-h3, .inline-ai-bubble .ai-h4, .inline-ai-bubble .ai-h5, .inline-ai-bubble .ai-h6 {
       color: #0f172a;
       font-weight: 800;
       margin: 10px 0 6px;
       line-height: 1.35;
     }
-    .inline-ai-bubble .ai-h4 { font-size: 14px; }
+    .inline-ai-bubble .ai-h2 { font-size: 16px; }
+    .inline-ai-bubble .ai-h3 { font-size: 15px; }
+    .inline-ai-bubble .ai-h4, .inline-ai-bubble .ai-h5, .inline-ai-bubble .ai-h6 { font-size: 13.5px; }
     .inline-ai-bubble .ai-ul, .inline-ai-bubble .ai-ol {
       margin: 8px 0 8px 20px;
       padding: 0;

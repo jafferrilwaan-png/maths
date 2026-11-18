@@ -431,10 +431,16 @@ Highlight essential university exam formulas, steps, and mark allocation tips.`;
 
     processed = newLines.join('\n');
 
-    // 3. Headings
-    processed = processed.replace(/^###\s+(.*?)$/gm, '<h4 class="ai-h4">$1</h4>');
-    processed = processed.replace(/^##\s+(.*?)$/gm, '<h3 class="ai-h3">$1</h3>');
-    processed = processed.replace(/^#\s+(.*?)$/gm, '<h2 class="ai-h2">$1</h2>');
+    // 3. Headings (supports # through ###### with optional leading whitespace)
+    processed = processed.replace(/^\s*######\s*(.*?)$/gm, '<h6 class="ai-h6">$1</h6>');
+    processed = processed.replace(/^\s*#####\s*(.*?)$/gm, '<h5 class="ai-h5">$1</h5>');
+    processed = processed.replace(/^\s*####\s*(.*?)$/gm, '<h4 class="ai-h4">$1</h4>');
+    processed = processed.replace(/^\s*###\s*(.*?)$/gm, '<h4 class="ai-h4">$1</h4>');
+    processed = processed.replace(/^\s*##\s*(.*?)$/gm, '<h3 class="ai-h3">$1</h3>');
+    processed = processed.replace(/^\s*#\s*(.*?)$/gm, '<h2 class="ai-h2">$1</h2>');
+
+    // Any remaining stray markdown header hashes at start of line
+    processed = processed.replace(/^\s*#{1,6}\s*/gm, '');
 
     // 4. Horizontal Rules
     processed = processed.replace(/^---+\s*$/gm, '<hr class="ai-hr">');
@@ -454,8 +460,8 @@ Highlight essential university exam formulas, steps, and mark allocation tips.`;
     // 8. Paragraph spacing & clean breaks
     processed = processed.replace(/\n{2,}/g, '<br><br>');
     processed = processed.replace(/(?<!<br>)\n/g, '<br>');
-    processed = processed.replace(/<br>\s*<(h[2-4]|ul|ol|div|hr)/g, '<$1');
-    processed = processed.replace(/<\/(h[2-4]|ul|ol|div|hr)>\s*<br>/g, '</$1>');
+    processed = processed.replace(/<br>\s*<(h[2-6]|ul|ol|div|hr)/g, '<$1');
+    processed = processed.replace(/<\/(h[2-6]|ul|ol|div|hr)>\s*<br>/g, '</$1>');
 
     // 9. Restore Math blocks
     mathBlocks.forEach((block, idx) => {
