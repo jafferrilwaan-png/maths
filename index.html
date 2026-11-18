@@ -14,16 +14,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- KaTeX CSS and JS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <!-- PWA & Offline Capabilities -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+
+  <!-- KaTeX CSS and JS (Local Offline-First with CDN Fallback) -->
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+  <script defer src="vendor/katex/katex.min.js"></script>
+  <script defer src="vendor/katex/auto-render.min.js"></script>
 
   <!-- Unit Data & AI Tutor Scripts -->
-  <script src="unit1_data.js?v=4.1"></script>
-  <script src="unit2_data.js?v=4.1"></script>
-  <script src="unit3_data.js?v=4.1"></script>
-  <script src="ai_tutor.js?v=4.1"></script>
+  <script src="unit1_data.js?v=5.0"></script>
+  <script src="unit2_data.js?v=5.0"></script>
+  <script src="unit3_data.js?v=5.0"></script>
+  <script src="unit4_data.js?v=5.0"></script>
+  <script src="unit5_data.js?v=5.0"></script>
+  <script src="ai_tutor.js?v=5.0"></script>
 
   <style>
     :root {
@@ -1131,6 +1137,8 @@
         <button class="unit-btn active" id="unitBtn1" onclick="switchUnit(1)">Unit I: Vector Spaces</button>
         <button class="unit-btn" id="unitBtn2" onclick="switchUnit(2)">Unit II: Linear Transformations</button>
         <button class="unit-btn" id="unitBtn3" onclick="switchUnit(3)">Unit III: Inner Product Spaces</button>
+        <button class="unit-btn" id="unitBtn4" onclick="switchUnit(4)">Unit IV: Equations &amp; Eigenvalues</button>
+        <button class="unit-btn" id="unitBtn5" onclick="switchUnit(5)">Unit V: Interpolation &amp; Approximation</button>
       </div>
 
       <div class="header-sub-row">
@@ -1180,6 +1188,8 @@
       if (unitNum === 1) return window.UNIT1_DATA;
       if (unitNum === 2) return window.UNIT2_DATA;
       if (unitNum === 3) return window.UNIT3_DATA;
+      if (unitNum === 4) return window.UNIT4_DATA;
+      if (unitNum === 5) return window.UNIT5_DATA;
       return window.UNIT1_DATA;
     }
 
@@ -1193,13 +1203,17 @@
       const unitTitles = [
         "Unit-I: Vector Spaces",
         "Unit-II: Linear Transformations & Diagonalization",
-        "Unit-III: Inner Product Spaces"
+        "Unit-III: Inner Product Spaces",
+        "Unit-IV: Equations & Eigenvalues",
+        "Unit-V: Interpolation & Approximation"
       ];
 
       const unitGradients = [
         "linear-gradient(135deg, rgba(30, 58, 138, 0.94) 0%, rgba(37, 99, 235, 0.92) 55%, rgba(59, 130, 246, 0.9) 100%)",
         "linear-gradient(135deg, rgba(49, 46, 129, 0.94) 0%, rgba(79, 70, 229, 0.92) 55%, rgba(99, 102, 241, 0.9) 100%)",
-        "linear-gradient(135deg, rgba(14, 116, 144, 0.94) 0%, rgba(2, 132, 199, 0.92) 55%, rgba(37, 99, 235, 0.9) 100%)"
+        "linear-gradient(135deg, rgba(14, 116, 144, 0.94) 0%, rgba(2, 132, 199, 0.92) 55%, rgba(37, 99, 235, 0.9) 100%)",
+        "linear-gradient(135deg, rgba(180, 83, 9, 0.94) 0%, rgba(217, 119, 6, 0.92) 55%, rgba(245, 158, 11, 0.9) 100%)",
+        "linear-gradient(135deg, rgba(109, 40, 217, 0.94) 0%, rgba(124, 58, 237, 0.92) 55%, rgba(147, 51, 234, 0.9) 100%)"
       ];
 
       if (heroBanner) {
@@ -1223,9 +1237,15 @@
         } else if (currentUnit === 2) {
           bannerTitle.textContent = "Unit 2 • Part A: 2-Mark Linear Transformations & Matrices";
           bannerDesc.textContent = "Kernel (Null Space), Range Space, Rank-Nullity Theorem, Injective & Surjective Maps, Matrix Representations, Eigenvalues.";
-        } else {
+        } else if (currentUnit === 3) {
           bannerTitle.textContent = "Unit 3 • Part A: 2-Mark Inner Products & Orthogonality";
           bannerDesc.textContent = "Inner product axioms, norms, Cauchy-Schwarz Inequality, Triangle Inequality, orthogonal vectors, conjugate transposes.";
+        } else if (currentUnit === 4) {
+          bannerTitle.textContent = "Unit 4 • Part A: 2-Mark Numerical Equations & Iterations";
+          bannerDesc.textContent = "Newton-Raphson order of convergence, fixed-point iterations, Gauss elimination partial pivoting, Gauss-Jordan inversion, Gauss-Seidel condition.";
+        } else {
+          bannerTitle.textContent = "Unit 5 • Part A: 2-Mark Interpolation & Numerical Calculus";
+          bannerDesc.textContent = "Lagrange interpolation formula, divided differences symmetry, Newton forward/backward formulas, cubic spline conditions, numerical integration.";
         }
       } else {
         if (currentUnit === 1) {
@@ -1234,9 +1254,15 @@
         } else if (currentUnit === 2) {
           bannerTitle.textContent = "Unit 2 • Part B: 16-Mark Diagonalization & Matrix Representations";
           bannerDesc.textContent = "Rank-Nullity proofs, matrix of transformation with non-standard bases, Cayley-Hamilton high-degree reductions, repeated root diagonalization.";
-        } else {
+        } else if (currentUnit === 3) {
           bannerTitle.textContent = "Unit 3 • Part B: 16-Mark Gram-Schmidt & Least Squares Analysis";
           bannerDesc.textContent = "Gram-Schmidt orthogonalization in R3 & polynomial spaces, orthonormal bases, QR factorizations, orthogonal projections, and least squares curve fitting.";
+        } else if (currentUnit === 4) {
+          bannerTitle.textContent = "Unit 4 • Part B: 16-Mark Systems & Eigenvalue Algorithms";
+          bannerDesc.textContent = "Gauss-Jordan matrix inversion, Gauss-Seidel 4-decimal iterations, Power Method dominant eigenvalues, Jacobi method orthogonal diagonalization.";
+        } else {
+          bannerTitle.textContent = "Unit 5 • Part B: 16-Mark Splines, Derivatives & Integration";
+          bannerDesc.textContent = "Newton divided difference polynomials, natural cubic splines tridiagonal equations, numerical derivatives at boundaries, composite Simpson's rules.";
         }
       }
     }
@@ -1432,6 +1458,19 @@
 
       animate();
     })();
+  </script>
+
+  <!-- Offline Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then((reg) => {
+          console.log('LANA Master Offline ServiceWorker active:', reg.scope);
+        }).catch((err) => {
+          console.warn('LANA Master ServiceWorker registration:', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>
