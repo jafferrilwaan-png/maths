@@ -1241,6 +1241,325 @@ window.UNIT1_DATA = {
 </div>
 <!-- ================= PART B SECTION (ALL 10 COMPLETE QUESTIONS) ================= -->
 <!-- ================= PART B SECTION (ALL 10 COMPLETE 16-MARK QUESTIONS) ================= -->
+
+<!-- Predicted Q17 -->
+      <div class="question-card" data-category="subspaces">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q17</span>
+        </div>
+        <div class="q-heading">State the necessary and sufficient condition for a non-empty subset $W$ of a vector space $V$ over field $F$ to be a subspace of $V$.</div>
+        <div class="solution-content">
+          <p><strong>Two-Step Criterion:</strong> A non-empty subset $W \subseteq V$ is a subspace of $V$ if and only if:<br>
+          1. <strong>Addition Closure:</strong> For all $u, v \in W$, $u + v \in W$.<br>
+          2. <strong>Scalar Multiplication Closure:</strong> For all $\alpha \in F$ and $u \in W$, $\alpha u \in W$.<br>
+          <strong>Single-Step Criterion:</strong> Equivalently, $W$ is a subspace iff for all $\alpha, \beta \in F$ and $u, v \in W$, $\alpha u + \beta v \in W$.</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Non-Empty Hypothesis</span>
+                <div class="explain-line-title">$W \neq \emptyset$ ensures existence of zero vector</div>
+                <div class="explain-line-desc">Taking $\alpha = 0$ in the scalar condition yields $0 \cdot u = \mathbf{0} \in W$, guaranteeing the additive zero element is inside $W$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Single Linear Combination Test</span>
+                <div class="explain-line-title">$\alpha u + \beta v \in W$ compresses all 10 vector space axioms</div>
+                <div class="explain-line-desc">Since $W$ inherits associativity, commutativity, and distributivity from ambient space $V$, only closure under linear combinations must be verified.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for stating addition closure ($u+v \in W$), 1 mark for scalar multiplication closure ($\alpha u \in W$ or linear combination $\alpha u + \beta v \in W$).</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted Q18 -->
+      <div class="question-card" data-category="dependence">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q18</span>
+        </div>
+        <div class="q-heading">If $S = \{v_1, v_2, \dots, v_n\}$ is a linearly independent subset of a vector space $V$, prove that every non-empty subset of $S$ is also linearly independent.</div>
+        <div class="solution-content">
+          <p><strong>Proof:</strong> Without loss of generality, let $S_k = \{v_1, v_2, \dots, v_k\}$ with $1 \le k < n$ be any non-empty subset of $S$.<br>
+          Consider the linear combination for $S_k$:
+          $$c_1 v_1 + c_2 v_2 + \dots + c_k v_k = \mathbf{0}$$
+          We can rewrite this in terms of the full set $S$ by choosing remaining scalars $c_{k+1} = \dots = c_n = 0$:
+          $$c_1 v_1 + c_2 v_2 + \dots + c_k v_k + 0 \cdot v_{k+1} + \dots + 0 \cdot v_n = \mathbf{0}$$
+          Since the original set $S$ is linearly independent, all scalars in this combination must vanish identically:
+          $$c_1 = c_2 = \dots = c_k = 0$$
+          Therefore, $S_k$ is linearly independent.</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Zero Extension Principle</span>
+                <div class="explain-line-title">Appending zero coefficients preserves the vector sum</div>
+                <div class="explain-line-desc">Embedding the sub-relation into the full set by assigning 0 to missing vectors allows direct invocation of the linear independence hypothesis of $S$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Contrapositive Interpretation</span>
+                <div class="explain-line-title">Super-set of linearly dependent set is dependent</div>
+                <div class="explain-line-desc">The contrapositive statement is equally important in Anna University exams: any superset containing a linearly dependent set is automatically dependent.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for setting up $c_1 v_1 + \dots + c_k v_k = 0$ with zero extensions, 1 mark for concluding all $c_i = 0$ by linear independence of $S$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted Q19 -->
+      <div class="question-card" data-category="theorems">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q19</span>
+        </div>
+        <div class="q-heading">Let $W_1$ and $W_2$ be two subspaces of $\mathbb{R}^4$ with $\dim(W_1)=2$ and $\dim(W_2)=3$. What are all the possible dimensions of $W_1 \cap W_2$?</div>
+        <div class="solution-content">
+          <p>By Grassmann's Dimension Formula:
+          $$\dim(W_1 + W_2) = \dim(W_1) + \dim(W_2) - \dim(W_1 \cap W_2)$$
+          $$\dim(W_1 \cap W_2) = \dim(W_1) + \dim(W_2) - \dim(W_1 + W_2) = 2 + 3 - \dim(W_1 + W_2) = 5 - \dim(W_1 + W_2)$$
+          Since $W_1 + W_2$ is a subspace of $\mathbb{R}^4$, $\dim(W_1 + W_2) \le 4$.<br>
+          Also, $W_2 \subseteq W_1 + W_2 \implies \dim(W_1 + W_2) \ge \dim(W_2) = 3$.<br>
+          Therefore $\dim(W_1 + W_2)$ can be either 3 or 4:<br>
+          • If $\dim(W_1 + W_2) = 4 \implies \dim(W_1 \cap W_2) = 5 - 4 = 1$.<br>
+          • If $\dim(W_1 + W_2) = 3 \implies \dim(W_1 \cap W_2) = 5 - 3 = 2$ (which occurs when $W_1 \subset W_2$).<br>
+          <strong>Conclusion:</strong> The possible dimensions of $W_1 \cap W_2$ are <strong>1 or 2</strong>.</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Dimension Bounds</span>
+                <div class="explain-line-title">$3 \le \dim(W_1 + W_2) \le 4$</div>
+                <div class="explain-line-desc">The sum cannot exceed the ambient dimension 4, and cannot be smaller than the largest individual subspace dimension 3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Intersection Guarantee</span>
+                <div class="explain-line-title">$\dim(W_1 \cap W_2) \ge 1$ prevents trivial intersection</div>
+                <div class="explain-line-desc">Two planes of dimensions 2 and 3 in 4D space MUST intersect in at least a 1D line ($5 - 4 = 1$), so $W_1 \cap W_2 \neq \{\mathbf{0}\}$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for applying Grassmann's formula, 1 mark for calculating and listing both possible dimensions $\{1, 2\}$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted Q20 -->
+      <div class="question-card" data-category="subspaces">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q20</span>
+        </div>
+        <div class="q-heading">Is the union of two subspaces of a vector space $V$ always a subspace of $V$? Justify your answer with a standard counterexample in $\mathbb{R}^2$.</div>
+        <div class="solution-content">
+          <p><strong>Answer:</strong> <strong>No</strong>, the union of two subspaces is <strong>not</strong> necessarily a subspace.<br>
+          (The union $W_1 \cup W_2$ is a subspace iff either $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$).<br>
+          <strong>Counterexample in $\mathbb{R}^2$:</strong><br>
+          Let $W_1 = \{(x, 0) : x \in \mathbb{R}\}$ ($x$-axis) and $W_2 = \{(0, y) : y \in \mathbb{R}\}$ ($y$-axis).<br>
+          Both $W_1$ and $W_2$ are 1D subspaces of $\mathbb{R}^2$.<br>
+          Take $u = (1, 0) \in W_1 \subseteq W_1 \cup W_2$ and $v = (0, 1) \in W_2 \subseteq W_1 \cup W_2$.<br>
+          Their sum is:
+          $$u + v = (1, 0) + (0, 1) = (1, 1)$$
+          Since $(1, 1)$ does not lie on the $x$-axis and does not lie on the $y$-axis, $(1, 1) \notin W_1 \cup W_2$.<br>
+          Because $W_1 \cup W_2$ is not closed under addition, it is <strong>not a subspace</strong>.</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Addition Failure in Union</span>
+                <div class="explain-line-title">Summing vectors from different coordinate axes leaves the axes</div>
+                <div class="explain-line-desc">Vector addition $(1,0) + (0,1) = (1,1)$ lands in the quadrant, outside the union of the two coordinate axes.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Subspace Union Theorem</span>
+                <div class="explain-line-title">$W_1 \cup W_2$ is a subspace iff $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$</div>
+                <div class="explain-line-desc">Only when one subspace completely contains the other is the union itself a vector space.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for stating 'No' with closure criterion, 1 mark for the coordinate axes counterexample $(1,0)+(0,1)=(1,1) \notin W_1 \cup W_2$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
 `,
   partB: String.raw`
 <div class="question-card" data-category="axioms">
@@ -1370,9 +1689,9 @@ window.UNIT1_DATA = {
             </div>
           </div>
           <div class="inline-ai-chat-history"></div>
-          <div class="inline-ai-input-wrap">
-            <input type="text" class="inline-ai-input" placeholder="Type your doubt about this problem (e.g. explain step 2 in simple terms)..." onkeydown="if(event.key==='Enter') window.sendInlineQuery(this)">
-            <button class="inline-ai-send" onclick="window.sendInlineQuery(this)">Ask AI</button>
+          <div class="inline-ai-input-group">
+            <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+            <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
           </div>
         </div>
             </div>
@@ -2340,9 +2659,9 @@ window.UNIT1_DATA = {
             </div>
           </div>
           <div class="inline-ai-chat-history"></div>
-          <div class="inline-ai-input-wrap">
-            <input type="text" class="inline-ai-input" placeholder="Type your doubt about this problem (e.g. explain step 2 in simple terms)..." onkeydown="if(event.key==='Enter') window.sendInlineQuery(this)">
-            <button class="inline-ai-send" onclick="window.sendInlineQuery(this)">Ask AI</button>
+          <div class="inline-ai-input-group">
+            <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+            <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
           </div>
         </div>
             </div>
@@ -2636,5 +2955,149 @@ window.UNIT1_DATA = {
         </div>
       </div>
     </div>
+
+<!-- Predicted Part B Q14 -->
+      <div class="question-card" data-category="theorems">
+        <div class="card-top">
+          <span class="q-pill extra">Part B • Predicted Q14 (16 Marks)</span>
+        </div>
+        <div class="q-heading">
+          Let $W_1$ and $W_2$ be subspaces of $\mathbb{R}^4$ defined by:<br>
+          $W_1 = \{(x_1, x_2, x_3, x_4) \in \mathbb{R}^4 : x_1 + 2x_2 - x_3 = 0 \text{ and } x_2 + x_4 = 0\}$<br>
+          $W_2 = \text{span}\{(1, -1, 1, 1), (0, 1, 2, -1)\}$.<br>
+          (a) Find bases and dimensions for $W_1$, $W_2$, $W_1 \cap W_2$, and $W_1 + W_2$.<br>
+          (b) Verify the dimension theorem: $\dim(W_1 + W_2) = \dim(W_1) + \dim(W_2) - \dim(W_1 \cap W_2)$.<br>
+          (c) Determine whether $\mathbb{R}^4$ is the direct sum $W_1 \oplus W_2$.
+        </div>
+        <div class="solution-content">
+          <p><strong>Aim:</strong> Solve linear homogeneous systems to find bases and dimensions of subspaces $W_1, W_2$, their intersection $W_1 \cap W_2$, their sum $W_1 + W_2$, verify Grassmann's formula, and assess the direct sum condition.</p>
+
+          <div class="partb-step">
+            <div class="step-title">Step 1: Basis and Dimension of $W_1$</div>
+            <p>From the defining equations:
+            $$x_3 = x_1 + 2x_2, \quad x_4 = -x_2$$
+            Any vector in $W_1$ is given by:
+            $$(x_1, x_2, x_3, x_4) = (x_1, x_2, x_1 + 2x_2, -x_2) = x_1(1, 0, 1, 0) + x_2(0, 1, 2, -1)$$
+            Vectors $u_1 = (1, 0, 1, 0)$ and $u_2 = (0, 1, 2, -1)$ are clearly linearly independent.<br>
+            <strong>Basis for $W_1$:</strong> $B_1 = \{(1, 0, 1, 0), (0, 1, 2, -1)\} \implies \dim(W_1) = 2$.</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 2: Basis and Dimension of $W_2$</div>
+            <p>$W_2$ is spanned by $v_1 = (1, -1, 1, 1)$ and $v_2 = (0, 1, 2, -1)$.<br>
+            If $c_1(1, -1, 1, 1) + c_2(0, 1, 2, -1) = (0, 0, 0, 0) \implies c_1 = 0 \implies c_2 = 0$.<br>
+            Since the spanning vectors are linearly independent:<br>
+            <strong>Basis for $W_2$:</strong> $B_2 = \{(1, -1, 1, 1), (0, 1, 2, -1)\} \implies \dim(W_2) = 2$.</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 3: Basis and Dimension of Intersection $W_1 \cap W_2$</div>
+            <p>Let $x \in W_1 \cap W_2$. Since $x \in W_2$:
+            $$x = c_1(1, -1, 1, 1) + c_2(0, 1, 2, -1) = (c_1, -c_1 + c_2, c_1 + 2c_2, c_1 - c_2)$$
+            Since $x \in W_1$, its coordinates must satisfy the defining equations of $W_1$:<br>
+            1. $x_1 + 2x_2 - x_3 = 0$:
+            $$c_1 + 2(-c_1 + c_2) - (c_1 + 2c_2) = c_1 - 2c_1 + 2c_2 - c_1 - 2c_2 = -2c_1 = 0 \implies c_1 = 0$$
+            2. $x_2 + x_4 = 0$:
+            $$(-c_1 + c_2) + (c_1 - c_2) = 0 \quad (\text{satisfied for all } c_2)$$
+            Setting $c_1 = 0$ leaves:
+            $$x = c_2(0, 1, 2, -1)$$
+            <strong>Basis for $W_1 \cap W_2$:</strong> $B_\cap = \{(0, 1, 2, -1)\} \implies \dim(W_1 \cap W_2) = 1$.</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 4: Basis and Dimension of Sum $W_1 + W_2$</div>
+            <p>The sum $W_1 + W_2$ is spanned by $B_1 \cup B_2$:
+            $$\{(1, 0, 1, 0), (0, 1, 2, -1), (1, -1, 1, 1), (0, 1, 2, -1)\}$$
+            Form the matrix with these vectors as rows and reduce to row echelon form:
+            $$A = \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 2 & -1 \\ 1 & -1 & 1 & 1 \end{bmatrix}$$
+            $R_3 \to R_3 - R_1$:
+            $$\begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 2 & -1 \\ 0 & -1 & 0 & 1 \end{bmatrix}$$
+            $R_3 \to R_3 + R_2$:
+            $$\begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 2 & -1 \\ 0 & 0 & 2 & 0 \end{bmatrix}$$
+            There are 3 non-zero rows in echelon form, so $\text{rank}(A) = 3$.<br>
+            <strong>Basis for $W_1 + W_2$:</strong> $\{(1, 0, 1, 0), (0, 1, 2, -1), (0, 0, 2, 0)\} \implies \dim(W_1 + W_2) = 3$.</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 5: Dimension Theorem Verification &amp; Direct Sum Evaluation</div>
+            <p>1. <strong>Verification of Grassmann's Dimension Formula:</strong>
+            $$\dim(W_1 + W_2) = \dim(W_1) + \dim(W_2) - \dim(W_1 \cap W_2)$$
+            $$\text{LHS} = 3, \quad \text{RHS} = 2 + 2 - 1 = 3 \quad (\text{Verified!})$$
+            2. <strong>Direct Sum Evaluation:</strong><br>
+            A vector space $V$ is a direct sum $W_1 \oplus W_2$ iff $W_1 + W_2 = V$ and $W_1 \cap W_2 = \{\mathbf{0}\}$.<br>
+            Here:
+            • $W_1 \cap W_2 = \text{span}\{(0, 1, 2, -1)\} \neq \{\mathbf{0}\}$ ($\dim(W_1 \cap W_2) = 1 \neq 0$).<br>
+            • $\dim(W_1 + W_2) = 3 \neq \dim(\mathbb{R}^4) = 4$, so $W_1 + W_2 \neq \mathbb{R}^4$.<br>
+            <strong>Conclusion:</strong> $\mathbb{R}^4$ is <strong>NOT</strong> the direct sum $W_1 \oplus W_2$.</p>
+          </div>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Parametric Basis for Null Space</span>
+                <div class="explain-line-title">Free variables determine basis vectors for $W_1$</div>
+                <div class="explain-line-desc">Expressing dependent variables $x_3, x_4$ in terms of free variables $x_1, x_2$ systematically produces the independent spanning set $B_1$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Intersection via Parametric Substitution</span>
+                <div class="explain-line-title">Substitute $W_2$ linear combination into $W_1$ constraints</div>
+                <div class="explain-line-desc">This avoids solving a large $4 \times 4$ system, reducing the intersection directly to $c_1=0$, instantly identifying the shared direction $(0, 1, 2, -1)$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Strict Direct Sum Criteria</span>
+                <div class="explain-line-title">Both $W_1 \cap W_2 = \{0\}$ and $\dim(W_1+W_2)=\dim(V)$ fail</div>
+                <div class="explain-line-desc">Students often stop after checking dimension. Citing both the non-trivial intersection and the dimension deficiency ensures full marks from external examiners.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">4 marks for $W_1$ basis &amp; dimension, 3 marks for $W_2$ basis &amp; dimension, 4 marks for $W_1 \cap W_2$, 3 marks for $W_1+W_2$ &amp; Grassmann verification, 2 marks for direct sum conclusion.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
 `
 };

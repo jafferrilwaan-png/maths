@@ -955,6 +955,320 @@ window.UNIT2_DATA = {
           </div>
         </div>
       </div>
+
+<!-- Predicted Q17 -->
+      <div class="question-card" data-category="theorems">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q17</span>
+        </div>
+        <div class="q-heading">State the Rank-Nullity Theorem (Dimension Theorem) for linear transformations. State its corollary when $\dim(V) = \dim(W)$.</div>
+        <div class="solution-content">
+          <p><strong>Rank-Nullity Theorem:</strong> Let $V$ and $W$ be vector spaces over a field $F$, where $V$ is finite-dimensional. If $T: V \to W$ is a linear transformation, then:
+          $$\text{nullity}(T) + \text{rank}(T) = \dim(V)$$
+          $$\dim(N(T)) + \dim(R(T)) = \dim(V)$$
+          <strong>Corollary:</strong> If $\dim(V) = \dim(W)$, then $T$ is one-to-one $\iff$ $T$ is onto $\iff$ $T$ is an isomorphism ($\text{rank}(T) = \dim(V)$).</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Domain Dimension Conservation</span>
+                <div class="explain-line-title">Degrees of freedom in $V$ divide between collapsed and preserved</div>
+                <div class="explain-line-desc">Nullity counts vectors collapsed to zero; rank counts vectors preserved in the output image space. Their sum always equals the domain dimension.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Finite Equal Dimensions Corollary</span>
+                <div class="explain-line-title">Injective implies surjective when $\dim(V) = \dim(W)$</div>
+                <div class="explain-line-desc">If $\text{nullity}(T) = 0$, then $\text{rank}(T) = \dim(V) = \dim(W)$, which automatically forces $R(T) = W$, making $T$ onto.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for the exact Rank-Nullity formula $\text{nullity}(T) + \text{rank}(T) = \dim(V)$, 1 mark for the equal dimension corollary.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted Q18 -->
+      <div class="question-card" data-category="linear_trans">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q18</span>
+        </div>
+        <div class="q-heading">If $T: V \to W$ is a linear transformation and $\dim(V) > \dim(W)$, can $T$ be one-to-one? Justify your answer using the Dimension Theorem.</div>
+        <div class="solution-content">
+          <p><strong>Answer:</strong> <strong>No</strong>, $T$ cannot be one-to-one.<br>
+          <strong>Justification:</strong> By the Dimension Theorem:
+          $$\text{nullity}(T) = \dim(V) - \text{rank}(T)$$
+          Since the range space $R(T)$ is a subspace of $W$, we must have $\text{rank}(T) \le \dim(W)$.<br>
+          Therefore:
+          $$\text{nullity}(T) \ge \dim(V) - \dim(W)$$
+          Since $\dim(V) > \dim(W)$, we have $\dim(V) - \dim(W) > 0$, which implies:
+          $$\text{nullity}(T) \ge 1 > 0 \implies N(T) \neq \{\mathbf{0}\}$$
+          Since $N(T)$ contains non-zero vectors, $T$ cannot be one-to-one.</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Range Subspace Bound</span>
+                <div class="explain-line-title">$\text{rank}(T) \le \dim(W)$</div>
+                <div class="explain-line-desc">The dimension of the image cannot exceed the dimension of the target codomain.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Pigeonhole Principle for Vector Spaces</span>
+                <div class="explain-line-title">Compressing a larger space into a smaller space forces non-trivial kernel</div>
+                <div class="explain-line-desc">At least $\dim(V) - \dim(W)$ dimensions must collapse into the zero vector.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for stating 'No', 1 mark for the mathematical justification $\text{nullity}(T) \ge \dim(V) - \dim(W) > 0$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted Q19 -->
+      <div class="question-card" data-category="diagonalization">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q19</span>
+        </div>
+        <div class="q-heading">The eigenvalues of a $3 \times 3$ matrix $A$ are $1, 2, -3$. Find the eigenvalues of $A^{-1}$, $A^3$, and $2A + 3I$.</div>
+        <div class="solution-content">
+          <p>By the spectral mapping properties of eigenvalues for any eigenvalue $\lambda$ of matrix $A$:<br>
+          1. <strong>Eigenvalues of $A^{-1}$</strong> are $\frac{1}{\lambda}$:<br>
+          $$\frac{1}{1} = 1, \quad \frac{1}{2}, \quad \frac{1}{-3} = -\frac{1}{3}$$
+          2. <strong>Eigenvalues of $A^3$</strong> are $\lambda^3$:<br>
+          $$1^3 = 1, \quad 2^3 = 8, \quad (-3)^3 = -27$$
+          3. <strong>Eigenvalues of $2A + 3I$</strong> are $2\lambda + 3$:<br>
+          $$2(1) + 3 = 5, \quad 2(2) + 3 = 7, \quad 2(-3) + 3 = -3$$</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Invariant Eigenvector Property</span>
+                <div class="explain-line-title">$AX = \lambda X \implies A^k X = \lambda^k X$</div>
+                <div class="explain-line-desc">Applying matrix powers or polynomials leaves the eigenvector unchanged while transforming the scalar eigenvalue identically.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Inverse Multiplicative Rule</span>
+                <div class="explain-line-title">$A X = \lambda X \implies A^{-1} X = \frac{1}{\lambda} X$</div>
+                <div class="explain-line-desc">Because all eigenvalues are non-zero ($1, 2, -3 \neq 0$), $\det(A) = -6 \neq 0$, guaranteeing $A^{-1}$ exists.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for $A^{-1}$ values $\{1, 1/2, -1/3\}$, 1 mark for $A^3$ and polynomial values.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted Q20 -->
+      <div class="question-card" data-category="diagonalization">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q20</span>
+        </div>
+        <div class="q-heading">State the necessary and sufficient condition for a square matrix $A$ of order $n$ to be diagonalizable in terms of its algebraic and geometric multiplicities.</div>
+        <div class="solution-content">
+          <p>A square matrix $A \in M_{n \times n}(F)$ is <strong>diagonalizable</strong> if and only if:<br>
+          1. The characteristic polynomial of $A$ <strong>splits completely</strong> into linear factors over field $F$:
+          $$p(\lambda) = (-1)^n (\lambda - \lambda_1)^{d_1} (\lambda - \lambda_2)^{d_2} \dots (\lambda - \lambda_k)^{d_k} \quad \text{where } \sum_{i=1}^k d_i = n$$
+          2. For each distinct eigenvalue $\lambda_i$, its <strong>Geometric Multiplicity equals its Algebraic Multiplicity</strong>:
+          $$\text{GM}(\lambda_i) = \text{nullity}(A - \lambda_i I) = n - \text{rank}(A - \lambda_i I) = d_i = \text{AM}(\lambda_i)$$
+          Equivalently, $A$ possesses $n$ linearly independent eigenvectors that form a basis for $F^n$.</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Splitting Criterion</span>
+                <div class="explain-line-title">All $n$ roots must lie in the working scalar field $F$</div>
+                <div class="explain-line-desc">If a real matrix has complex eigenvalues with non-zero imaginary parts, it cannot be diagonalized over $\mathbb{R}$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Zero Eigenspace Defect</span>
+                <div class="explain-line-title">$\text{Defect}(\lambda_i) = \text{AM}(\lambda_i) - \text{GM}(\lambda_i) = 0$</div>
+                <div class="explain-line-desc">A matrix fails to diagonalize only when the eigenspace is deficient ($\text{GM} < \text{AM}$). When defect is zero for all eigenvalues, a full modal matrix $P$ exists.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for stating characteristic polynomial splits, 1 mark for equating geometric multiplicity to algebraic multiplicity ($\text{GM} = \text{AM}$) for each eigenvalue.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
 `,
   partB: String.raw`<div class="section-badge">Part B: Compulsory 16-Mark University Questions (Unit II)</div>
 
@@ -2176,6 +2490,138 @@ window.UNIT2_DATA = {
                 <div class="inline-ai-input-group">
                   <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Predicted Part B Q14 -->
+      <div class="question-card" data-category="matrix_rep">
+        <div class="card-top">
+          <span class="q-pill extra">Part B • Predicted Q14 (16 Marks)</span>
+        </div>
+        <div class="q-heading">
+          Let $T: \mathbb{R}^2 \to \mathbb{R}^2$ be the linear transformation defined by $T(x, y) = (2x - y, \; x + 3y)$.<br>
+          Let $B = \{u_1 = (1, 1), u_2 = (-1, 1)\}$ and $B' = \{v_1 = (2, 1), v_2 = (1, 0)\}$ be two ordered bases of $\mathbb{R}^2$.<br>
+          (a) Find the matrix $[T]_B$ representing $T$ with respect to basis $B$.<br>
+          (b) Find the change of basis transition matrix $P$ from basis $B'$ to basis $B$.<br>
+          (c) Find the matrix $[T]_{B'}$ representing $T$ with respect to basis $B'$.<br>
+          (d) Verify the similarity transformation relation: $[T]_{B'} = P^{-1} [T]_B P$.
+        </div>
+        <div class="solution-content">
+          <p><strong>Aim:</strong> Construct representation matrices $[T]_B$ and $[T]_{B'}$, determine the transition change-of-basis matrix $P$, compute $P^{-1}$, and verify the similarity relation $[T]_{B'} = P^{-1} [T]_B P$.</p>
+
+          <div class="partb-step">
+            <div class="step-title">Step 1: Compute Matrix $[T]_B$ with Respect to Basis $B$</div>
+            <p>1. Compute images of $B = \{u_1=(1,1), u_2=(-1,1)\}$ under $T$:<br>
+            • $T(u_1) = T(1, 1) = (2(1) - 1, \; 1 + 3(1)) = (1, 4)$.<br>
+            • $T(u_2) = T(-1, 1) = (2(-1) - 1, \; -1 + 3(1)) = (-3, 2)$.<br>
+            2. Express $(a, b)$ in coordinates of $B = \{u_1, u_2\}$:
+            $$c_1(1, 1) + c_2(-1, 1) = (a, b) \implies \begin{cases} c_1 - c_2 = a \\ c_1 + c_2 = b \end{cases} \implies c_1 = \frac{a+b}{2}, \quad c_2 = \frac{b-a}{2}$$
+            • For $T(u_1) = (1, 4)$: $c_1 = \frac{1+4}{2} = \frac{5}{2}, \quad c_2 = \frac{4-1}{2} = \frac{3}{2}$.<br>
+            • For $T(u_2) = (-3, 2)$: $c_1 = \frac{-3+2}{2} = -\frac{1}{2}, \quad c_2 = \frac{2 - (-3)}{2} = \frac{5}{2}$.<br>
+            Writing coordinate columns:
+            $$[T]_B = \begin{bmatrix} 5/2 & -1/2 \\ 3/2 & 5/2 \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 5 & -1 \\ 3 & 5 \end{bmatrix}$$</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 2: Transition Matrix $P$ from $B'$ to $B$</div>
+            <p>The transition matrix $P$ expresses vectors of $B' = \{v_1=(2,1), v_2=(1,0)\}$ in terms of basis $B$:<br>
+            • For $v_1 = (2, 1)$: $c_1 = \frac{2+1}{2} = \frac{3}{2}, \quad c_2 = \frac{1-2}{2} = -\frac{1}{2}$.<br>
+            • For $v_2 = (1, 0)$: $c_1 = \frac{1+0}{2} = \frac{1}{2}, \quad c_2 = \frac{0-1}{2} = -\frac{1}{2}$.<br>
+            $$P = \begin{bmatrix} 3/2 & 1/2 \\ -1/2 & -1/2 \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 3 & 1 \\ -1 & -1 \end{bmatrix}$$
+            $\det(P) = \left(\frac{3}{2}\right)\left(-\frac{1}{2}\right) - \left(\frac{1}{2}\right)\left(-\frac{1}{2}\right) = -\frac{3}{4} + \frac{1}{4} = -\frac{2}{4} = -\frac{1}{2} \neq 0$.<br>
+            Compute $P^{-1}$:
+            $$P^{-1} = \frac{1}{-1/2} \begin{bmatrix} -1/2 & -1/2 \\ 1/2 & 3/2 \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ -1 & -3 \end{bmatrix}$$</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 3: Direct Computation of Matrix $[T]_{B'}$</div>
+            <p>1. Images of $B' = \{v_1=(2,1), v_2=(1,0)\}$:<br>
+            • $T(v_1) = T(2, 1) = (2(2) - 1, \; 2 + 3(1)) = (3, 5)$.<br>
+            • $T(v_2) = T(1, 0) = (2(1) - 0, \; 1 + 0) = (2, 1)$.<br>
+            2. Express $(a, b)$ in coordinates of $B' = \{v_1=(2,1), v_2=(1,0)\}$:
+            $$d_1(2, 1) + d_2(1, 0) = (a, b) \implies \begin{cases} 2d_1 + d_2 = a \\ d_1 = b \end{cases} \implies d_1 = b, \quad d_2 = a - 2b$$
+            • For $T(v_1) = (3, 5)$: $d_1 = 5, \quad d_2 = 3 - 2(5) = -7$.<br>
+            • For $T(v_2) = (2, 1)$: $d_1 = 1, \quad d_2 = 2 - 2(1) = 0$.<br>
+            Writing coordinate columns:
+            $$[T]_{B'} = \begin{bmatrix} 5 & 1 \\ -7 & 0 \end{bmatrix}$$</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 4: Verification of Similarity Relation $[T]_{B'} = P^{-1} [T]_B P$</div>
+            <p>1. Compute $[T]_B P$:
+            $$[T]_B P = \left(\frac{1}{2} \begin{bmatrix} 5 & -1 \\ 3 & 5 \end{bmatrix}\right) \left(\frac{1}{2} \begin{bmatrix} 3 & 1 \\ -1 & -1 \end{bmatrix}\right) = \frac{1}{4} \begin{bmatrix} 15 + 1 & 5 + 1 \\ 9 - 5 & 3 - 5 \end{bmatrix} = \frac{1}{4} \begin{bmatrix} 16 & 6 \\ 4 & -2 \end{bmatrix} = \begin{bmatrix} 4 & 3/2 \\ 1 & -1/2 \end{bmatrix}$$
+            2. Compute $P^{-1} ([T]_B P)$:
+            $$P^{-1} ([T]_B P) = \begin{bmatrix} 1 & 1 \\ -1 & -3 \end{bmatrix} \begin{bmatrix} 4 & 3/2 \\ 1 & -1/2 \end{bmatrix} = \begin{bmatrix} 1(4) + 1(1) & 1(3/2) + 1(-1/2) \\ -1(4) - 3(1) & -1(3/2) - 3(-1/2) \end{bmatrix}$$
+            $$= \begin{bmatrix} 5 & 1 \\ -7 & -3/2 + 3/2 \end{bmatrix} = \begin{bmatrix} 5 & 1 \\ -7 & 0 \end{bmatrix} = [T]_{B'}$$
+            The similarity relationship $[T]_{B'} = P^{-1} [T]_B P$ is verified!</p>
+          </div>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Ordered Basis Coordinate Resolution</span>
+                <div class="explain-line-title">Systematic inversion formula for $(a,b)$</div>
+                <div class="explain-line-desc">Pre-computing coordinates $c_1=\frac{a+b}{2}, c_2=\frac{b-a}{2}$ simplifies finding columns of $[T]_B$ and transition matrix $P$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Transition Matrix Direction Convention</span>
+                <div class="explain-line-title">$P$ takes coordinates $[x]_{B'}$ to $[x]_B$</div>
+                <div class="explain-line-desc">By definition, the $j$-th column of the change-of-basis matrix from $B'$ to $B$ is the coordinate vector of the $j$-th vector of $B'$ relative to basis $B$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Similarity Invariance</span>
+                <div class="explain-line-title">$\text{tr}([T]_B) = \text{tr}([T]_{B'}) = 5$ and $\det([T]_B) = \det([T]_{B'}) = 7$</div>
+                <div class="explain-line-desc">Notice that both representation matrices have identical trace $5/2+5/2=5$ and $5+0=5$, and determinant $25/4 - (-3/4) = 7$ and $5(0)-(-7)(1)=7$, verifying matrix similarity.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">4 marks for $[T]_B$, 4 marks for transition matrix $P$ and $P^{-1}$, 4 marks for direct $[T]_{B'}$, 4 marks for matrix multiplication verification $[T]_{B'} = P^{-1}[T]_BP$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
                 </div>
               </div>
 

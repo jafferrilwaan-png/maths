@@ -1,6 +1,6 @@
 // LANA Production AI Math Tutor
 // Zero-404 Cross-Cascade Architecture (Google Gemini + OpenRouter Free)
-// Full Markdown Table & LaTeX Parser with Animated Pulsing Analyzing Dots
+// Full Markdown Table & LaTeX Parser with Auto-Repaired Delimiters & Extended Output Tokens
 
 window.AITutor = (function() {
   const DEFAULT_GEMINI_KEY = atob("QVEuQWI4Uk42SmxpXzlJZWNxV01TaXVtRFMzb3RQNzZOTl9GbVNKMGR6dUphdXRJNHhSdlE=");
@@ -90,11 +90,13 @@ window.AITutor = (function() {
   };
 
   const SYSTEM_PROMPT = `You are an expert mathematics professor for course 23MA1302 - Linear Algebra and Numerical Analysis.
-Provide the direct, real answer immediately.
+Provide complete, rigorous, and fully worked-out step-by-step mathematical explanations.
+NEVER truncate calculations or leave equations incomplete. Always finish the final numerical values and conclusions.
+Break long equations across multiple lines using separate $$...$$ blocks or \\begin{aligned} ... \\end{aligned} so they fit comfortably on mobile screens without horizontal clipping.
 Do NOT output internal reasoning, do NOT write "thinking process" logs, and do NOT use emojis.
-Use Markdown tables (| Col 1 | Col 2 |) when presenting properties, comparisons, or step summaries.
-Format all mathematical symbols and equations using LaTeX ($...$ inline, $$...$$ display equations).
-Explain mathematical steps with rigor and highlight university exam mark allocation.`;
+Use Markdown tables (| Col 1 | Col 2 |) when presenting data points, normal equations, or property comparisons.
+Format all mathematical expressions in clean LaTeX ($...$ inline, $$...$$ display).
+Highlight essential university exam formulas, steps, and mark allocation tips.`;
 
   function syncDropdowns() {
     if (selectedModel.includes('/') || selectedModel.endsWith(':free')) {
@@ -151,11 +153,6 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
     const section = btnElem.closest('.inline-ai-section');
     if (!section) return;
 
-    const modelSel = section.querySelector('.inline-ai-model-select, .inline-ai-model');
-    if (modelSel && modelSel.value) {
-      selectedModel = modelSel.value;
-    }
-
     const input = section.querySelector('.inline-ai-input');
     const query = input.value.trim();
     if (!query) return;
@@ -175,7 +172,6 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
     const loadingMsg = document.createElement('div');
     loadingMsg.className = 'inline-ai-msg inline-ai-msg-bot';
     loadingMsg.id = loadingId;
-    // Elegant pulsing 3 dots indicator
     loadingMsg.innerHTML = `<div class="inline-ai-bubble ai-analyzing-bubble">Analyzing<span class="ai-typing-dots"><span>.</span><span>.</span><span>.</span></span></div>`;
     history.appendChild(loadingMsg);
     history.scrollTop = history.scrollHeight;
@@ -235,7 +231,7 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
       try {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${key}`;
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 7000);
+        const timeoutId = setTimeout(() => controller.abort(), 12000);
 
         const res = await fetch(url, {
           method: 'POST',
@@ -243,7 +239,7 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
           body: JSON.stringify({
             contents: [{ role: 'user', parts: [{ text: `${SYSTEM_PROMPT}\n\n${userQuery}` }] }],
             generationConfig: {
-              maxOutputTokens: 420,
+              maxOutputTokens: 1800,
               temperature: 0.2
             }
           }),
@@ -257,6 +253,9 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
           if (rawText) {
             return cleanAIOutput(rawText);
           }
+        }
+        if (res.status === 429) {
+          throw new Error('Rate limit (429) - auto-switching to Google Gemini');
         }
         lastError = new Error(`HTTP ${res.status}`);
       } catch (e) {
@@ -277,7 +276,7 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
     for (const m of modelsToTry) {
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 7000);
+        const timeoutId = setTimeout(() => controller.abort(), 12000);
 
         const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
           method: 'POST',
@@ -289,7 +288,7 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
           },
           body: JSON.stringify({
             model: m,
-            max_tokens: 420,
+            max_tokens: 1800,
             temperature: 0.2,
             messages: [
               { role: 'system', content: SYSTEM_PROMPT },
@@ -311,6 +310,9 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
             return cleanAIOutput(rawText);
           }
         }
+        if (res.status === 429) {
+          throw new Error('Rate limit (429) - auto-switching to Google Gemini');
+        }
         lastError = new Error(`HTTP ${res.status}`);
       } catch (e) {
         lastError = e;
@@ -323,10 +325,8 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
     if (!text) return "";
     let cleaned = text;
 
-    // Strip internal thinking tags <think>...</think>
     cleaned = cleaned.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
 
-    // Strip "Here's a thinking process: ..."
     if (cleaned.startsWith("Here's a thinking process:")) {
       const doubleBreak = cleaned.indexOf("\n\n");
       if (doubleBreak !== -1) {
@@ -337,13 +337,50 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
     return cleaned || text;
   }
 
+  // Auto-repairs cut-off LaTeX equations (e.g. unclosed \begin{pmatrix} or unclosed $)
+  function repairUnclosedMath(text) {
+    if (!text) return "";
+    let repaired = text;
+
+    // Check environment tags (\begin{pmatrix}, \begin{matrix}, \begin{aligned})
+    const beginMatches = repaired.match(/\\begin\{([a-zA-Z0-9*]+)\}/g) || [];
+    const endMatches = repaired.match(/\\end\{([a-zA-Z0-9*]+)\}/g) || [];
+
+    if (beginMatches.length > endMatches.length) {
+      const diff = beginMatches.length - endMatches.length;
+      for (let i = 0; i < diff; i++) {
+        const lastBegin = beginMatches[beginMatches.length - 1 - i];
+        const envName = lastBegin.replace(/\\begin\{|\}/g, '');
+        repaired += `\\end{${envName}}`;
+      }
+    }
+
+    // Check display math $$
+    const doubleDollarCount = (repaired.match(/\$\$/g) || []).length;
+    if (doubleDollarCount % 2 !== 0) {
+      repaired += '$$';
+    }
+
+    // Check inline math $
+    const withoutDouble = repaired.replace(/\$\$/g, '');
+    const singleDollarCount = (withoutDouble.match(/(?<!\\)\$/g) || []).length;
+    if (singleDollarCount % 2 !== 0) {
+      repaired += '$';
+    }
+
+    return repaired;
+  }
+
   // Full Rich Markdown, Table, and Prose Formatter (preserves LaTeX $...$ and $$...$$)
   function formatResponse(text) {
     if (!text) return "";
 
+    // 0. Repair any unclosed mathematical environments first
+    let processed = repairUnclosedMath(text);
+
     // 1. Stash Math blocks ($$...$$ and $...$) so regex doesn't interfere
     const mathBlocks = [];
-    let processed = text.replace(/\$\$[\s\S]*?\$\$/g, (match) => {
+    processed = processed.replace(/\$\$[\s\S]*?\$\$/g, (match) => {
       mathBlocks.push(match);
       return `%%%MATHBLOCK_${mathBlocks.length - 1}%%%`;
     });
@@ -363,7 +400,6 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
       let html = '<div class="ai-table-wrap"><table class="ai-table">';
       let isHeader = true;
       for (const row of tableRows) {
-        // Separator row (| --- | --- |)
         if (/^\s*\|?(\s*:?-+:?\s*\|)+\s*:?-+:?\s*\|?\s*$/.test(row)) {
           isHeader = false;
           continue;
@@ -451,7 +487,6 @@ Explain mathematical steps with rigor and highlight university exam mark allocat
   };
 })();
 
-
 // Global wrappers for onclick/onkeypress events in HTML cards
 window.sendInlineQuery = function(elem) {
   if (window.AITutor && window.AITutor.askInline) {
@@ -459,3 +494,4 @@ window.sendInlineQuery = function(elem) {
   }
 };
 window.askInlineAI = window.sendInlineQuery;
+

@@ -120,8 +120,7 @@ window.UNIT3_DATA = {
               <div class="explain-line">
                 <span class="explain-line-badge">Exam Tip</span>
                 <div class="explain-line-title">Scoring Rubric (2 Marks)</div>
-                <div class="explain-line-desc">1 mark for defining orthogonal ($\langle u, v 
-angle = 0$), 1 mark for orthonormal ($\|u\|=1, \|v\|=1$).</div>
+                <div class="explain-line-desc">1 mark for defining orthogonal ($\langle u, v \rangle = 0$), 1 mark for orthonormal ($\|u\|=1, \|v\|=1$).</div>
               </div>
 <div class="inline-ai-section">
                 <div class="inline-ai-header">
@@ -882,6 +881,320 @@ angle = 0$), 1 mark for orthonormal ($\|u\|=1, \|v\|=1$).</div>
         </div>
       </div>
     </div>
+
+<!-- Predicted Q13 -->
+      <div class="question-card" data-category="orthogonality">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q13</span>
+        </div>
+        <div class="q-heading">Define the orthogonal complement $W^\perp$ of a subspace $W$ in an inner product space $V$. State the relationship between $\dim(W)$, $\dim(W^\perp)$, and $\dim(V)$ when $V$ is finite-dimensional.</div>
+        <div class="solution-content">
+          <p><strong>Definition:</strong> Let $W$ be a subspace of an inner product space $V$. The <strong>orthogonal complement</strong> of $W$, denoted by $W^\perp$, is the set of all vectors in $V$ that are orthogonal to every vector in $W$:
+          $$W^\perp = \{v \in V : \langle v, w \rangle = 0 \text{ for all } w \in W\}$$
+          <strong>Properties &amp; Dimension Relationship:</strong><br>
+          1. $W^\perp$ is always a subspace of $V$, and $W \cap W^\perp = \{\mathbf{0}\}$.<br>
+          2. If $V$ is finite-dimensional, $V$ is the direct sum: $V = W \oplus W^\perp$, which gives:
+          $$\dim(W) + \dim(W^\perp) = \dim(V) \iff \dim(W^\perp) = \dim(V) - \dim(W)$$
+          3. $(W^\perp)^\perp = W$.</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Set Notation Definition</span>
+                <div class="explain-line-title">Universal quantifier $\forall w \in W$</div>
+                <div class="explain-line-desc">A vector belongs to $W^\perp$ only if it is perpendicular to the entire subspace $W$, which is equivalent to being perpendicular to every basis vector of $W$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Orthogonal Decomposition</span>
+                <div class="explain-line-title">$V = W \oplus W^\perp$</div>
+                <div class="explain-line-desc">Every vector in $V$ uniquely splits as $v = w + w^\perp$ with $w \in W$ and $w^\perp \in W^\perp$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for defining set $W^\perp = \{v : \langle v, w \rangle = 0\}$, 1 mark for dimension formula $\dim(W) + \dim(W^\perp) = \dim(V)$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted Q14 -->
+      <div class="question-card" data-category="orthogonality">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q14</span>
+        </div>
+        <div class="q-heading">State Bessel's Inequality and Parseval's Identity for an orthonormal set in an inner product space $V$.</div>
+        <div class="solution-content">
+          <p>Let $\{e_1, e_2, \dots, e_k\}$ be an orthonormal set in an inner product space $V$, and let $x \in V$.<br>
+          1. <strong>Bessel's Inequality:</strong>
+          $$\sum_{i=1}^k |\langle x, e_i \rangle|^2 \le \|x\|^2$$
+          The sum of squares of the Fourier coefficients never exceeds the total squared norm of the vector.<br>
+          2. <strong>Parseval's Identity:</strong> If $\{e_1, e_2, \dots, e_n\}$ is a complete orthonormal <em>basis</em> of $V$, equality holds identically:
+          $$\sum_{i=1}^n |\langle x, e_i \rangle|^2 = \|x\|^2$$</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Generalized Pythagorean Theorem</span>
+                <div class="explain-line-title">$\|x\|^2 = \|\sum \langle x, e_i \rangle e_i\|^2 + \|x - \sum \langle x, e_i \rangle e_i\|^2$</div>
+                <div class="explain-line-desc">Because the orthogonal component norm is non-negative ($\|x^\perp\|^2 \ge 0$), dropping it gives Bessel's inequality $\sum |\langle x, e_i \rangle|^2 \le \|x\|^2$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Completeness &amp; Parseval</span>
+                <div class="explain-line-title">Zero residual error when spanning the full space</div>
+                <div class="explain-line-desc">When $\{e_i\}$ spans the entire space, the orthogonal residual is zero ($x^\perp = \mathbf{0}$), yielding exact equality in Parseval's formula.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for Bessel's inequality statement and formula, 1 mark for Parseval's identity equality with basis condition.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted Q15 -->
+      <div class="question-card" data-category="orthogonality">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q15</span>
+        </div>
+        <div class="q-heading">In $\mathbb{R}^3$ with the standard Euclidean inner product, find a unit vector orthogonal to both $u = (1, 1, 0)$ and $v = (0, 1, 1)$.</div>
+        <div class="solution-content">
+          <p>Compute the vector cross product $w = u \times v$:
+          $$w = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 1 & 0 \\ 0 & 1 & 1 \end{vmatrix} = \mathbf{i}(1 - 0) - \mathbf{j}(1 - 0) + \mathbf{k}(1 - 0) = (1, -1, 1)$$
+          Check orthogonality:<br>
+          • $\langle u, w \rangle = 1(1) + 1(-1) + 0(1) = 0$.<br>
+          • $\langle v, w \rangle = 0(1) + 1(-1) + 1(1) = 0$.<br>
+          Norm of $w$: $\|w\| = \sqrt{1^2 + (-1)^2 + 1^2} = \sqrt{3}$.<br>
+          <strong>Unit Orthogonal Vector:</strong>
+          $$\hat{w} = \frac{w}{\|w\|} = \frac{1}{\sqrt{3}}(1, -1, 1) = \left(\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$$</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Cross Product Orthogonality</span>
+                <div class="explain-line-title">$u \times v$ is orthogonal to both $u$ and $v$ in $\mathbb{R}^3$</div>
+                <div class="explain-line-desc">Evaluating the $3 \times 3$ determinant $(1, -1, 1)$ directly constructs an orthogonal vector without solving simultaneous linear equations.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Normalization to Unit Length</span>
+                <div class="explain-line-title">$\hat{w} = \frac{w}{\|w\|}$</div>
+                <div class="explain-line-desc">Dividing by length $\sqrt{3}$ ensures the final vector has unit norm $\|\hat{w}\| = 1$. Both $\pm \hat{w}$ are valid unit vectors.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for orthogonal vector $(1, -1, 1)$, 1 mark for normalizing to unit length $\frac{1}{\sqrt{3}}(1, -1, 1)$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted Q16 -->
+      <div class="question-card" data-category="innerproduct">
+        <div class="card-top">
+          <span class="q-pill extra">Predicted • Q16</span>
+        </div>
+        <div class="q-heading">State the Parallelogram Law in an inner product space $V$. What is its geometric significance regarding norms?</div>
+        <div class="solution-content">
+          <p><strong>Parallelogram Law:</strong> For all vectors $u, v \in V$:
+          $$\|u + v\|^2 + \|u - v\|^2 = 2\|u\|^2 + 2\|v\|^2$$
+          <strong>Geometric Significance:</strong><br>
+          1. <strong>Euclidean Geometry:</strong> In any parallelogram, the sum of the squares of the lengths of the two diagonals ($u+v$ and $u-v$) equals the sum of the squares of the lengths of all four sides ($2\|u\|^2 + 2\|v\|^2$).<br>
+          2. <strong>Jordan-von Neumann Theorem:</strong> A normed linear space $(V, \|\cdot\|)$ is derived from an inner product ($\|x\| = \sqrt{\langle x, x \rangle}$) if and only if the norm satisfies the Parallelogram Law.</p>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Inner Product Expansion Proof</span>
+                <div class="explain-line-title">$\|u+v\|^2 = \|u\|^2 + 2\text{Re}\langle u, v \rangle + \|v\|^2$</div>
+                <div class="explain-line-desc">Adding $\|u-v\|^2 = \|u\|^2 - 2\text{Re}\langle u, v \rangle + \|v\|^2$ cancels the inner product cross-terms, yielding $2\|u\|^2 + 2\|v\|^2$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Test for Inner Product Norms</span>
+                <div class="explain-line-title">Distinguishes Hilbert spaces from general Banach spaces</div>
+                <div class="explain-line-desc">Norms like the $\ell_1$ norm ($\|x\|_1 = |x_1| + |x_2|$) fail the parallelogram law, proving they cannot be generated by any inner product.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">1 mark for the exact statement $\|u+v\|^2 + \|u-v\|^2 = 2\|u\|^2 + 2\|v\|^2$, 1 mark for geometric significance (sum of squares of diagonals = sum of squares of sides).</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
 `,
   
   partB: String.raw`
@@ -2047,5 +2360,138 @@ angle = 0$), 1 mark for orthonormal ($\|u\|=1, \|v\|=1$).</div>
           </div>
         </div>
       </div>
+
+<!-- Predicted Part B Q13 -->
+      <div class="question-card" data-category="gram_schmidt">
+        <div class="card-top">
+          <span class="q-pill extra">Part B • Predicted Q13 (16 Marks)</span>
+        </div>
+        <div class="q-heading">
+          In the inner product space $P_2[0, 1]$ with inner product defined by $\langle f, g \rangle = \int_0^1 f(t)g(t)dt$:<br>
+          (a) Apply the Gram-Schmidt process to the standard basis $\{1, t, t^2\}$ to obtain an orthonormal basis $\{q_0(t), q_1(t), q_2(t)\}$.<br>
+          (b) Find the best first-degree polynomial approximation $p_1(t) = at + b$ to the function $f(t) = e^t$ on $[0, 1]$.<br>
+          (c) Compute the mean square approximation error $\|e^t - p_1(t)\|$.
+        </div>
+        <div class="solution-content">
+          <p><strong>Aim:</strong> Construct an orthonormal polynomial basis on $[0, 1]$, determine the best linear approximation of $e^t$ using orthogonal projection, and evaluate the residual approximation error.</p>
+
+          <div class="partb-step">
+            <div class="step-title">Step 1: Gram-Schmidt Orthonormal Basis on $[0, 1]$</div>
+            <p>Let $v_0 = 1, \; v_1 = t, \; v_2 = t^2$.<br>
+            • <strong>First basis vector:</strong>
+            $$u_0 = v_0 = 1, \quad \|u_0\|^2 = \int_0^1 1^2 dt = 1 \implies q_0(t) = 1$$
+            • <strong>Second basis vector:</strong>
+            $$\langle v_1, q_0 \rangle = \int_0^1 t \cdot 1 \, dt = \left[\frac{t^2}{2}\right]_0^1 = \frac{1}{2}$$
+            $$u_1 = v_1 - \langle v_1, q_0 \rangle q_0 = t - \frac{1}{2}$$
+            $$\|u_1\|^2 = \int_0^1 \left(t - \frac{1}{2}\right)^2 dt = \left[\frac{(t - 1/2)^3}{3}\right]_0^1 = \frac{1/8 - (-1/8)}{3} = \frac{1/4}{3} = \frac{1}{12}$$
+            $$q_1(t) = \frac{u_1}{\|u_1\|} = \sqrt{12}\left(t - \frac{1}{2}\right) = 2\sqrt{3}\left(t - \frac{1}{2}\right) = \sqrt{3}(2t - 1)$$
+            • <strong>Third basis vector:</strong>
+            $$\langle v_2, q_0 \rangle = \int_0^1 t^2 \cdot 1 \, dt = \frac{1}{3}$$
+            $$\langle v_2, q_1 \rangle = \int_0^1 t^2 \sqrt{3}(2t - 1) dt = \sqrt{3} \int_0^1 (2t^3 - t^2) dt = \sqrt{3}\left(\frac{2}{4} - \frac{1}{3}\right) = \sqrt{3}\left(\frac{1}{2} - \frac{1}{3}\right) = \frac{\sqrt{3}}{6}$$
+            $$u_2 = v_2 - \langle v_2, q_0 \rangle q_0 - \langle v_2, q_1 \rangle q_1 = t^2 - \frac{1}{3}(1) - \frac{\sqrt{3}}{6}[\sqrt{3}(2t - 1)] = t^2 - \frac{1}{3} - \frac{1}{2}(2t - 1) = t^2 - t + \frac{1}{6}$$
+            $$\|u_2\|^2 = \int_0^1 \left(t^2 - t + \frac{1}{6}\right)^2 dt = \frac{1}{180}$$
+            $$q_2(t) = \sqrt{180}\left(t^2 - t + \frac{1}{6}\right) = 6\sqrt{5}\left(t^2 - t + \frac{1}{6}\right) = \sqrt{5}(6t^2 - 6t + 1)$$</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 2: Best First-Degree Polynomial Approximation of $e^t$</div>
+            <p>The best linear approximation $p_1(t) \in P_1[0, 1]$ is the orthogonal projection onto $\text{span}\{q_0, q_1\}$:
+            $$p_1(t) = \langle e^t, q_0 \rangle q_0(t) + \langle e^t, q_1 \rangle q_1(t)$$
+            1. First Fourier coefficient:
+            $$\langle e^t, q_0 \rangle = \int_0^1 e^t \cdot 1 \, dt = e - 1 \approx 1.71828$$
+            2. Second Fourier coefficient:
+            $$\langle e^t, q_1 \rangle = \int_0^1 e^t \sqrt{3}(2t - 1) dt = \sqrt{3} \left[2 \int_0^1 t e^t dt - \int_0^1 e^t dt\right]$$
+            Using integration by parts: $\int_0^1 t e^t dt = [t e^t - e^t]_0^1 = (e - e) - (0 - 1) = 1$.<br>
+            $$\langle e^t, q_1 \rangle = \sqrt{3}[2(1) - (e - 1)] = \sqrt{3}(3 - e) \approx 0.4879$$
+            3. Synthesize projection:
+            $$p_1(t) = (e - 1)(1) + \sqrt{3}(3 - e) [\sqrt{3}(2t - 1)] = (e - 1) + 3(3 - e)(2t - 1)$$
+            $$p_1(t) = (e - 1) + (18 - 6e)t - (9 - 3e) = (18 - 6e)t + (4e - 10)$$
+            $$p_1(t) \approx (18 - 16.3097)t + (10.8731 - 10) = 1.6903t + 0.8731$$</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Step 3: Mean Square Approximation Error</div>
+            <p>By Parseval's identity / Pythagorean theorem:
+            $$\|e^t - p_1(t)\|^2 = \|e^t\|^2 - |\langle e^t, q_0 \rangle|^2 - |\langle e^t, q_1 \rangle|^2$$
+            1. Norm of $e^t$:
+            $$\|e^t\|^2 = \int_0^1 (e^t)^2 dt = \int_0^1 e^{2t} dt = \left[\frac{e^{2t}}{2}\right]_0^1 = \frac{e^2 - 1}{2} \approx \frac{7.38906 - 1}{2} = 3.19453$$
+            2. Squared coefficients:
+            $$|\langle e^t, q_0 \rangle|^2 = (e - 1)^2 \approx (1.71828)^2 \approx 2.95251$$
+            $$|\langle e^t, q_1 \rangle|^2 = 3(3 - e)^2 \approx 3(0.28172)^2 \approx 3(0.07936) \approx 0.23810$$
+            3. Error evaluation:
+            $$\|e^t - p_1(t)\|^2 = 3.19453 - 2.95251 - 0.23810 = 0.00392$$
+            $$\|e^t - p_1(t)\| = \sqrt{0.00392} \approx 0.0626$$
+            The maximum mean square error is less than 0.063, demonstrating remarkable approximation fidelity!</p>
+          </div>
+
+          <div class="why-dropdown">
+            <button class="why-toggle-btn" onclick="toggleWhy(this)">
+              <span>Mathematical Explanation &amp; Step Reasoning</span>
+              <span class="why-icon">&#9660;</span>
+            </button>
+            <div class="why-content">
+              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 1 • Shifted Legendre Polynomials</span>
+                <div class="explain-line-title">Orthonormal polynomials on $[0,1]$ vs $[-1,1]$</div>
+                <div class="explain-line-desc">On interval $[0,1]$, shifted Legendre polynomials have normalization factors $1, \sqrt{3}(2t-1), \sqrt{5}(6t^2-6t+1)$, distinct from the $[-1,1]$ standard formulas.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 2 • Projection Minimizes Square Integral</span>
+                <div class="explain-line-title">$p_1(t)$ minimizes $\int_0^1 (e^t - p_1(t))^2 dt$</div>
+                <div class="explain-line-desc">The orthogonal projection Theorem guarantees that Fourier polynomial synthesis yields the unique absolute minimum of the continuous least squares error integral.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 3 • Shortcut Error Calculation via Parseval</span>
+                <div class="explain-line-title">$\|f - p\|^2 = \|f\|^2 - \sum c_i^2$ eliminates polynomial integral expansion</div>
+                <div class="explain-line-desc">Subtracting squared Fourier coefficients directly avoids the arduous task of integrating the expanded difference $(e^t - 1.6903t - 0.8731)^2$.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
+                <div class="explain-line-title">University Evaluation Breakdown</div>
+                <div class="explain-line-desc">6 marks for orthonormal basis $\{q_0, q_1, q_2\}$, 6 marks for Fourier coefficients and $p_1(t) = (18-6e)t + (4e-10)$, 4 marks for error computation $\|e^t - p_1(t)\| \approx 0.0626$.</div>
+              </div>
+
+              <div class="inline-ai-section">
+                <div class="inline-ai-header">
+                  <div class="inline-ai-title-wrap">
+                    <span class="inline-ai-title">Matrix AI Tutor</span>
+                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
+                  </div>
+                  <div class="inline-ai-controls">
+                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
+                      <optgroup label="Direct Gemini API (Recommended &amp; Ultra-Fast)">
+                        <option value="gemini-2.5-flash" selected>gemini-2.5-flash (Google High Throughput)</option>
+                        <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (Google Low Latency)</option>
+                        <option value="gemini-flash-latest">gemini-flash-latest (Google Stable)</option>
+                        <option value="gemini-3.1-flash-lite-preview">gemini-3.1-flash-lite-preview (Google Next-Gen)</option>
+                        <option value="gemini-2.5-pro">gemini-2.5-pro (Google Deep Reasoning)</option>
+                        <option value="gemini-3.5-flash">gemini-3.5-flash (Google High Speed)</option>
+                        <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Google Lightweight)</option>
+                      </optgroup>
+                      <optgroup label="OpenRouter Free Endpoints">
+                        <option value="openrouter/free">openrouter/free (Auto Best Free Endpoint)</option>
+                        <option value="google/gemma-4-31b-it:free">google/gemma-4-31b-it:free (OpenRouter)</option>
+                        <option value="google/gemma-4-26b-a4b-it:free">google/gemma-4-26b-a4b-it:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3-ultra-550b-a55b:free">nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)</option>
+                        <option value="nvidia/nemotron-3.5-super-vl:free">nvidia/nemotron-3.5-super-vl:free (OpenRouter)</option>
+                        <option value="liquid/lfm-2.5-2.6b:free">liquid/lfm-2.5-2.6b:free (Liquid AI Free)</option>
+                        <option value="baidu/ernie-5.5-flash-preview:free">baidu/ernie-5.5-flash-preview:free (Baidu Free)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="inline-ai-chat-history"></div>
+                <div class="inline-ai-input-group">
+                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
+                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
 `
 };
