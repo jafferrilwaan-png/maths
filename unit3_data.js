@@ -8,7 +8,7 @@ window.UNIT3_DATA = {
       <!-- Q1 -->
       <div class="question-card" data-category="innerproduct">
         <div class="card-top">
-          <span class="q-pill">QB • Q1</span>
+          <span class="q-pill">QB - Q1</span>
           <div class="q-heading">Define an Inner Product and an Inner Product Space.</div>
         </div>
         <div class="solution-content">
@@ -27,17 +27,17 @@ window.UNIT3_DATA = {
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Linearity</span>
+                <span class="explain-line-badge">Step 1 - Linearity</span>
                 <div class="explain-line-title">Additivity and Homogeneity in first argument</div>
                 <div class="explain-line-desc">$\langle u+v, w \rangle = \langle u, w \rangle + \langle v, w \rangle$ and $\langle cu, v \rangle = c\langle u, v \rangle$. This ensures the inner product behaves linearly with respect to vector operations.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Symmetry</span>
+                <span class="explain-line-badge">Step 2 - Symmetry</span>
                 <div class="explain-line-title">Conjugate Symmetry Property</div>
                 <div class="explain-line-desc">$\langle u, v \rangle = \overline{\langle v, u \rangle}$ for complex spaces, and $\langle u, v \rangle = \langle v, u \rangle$ for real spaces, ensuring geometric consistency.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 3 • Positive Definiteness</span>
+                <span class="explain-line-badge">Step 3 - Positive Definiteness</span>
                 <div class="explain-line-title">Strict Positivity Criterion</div>
                 <div class="explain-line-desc">$\langle v, v \rangle \ge 0$ for all $v$, with $\langle v, v \rangle = 0 \iff v = 0$. This establishes the definition of Euclidean distance and length.</div>
               </div>
@@ -86,7 +86,7 @@ window.UNIT3_DATA = {
 </div>
 <div class="question-card" data-category="orthogonality">
         <div class="card-top">
-          <span class="q-pill">QB • Q2</span>
+          <span class="q-pill">QB - Q2</span>
           <div class="q-heading">Let $P_2$ have the inner product $\langle p, q \rangle = \int_{-1}^1 p(x)q(x)\,dx$. Find the angle between $p = x$ and $q = x^2$.</div>
         </div>
         <div class="solution-content">
@@ -108,12 +108,12 @@ window.UNIT3_DATA = {
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Orthogonality</span>
+                <span class="explain-line-badge">Step 1 - Orthogonality</span>
                 <div class="explain-line-title">Zero Inner Product Condition</div>
                 <div class="explain-line-desc">Two vectors $u$ and $v$ are orthogonal ($u \perp v$) if and only if $\langle u, v \rangle = 0$. Geometrically, the angle between them is $90^\circ$ ($\cos \theta = 0$).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Orthonormality</span>
+                <span class="explain-line-badge">Step 2 - Orthonormality</span>
                 <div class="explain-line-title">Unit Length Requirement</div>
                 <div class="explain-line-desc">A set is orthonormal if it is orthogonal AND every vector is a unit vector: $\langle v_i, v_j \rangle = \delta_{ij}$ (Kronecker delta: 1 if $i=j$, 0 if $i \neq j$).</div>
               </div>
@@ -162,13 +162,13 @@ window.UNIT3_DATA = {
 </div>
 <div class="question-card" data-category="orthogonality">
         <div class="card-top">
-          <span class="q-pill">QB • Q3</span>
+          <span class="q-pill">QB - Q3</span>
           <div class="q-heading">If $\{a, b\}$ is an orthonormal set, what is the distance between $a$ and $b$?</div>
         </div>
         <div class="solution-content">
           <p>Since $\{a, b\}$ is an orthonormal set, by definition:<br>
-          • $\|a\| = 1$ and $\|b\| = 1$ (Unit vectors)<br>
-          • $\langle a, b \rangle = 0$ (Orthogonal)<br><br>
+          - $\|a\| = 1$ and $\|b\| = 1$ (Unit vectors)<br>
+          - $\langle a, b \rangle = 0$ (Orthogonal)<br><br>
           Distance formula: $d(a, b) = \|a - b\| = \sqrt{\langle a - b, a - b \rangle}$:
           $$\|a - b\|^2 = \langle a - b, a - b \rangle = \langle a, a \rangle - \langle a, b \rangle - \langle b, a \rangle + \langle b, b \rangle$$
           $$\|a - b\|^2 = \|a\|^2 - 2\langle a, b \rangle + \|b\|^2 = 1^2 - 2(0) + 1^2 = 2$$
@@ -184,12 +184,12 @@ window.UNIT3_DATA = {
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Distance Formula</span>
+                <span class="explain-line-badge">Step 1 - Distance Formula</span>
                 <div class="explain-line-title">Norm of Difference Vector</div>
                 <div class="explain-line-desc">The distance between vectors is defined by $d(a, b) = \|a - b\| = \sqrt{\langle a - b, a - b \rangle}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Orthonormal Expansion</span>
+                <span class="explain-line-badge">Step 2 - Orthonormal Expansion</span>
                 <div class="explain-line-title">Pythagorean Expansion</div>
                 <div class="explain-line-desc">$\|a - b\|^2 = \langle a, a \rangle - 2\langle a, b \rangle + \langle b, b \rangle = 1 - 2(0) + 1 = 2 \implies d(a, b) = \sqrt{2}$.</div>
               </div>
@@ -238,7 +238,7 @@ window.UNIT3_DATA = {
 </div>
 <div class="question-card" data-category="norm">
         <div class="card-top">
-          <span class="q-pill">QB • Q4</span>
+          <span class="q-pill">QB - Q4</span>
           <div class="q-heading">Define Norm and state its three defining properties.</div>
         </div>
         <div class="solution-content">
@@ -258,12 +258,12 @@ window.UNIT3_DATA = {
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Definition</span>
+                <span class="explain-line-badge">Step 1 - Definition</span>
                 <div class="explain-line-title">Square Root of Self-Inner Product</div>
                 <div class="explain-line-desc">$\|v\| = \sqrt{\langle v, v \rangle}$. The norm assigns a non-negative real length to every vector in $V$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Three Axioms</span>
+                <span class="explain-line-badge">Step 2 - Three Axioms</span>
                 <div class="explain-line-title">Positivity, Homogeneity, Triangle Inequality</div>
                 <div class="explain-line-desc">1. $\|v\| \ge 0$ ($\|v\|=0 \iff v=0$); 2. $\|cv\| = |c|\|v\|$; 3. $\|u+v\| \le \|u\| + \|v\|$.</div>
               </div>
@@ -312,7 +312,7 @@ window.UNIT3_DATA = {
 </div>
 <div class="question-card" data-category="norm">
         <div class="card-top">
-          <span class="q-pill">QB • Q5</span>
+          <span class="q-pill">QB - Q5</span>
           <div class="q-heading">State the Cauchy-Schwarz Inequality and condition for equality.</div>
         </div>
         <div class="solution-content">
@@ -329,12 +329,12 @@ window.UNIT3_DATA = {
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Theorem Statement</span>
+                <span class="explain-line-badge">Step 1 - Theorem Statement</span>
                 <div class="explain-line-title">Upper Bound on Inner Product</div>
                 <div class="explain-line-desc">$|\langle u, v \rangle| \le \|u\| \|v\|$ for all $u, v \in V$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Equality Condition</span>
+                <span class="explain-line-badge">Step 2 - Equality Condition</span>
                 <div class="explain-line-title">Linear Dependence Criterion</div>
                 <div class="explain-line-desc">Equality $|\langle u, v \rangle| = \|u\| \|v\|$ holds if and only if $u$ and $v$ are scalar multiples (linearly dependent).</div>
               </div>
@@ -383,7 +383,7 @@ window.UNIT3_DATA = {
 </div>
 <div class="question-card" data-category="orthogonality">
         <div class="card-top">
-          <span class="q-pill">QB • Q6</span>
+          <span class="q-pill">QB - Q6</span>
           <div class="q-heading">For any non-zero vector $x \in V$, prove that $y = \frac{x}{\|x\|}$ is a unit vector.</div>
         </div>
         <div class="solution-content">
@@ -404,12 +404,12 @@ window.UNIT3_DATA = {
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Homogeneity Property</span>
+                <span class="explain-line-badge">Step 1 - Homogeneity Property</span>
                 <div class="explain-line-title">Pulling out scalar reciprocal</div>
                 <div class="explain-line-desc">$\|y\| = \|\frac{1}{\|x\|} x\| = |\frac{1}{\|x\|}| \|x\|$ by absolute scalar homogeneity.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Simplification</span>
+                <span class="explain-line-badge">Step 2 - Simplification</span>
                 <div class="explain-line-title">Strict Positivity of Length</div>
                 <div class="explain-line-desc">Since $x \neq 0$, $\|x\| > 0$, so $\frac{1}{\|x\|} \cdot \|x\| = 1$. Hence $\|y\|=1$.</div>
               </div>
@@ -458,13 +458,13 @@ window.UNIT3_DATA = {
 </div>
 <div class="question-card" data-category="innerproduct">
         <div class="card-top">
-          <span class="q-pill">QB • Q7</span>
+          <span class="q-pill">QB - Q7</span>
           <div class="q-heading">Let $\mathbb{R}^2$ have the weighted Euclidean inner product $\langle u, v \rangle = 2u_1 v_1 + 3u_2 v_2$. If $u = (1, 1), v = (3, 2), w = (0, -1)$, compute $\langle u + v, 3w \rangle$.</div>
         </div>
         <div class="solution-content">
           <p><strong>Step 1: Compute vectors:</strong><br>
-          • $u + v = (1+3, 1+2) = (4, 3)$<br>
-          • $3w = 3(0, -1) = (0, -3)$<br><br>
+          - $u + v = (1+3, 1+2) = (4, 3)$<br>
+          - $3w = 3(0, -1) = (0, -3)$<br><br>
           <strong>Step 2: Apply weighted inner product formula:</strong>
           $$\langle u + v, 3w \rangle = 2(u+v)_1 (3w)_1 + 3(u+v)_2 (3w)_2$$
           Substitute values:
@@ -480,12 +480,12 @@ window.UNIT3_DATA = {
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Conjugate Operation</span>
+                <span class="explain-line-badge">Step 1 - Conjugate Operation</span>
                 <div class="explain-line-title">Complex Conjugation of Entries</div>
                 <div class="explain-line-desc">Replace each entry $a_{ij}$ with its complex conjugate $\overline{a_{ij}}$: $\overline{1-2i} = 1+2i, \overline{4i} = -4i, \overline{5+i} = 5-i$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Matrix Transpose</span>
+                <span class="explain-line-badge">Step 2 - Matrix Transpose</span>
                 <div class="explain-line-title">Interchange Rows and Columns</div>
                 <div class="explain-line-desc">Swap rows and columns to obtain $A^* = (\overline{A})^T = \begin{pmatrix} 1+2i & -4i \\ 3 & 5-i \end{pmatrix}$.</div>
               </div>
@@ -531,11 +531,11 @@ window.UNIT3_DATA = {
       </div>
   
   
-    <!-- QB • Q8 -->
+    <!-- QB - Q8 -->
 </div>
 <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">QB • Q8</span>
+        <span class="q-pill">QB - Q8</span>
         <div class="q-heading">For any non-zero vector $x \in V$, prove that $y = \frac{x}{\|x\|}$ is a unit vector, i.e., $\|y\| = 1$.</div>
       </div>
       <div class="solution-content">
@@ -556,12 +556,12 @@ window.UNIT3_DATA = {
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Definition</span>
+                <span class="explain-line-badge">Step 1 - Definition</span>
                 <div class="explain-line-title">Vectors Orthogonal to Entire Subspace</div>
                 <div class="explain-line-desc">$W^\perp = \{v \in V \mid \langle v, w \rangle = 0 \text{ for all } w \in W\}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Subspace Property</span>
+                <span class="explain-line-badge">Step 2 - Subspace Property</span>
                 <div class="explain-line-title">Direct Sum Decomposition</div>
                 <div class="explain-line-desc">$W^\perp$ is always a subspace of $V$, and $V = W \oplus W^\perp$ for finite-dimensional spaces.</div>
               </div>
@@ -602,10 +602,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- QB • Q9 -->
+    <!-- QB - Q9 -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">QB • Q9</span>
+        <span class="q-pill">QB - Q9</span>
         <div class="q-heading">Define Unit Vector and Norm of a vector in an Inner Product Space.</div>
       </div>
       <div class="solution-content">
@@ -622,12 +622,12 @@ window.UNIT3_DATA = {
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Definition</span>
+                <span class="explain-line-badge">Step 1 - Definition</span>
                 <div class="explain-line-title">Vector with Unit Length</div>
                 <div class="explain-line-desc">A vector $u \in V$ is called a unit vector if $\|u\| = 1$, or equivalently $\langle u, u \rangle = 1$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Normalization Process</span>
+                <span class="explain-line-badge">Step 2 - Normalization Process</span>
                 <div class="explain-line-title">Converting vector to unit vector</div>
                 <div class="explain-line-desc">Any non-zero vector $v$ can be normalized into a unit vector via $\hat{v} = \frac{v}{\|v\|}$.</div>
               </div>
@@ -668,10 +668,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- QB • Q10 -->
+    <!-- QB - Q10 -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">QB • Q10</span>
+        <span class="q-pill">QB - Q10</span>
         <div class="q-heading">Let $\mathbb{R}^2$ have the weighted Euclidean inner product $\langle u, v \rangle = 2u_1 v_1 + 3u_2 v_2$. Let $u = (1, 1), v = (3, 2), w = (0, -1)$. Compute the value of $\langle u+v, 3w \rangle$.</div>
       </div>
       <div class="solution-content">
@@ -691,12 +691,12 @@ window.UNIT3_DATA = {
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Vector Operations</span>
+                <span class="explain-line-badge">Step 1 - Vector Operations</span>
                 <div class="explain-line-title">Calculate Sum and Scalar Product</div>
                 <div class="explain-line-desc">$u+v = (1+3, 1+2) = (4, 3)$ and $3w = 3(0, -1) = (0, -3)$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Weighted Inner Product</span>
+                <span class="explain-line-badge">Step 2 - Weighted Inner Product</span>
                 <div class="explain-line-title">Substitute Component Weights</div>
                 <div class="explain-line-desc">$\langle (4, 3), (0, -3) \rangle = 2(4)(0) + 3(3)(-3) = 0 - 27 = -27$.</div>
               </div>
@@ -737,10 +737,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Extra • Q11 -->
+    <!-- Extra - Q11 -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill extra">Extra • Q11</span>
+        <span class="q-pill extra">Extra - Q11</span>
         <div class="q-heading">State the Pythagorean Theorem in an Inner Product Space and prove it for orthogonal vectors.</div>
       </div>
       <div class="solution-content">
@@ -762,12 +762,12 @@ window.UNIT3_DATA = {
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Statement</span>
+                <span class="explain-line-badge">Step 1 - Statement</span>
                 <div class="explain-line-title">Pythagorean Theorem in IPS</div>
                 <div class="explain-line-desc">If $\langle u, v \rangle = 0$, then $\|u+v\|^2 = \|u\|^2 + \|v\|^2$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Proof</span>
+                <span class="explain-line-badge">Step 2 - Proof</span>
                 <div class="explain-line-title">Expansion of Self-Inner Product</div>
                 <div class="explain-line-desc">$\|u+v\|^2 = \langle u+v, u+v \rangle = \|u\|^2 + 2\langle u, v \rangle + \|v\|^2 = \|u\|^2 + 0 + \|v\|^2$.</div>
               </div>
@@ -808,10 +808,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Extra • Q12 -->
+    <!-- Extra - Q12 -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill extra">Extra • Q12</span>
+        <span class="q-pill extra">Extra - Q12</span>
         <div class="q-heading">Prove that every orthogonal set of non-zero vectors in an Inner Product Space is linearly independent.</div>
       </div>
       <div class="solution-content">
@@ -836,12 +836,12 @@ window.UNIT3_DATA = {
           <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Projection</span>
+                <span class="explain-line-badge">Step 1 - Projection</span>
                 <div class="explain-line-title">Inner Product with Basis Vector</div>
                 <div class="explain-line-desc">Take inner product of $\sum c_j v_j = 0$ with $v_i$: $\langle \sum c_j v_j, v_i \rangle = c_i \|v_i\|^2 = 0$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Conclusion</span>
+                <span class="explain-line-badge">Step 2 - Conclusion</span>
                 <div class="explain-line-title">All Coefficients Vanish</div>
                 <div class="explain-line-desc">Since $v_i \neq 0 \implies \|v_i\| \neq 0$, dividing yields $c_i = 0$ for all $i$. Hence independent.</div>
               </div>
@@ -885,7 +885,7 @@ window.UNIT3_DATA = {
 <!-- Predicted Q13 -->
       <div class="question-card" data-category="orthogonality">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q13</span>
+          <span class="q-pill extra">Predicted - Q13</span>
         </div>
         <div class="q-heading">Define the orthogonal complement $W^\perp$ of a subspace $W$ in an inner product space $V$. State the relationship between $\dim(W)$, $\dim(W^\perp)$, and $\dim(V)$ when $V$ is finite-dimensional.</div>
         <div class="solution-content">
@@ -905,17 +905,17 @@ window.UNIT3_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Set Notation Definition</span>
+                <span class="explain-line-badge">Step 1: Set Notation Definition</span>
                 <div class="explain-line-title">Universal quantifier $\forall w \in W$</div>
                 <div class="explain-line-desc">A vector belongs to $W^\perp$ only if it is perpendicular to the entire subspace $W$, which is equivalent to being perpendicular to every basis vector of $W$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Orthogonal Decomposition</span>
+                <span class="explain-line-badge">Step 2: Orthogonal Decomposition</span>
                 <div class="explain-line-title">$V = W \oplus W^\perp$</div>
                 <div class="explain-line-desc">Every vector in $V$ uniquely splits as $v = w + w^\perp$ with $w \in W$ and $w^\perp \in W^\perp$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for defining set $W^\perp = \{v : \langle v, w \rangle = 0\}$, 1 mark for dimension formula $\dim(W) + \dim(W^\perp) = \dim(V)$.</div>
               </div>
@@ -964,7 +964,7 @@ window.UNIT3_DATA = {
       <!-- Predicted Q14 -->
       <div class="question-card" data-category="orthogonality">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q14</span>
+          <span class="q-pill extra">Predicted - Q14</span>
         </div>
         <div class="q-heading">State Bessel's Inequality and Parseval's Identity for an orthonormal set in an inner product space $V$.</div>
         <div class="solution-content">
@@ -983,17 +983,17 @@ window.UNIT3_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Generalized Pythagorean Theorem</span>
+                <span class="explain-line-badge">Step 1: Generalized Pythagorean Theorem</span>
                 <div class="explain-line-title">$\|x\|^2 = \|\sum \langle x, e_i \rangle e_i\|^2 + \|x - \sum \langle x, e_i \rangle e_i\|^2$</div>
                 <div class="explain-line-desc">Because the orthogonal component norm is non-negative ($\|x^\perp\|^2 \ge 0$), dropping it gives Bessel's inequality $\sum |\langle x, e_i \rangle|^2 \le \|x\|^2$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Completeness &amp; Parseval</span>
+                <span class="explain-line-badge">Step 2: Completeness &amp; Parseval</span>
                 <div class="explain-line-title">Zero residual error when spanning the full space</div>
                 <div class="explain-line-desc">When $\{e_i\}$ spans the entire space, the orthogonal residual is zero ($x^\perp = \mathbf{0}$), yielding exact equality in Parseval's formula.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for Bessel's inequality statement and formula, 1 mark for Parseval's identity equality with basis condition.</div>
               </div>
@@ -1042,15 +1042,15 @@ window.UNIT3_DATA = {
       <!-- Predicted Q15 -->
       <div class="question-card" data-category="orthogonality">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q15</span>
+          <span class="q-pill extra">Predicted - Q15</span>
         </div>
         <div class="q-heading">In $\mathbb{R}^3$ with the standard Euclidean inner product, find a unit vector orthogonal to both $u = (1, 1, 0)$ and $v = (0, 1, 1)$.</div>
         <div class="solution-content">
           <p>Compute the vector cross product $w = u \times v$:
           $$w = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 1 & 1 & 0 \\ 0 & 1 & 1 \end{vmatrix} = \mathbf{i}(1 - 0) - \mathbf{j}(1 - 0) + \mathbf{k}(1 - 0) = (1, -1, 1)$$
           Check orthogonality:<br>
-          • $\langle u, w \rangle = 1(1) + 1(-1) + 0(1) = 0$.<br>
-          • $\langle v, w \rangle = 0(1) + 1(-1) + 1(1) = 0$.<br>
+          - $\langle u, w \rangle = 1(1) + 1(-1) + 0(1) = 0$.<br>
+          - $\langle v, w \rangle = 0(1) + 1(-1) + 1(1) = 0$.<br>
           Norm of $w$: $\|w\| = \sqrt{1^2 + (-1)^2 + 1^2} = \sqrt{3}$.<br>
           <strong>Unit Orthogonal Vector:</strong>
           $$\hat{w} = \frac{w}{\|w\|} = \frac{1}{\sqrt{3}}(1, -1, 1) = \left(\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$$</p>
@@ -1063,17 +1063,17 @@ window.UNIT3_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Cross Product Orthogonality</span>
+                <span class="explain-line-badge">Step 1: Cross Product Orthogonality</span>
                 <div class="explain-line-title">$u \times v$ is orthogonal to both $u$ and $v$ in $\mathbb{R}^3$</div>
                 <div class="explain-line-desc">Evaluating the $3 \times 3$ determinant $(1, -1, 1)$ directly constructs an orthogonal vector without solving simultaneous linear equations.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Normalization to Unit Length</span>
+                <span class="explain-line-badge">Step 2: Normalization to Unit Length</span>
                 <div class="explain-line-title">$\hat{w} = \frac{w}{\|w\|}$</div>
                 <div class="explain-line-desc">Dividing by length $\sqrt{3}$ ensures the final vector has unit norm $\|\hat{w}\| = 1$. Both $\pm \hat{w}$ are valid unit vectors.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for orthogonal vector $(1, -1, 1)$, 1 mark for normalizing to unit length $\frac{1}{\sqrt{3}}(1, -1, 1)$.</div>
               </div>
@@ -1122,7 +1122,7 @@ window.UNIT3_DATA = {
       <!-- Predicted Q16 -->
       <div class="question-card" data-category="innerproduct">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q16</span>
+          <span class="q-pill extra">Predicted - Q16</span>
         </div>
         <div class="q-heading">State the Parallelogram Law in an inner product space $V$. What is its geometric significance regarding norms?</div>
         <div class="solution-content">
@@ -1140,17 +1140,17 @@ window.UNIT3_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Inner Product Expansion Proof</span>
+                <span class="explain-line-badge">Step 1: Inner Product Expansion Proof</span>
                 <div class="explain-line-title">$\|u+v\|^2 = \|u\|^2 + 2\text{Re}\langle u, v \rangle + \|v\|^2$</div>
                 <div class="explain-line-desc">Adding $\|u-v\|^2 = \|u\|^2 - 2\text{Re}\langle u, v \rangle + \|v\|^2$ cancels the inner product cross-terms, yielding $2\|u\|^2 + 2\|v\|^2$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Test for Inner Product Norms</span>
+                <span class="explain-line-badge">Step 2: Test for Inner Product Norms</span>
                 <div class="explain-line-title">Distinguishes Hilbert spaces from general Banach spaces</div>
                 <div class="explain-line-desc">Norms like the $\ell_1$ norm ($\|x\|_1 = |x_1| + |x_2|$) fail the parallelogram law, proving they cannot be generated by any inner product.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for the exact statement $\|u+v\|^2 + \|u-v\|^2 = 2\|u\|^2 + 2\|v\|^2$, 1 mark for geometric significance (sum of squares of diagonals = sum of squares of sides).</div>
               </div>
@@ -1198,10 +1198,10 @@ window.UNIT3_DATA = {
 `,
   
   partB: String.raw`
-<!-- Part B • Q1 (16 Marks) -->
+<!-- Part B - Q1 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q1 (16 Marks)</span>
+        <span class="q-pill">Part B - Q1 (16 Marks)</span>
         <div class="q-heading">State and prove the Gram-Schmidt Orthogonalization Process theorem for constructing an orthonormal basis from an arbitrary basis in an inner product space.</div>
       </div>
       <div class="solution-content">
@@ -1209,13 +1209,13 @@ window.UNIT3_DATA = {
 
         <div class="partb-step">
           <div class="step-title">Step 1: Recursive Construction of Orthogonal Vectors $\{u_k\}$</div>
-          <p>• <strong>Base Step:</strong> Choose the first vector directly:
+          <p>- <strong>Base Step:</strong> Choose the first vector directly:
           $$u_1 = v_1$$
-          • <strong>Second Step:</strong> Subtract the orthogonal projection of $v_2$ onto $u_1$:
+          - <strong>Second Step:</strong> Subtract the orthogonal projection of $v_2$ onto $u_1$:
           $$u_2 = v_2 - \frac{\langle v_2, u_1 \rangle}{\|u_1\|^2} u_1$$
           Verify $\langle u_2, u_1 \rangle = 0$:
           $$\langle u_2, u_1 \rangle = \left\langle v_2 - \frac{\langle v_2, u_1 \rangle}{\|u_1\|^2} u_1, \; u_1 \right\rangle = \langle v_2, u_1 \rangle - \frac{\langle v_2, u_1 \rangle}{\|u_1\|^2} \langle u_1, u_1 \rangle = \langle v_2, u_1 \rangle - \langle v_2, u_1 \rangle = 0$$
-          • <strong>General Induction Step:</strong> For $k = 3, \dots, n$:
+          - <strong>General Induction Step:</strong> For $k = 3, \dots, n$:
           $$u_k = v_k - \sum_{j=1}^{k-1} \frac{\langle v_k, u_j \rangle}{\|u_j\|^2} u_j$$</p>
         </div>
 
@@ -1315,10 +1315,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Part B • Q2 (16 Marks) -->
+    <!-- Part B - Q2 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q2 (16 Marks)</span>
+        <span class="q-pill">Part B - Q2 (16 Marks)</span>
         <div class="q-heading">Apply the Gram-Schmidt orthogonalization process to the basis $B = \{v_1 = (1, 1, 0), v_2 = (1, 2, 0), v_3 = (0, 1, 2)\}$ for $\mathbb{R}^3$ with standard Euclidean inner product to obtain an orthonormal basis.</div>
       </div>
       <div class="solution-content">
@@ -1429,10 +1429,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Part B • Q3 (16 Marks) -->
+    <!-- Part B - Q3 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q3 (16 Marks)</span>
+        <span class="q-pill">Part B - Q3 (16 Marks)</span>
         <div class="q-heading">Let the vector space $P_2([0, 1])$ have the inner product $\langle p, q \rangle = \int_0^1 p(x)q(x) dx$. Apply the Gram-Schmidt process to transform the standard basis $S = \{1, x, x^2\}$ into an orthogonal basis.</div>
       </div>
       <div class="solution-content">
@@ -1538,10 +1538,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Part B • Q4 (16 Marks) -->
+    <!-- Part B - Q4 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q4 (16 Marks)</span>
+        <span class="q-pill">Part B - Q4 (16 Marks)</span>
         <div class="q-heading">State and prove Cauchy-Schwarz Inequality and Triangle Inequality in an Inner Product Space.</div>
       </div>
       <div class="solution-content">
@@ -1551,8 +1551,8 @@ window.UNIT3_DATA = {
 
         <div class="partb-step">
           <div class="step-title">Proof of Cauchy-Schwarz Inequality</div>
-          <p>• If $u = 0$, then $\langle 0, v \rangle = 0$ and $\|0\|\|v\| = 0$. The equality $0 = 0$ holds trivially.<br>
-          • Suppose $u \neq 0 \implies \|u\| > 0$. For any scalar $t \in \mathbb{R}$, consider the vector $tu - v$.<br>
+          <p>- If $u = 0$, then $\langle 0, v \rangle = 0$ and $\|0\|\|v\| = 0$. The equality $0 = 0$ holds trivially.<br>
+          - Suppose $u \neq 0 \implies \|u\| > 0$. For any scalar $t \in \mathbb{R}$, consider the vector $tu - v$.<br>
           By the non-negativity axiom of inner product:
           $$\|tu - v\|^2 \ge 0 \implies \langle tu - v, tu - v \rangle \ge 0$$
           $$t^2 \langle u, u \rangle - 2t \langle u, v \rangle + \langle v, v \rangle \ge 0$$
@@ -1653,10 +1653,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Part B • Q5 (16 Marks) -->
+    <!-- Part B - Q5 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q5 (16 Marks)</span>
+        <span class="q-pill">Part B - Q5 (16 Marks)</span>
         <div class="q-heading">Apply the Gram-Schmidt orthogonalization process to the subset $S = \{(1, 0, 1), (0, 1, 1), (1, 3, 3)\}$ of $\mathbb{R}^3$ to obtain an orthonormal basis, and express $x = (1, 1, 2)$ in terms of this basis.</div>
       </div>
       <div class="solution-content">
@@ -1775,10 +1775,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Part B • Q6 (16 Marks) -->
+    <!-- Part B - Q6 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q6 (16 Marks)</span>
+        <span class="q-pill">Part B - Q6 (16 Marks)</span>
         <div class="q-heading">Find the least squares approximation to find the best fit: (a) a linear function $y = ax + b$ (b) a quadratic function $y = ax^2 + bx + c$ for the data points: $(1, 1), (2, 4), (3, 9), (4, 16)$.</div>
       </div>
       <div class="solution-content">
@@ -1789,10 +1789,10 @@ window.UNIT3_DATA = {
           <p>Normal equations for line $y = ax + b$:
           $$\begin{pmatrix} \sum x_i^2 & \sum x_i \\ \sum x_i & n \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} \sum x_i y_i \\ \sum y_i \end{pmatrix}$$
           Data: $(1,1), (2,4), (3,9), (4,16)$ with $n = 4$.<br>
-          • $\sum x_i = 1 + 2 + 3 + 4 = 10$<br>
-          • $\sum x_i^2 = 1 + 4 + 9 + 16 = 30$<br>
-          • $\sum y_i = 1 + 4 + 9 + 16 = 30$<br>
-          • $\sum x_i y_i = 1(1) + 2(4) + 3(9) + 4(16) = 1 + 8 + 27 + 64 = 100$<br>
+          - $\sum x_i = 1 + 2 + 3 + 4 = 10$<br>
+          - $\sum x_i^2 = 1 + 4 + 9 + 16 = 30$<br>
+          - $\sum y_i = 1 + 4 + 9 + 16 = 30$<br>
+          - $\sum x_i y_i = 1(1) + 2(4) + 3(9) + 4(16) = 1 + 8 + 27 + 64 = 100$<br>
           Normal system:
           $$\begin{pmatrix} 30 & 10 \\ 10 & 4 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 100 \\ 30 \end{pmatrix}$$
           Dividing row 2 by 2: $5a + 2b = 15 \implies 2b = 15 - 5a$.<br>
@@ -1889,10 +1889,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Part B • Q7 (16 Marks) -->
+    <!-- Part B - Q7 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q7 (16 Marks)</span>
+        <span class="q-pill">Part B - Q7 (16 Marks)</span>
         <div class="q-heading">Find the least squares approximation to find the best fit: (a) a linear function $y = ax + b$ (b) a quadratic function $y = ax^2 + bx + c$ for the data points: $(1, 2), (2, 3), (3, 5), (4, 7)$.</div>
       </div>
       <div class="solution-content">
@@ -1900,11 +1900,11 @@ window.UNIT3_DATA = {
 
         <div class="partb-step">
           <div class="step-title">Section I: Best Fit Line $y = ax + b$</div>
-          <p>• $n = 4$<br>
-          • $\sum x_i = 1 + 2 + 3 + 4 = 10$<br>
-          • $\sum x_i^2 = 1 + 4 + 9 + 16 = 30$<br>
-          • $\sum y_i = 2 + 3 + 5 + 7 = 17$<br>
-          • $\sum x_i y_i = 1(2) + 2(3) + 3(5) + 4(7) = 2 + 6 + 15 + 28 = 51$<br>
+          <p>- $n = 4$<br>
+          - $\sum x_i = 1 + 2 + 3 + 4 = 10$<br>
+          - $\sum x_i^2 = 1 + 4 + 9 + 16 = 30$<br>
+          - $\sum y_i = 2 + 3 + 5 + 7 = 17$<br>
+          - $\sum x_i y_i = 1(2) + 2(3) + 3(5) + 4(7) = 2 + 6 + 15 + 28 = 51$<br>
           Normal Equations:
           $$\begin{pmatrix} 30 & 10 \\ 10 & 4 \end{pmatrix} \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 51 \\ 17 \end{pmatrix}$$
           Multiply row 2 by 3: $30a + 12b = 51$.<br>
@@ -1915,9 +1915,9 @@ window.UNIT3_DATA = {
 
         <div class="partb-step">
           <div class="step-title">Section II: Best Fit Quadratic $y = ax^2 + bx + c$</div>
-          <p>• $\sum x_i^3 = 1 + 8 + 27 + 64 = 100$<br>
-          • $\sum x_i^4 = 1 + 16 + 81 + 256 = 354$<br>
-          • $\sum x_i^2 y_i = 1(2) + 4(3) + 9(5) + 16(7) = 2 + 12 + 45 + 112 = 171$<br>
+          <p>- $\sum x_i^3 = 1 + 8 + 27 + 64 = 100$<br>
+          - $\sum x_i^4 = 1 + 16 + 81 + 256 = 354$<br>
+          - $\sum x_i^2 y_i = 1(2) + 4(3) + 9(5) + 16(7) = 2 + 12 + 45 + 112 = 171$<br>
           Normal system:
           $$\begin{pmatrix} 354 & 100 & 30 \\ 100 & 30 & 10 \\ 30 & 10 & 4 \end{pmatrix} \begin{pmatrix} a \\ b \\ c \end{pmatrix} = \begin{pmatrix} 171 \\ 51 \\ 17 \end{pmatrix}$$
           Solving by elimination: $a = 0.05, b = 1.45, c = 0.3$.<br>
@@ -2004,10 +2004,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Part B • Q8 (16 Marks) -->
+    <!-- Part B - Q8 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q8 (16 Marks)</span>
+        <span class="q-pill">Part B - Q8 (16 Marks)</span>
         <div class="q-heading">Find the least squares approximation to find the best fit: (a) a linear function (b) a quadratic function for the data points: $(-3, 9), (-2, 6), (0, 2), (1, 1)$ and compute the error.</div>
       </div>
       <div class="solution-content">
@@ -2016,10 +2016,10 @@ window.UNIT3_DATA = {
         <div class="partb-step">
           <div class="step-title">Step 1: Compute Table of Sums</div>
           <p>Points: $(-3, 9), (-2, 6), (0, 2), (1, 1)$ with $n = 4$.<br>
-          • $\sum x_i = -3 - 2 + 0 + 1 = -4$<br>
-          • $\sum x_i^2 = 9 + 4 + 0 + 1 = 14$<br>
-          • $\sum y_i = 9 + 6 + 2 + 1 = 18$<br>
-          • $\sum x_i y_i = (-3)(9) + (-2)(6) + 0(2) + 1(1) = -27 - 12 + 0 + 1 = -38$</p>
+          - $\sum x_i = -3 - 2 + 0 + 1 = -4$<br>
+          - $\sum x_i^2 = 9 + 4 + 0 + 1 = 14$<br>
+          - $\sum y_i = 9 + 6 + 2 + 1 = 18$<br>
+          - $\sum x_i y_i = (-3)(9) + (-2)(6) + 0(2) + 1(1) = -27 - 12 + 0 + 1 = -38$</p>
         </div>
 
         <div class="partb-step">
@@ -2033,10 +2033,10 @@ window.UNIT3_DATA = {
 
         <div class="partb-step">
           <div class="step-title">Step 3: Residual Error Calculation for Line</div>
-          <p>• At $x = -3$: $y_{\text{calc}} = -2(-3) + 2.5 = 8.5 \implies e_1 = 9 - 8.5 = 0.5 \implies e_1^2 = 0.25$<br>
-          • At $x = -2$: $y_{\text{calc}} = -2(-2) + 2.5 = 6.5 \implies e_2 = 6 - 6.5 = -0.5 \implies e_2^2 = 0.25$<br>
-          • At $x = 0$: $y_{\text{calc}} = 2.5 \implies e_3 = 2 - 2.5 = -0.5 \implies e_3^2 = 0.25$<br>
-          • At $x = 1$: $y_{\text{calc}} = -2(1) + 2.5 = 0.5 \implies e_4 = 1 - 0.5 = 0.5 \implies e_4^2 = 0.25$<br>
+          <p>- At $x = -3$: $y_{\text{calc}} = -2(-3) + 2.5 = 8.5 \implies e_1 = 9 - 8.5 = 0.5 \implies e_1^2 = 0.25$<br>
+          - At $x = -2$: $y_{\text{calc}} = -2(-2) + 2.5 = 6.5 \implies e_2 = 6 - 6.5 = -0.5 \implies e_2^2 = 0.25$<br>
+          - At $x = 0$: $y_{\text{calc}} = 2.5 \implies e_3 = 2 - 2.5 = -0.5 \implies e_3^2 = 0.25$<br>
+          - At $x = 1$: $y_{\text{calc}} = -2(1) + 2.5 = 0.5 \implies e_4 = 1 - 0.5 = 0.5 \implies e_4^2 = 0.25$<br>
           <strong>Total Squared Error:</strong> $E = 0.25 + 0.25 + 0.25 + 0.25 = 1.0$.</p>
         </div>
 
@@ -2120,10 +2120,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Part B • Q9 (16 Marks) -->
+    <!-- Part B - Q9 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q9 (16 Marks)</span>
+        <span class="q-pill">Part B - Q9 (16 Marks)</span>
         <div class="q-heading">(i) Let $V$ be the vector space of polynomials with inner product $\langle f, g \rangle = \int_0^1 f(t)g(t) dt$. For $f(t) = t^2 + t - 4$ and $g(t) = t - 1$, find $\langle f, g \rangle, \|f\|$, and $\|g\|$. (ii) If $\alpha = (1, 2, 3, 4)$ and $\beta = (2, 0, -3, 1)$ in $\mathbb{R}^4$, compute $\|\alpha\|, \|\beta\|, \|\alpha + \beta\|$, and $\langle \alpha, \beta \rangle$.</div>
       </div>
       <div class="solution-content">
@@ -2131,10 +2131,10 @@ window.UNIT3_DATA = {
 
         <div class="partb-step">
           <div class="step-title">Section I: Polynomial Inner Product &amp; Norms</div>
-          <p>• $f(t)g(t) = (t^2 + t - 4)(t - 1) = t^3 - t^2 + t^2 - t - 4t + 4 = t^3 - 5t + 4$.
+          <p>- $f(t)g(t) = (t^2 + t - 4)(t - 1) = t^3 - t^2 + t^2 - t - 4t + 4 = t^3 - 5t + 4$.
           $$\langle f, g \rangle = \int_0^1 (t^3 - 5t + 4) dt = \left[ \frac{t^4}{4} - \frac{5t^2}{2} + 4t \right]_0^1 = \frac{1}{4} - \frac{5}{2} + 4 = \frac{1 - 10 + 16}{4} = \frac{7}{4}$$
-          • $\|g\|^2 = \int_0^1 (t - 1)^2 dt = \left[ \frac{(t-1)^3}{3} \right]_0^1 = 0 - \left(-\frac{1}{3}\right) = \frac{1}{3} \implies \|g\| = \frac{1}{\sqrt{3}}$<br>
-          • $\|f\|^2 = \int_0^1 (t^2 + t - 4)^2 dt = \int_0^1 (t^4 + t^2 + 16 + 2t^3 - 8t^2 - 8t) dt = \int_0^1 (t^4 + 2t^3 - 7t^2 - 8t + 16) dt$
+          - $\|g\|^2 = \int_0^1 (t - 1)^2 dt = \left[ \frac{(t-1)^3}{3} \right]_0^1 = 0 - \left(-\frac{1}{3}\right) = \frac{1}{3} \implies \|g\| = \frac{1}{\sqrt{3}}$<br>
+          - $\|f\|^2 = \int_0^1 (t^2 + t - 4)^2 dt = \int_0^1 (t^4 + t^2 + 16 + 2t^3 - 8t^2 - 8t) dt = \int_0^1 (t^4 + 2t^3 - 7t^2 - 8t + 16) dt$
           $$= \frac{1}{5} + \frac{2}{4} - \frac{7}{3} - \frac{8}{2} + 16 = \frac{1}{5} + \frac{1}{2} - \frac{7}{3} - 4 + 16 = \frac{1}{5} + \frac{1}{2} - \frac{7}{3} + 12 = \frac{6 + 15 - 70 + 360}{30} = \frac{311}{30}$$
           $$\|f\| = \sqrt{\frac{311}{30}}$$</p>
         </div>
@@ -2142,11 +2142,11 @@ window.UNIT3_DATA = {
         <div class="partb-step">
           <div class="step-title">Section II: 4D Euclidean Vector Norms and Inner Product</div>
           <p>Vectors: $\alpha = (1, 2, 3, 4)$ and $\beta = (2, 0, -3, 1)$.<br>
-          • $\|\alpha\|^2 = 1^2 + 2^2 + 3^2 + 4^2 = 1 + 4 + 9 + 16 = 30 \implies \|\alpha\| = \sqrt{30}$<br>
-          • $\|\beta\|^2 = 2^2 + 0^2 + (-3)^2 + 1^2 = 4 + 0 + 9 + 1 = 14 \implies \|\beta\| = \sqrt{14}$<br>
-          • $\alpha + \beta = (1+2, 2+0, 3-3, 4+1) = (3, 2, 0, 5)$<br>
+          - $\|\alpha\|^2 = 1^2 + 2^2 + 3^2 + 4^2 = 1 + 4 + 9 + 16 = 30 \implies \|\alpha\| = \sqrt{30}$<br>
+          - $\|\beta\|^2 = 2^2 + 0^2 + (-3)^2 + 1^2 = 4 + 0 + 9 + 1 = 14 \implies \|\beta\| = \sqrt{14}$<br>
+          - $\alpha + \beta = (1+2, 2+0, 3-3, 4+1) = (3, 2, 0, 5)$<br>
           $$\|\alpha + \beta\|^2 = 3^2 + 2^2 + 0^2 + 5^2 = 9 + 4 + 0 + 25 = 38 \implies \|\alpha + \beta\| = \sqrt{38}$$
-          • $\langle \alpha, \beta \rangle = 1(2) + 2(0) + 3(-3) + 4(1) = 2 + 0 - 9 + 4 = -3$</p>
+          - $\langle \alpha, \beta \rangle = 1(2) + 2(0) + 3(-3) + 4(1) = 2 + 0 - 9 + 4 = -3$</p>
         </div>
 
         <div class="tag-result">Results: $\langle f, g \rangle = \frac{7}{4}, \|g\| = \frac{1}{\sqrt{3}}, \|f\| = \sqrt{\frac{311}{30}}$; $\|\alpha\| = \sqrt{30}, \|\beta\| = \sqrt{14}, \|\alpha+\beta\| = \sqrt{38}, \langle \alpha, \beta \rangle = -3$.</div>
@@ -2229,10 +2229,10 @@ window.UNIT3_DATA = {
       </div>
     </div>
 
-    <!-- Part B • Q10 (16 Marks) -->
+    <!-- Part B - Q10 (16 Marks) -->
     <div class="question-card" data-category="orthogonality">
       <div class="card-top">
-        <span class="q-pill">Part B • Q10 (16 Marks)</span>
+        <span class="q-pill">Part B - Q10 (16 Marks)</span>
         <div class="q-heading">(i) Let $V = M_{n \times n}(\mathbb{R})$ and define $\langle A, B \rangle = \text{tr}(B^T A)$ for $A, B \in V$. Verify whether it is an inner product on $V$. (ii) Verify the Triangle Inequality $\|A + B\| \le \|A\| + \|B\|$ for this space.</div>
       </div>
       <div class="solution-content">
@@ -2348,7 +2348,7 @@ window.UNIT3_DATA = {
 <!-- Part B Extra Q11 -->
       <div class="question-card" data-category="gram_schmidt">
         <div class="card-top">
-          <span class="q-pill extra">Part B • Extra Q11 (16 Marks)</span>
+          <span class="q-pill extra">Part B - Extra Q11 (16 Marks)</span>
         </div>
         <div class="q-heading">
           Using the Gram-Schmidt Orthogonalization Process, find the $QR$ decomposition of the matrix:
@@ -2361,39 +2361,39 @@ window.UNIT3_DATA = {
           <div class="partb-step">
             <div class="step-title">Step 1: Extract Columns and Orthonormalize First Vector $a_1$</div>
             <p>Let columns of $A$ be $a_1 = (1, 1, 0)^T, \; a_2 = (1, 0, 1)^T, \; a_3 = (0, 1, 1)^T$.<br>
-            • First orthogonal vector:
+            - First orthogonal vector:
             $$u_1 = a_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, \quad \|u_1\| = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{2}$$
-            • First orthonormal column of $Q$:
+            - First orthonormal column of $Q$:
             $$q_1 = \frac{u_1}{\|u_1\|} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1/\sqrt{2} \\ 1/\sqrt{2} \\ 0 \end{bmatrix}$$
             $r_{11} = \|u_1\| = \sqrt{2}$.</p>
           </div>
 
           <div class="partb-step">
             <div class="step-title">Step 2: Orthogonalize Second Vector $a_2$</div>
-            <p>• Component of $a_2$ along $q_1$:
+            <p>- Component of $a_2$ along $q_1$:
             $$r_{12} = q_1^T a_2 = \frac{1}{\sqrt{2}}(1 \cdot 1 + 1 \cdot 0 + 0 \cdot 1) = \frac{1}{\sqrt{2}}$$
-            • Subtract projection:
+            - Subtract projection:
             $$u_2 = a_2 - r_{12} q_1 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} - \frac{1}{\sqrt{2}} \begin{bmatrix} 1/\sqrt{2} \\ 1/\sqrt{2} \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} - \begin{bmatrix} 1/2 \\ 1/2 \\ 0 \end{bmatrix} = \begin{bmatrix} 1/2 \\ -1/2 \\ 1 \end{bmatrix}$$
-            • Norm: $\|u_2\| = \sqrt{(1/2)^2 + (-1/2)^2 + 1^2} = \sqrt{1/4 + 1/4 + 1} = \sqrt{6/4} = \frac{\sqrt{6}}{2}$.<br>
+            - Norm: $\|u_2\| = \sqrt{(1/2)^2 + (-1/2)^2 + 1^2} = \sqrt{1/4 + 1/4 + 1} = \sqrt{6/4} = \frac{\sqrt{6}}{2}$.<br>
             $r_{22} = \|u_2\| = \frac{\sqrt{6}}{2}$.<br>
-            • Second orthonormal column:
+            - Second orthonormal column:
             $$q_2 = \frac{u_2}{\|u_2\|} = \frac{2}{\sqrt{6}} \begin{bmatrix} 1/2 \\ -1/2 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{6}} \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}$$</p>
           </div>
 
           <div class="partb-step">
             <div class="step-title">Step 3: Orthogonalize Third Vector $a_3$</div>
-            <p>• Projection components:
+            <p>- Projection components:
             $$r_{13} = q_1^T a_3 = \frac{1}{\sqrt{2}}(1 \cdot 0 + 1 \cdot 1 + 0 \cdot 1) = \frac{1}{\sqrt{2}}$$
             $$r_{23} = q_2^T a_3 = \frac{1}{\sqrt{6}}(1 \cdot 0 + (-1) \cdot 1 + 2 \cdot 1) = \frac{1}{\sqrt{6}}$$
-            • Subtract projections:
+            - Subtract projections:
             $$u_3 = a_3 - r_{13} q_1 - r_{23} q_2 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} - \frac{1}{2} \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} - \frac{1}{6} \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}$$
-            • Component 1: $0 - 1/2 - 1/6 = -4/6 = -2/3$.<br>
-            • Component 2: $1 - 1/2 - (-1/6) = 1/2 + 1/6 = 4/6 = 2/3$.<br>
-            • Component 3: $1 - 0 - 2/6 = 4/6 = 2/3$.<br>
+            - Component 1: $0 - 1/2 - 1/6 = -4/6 = -2/3$.<br>
+            - Component 2: $1 - 1/2 - (-1/6) = 1/2 + 1/6 = 4/6 = 2/3$.<br>
+            - Component 3: $1 - 0 - 2/6 = 4/6 = 2/3$.<br>
             $$u_3 = \begin{bmatrix} -2/3 \\ 2/3 \\ 2/3 \end{bmatrix} = \frac{2}{3} \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}$$
-            • Norm: $\|u_3\| = \frac{2}{3}\sqrt{(-1)^2 + 1^2 + 1^2} = \frac{2\sqrt{3}}{3} = \frac{2}{\sqrt{3}}$.<br>
+            - Norm: $\|u_3\| = \frac{2}{3}\sqrt{(-1)^2 + 1^2 + 1^2} = \frac{2\sqrt{3}}{3} = \frac{2}{\sqrt{3}}$.<br>
             $r_{33} = \|u_3\| = \frac{2}{\sqrt{3}}$.<br>
-            • Third orthonormal column:
+            - Third orthonormal column:
             $$q_3 = \frac{u_3}{\|u_3\|} = \frac{\sqrt{3}}{2} \cdot \frac{2}{3} \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{3}} \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix}$$</p>
           </div>
 
@@ -2499,7 +2499,7 @@ window.UNIT3_DATA = {
       <!-- Part B Extra Q12 -->
       <div class="question-card" data-category="inner_product">
         <div class="card-top">
-          <span class="q-pill extra">Part B • Extra Q12 (16 Marks)</span>
+          <span class="q-pill extra">Part B - Extra Q12 (16 Marks)</span>
         </div>
         <div class="q-heading">
           Let $W$ be the subspace of $\mathbb{R}^4$ spanned by $v_1 = (1, 2, 0, -1)$ and $v_2 = (2, 0, 1, 1)$. Given vector $x = (1, 3, -2, 2) \in \mathbb{R}^4$:<br>
@@ -2514,10 +2514,10 @@ window.UNIT3_DATA = {
           <div class="partb-step">
             <div class="step-title">Step 1: Orthogonal Basis for $W$</div>
             <p>Apply Gram-Schmidt to $\{v_1, v_2\}$:<br>
-            • First vector:
+            - First vector:
             $$u_1 = v_1 = (1, 2, 0, -1)$$
             $\|u_1\|^2 = 1^2 + 2^2 + 0^2 + (-1)^2 = 1 + 4 + 0 + 1 = 6$.<br>
-            • Second vector:
+            - Second vector:
             $$\langle v_2, u_1 \rangle = (2)(1) + (0)(2) + (1)(0) + (1)(-1) = 2 - 1 = 1$$
             $$u_2 = v_2 - \frac{\langle v_2, u_1 \rangle}{\|u_1\|^2} u_1 = (2, 0, 1, 1) - \frac{1}{6}(1, 2, 0, -1)$$
             $$u_2 = \left(2 - \frac{1}{6}, \; 0 - \frac{2}{6}, \; 1 - 0, \; 1 - \left(-\frac{1}{6}\right)\right) = \left(\frac{11}{6}, -\frac{1}{3}, 1, \frac{7}{6}\right)$$
@@ -2650,7 +2650,7 @@ window.UNIT3_DATA = {
 <!-- Predicted Part B Q13 -->
       <div class="question-card" data-category="gram_schmidt">
         <div class="card-top">
-          <span class="q-pill extra">Part B • Predicted Q13 (16 Marks)</span>
+          <span class="q-pill extra">Part B - Predicted Q13 (16 Marks)</span>
         </div>
         <div class="q-heading">
           In the inner product space $P_2[0, 1]$ with inner product defined by $\langle f, g \rangle = \int_0^1 f(t)g(t)dt$:<br>
@@ -2664,14 +2664,14 @@ window.UNIT3_DATA = {
           <div class="partb-step">
             <div class="step-title">Step 1: Gram-Schmidt Orthonormal Basis on $[0, 1]$</div>
             <p>Let $v_0 = 1, \; v_1 = t, \; v_2 = t^2$.<br>
-            • <strong>First basis vector:</strong>
+            - <strong>First basis vector:</strong>
             $$u_0 = v_0 = 1, \quad \|u_0\|^2 = \int_0^1 1^2 dt = 1 \implies q_0(t) = 1$$
-            • <strong>Second basis vector:</strong>
+            - <strong>Second basis vector:</strong>
             $$\langle v_1, q_0 \rangle = \int_0^1 t \cdot 1 \, dt = \left[\frac{t^2}{2}\right]_0^1 = \frac{1}{2}$$
             $$u_1 = v_1 - \langle v_1, q_0 \rangle q_0 = t - \frac{1}{2}$$
             $$\|u_1\|^2 = \int_0^1 \left(t - \frac{1}{2}\right)^2 dt = \left[\frac{(t - 1/2)^3}{3}\right]_0^1 = \frac{1/8 - (-1/8)}{3} = \frac{1/4}{3} = \frac{1}{12}$$
             $$q_1(t) = \frac{u_1}{\|u_1\|} = \sqrt{12}\left(t - \frac{1}{2}\right) = 2\sqrt{3}\left(t - \frac{1}{2}\right) = \sqrt{3}(2t - 1)$$
-            • <strong>Third basis vector:</strong>
+            - <strong>Third basis vector:</strong>
             $$\langle v_2, q_0 \rangle = \int_0^1 t^2 \cdot 1 \, dt = \frac{1}{3}$$
             $$\langle v_2, q_1 \rangle = \int_0^1 t^2 \sqrt{3}(2t - 1) dt = \sqrt{3} \int_0^1 (2t^3 - t^2) dt = \sqrt{3}\left(\frac{2}{4} - \frac{1}{3}\right) = \sqrt{3}\left(\frac{1}{2} - \frac{1}{3}\right) = \frac{\sqrt{3}}{6}$$
             $$u_2 = v_2 - \langle v_2, q_0 \rangle q_0 - \langle v_2, q_1 \rangle q_1 = t^2 - \frac{1}{3}(1) - \frac{\sqrt{3}}{6}[\sqrt{3}(2t - 1)] = t^2 - \frac{1}{3} - \frac{1}{2}(2t - 1) = t^2 - t + \frac{1}{6}$$

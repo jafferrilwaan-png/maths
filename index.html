@@ -7,7 +7,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>23MA1302 • Linear Algebra &amp; Numerical Analysis Master App</title>
+  <title>23MA1302 - Linear Algebra &amp; Numerical Analysis Master App</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,12 +24,12 @@
   <script defer src="vendor/katex/auto-render.min.js"></script>
 
   <!-- Unit Data & AI Tutor Scripts -->
-  <script src="unit1_data.js?v=6.0"></script>
-  <script src="unit2_data.js?v=6.0"></script>
-  <script src="unit3_data.js?v=6.0"></script>
-  <script src="unit4_data.js?v=6.0"></script>
-  <script src="unit5_data.js?v=6.0"></script>
-  <script src="ai_tutor.js?v=6.1"></script>
+  <script src="unit1_data.js?v=7.0"></script>
+  <script src="unit2_data.js?v=7.0"></script>
+  <script src="unit3_data.js?v=7.0"></script>
+  <script src="unit4_data.js?v=7.0"></script>
+  <script src="unit5_data.js?v=7.0"></script>
+  <script src="ai_tutor.js?v=7.0"></script>
 
   <style>
     :root {
@@ -1271,36 +1271,36 @@
 
       if (currentTab === 'partA') {
         if (currentUnit === 1) {
-          bannerTitle.textContent = "Unit 1 • Part A: 2-Mark Conceptual & Analytical Problems";
+          bannerTitle.textContent = "Unit 1 - Part A: 2-Mark Conceptual & Analytical Problems";
           bannerDesc.textContent = "Axioms of Vector Spaces, Subspace Criteria, Linear Independence/Dependence, Spanning Sets, Basis & Dimension, Dimension Theorems.";
         } else if (currentUnit === 2) {
-          bannerTitle.textContent = "Unit 2 • Part A: 2-Mark Linear Transformations & Matrices";
+          bannerTitle.textContent = "Unit 2 - Part A: 2-Mark Linear Transformations & Matrices";
           bannerDesc.textContent = "Kernel (Null Space), Range Space, Rank-Nullity Theorem, Injective & Surjective Maps, Matrix Representations, Eigenvalues.";
         } else if (currentUnit === 3) {
-          bannerTitle.textContent = "Unit 3 • Part A: 2-Mark Inner Products & Orthogonality";
+          bannerTitle.textContent = "Unit 3 - Part A: 2-Mark Inner Products & Orthogonality";
           bannerDesc.textContent = "Inner product axioms, norms, Cauchy-Schwarz Inequality, Triangle Inequality, orthogonal vectors, conjugate transposes.";
         } else if (currentUnit === 4) {
-          bannerTitle.textContent = "Unit 4 • Part A: 2-Mark Numerical Equations & Iterations";
+          bannerTitle.textContent = "Unit 4 - Part A: 2-Mark Numerical Equations & Iterations";
           bannerDesc.textContent = "Newton-Raphson order of convergence, fixed-point iterations, Gauss elimination partial pivoting, Gauss-Jordan inversion, Gauss-Seidel condition.";
         } else {
-          bannerTitle.textContent = "Unit 5 • Part A: 2-Mark Interpolation & Numerical Calculus";
+          bannerTitle.textContent = "Unit 5 - Part A: 2-Mark Interpolation & Numerical Calculus";
           bannerDesc.textContent = "Lagrange interpolation formula, divided differences symmetry, Newton forward/backward formulas, cubic spline conditions, numerical integration.";
         }
       } else {
         if (currentUnit === 1) {
-          bannerTitle.textContent = "Unit 1 • Part B: 16-Mark Comprehensive Proofs & Derivations";
+          bannerTitle.textContent = "Unit 1 - Part B: 16-Mark Comprehensive Proofs & Derivations";
           bannerDesc.textContent = "Complete 16-mark derivations, coordinate isomorphisms, subspace verifications, dimension proofs, and university test problems.";
         } else if (currentUnit === 2) {
-          bannerTitle.textContent = "Unit 2 • Part B: 16-Mark Diagonalization & Matrix Representations";
+          bannerTitle.textContent = "Unit 2 - Part B: 16-Mark Diagonalization & Matrix Representations";
           bannerDesc.textContent = "Rank-Nullity proofs, matrix of transformation with non-standard bases, Cayley-Hamilton high-degree reductions, repeated root diagonalization.";
         } else if (currentUnit === 3) {
-          bannerTitle.textContent = "Unit 3 • Part B: 16-Mark Gram-Schmidt & Least Squares Analysis";
+          bannerTitle.textContent = "Unit 3 - Part B: 16-Mark Gram-Schmidt & Least Squares Analysis";
           bannerDesc.textContent = "Gram-Schmidt orthogonalization in R3 & polynomial spaces, orthonormal bases, QR factorizations, orthogonal projections, and least squares curve fitting.";
         } else if (currentUnit === 4) {
-          bannerTitle.textContent = "Unit 4 • Part B: 16-Mark Systems & Eigenvalue Algorithms";
+          bannerTitle.textContent = "Unit 4 - Part B: 16-Mark Systems & Eigenvalue Algorithms";
           bannerDesc.textContent = "Gauss-Jordan matrix inversion, Gauss-Seidel 4-decimal iterations, Power Method dominant eigenvalues, Jacobi method orthogonal diagonalization.";
         } else {
-          bannerTitle.textContent = "Unit 5 • Part B: 16-Mark Splines, Derivatives & Integration";
+          bannerTitle.textContent = "Unit 5 - Part B: 16-Mark Splines, Derivatives & Integration";
           bannerDesc.textContent = "Newton divided difference polynomials, natural cubic splines tridiagonal equations, numerical derivatives at boundaries, composite Simpson's rules.";
         }
       }
@@ -1502,7 +1502,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=6.1').then((reg) => {
+        navigator.serviceWorker.register('./sw.js?v=7.0').then((reg) => {
           console.log('LANA Master Offline ServiceWorker active:', reg.scope);
           reg.update();
         }).catch((err) => {

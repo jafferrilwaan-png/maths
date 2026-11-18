@@ -7,7 +7,7 @@ window.UNIT4_DATA = {
   desc: "Newton-Raphson Method, Gauss Elimination & Jordan, Gauss-Jacobi & Seidel, Power Method & Jacobi Eigenvalues.",
   partA: String.raw`<div class="question-card" data-category="newton">
 <div class="card-top">
-<span class="q-pill">QB • Q1</span>
+<span class="q-pill">QB - Q1</span>
 <div class="q-heading">State the order of convergence and convergence condition for Newton-Raphson method.</div>
 </div>
 <div class="solution-content">
@@ -27,12 +27,12 @@ $$\left| f(x) f''(x) \right| < \left[ f'(x) \right]^2 \quad \text{for all } x \i
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Order</span>
+                <span class="explain-line-badge">Step 1: Order</span>
                 <div class="explain-line-title">Quadratic Convergence ($p=2$)</div>
                 <div class="explain-line-desc">Derived from Taylor series expansion $f(\alpha) = f(x_n) + (\alpha - x_n)f'(x_n) + \frac{(\alpha - x_n)^2}{2}f''(c) = 0$, leading to $e_{n+1} = \frac{f''(c)}{2f'(x_n)}e_n^2$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Condition</span>
+                <span class="explain-line-badge">Step 2: Condition</span>
                 <div class="explain-line-title">Fourier / Convergence Criterion</div>
                 <div class="explain-line-desc">The inequality $|f(x)f''(x)| < [f'(x)]^2$ ensures that the tangent line intersects the $x$-axis closer to the root than the current estimate.</div>
               </div>
@@ -75,7 +75,7 @@ $$\left| f(x) f''(x) \right| < \left[ f'(x) \right]^2 \quad \text{for all } x \i
 
 <div class="question-card" data-category="newton">
 <div class="card-top">
-<span class="q-pill">QB • Q2</span>
+<span class="q-pill">QB - Q2</span>
 <div class="q-heading">Establish the iteration formula to find the reciprocal of a positive number $N$ by Newton-Raphson Method.</div>
 </div>
 <div class="solution-content">
@@ -100,12 +100,12 @@ $$x_{n+1} = x_n (2 - N x_n)$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Function</span>
+                <span class="explain-line-badge">Step 1: Function</span>
                 <div class="explain-line-title">Formulate $f(x) = 0$</div>
                 <div class="explain-line-desc">Let $x = 1/N \implies 1/x - N = 0$. Using $f(x) = x - 1/N$ would yield division by $N$ directly, defeating the purpose of an iterative reciprocal formula.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Formula</span>
+                <span class="explain-line-badge">Step 2: Formula</span>
                 <div class="explain-line-title">Newton-Raphson Substitution</div>
                 <div class="explain-line-desc">Substitute $f(x_n)$ and $f'(x_n) = -1/x_n^2$ into $x_{n+1} = x_n - f/f'$, simplify the compound fraction by multiplying numerator by $x_n^2$.</div>
               </div>
@@ -148,7 +148,7 @@ $$x_{n+1} = x_n (2 - N x_n)$$
 
 <div class="question-card" data-category="newton">
 <div class="card-top">
-<span class="q-pill">QB • Q3</span>
+<span class="q-pill">QB - Q3</span>
 <div class="q-heading">Find the Newton-Raphson iterative formula for $\sqrt{a}$ (where $a > 0$).</div>
 </div>
 <div class="solution-content">
@@ -172,12 +172,12 @@ $$x_{n+1} = \frac{1}{2} \left( x_n + \frac{a}{x_n} \right)$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Objective</span>
+                <span class="explain-line-badge">Step 1: Objective</span>
                 <div class="explain-line-title">Define $f(x) = x^2 - a$</div>
                 <div class="explain-line-desc">Setting $x^2 - a = 0$ gives a smooth polynomial whose derivative $f'(x) = 2x$ is linear and non-zero for $x > 0$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Simplification</span>
+                <span class="explain-line-badge">Step 2: Simplification</span>
                 <div class="explain-line-title">Common Denominator</div>
                 <div class="explain-line-desc">Combining $x_n - \frac{x_n^2-a}{2x_n} = \frac{2x_n^2 - x_n^2 + a}{2x_n} = \frac{1}{2}(x_n + a/x_n)$.</div>
               </div>
@@ -220,7 +220,7 @@ $$x_{n+1} = \frac{1}{2} \left( x_n + \frac{a}{x_n} \right)$$
 
 <div class="question-card" data-category="direct_indirect">
 <div class="card-top">
-<span class="q-pill">QB • Q4</span>
+<span class="q-pill">QB - Q4</span>
 <div class="q-heading">Distinguish between direct and indirect (iterative) methods of solving simultaneous linear equations.</div>
 </div>
 <div class="solution-content">
@@ -246,12 +246,12 @@ $$x_{n+1} = \frac{1}{2} \left( x_n + \frac{a}{x_n} \right)$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Concept</span>
+                <span class="explain-line-badge">Step 1: Concept</span>
                 <div class="explain-line-title">Exact vs Approximative</div>
                 <div class="explain-line-desc">Direct methods find roots algebraically in $O(n^3/3)$ operations. Iterative methods stop when $|x^{(k+1)} - x^{(k)}| < \varepsilon$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Sparsity</span>
+                <span class="explain-line-badge">Step 2: Sparsity</span>
                 <div class="explain-line-title">Computational Efficiency</div>
                 <div class="explain-line-desc">For sparse matrices with 90%+ zeros, direct elimination causes 'fill-in' (zeros turn non-zero), whereas iterative methods multiply only non-zero elements.</div>
               </div>
@@ -294,7 +294,7 @@ $$x_{n+1} = \frac{1}{2} \left( x_n + \frac{a}{x_n} \right)$$
 
 <div class="question-card" data-category="iterative">
 <div class="card-top">
-<span class="q-pill">QB • Q5</span>
+<span class="q-pill">QB - Q5</span>
 <div class="q-heading">Why is the Gauss-Seidel method a better method than Jacobi's iterative method?</div>
 </div>
 <div class="solution-content">
@@ -317,12 +317,12 @@ Thus, Gauss-Seidel converges roughly <strong>twice as fast</strong>, requiring h
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Memory & Logic</span>
+                <span class="explain-line-badge">Step 1: Memory & Logic</span>
                 <div class="explain-line-title">In-place Update</div>
                 <div class="explain-line-desc">Jacobi requires two storage arrays (old $x^{(k)}$ and new $x^{(k+1)}$). Gauss-Seidel overwrites the vector in-place.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Convergence</span>
+                <span class="explain-line-badge">Step 2: Convergence</span>
                 <div class="explain-line-title">Spectral Radius Relationship</div>
                 <div class="explain-line-desc">$\rho(H_S) = \rho(H_J)^2$ means each Gauss-Seidel step reduces the asymptotic error by the square of the Jacobi reduction.</div>
               </div>
@@ -365,18 +365,18 @@ Thus, Gauss-Seidel converges roughly <strong>twice as fast</strong>, requiring h
 
 <div class="question-card" data-category="gauss_elim">
 <div class="card-top">
-<span class="q-pill">QB • Q6</span>
+<span class="q-pill">QB - Q6</span>
 <div class="q-heading">By Gauss Elimination method, solve: $2x + y = 5$ and $x + 3y = 5$.</div>
 </div>
 <div class="solution-content">
 <p>Write the system in augmented matrix form $[A \mid B]$:</p>
 <div class="math-panel">
-$$[A \mid B] = \begin{bmatrix} 2 & 1 & \mid & 5 \ 1 & 3 & \mid & 5 \end{bmatrix}$$
+$$[A \mid B] = \begin{bmatrix} 2 & 1 & \mid & 5 \\ 1 & 3 & \mid & 5 \end{bmatrix}$$
 </div>
 <p>Perform row operation $R_2 \leftarrow R_2 - \frac{1}{2} R_1$:</p>
 <div class="math-panel">
 $$R_2 \leftarrow \begin{bmatrix} 1 - \frac{1}{2}(2) & 3 - \frac{1}{2}(1) & \mid & 5 - \frac{1}{2}(5) \end{bmatrix} = \begin{bmatrix} 0 & \frac{5}{2} & \mid & \frac{5}{2} \end{bmatrix}$$
-$$\begin{bmatrix} 2 & 1 & \mid & 5 \ 0 & \frac{5}{2} & \mid & \frac{5}{2} \end{bmatrix}$$
+$$\begin{bmatrix} 2 & 1 & \mid & 5 \\ 0 & \frac{5}{2} & \mid & \frac{5}{2} \end{bmatrix}$$
 </div>
 <p>From the second row: $\frac{5}{2} y = \frac{5}{2} \implies y = 1$.</p>
 <p>Back-substituting into row 1: $2x + 1 = 5 \implies 2x = 4 \implies x = 2$.</p>
@@ -391,12 +391,12 @@ $$\begin{bmatrix} 2 & 1 & \mid & 5 \ 0 & \frac{5}{2} & \mid & \frac{5}{2} \end{b
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Augmented Matrix</span>
+                <span class="explain-line-badge">Step 1: Augmented Matrix</span>
                 <div class="explain-line-title">Forward Elimination</div>
                 <div class="explain-line-desc">Form $[A \mid B]$ and apply multiplier $m_{21} = 1/2$ to eliminate $x$ from equation 2.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Back-substitution</span>
+                <span class="explain-line-badge">Step 2: Back-substitution</span>
                 <div class="explain-line-title">Solve Upper Triangular System</div>
                 <div class="explain-line-desc">Equation 2 gives $y=1$ directly. Back-substitution into $2x + y = 5$ yields $x=2$.</div>
               </div>
@@ -439,7 +439,7 @@ $$\begin{bmatrix} 2 & 1 & \mid & 5 \ 0 & \frac{5}{2} & \mid & \frac{5}{2} \end{b
 
 <div class="question-card" data-category="direct_methods">
 <div class="card-top">
-<span class="q-pill">QB • Q7</span>
+<span class="q-pill">QB - Q7</span>
 <div class="q-heading">Compare Gauss Elimination and Gauss-Jordan methods.</div>
 </div>
 <div class="solution-content">
@@ -465,12 +465,12 @@ $$\begin{bmatrix} 2 & 1 & \mid & 5 \ 0 & \frac{5}{2} & \mid & \frac{5}{2} \end{b
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Triangular vs Diagonal</span>
+                <span class="explain-line-badge">Step 1: Triangular vs Diagonal</span>
                 <div class="explain-line-title">Row Reduction Target</div>
                 <div class="explain-line-desc">Gauss eliminates entries below main diagonal; Gauss-Jordan eliminates entries both below and above pivots.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Efficiency</span>
+                <span class="explain-line-badge">Step 2: Efficiency</span>
                 <div class="explain-line-title">Complexity Comparison</div>
                 <div class="explain-line-desc">Gauss is computationally cheaper ($n^3/3$) for solving $AX=B$, while Gauss-Jordan avoids back-substitution and finds $A^{-1}$.</div>
               </div>
@@ -513,29 +513,29 @@ $$\begin{bmatrix} 2 & 1 & \mid & 5 \ 0 & \frac{5}{2} & \mid & \frac{5}{2} \end{b
 
 <div class="question-card" data-category="gauss_jordan">
 <div class="card-top">
-<span class="q-pill">QB • Q8</span>
+<span class="q-pill">QB - Q8</span>
 <div class="q-heading">Solve by using Gauss-Jordan method: $2x + 3y = 8$, $x - y = 4$.</div>
 </div>
 <div class="solution-content">
 <p>Set up augmented matrix $[A \mid B]$:</p>
 <div class="math-panel">
-$$[A \mid B] = \begin{bmatrix} 2 & 3 & \mid & 8 \ 1 & -1 & \mid & 4 \end{bmatrix}$$
+$$[A \mid B] = \begin{bmatrix} 2 & 3 & \mid & 8 \\ 1 & -1 & \mid & 4 \end{bmatrix}$$
 </div>
 <p>Interchange $R_1 \leftrightarrow R_2$ for unit pivot:</p>
 <div class="math-panel">
-$$\begin{bmatrix} 1 & -1 & \mid & 4 \ 2 & 3 & \mid & 8 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & -1 & \mid & 4 \\ 2 & 3 & \mid & 8 \end{bmatrix}$$
 </div>
 <p>Perform $R_2 \leftarrow R_2 - 2R_1$:</p>
 <div class="math-panel">
-$$\begin{bmatrix} 1 & -1 & \mid & 4 \ 0 & 5 & \mid & 0 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & -1 & \mid & 4 \\ 0 & 5 & \mid & 0 \end{bmatrix}$$
 </div>
 <p>Normalize $R_2 \leftarrow \frac{R_2}{5}$:</p>
 <div class="math-panel">
-$$\begin{bmatrix} 1 & -1 & \mid & 4 \ 0 & 1 & \mid & 0 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & -1 & \mid & 4 \\ 0 & 1 & \mid & 0 \end{bmatrix}$$
 </div>
 <p>Eliminate above pivot: $R_1 \leftarrow R_1 + R_2$:</p>
 <div class="math-panel">
-$$\begin{bmatrix} 1 & 0 & \mid & 4 \ 0 & 1 & \mid & 0 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 0 & \mid & 4 \\ 0 & 1 & \mid & 0 \end{bmatrix}$$
 </div>
 <p><strong>Final Answer:</strong> $x = 4, \quad y = 0$. (Check: $2(4)+3(0)=8$, $4-0=4$).</p>
 </div>
@@ -548,12 +548,12 @@ $$\begin{bmatrix} 1 & 0 & \mid & 4 \ 0 & 1 & \mid & 0 \end{bmatrix}$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Pivot Setup</span>
+                <span class="explain-line-badge">Step 1: Pivot Setup</span>
                 <div class="explain-line-title">Pivot Selection & Elimination Below</div>
                 <div class="explain-line-desc">Interchanging rows creates pivot 1, eliminating row 2 gives $5y = 0 \implies y=0$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Jordan Reduction</span>
+                <span class="explain-line-badge">Step 2: Jordan Reduction</span>
                 <div class="explain-line-title">Eliminate Above Pivot</div>
                 <div class="explain-line-desc">Adding normalized $R_2$ to $R_1$ converts coefficient matrix to identity $[I \mid X]$.</div>
               </div>
@@ -596,7 +596,7 @@ $$\begin{bmatrix} 1 & 0 & \mid & 4 \ 0 & 1 & \mid & 0 \end{bmatrix}$$
 
 <div class="question-card" data-category="iterative">
 <div class="card-top">
-<span class="q-pill">QB • Q9</span>
+<span class="q-pill">QB - Q9</span>
 <div class="q-heading">State the sufficient condition for convergence of the Gauss-Seidel method.</div>
 </div>
 <div class="solution-content">
@@ -616,12 +616,12 @@ $$\left| a_{ii} \right| > \sum_{\substack{j=1 \ j \neq i}}^{n} \left| a_{ij} \ri
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Diagonal Dominance</span>
+                <span class="explain-line-badge">Step 1: Diagonal Dominance</span>
                 <div class="explain-line-title">Row-wise Inequality</div>
                 <div class="explain-line-desc">For each row $i$, $|a_{ii}| > \sum_{j \neq i} |a_{ij}|$ ensures spectral radius of iteration matrix $\rho(H) < 1$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Rearrangement</span>
+                <span class="explain-line-badge">Step 2: Rearrangement</span>
                 <div class="explain-line-title">Pre-processing System</div>
                 <div class="explain-line-desc">If a given system is not diagonally dominant, rows must be rearranged before applying Gauss-Seidel.</div>
               </div>
@@ -664,7 +664,7 @@ $$\left| a_{ii} \right| > \sum_{\substack{j=1 \ j \neq i}}^{n} \left| a_{ij} \ri
 
 <div class="question-card" data-category="power_method">
 <div class="card-top">
-<span class="q-pill">QB • Q10</span>
+<span class="q-pill">QB - Q10</span>
 <div class="q-heading">Find the dominant eigenvalue of $A = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}$ by power method (2 iterations).</div>
 </div>
 <div class="solution-content">
@@ -690,12 +690,12 @@ $$\lambda^{(2)} \approx 5.3333, \quad X_2 = \begin{bmatrix} 0.6875 \\ 1 \end{bma
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Iteration 1</span>
+                <span class="explain-line-badge">Step 1: Iteration 1</span>
                 <div class="explain-line-title">Matrix-Vector Product</div>
                 <div class="explain-line-desc">$AX_0 = [4, 6]^T$. Normalize by factoring out largest component 6 to obtain $X_1 = [0.6667, 1]^T$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Iteration 2</span>
+                <span class="explain-line-badge">Step 2: Iteration 2</span>
                 <div class="explain-line-title">Second Power Step</div>
                 <div class="explain-line-desc">$AX_1 = [3.6667, 5.3333]^T = 5.3333 [0.6875, 1]^T$, rapidly approaching true eigenvalue $5.3723$.</div>
               </div>
@@ -738,7 +738,7 @@ $$\lambda^{(2)} \approx 5.3333, \quad X_2 = \begin{bmatrix} 0.6875 \\ 1 \end{bma
 
 <div class="question-card" data-category="fixed_point">
 <div class="card-top">
-<span class="q-pill">Extra • Q11</span>
+<span class="q-pill">Extra - Q11</span>
 <div class="q-heading">State the condition for the convergence of the Fixed-Point Iteration method $x = g(x)$.</div>
 </div>
 <div class="solution-content">
@@ -757,12 +757,12 @@ $$\left| g'(x) \right| \le k < 1 \quad \text{for all } x \in [a, b]$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Lipschitz Condition</span>
+                <span class="explain-line-badge">Step 1: Lipschitz Condition</span>
                 <div class="explain-line-title">Contraction Mapping Principle</div>
                 <div class="explain-line-desc">$|g(x) - g(y)| \le k |x - y|$ with $k < 1$ guarantees a unique fixed point via Banach Contraction Theorem.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Derivative Test</span>
+                <span class="explain-line-badge">Step 2: Derivative Test</span>
                 <div class="explain-line-title">Convergence Guarantee</div>
                 <div class="explain-line-desc">Check $|g'(x)|$ at the initial guess. If $|g'(x_0)| \ge 1$, algebraically reformulate $x = g(x)$ into another form.</div>
               </div>
@@ -805,7 +805,7 @@ $$\left| g'(x) \right| \le k < 1 \quad \text{for all } x \in [a, b]$$
 
 <div class="question-card" data-category="newton">
 <div class="card-top">
-<span class="q-pill">Extra • Q12</span>
+<span class="q-pill">Extra - Q12</span>
 <div class="q-heading">Establish the Newton-Raphson iteration formula for finding the $k$-th root of a positive real number $N$ ($\sqrt[k]{N}$).</div>
 </div>
 <div class="solution-content">
@@ -829,12 +829,12 @@ $$x_{n+1} = \frac{1}{k} \left[ (k-1)x_n + \frac{N}{x_n^{k-1}} \right]$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Function Definition</span>
+                <span class="explain-line-badge">Step 1: Function Definition</span>
                 <div class="explain-line-title">$f(x) = x^k - N$</div>
                 <div class="explain-line-desc">Derivative is $k x^{k-1}$. Substitute into $x - f(x)/f'(x)$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Generalized Formula</span>
+                <span class="explain-line-badge">Step 2: Generalized Formula</span>
                 <div class="explain-line-title">Weighted Average</div>
                 <div class="explain-line-desc">The result expresses $x_{n+1}$ as a weighted average of $(k-1)$ parts $x_n$ and 1 part $N/x_n^{k-1}$.</div>
               </div>
@@ -877,7 +877,7 @@ $$x_{n+1} = \frac{1}{k} \left[ (k-1)x_n + \frac{N}{x_n^{k-1}} \right]$$
 
 <div class="question-card" data-category="gauss_elim">
 <div class="card-top">
-<span class="q-pill">Extra • Q13</span>
+<span class="q-pill">Extra - Q13</span>
 <div class="q-heading">Explain the concept of partial pivoting in Gauss Elimination and state why it is essential.</div>
 </div>
 <div class="solution-content">
@@ -901,12 +901,12 @@ $$\left| a_{pk} \right| = \max_{k \le i \le n} \left| a_{ik} \right|$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Pivot Search</span>
+                <span class="explain-line-badge">Step 1: Pivot Search</span>
                 <div class="explain-line-title">Largest Magnitude Pivot</div>
                 <div class="explain-line-desc">Searching column $k$ for maximum $|a_{ik}|$ guarantees the divisor in row operations is maximized.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Numerical Stability</span>
+                <span class="explain-line-badge">Step 2: Numerical Stability</span>
                 <div class="explain-line-title">Error Containment</div>
                 <div class="explain-line-desc">Multipliers $\le 1$ avoid catastrophic cancellation when subtracting floating point values.</div>
               </div>
@@ -949,7 +949,7 @@ $$\left| a_{pk} \right| = \max_{k \le i \le n} \left| a_{ik} \right|$$
 
 <div class="question-card" data-category="matrix_methods">
 <div class="card-top">
-<span class="q-pill">Extra • Q14</span>
+<span class="q-pill">Extra - Q14</span>
 <div class="q-heading">What is an ill-conditioned system of equations and how can it be detected using the condition number?</div>
 </div>
 <div class="solution-content">
@@ -972,12 +972,12 @@ $$\kappa(A) = \|A\| \cdot \|A^{-1}\|$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Definition</span>
+                <span class="explain-line-badge">Step 1: Definition</span>
                 <div class="explain-line-title">Sensitivity to Perturbations</div>
                 <div class="explain-line-desc">Geometrically corresponds to nearly parallel hyperplanes where intersection points shift drastically under minor slope errors.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Condition Metric</span>
+                <span class="explain-line-badge">Step 2: Condition Metric</span>
                 <div class="explain-line-title">$\kappa(A) = \|A\| \|A^{-1}\|$</div>
                 <div class="explain-line-desc">Always $\kappa(A) \ge 1$. For singular matrices, $\kappa(A) \to \infty$.</div>
               </div>
@@ -1020,7 +1020,7 @@ $$\kappa(A) = \|A\| \cdot \|A^{-1}\|$$
 
 <div class="question-card" data-category="iterative">
 <div class="card-top">
-<span class="q-pill">Extra • Q15</span>
+<span class="q-pill">Extra - Q15</span>
 <div class="q-heading">Express the Jacobi iteration method in matrix form.</div>
 </div>
 <div class="solution-content">
@@ -1040,12 +1040,12 @@ $$X^{(k+1)} = -D^{-1}(L + U) X^{(k)} + D^{-1} B$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Matrix Splitting</span>
+                <span class="explain-line-badge">Step 1: Matrix Splitting</span>
                 <div class="explain-line-title">$A = D + L + U$</div>
                 <div class="explain-line-desc">Splits diagonal from off-diagonal elements so inversion of $D$ is trivial ($d_{ii}^{-1} = 1/a_{ii}$).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Iteration Formula</span>
+                <span class="explain-line-badge">Step 2: Iteration Formula</span>
                 <div class="explain-line-title">$X^{(k+1)} = H_J X^{(k)} + C$</div>
                 <div class="explain-line-desc">Standard linear fixed-point form enabling rigorous eigenvalue stability analysis.</div>
               </div>
@@ -1088,7 +1088,7 @@ $$X^{(k+1)} = -D^{-1}(L + U) X^{(k)} + D^{-1} B$$
 
 <div class="question-card" data-category="iterative">
 <div class="card-top">
-<span class="q-pill">Extra • Q16</span>
+<span class="q-pill">Extra - Q16</span>
 <div class="q-heading">Express the Gauss-Seidel iteration method in matrix form.</div>
 </div>
 <div class="solution-content">
@@ -1109,12 +1109,12 @@ $$X^{(k+1)} = -(D + L)^{-1} U X^{(k)} + (D + L)^{-1} B$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Splitting Formulation</span>
+                <span class="explain-line-badge">Step 1: Splitting Formulation</span>
                 <div class="explain-line-title">$(D+L)X^{(k+1)} = -UX^{(k)} + B$</div>
                 <div class="explain-line-desc">Incorporate updated lower elements into left-hand side of iteration.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Iteration Matrix</span>
+                <span class="explain-line-badge">Step 2: Iteration Matrix</span>
                 <div class="explain-line-title">$H_{GS} = -(D+L)^{-1}U$</div>
                 <div class="explain-line-desc">Demonstrates that Gauss-Seidel systematically annihilates old iterations from triangular components.</div>
               </div>
@@ -1157,7 +1157,7 @@ $$X^{(k+1)} = -(D + L)^{-1} U X^{(k)} + (D + L)^{-1} B$$
 
 <div class="question-card" data-category="eigenvalues">
 <div class="card-top">
-<span class="q-pill">Extra • Q17</span>
+<span class="q-pill">Extra - Q17</span>
 <div class="q-heading">State the formula for rotation angle $\theta$ in Jacobi's method for symmetric matrices.</div>
 </div>
 <div class="solution-content">
@@ -1177,12 +1177,12 @@ $$\text{If } a_{ii} = a_{jj}, \text{ then } \theta = \frac{\pi}{4}$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Annihilation Condition</span>
+                <span class="explain-line-badge">Step 1: Annihilation Condition</span>
                 <div class="explain-line-title">Setting Transformed $a'_{ij} = 0$</div>
                 <div class="explain-line-desc">Orthogonal similarity transform $A' = R^T A R$ leads directly to $(a_{ii} - a_{jj})\sin 2\theta = 2 a_{ij} \cos 2\theta$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Angle Range</span>
+                <span class="explain-line-badge">Step 2: Angle Range</span>
                 <div class="explain-line-title">$-\pi/4 \le \theta \le \pi/4$</div>
                 <div class="explain-line-desc">Taking the principal angle minimizes distortion of other elements during rotation.</div>
               </div>
@@ -1225,7 +1225,7 @@ $$\text{If } a_{ii} = a_{jj}, \text{ then } \theta = \frac{\pi}{4}$$
 
 <div class="question-card" data-category="eigenvalues">
 <div class="card-top">
-<span class="q-pill">Extra • Q18</span>
+<span class="q-pill">Extra - Q18</span>
 <div class="q-heading">How does the Shifted Power Method find the smallest eigenvalue of a matrix?</div>
 </div>
 <div class="solution-content">
@@ -1249,12 +1249,12 @@ $$\lambda_{\min} = \mu_{\max} + \lambda_1$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Spectral Shift</span>
+                <span class="explain-line-badge">Step 1: Spectral Shift</span>
                 <div class="explain-line-title">Eigenvalues of $A - kI$</div>
                 <div class="explain-line-desc">Shifting shifts every eigenvalue uniformly by $k$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Inverse Power Alternative</span>
+                <span class="explain-line-badge">Step 2: Inverse Power Alternative</span>
                 <div class="explain-line-title">Apply Power Method to $A^{-1}$</div>
                 <div class="explain-line-desc">Power method on $A^{-1}$ directly converges to $1/\lambda_{\min}$ since $1/\lambda_{\min}$ is the largest eigenvalue of $A^{-1}$.</div>
               </div>
@@ -1297,7 +1297,7 @@ $$\lambda_{\min} = \mu_{\max} + \lambda_1$$
 
 <div class="question-card" data-category="stopping_criteria">
 <div class="card-top">
-<span class="q-pill">Extra • Q19</span>
+<span class="q-pill">Extra - Q19</span>
 <div class="q-heading">What are the standard stopping criteria for iterative numerical methods?</div>
 </div>
 <div class="solution-content">
@@ -1319,12 +1319,12 @@ $$\lambda_{\min} = \mu_{\max} + \lambda_1$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Absolute vs Relative</span>
+                <span class="explain-line-badge">Step 1: Absolute vs Relative</span>
                 <div class="explain-line-title">Magnitude Independence</div>
                 <div class="explain-line-desc">Relative error test avoids premature stopping when root magnitude is small, and prevents infinite loops when magnitude is large.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Residual Check</span>
+                <span class="explain-line-badge">Step 2: Residual Check</span>
                 <div class="explain-line-title">Direct Verification</div>
                 <div class="explain-line-desc">Confirms that the function value or system residual is sufficiently close to zero.</div>
               </div>
@@ -1367,7 +1367,7 @@ $$\lambda_{\min} = \mu_{\max} + \lambda_1$$
 
 <div class="question-card" data-category="eigenvalues">
 <div class="card-top">
-<span class="q-pill">Extra • Q20</span>
+<span class="q-pill">Extra - Q20</span>
 <div class="q-heading">If $\lambda$ is an eigenvalue of non-singular matrix $A$, what are the eigenvalues of $A^m$, $A^{-1}$, and $kA$?</div>
 </div>
 <div class="solution-content">
@@ -1390,12 +1390,12 @@ $$\lambda_{\min} = \mu_{\max} + \lambda_1$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Proof Sketch</span>
+                <span class="explain-line-badge">Step 1: Proof Sketch</span>
                 <div class="explain-line-title">$A X = \lambda X$</div>
                 <div class="explain-line-desc">$A(AX) = A(\lambda X) = \lambda(AX) = \lambda^2 X$. Multiplying by $A^{-1}$ yields $A^{-1}X = \frac{1}{\lambda}X$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Eigenvector Invariance</span>
+                <span class="explain-line-badge">Step 2: Eigenvector Invariance</span>
                 <div class="explain-line-title">Identical Eigenvector</div>
                 <div class="explain-line-desc">The eigenvectors corresponding to these transformed eigenvalues remain identical to those of $A$.</div>
               </div>
@@ -1438,7 +1438,7 @@ $$\lambda_{\min} = \mu_{\max} + \lambda_1$$
 `,
   partB: String.raw`<div class="question-card" data-category="newton_jacobi">
 <div class="card-top">
-<span class="q-pill">QB • Q1 (16-Mark)</span>
+<span class="q-pill">QB - Q1 (16-Mark)</span>
 <div class="q-heading">(i) Find the real positive root of $3x - \cos x - 1 = 0$ by Newton-Raphson method correct to 4 decimal places. (ii) Solve the system by Gauss-Jacobi iteration method: $10x - 2y + 3z = 23$, $2x + 10y - 5z = -33$, $3x - 4y + 10z = 41$.</div>
 </div>
 <div class="solution-content">
@@ -1569,7 +1569,7 @@ $$z^{(k+1)} = \frac{1}{10}(41 - 3x^{(k)} + 4y^{(k)})$$
 
 <div class="question-card" data-category="newton_seidel">
 <div class="card-top">
-<span class="q-pill">QB • Q2 (16-Mark)</span>
+<span class="q-pill">QB - Q2 (16-Mark)</span>
 <div class="q-heading">(i) Solve $x \log_{10} x = 1.2$ using Newton-Raphson method correct to 4 decimal places. (ii) Solve by Gauss-Seidel method: $27x + 6y - z = 85$, $6x + 15y + 2z = 72$, $x + y + 54z = 110$.</div>
 </div>
 <div class="solution-content">
@@ -1693,7 +1693,7 @@ $$z^{(k+1)} = \frac{1}{54}(110 - x^{(k+1)} - y^{(k+1)})$$
 
 <div class="question-card" data-category="newton_gauss_jordan">
 <div class="card-top">
-<span class="q-pill">QB • Q3 (16-Mark)</span>
+<span class="q-pill">QB - Q3 (16-Mark)</span>
 <div class="q-heading">(i) Find the real root of $x^3 - 2x - 5 = 0$ correct to 4 decimal places using Newton-Raphson method. (ii) Solve the system by Gauss-Jordan method: $2x_1 + 4x_2 + x_3 = 4$, $3x_1 + 2x_2 - x_3 = -2$, $x_1 - x_2 + 2x_3 = 12$.</div>
 </div>
 <div class="solution-content">
@@ -1710,15 +1710,15 @@ $$z^{(k+1)} = \frac{1}{54}(110 - x^{(k+1)} - y^{(k+1)})$$
 <hr class="ai-hr">
 <h4>Part (ii): Gauss-Jordan Elimination</h4>
 <p>Augmented matrix $[A \mid B]$:</p>
-$$[A \mid B] = \begin{bmatrix} 2 & 4 & 1 & \mid & 4 \ 3 & 2 & -1 & \mid & -2 \ 1 & -1 & 2 & \mid & 12 \end{bmatrix}$$
+$$[A \mid B] = \begin{bmatrix} 2 & 4 & 1 & \mid & 4 \\ 3 & 2 & -1 & \mid & -2 \\ 1 & -1 & 2 & \mid & 12 \end{bmatrix}$$
 <p>Interchange $R_1 \leftrightarrow R_3$:</p>
-$$\begin{bmatrix} 1 & -1 & 2 & \mid & 12 \ 3 & 2 & -1 & \mid & -2 \ 2 & 4 & 1 & \mid & 4 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & -1 & 2 & \mid & 12 \\ 3 & 2 & -1 & \mid & -2 \\ 2 & 4 & 1 & \mid & 4 \end{bmatrix}$$
 <p>$R_2 \leftarrow R_2 - 3R_1, \quad R_3 \leftarrow R_3 - 2R_1$:</p>
-$$\begin{bmatrix} 1 & -1 & 2 & \mid & 12 \ 0 & 5 & -7 & \mid & -38 \ 0 & 6 & -3 & \mid & -20 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & -1 & 2 & \mid & 12 \\ 0 & 5 & -7 & \mid & -38 \\ 0 & 6 & -3 & \mid & -20 \end{bmatrix}$$
 <p>Normalize pivot 2: $R_2 \leftarrow \frac{R_2}{5}$:</p>
-$$\begin{bmatrix} 1 & -1 & 2 & \mid & 12 \ 0 & 1 & -1.4 & \mid & -7.6 \ 0 & 6 & -3 & \mid & -20 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & -1 & 2 & \mid & 12 \\ 0 & 1 & -1.4 & \mid & -7.6 \\ 0 & 6 & -3 & \mid & -20 \end{bmatrix}$$
 <p>Eliminate in column 2: $R_1 \leftarrow R_1 + R_2, \quad R_3 \leftarrow R_3 - 6R_2$:</p>
-$$\begin{bmatrix} 1 & 0 & 0.6 & \mid & 4.4 \ 0 & 1 & -1.4 & \mid & -7.6 \ 0 & 0 & 5.4 & \mid & 25.6 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 0 & 0.6 & \mid & 4.4 \\ 0 & 1 & -1.4 & \mid & -7.6 \\ 0 & 0 & 5.4 & \mid & 25.6 \end{bmatrix}$$
 <p>Normalize pivot 3: $R_3 \leftarrow \frac{R_3}{5.4} \implies z = 4.7407$ or exact fractions:</p>
 <p>Direct substitution yields exact integer solution: $x_1 = 2, \quad x_2 = -1, \quad x_3 = 4$.</p>
 </div>
@@ -1804,18 +1804,18 @@ $$\begin{bmatrix} 1 & 0 & 0.6 & \mid & 4.4 \ 0 & 1 & -1.4 & \mid & -7.6 \ 0 & 0 
 
 <div class="question-card" data-category="gauss_elim_jordan">
 <div class="card-top">
-<span class="q-pill">QB • Q4 (16-Mark)</span>
+<span class="q-pill">QB - Q4 (16-Mark)</span>
 <div class="q-heading">Solve the following system by Gauss Elimination and verify the result by Gauss-Jordan method: $10x - 2y + 3z = 23$, $2x + 10y - 5z = -33$, $3x - 4y + 10z = 41$.</div>
 </div>
 <div class="solution-content">
 <div class="math-panel">
 <h4>Method 1: Gauss Elimination</h4>
 <p>Augmented matrix:</p>
-$$[A \mid B] = \begin{bmatrix} 10 & -2 & 3 & \mid & 23 \ 2 & 10 & -5 & \mid & -33 \ 3 & -4 & 10 & \mid & 41 \end{bmatrix}$$
+$$[A \mid B] = \begin{bmatrix} 10 & -2 & 3 & \mid & 23 \\ 2 & 10 & -5 & \mid & -33 \\ 3 & -4 & 10 & \mid & 41 \end{bmatrix}$$
 <p>Eliminate $x$ using $R_2 \leftarrow R_2 - 0.2 R_1$ and $R_3 \leftarrow R_3 - 0.3 R_1$:</p>
-$$\begin{bmatrix} 10 & -2 & 3 & \mid & 23 \ 0 & 10.4 & -5.6 & \mid & -37.6 \ 0 & -3.4 & 9.1 & \mid & 34.1 \end{bmatrix}$$
+$$\begin{bmatrix} 10 & -2 & 3 & \mid & 23 \\ 0 & 10.4 & -5.6 & \mid & -37.6 \\ 0 & -3.4 & 9.1 & \mid & 34.1 \end{bmatrix}$$
 <p>Eliminate $y$ using $R_3 \leftarrow R_3 - \left(-\frac{3.4}{10.4}\right) R_2 = R_3 + 0.32692 R_2$:</p>
-$$\begin{bmatrix} 10 & -2 & 3 & \mid & 23 \ 0 & 10.4 & -5.6 & \mid & -37.6 \ 0 & 0 & 7.2692 & \mid & 21.8077 \end{bmatrix}$$
+$$\begin{bmatrix} 10 & -2 & 3 & \mid & 23 \\ 0 & 10.4 & -5.6 & \mid & -37.6 \\ 0 & 0 & 7.2692 & \mid & 21.8077 \end{bmatrix}$$
 <p><strong>Back-Substitution:</strong></p>
 <ol>
 <li>Row 3: $7.2692 z = 21.8077 \implies z = 3$</li>
@@ -1910,7 +1910,7 @@ $$\begin{bmatrix} 10 & -2 & 3 & \mid & 23 \ 0 & 10.4 & -5.6 & \mid & -37.6 \ 0 &
 
 <div class="question-card" data-category="jacobi_seidel">
 <div class="card-top">
-<span class="q-pill">QB • Q5 (16-Mark)</span>
+<span class="q-pill">QB - Q5 (16-Mark)</span>
 <div class="q-heading">Solve the system by (i) Gauss-Jacobi method and (ii) Gauss-Seidel method: $5x + 2y + z = 12$, $x + 4y + 2z = 15$, $x + 2y + 5z = 20$.</div>
 </div>
 <div class="solution-content">
@@ -2034,7 +2034,7 @@ $$z^{(k+1)} = \frac{1}{5}(20 - x^{(k+1)} - 2y^{(k+1)})$$
 
 <div class="question-card" data-category="jacobi_seidel">
 <div class="card-top">
-<span class="q-pill">QB • Q6 (16-Mark)</span>
+<span class="q-pill">QB - Q6 (16-Mark)</span>
 <div class="q-heading">Solve the following system by Gauss-Jacobi and Gauss-Seidel methods: $9x + 2y + 4z = 20$, $x + 10y + 4z = 6$, $2x - 4y + 10z = -15$.</div>
 </div>
 <div class="solution-content">
@@ -2155,20 +2155,20 @@ $$z^{(k+1)} = \frac{1}{10}(-15 - 2x^{(k+1)} + 4y^{(k+1)})$$
 
 <div class="question-card" data-category="power_method">
 <div class="card-top">
-<span class="q-pill">QB • Q7 (16-Mark)</span>
-<div class="q-heading">Using the power method, find all the eigenvalues and the dominant eigenvector of $A = \begin{bmatrix} 5 & 0 & 1 \ 0 & -2 & 0 \ 1 & 0 & 5 \end{bmatrix}$.</div>
+<span class="q-pill">QB - Q7 (16-Mark)</span>
+<div class="q-heading">Using the power method, find all the eigenvalues and the dominant eigenvector of $A = \begin{bmatrix} 5 & 0 & 1 \\ 0 & -2 & 0 \\ 1 & 0 & 5 \end{bmatrix}$.</div>
 </div>
 <div class="solution-content">
 <div class="math-panel">
 <h4>Step 1: Dominant Eigenvalue by Power Method</h4>
-<p>Let $X_0 = \begin{bmatrix} 1 \ 0 \ 1 \end{bmatrix}$ (or $[1, 1, 1]^T$).</p>
+<p>Let $X_0 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$ (or $[1, 1, 1]^T$).</p>
 <ul>
-<li>$Y_1 = A X_0 = \begin{bmatrix} 5 & 0 & 1 \ 0 & -2 & 0 \ 1 & 0 & 5 \end{bmatrix} \begin{bmatrix} 1 \ 1 \ 1 \end{bmatrix} = \begin{bmatrix} 6 \ -2 \ 6 \end{bmatrix} = 6 \begin{bmatrix} 1 \ -0.3333 \ 1 \end{bmatrix}$</li>
-<li>$Y_2 = A X_1 = \begin{bmatrix} 5 & 0 & 1 \ 0 & -2 & 0 \ 1 & 0 & 5 \end{bmatrix} \begin{bmatrix} 1 \ -0.3333 \ 1 \end{bmatrix} = \begin{bmatrix} 6 \ 0.6667 \ 6 \end{bmatrix} = 6 \begin{bmatrix} 1 \ 0.1111 \ 1 \end{bmatrix}$</li>
-<li>$Y_3 = A X_2 = \begin{bmatrix} 6 \ -0.2222 \ 6 \end{bmatrix} = 6 \begin{bmatrix} 1 \ -0.0370 \ 1 \end{bmatrix}$</li>
-<li>$Y_4 = A X_3 = \begin{bmatrix} 6 \ 0.0741 \ 6 \end{bmatrix} = 6 \begin{bmatrix} 1 \ 0.0123 \ 1 \end{bmatrix} \to 6 \begin{bmatrix} 1 \ 0 \ 1 \end{bmatrix}$</li>
+<li>$Y_1 = A X_0 = \begin{bmatrix} 5 & 0 & 1 \\ 0 & -2 & 0 \\ 1 & 0 & 5 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 6 \\ -2 \\ 6 \end{bmatrix} = 6 \begin{bmatrix} 1 \\ -0.3333 \\ 1 \end{bmatrix}$</li>
+<li>$Y_2 = A X_1 = \begin{bmatrix} 5 & 0 & 1 \\ 0 & -2 & 0 \\ 1 & 0 & 5 \end{bmatrix} \begin{bmatrix} 1 \\ -0.3333 \\ 1 \end{bmatrix} = \begin{bmatrix} 6 \\ 0.6667 \\ 6 \end{bmatrix} = 6 \begin{bmatrix} 1 \\ 0.1111 \\ 1 \end{bmatrix}$</li>
+<li>$Y_3 = A X_2 = \begin{bmatrix} 6 \\ -0.2222 \\ 6 \end{bmatrix} = 6 \begin{bmatrix} 1 \\ -0.0370 \\ 1 \end{bmatrix}$</li>
+<li>$Y_4 = A X_3 = \begin{bmatrix} 6 \\ 0.0741 \\ 6 \end{bmatrix} = 6 \begin{bmatrix} 1 \\ 0.0123 \\ 1 \end{bmatrix} \to 6 \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$</li>
 </ul>
-<p><strong>Dominant Eigenvalue:</strong> $\lambda_1 = 6$, with eigenvector $X_1 = \begin{bmatrix} 1 \ 0 \ 1 \end{bmatrix}$.</p>
+<p><strong>Dominant Eigenvalue:</strong> $\lambda_1 = 6$, with eigenvector $X_1 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$.</p>
 <hr class="ai-hr">
 <h4>Step 2: Remaining Eigenvalues</h4>
 <p><strong>Trace property:</strong> $\text{Tr}(A) = 5 + (-2) + 5 = 8$.</p>
@@ -2262,23 +2262,23 @@ $$\lambda_2 = 4, \quad \lambda_3 = -2$$
 
 <div class="question-card" data-category="power_method">
 <div class="card-top">
-<span class="q-pill">QB • Q8 (16-Mark)</span>
-<div class="q-heading">Find the numerically largest and smallest eigenvalue of $A = \begin{bmatrix} 25 & 1 & 2 \ 1 & 3 & 0 \ 2 & 0 & -4 \end{bmatrix}$ by power method and the corresponding eigenvector.</div>
+<span class="q-pill">QB - Q8 (16-Mark)</span>
+<div class="q-heading">Find the numerically largest and smallest eigenvalue of $A = \begin{bmatrix} 25 & 1 & 2 \\ 1 & 3 & 0 \\ 2 & 0 & -4 \end{bmatrix}$ by power method and the corresponding eigenvector.</div>
 </div>
 <div class="solution-content">
 <div class="math-panel">
 <h4>Step 1: Largest Eigenvalue $\lambda_1$</h4>
 <p>Initial vector $X_0 = [1, 0, 0]^T$ (guided by largest diagonal entry 25):</p>
 <ul>
-<li>$Y_1 = A X_0 = \begin{bmatrix} 25 & 1 & 2 \ 1 & 3 & 0 \ 2 & 0 & -4 \end{bmatrix} \begin{bmatrix} 1 \ 0 \ 0 \end{bmatrix} = \begin{bmatrix} 25 \ 1 \ 2 \end{bmatrix} = 25 \begin{bmatrix} 1 \ 0.0400 \ 0.0800 \end{bmatrix}$</li>
-<li>$Y_2 = A X_1 = \begin{bmatrix} 25(1) + 1(0.04) + 2(0.08) \ 1(1) + 3(0.04) \ 2(1) - 4(0.08) \end{bmatrix} = \begin{bmatrix} 25.2000 \ 1.1200 \ 1.6800 \end{bmatrix} = 25.20 \begin{bmatrix} 1 \ 0.0444 \ 0.0667 \end{bmatrix}$</li>
-<li>$Y_3 = A X_2 = \begin{bmatrix} 25.1778 \ 1.1332 \ 1.7332 \end{bmatrix} = 25.1778 \begin{bmatrix} 1 \ 0.0450 \ 0.0688 \end{bmatrix}$</li>
-<li>$Y_4 = A X_3 = \begin{bmatrix} 25.1826 \ 1.1350 \ 1.7248 \end{bmatrix} = 25.18 \begin{bmatrix} 1 \ 0.0451 \ 0.0685 \end{bmatrix}$</li>
+<li>$Y_1 = A X_0 = \begin{bmatrix} 25 & 1 & 2 \\ 1 & 3 & 0 \\ 2 & 0 & -4 \end{bmatrix} \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 25 \\ 1 \\ 2 \end{bmatrix} = 25 \begin{bmatrix} 1 \\ 0.0400 \\ 0.0800 \end{bmatrix}$</li>
+<li>$Y_2 = A X_1 = \begin{bmatrix} 25(1) + 1(0.04) + 2(0.08) \\ 1(1) + 3(0.04) \\ 2(1) - 4(0.08) \end{bmatrix} = \begin{bmatrix} 25.2000 \\ 1.1200 \\ 1.6800 \end{bmatrix} = 25.20 \begin{bmatrix} 1 \\ 0.0444 \\ 0.0667 \end{bmatrix}$</li>
+<li>$Y_3 = A X_2 = \begin{bmatrix} 25.1778 \\ 1.1332 \\ 1.7332 \end{bmatrix} = 25.1778 \begin{bmatrix} 1 \\ 0.0450 \\ 0.0688 \end{bmatrix}$</li>
+<li>$Y_4 = A X_3 = \begin{bmatrix} 25.1826 \\ 1.1350 \\ 1.7248 \end{bmatrix} = 25.18 \begin{bmatrix} 1 \\ 0.0451 \\ 0.0685 \end{bmatrix}$</li>
 </ul>
 <p><strong>Largest Eigenvalue:</strong> $\lambda_{\max} \approx 25.18$, Eigenvector: $X_{\max} = [1, 0.0451, 0.0685]^T$.</p>
 <hr class="ai-hr">
 <h4>Step 2: Smallest Eigenvalue by Shifted Matrix $B = A - \lambda_1 I$</h4>
-<p>$B = A - 25.18 I = \begin{bmatrix} -0.18 & 1 & 2 \ 1 & -22.18 & 0 \ 2 & 0 & -29.18 \end{bmatrix}$.</p>
+<p>$B = A - 25.18 I = \begin{bmatrix} -0.18 & 1 & 2 \\ 1 & -22.18 & 0 \\ 2 & 0 & -29.18 \end{bmatrix}$.</p>
 <p>Applying power method to $B$ with $X_0 = [0, 0, 1]^T$ converges to dominant eigenvalue of $B$:</p>
 <p>$\mu = -29.18 \implies \lambda_{\min} = \mu + \lambda_1 \approx -4.00$.</p>
 <p><strong>Smallest Eigenvalue:</strong> $\lambda_{\min} \approx -4.00$, Eigenvector: $[0.0685, 0, 1]^T$.</p>
@@ -2365,19 +2365,19 @@ $$\lambda_2 = 4, \quad \lambda_3 = -2$$
 
 <div class="question-card" data-category="power_method">
 <div class="card-top">
-<span class="q-pill">QB • Q9 (16-Mark)</span>
-<div class="q-heading">Find the dominant eigenvalue and eigenvector of $A = \begin{bmatrix} 1 & 6 & 1 \ 1 & 2 & 0 \ 0 & 0 & 3 \end{bmatrix}$ by power method. Find also the least latent root and the third eigenvalue.</div>
+<span class="q-pill">QB - Q9 (16-Mark)</span>
+<div class="q-heading">Find the dominant eigenvalue and eigenvector of $A = \begin{bmatrix} 1 & 6 & 1 \\ 1 & 2 & 0 \\ 0 & 0 & 3 \end{bmatrix}$ by power method. Find also the least latent root and the third eigenvalue.</div>
 </div>
 <div class="solution-content">
 <div class="math-panel">
 <h4>Step 1: Power Method for Dominant Root</h4>
 <p>Initial guess: $X_0 = [1, 1, 1]^T$.</p>
 <ul>
-<li>$Y_1 = A X_0 = \begin{bmatrix} 8 \ 3 \ 3 \end{bmatrix} = 8 \begin{bmatrix} 1 \ 0.3750 \ 0.3750 \end{bmatrix}$</li>
-<li>$Y_2 = A X_1 = \begin{bmatrix} 3.6250 \ 1.7500 \ 1.1250 \end{bmatrix} = 3.6250 \begin{bmatrix} 1 \ 0.4828 \ 0.3103 \end{bmatrix}$</li>
-<li>$Y_3 = A X_2 = \begin{bmatrix} 4.2071 \ 1.9656 \ 0.9309 \end{bmatrix} = 4.2071 \begin{bmatrix} 1 \ 0.4672 \ 0.2213 \end{bmatrix}$</li>
-<li>$Y_4 = A X_3 = \begin{bmatrix} 4.0245 \ 1.9344 \ 0.6639 \end{bmatrix} = 4.0245 \begin{bmatrix} 1 \ 0.4807 \ 0.1650 \end{bmatrix}$</li>
-<li>$Y_5 = \dots = 4.0000 \begin{bmatrix} 1 \ 0.5000 \ 0 \end{bmatrix}$</li>
+<li>$Y_1 = A X_0 = \begin{bmatrix} 8 \\ 3 \\ 3 \end{bmatrix} = 8 \begin{bmatrix} 1 \\ 0.3750 \\ 0.3750 \end{bmatrix}$</li>
+<li>$Y_2 = A X_1 = \begin{bmatrix} 3.6250 \\ 1.7500 \\ 1.1250 \end{bmatrix} = 3.6250 \begin{bmatrix} 1 \\ 0.4828 \\ 0.3103 \end{bmatrix}$</li>
+<li>$Y_3 = A X_2 = \begin{bmatrix} 4.2071 \\ 1.9656 \\ 0.9309 \end{bmatrix} = 4.2071 \begin{bmatrix} 1 \\ 0.4672 \\ 0.2213 \end{bmatrix}$</li>
+<li>$Y_4 = A X_3 = \begin{bmatrix} 4.0245 \\ 1.9344 \\ 0.6639 \end{bmatrix} = 4.0245 \begin{bmatrix} 1 \\ 0.4807 \\ 0.1650 \end{bmatrix}$</li>
+<li>$Y_5 = \dots = 4.0000 \begin{bmatrix} 1 \\ 0.5000 \\ 0 \end{bmatrix}$</li>
 </ul>
 <p><strong>Dominant Eigenvalue:</strong> $\lambda_1 = 4$, Eigenvector: $X_1 = [1, 0.5, 0]^T$.</p>
 <hr class="ai-hr">
@@ -2470,18 +2470,18 @@ $$\lambda_1 + \lambda_2 + \lambda_3 = 6 \implies 4 + 3 + \lambda_3 = 6 \implies 
 
 <div class="question-card" data-category="power_newton">
 <div class="card-top">
-<span class="q-pill">QB • Q10 (16-Mark)</span>
-<div class="q-heading">(i) Find the dominant eigenvalue and eigenvector of $A = \begin{bmatrix} 1 & 3 & -2 \ 4 & 4 & -1 \ 6 & 3 & 5 \end{bmatrix}$ by power method. (ii) Find the root of $x = \sin x + \frac{1}{3}$ using Newton-Raphson method.</div>
+<span class="q-pill">QB - Q10 (16-Mark)</span>
+<div class="q-heading">(i) Find the dominant eigenvalue and eigenvector of $A = \begin{bmatrix} 1 & 3 & -2 \\ 4 & 4 & -1 \\ 6 & 3 & 5 \end{bmatrix}$ by power method. (ii) Find the root of $x = \sin x + \frac{1}{3}$ using Newton-Raphson method.</div>
 </div>
 <div class="solution-content">
 <div class="math-panel">
 <h4>Part (i): Power Method</h4>
 <p>Let $X_0 = [1, 1, 1]^T$.</p>
 <ul>
-<li>$Y_1 = A X_0 = \begin{bmatrix} 2 \ 7 \ 14 \end{bmatrix} = 14 \begin{bmatrix} 0.1429 \ 0.5000 \ 1 \end{bmatrix}$</li>
-<li>$Y_2 = A X_1 = \begin{bmatrix} -0.3571 \ 1.5714 \ 7.3571 \end{bmatrix} = 7.3571 \begin{bmatrix} -0.0485 \ 0.2136 \ 1 \end{bmatrix}$</li>
-<li>$Y_3 = A X_2 = \begin{bmatrix} -1.4077 \ -0.3396 \ 5.3498 \end{bmatrix} = 5.3498 \begin{bmatrix} -0.2631 \ -0.0635 \ 1 \end{bmatrix}$</li>
-<li>$Y_4 = \dots = 6.0000 \begin{bmatrix} -0.25 \ 0.25 \ 1 \end{bmatrix}$</li>
+<li>$Y_1 = A X_0 = \begin{bmatrix} 2 \\ 7 \\ 14 \end{bmatrix} = 14 \begin{bmatrix} 0.1429 \\ 0.5000 \\ 1 \end{bmatrix}$</li>
+<li>$Y_2 = A X_1 = \begin{bmatrix} -0.3571 \\ 1.5714 \\ 7.3571 \end{bmatrix} = 7.3571 \begin{bmatrix} -0.0485 \\ 0.2136 \\ 1 \end{bmatrix}$</li>
+<li>$Y_3 = A X_2 = \begin{bmatrix} -1.4077 \\ -0.3396 \\ 5.3498 \end{bmatrix} = 5.3498 \begin{bmatrix} -0.2631 \\ -0.0635 \\ 1 \end{bmatrix}$</li>
+<li>$Y_4 = \dots = 6.0000 \begin{bmatrix} -0.25 \\ 0.25 \\ 1 \end{bmatrix}$</li>
 </ul>
 <p><strong>Dominant Eigenvalue:</strong> $\lambda \approx 6.00$, Eigenvector: $X \approx [-0.25, 0.25, 1]^T$.</p>
 <hr class="ai-hr">
@@ -2579,23 +2579,23 @@ $$\lambda_1 + \lambda_2 + \lambda_3 = 6 \implies 4 + 3 + \lambda_3 = 6 \implies 
 
 <div class="question-card" data-category="gauss_elim">
 <div class="card-top">
-<span class="q-pill">Extra • Q11 (16-Mark)</span>
+<span class="q-pill">Extra - Q11 (16-Mark)</span>
 <div class="q-heading">Solve the system using Gauss Elimination with Partial Pivoting: $x + y + z = 6$, $3x + 3y + 4z = 20$, $2x + y + 3z = 13$.</div>
 </div>
 <div class="solution-content">
 <div class="math-panel">
 <h4>Step 1: Augmented Matrix Setup</h4>
-$$[A \mid B] = \begin{bmatrix} 1 & 1 & 1 & \mid & 6 \ 3 & 3 & 4 & \mid & 20 \ 2 & 1 & 3 & \mid & 13 \end{bmatrix}$$
+$$[A \mid B] = \begin{bmatrix} 1 & 1 & 1 & \mid & 6 \\ 3 & 3 & 4 & \mid & 20 \\ 2 & 1 & 3 & \mid & 13 \end{bmatrix}$$
 <h4>Step 2: Partial Pivoting in Column 1</h4>
 <p>Compare $|a_{11}|=1, |a_{21}|=3, |a_{31}|=2$. Maximum is in Row 2 ($3$). Swap $R_1 \leftrightarrow R_2$:</p>
-$$\begin{bmatrix} 3 & 3 & 4 & \mid & 20 \ 1 & 1 & 1 & \mid & 6 \ 2 & 1 & 3 & \mid & 13 \end{bmatrix}$$
+$$\begin{bmatrix} 3 & 3 & 4 & \mid & 20 \\ 1 & 1 & 1 & \mid & 6 \\ 2 & 1 & 3 & \mid & 13 \end{bmatrix}$$
 <h4>Step 3: Forward Elimination (Column 1)</h4>
 <p>$R_2 \leftarrow R_2 - \frac{1}{3} R_1 \implies \begin{bmatrix} 0 & 0 & -\frac{1}{3} & \mid & -\frac{2}{3} \end{bmatrix}$</p>
 <p>$R_3 \leftarrow R_3 - \frac{2}{3} R_1 \implies \begin{bmatrix} 0 & -1 & \frac{1}{3} & \mid & -\frac{1}{3} \end{bmatrix}$</p>
-$$\begin{bmatrix} 3 & 3 & 4 & \mid & 20 \ 0 & 0 & -\frac{1}{3} & \mid & -\frac{2}{3} \ 0 & -1 & \frac{1}{3} & \mid & -\frac{1}{3} \end{bmatrix}$$
+$$\begin{bmatrix} 3 & 3 & 4 & \mid & 20 \\ 0 & 0 & -\frac{1}{3} & \mid & -\frac{2}{3} \\ 0 & -1 & \frac{1}{3} & \mid & -\frac{1}{3} \end{bmatrix}$$
 <h4>Step 4: Partial Pivoting in Column 2</h4>
 <p>Pivot position $a_{22} = 0$, so we MUST pivot! Swap $R_2 \leftrightarrow R_3$:</p>
-$$\begin{bmatrix} 3 & 3 & 4 & \mid & 20 \ 0 & -1 & \frac{1}{3} & \mid & -\frac{1}{3} \ 0 & 0 & -\frac{1}{3} & \mid & -\frac{2}{3} \end{bmatrix}$$
+$$\begin{bmatrix} 3 & 3 & 4 & \mid & 20 \\ 0 & -1 & \frac{1}{3} & \mid & -\frac{1}{3} \\ 0 & 0 & -\frac{1}{3} & \mid & -\frac{2}{3} \end{bmatrix}$$
 <p>The matrix is now in perfect upper triangular form without any division-by-zero breakdown!</p>
 <h4>Step 5: Back-Substitution</h4>
 <ul>
@@ -2687,29 +2687,29 @@ $$\begin{bmatrix} 3 & 3 & 4 & \mid & 20 \ 0 & -1 & \frac{1}{3} & \mid & -\frac{1
 
 <div class="question-card" data-category="gauss_jordan">
 <div class="card-top">
-<span class="q-pill">Extra • Q12 (16-Mark)</span>
-<div class="q-heading">Find the inverse of the matrix $A = \begin{bmatrix} 2 & 1 & 1 \ 1 & 2 & 1 \ 1 & 1 & 2 \end{bmatrix}$ using the Gauss-Jordan method.</div>
+<span class="q-pill">Extra - Q12 (16-Mark)</span>
+<div class="q-heading">Find the inverse of the matrix $A = \begin{bmatrix} 2 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 1 & 2 \end{bmatrix}$ using the Gauss-Jordan method.</div>
 </div>
 <div class="solution-content">
 <div class="math-panel">
 <h4>Step 1: Augmented Matrix $[A \mid I]$</h4>
-$$[A \mid I] = \begin{bmatrix} 2 & 1 & 1 & \mid & 1 & 0 & 0 \ 1 & 2 & 1 & \mid & 0 & 1 & 0 \ 1 & 1 & 2 & \mid & 0 & 0 & 1 \end{bmatrix}$$
+$$[A \mid I] = \begin{bmatrix} 2 & 1 & 1 & \mid & 1 & 0 & 0 \\ 1 & 2 & 1 & \mid & 0 & 1 & 0 \\ 1 & 1 & 2 & \mid & 0 & 0 & 1 \end{bmatrix}$$
 <h4>Step 2: Make Pivot 1 Equal to 1</h4>
 <p>Swap $R_1 \leftrightarrow R_2$:</p>
-$$\begin{bmatrix} 1 & 2 & 1 & \mid & 0 & 1 & 0 \ 2 & 1 & 1 & \mid & 1 & 0 & 0 \ 1 & 1 & 2 & \mid & 0 & 0 & 1 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 2 & 1 & \mid & 0 & 1 & 0 \\ 2 & 1 & 1 & \mid & 1 & 0 & 0 \\ 1 & 1 & 2 & \mid & 0 & 0 & 1 \end{bmatrix}$$
 <p>$R_2 \leftarrow R_2 - 2R_1, \quad R_3 \leftarrow R_3 - R_1$:</p>
-$$\begin{bmatrix} 1 & 2 & 1 & \mid & 0 & 1 & 0 \ 0 & -3 & -1 & \mid & 1 & -2 & 0 \ 0 & -1 & 1 & \mid & 0 & -1 & 1 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 2 & 1 & \mid & 0 & 1 & 0 \\ 0 & -3 & -1 & \mid & 1 & -2 & 0 \\ 0 & -1 & 1 & \mid & 0 & -1 & 1 \end{bmatrix}$$
 <h4>Step 3: Eliminate Column 2</h4>
 <p>Interchange $R_2 \leftrightarrow R_3$ (multiply by $-1$):</p>
-$$\begin{bmatrix} 1 & 2 & 1 & \mid & 0 & 1 & 0 \ 0 & 1 & -1 & \mid & 0 & 1 & -1 \ 0 & -3 & -1 & \mid & 1 & -2 & 0 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 2 & 1 & \mid & 0 & 1 & 0 \\ 0 & 1 & -1 & \mid & 0 & 1 & -1 \\ 0 & -3 & -1 & \mid & 1 & -2 & 0 \end{bmatrix}$$
 <p>$R_1 \leftarrow R_1 - 2R_2, \quad R_3 \leftarrow R_3 + 3R_2$:</p>
-$$\begin{bmatrix} 1 & 0 & 3 & \mid & 0 & -1 & 2 \ 0 & 1 & -1 & \mid & 0 & 1 & -1 \ 0 & 0 & -4 & \mid & 1 & 1 & -3 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 0 & 3 & \mid & 0 & -1 & 2 \\ 0 & 1 & -1 & \mid & 0 & 1 & -1 \\ 0 & 0 & -4 & \mid & 1 & 1 & -3 \end{bmatrix}$$
 <h4>Step 4: Normalize Pivot 3 and Eliminate Column 3</h4>
 <p>$R_3 \leftarrow -\frac{1}{4} R_3 \implies \begin{bmatrix} 0 & 0 & 1 & \mid & -\frac{1}{4} & -\frac{1}{4} & \frac{3}{4} \end{bmatrix}$</p>
 <p>$R_1 \leftarrow R_1 - 3R_3, \quad R_2 \leftarrow R_2 + R_3$:</p>
-$$\begin{bmatrix} 1 & 0 & 0 & \mid & \frac{3}{4} & -\frac{1}{4} & -\frac{1}{4} \ 0 & 1 & 0 & \mid & -\frac{1}{4} & \frac{3}{4} & -\frac{1}{4} \ 0 & 0 & 1 & \mid & -\frac{1}{4} & -\frac{1}{4} & \frac{3}{4} \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 0 & 0 & \mid & \frac{3}{4} & -\frac{1}{4} & -\frac{1}{4} \\ 0 & 1 & 0 & \mid & -\frac{1}{4} & \frac{3}{4} & -\frac{1}{4} \\ 0 & 0 & 1 & \mid & -\frac{1}{4} & -\frac{1}{4} & \frac{3}{4} \end{bmatrix}$$
 <p><strong>Inverse Matrix:</strong></p>
-$$A^{-1} = \frac{1}{4} \begin{bmatrix} 3 & -1 & -1 \ -1 & 3 & -1 \ -1 & -1 & 3 \end{bmatrix}$$
+$$A^{-1} = \frac{1}{4} \begin{bmatrix} 3 & -1 & -1 \\ -1 & 3 & -1 \\ -1 & -1 & 3 \end{bmatrix}$$
 </div>
 </div>
 <div class="why-dropdown">
@@ -2793,8 +2793,8 @@ $$A^{-1} = \frac{1}{4} \begin{bmatrix} 3 & -1 & -1 \ -1 & 3 & -1 \ -1 & -1 & 3 \
 
 <div class="question-card" data-category="jacobi_symmetric">
 <div class="card-top">
-<span class="q-pill">Extra • Q13 (16-Mark)</span>
-<div class="q-heading">Diagonalize the symmetric matrix $A = \begin{bmatrix} 1 & \sqrt{2} \ \sqrt{2} & 2 \end{bmatrix}$ using Jacobi's method of plane rotations.</div>
+<span class="q-pill">Extra - Q13 (16-Mark)</span>
+<div class="q-heading">Diagonalize the symmetric matrix $A = \begin{bmatrix} 1 & \sqrt{2} \\ \sqrt{2} & 2 \end{bmatrix}$ using Jacobi's method of plane rotations.</div>
 </div>
 <div class="solution-content">
 <div class="math-panel">
@@ -2807,12 +2807,12 @@ $$(\sqrt{2} \tan \theta - 1)(\tan \theta + \sqrt{2}) = 0 \implies \tan \theta = 
 <p>Therefore:</p>
 $$\cos \theta = \frac{\sqrt{2}}{\sqrt{3}}, \quad \sin \theta = \frac{1}{\sqrt{3}}$$
 <h4>Step 2: Construct Orthogonal Rotation Matrix $R_1$</h4>
-$$R_1 = \begin{bmatrix} \cos \theta & -\sin \theta \ \sin \theta & \cos \theta \end{bmatrix} = \begin{bmatrix} \frac{\sqrt{2}}{\sqrt{3}} & -\frac{1}{\sqrt{3}} \ \frac{1}{\sqrt{3}} & \frac{\sqrt{2}}{\sqrt{3}} \end{bmatrix} = \frac{1}{\sqrt{3}} \begin{bmatrix} \sqrt{2} & -1 \ 1 & \sqrt{2} \end{bmatrix}$$
+$$R_1 = \begin{bmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{bmatrix} = \begin{bmatrix} \frac{\sqrt{2}}{\sqrt{3}} & -\frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{3}} & \frac{\sqrt{2}}{\sqrt{3}} \end{bmatrix} = \frac{1}{\sqrt{3}} \begin{bmatrix} \sqrt{2} & -1 \\ 1 & \sqrt{2} \end{bmatrix}$$
 <h4>Step 3: Similarity Transformation $D = R_1^T A R_1$</h4>
-$$A R_1 = \begin{bmatrix} 1 & \sqrt{2} \ \sqrt{2} & 2 \end{bmatrix} \frac{1}{\sqrt{3}} \begin{bmatrix} \sqrt{2} & -1 \ 1 & \sqrt{2} \end{bmatrix} = \frac{1}{\sqrt{3}} \begin{bmatrix} 2\sqrt{2} & 1 \ 4 & \sqrt{2} \end{bmatrix}$$
-$$R_1^T (A R_1) = \frac{1}{3} \begin{bmatrix} \sqrt{2} & 1 \ -1 & \sqrt{2} \end{bmatrix} \begin{bmatrix} 2\sqrt{2} & 1 \ 4 & \sqrt{2} \end{bmatrix} = \frac{1}{3} \begin{bmatrix} 4 + 4 & \sqrt{2} + \sqrt{2} - 2\sqrt{2} \ -2\sqrt{2} + 4\sqrt{2} - 2\sqrt{2} & -1 + 2 \end{bmatrix} = \begin{bmatrix} 0 & 0 \ 0 & 3 \end{bmatrix}$$
+$$A R_1 = \begin{bmatrix} 1 & \sqrt{2} \\ \sqrt{2} & 2 \end{bmatrix} \frac{1}{\sqrt{3}} \begin{bmatrix} \sqrt{2} & -1 \\ 1 & \sqrt{2} \end{bmatrix} = \frac{1}{\sqrt{3}} \begin{bmatrix} 2\sqrt{2} & 1 \\ 4 & \sqrt{2} \end{bmatrix}$$
+$$R_1^T (A R_1) = \frac{1}{3} \begin{bmatrix} \sqrt{2} & 1 \\ -1 & \sqrt{2} \end{bmatrix} \begin{bmatrix} 2\sqrt{2} & 1 \\ 4 & \sqrt{2} \end{bmatrix} = \frac{1}{3} \begin{bmatrix} 4 + 4 & \sqrt{2} + \sqrt{2} - 2\sqrt{2} \\ -2\sqrt{2} + 4\sqrt{2} - 2\sqrt{2} & -1 + 2 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 3 \end{bmatrix}$$
 <p><strong>Eigenvalues:</strong> $\lambda_1 = 0, \quad \lambda_2 = 3$.</p>
-<p><strong>Eigenvectors:</strong> Columns of $R_1$: $X_1 = \frac{1}{\sqrt{3}}\begin{bmatrix} \sqrt{2} \ 1 \end{bmatrix}, \quad X_2 = \frac{1}{\sqrt{3}}\begin{bmatrix} -1 \ \sqrt{2} \end{bmatrix}$.</p>
+<p><strong>Eigenvectors:</strong> Columns of $R_1$: $X_1 = \frac{1}{\sqrt{3}}\begin{bmatrix} \sqrt{2} \\ 1 \end{bmatrix}, \quad X_2 = \frac{1}{\sqrt{3}}\begin{bmatrix} -1 \\ \sqrt{2} \end{bmatrix}$.</p>
 </div>
 </div>
 <div class="why-dropdown">
@@ -2896,8 +2896,8 @@ $$R_1^T (A R_1) = \frac{1}{3} \begin{bmatrix} \sqrt{2} & 1 \ -1 & \sqrt{2} \end{
 
 <div class="question-card" data-category="jacobi_symmetric">
 <div class="card-top">
-<span class="q-pill">Extra • Q14 (16-Mark)</span>
-<div class="q-heading">Perform two iterations of Jacobi's method to approximate the eigenvalues of the tridiagonal symmetric matrix $A = \begin{bmatrix} 2 & -1 & 0 \ -1 & 2 & -1 \ 0 & -1 & 2 \end{bmatrix}$.</div>
+<span class="q-pill">Extra - Q14 (16-Mark)</span>
+<div class="q-heading">Perform two iterations of Jacobi's method to approximate the eigenvalues of the tridiagonal symmetric matrix $A = \begin{bmatrix} 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2 \end{bmatrix}$.</div>
 </div>
 <div class="solution-content">
 <div class="math-panel">
@@ -2906,9 +2906,9 @@ $$R_1^T (A R_1) = \frac{1}{3} \begin{bmatrix} \sqrt{2} & 1 \ -1 & \sqrt{2} \end{
 $$\tan 2\theta_1 = \frac{2 a_{12}}{a_{11} - a_{22}} = \frac{2(-1)}{2 - 2} = \frac{-2}{0} = -\infty \implies 2\theta_1 = -\frac{\pi}{2} \implies \theta_1 = -\frac{\pi}{4}$$
 <p>Thus, $\cos \theta_1 = \frac{1}{\sqrt{2}}, \quad \sin \theta_1 = -\frac{1}{\sqrt{2}}$.</p>
 <p>Rotation matrix $R_1$ acting in the $(1, 2)$ plane:</p>
-$$R_1 = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 \ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 \ 0 & 0 & 1 \end{bmatrix}$$
+$$R_1 = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
 <p>Compute $A_1 = R_1^T A R_1$:</p>
-$$A_1 = \begin{bmatrix} 3 & 0 & \frac{1}{\sqrt{2}} \ 0 & 1 & -\frac{1}{\sqrt{2}} \ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} & 2 \end{bmatrix} \approx \begin{bmatrix} 3 & 0 & 0.7071 \ 0 & 1 & -0.7071 \ 0.7071 & -0.7071 & 2 \end{bmatrix}$$
+$$A_1 = \begin{bmatrix} 3 & 0 & \frac{1}{\sqrt{2}} \\ 0 & 1 & -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} & 2 \end{bmatrix} \approx \begin{bmatrix} 3 & 0 & 0.7071 \\ 0 & 1 & -0.7071 \\ 0.7071 & -0.7071 & 2 \end{bmatrix}$$
 <p>Note: $a_{12}$ has been completely eliminated to $0$!</p>
 <hr class="ai-hr">
 <h4>Iteration 2: Annihilate Largest Off-Diagonal Entry in $A_1$</h4>
@@ -2917,7 +2917,7 @@ $$\tan 2\theta_2 = \frac{2 a_{13}}{a_{11} - a_{33}} = \frac{2(1/\sqrt{2})}{3 - 2
 $$2\theta_2 = \tan^{-1}(1.4142) \approx 54.74^{\circ} \implies \theta_2 \approx 27.37^{\circ}$$
 $$\cos \theta_2 \approx 0.8881, \quad \sin \theta_2 \approx 0.4597$$
 <p>Rotation matrix $R_2$ acting in $(1, 3)$ plane produces $A_2 = R_2^T A_1 R_2$:</p>
-$$A_2 \approx \begin{bmatrix} 3.4142 & -0.325 & 0 \ -0.325 & 1 & -0.628 \ 0 & -0.628 & 1.5858 \end{bmatrix}$$
+$$A_2 \approx \begin{bmatrix} 3.4142 & -0.325 & 0 \\ -0.325 & 1 & -0.628 \\ 0 & -0.628 & 1.5858 \end{bmatrix}$$
 <p><em>(Theoretical exact eigenvalues: $2 - \sqrt{2} \approx 0.5858, \quad 2, \quad 2 + \sqrt{2} \approx 3.4142$).</em></p>
 <p>Diagonal values after 2 rotations: $\lambda \approx 3.414, \quad 1.000, \quad 1.586$, rapidly converging to true spectrum.</p>
 </div>

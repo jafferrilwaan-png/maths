@@ -7,7 +7,7 @@ window.UNIT5_DATA = {
   desc: "Lagrange's Interpolation, Newton's Divided Differences, Forward & Backward Differences, Cubic Splines, Numerical Differentiation & Integration.",
   partA: String.raw`<div class="question-card" data-category="interpolation_def">
 <div class="card-top">
-<span class="q-pill">QB • Q1</span>
+<span class="q-pill">QB - Q1</span>
 <div class="q-heading">Define interpolation and extrapolation.</div>
 </div>
 <div class="solution-content">
@@ -23,12 +23,12 @@ window.UNIT5_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Domain Bound</span>
+                <span class="explain-line-badge">Step 1: Domain Bound</span>
                 <div class="explain-line-title">Inside vs Outside</div>
                 <div class="explain-line-desc">Interpolation assumes the underlying function behaves smoothly between observations. Extrapolation carries higher uncertainty due to unknown boundary behavior.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Mathematical Model</span>
+                <span class="explain-line-badge">Step 2: Mathematical Model</span>
                 <div class="explain-line-title">Polynomial Approximation</div>
                 <div class="explain-line-desc">Both assume $f(x) \approx P_n(x)$ where $P_n(x_i) = y_i$ for $i = 0, 1, \dots, n$.</div>
               </div>
@@ -71,7 +71,7 @@ window.UNIT5_DATA = {
 
 <div class="question-card" data-category="lagrange">
 <div class="card-top">
-<span class="q-pill">QB • Q2</span>
+<span class="q-pill">QB - Q2</span>
 <div class="q-heading">State Lagrange's interpolation formula for unequally spaced data.</div>
 </div>
 <div class="solution-content">
@@ -93,12 +93,12 @@ e j \end{cases}$.</p>
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • General Summation</span>
+                <span class="explain-line-badge">Step 1: General Summation</span>
                 <div class="explain-line-title">Linear Combination of Bases</div>
                 <div class="explain-line-desc">$P_n(x) = L_0(x)y_0 + L_1(x)y_1 + \dots + L_n(x)y_n$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Basis Property</span>
+                <span class="explain-line-badge">Step 2: Basis Property</span>
                 <div class="explain-line-title">Cardinal Property</div>
                 <div class="explain-line-desc">$L_i(x)$ is constructed such that numerator vanishes at all $x_j$ ($j 
 e i$) and denominator scales value to 1 at $x_i$.</div>
@@ -142,7 +142,7 @@ e i$) and denominator scales value to 1 at $x_i$.</div>
 
 <div class="question-card" data-category="lagrange">
 <div class="card-top">
-<span class="q-pill">QB • Q3</span>
+<span class="q-pill">QB - Q3</span>
 <div class="q-heading">What advantage does Lagrange's interpolation formula have over Newton's difference formulas?</div>
 </div>
 <div class="solution-content">
@@ -164,12 +164,12 @@ e \text{constant}$), whereas Newton's forward and backward formulas strictly req
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Node Flexibility</span>
+                <span class="explain-line-badge">Step 1: Node Flexibility</span>
                 <div class="explain-line-title">Arbitrary Point Placement</div>
                 <div class="explain-line-desc">Works on observational data from experiments where sample intervals cannot be held fixed.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Inverse Usage</span>
+                <span class="explain-line-badge">Step 2: Inverse Usage</span>
                 <div class="explain-line-title">Free Inversion</div>
                 <div class="explain-line-desc">$x = \sum x_i \prod_{j 
 e i} \frac{y - y_j}{y_i - y_j}$ solves $f(x) = y^*$ without solving a polynomial equation.</div>
@@ -213,7 +213,7 @@ e i} \frac{y - y_j}{y_i - y_j}$ solves $f(x) = y^*$ without solving a polynomial
 
 <div class="question-card" data-category="lagrange">
 <div class="card-top">
-<span class="q-pill">QB • Q4</span>
+<span class="q-pill">QB - Q4</span>
 <div class="q-heading">Use Lagrange's formula to find the quadratic polynomial that takes values $x: [0, 1, 3]$ and $y: [0, 1, 0]$.</div>
 </div>
 <div class="solution-content">
@@ -234,12 +234,12 @@ $$f(x) = -\frac{1}{2} (x^2 - 3x) = \frac{3x - x^2}{2}$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Zero Simplification</span>
+                <span class="explain-line-badge">Step 1: Zero Simplification</span>
                 <div class="explain-line-title">Only $L_1(x)$ Survives</div>
                 <div class="explain-line-desc">Recognizing $y_0 = y_2 = 0$ eliminates 66% of the calculation immediately.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Formula Substitution</span>
+                <span class="explain-line-badge">Step 2: Formula Substitution</span>
                 <div class="explain-line-title">Denominator Computation</div>
                 <div class="explain-line-desc">Denominator $(1 - 0)(1 - 3) = -2$. Numerator $x(x - 3) = x^2 - 3x$.</div>
               </div>
@@ -282,7 +282,7 @@ $$f(x) = -\frac{1}{2} (x^2 - 3x) = \frac{3x - x^2}{2}$$
 
 <div class="question-card" data-category="divided_diff">
 <div class="card-top">
-<span class="q-pill">QB • Q5</span>
+<span class="q-pill">QB - Q5</span>
 <div class="q-heading">Find the second divided difference with arguments $a, b, c$ if $f(x) = 1/x$.</div>
 </div>
 <div class="solution-content">
@@ -306,12 +306,12 @@ $$f[a, b, c] = \frac{f[b, c] - f[a, b]}{c - a} = \frac{-\frac{1}{bc} - \left(-\f
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • First Difference</span>
+                <span class="explain-line-badge">Step 1: First Difference</span>
                 <div class="explain-line-title">$f[a, b] = -1/(ab)$</div>
                 <div class="explain-line-desc">Subtract fractions with common denominator $ab$, factor out $(b - a)$ from numerator.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Second Difference</span>
+                <span class="explain-line-badge">Step 2: Second Difference</span>
                 <div class="explain-line-title">$f[a, b, c] = 1/(abc)$</div>
                 <div class="explain-line-desc">Difference of $-1/(bc) - (-1/(ab))$ gives $(c - a)/(abc)$, cancelling with divisor $(c - a)$.</div>
               </div>
@@ -354,7 +354,7 @@ $$f[a, b, c] = \frac{f[b, c] - f[a, b]}{c - a} = \frac{-\frac{1}{bc} - \left(-\f
 
 <div class="question-card" data-category="difference_operators">
 <div class="card-top">
-<span class="q-pill">QB • Q6</span>
+<span class="q-pill">QB - Q6</span>
 <div class="q-heading">Given $u_0 = 1, u_1 = 11, u_2 = 21, u_3 = 28, u_4 = 29$, find $\Delta^4 u_0$.</div>
 </div>
 <div class="solution-content">
@@ -379,12 +379,12 @@ $$\Delta^4 u_0 = 29 - 112 + 126 - 44 + 1 = 156 - 156 = 0$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Binomial Expansion</span>
+                <span class="explain-line-badge">Step 1: Binomial Expansion</span>
                 <div class="explain-line-title">Operator Expansion $(E-1)^4$</div>
                 <div class="explain-line-desc">Avoids drawing an entire difference table by direct expansion $\sum_{k=0}^4 (-1)^{4-k} \binom{4}{k} u_k$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Arithmetic Evaluation</span>
+                <span class="explain-line-badge">Step 2: Arithmetic Evaluation</span>
                 <div class="explain-line-title">$29 - 112 + 126 - 44 + 1 = 0$</div>
                 <div class="explain-line-desc">Sums of positive ($156$) and negative ($156$) terms cancel to zero.</div>
               </div>
@@ -427,7 +427,7 @@ $$\Delta^4 u_0 = 29 - 112 + 126 - 44 + 1 = 156 - 156 = 0$$
 
 <div class="question-card" data-category="divided_diff">
 <div class="card-top">
-<span class="q-pill">QB • Q7</span>
+<span class="q-pill">QB - Q7</span>
 <div class="q-heading">If $f(x) = 1/x^2$, find $f[a, b]$ and $f[a, b, c]$ by using divided differences.</div>
 </div>
 <div class="solution-content">
@@ -452,12 +452,12 @@ $$= \frac{(c - a)[ac + b(c + a)]}{a^2 b^2 c^2 (c - a)} = \frac{ab + bc + ca}{a^2
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • First Difference</span>
+                <span class="explain-line-badge">Step 1: First Difference</span>
                 <div class="explain-line-title">Factor $(b^2 - a^2)$</div>
                 <div class="explain-line-desc">Factor out $(b - a)$ from numerator to cancel the denominator divisor.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Second Difference</span>
+                <span class="explain-line-badge">Step 2: Second Difference</span>
                 <div class="explain-line-title">Factor $(c - a)$</div>
                 <div class="explain-line-desc">Collect like terms $ac(c - a) + b(c - a)(c + a)$ to factor out $(c - a)$ completely.</div>
               </div>
@@ -500,7 +500,7 @@ $$= \frac{(c - a)[ac + b(c + a)]}{a^2 b^2 c^2 (c - a)} = \frac{ab + bc + ca}{a^2
 
 <div class="question-card" data-category="divided_diff">
 <div class="card-top">
-<span class="q-pill">QB • Q8</span>
+<span class="q-pill">QB - Q8</span>
 <div class="q-heading">State Newton's divided difference interpolation formula.</div>
 </div>
 <div class="solution-content">
@@ -519,12 +519,12 @@ $$y = f(x) = f(x_0) + (x - x_0) f[x_0, x_1] + (x - x_0)(x - x_1) f[x_0, x_1, x_2
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Formula Structure</span>
+                <span class="explain-line-badge">Step 1: Formula Structure</span>
                 <div class="explain-line-title">Progressive Polynomial Terms</div>
                 <div class="explain-line-desc">Each term adds one new root factor $(x - x_{k-1})$ multiplied by the $k$-th divided difference.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Adaptability</span>
+                <span class="explain-line-badge">Step 2: Adaptability</span>
                 <div class="explain-line-title">Telescoping Addition</div>
                 <div class="explain-line-desc">Unlike Lagrange, adding a new data point $(x_{n+1}, y_{n+1})$ requires only adding one term to the existing polynomial without recomputing previous terms.</div>
               </div>
@@ -567,7 +567,7 @@ $$y = f(x) = f(x_0) + (x - x_0) f[x_0, x_1] + (x - x_0)(x - x_1) f[x_0, x_1, x_2
 
 <div class="question-card" data-category="numerical_diff">
 <div class="card-top">
-<span class="q-pill">QB • Q9</span>
+<span class="q-pill">QB - Q9</span>
 <div class="q-heading">By using Newton's forward and backward difference formula, write down the formula for the first derivative of $f(x)$ at $x = x_0$ and $x = x_n$.</div>
 </div>
 <div class="solution-content">
@@ -594,12 +594,12 @@ abla^4 y_n + \dots \right]$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Forward Derivative</span>
+                <span class="explain-line-badge">Step 1: Forward Derivative</span>
                 <div class="explain-line-title">Alternating Series at $x_0$</div>
                 <div class="explain-line-desc">Derived from $h \frac{dy}{dx} = \ln(1 + \Delta) y_0 = (\Delta - \frac{\Delta^2}{2} + \frac{\Delta^3}{3} - \dots) y_0$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Backward Derivative</span>
+                <span class="explain-line-badge">Step 2: Backward Derivative</span>
                 <div class="explain-line-title">All Positive Series at $x_n$</div>
                 <div class="explain-line-desc">Derived from $h \frac{dy}{dx} = -\ln(1 - 
 abla) y_n = (
@@ -646,7 +646,7 @@ abla^3}{3} + \dots) y_n$.</div>
 
 <div class="question-card" data-category="divided_diff">
 <div class="card-top">
-<span class="q-pill">QB • Q10</span>
+<span class="q-pill">QB - Q10</span>
 <div class="q-heading">Form the Newton divided difference table from the data: $X: [0, 1, 2, 5]$ and $Y: [2, 3, 12, 147]$.</div>
 </div>
 <div class="solution-content">
@@ -676,12 +676,12 @@ abla^3}{3} + \dots) y_n$.</div>
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Table Column 1</span>
+                <span class="explain-line-badge">Step 1: Table Column 1</span>
                 <div class="explain-line-title">First Differences</div>
                 <div class="explain-line-desc">$\frac{3-2}{1-0} = 1$, $\frac{12-3}{2-1} = 9$, $\frac{147-12}{5-2} = 45$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Column 2 & 3</span>
+                <span class="explain-line-badge">Step 2: Column 2 & 3</span>
                 <div class="explain-line-title">Higher Differences</div>
                 <div class="explain-line-desc">Divisors use spanning abscissae $(2 - 0 = 2)$ and $(5 - 1 = 4)$. Third diff divisor is $(5 - 0 = 5)$ yielding constant $1$.</div>
               </div>
@@ -724,7 +724,7 @@ abla^3}{3} + \dots) y_n$.</div>
 
 <div class="question-card" data-category="interpolation_error">
 <div class="card-top">
-<span class="q-pill">Extra • Q11</span>
+<span class="q-pill">Extra - Q11</span>
 <div class="q-heading">State the error formula in polynomial interpolation $P_n(x)$ of degree $n$.</div>
 </div>
 <div class="solution-content">
@@ -744,12 +744,12 @@ $$E_n(x) = f(x) - P_n(x) = \frac{f^{(n+1)}(\xi)}{(n + 1)!} \prod_{i=0}^{n} (x - 
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Error Structure</span>
+                <span class="explain-line-badge">Step 1: Error Structure</span>
                 <div class="explain-line-title">Resemblance to Taylor Remainder</div>
                 <div class="explain-line-desc">Matches the Cauchy remainder term in Taylor series where $(x - x_0)^{n+1}$ is replaced by node product $\prod (x - x_i)$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Node Optimization</span>
+                <span class="explain-line-badge">Step 2: Node Optimization</span>
                 <div class="explain-line-title">Chebyshev Nodes</div>
                 <div class="explain-line-desc">Chebyshev node distribution minimizes the maximum value of $|\prod (x - x_i)|$, eliminating Runge's oscillation phenomenon.</div>
               </div>
@@ -792,7 +792,7 @@ $$E_n(x) = f(x) - P_n(x) = \frac{f^{(n+1)}(\xi)}{(n + 1)!} \prod_{i=0}^{n} (x - 
 
 <div class="question-card" data-category="spline">
 <div class="card-top">
-<span class="q-pill">Extra • Q12</span>
+<span class="q-pill">Extra - Q12</span>
 <div class="q-heading">State the conditions for a function $S(x)$ to be a Natural Cubic Spline.</div>
 </div>
 <div class="solution-content">
@@ -815,12 +815,12 @@ $$E_n(x) = f(x) - P_n(x) = \frac{f^{(n+1)}(\xi)}{(n + 1)!} \prod_{i=0}^{n} (x - 
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Polynomial & Continuity</span>
+                <span class="explain-line-badge">Step 1: Polynomial & Continuity</span>
                 <div class="explain-line-title">$C^2$ Differentiability</div>
                 <div class="explain-line-desc">Piecewise cubic polynomials joined such that displacement, slope, and curvature are continuous at every knot.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Natural End Conditions</span>
+                <span class="explain-line-badge">Step 2: Natural End Conditions</span>
                 <div class="explain-line-title">$M_0 = M_n = 0$</div>
                 <div class="explain-line-desc">Zero bending moment at the extremities corresponds to a free physical flexible draftsman's spline strip.</div>
               </div>
@@ -863,7 +863,7 @@ $$E_n(x) = f(x) - P_n(x) = \frac{f^{(n+1)}(\xi)}{(n + 1)!} \prod_{i=0}^{n} (x - 
 
 <div class="question-card" data-category="numerical_integration">
 <div class="card-top">
-<span class="q-pill">Extra • Q13</span>
+<span class="q-pill">Extra - Q13</span>
 <div class="q-heading">State the conditions under which Simpson's 1/3 and Simpson's 3/8 rules are applicable.</div>
 </div>
 <div class="solution-content">
@@ -886,12 +886,12 @@ $$E_n(x) = f(x) - P_n(x) = \frac{f^{(n+1)}(\xi)}{(n + 1)!} \prod_{i=0}^{n} (x - 
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Even vs Multiple of 3</span>
+                <span class="explain-line-badge">Step 1: Even vs Multiple of 3</span>
                 <div class="explain-line-title">Subdivision Requirement</div>
                 <div class="explain-line-desc">Simpson's 1/3 combines intervals in pairs $(x_0, x_1, x_2)$, requiring $n$ even. Simpson's 3/8 combines in triplets, requiring $3 \mid n$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Degree of Precision</span>
+                <span class="explain-line-badge">Step 2: Degree of Precision</span>
                 <div class="explain-line-title">Unexpected Precision 3</div>
                 <div class="explain-line-desc">Simpson's 1/3 fits quadratic parabolas but error term involves $f^{(4)}(\xi)$, making it exact for cubic polynomials as well due to symmetry.</div>
               </div>
@@ -934,7 +934,7 @@ $$E_n(x) = f(x) - P_n(x) = \frac{f^{(n+1)}(\xi)}{(n + 1)!} \prod_{i=0}^{n} (x - 
 
 <div class="question-card" data-category="numerical_integration">
 <div class="card-top">
-<span class="q-pill">Extra • Q14</span>
+<span class="q-pill">Extra - Q14</span>
 <div class="q-heading">State the Trapezoidal rule for numerical integration and give its truncation error order.</div>
 </div>
 <div class="solution-content">
@@ -957,12 +957,12 @@ $$|E_T| = \frac{(b - a) h^2}{12} |f''(\xi)| = O(h^2)$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Formula</span>
+                <span class="explain-line-badge">Step 1: Formula</span>
                 <div class="explain-line-title">Sum of Trapezoids</div>
                 <div class="explain-line-desc">$\frac{h}{2} [(\text{first} + \text{last}) + 2(\text{sum of remaining})]$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Truncation Error</span>
+                <span class="explain-line-badge">Step 2: Truncation Error</span>
                 <div class="explain-line-title">Second Derivative Dependence</div>
                 <div class="explain-line-desc">Error order $O(h^2)$. Exact for linear polynomials ($f''(x) = 0$).</div>
               </div>
@@ -1005,7 +1005,7 @@ $$|E_T| = \frac{(b - a) h^2}{12} |f''(\xi)| = O(h^2)$$
 
 <div class="question-card" data-category="difference_operators">
 <div class="card-top">
-<span class="q-pill">Extra • Q15</span>
+<span class="q-pill">Extra - Q15</span>
 <div class="q-heading">Prove the operator identities: (i) $\Delta = E - 1$ and (ii) $
 abla = 1 - E^{-1}$.</div>
 </div>
@@ -1030,12 +1030,12 @@ abla = \frac{E - 1}{E} = \frac{\Delta}{E} = \Delta E^{-1}$.</p>
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Forward Shift</span>
+                <span class="explain-line-badge">Step 1: Forward Shift</span>
                 <div class="explain-line-title">Definition of $\Delta$</div>
                 <div class="explain-line-desc">Subtracting base value from shifted value $E f(x)$ yields $(E - 1)$ directly.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Backward Shift</span>
+                <span class="explain-line-badge">Step 2: Backward Shift</span>
                 <div class="explain-line-title">Definition of $
 abla$</div>
                 <div class="explain-line-desc">Subtracting previous value $E^{-1} f(x)$ from base value yields $(1 - E^{-1})$.</div>
@@ -1079,7 +1079,7 @@ abla$</div>
 
 <div class="question-card" data-category="divided_diff">
 <div class="card-top">
-<span class="q-pill">Extra • Q16</span>
+<span class="q-pill">Extra - Q16</span>
 <div class="q-heading">Show that the $n$-th divided difference of a polynomial of degree $n$ is constant.</div>
 </div>
 <div class="solution-content">
@@ -1105,12 +1105,12 @@ $$f[x_0, x_1, \dots, x_{n+1}] = 0$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Degree Reduction</span>
+                <span class="explain-line-badge">Step 1: Degree Reduction</span>
                 <div class="explain-line-title">Analogy to Derivatives</div>
                 <div class="explain-line-desc">Divided difference is the discrete analogue of differentiation: $f[x_0, \dots, x_n] = \frac{f^{(n)}(\xi)}{n!}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Leading Coefficient</span>
+                <span class="explain-line-badge">Step 2: Leading Coefficient</span>
                 <div class="explain-line-title">$a_n$</div>
                 <div class="explain-line-desc">Since $\frac{d^n}{dx^n}(a_n x^n) = n! a_n$, dividing by $n!$ yields $a_n$ as the invariant value.</div>
               </div>
@@ -1153,7 +1153,7 @@ $$f[x_0, x_1, \dots, x_{n+1}] = 0$$
 
 <div class="question-card" data-category="numerical_integration">
 <div class="card-top">
-<span class="q-pill">Extra • Q17</span>
+<span class="q-pill">Extra - Q17</span>
 <div class="q-heading">Evaluate $\int_0^1 \frac{1}{1 + x^2} dx$ using Trapezoidal rule with $h = 0.5$. Hence approximate $\pi$.</div>
 </div>
 <div class="solution-content">
@@ -1179,12 +1179,12 @@ $$\frac{\pi}{4} \approx 0.775 \implies \pi \approx 4 \times 0.775 = 3.100$$
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Ordinate Table</span>
+                <span class="explain-line-badge">Step 1: Ordinate Table</span>
                 <div class="explain-line-title">$y = [1, 0.8, 0.5]$</div>
                 <div class="explain-line-desc">Evaluating at $x = 0, 0.5, 1.0$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Trapezoidal Application</span>
+                <span class="explain-line-badge">Step 2: Trapezoidal Application</span>
                 <div class="explain-line-title">Sum Calculation</div>
                 <div class="explain-line-desc">$I = 0.25 [1.5 + 1.6] = 0.775$.</div>
               </div>
@@ -1227,7 +1227,7 @@ $$\frac{\pi}{4} \approx 0.775 \implies \pi \approx 4 \times 0.775 = 3.100$$
 
 <div class="question-card" data-category="lagrange">
 <div class="card-top">
-<span class="q-pill">Extra • Q18</span>
+<span class="q-pill">Extra - Q18</span>
 <div class="q-heading">What is inverse interpolation and how is it solved using Lagrange's formula?</div>
 </div>
 <div class="solution-content">
@@ -1249,12 +1249,12 @@ $$x = x_0 \frac{(y - y_1)(y - y_2)\dots}{(y_0 - y_1)(y_0 - y_2)\dots} + x_1 \fra
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Definition</span>
+                <span class="explain-line-badge">Step 1: Definition</span>
                 <div class="explain-line-title">Estimating $x$ from $y$</div>
                 <div class="explain-line-desc">Required in root-finding ($y = 0$) or finding median / percentile values from cumulative frequencies.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Swapped Lagrange Formula</span>
+                <span class="explain-line-badge">Step 2: Swapped Lagrange Formula</span>
                 <div class="explain-line-title">Closed Form Formula</div>
                 <div class="explain-line-desc">Interchanging $x_i \leftrightarrow y_i$ transforms the problem into standard polynomial evaluation.</div>
               </div>
@@ -1297,7 +1297,7 @@ $$x = x_0 \frac{(y - y_1)(y - y_2)\dots}{(y_0 - y_1)(y_0 - y_2)\dots} + x_1 \fra
 
 <div class="question-card" data-category="numerical_diff">
 <div class="card-top">
-<span class="q-pill">Extra • Q19</span>
+<span class="q-pill">Extra - Q19</span>
 <div class="q-heading">Write down the formula for the second derivative $f''(x_0)$ in terms of forward difference operators.</div>
 </div>
 <div class="solution-content">
@@ -1320,12 +1320,12 @@ $$f''(x_0) = \left( \frac{d^2 y}{dx^2} \right)_{x = x_0} = \frac{1}{h^2} \left[ 
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Operator Squaring</span>
+                <span class="explain-line-badge">Step 1: Operator Squaring</span>
                 <div class="explain-line-title">Expanding $[\ln(1+\Delta)]^2$</div>
                 <div class="explain-line-desc">$(\Delta - \Delta^2/2 + \Delta^3/3)^2 = \Delta^2 - \Delta^3 + (1/4 + 2/3)\Delta^4 = \Delta^2 - \Delta^3 + \frac{11}{12}\Delta^4$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Scaling Factor</span>
+                <span class="explain-line-badge">Step 2: Scaling Factor</span>
                 <div class="explain-line-title">Divide by $h^2$</div>
                 <div class="explain-line-desc">Dividing by $h^2$ maintains physical dimension of second spatial derivative.</div>
               </div>
@@ -1368,7 +1368,7 @@ $$f''(x_0) = \left( \frac{d^2 y}{dx^2} \right)_{x = x_0} = \frac{1}{h^2} \left[ 
 
 <div class="question-card" data-category="numerical_integration">
 <div class="card-top">
-<span class="q-pill">Extra • Q20</span>
+<span class="q-pill">Extra - Q20</span>
 <div class="q-heading">Compare Trapezoidal and Simpson's 1/3 rules in terms of degree of precision and error order.</div>
 </div>
 <div class="solution-content">
@@ -1393,12 +1393,12 @@ $$f''(x_0) = \left( \frac{d^2 y}{dx^2} \right)_{x = x_0} = \frac{1}{h^2} \left[ 
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Degree of Precision</span>
+                <span class="explain-line-badge">Step 1: Degree of Precision</span>
                 <div class="explain-line-title">Unexpected Cubic Exactness</div>
                 <div class="explain-line-desc">Simpson's 1/3 has degree of precision 3 because odd symmetry in the error kernel causes the $x^3$ error term to integrate to zero identically.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Convergence Rate</span>
+                <span class="explain-line-badge">Step 2: Convergence Rate</span>
                 <div class="explain-line-title">$O(h^2)$ vs $O(h^4)$</div>
                 <div class="explain-line-desc">Halving $h$ reduces Trapezoidal error by 4, but reduces Simpson's 1/3 error by 16.</div>
               </div>
@@ -1441,7 +1441,7 @@ $$f''(x_0) = \left( \frac{d^2 y}{dx^2} \right)_{x = x_0} = \frac{1}{h^2} \left[ 
 `,
   partB: String.raw`<div class="question-card" data-category="lagrange_newton">
 <div class="card-top">
-<span class="q-pill">QB • Q1 (16-Mark)</span>
+<span class="q-pill">QB - Q1 (16-Mark)</span>
 <div class="q-heading">(i) Using Lagrange's interpolation formula, calculate the profit in the year 2000 from the data: Year: [1997, 1999, 2001, 2002], Profit: [43, 65, 159, 248] lakhs. (ii) Using Newton's divided difference formula find $u(3)$ given $u(1) = -26, u(2) = 12, u(4) = 256, u(6) = 844$.</div>
 </div>
 <div class="solution-content">
@@ -1563,7 +1563,7 @@ $$u(3) = -26 + 76 + 56 - 2.4 = 103.6$$
 
 <div class="question-card" data-category="lagrange">
 <div class="card-top">
-<span class="q-pill">QB • Q2 (16-Mark)</span>
+<span class="q-pill">QB - Q2 (16-Mark)</span>
 <div class="q-heading">Find the polynomial $f(x)$ using Lagrange's formula and hence determine $f(3)$ and $f(5)$ for the data: $x: [0, 1, 2, 5]$ and $f(x): [2, 3, 12, 147]$ (or $248$).</div>
 </div>
 <div class="solution-content">
@@ -1674,7 +1674,7 @@ $$f(x) = x^3 + x^2 - x + 2$$
 
 <div class="question-card" data-category="lagrange_forward">
 <div class="card-top">
-<span class="q-pill">QB • Q3 (16-Mark)</span>
+<span class="q-pill">QB - Q3 (16-Mark)</span>
 <div class="q-heading">(i) Given $\log_{10} 654 = 2.8156, \log_{10} 658 = 2.8182, \log_{10} 659 = 2.8189, \log_{10} 661 = 2.8202$. Find $\log_{10} 656$ by Lagrange's formula. (ii) Construct Newton's forward interpolation polynomial for $x: [4, 6, 8, 10], y: [1, 3, 8, 16]$ and find $y(5)$.</div>
 </div>
 <div class="solution-content">
@@ -1796,7 +1796,7 @@ $$y(5) = 1 + 2(0.5) + \frac{0.5(-0.5)}{2}(3) = 1 + 1 - 0.375 = 1.625$$
 
 <div class="question-card" data-category="steam_newton">
 <div class="card-top">
-<span class="q-pill">QB • Q4 (16-Mark)</span>
+<span class="q-pill">QB - Q4 (16-Mark)</span>
 <div class="q-heading">(i) The following data are taken from the steam table: Temp $T$: [140, 150, 160, 170, 180], Pressure $P$: [3.685, 4.854, 6.302, 8.076, 10.225]. Find pressure at $t = 142^{\circ}$ and $t = 175^{\circ}$. (ii) Given $u_0 = -4, u_1 = 2, u_4 = 220, u_5 = 546, u_6 = 1148$. Find $u_2$ using Newton divided difference.</div>
 </div>
 <div class="solution-content">
@@ -1916,7 +1916,7 @@ $$P(175) = 10.225 - 1.0745 - 0.0469 - 0.0031 = 9.1005 \text{ kg f/cm}^2$$
 
 <div class="question-card" data-category="forward_backward">
 <div class="card-top">
-<span class="q-pill">QB • Q5 (16-Mark)</span>
+<span class="q-pill">QB - Q5 (16-Mark)</span>
 <div class="q-heading">Find the value of $y$ at $x = 21$ and $x = 28$ from the data: $X: [20, 23, 26, 29]$ and $Y: [0.3420, 0.3907, 0.4384, 0.4848]$, and find the interpolating polynomial $f(x)$.</div>
 </div>
 <div class="solution-content">
@@ -2027,7 +2027,7 @@ $$y(28) = 0.4848 - 0.01547 + 0.00014 + 0.00002 = 0.4695$$
 
 <div class="question-card" data-category="forward_backward">
 <div class="card-top">
-<span class="q-pill">QB • Q6 (16-Mark)</span>
+<span class="q-pill">QB - Q6 (16-Mark)</span>
 <div class="q-heading">From the following data, express $\theta$ in terms of $x$ and also find the value of $\theta$ at $x = 43$ and $x = 84$: $X: [40, 50, 60, 70, 80, 90]$, $\theta: [184, 204, 226, 250, 276, 304]$.</div>
 </div>
 <div class="solution-content">
@@ -2145,7 +2145,7 @@ $$\theta(x) = \frac{x^2 + 110x + 12400}{100} = 0.01 x^2 + 1.1 x + 124$$
 
 <div class="question-card" data-category="forward_backward">
 <div class="card-top">
-<span class="q-pill">QB • Q7 (16-Mark)</span>
+<span class="q-pill">QB - Q7 (16-Mark)</span>
 <div class="q-heading">(i) From the following data, estimate the number of persons earning weekly wages between 60 and 70 rupees: Wage below 40: 250, 40-60: 120, 60-80: 100, 80-100: 70, 100-120: 50 (in thousands). (ii) Using Newton's forward interpolation, find $f(x)$ for $x: [0, 5, 10, 15]$ and $f(x): [14, 379, 1444, 3584]$ and find $f(2)$.</div>
 </div>
 <div class="solution-content">
@@ -2257,7 +2257,7 @@ $$f(2) = 14 + 146 - 84 + 22.4 = 98.4$$
 
 <div class="question-card" data-category="numerical_diff">
 <div class="card-top">
-<span class="q-pill">QB • Q8 (16-Mark)</span>
+<span class="q-pill">QB - Q8 (16-Mark)</span>
 <div class="q-heading">Find the first two derivatives of $y = x^{1/3}$ at $x = 50$ and $x = 56$, for the given table: $x: [50, 51, 52, 53, 54, 55, 56]$, $y: [3.6840, 3.7084, 3.7325, 3.7563, 3.7798, 3.8030, 3.8259]$.</div>
 </div>
 <div class="solution-content">
@@ -2378,7 +2378,7 @@ abla^2 y_n ] = -0.0004$$
 
 <div class="question-card" data-category="diff_trig">
 <div class="card-top">
-<span class="q-pill">QB • Q9 (16-Mark)</span>
+<span class="q-pill">QB - Q9 (16-Mark)</span>
 <div class="q-heading">(i) The population of a town is: Year: [1941, 1951, 1961, 1971, 1981, 1991], Pop: [20, 24, 29, 36, 46, 51] thousands. Estimate the population increase during the period 1976. (ii) Find $\sec 31^{\circ}$ from $\theta: [31^{\circ}, 32^{\circ}, 33^{\circ}, 34^{\circ}]$ and $\tan \theta: [0.6008, 0.6249, 0.6494, 0.6745]$.</div>
 </div>
 <div class="solution-content">
@@ -2484,7 +2484,7 @@ $$\sec(31^{\circ}) = \sqrt{1.3734} \approx 1.1719$$
 
 <div class="question-card" data-category="numerical_diff">
 <div class="card-top">
-<span class="q-pill">QB • Q10 (16-Mark)</span>
+<span class="q-pill">QB - Q10 (16-Mark)</span>
 <div class="q-heading">The population of a certain town is: Year: [1931, 1941, 1951, 1961, 1971], Population: [40.62, 60.80, 79.95, 103.56, 132.65] thousands. Find the rate of growth of the population in 1931 and 1971.</div>
 </div>
 <div class="solution-content">
@@ -2605,7 +2605,7 @@ $$= \frac{1}{10} [ 29.09 + 2.74 + 0.4733 - 1.0175 ] = \frac{1}{10}[31.2858] = 3.
 
 <div class="question-card" data-category="spline">
 <div class="card-top">
-<span class="q-pill">Extra • Q11 (16-Mark)</span>
+<span class="q-pill">Extra - Q11 (16-Mark)</span>
 <div class="q-heading">Fit a natural cubic spline to the data: $x: [1, 2, 3]$ and $y: [-8, -1, 18]$ with $M_0 = M_2 = 0$. Hence evaluate $y(1.5)$ and $y'(1.5)$.</div>
 </div>
 <div class="solution-content">
@@ -2717,7 +2717,7 @@ $$S_1'(1.5) = 9(0.5)^2 + 4 = 9(0.25) + 4 = 2.25 + 4 = 6.25$$
 
 <div class="question-card" data-category="numerical_integration">
 <div class="card-top">
-<span class="q-pill">Extra • Q12 (16-Mark)</span>
+<span class="q-pill">Extra - Q12 (16-Mark)</span>
 <div class="q-heading">Evaluate $I = \int_0^6 \\frac{dx}{1 + x^2}$ using (i) Trapezoidal Rule, (ii) Simpson's 1/3 Rule, and (iii) Simpson's 3/8 Rule with $h = 1$. Compare with the exact value.</div>
 </div>
 <div class="solution-content">
@@ -2834,7 +2834,7 @@ $$I_{3/8} = \\frac{3}{8} [ 1.0270 + 3(0.7973) + 0.2000 ] = \\frac{3}{8} [ 1.0270
 
 <div class="question-card" data-category="numerical_integration">
 <div class="card-top">
-<span class="q-pill">Extra • Q13 (16-Mark)</span>
+<span class="q-pill">Extra - Q13 (16-Mark)</span>
 <div class="q-heading">Evaluate $\int_0^{\pi/2} \sin x \, dx$ using Simpson's 1/3 Rule with $n = 6$ sub-intervals. Compute the percentage error relative to the exact analytical value.</div>
 </div>
 <div class="solution-content">
@@ -2950,7 +2950,7 @@ $$\text{Percentage Error} = \frac{8 \times 10^{-6}}{1} \times 100\% = 0.0008\%$$
 
 <div class="question-card" data-category="numerical_diff">
 <div class="card-top">
-<span class="q-pill">Extra • Q14 (16-Mark)</span>
+<span class="q-pill">Extra - Q14 (16-Mark)</span>
 <div class="q-heading">Find $f'(6)$ and $f''(6)$ from the divided difference table for unequally spaced data: $x: [1, 3, 5, 8, 10]$ and $f(x): [3, 15, 35, 72, 108]$.</div>
 </div>
 <div class="solution-content">

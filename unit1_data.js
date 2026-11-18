@@ -7,7 +7,7 @@ window.UNIT1_DATA = {
 <!-- Q1 -->
 <div class="question-card" data-category="axioms">
 <div class="card-top">
-<span class="q-pill">QB • Q1</span>
+<span class="q-pill">QB - Q1</span>
 <div class="q-heading">Define Vector Space.</div>
 </div>
 <div class="solution-content">
@@ -36,17 +36,17 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Setup</span>
+                <span class="explain-line-badge">Step 1: Setup</span>
                 <div class="explain-line-title">Definition of Vector Space $V(F)$</div>
                 <div class="explain-line-desc">A vector space requires two mathematical entities: a set of objects (vectors $V$) and a number field (scalars $F$, usually $\mathbb{R}$). Without defining the scalar field, scaling operations cannot exist.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Abelian Group</span>
+                <span class="explain-line-badge">Step 2: Abelian Group</span>
                 <div class="explain-line-title">5 Vector Addition Axioms ($A_1$ to $A_5$)</div>
                 <div class="explain-line-desc">Closure ($u+v \in V$), Associativity, Zero Vector ($u+0=u$), Additive Inverse ($u+(-u)=0$), and Commutativity. This guarantees $(V, +)$ behaves like ordinary addition where you can cancel, invert, and reorder terms.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scalar Laws</span>
+                <span class="explain-line-badge">Step 3: Scalar Laws</span>
                 <div class="explain-line-title">5 Scalar Multiplication Axioms ($M_1$ to $M_5$)</div>
                 <div class="explain-line-desc">Scalar closure ($\alpha u \in V$), two Distributive laws ($\alpha(u+v)$ and $(\alpha+\beta)u$), Scalar Associativity, and Unit scaling ($1 \cdot u = u$). This couples the field $F$ with vectors $V$ consistently.</div>
               </div>
@@ -92,7 +92,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="axioms">
 <div class="card-top">
-<span class="q-pill">QB • Q2</span>
+<span class="q-pill">QB - Q2</span>
 <div class="q-heading">State and prove the cancellation law for vector addition.</div>
 </div>
 <div class="solution-content">
@@ -118,22 +118,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Axiom Use</span>
+                <span class="explain-line-badge">Step 1: Axiom Use</span>
                 <div class="explain-line-title">State Additive Inverse $-z \in V$</div>
                 <div class="explain-line-desc">In abstract algebra, you cannot just 'cross out' or subtract terms without proving the inverse exists. Axiom $A_4$ ensures every $z$ has a unique element $-z$ such that $z + (-z) = 0$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Operation</span>
+                <span class="explain-line-badge">Step 2: Operation</span>
                 <div class="explain-line-title">Add $(-z)$ to both sides of $x + z = y + z$</div>
                 <div class="explain-line-desc">Since equality is preserved under identical operations, $(x + z) + (-z) = (y + z) + (-z)$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Associativity</span>
+                <span class="explain-line-badge">Step 3: Associativity</span>
                 <div class="explain-line-title">Regroup terms: $x + (z + (-z)) = y + (z + (-z))$</div>
                 <div class="explain-line-desc">By Associative Law $A_2$, we regroup parentheses so that each vector meets its inverse.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <span class="explain-line-badge">Step 4: Conclusion</span>
                 <div class="explain-line-title">Apply Identity: $x + 0 = y + 0 \implies x = y$</div>
                 <div class="explain-line-desc">By Identity Law $A_3$, adding $0$ leaves vectors unchanged, completing the formal proof.</div>
               </div>
@@ -174,7 +174,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
-<span class="q-pill">QB • Q3</span>
+<span class="q-pill">QB - Q3</span>
 <div class="q-heading">If $V = \mathbb{R}^3$, verify whether $W = \{(a_1, a_2, a_3) \mid 2a_1 - 7a_2 + a_3 = 0\}$ is a subspace.</div>
 </div>
 <div class="solution-content">
@@ -199,22 +199,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Inspection</span>
+                <span class="explain-line-badge">Step 1: Inspection</span>
                 <div class="explain-line-title">Identify the defining condition $a_1 \ge 0$</div>
                 <div class="explain-line-desc">Subspaces in $\mathbb{R}^3$ must be closed under multiplication by ANY scalar in the field $\mathbb{R}$ (positive, zero, or negative).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Counterexample</span>
+                <span class="explain-line-badge">Step 2: Counterexample</span>
                 <div class="explain-line-title">Choose $u = (1, 0, 0) \in W$ and scalar $\alpha = -1 \in \mathbb{R}$</div>
                 <div class="explain-line-desc">Since $a_1 = 1 \ge 0$, vector $u$ is inside $W$. Since field is $\mathbb{R}$, $-1$ is a valid scalar.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Contradiction</span>
+                <span class="explain-line-badge">Step 3: Contradiction</span>
                 <div class="explain-line-title">Compute $\alpha u = -1 \cdot (1,0,0) = (-1, 0, 0)$</div>
                 <div class="explain-line-desc">The first coordinate is now $-1 < 0$, which violates the requirement $a_1 \ge 0$. Thus $\alpha u \notin W$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <span class="explain-line-badge">Step 4: Conclusion</span>
                 <div class="explain-line-title">Fails Scalar Closure $\implies$ Not a Subspace</div>
                 <div class="explain-line-desc">A single counterexample is sufficient in mathematics to disprove subspace status.</div>
               </div>
@@ -255,7 +255,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
-<span class="q-pill">QB • Q4</span>
+<span class="q-pill">QB - Q4</span>
 <div class="q-heading">Define Subspace.</div>
 </div>
 <div class="solution-content">
@@ -276,22 +276,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Formal Definition</span>
+                <span class="explain-line-badge">Step 1: Formal Definition</span>
                 <div class="explain-line-title">Subset forming Vector Space on its own</div>
                 <div class="explain-line-desc">A non-empty subset $W \subseteq V(F)$ is a subspace if it satisfies all vector space axioms using the exact same addition and scalar multiplication defined on $V$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Two-Step Test</span>
+                <span class="explain-line-badge">Step 2: Two-Step Test</span>
                 <div class="explain-line-title">Closure under $+$ and $\cdot$</div>
                 <div class="explain-line-desc">(i) For all $u, v \in W \implies u + v \in W$. (ii) For all $\alpha \in F, u \in W \implies \alpha u \in W$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • One-Step Criterion</span>
+                <span class="explain-line-badge">Step 3: One-Step Criterion</span>
                 <div class="explain-line-title">Single Linear Combination $\alpha u + \beta v \in W$</div>
                 <div class="explain-line-desc">Combining both closures into $\alpha u + \beta v \in W$ for all $\alpha, \beta \in F$ is faster and preferred by university evaluators.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Zero Vector Rule</span>
+                <span class="explain-line-badge">Step 4: Zero Vector Rule</span>
                 <div class="explain-line-title">Zero vector $0 \in W$ is mandatory</div>
                 <div class="explain-line-desc">If $(0,0,\dots,0) \notin W$, the set can NEVER be a subspace.</div>
               </div>
@@ -332,7 +332,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="dependence">
 <div class="card-top">
-<span class="q-pill">QB • Q5</span>
+<span class="q-pill">QB - Q5</span>
 <div class="q-heading">Define Linear Combination.</div>
 </div>
 <div class="solution-content">
@@ -351,17 +351,17 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Formula</span>
+                <span class="explain-line-badge">Step 1: Formula</span>
                 <div class="explain-line-title">Mathematical Expression $v = c_1 v_1 + c_2 v_2 + \dots + c_k v_k$</div>
                 <div class="explain-line-desc">A vector $v$ is a linear combination of a set $S = \{v_1, \dots, v_k\}$ if it can be built by multiplying each vector by a scalar $c_i \in F$ and summing them up.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Geometric Meaning</span>
+                <span class="explain-line-badge">Step 2: Geometric Meaning</span>
                 <div class="explain-line-title">Directional Stretching and Superposition</div>
                 <div class="explain-line-desc">Geometrically, scalar multiples stretch/shrink vectors along their axes, and vector addition joins them tip-to-tail to reach new points in space.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Span Connection</span>
+                <span class="explain-line-badge">Step 3: Span Connection</span>
                 <div class="explain-line-title">Generates the Subspace $L(S)$</div>
                 <div class="explain-line-desc">The collection of all possible linear combinations of $S$ is called the Linear Span $L(S)$, which is always a valid subspace.</div>
               </div>
@@ -402,7 +402,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="dependence">
 <div class="card-top">
-<span class="q-pill">QB • Q6</span>
+<span class="q-pill">QB - Q6</span>
 <div class="q-heading">Check if $v_1=(1,-2,3), v_2=(5,6,-1), v_3=(3,2,1)$ are Linearly Dependent or Independent.</div>
 </div>
 <div class="solution-content">
@@ -422,22 +422,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Setup</span>
+                <span class="explain-line-badge">Step 1: Setup</span>
                 <div class="explain-line-title">Matrix Determinant Formulation $|A|$</div>
                 <div class="explain-line-desc">For $n$ vectors in $\mathbb{R}^n$ (here 3 vectors in $\mathbb{R}^3$), the determinant $|A|$ immediately reveals dependence. If $|A| = 0$, the vectors lie in a lower-dimensional plane.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Calculation</span>
+                <span class="explain-line-badge">Step 2: Calculation</span>
                 <div class="explain-line-title">Row 1 Expansion: $1(8) - (-2)(8) + 3(-8) = 8 + 16 - 24 = 0$</div>
                 <div class="explain-line-desc">Expanding the $3 \times 3$ determinant yields exactly 0.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Linear Relation</span>
+                <span class="explain-line-badge">Step 3: Linear Relation</span>
                 <div class="explain-line-title">Non-trivial scalars exist ($c_1, c_2, c_3 \neq 0$)</div>
                 <div class="explain-line-desc">Because $|A| = 0$, the homogeneous system $Ac = 0$ has infinitely many non-zero solutions. Specifically, $v_2 = 2v_1 + v_3$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <span class="explain-line-badge">Step 4: Conclusion</span>
                 <div class="explain-line-title">Vectors are Linearly Dependent</div>
                 <div class="explain-line-desc">Always state $|A|=0 \implies$ Linearly Dependent for full 2 marks.</div>
               </div>
@@ -478,7 +478,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="basis">
 <div class="card-top">
-<span class="q-pill">QB • Q7</span>
+<span class="q-pill">QB - Q7</span>
 <div class="q-heading">Define Basis.</div>
 </div>
 <div class="solution-content">
@@ -498,22 +498,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Definition</span>
+                <span class="explain-line-badge">Step 1: Definition</span>
                 <div class="explain-line-title">Minimal Spanning Set (Basis $B$)</div>
                 <div class="explain-line-desc">A set $B = \{v_1, \dots, v_n\}$ in $V$ is a basis if it serves as a coordinate frame from which EVERY vector in $V$ can be built uniquely.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Condition 1</span>
+                <span class="explain-line-badge">Step 2: Condition 1</span>
                 <div class="explain-line-title">Linear Independence (No Redundancy)</div>
                 <div class="explain-line-desc">No vector in $B$ can be formed from the others; $c_1 v_1 + \dots + c_n v_n = 0 \implies c_1 = \dots = c_n = 0$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Condition 2</span>
+                <span class="explain-line-badge">Step 3: Condition 2</span>
                 <div class="explain-line-title">Spans the entire space: $L(B) = V$</div>
                 <div class="explain-line-desc">Every vector $x \in V$ can be represented as a linear combination of elements in $B$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Dimension</span>
+                <span class="explain-line-badge">Step 4: Dimension</span>
                 <div class="explain-line-title">Number of vectors $|B| = \dim V$</div>
                 <div class="explain-line-desc">The number of elements in any basis of $V$ is invariant and defines the dimension of $V$.</div>
               </div>
@@ -554,7 +554,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="basis">
 <div class="card-top">
-<span class="q-pill">QB • Q8</span>
+<span class="q-pill">QB - Q8</span>
 <div class="q-heading">Find dimension of $W = \{(x_1, x_2, x_3) \mid x_1 + x_2 + x_3 = 0\}$.</div>
 </div>
 <div class="solution-content">
@@ -575,22 +575,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Constraint</span>
+                <span class="explain-line-badge">Step 1: Constraint</span>
                 <div class="explain-line-title">Constraint equation $x_1 + x_2 + x_3 = 0$</div>
                 <div class="explain-line-desc">This single linear equation in 3 variables removes 1 degree of freedom from $\mathbb{R}^3$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Free Variables</span>
+                <span class="explain-line-badge">Step 2: Free Variables</span>
                 <div class="explain-line-title">Express dependent variable: $x_1 = -x_2 - x_3$</div>
                 <div class="explain-line-desc">Variables $x_2$ and $x_3$ are independent parameters (free variables).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Vector Decomposition</span>
+                <span class="explain-line-badge">Step 3: Vector Decomposition</span>
                 <div class="explain-line-title">$(x_1, x_2, x_3) = x_2(-1, 1, 0) + x_3(-1, 0, 1)$</div>
                 <div class="explain-line-desc">Separating variables into vector components reveals the generating vectors $\{(-1,1,0), (-1,0,1)\}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Dimension</span>
+                <span class="explain-line-badge">Step 4: Dimension</span>
                 <div class="explain-line-title">Dimension = 2 (A 2D plane through origin)</div>
                 <div class="explain-line-desc">Formula: $\dim W = \text{Total variables } (3) - \text{Independent constraints } (1) = 2$.</div>
               </div>
@@ -631,7 +631,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="dependence">
 <div class="card-top">
-<span class="q-pill">QB • Q9</span>
+<span class="q-pill">QB - Q9</span>
 <div class="q-heading">Is $\{(1,2,1), (2,1,0), (1,-1,2)\}$ Linearly Independent or Dependent?</div>
 </div>
 <div class="solution-content">
@@ -650,22 +650,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Matrix Setup</span>
+                <span class="explain-line-badge">Step 1: Matrix Setup</span>
                 <div class="explain-line-title">Construct square matrix from vectors as rows</div>
                 <div class="explain-line-desc">Form matrix $A = \begin{bmatrix} 1 & 2 & 1 \\ 2 & 1 & 0 \\ 1 & -1 & 2 \end{bmatrix}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Determinant</span>
+                <span class="explain-line-badge">Step 2: Determinant</span>
                 <div class="explain-line-title">Compute $|A| = 1(2-0) - 2(4-0) + 1(-2-1) = -9$</div>
                 <div class="explain-line-desc">Expanding along row 1 gives $2 - 8 - 3 = -9$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Independence Law</span>
+                <span class="explain-line-badge">Step 3: Independence Law</span>
                 <div class="explain-line-title">Since $|A| = -9 \neq 0$, rank is 3</div>
                 <div class="explain-line-desc">A non-zero determinant means the matrix is invertible, so the only solution to $Ac = 0$ is the trivial solution $c_1 = c_2 = c_3 = 0$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <span class="explain-line-badge">Step 4: Conclusion</span>
                 <div class="explain-line-title">Set is Linearly Independent</div>
                 <div class="explain-line-desc">Full marks require showing $|A| \neq 0$ and concluding Linearly Independent.</div>
               </div>
@@ -706,7 +706,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="basis">
 <div class="card-top">
-<span class="q-pill">QB • Q10</span>
+<span class="q-pill">QB - Q10</span>
 <div class="q-heading">If $V = A \oplus B$, show that $\dim V = \dim A + \dim B$.</div>
 </div>
 <div class="solution-content">
@@ -729,22 +729,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Direct Sum Definition</span>
+                <span class="explain-line-badge">Step 1: Direct Sum Definition</span>
                 <div class="explain-line-title">Direct Sum means $V = A + B$ and $A \cap B = \{0\}$</div>
                 <div class="explain-line-desc">The symbol $\oplus$ denotes that every vector $v \in V$ decomposes uniquely as $v = a + b$ with $a \in A, b \in B$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • General Formula</span>
+                <span class="explain-line-badge">Step 2: General Formula</span>
                 <div class="explain-line-title">Dimension Theorem: $\dim(A+B) = \dim A + \dim B - \dim(A \cap B)$</div>
                 <div class="explain-line-desc">This is the fundamental dimension theorem for the sum of two subspaces.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Substitution</span>
+                <span class="explain-line-badge">Step 3: Substitution</span>
                 <div class="explain-line-title">Substitute $\dim(A \cap B) = \dim\{0\} = 0$</div>
                 <div class="explain-line-desc">The zero subspace $\{0\}$ contains only the zero vector, which has dimension 0.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Result</span>
+                <span class="explain-line-badge">Step 4: Result</span>
                 <div class="explain-line-title">$\dim(A \oplus B) = \dim A + \dim B$</div>
                 <div class="explain-line-desc">Subtracting 0 completes the required derivation.</div>
               </div>
@@ -787,7 +787,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
-<span class="q-pill extra">Extra • Q11</span>
+<span class="q-pill extra">Extra - Q11</span>
 <div class="q-heading">Verify whether $W = \{(x, y, z) \in \mathbb{R}^3 \mid x + 2y - 3z = 1\}$ is a subspace of $\mathbb{R}^3$.</div>
 </div>
 <div class="solution-content">
@@ -806,22 +806,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Zero Vector Rule</span>
+                <span class="explain-line-badge">Step 1: Zero Vector Rule</span>
                 <div class="explain-line-title">Check whether origin $(0,0,0) \in W$</div>
                 <div class="explain-line-desc">Substitute $(x,y,z) = (0,0,0)$ into $x + 2y + 3z = 4$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Evaluation</span>
+                <span class="explain-line-badge">Step 2: Evaluation</span>
                 <div class="explain-line-title">LHS $= 0 + 2(0) + 3(0) = 0 \neq 4$ (RHS)</div>
                 <div class="explain-line-desc">The zero vector does not satisfy the constraint equation.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Subspace Axiom</span>
+                <span class="explain-line-badge">Step 3: Subspace Axiom</span>
                 <div class="explain-line-title">Zero vector existence is mandatory ($0 \in W$)</div>
                 <div class="explain-line-desc">Every vector space and subspace MUST contain the additive identity. Since $(0,0,0) \notin W$, $W$ cannot be a subspace.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <span class="explain-line-badge">Step 4: Conclusion</span>
                 <div class="explain-line-title">Not a subspace (Affine plane, not vector subspace)</div>
                 <div class="explain-line-desc">Any plane not passing through $(0,0,0)$ fails immediately.</div>
               </div>
@@ -862,7 +862,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
-<span class="q-pill extra">Extra • Q12</span>
+<span class="q-pill extra">Extra - Q12</span>
 <div class="q-heading">What are all the possible subspaces of $\mathbb{R}^2$ and $\mathbb{R}^3$?</div>
 </div>
 <div class="solution-content">
@@ -889,17 +889,17 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • $\mathbb{R}^2$ Subspaces</span>
+                <span class="explain-line-badge">Step 1: $\mathbb{R}^2$ Subspaces</span>
                 <div class="explain-line-title">3 Geometric Types in 2D Plane</div>
                 <div class="explain-line-desc">1. $\{0\}$ (Dimension 0, the origin point). 2. Any line passing through $(0,0)$ of form $ax + by = 0$ (Dimension 1). 3. $\mathbb{R}^2$ itself (Dimension 2).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • $\mathbb{R}^3$ Subspaces</span>
+                <span class="explain-line-badge">Step 2: $\mathbb{R}^3$ Subspaces</span>
                 <div class="explain-line-title">4 Geometric Types in 3D Space</div>
                 <div class="explain-line-desc">1. $\{0\}$ (Dim 0). 2. Any straight line passing through $(0,0,0)$ (Dim 1). 3. Any plane passing through $(0,0,0)$ of form $ax + by + cz = 0$ (Dim 2). 4. $\mathbb{R}^3$ itself (Dim 3).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • The Golden Rule</span>
+                <span class="explain-line-badge">Step 3: The Golden Rule</span>
                 <div class="explain-line-title">Must pass through the origin</div>
                 <div class="explain-line-desc">Lines and planes that do not pass through the origin do not contain the zero vector and therefore are never subspaces.</div>
               </div>
@@ -940,7 +940,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="basis">
 <div class="card-top">
-<span class="q-pill extra">Extra • Q13</span>
+<span class="q-pill extra">Extra - Q13</span>
 <div class="q-heading">Write the standard basis and dimension for $\mathbb{R}^n$, $P_n(\mathbb{R})$, and $M_{m \times n}(\mathbb{R})$.</div>
 </div>
 <div class="solution-content">
@@ -960,17 +960,17 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Euclidean Space $\mathbb{R}^n$</span>
+                <span class="explain-line-badge">Step 1: Euclidean Space $\mathbb{R}^n$</span>
                 <div class="explain-line-title">Standard Basis: $\{e_1, \dots, e_n\}$ | $\dim = n$</div>
                 <div class="explain-line-desc">$e_1=(1,0,\dots,0), e_2=(0,1,\dots,0), \dots, e_n=(0,\dots,0,1)$. Exactly $n$ orthogonal unit vectors.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Matrices $M_{2\times 2}(\mathbb{R})$</span>
+                <span class="explain-line-badge">Step 2: Matrices $M_{2\times 2}(\mathbb{R})$</span>
                 <div class="explain-line-title">Standard Basis: $\{E_{11}, E_{12}, E_{21}, E_{22}\}$ | $\dim = 4$</div>
                 <div class="explain-line-desc">The 4 elementary matrices each having a 1 in one cell and 0 elsewhere. $\dim = 2 \times 2 = 4$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Polynomials $P_n[x]$</span>
+                <span class="explain-line-badge">Step 3: Polynomials $P_n[x]$</span>
                 <div class="explain-line-title">Standard Basis: $\{1, x, x^2, \dots, x^n\}$ | $\dim = n + 1$</div>
                 <div class="explain-line-desc">Notice $\dim = n+1$ because the constant term ($x^0 = 1$) counts as a degree-0 basis vector.</div>
               </div>
@@ -1011,7 +1011,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="dependence">
 <div class="card-top">
-<span class="q-pill extra">Extra • Q14</span>
+<span class="q-pill extra">Extra - Q14</span>
 <div class="q-heading">For what value of $k$ will the set $\{(2,-1,3), (3,4,-1), (k,2,1)\}$ be linearly dependent?</div>
 </div>
 <div class="solution-content">
@@ -1032,22 +1032,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Matrix Setup</span>
+                <span class="explain-line-badge">Step 1: Matrix Setup</span>
                 <div class="explain-line-title">Form matrix with vectors as rows, set $|A| = 0$</div>
                 <div class="explain-line-desc">Linearly dependent vectors produce a singular matrix with determinant 0.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Expansion</span>
+                <span class="explain-line-badge">Step 2: Expansion</span>
                 <div class="explain-line-title">Expand along Row 3: $k(1-12) - 1(-2-9) + 1(8 - (-3)) = 0$</div>
                 <div class="explain-line-desc">$-11k + 11 + 11 = -11k + 22 = 0$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Solve for $k$</span>
+                <span class="explain-line-badge">Step 3: Solve for $k$</span>
                 <div class="explain-line-title">$-11k = -22 \implies k = 2$</div>
                 <div class="explain-line-desc">Equating the determinant to zero directly isolates the unknown $k$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <span class="explain-line-badge">Step 4: Conclusion</span>
                 <div class="explain-line-title">When $k = 2$, the vectors are Linearly Dependent</div>
                 <div class="explain-line-desc">For any $k \neq 2$, the vectors are Linearly Independent.</div>
               </div>
@@ -1088,7 +1088,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="axioms">
 <div class="card-top">
-<span class="q-pill extra">Extra • Q15</span>
+<span class="q-pill extra">Extra - Q15</span>
 <div class="q-heading">Is $\mathbb{R}$ a vector space over $\mathbb{C}$? Justify.</div>
 </div>
 <div class="solution-content">
@@ -1108,22 +1108,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Definitions</span>
+                <span class="explain-line-badge">Step 1: Definitions</span>
                 <div class="explain-line-title">Vector set $\mathbb{R}$, Scalar field $\mathbb{C}$</div>
                 <div class="explain-line-desc">In $V(F) = \mathbb{R}(\mathbb{C})$, vectors are real numbers, but scalars are complex numbers.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Scalar Multiplication Test</span>
+                <span class="explain-line-badge">Step 2: Scalar Multiplication Test</span>
                 <div class="explain-line-title">Take $u = 1 \in \mathbb{R}$ and scalar $\alpha = i \in \mathbb{C}$</div>
                 <div class="explain-line-desc">The imaginary unit $i = \sqrt{-1}$ is an allowed scalar from $\mathbb{C}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Product Evaluation</span>
+                <span class="explain-line-badge">Step 3: Product Evaluation</span>
                 <div class="explain-line-title">$\alpha \cdot u = i \cdot 1 = i \notin \mathbb{R}$</div>
                 <div class="explain-line-desc">The result $i$ is not a real number; it falls outside the set $\mathbb{R}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <span class="explain-line-badge">Step 4: Conclusion</span>
                 <div class="explain-line-title">Fails Closure under Scalar Multiplication</div>
                 <div class="explain-line-desc">Hence $\mathbb{R}$ is NOT a vector space over $\mathbb{C}$. (Note: $\mathbb{C}$ over $\mathbb{R}$ IS a vector space with dimension 2).</div>
               </div>
@@ -1164,7 +1164,7 @@ window.UNIT1_DATA = {
 </div>
 <div class="question-card" data-category="subspace">
 <div class="card-top">
-<span class="q-pill extra">Extra • Q16</span>
+<span class="q-pill extra">Extra - Q16</span>
 <div class="q-heading">Prove that the intersection of two subspaces $W_1$ and $W_2$ of $V$ is also a subspace of $V$.</div>
 </div>
 <div class="solution-content">
@@ -1186,22 +1186,22 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
 
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Non-Empty Proof</span>
+                <span class="explain-line-badge">Step 1: Non-Empty Proof</span>
                 <div class="explain-line-title">Both contain zero vector $\implies 0 \in W_1 \cap W_2$</div>
                 <div class="explain-line-desc">Since $W_1$ and $W_2$ are subspaces, $0 \in W_1$ and $0 \in W_2$. Thus $0 \in W_1 \cap W_2$, so the intersection is non-empty.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Test Setup</span>
+                <span class="explain-line-badge">Step 2: Test Setup</span>
                 <div class="explain-line-title">Let $u, v \in W_1 \cap W_2$ and $\alpha, \beta \in F$</div>
                 <div class="explain-line-desc">We must verify whether $\alpha u + \beta v \in W_1 \cap W_2$ using the single-step criterion.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Subspace Membership</span>
+                <span class="explain-line-badge">Step 3: Subspace Membership</span>
                 <div class="explain-line-title">$u, v \in W_1 \implies \alpha u + \beta v \in W_1$, and $u, v \in W_2 \implies \alpha u + \beta v \in W_2$</div>
                 <div class="explain-line-desc">Since each is individually a subspace, each is individually closed under linear combinations.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
+                <span class="explain-line-badge">Step 4: Conclusion</span>
                 <div class="explain-line-title">$\alpha u + \beta v \in W_1 \cap W_2 \implies$ Subspace</div>
                 <div class="explain-line-desc">Being in both sets means being in the intersection. Q.E.D.</div>
               </div>
@@ -1245,7 +1245,7 @@ window.UNIT1_DATA = {
 <!-- Predicted Q17 -->
       <div class="question-card" data-category="subspaces">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q17</span>
+          <span class="q-pill extra">Predicted - Q17</span>
         </div>
         <div class="q-heading">State the necessary and sufficient condition for a non-empty subset $W$ of a vector space $V$ over field $F$ to be a subspace of $V$.</div>
         <div class="solution-content">
@@ -1262,17 +1262,17 @@ window.UNIT1_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Non-Empty Hypothesis</span>
+                <span class="explain-line-badge">Step 1: Non-Empty Hypothesis</span>
                 <div class="explain-line-title">$W \neq \emptyset$ ensures existence of zero vector</div>
                 <div class="explain-line-desc">Taking $\alpha = 0$ in the scalar condition yields $0 \cdot u = \mathbf{0} \in W$, guaranteeing the additive zero element is inside $W$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Single Linear Combination Test</span>
+                <span class="explain-line-badge">Step 2: Single Linear Combination Test</span>
                 <div class="explain-line-title">$\alpha u + \beta v \in W$ compresses all 10 vector space axioms</div>
                 <div class="explain-line-desc">Since $W$ inherits associativity, commutativity, and distributivity from ambient space $V$, only closure under linear combinations must be verified.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for stating addition closure ($u+v \in W$), 1 mark for scalar multiplication closure ($\alpha u \in W$ or linear combination $\alpha u + \beta v \in W$).</div>
               </div>
@@ -1321,7 +1321,7 @@ window.UNIT1_DATA = {
       <!-- Predicted Q18 -->
       <div class="question-card" data-category="dependence">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q18</span>
+          <span class="q-pill extra">Predicted - Q18</span>
         </div>
         <div class="q-heading">If $S = \{v_1, v_2, \dots, v_n\}$ is a linearly independent subset of a vector space $V$, prove that every non-empty subset of $S$ is also linearly independent.</div>
         <div class="solution-content">
@@ -1342,17 +1342,17 @@ window.UNIT1_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Zero Extension Principle</span>
+                <span class="explain-line-badge">Step 1: Zero Extension Principle</span>
                 <div class="explain-line-title">Appending zero coefficients preserves the vector sum</div>
                 <div class="explain-line-desc">Embedding the sub-relation into the full set by assigning 0 to missing vectors allows direct invocation of the linear independence hypothesis of $S$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Contrapositive Interpretation</span>
+                <span class="explain-line-badge">Step 2: Contrapositive Interpretation</span>
                 <div class="explain-line-title">Super-set of linearly dependent set is dependent</div>
                 <div class="explain-line-desc">The contrapositive statement is equally important in Anna University exams: any superset containing a linearly dependent set is automatically dependent.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for setting up $c_1 v_1 + \dots + c_k v_k = 0$ with zero extensions, 1 mark for concluding all $c_i = 0$ by linear independence of $S$.</div>
               </div>
@@ -1401,7 +1401,7 @@ window.UNIT1_DATA = {
       <!-- Predicted Q19 -->
       <div class="question-card" data-category="theorems">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q19</span>
+          <span class="q-pill extra">Predicted - Q19</span>
         </div>
         <div class="q-heading">Let $W_1$ and $W_2$ be two subspaces of $\mathbb{R}^4$ with $\dim(W_1)=2$ and $\dim(W_2)=3$. What are all the possible dimensions of $W_1 \cap W_2$?</div>
         <div class="solution-content">
@@ -1411,8 +1411,8 @@ window.UNIT1_DATA = {
           Since $W_1 + W_2$ is a subspace of $\mathbb{R}^4$, $\dim(W_1 + W_2) \le 4$.<br>
           Also, $W_2 \subseteq W_1 + W_2 \implies \dim(W_1 + W_2) \ge \dim(W_2) = 3$.<br>
           Therefore $\dim(W_1 + W_2)$ can be either 3 or 4:<br>
-          • If $\dim(W_1 + W_2) = 4 \implies \dim(W_1 \cap W_2) = 5 - 4 = 1$.<br>
-          • If $\dim(W_1 + W_2) = 3 \implies \dim(W_1 \cap W_2) = 5 - 3 = 2$ (which occurs when $W_1 \subset W_2$).<br>
+          - If $\dim(W_1 + W_2) = 4 \implies \dim(W_1 \cap W_2) = 5 - 4 = 1$.<br>
+          - If $\dim(W_1 + W_2) = 3 \implies \dim(W_1 \cap W_2) = 5 - 3 = 2$ (which occurs when $W_1 \subset W_2$).<br>
           <strong>Conclusion:</strong> The possible dimensions of $W_1 \cap W_2$ are <strong>1 or 2</strong>.</p>
 
           <div class="why-dropdown">
@@ -1423,17 +1423,17 @@ window.UNIT1_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Dimension Bounds</span>
+                <span class="explain-line-badge">Step 1: Dimension Bounds</span>
                 <div class="explain-line-title">$3 \le \dim(W_1 + W_2) \le 4$</div>
                 <div class="explain-line-desc">The sum cannot exceed the ambient dimension 4, and cannot be smaller than the largest individual subspace dimension 3.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Intersection Guarantee</span>
+                <span class="explain-line-badge">Step 2: Intersection Guarantee</span>
                 <div class="explain-line-title">$\dim(W_1 \cap W_2) \ge 1$ prevents trivial intersection</div>
                 <div class="explain-line-desc">Two planes of dimensions 2 and 3 in 4D space MUST intersect in at least a 1D line ($5 - 4 = 1$), so $W_1 \cap W_2 \neq \{\mathbf{0}\}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for applying Grassmann's formula, 1 mark for calculating and listing both possible dimensions $\{1, 2\}$.</div>
               </div>
@@ -1482,7 +1482,7 @@ window.UNIT1_DATA = {
       <!-- Predicted Q20 -->
       <div class="question-card" data-category="subspaces">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q20</span>
+          <span class="q-pill extra">Predicted - Q20</span>
         </div>
         <div class="q-heading">Is the union of two subspaces of a vector space $V$ always a subspace of $V$? Justify your answer with a standard counterexample in $\mathbb{R}^2$.</div>
         <div class="solution-content">
@@ -1505,17 +1505,17 @@ window.UNIT1_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Addition Failure in Union</span>
+                <span class="explain-line-badge">Step 1: Addition Failure in Union</span>
                 <div class="explain-line-title">Summing vectors from different coordinate axes leaves the axes</div>
                 <div class="explain-line-desc">Vector addition $(1,0) + (0,1) = (1,1)$ lands in the quadrant, outside the union of the two coordinate axes.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Subspace Union Theorem</span>
+                <span class="explain-line-badge">Step 2: Subspace Union Theorem</span>
                 <div class="explain-line-title">$W_1 \cup W_2$ is a subspace iff $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$</div>
                 <div class="explain-line-desc">Only when one subspace completely contains the other is the union itself a vector space.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for stating 'No' with closure criterion, 1 mark for the coordinate axes counterexample $(1,0)+(0,1)=(1,1) \notin W_1 \cup W_2$.</div>
               </div>
@@ -1564,7 +1564,7 @@ window.UNIT1_DATA = {
   partB: String.raw`
 <div class="question-card" data-category="axioms">
         <div class="card-top">
-          <span class="q-pill">Part B • Q1 (16 Marks)</span>
+          <span class="q-pill">Part B - Q1 (16 Marks)</span>
           <div class="q-heading">Let $V$ be the set of all positive real numbers ($\mathbb{R}^+$). Define the vector addition and scalar multiplication as follows:
           $$x \oplus y = xy \quad \text{and} \quad k \odot x = x^k \quad (k \in \mathbb{R}, \; x, y \in V)$$
           Determine whether or not $V$ is a vector space over $\mathbb{R}$ with respect to the above operations.</div>
@@ -1719,49 +1719,114 @@ window.UNIT1_DATA = {
 
       <!-- Part B Q2 -->
       
-<div class="question-card" data-category="axioms">
-        <div class="card-top">
-          <span class="q-pill">Part B • Q2 (16 Marks)</span>
+<!-- Part B - Q2 -->
+    <div class="question-card" data-type="partb" data-unit="1" data-id="u1_pb_q2">
+      <div class="card-top">
+        <div class="q-meta">
+          <span class="q-pill">Part B - Q2 (16 Marks)</span>
           <div class="q-heading">Determine whether the set of all $2 \times 2$ matrices of the form $\begin{bmatrix} a & a+b \\ a+b & b \end{bmatrix}$, $a, b \in \mathbb{R}$, with respect to standard matrix addition and scalar multiplication is a vector space or not? If not, list all the axioms that fail to hold.</div>
         </div>
-        <div class="solution-content">
-          <p>Let $V = \left\{ \begin{bmatrix} a & a+b \\ a+b & b \end{bmatrix} \;\middle|\; a, b \in \mathbb{R} \right\}$. Notice that $V$ is a non-empty subset of the standard vector space $M_{2 \times 2}(\mathbb{R})$.</p>
+      </div>
+      <div class="solution-content">
+          <p>Let $V = \left\{ \begin{bmatrix} a & a+b \\ a+b & b \end{bmatrix} \;\middle|\; a, b \in \mathbb{R} \right\}$. We must rigorously verify all 10 vector space axioms over the field $\mathbb{R}$.</p>
 
           <div class="partb-step">
-            <div class="step-title">Step 1: Check Closure Under Matrix Addition</div>
-            <p>Let $A, B \in V$ with real parameters $(a_1, b_1)$ and $(a_2, b_2)$:</p>
+            <div class="step-title">Section I: Addition Axioms (A1 to A5: Abelian Group Verification)</div>
+            <p>Let $A, B, C \in V$ be arbitrary matrices defined with real parameters $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in \mathbb{R}$:</p>
             <div class="math-panel">
-              $$A = \begin{bmatrix} a_1 & a_1+b_1 \\ a_1+b_1 & b_1 \end{bmatrix}, \quad B = \begin{bmatrix} a_2 & a_2+b_2 \\ a_2+b_2 & b_2 \end{bmatrix}$$
-              $$A + B = \begin{bmatrix} a_1+a_2 & (a_1+b_1)+(a_2+b_2) \\ (a_1+b_1)+(a_2+b_2) & b_1+b_2 \end{bmatrix} = \begin{bmatrix} (a_1+a_2) & (a_1+a_2)+(b_1+b_2) \\ (a_1+a_2)+(b_1+b_2) & (b_1+b_2) \end{bmatrix}$$
+              $$A = \begin{bmatrix} a_1 & a_1+b_1 \\ a_1+b_1 & b_1 \end{bmatrix}, \quad B = \begin{bmatrix} a_2 & a_2+b_2 \\ a_2+b_2 & b_2 \end{bmatrix}, \quad C = \begin{bmatrix} a_3 & a_3+b_3 \\ a_3+b_3 & b_3 \end{bmatrix}$$
             </div>
-            <p>Let $a_3 = a_1 + a_2 \in \mathbb{R}$ and $b_3 = b_1 + b_2 \in \mathbb{R}$. Then:</p>
+
+            <p><strong>Axiom 1 (Closure under Matrix Addition):</strong></p>
+            <p>Compute the matrix sum $A + B$ by standard entry-wise addition:</p>
             <div class="math-panel">
-              $$A + B = \begin{bmatrix} a_3 & a_3+b_3 \\ a_3+b_3 & b_3 \end{bmatrix} \in V$$
+              $$A + B = \begin{bmatrix} a_1 & a_1+b_1 \\ a_1+b_1 & b_1 \end{bmatrix} + \begin{bmatrix} a_2 & a_2+b_2 \\ a_2+b_2 & b_2 \end{bmatrix} = \begin{bmatrix} a_1+a_2 & (a_1+b_1)+(a_2+b_2) \\ (a_1+b_1)+(a_2+b_2) & b_1+b_2 \end{bmatrix}$$
+              $$= \begin{bmatrix} (a_1+a_2) & (a_1+a_2)+(b_1+b_2) \\ (a_1+a_2)+(b_1+b_2) & (b_1+b_2) \end{bmatrix}$$
             </div>
-            <p>Since the resulting matrix strictly follows the required algebraic format, $V$ is **closed under matrix addition**.</p>
+            <p>Define new parameters $a' = a_1 + a_2 \in \mathbb{R}$ and $b' = b_1 + b_2 \in \mathbb{R}$ (sums of real numbers are real). Then:</p>
+            <div class="math-panel">
+              $$A + B = \begin{bmatrix} a' & a'+b' \\ a'+b' & b' \end{bmatrix} \in V$$
+            </div>
+            <p>The sum strictly retains the required algebraic pattern: the off-diagonal entries equal the sum of the top-left and bottom-right entries. Therefore, $V$ is <strong>closed under matrix addition</strong>.</p>
+
+            <p><strong>Axiom 2 (Commutative Law of Addition):</strong></p>
+            <p>Verify whether $A + B = B + A$ for all $A, B \in V$:</p>
+            <div class="math-panel">
+              $$A + B = \begin{bmatrix} a_1+a_2 & (a_1+a_2)+(b_1+b_2) \\ (a_1+a_2)+(b_1+b_2) & b_1+b_2 \end{bmatrix} = \begin{bmatrix} a_2+a_1 & (a_2+a_1)+(b_2+b_1) \\ (a_2+a_1)+(b_2+b_1) & b_2+b_1 \end{bmatrix} = B + A$$
+            </div>
+            <p>Because addition of real numbers is commutative ($a_1 + a_2 = a_2 + a_1$ and $b_1 + b_2 = b_2 + b_1$), commutativity holds identically.</p>
+
+            <p><strong>Axiom 3 (Associative Law of Addition):</strong></p>
+            <p>Verify whether $(A + B) + C = A + (B + C)$ for all $A, B, C \in V$:</p>
+            <div class="math-panel">
+              $$(A + B) + C = \begin{bmatrix} (a_1+a_2)+a_3 & ((a_1+a_2)+(b_1+b_2))+(a_3+b_3) \\ ((a_1+a_2)+(b_1+b_2))+(a_3+b_3) & (b_1+b_2)+b_3 \end{bmatrix}$$
+              $$= \begin{bmatrix} a_1+(a_2+a_3) & (a_1+a_2+a_3)+(b_1+b_2+b_3) \\ (a_1+a_2+a_3)+(b_1+b_2+b_3) & b_1+(b_2+b_3) \end{bmatrix} = A + (B + C)$$
+            </div>
+            <p>Because addition of real numbers is associative, associativity holds identically.</p>
+
+            <p><strong>Axiom 4 (Existence of Additive Identity - Zero Matrix):</strong></p>
+            <p>We require a matrix $O \in V$ such that $A + O = A$ for all $A \in V$. Choosing parameters $a = 0 \in \mathbb{R}$ and $b = 0 \in \mathbb{R}$:</p>
+            <div class="math-panel">
+              $$O = \begin{bmatrix} 0 & 0+0 \\ 0+0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \in V$$
+              $$A + O = \begin{bmatrix} a_1+0 & (a_1+b_1)+0 \\ (a_1+b_1)+0 & b_1+0 \end{bmatrix} = \begin{bmatrix} a_1 & a_1+b_1 \\ a_1+b_1 & b_1 \end{bmatrix} = A$$
+            </div>
+            <p>Hence, the zero vector exists in $V$ as the standard $2 \times 2$ zero matrix.</p>
+
+            <p><strong>Axiom 5 (Existence of Additive Inverse):</strong></p>
+            <p>For any $A \in V$, we require a matrix $-A \in V$ such that $A + (-A) = O$. Choosing parameters $a'' = -a_1 \in \mathbb{R}$ and $b'' = -b_1 \in \mathbb{R}$:</p>
+            <div class="math-panel">
+              $$-A = \begin{bmatrix} -a_1 & (-a_1)+(-b_1) \\ (-a_1)+(-b_1) & -b_1 \end{bmatrix} = \begin{bmatrix} -a_1 & -(a_1+b_1) \\ -(a_1+b_1) & -b_1 \end{bmatrix} \in V$$
+              $$A + (-A) = \begin{bmatrix} a_1+(-a_1) & (a_1+b_1)+(-(a_1+b_1)) \\ (a_1+b_1)+(-(a_1+b_1)) & b_1+(-b_1) \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = O$$
+            </div>
+            <p>Hence, every element in $V$ has a unique additive inverse in $V$. $(V, +)$ is an Abelian Group.</p>
           </div>
 
           <div class="partb-step">
-            <div class="step-title">Step 2: Check Identity and Inverses</div>
-            <p>• <strong>Zero Matrix ($O \in V$):</strong> Setting parameters $a = 0, b = 0 \in \mathbb{R}$ gives:
-            $$\begin{bmatrix} 0 & 0+0 \\ 0+0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} = O \in V$$
-            Hence, the zero vector exists in $V$.</p>
-            <p>• <strong>Additive Inverse ($-A \in V$):</strong> For any $A \in V$, consider:
-            $$-A = \begin{bmatrix} -a & -(a+b) \\ -(a+b) & -b \end{bmatrix} = \begin{bmatrix} (-a) & (-a)+(-b) \\ (-a)+(-b) & (-b) \end{bmatrix}$$
-            Since $-a, -b \in \mathbb{R}$, $-A \in V$.</p>
-          </div>
+            <div class="step-title">Section II: Scalar Multiplication Axioms (M1 to M5 over Field $\mathbb{R}$)</div>
+            <p>Let $k, m \in \mathbb{R}$ be any real scalars and $A, B \in V$:</p>
 
-          <div class="partb-step">
-            <div class="step-title">Step 3: Check Scalar Multiplication</div>
-            <p>For any scalar $k \in \mathbb{R}$ and $A \in V$:</p>
+            <p><strong>Axiom 6 (Closure under Scalar Multiplication):</strong></p>
+            <p>Compute the scalar product $k A$ using standard matrix scalar multiplication:</p>
             <div class="math-panel">
-              $$k A = k \begin{bmatrix} a & a+b \\ a+b & b \end{bmatrix} = \begin{bmatrix} ka & k(a+b) \\ k(a+b) & kb \end{bmatrix} = \begin{bmatrix} (ka) & (ka)+(kb) \\ (ka)+(kb) & (kb) \end{bmatrix}$$
+              $$k A = k \begin{bmatrix} a_1 & a_1+b_1 \\ a_1+b_1 & b_1 \end{bmatrix} = \begin{bmatrix} k a_1 & k(a_1+b_1) \\ k(a_1+b_1) & k b_1 \end{bmatrix} = \begin{bmatrix} (k a_1) & (k a_1) + (k b_1) \\ (k a_1) + (k b_1) & (k b_1) \end{bmatrix}$$
             </div>
-            <p>Setting $a' = ka \in \mathbb{R}$ and $b' = kb \in \mathbb{R}$ shows $kA \in V$. Hence $V$ is **closed under scalar multiplication**.</p>
-            <p>• Since $V \subseteq M_{2 \times 2}(\mathbb{R})$ contains the zero matrix and is closed under addition and scalar multiplication, $V$ is a <strong>subspace</strong> of $M_{2 \times 2}(\mathbb{R})$. Every subspace automatically inherits all associative, commutative, and distributive laws.</p>
+            <p>Setting parameters $\hat{a} = k a_1 \in \mathbb{R}$ and $\hat{b} = k b_1 \in \mathbb{R}$ (product of real numbers is real):</p>
+            <div class="math-panel">
+              $$k A = \begin{bmatrix} \hat{a} & \hat{a}+\hat{b} \\ \hat{a}+\hat{b} & \hat{b} \end{bmatrix} \in V$$
+            </div>
+            <p>The resulting matrix strictly matches the required algebraic form. Therefore, $V$ is <strong>closed under scalar multiplication</strong>.</p>
+
+            <p><strong>Axiom 7 (Scalar Distributive Law over Matrix Addition):</strong></p>
+            <p>Verify whether $k(A + B) = kA + kB$:</p>
+            <div class="math-panel">
+              $$k(A + B) = k \begin{bmatrix} a_1+a_2 & (a_1+a_2)+(b_1+b_2) \\ (a_1+a_2)+(b_1+b_2) & b_1+b_2 \end{bmatrix} = \begin{bmatrix} k(a_1+a_2) & k((a_1+a_2)+(b_1+b_2)) \\ k((a_1+a_2)+(b_1+b_2)) & k(b_1+b_2) \end{bmatrix}$$
+              $$= \begin{bmatrix} ka_1+ka_2 & (ka_1+kb_1)+(ka_2+kb_2) \\ (ka_1+kb_1)+(ka_2+kb_2) & kb_1+kb_2 \end{bmatrix} = kA + kB$$
+            </div>
+            <p>This follows from the distributivity of real numbers: $k(x + y) = kx + ky$.</p>
+
+            <p><strong>Axiom 8 (Scalar Distributive Law over Scalar Addition):</strong></p>
+            <p>Verify whether $(k + m)A = kA + mA$:</p>
+            <div class="math-panel">
+              $$(k + m)A = \begin{bmatrix} (k+m)a_1 & (k+m)(a_1+b_1) \\ (k+m)(a_1+b_1) & (k+m)b_1 \end{bmatrix} = \begin{bmatrix} ka_1+ma_1 & (ka_1+kb_1)+(ma_1+mb_1) \\ (ka_1+kb_1)+(ma_1+mb_1) & kb_1+mb_1 \end{bmatrix} = kA + mA$$
+            </div>
+            <p>This follows from the distributivity of real numbers: $(k + m)x = kx + mx$.</p>
+
+            <p><strong>Axiom 9 (Associative Law of Scalar Multiplication):</strong></p>
+            <p>Verify whether $(km)A = k(mA)$:</p>
+            <div class="math-panel">
+              $$(km)A = \begin{bmatrix} (km)a_1 & (km)(a_1+b_1) \\ (km)(a_1+b_1) & (km)b_1 \end{bmatrix} = \begin{bmatrix} k(ma_1) & k(m(a_1+b_1)) \\ k(m(a_1+b_1)) & k(mb_1) \end{bmatrix} = k(mA)$$
+            </div>
+            <p>This follows from the associativity of real multiplication: $(km)x = k(mx)$.</p>
+
+            <p><strong>Axiom 10 (Unitary Scalar Multiplication):</strong></p>
+            <p>Verify whether $1 \cdot A = A$ for scalar $1 \in \mathbb{R}$:</p>
+            <div class="math-panel">
+              $$1 \cdot A = \begin{bmatrix} 1 \cdot a_1 & 1 \cdot (a_1+b_1) \\ 1 \cdot (a_1+b_1) & 1 \cdot b_1 \end{bmatrix} = \begin{bmatrix} a_1 & a_1+b_1 \\ a_1+b_1 & b_1 \end{bmatrix} = A$$
+            </div>
+            <p>The unit scalar $1 \in \mathbb{R}$ acts as the identity operator on $V$.</p>
           </div>
 
-          <div class="tag-result"> Conclusion: $V$ satisfies all axioms with no failing axioms. Therefore, $V$ IS a Vector Space over $\mathbb{R}$.</div>
+          <div class="tag-result">Conclusion: All 10 vector space axioms are strictly satisfied. No axiom fails to hold. Therefore, $V$ IS a Vector Space over the field $\mathbb{R}$.</div>
         </div>
       
       <div class="why-dropdown">
@@ -1773,78 +1838,51 @@ window.UNIT1_DATA = {
 <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
                 <span class="explain-line-badge">Step 1: Problem Setup</span>
-                <div class="explain-line-title">Understanding the Matrix Set</div>
-                <div class="explain-line-desc">The set W consists of all 2x2 real matrices where the top-left element is a, the bottom-right element is b, and both off-diagonal elements equal a + b. We must check if W is a subspace of M2x2.</div>
+                <div class="explain-line-title">Parametric Matrix Definition</div>
+                <div class="explain-line-desc">The set $V$ consists of all $2 \times 2$ symmetric matrices where the off-diagonal entries equal the sum of the two diagonal entries $a$ and $b$. We must test whether $V$ satisfies all 10 vector space axioms under standard matrix addition and scalar multiplication.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2: Core Subspace Criterion</span>
-                <div class="explain-line-title">The Two Step Vector Space Test</div>
-                <div class="explain-line-desc">Instead of testing all 10 axioms, a subset W is a subspace if and only if it contains the zero matrix and is closed under arbitrary linear combinations: for any matrices A, B in W and real scalars alpha, beta, the combination alpha*A + beta*B must also belong to W.</div>
+                <span class="explain-line-badge">Step 2: Addition Closure Verification</span>
+                <div class="explain-line-title">Adding Two Arbitrary Parametric Matrices</div>
+                <div class="explain-line-desc">Take two matrices $A$ and $B$ generated by real pairs $(a_1, b_1)$ and $(a_2, b_2)$. Adding them entry-wise gives diagonal entries $(a_1+a_2)$ and $(b_1+b_2)$, and off-diagonal entries $(a_1+a_2) + (b_1+b_2)$. Since this matches the exact required form with $a' = a_1+a_2 \in \mathbb{R}$ and $b' = b_1+b_2 \in \mathbb{R}$, addition closure holds.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 3: Zero Matrix Verification</span>
-                <div class="explain-line-title">Checking the Additive Identity</div>
-                <div class="explain-line-desc">Setting a = 0 and b = 0 gives the 2x2 zero matrix with all entries 0. Since 0 + 0 = 0, the zero matrix matches the required form and belongs to W.</div>
+                <span class="explain-line-badge">Step 3: Commutative and Associative Laws</span>
+                <div class="explain-line-title">Inheritance from Real Number Arithmetic</div>
+                <div class="explain-line-desc">Matrix addition is defined element-wise. Because addition of real numbers is commutative ($x + y = y + x$) and associative ($(x + y) + z = x + (y + z)$), matrix addition on $V$ automatically satisfies $A + B = B + A$ and $(A + B) + C = A + (B + C)$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 4: Setting Up Two Arbitrary Matrices</span>
-                <div class="explain-line-title">Parametric Representation</div>
-                <div class="explain-line-desc">Let matrix A have parameters a1 and b1, so its entries are a1, a1+b1, a1+b1, b1. Let matrix B have parameters a2 and b2, so its entries are a2, a2+b2, a2+b2, b2.</div>
+                <span class="explain-line-badge">Step 4: Additive Zero Vector &amp; Additive Inverse</span>
+                <div class="explain-line-title">Existence of $O$ and $-A$</div>
+                <div class="explain-line-desc">Setting parameters $a = 0, b = 0$ yields the zero matrix $O = \begin{bmatrix}0&0\\0&0\end{bmatrix} \in V$. For any matrix $A$ with parameters $(a_1, b_1)$, setting parameters $(-a_1, -b_1)$ gives $-A \in V$ satisfying $A + (-A) = O$. Hence $(V, +)$ forms an Abelian group.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 5: Computing the Linear Combination</span>
-                <div class="explain-line-title">Matrix Addition and Scalar Scaling</div>
-                <div class="explain-line-desc">Form the matrix C = alpha*A + beta*B. The top-left entry becomes alpha*a1 + beta*a2. The bottom-right entry becomes alpha*b1 + beta*b2.</div>
+                <span class="explain-line-badge">Step 5: Scalar Multiplication Closure</span>
+                <div class="explain-line-title">Multiplying by Real Scalar $k$</div>
+                <div class="explain-line-desc">Multiplying matrix $A$ by scalar $k \in \mathbb{R}$ scales each entry: diagonal elements become $ka_1$ and $kb_1$, while off-diagonal elements become $k(a_1+b_1) = ka_1 + kb_1$. Since $ka_1, kb_1 \in \mathbb{R}$, the product stays in $V$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 6: Checking the Off-Diagonal Constraint</span>
-                <div class="explain-line-title">Verifying the Defining Rule</div>
-                <div class="explain-line-desc">The off-diagonal entries are alpha*(a1 + b1) + beta*(a2 + b2) = (alpha*a1 + beta*a2) + (alpha*b1 + beta*b2). This is exactly the sum of the new top-left and bottom-right entries.</div>
+                <span class="explain-line-badge">Step 6: First Distributive Law</span>
+                <div class="explain-line-title">Scalar Distributing over Matrix Addition</div>
+                <div class="explain-line-desc">Compute $k(A + B)$. Distributing scalar $k$ across the sum inside each matrix cell yields $k(a_1+a_2) = ka_1 + ka_2$, which matches the entries of $kA + kB$. Thus $k(A + B) = kA + kB$ holds for all $k \in \mathbb{R}$ and $A, B \in V$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 7: Final Conclusion</span>
-                <div class="explain-line-title">Confirmation of Subspace</div>
-                <div class="explain-line-desc">Because the linear combination maintains the exact structural requirement for all real scalars, W is closed under linear combinations and is a subspace of M2x2.</div>
+                <span class="explain-line-badge">Step 7: Second Distributive Law &amp; Unitary Law</span>
+                <div class="explain-line-title">Scalar Addition &amp; Identity Scalar Multiplication</div>
+                <div class="explain-line-desc">Similarly, $(k + m)A = kA + mA$ and $(km)A = k(mA)$ hold from the distributive and associative properties of real scalar arithmetic. Setting scalar $1$ gives $1 \cdot A = A$, confirming the unitary property.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
-                <div class="explain-line-title">16 Marks Distribution</div>
-                <div class="explain-line-desc">Subspace criterion statement: 3 marks; Zero element verification: 3 marks; Linear combination setup and matrix algebra: 6 marks; Off-diagonal constraint verification and conclusion: 4 marks.</div>
+                <span class="explain-line-badge">Step 8: University Scoring Rubric (16 Marks Total)</span>
+                <div class="explain-line-title">Marks Breakdown for Semester Exams</div>
+                <div class="explain-line-desc">University grading: 6 marks for Abelian group addition axioms (A1 to A5), 8 marks for scalar multiplication axioms (M1 to M5), and 2 marks for the clear affirmative conclusion stating that all 10 axioms hold with zero failures.</div>
               </div>
-              <div class="inline-ai-section">
-        <div class="inline-ai-header">
-          <div class="inline-ai-title-wrap">
-            <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
-            <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
-          </div>
-          <div class="inline-ai-controls">
-            <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
-              <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
-              <option value="gemini">Google Gemini API</option>
-              <option value="ollama">Ollama (Local Offline)</option>
-            </select>
-            <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
-              <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free - Recommended)</option>
-              <option value="openrouter/free">OpenRouter Auto Free (Fallback)</option>
-              <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
-              <option value="deepseek/deepseek-r1:free">DeepSeek R1 Reasoning (Free)</option>
-              <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
-            </select>
-          </div>
-        </div>
-        <div class="inline-ai-chat-history"></div>
-        <div class="inline-ai-input-group">
-          <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-          <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
-        </div>
-      </div>
-
         </div>
       </div>
     </div>
+
 <div class="question-card" data-category="axioms">
         <div class="card-top">
-          <span class="q-pill">Part B • Q3 (16 Marks)</span>
+          <span class="q-pill">Part B - Q3 (16 Marks)</span>
           <div class="q-heading">Consider $V = \{p(x) = a_0 + a_1 x + a_2 x^2 \mid a_0, a_1, a_2 \in \mathbb{R}\}$, the set of all polynomials of degree $\le 2$. Prove that $V$ is a vector space over $\mathbb{R}$ under usual polynomial addition and scalar multiplication.</div>
         </div>
         <div class="solution-content">
@@ -1947,7 +1985,7 @@ window.UNIT1_DATA = {
     </div>
 <div class="question-card" data-category="dependence">
         <div class="card-top">
-          <span class="q-pill">Part B • Q4 (16 Marks)</span>
+          <span class="q-pill">Part B - Q4 (16 Marks)</span>
           <div class="q-heading">(i) Let $V = \mathbb{R}^3, S = \{(1,2,0), (0,-5,-7)\}$ and $v = (2,-5,7) \in V$. Verify whether $v$ is a linear combination of $S$ or not. [8 Marks]<br>
           (ii) Let $S = \{(1,-2,3,-1), (2,1,-1,2), (3,-1,2,1)\}$ be a subset of $V_4(\mathbb{R})$. Check whether $S$ is linearly independent or not. [8 Marks]</div>
         </div>
@@ -1966,10 +2004,10 @@ window.UNIT1_DATA = {
               -7c_2 &= 7 && \text{--- (3)}
               \end{aligned}$$
             </div>
-            <p>• From equation (1): $\mathbf{c_1 = 2}$.<br>
-            • Substitute $c_1 = 2$ into equation (2):<br>
+            <p>- From equation (1): $\mathbf{c_1 = 2}$.<br>
+            - Substitute $c_1 = 2$ into equation (2):<br>
             $$2(2) - 5c_2 = -5 \implies 4 - 5c_2 = -5 \implies -5c_2 = -9 \implies \mathbf{c_2 = \frac{9}{5}}$$<br>
-            • Substitute $c_2 = \frac{9}{5}$ into equation (3):<br>
+            - Substitute $c_2 = \frac{9}{5}$ into equation (3):<br>
             $$-7c_2 = -7\left(\frac{9}{5}\right) = -\frac{63}{5} \neq 7 \quad \mathbf{(\text{Contradiction!})}$$</p>
             <p><strong>Augmented Matrix Verification:</strong></p>
             <div class="math-panel">
@@ -1993,9 +2031,9 @@ window.UNIT1_DATA = {
               <p>Apply $R_3 \to R_3 - R_2$:</p>
               $$\sim \begin{bmatrix} 1 & -2 & 3 & -1 \\ 0 & 5 & -7 & 4 \\ 0 & 0 & 0 & 0 \end{bmatrix}$$
             </div>
-            <p>• The number of non-zero rows in Echelon form is $\operatorname{Rank}(A) = 2$.<br>
-            • Since $\operatorname{Rank}(A) = 2 < 3$ (number of vectors), the system has non-trivial solutions.<br>
-            • In fact, row 3 shows $v_3 - v_2 - v_1 = 0 \implies v_3 = v_1 + v_2$.</p>
+            <p>- The number of non-zero rows in Echelon form is $\operatorname{Rank}(A) = 2$.<br>
+            - Since $\operatorname{Rank}(A) = 2 < 3$ (number of vectors), the system has non-trivial solutions.<br>
+            - In fact, row 3 shows $v_3 - v_2 - v_1 = 0 \implies v_3 = v_1 + v_2$.</p>
             <div class="tag-result fail">Conclusion (ii): The set $S$ is Linearly Dependent (LD).</div>
           </div>
         </div>
@@ -2080,7 +2118,7 @@ window.UNIT1_DATA = {
     </div>
 <div class="question-card" data-category="subspace">
         <div class="card-top">
-          <span class="q-pill">Part B • Q5 (16 Marks)</span>
+          <span class="q-pill">Part B - Q5 (16 Marks)</span>
           <div class="q-heading">(i) State and prove the necessary and sufficient conditions for a non-empty subset $W$ of a vector space $V(F)$ to be a subspace. [8 Marks]<br>
           (ii) Verify whether the first polynomial $P = x^3 - 8x^2 + 4x$ can be expressed as a linear combination of $P_1 = x^3 - 2x^2 + 3x - 1$ and $P_2 = x^3 - 2x + 3$ in $P_3(\mathbb{R})$. [8 Marks]</div>
         </div>
@@ -2130,11 +2168,11 @@ window.UNIT1_DATA = {
               x^0 \text{ coeff:} & \quad -c_1 + 3c_2 = 0 && \text{--- (4)}
               \end{aligned}$$
             </div>
-            <p>• From (2), we obtain: $\mathbf{c_1 = 4}$.<br>
-            • Substituting $c_1 = 4$ into (1): $4 + c_2 = 1 \implies \mathbf{c_2 = -3}$.<br>
-            • Now substitute $c_1 = 4$ and $c_2 = -3$ into equation (3):<br>
+            <p>- From (2), we obtain: $\mathbf{c_1 = 4}$.<br>
+            - Substituting $c_1 = 4$ into (1): $4 + c_2 = 1 \implies \mathbf{c_2 = -3}$.<br>
+            - Now substitute $c_1 = 4$ and $c_2 = -3$ into equation (3):<br>
             $$3c_1 - 2c_2 = 3(4) - 2(-3) = 12 + 6 = 18 \neq 4 \quad \mathbf{(\text{Inconsistent!})}$$<br>
-            • Substitute into equation (4):<br>
+            - Substitute into equation (4):<br>
             $$-c_1 + 3c_2 = -(4) + 3(-3) = -4 - 9 = -13 \neq 0 \quad \mathbf{(\text{Inconsistent!})}$$</p>
             <div class="tag-result fail">Conclusion (ii): The system has no solution. Therefore, $P$ CANNOT be expressed as a linear combination of $P_1$ and $P_2$.</div>
           </div>
@@ -2220,7 +2258,7 @@ window.UNIT1_DATA = {
     </div>
 <div class="question-card" data-category="subspace">
         <div class="card-top">
-          <span class="q-pill">Part B • Q6 (16 Marks)</span>
+          <span class="q-pill">Part B - Q6 (16 Marks)</span>
           <div class="q-heading">(i) If $W_1$ and $W_2$ are subspaces of $V$, prove that $W_1 \cup W_2$ is a subspace of $V$ if and only if $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$. [8 Marks]<br>
           (ii) Verify whether any set of 5 matrices in $M_{2 \times 2}$ is linearly dependent or not. [8 Marks]</div>
         </div>
@@ -2230,8 +2268,8 @@ window.UNIT1_DATA = {
             <p><strong>Proof in Two Directions:</strong></p>
             <p><strong>Case 1: Sufficient Condition ($\impliedby$):</strong><br>
             Assume $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$.<br>
-            • If $W_1 \subseteq W_2$, then $W_1 \cup W_2 = W_2$. Since $W_2$ is a subspace, $W_1 \cup W_2$ is a subspace.<br>
-            • If $W_2 \subseteq W_1$, then $W_1 \cup W_2 = W_1$. Since $W_1$ is a subspace, $W_1 \cup W_2$ is a subspace.<br>
+            - If $W_1 \subseteq W_2$, then $W_1 \cup W_2 = W_2$. Since $W_2$ is a subspace, $W_1 \cup W_2$ is a subspace.<br>
+            - If $W_2 \subseteq W_1$, then $W_1 \cup W_2 = W_1$. Since $W_1$ is a subspace, $W_1 \cup W_2$ is a subspace.<br>
             Hence the condition is sufficient.</p>
 
             <p style="margin-top:10px;"><strong>Case 2: Necessary Condition by Contradiction ($\implies$):</strong><br>
@@ -2242,9 +2280,9 @@ window.UNIT1_DATA = {
             3. Since $x \in W_1 \implies x \in W_1 \cup W_2$, and $y \in W_2 \implies y \in W_1 \cup W_2$.<br>
             4. Because $W_1 \cup W_2$ is assumed to be a subspace, it must be closed under addition:<br>
             $$x + y \in W_1 \cup W_2 \implies x + y \in W_1 \quad \text{or} \quad x + y \in W_2$$<br>
-            • <strong>Sub-case A:</strong> Suppose $x + y \in W_1$. Since $x \in W_1$ and $W_1$ is a subspace, $(-x) \in W_1$.<br>
+            - <strong>Sub-case A:</strong> Suppose $x + y \in W_1$. Since $x \in W_1$ and $W_1$ is a subspace, $(-x) \in W_1$.<br>
             Therefore, $y = (x + y) + (-x) \in W_1$. This directly contradicts our hypothesis that $y \notin W_1$!<br>
-            • <strong>Sub-case B:</strong> Suppose $x + y \in W_2$. Since $y \in W_2$ and $W_2$ is a subspace, $(-y) \in W_2$.<br>
+            - <strong>Sub-case B:</strong> Suppose $x + y \in W_2$. Since $y \in W_2$ and $W_2$ is a subspace, $(-y) \in W_2$.<br>
             Therefore, $x = (x + y) + (-y) \in W_2$. This directly contradicts our hypothesis that $x \notin W_2$!<br>
             5. In both cases, we arrive at an impossible contradiction. Hence our supposition was false.</p>
             <div class="tag-result">Hence proved: $W_1 \cup W_2$ is a subspace iff $W_1 \subseteq W_2$ or $W_2 \subseteq W_1$.</div>
@@ -2344,7 +2382,7 @@ window.UNIT1_DATA = {
     </div>
 <div class="question-card" data-category="dependence">
         <div class="card-top">
-          <span class="q-pill">Part B • Q7 (16 Marks)</span>
+          <span class="q-pill">Part B - Q7 (16 Marks)</span>
           <div class="q-heading">(i) For which values of $k$ will the vector $V = (1,-2,k)$ in $\mathbb{R}^3$ be a linear combination of $U = (3,0,-2)$ and $W = (2,-1,-5)$? [8 Marks]<br>
           (ii) Determine whether $\operatorname{span}\{(1,-1,0), (0,1,1), (3,-5,-2)\} = \mathbb{R}^3$. [8 Marks]</div>
         </div>
@@ -2363,10 +2401,10 @@ window.UNIT1_DATA = {
               -2c_1 - 5c_2 &= k && \text{--- (3)}
               \end{aligned}$$
             </div>
-            <p>• From (2), $\mathbf{c_2 = 2}$.<br>
-            • Substitute $c_2 = 2$ into (1):<br>
+            <p>- From (2), $\mathbf{c_2 = 2}$.<br>
+            - Substitute $c_2 = 2$ into (1):<br>
             $$3c_1 + 2(2) = 1 \implies 3c_1 + 4 = 1 \implies 3c_1 = -3 \implies \mathbf{c_1 = -1}$$<br>
-            • Now substitute $c_1 = -1$ and $c_2 = 2$ into equation (3):<br>
+            - Now substitute $c_1 = -1$ and $c_2 = 2$ into equation (3):<br>
             $$k = -2c_1 - 5c_2 = -2(-1) - 5(2) = 2 - 10 = \mathbf{-8}$$</p>
             <div class="tag-result">Part (i) Answer: $k = -8$</div>
           </div>
@@ -2383,9 +2421,9 @@ window.UNIT1_DATA = {
                   &= 1(3) + 1(-3) = 3 - 3 = \mathbf{0}
               \end{aligned}$$
             </div>
-            <p>• Since $|A| = 0$, the vectors are <strong>Linearly Dependent</strong>.<br>
-            • Row operations show $v_3 = 3v_1 - 2v_2$. The rank is $\rho(A) = 2 < 3$.<br>
-            • Therefore, $\operatorname{Span}(S)$ is only a 2-dimensional plane passing through the origin in $\mathbb{R}^3$.</p>
+            <p>- Since $|A| = 0$, the vectors are <strong>Linearly Dependent</strong>.<br>
+            - Row operations show $v_3 = 3v_1 - 2v_2$. The rank is $\rho(A) = 2 < 3$.<br>
+            - Therefore, $\operatorname{Span}(S)$ is only a 2-dimensional plane passing through the origin in $\mathbb{R}^3$.</p>
             <div class="tag-result fail">Conclusion (ii): $\operatorname{span}\{(1,-1,0), (0,1,1), (3,-5,-2)\} \neq \mathbb{R}^3$ (Does NOT span $\mathbb{R}^3$).</div>
           </div>
         </div>
@@ -2470,7 +2508,7 @@ window.UNIT1_DATA = {
     </div>
 <div class="question-card" data-category="basis">
         <div class="card-top">
-          <span class="q-pill">Part B • Q8 (16 Marks)</span>
+          <span class="q-pill">Part B - Q8 (16 Marks)</span>
           <div class="q-heading">(i) Find the dimension and basis of $W = \{(a,b,c) \in \mathbb{R}^3 \mid 2a + 3b = c, \; 7c + 2b = a\}$. [8 Marks]<br>
           (ii) Let $S = \{v_1, v_2, v_3\}$ where $v_1=(2,1,0), v_2=(-3,-3,1), v_3=(-2,1,-1)$. Show that $S$ is a basis of $\mathbb{R}^3$. [8 Marks]</div>
         </div>
@@ -2605,7 +2643,7 @@ window.UNIT1_DATA = {
     </div>
 <div class="question-card" data-category="basis">
         <div class="card-top">
-          <span class="q-pill">Part B • Q9 (16 Marks)</span>
+          <span class="q-pill">Part B - Q9 (16 Marks)</span>
           <div class="q-heading">(i) Show that the following vectors form a basis for $V_3(\mathbb{R}) = \{(1,1,0), (0,1,1), (1,0,1)\}$. [8 Marks]<br>
           (ii) Determine the basis and dimension of the solution space of the linear homogeneous system:
           $$x + y - z = 0; \quad -2x - y + 2z = 0; \quad -x + z = 0 \quad [8 \text{ Marks}]$$</div>
@@ -2617,8 +2655,8 @@ window.UNIT1_DATA = {
             <div class="math-panel">
               $$|A| = \begin{vmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 1 & 0 & 1 \end{vmatrix} = 1(1 - 0) - 1(0 - 1) + 0 = 1(1) - 1(-1) = 1 + 1 = \mathbf{2 \neq 0}$$
             </div>
-            <p>• Since $|A| = 2 \neq 0$, the vectors are <strong>Linearly Independent</strong>.<br>
-            • Let $(x, y, z) \in \mathbb{R}^3$ be arbitrary. Setting $c_1(1,1,0) + c_2(0,1,1) + c_3(1,0,1) = (x, y, z)$ gives:<br>
+            <p>- Since $|A| = 2 \neq 0$, the vectors are <strong>Linearly Independent</strong>.<br>
+            - Let $(x, y, z) \in \mathbb{R}^3$ be arbitrary. Setting $c_1(1,1,0) + c_2(0,1,1) + c_3(1,0,1) = (x, y, z)$ gives:<br>
             $$c_1 + c_3 = x, \quad c_1 + c_2 = y, \quad c_2 + c_3 = z$$<br>
             Solving yields: $c_1 = \frac{x+y-z}{2}, \; c_2 = \frac{-x+y+z}{2}, \; c_3 = \frac{x-y+z}{2}$.<br>
             Since unique scalars exist for every vector in $V_3(\mathbb{R})$, $S$ spans $V_3(\mathbb{R})$.</p>
@@ -2635,12 +2673,12 @@ window.UNIT1_DATA = {
               <p>Apply $R_3 \to R_3 - R_2$:</p>
               $$\sim \begin{bmatrix} 1 & 1 & -1 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
             </div>
-            <p>• The matrix is in Row Echelon Form with $\operatorname{Rank}(A) = r = 2$.<br>
-            • Number of unknowns is $n = 3$.<br>
-            • By Rank-Nullity Theorem: $\text{Dimension of Solution Space} = n - r = 3 - 2 = \mathbf{1}$.<br>
-            • From row 2: $\mathbf{y = 0}$.<br>
-            • From row 1: $x + y - z = 0 \implies x + 0 - z = 0 \implies \mathbf{x = z}$.<br>
-            • Setting $z = t$ (free parameter), the general solution vector is:</p>
+            <p>- The matrix is in Row Echelon Form with $\operatorname{Rank}(A) = r = 2$.<br>
+            - Number of unknowns is $n = 3$.<br>
+            - By Rank-Nullity Theorem: $\text{Dimension of Solution Space} = n - r = 3 - 2 = \mathbf{1}$.<br>
+            - From row 2: $\mathbf{y = 0}$.<br>
+            - From row 1: $x + y - z = 0 \implies x + 0 - z = 0 \implies \mathbf{x = z}$.<br>
+            - Setting $z = t$ (free parameter), the general solution vector is:</p>
             <div class="math-panel">
               $$\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} t \\ 0 \\ t \end{bmatrix} = t \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$$
             </div>
@@ -2728,7 +2766,7 @@ window.UNIT1_DATA = {
     </div>
 <div class="question-card" data-category="basis">
         <div class="card-top">
-          <span class="q-pill">Part B • Q10 (16 Marks)</span>
+          <span class="q-pill">Part B - Q10 (16 Marks)</span>
           <div class="q-heading">Show that the vectors $\{(2,-3,1), (0,1,2), (1,1,2)\}$ form a basis for $V_3(\mathbb{R})$. [16 Marks]</div>
         </div>
         <div class="solution-content">
@@ -2859,10 +2897,10 @@ window.UNIT1_DATA = {
 
     
 
-<!-- Part B • Extra Q11 (16 Marks) -->
+<!-- Part B - Extra Q11 (16 Marks) -->
       <div class="question-card" data-category="subspace">
         <div class="card-top">
-          <span class="q-pill">Part B • Extra Q11 (16 Marks)</span>
+          <span class="q-pill">Part B - Extra Q11 (16 Marks)</span>
           <div class="q-heading">Let $V = M_{n \times n}(\mathbb{R})$ be the vector space of all $n \times n$ real matrices. Let $W_1$ be the set of symmetric matrices and $W_2$ be the set of skew-symmetric matrices. Prove that $W_1$ and $W_2$ are subspaces of $V$, that $V = W_1 \oplus W_2$, and find $\dim W_1$ and $\dim W_2$.</div>
         </div>
         <div class="solution-content">
@@ -2871,13 +2909,13 @@ window.UNIT1_DATA = {
           <div class="partb-step">
             <div class="step-title">Step 1: Subspace Verification for $W_1$ and $W_2$</div>
             <p><strong>(a) Symmetric Matrices $W_1 = \{A \in M_{n \times n}(\mathbb{R}) \mid A^T = A\}$:</strong><br>
-            • Zero matrix $O^T = O \implies O \in W_1 \neq \emptyset$.<br>
-            • Let $A, B \in W_1$ and $\alpha, \beta \in \mathbb{R}$. Consider $(\alpha A + \beta B)^T$:
+            - Zero matrix $O^T = O \implies O \in W_1 \neq \emptyset$.<br>
+            - Let $A, B \in W_1$ and $\alpha, \beta \in \mathbb{R}$. Consider $(\alpha A + \beta B)^T$:
             $$(\alpha A + \beta B)^T = \alpha A^T + \beta B^T = \alpha A + \beta B$$
             Since $(\alpha A + \beta B)^T = \alpha A + \beta B$, we have $\alpha A + \beta B \in W_1$. Hence $W_1$ is a subspace.<br><br>
             <strong>(b) Skew-Symmetric Matrices $W_2 = \{A \in M_{n \times n}(\mathbb{R}) \mid A^T = -A\}$:</strong><br>
-            • Zero matrix $O^T = -O \implies O \in W_2 \neq \emptyset$.<br>
-            • For $A, B \in W_2$ and $\alpha, \beta \in \mathbb{R}$:
+            - Zero matrix $O^T = -O \implies O \in W_2 \neq \emptyset$.<br>
+            - For $A, B \in W_2$ and $\alpha, \beta \in \mathbb{R}$:
             $$(\alpha A + \beta B)^T = \alpha A^T + \beta B^T = \alpha (-A) + \beta (-B) = -(\alpha A + \beta B)$$
             Hence $\alpha A + \beta B \in W_2$. Thus $W_2$ is a subspace.</p>
           </div>
@@ -2888,8 +2926,8 @@ window.UNIT1_DATA = {
             Every square matrix $A \in V$ can be identically decomposed as:
             $$A = \frac{A + A^T}{2} + \frac{A - A^T}{2}$$
             Let $A_1 = \frac{A + A^T}{2}$ and $A_2 = \frac{A - A^T}{2}$.<br>
-            • $A_1^T = \left(\frac{A + A^T}{2}\right)^T = \frac{A^T + A}{2} = A_1 \implies A_1 \in W_1$.<br>
-            • $A_2^T = \left(\frac{A - A^T}{2}\right)^T = \frac{A^T - A}{2} = -\frac{A - A^T}{2} = -A_2 \implies A_2 \in W_2$.<br>
+            - $A_1^T = \left(\frac{A + A^T}{2}\right)^T = \frac{A^T + A}{2} = A_1 \implies A_1 \in W_1$.<br>
+            - $A_2^T = \left(\frac{A - A^T}{2}\right)^T = \frac{A^T - A}{2} = -\frac{A - A^T}{2} = -A_2 \implies A_2 \in W_2$.<br>
             Therefore, $A = A_1 + A_2 \in W_1 + W_2 \implies V = W_1 + W_2$.<br><br>
             <strong>(b) Trivial Intersection $W_1 \cap W_2 = \{O\}$:</strong><br>
             Let $A \in W_1 \cap W_2$. Then $A^T = A$ (since $A \in W_1$) and $A^T = -A$ (since $A \in W_2$).<br>
@@ -2899,11 +2937,11 @@ window.UNIT1_DATA = {
 
           <div class="partb-step">
             <div class="step-title">Step 3: Dimensions of $W_1$ and $W_2$</div>
-            <p>• For $A \in W_1$ ($A^T = A$), diagonal entries $a_{ii}$ can be chosen arbitrarily ($n$ entries). Upper triangular entries $a_{ij}$ ($i < j$) determine lower triangular entries:
+            <p>- For $A \in W_1$ ($A^T = A$), diagonal entries $a_{ii}$ can be chosen arbitrarily ($n$ entries). Upper triangular entries $a_{ij}$ ($i < j$) determine lower triangular entries:
             $$\dim W_1 = n + \frac{n(n-1)}{2} = \frac{n(n+1)}{2}$$
-            • For $A \in W_2$ ($A^T = -A$), diagonal entries must be zero ($a_{ii} = -a_{ii} \implies a_{ii} = 0$). Only strictly upper triangular entries are free:
+            - For $A \in W_2$ ($A^T = -A$), diagonal entries must be zero ($a_{ii} = -a_{ii} \implies a_{ii} = 0$). Only strictly upper triangular entries are free:
             $$\dim W_2 = \frac{n(n-1)}{2}$$
-            • Check Dimension Theorem: $\dim W_1 + \dim W_2 = \frac{n^2+n}{2} + \frac{n^2-n}{2} = n^2 = \dim V$.</p>
+            - Check Dimension Theorem: $\dim W_1 + \dim W_2 = \frac{n^2+n}{2} + \frac{n^2-n}{2} = n^2 = \dim V$.</p>
           </div>
 
           <div class="why-dropdown">
@@ -2989,11 +3027,11 @@ window.UNIT1_DATA = {
         </div>
       </div>
 
-      <!-- Part B • Extra Q12 (16 Marks) -->
+      <!-- Part B - Extra Q12 (16 Marks) -->
 
 <div class="question-card" data-category="basis">
         <div class="card-top">
-          <span class="q-pill">Part B • Extra Q12 (16 Marks)</span>
+          <span class="q-pill">Part B - Extra Q12 (16 Marks)</span>
           <div class="q-heading">Let $S = \{(1, 0, 1, 0), (0, 1, 0, 1)\}$ be a linearly independent subset of $\mathbb{R}^4$. Extend $S$ to form a complete basis of $\mathbb{R}^4$, and find the coordinates of $v = (2, 3, -1, 4)$ with respect to this extended basis.</div>
         </div>
         <div class="solution-content">
@@ -3004,8 +3042,8 @@ window.UNIT1_DATA = {
             <p>Standard basis of $\mathbb{R}^4$ is $\{e_1, e_2, e_3, e_4\}$. Form matrix with $v_1, v_2$ followed by standard basis vectors:
             $$A = \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
             Applying Gaussian row reduction:<br>
-            • $R_3 \to R_3 - R_1 = (0, 0, -1, 0) \to (0, 0, 1, 0)$ (Piv\dots in columns 1, 2, 3).<br>
-            • Pivot 4 is obtained by choosing $e_4 = (0, 0, 0, 1)$ or $e_1 = (1, 0, 0, 0)$.<br>
+            - $R_3 \to R_3 - R_1 = (0, 0, -1, 0) \to (0, 0, 1, 0)$ (Piv\dots in columns 1, 2, 3).<br>
+            - Pivot 4 is obtained by choosing $e_4 = (0, 0, 0, 1)$ or $e_1 = (1, 0, 0, 0)$.<br>
             We choose extended vectors $v_3 = (0, 0, 1, 0)$ and $v_4 = (0, 0, 0, 1)$.<br>
             Extended set $B = \{v_1, v_2, v_3, v_4\} = \{(1,0,1,0), (0,1,0,1), (0,0,1,0), (0,0,0,1)\}$.<br>
             Determinant:
@@ -3109,11 +3147,11 @@ window.UNIT1_DATA = {
       </div>
 
 
-    <!-- Part B • Tough Challenge Q13 (16 Marks) -->
+    <!-- Part B - Tough Challenge Q13 (16 Marks) -->
 
 <div class="question-card" data-category="subspace">
       <div class="card-top">
-        <span class="q-pill">Part B • Tough Challenge Q13 (16 Marks)</span>
+        <span class="q-pill">Part B - Tough Challenge Q13 (16 Marks)</span>
         <div class="q-heading">Let $W_1$ and $W_2$ be two subspaces of $\mathbb{R}^4$ defined by:
         $$W_1 = \{(x_1, x_2, x_3, x_4) \in \mathbb{R}^4 \mid x_1 + x_2 - x_3 = 0, \; x_2 - x_4 = 0\}$$
         $$W_2 = \{(x_1, x_2, x_3, x_4) \in \mathbb{R}^4 \mid x_1 - x_2 + x_4 = 0, \; x_3 + x_4 = 0\}$$
@@ -3252,7 +3290,7 @@ window.UNIT1_DATA = {
 <!-- Predicted Part B Q14 -->
       <div class="question-card" data-category="theorems">
         <div class="card-top">
-          <span class="q-pill extra">Part B • Predicted Q14 (16 Marks)</span>
+          <span class="q-pill extra">Part B - Predicted Q14 (16 Marks)</span>
         </div>
         <div class="q-heading">
           Let $W_1$ and $W_2$ be subspaces of $\mathbb{R}^4$ defined by:<br>
@@ -3319,8 +3357,8 @@ window.UNIT1_DATA = {
             2. <strong>Direct Sum Evaluation:</strong><br>
             A vector space $V$ is a direct sum $W_1 \oplus W_2$ iff $W_1 + W_2 = V$ and $W_1 \cap W_2 = \{\mathbf{0}\}$.<br>
             Here:
-            • $W_1 \cap W_2 = \text{span}\{(0, 1, 2, -1)\} \neq \{\mathbf{0}\}$ ($\dim(W_1 \cap W_2) = 1 \neq 0$).<br>
-            • $\dim(W_1 + W_2) = 3 \neq \dim(\mathbb{R}^4) = 4$, so $W_1 + W_2 \neq \mathbb{R}^4$.<br>
+            - $W_1 \cap W_2 = \text{span}\{(0, 1, 2, -1)\} \neq \{\mathbf{0}\}$ ($\dim(W_1 \cap W_2) = 1 \neq 0$).<br>
+            - $\dim(W_1 + W_2) = 3 \neq \dim(\mathbb{R}^4) = 4$, so $W_1 + W_2 \neq \mathbb{R}^4$.<br>
             <strong>Conclusion:</strong> $\mathbb{R}^4$ is <strong>NOT</strong> the direct sum $W_1 \oplus W_2$.</p>
           </div>
 

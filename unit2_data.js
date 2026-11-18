@@ -7,7 +7,7 @@ window.UNIT2_DATA = {
       <!-- Card A1 -->
       <div class="question-card" data-category="transformation">
         <div class="card-top">
-          <span class="q-pill">QB • Q1</span>
+          <span class="q-pill">QB - Q1</span>
           <div class="q-heading">Define Ordered Basis.</div>
         </div>
         <div class="solution-content">
@@ -23,12 +23,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Definition</span>
+                <span class="explain-line-badge">Step 1 - Definition</span>
                 <div class="explain-line-title">Sequence vs Set</div>
                 <div class="explain-line-desc">A set {v1, v2} = {v2, v1}, but ordered tuple (v1, v2) ≠ (v2, v1). The coordinate vector depends strictly on the indexed position.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Exam Key Point</span>
+                <span class="explain-line-badge">Step 2 - Exam Key Point</span>
                 <div class="explain-line-title">Coordinate Vector Representation</div>
                 <div class="explain-line-desc">If x = c1 v1 + ... + cn vn, then [x]_β = (c1, ..., cn)^T. Full marks require mentioning that the sequence uniquely fixes the column vector.</div>
               </div>
@@ -63,7 +63,7 @@ window.UNIT2_DATA = {
       <!-- Card A2 -->
       <div class="question-card" data-category="kernel">
         <div class="card-top">
-          <span class="q-pill">QB • Q2</span>
+          <span class="q-pill">QB - Q2</span>
           <div class="q-heading">Define Null Space (Kernel) and Nullity.</div>
         </div>
         <div class="solution-content">
@@ -81,12 +81,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Subspace Property</span>
+                <span class="explain-line-badge">Step 1 - Subspace Property</span>
                 <div class="explain-line-title">N(T) is a Subspace of V</div>
                 <div class="explain-line-desc">N(T) contains 0_V since T(0_V) = 0_W, and is closed under addition and scalar multiplication.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Exam Criterion</span>
+                <span class="explain-line-badge">Step 2 - Exam Criterion</span>
                 <div class="explain-line-title">Nullity Definition</div>
                 <div class="explain-line-desc">State nullity(T) = dim(N(T)). In university exams, writing both the set builder notation and the dimension formula gets 2 full marks.</div>
               </div>
@@ -121,14 +121,14 @@ window.UNIT2_DATA = {
       <!-- Card A3 -->
       <div class="question-card" data-category="transformation">
         <div class="card-top">
-          <span class="q-pill">QB • Q3</span>
+          <span class="q-pill">QB - Q3</span>
           <div class="q-heading">Verify whether $T: \mathbb{R}^3 \to \mathbb{R}$ defined by $T(u) = \|u\|$ is a linear transformation.</div>
         </div>
         <div class="solution-content">
           <p><strong>Condition for Linearity:</strong> $T(c u) = c T(u)$ for all $c \in \mathbb{R}$ and $u \in \mathbb{R}^3$.<br>
      Let $u = (1, 0, 0)$ and scalar $c = -1$.<br>
-     • $T(c u) = T(-1, 0, 0) = \|(-1, 0, 0)\| = \sqrt{(-1)^2 + 0^2 + 0^2} = \sqrt{1} = 1$<br>
-     • $c T(u) = (-1) T(1, 0, 0) = (-1)(1) = -1$<br>
+     - $T(c u) = T(-1, 0, 0) = \|(-1, 0, 0)\| = \sqrt{(-1)^2 + 0^2 + 0^2} = \sqrt{1} = 1$<br>
+     - $c T(u) = (-1) T(1, 0, 0) = (-1)(1) = -1$<br>
      Since $T(-u) = 1 \neq -1 = -T(u)$, $T$ fails scalar homogeneity.<br>
      <span class="tag-result fail">Conclusion: $T(u) = \|u\|$ is NOT a linear transformation.</span></p>
           
@@ -140,12 +140,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Homogeneity Test</span>
+                <span class="explain-line-badge">Step 1 - Homogeneity Test</span>
                 <div class="explain-line-title">Scalar pull-out fails for negative scalars</div>
                 <div class="explain-line-desc">The norm ||cu|| = |c| ||u||. For c = -1, ||-u|| = ||u|| ≠ -||u||.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Additivity Test</span>
+                <span class="explain-line-badge">Step 2 - Additivity Test</span>
                 <div class="explain-line-title">Triangle Inequality</div>
                 <div class="explain-line-desc">||u + v|| ≤ ||u|| + ||v|| with strict inequality for non-collinear vectors, so T(u+v) ≠ T(u) + T(v).</div>
               </div>
@@ -180,7 +180,7 @@ window.UNIT2_DATA = {
       <!-- Card A4 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill">QB • Q4</span>
+          <span class="q-pill">QB - Q4</span>
           <div class="q-heading">Define Algebraic Multiplicity and Geometric Multiplicity of an Eigenvalue.</div>
         </div>
         <div class="solution-content">
@@ -198,12 +198,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Core Inequality</span>
+                <span class="explain-line-badge">Step 1 - Core Inequality</span>
                 <div class="explain-line-title">1 <= GM <= AM</div>
                 <div class="explain-line-desc">Geometric multiplicity never exceeds algebraic multiplicity. Diagonalizability holds iff GM = AM for all eigenvalues.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • University Key</span>
+                <span class="explain-line-badge">Step 2 - University Key</span>
                 <div class="explain-line-title">Eigenspace Dimension</div>
                 <div class="explain-line-desc">GM is the number of linearly independent eigenvectors associated with lambda_0.</div>
               </div>
@@ -238,7 +238,7 @@ window.UNIT2_DATA = {
       <!-- Card A5 -->
       <div class="question-card" data-category="transformation">
         <div class="card-top">
-          <span class="q-pill">QB • Q5</span>
+          <span class="q-pill">QB - Q5</span>
           <div class="q-heading">Is there a linear transformation $T: \mathbb{R}^3 \to \mathbb{R}^2$ such that $T(1,0,3) = (1,1)$ and $T(-2,0,-6) = (2,1)$?</div>
         </div>
         <div class="solution-content">
@@ -257,12 +257,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Linear Dependency</span>
+                <span class="explain-line-badge">Step 1 - Linear Dependency</span>
                 <div class="explain-line-title">Scalar multiple of input must yield same multiple of output</div>
                 <div class="explain-line-desc">u2 = -2 u1 implies T(u2) must equal -2 T(u1).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Contradiction</span>
+                <span class="explain-line-badge">Step 2 - Contradiction</span>
                 <div class="explain-line-title">(2, 1) ≠ (-2, -2)</div>
                 <div class="explain-line-desc">Linearity is fundamentally violated by the contradictory output assignments.</div>
               </div>
@@ -297,7 +297,7 @@ window.UNIT2_DATA = {
       <!-- Card A6 -->
       <div class="question-card" data-category="kernel">
         <div class="card-top">
-          <span class="q-pill">QB • Q6</span>
+          <span class="q-pill">QB - Q6</span>
           <div class="q-heading">Prove that a linear transformation $T: V \to W$ is one-to-one (injective) if and only if $N(T) = \{0\}$.</div>
         </div>
         <div class="solution-content">
@@ -317,12 +317,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Necessary Condition</span>
+                <span class="explain-line-badge">Step 1 - Necessary Condition</span>
                 <div class="explain-line-title">If T is 1-1, Ker(T) = {0}</div>
                 <div class="explain-line-desc">T(x) = T(0) implies x = 0 by injectivity.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Sufficient Condition</span>
+                <span class="explain-line-badge">Step 2 - Sufficient Condition</span>
                 <div class="explain-line-title">If Ker(T) = {0}, T(u) = T(v) implies u = v</div>
                 <div class="explain-line-desc">T(u - v) = 0 puts (u - v) into kernel. With trivial kernel, u - v must be 0.</div>
               </div>
@@ -357,7 +357,7 @@ window.UNIT2_DATA = {
       <!-- Card A7 -->
       <div class="question-card" data-category="transformation">
         <div class="card-top">
-          <span class="q-pill">QB • Q7</span>
+          <span class="q-pill">QB - Q7</span>
           <div class="q-heading">Check whether $T: \mathbb{R}^2 \to \mathbb{R}^2$ defined by $T(a_1, a_2) = (2a_1 + a_2, a_1)$ is linear.</div>
         </div>
         <div class="solution-content">
@@ -376,12 +376,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Additivity</span>
+                <span class="explain-line-badge">Step 1 - Additivity</span>
                 <div class="explain-line-title">Direct expansion</div>
                 <div class="explain-line-desc">Both coordinate components are linear polynomials without constant offsets.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Homogeneity</span>
+                <span class="explain-line-badge">Step 2 - Homogeneity</span>
                 <div class="explain-line-title">Scalar factoring</div>
                 <div class="explain-line-desc">Scalar c factors out of both output coordinates cleanly.</div>
               </div>
@@ -416,7 +416,7 @@ window.UNIT2_DATA = {
       <!-- Card A8 -->
       <div class="question-card" data-category="kernel">
         <div class="card-top">
-          <span class="q-pill">QB • Q8</span>
+          <span class="q-pill">QB - Q8</span>
           <div class="q-heading">Verify the Dimension Theorem for $T: \mathbb{R}^3 \to \mathbb{R}^2$ defined by $T(a_1, a_2, a_3) = (a_1 - a_2, 2a_3)$.</div>
         </div>
         <div class="solution-content">
@@ -439,12 +439,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Solve Kernel System</span>
+                <span class="explain-line-badge">Step 1 - Solve Kernel System</span>
                 <div class="explain-line-title">a2 = a1, a3 = 0</div>
                 <div class="explain-line-desc">One free variable a1 gives nullity = 1 with basis (1, 1, 0).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Check Rank-Nullity Sum</span>
+                <span class="explain-line-badge">Step 2 - Check Rank-Nullity Sum</span>
                 <div class="explain-line-title">1 + 2 = 3</div>
                 <div class="explain-line-desc">Sum of nullity (1) and rank (2) matches domain dimension dim(R^3) = 3.</div>
               </div>
@@ -479,7 +479,7 @@ window.UNIT2_DATA = {
       <!-- Card A9 -->
       <div class="question-card" data-category="kernel">
         <div class="card-top">
-          <span class="q-pill">QB • Q9</span>
+          <span class="q-pill">QB - Q9</span>
           <div class="q-heading">Define Range Space and Rank of a Linear Transformation.</div>
         </div>
         <div class="solution-content">
@@ -497,12 +497,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Subspace Property</span>
+                <span class="explain-line-badge">Step 1 - Subspace Property</span>
                 <div class="explain-line-title">R(T) is a Subspace of W</div>
                 <div class="explain-line-desc">If {v1, ..., vn} spans V, then {T(v1), ..., T(vn)} spans R(T).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Exam Key Point</span>
+                <span class="explain-line-badge">Step 2 - Exam Key Point</span>
                 <div class="explain-line-title">Rank Definition</div>
                 <div class="explain-line-desc">rank(T) = dim(R(T)). For matrices, it equals the number of pivot columns.</div>
               </div>
@@ -537,7 +537,7 @@ window.UNIT2_DATA = {
       <!-- Card A10 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill">QB • Q10</span>
+          <span class="q-pill">QB - Q10</span>
           <div class="q-heading">Test whether the matrix $A = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}$ is diagonalizable.</div>
         </div>
         <div class="solution-content">
@@ -556,12 +556,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Distinct Eigenvalues Theorem</span>
+                <span class="explain-line-badge">Step 1 - Distinct Eigenvalues Theorem</span>
                 <div class="explain-line-title">Distinct ro\dots guarantee diagonalizability</div>
                 <div class="explain-line-desc">For an n x n matrix, if it has n distinct eigenvalues, it is automatically diagonalizable.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Diagonal Form</span>
+                <span class="explain-line-badge">Step 2 - Diagonal Form</span>
                 <div class="explain-line-title">D = diag(0, 2)</div>
                 <div class="explain-line-desc">The diagonal entries of D are the eigenvalues 0 and 2.</div>
               </div>
@@ -597,7 +597,7 @@ window.UNIT2_DATA = {
       <!-- Card A11 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill extra">Extra • Q11</span>
+          <span class="q-pill extra">Extra - Q11</span>
           <div class="q-heading">State Cayley-Hamilton Theorem and how to compute $A^{-1}$ using it.</div>
         </div>
         <div class="solution-content">
@@ -616,12 +616,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Statement</span>
+                <span class="explain-line-badge">Step 1 - Statement</span>
                 <div class="explain-line-title">Matrix satisfies characteristic polynomial</div>
                 <div class="explain-line-desc">Replace lambda by A and scalar constant by c0 * I.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Inverse Formula</span>
+                <span class="explain-line-badge">Step 2 - Inverse Formula</span>
                 <div class="explain-line-title">Multiply by A^-1</div>
                 <div class="explain-line-desc">Allows calculating inverse directly using powers of A rather than calculating n^2 cofactors.</div>
               </div>
@@ -656,7 +656,7 @@ window.UNIT2_DATA = {
       <!-- Card A12 -->
       <div class="question-card" data-category="kernel">
         <div class="card-top">
-          <span class="q-pill extra">Extra • Q12</span>
+          <span class="q-pill extra">Extra - Q12</span>
           <div class="q-heading">State the Dimension Theorem (Rank-Nullity Theorem) for linear transformations.</div>
         </div>
         <div class="solution-content">
@@ -674,12 +674,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Dimension Conservation</span>
+                <span class="explain-line-badge">Step 1 - Dimension Conservation</span>
                 <div class="explain-line-title">Domain dimension splits into two parts</div>
                 <div class="explain-line-desc">The dimension of the domain V is preserved: part collapsed to zero (nullity) + part surviving (rank).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Finite Dimension Condition</span>
+                <span class="explain-line-badge">Step 2 - Finite Dimension Condition</span>
                 <div class="explain-line-title">V must be finite dimensional</div>
                 <div class="explain-line-desc">In exams, remember to state that V is finite-dimensional to get full marks.</div>
               </div>
@@ -714,7 +714,7 @@ window.UNIT2_DATA = {
       <!-- Card A13 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill extra">Extra • Q13</span>
+          <span class="q-pill extra">Extra - Q13</span>
           <div class="q-heading">If $\lambda$ is an eigenvalue of an invertible linear operator $T$, prove that $\lambda^{-1}$ is an eigenvalue of $T^{-1}$.</div>
         </div>
         <div class="solution-content">
@@ -736,12 +736,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Non-zero Eigenvalue</span>
+                <span class="explain-line-badge">Step 1 - Non-zero Eigenvalue</span>
                 <div class="explain-line-title">Invertible implies lambda ≠ 0</div>
                 <div class="explain-line-desc">An operator is invertible iff 0 is NOT an eigenvalue.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Invert operator</span>
+                <span class="explain-line-badge">Step 2 - Invert operator</span>
                 <div class="explain-line-title">Apply T^-1 to both sides</div>
                 <div class="explain-line-desc">T^-1(T(v)) = v, and linearity pulls lambda out, yielding T^-1(v) = (1/lambda)v.</div>
               </div>
@@ -776,7 +776,7 @@ window.UNIT2_DATA = {
       <!-- Card A14 -->
       <div class="question-card" data-category="transformation">
         <div class="card-top">
-          <span class="q-pill extra">Extra • Q14</span>
+          <span class="q-pill extra">Extra - Q14</span>
           <div class="q-heading">Let $T: V \to W$ be linear. Show that $T(0_V) = 0_W$ and $T(-v) = -T(v)$.</div>
         </div>
         <div class="solution-content">
@@ -796,12 +796,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Zero mapping</span>
+                <span class="explain-line-badge">Step 1 - Zero mapping</span>
                 <div class="explain-line-title">T(0) = 0</div>
                 <div class="explain-line-desc">Essential first step in verifying if any mapping is linear. If T(0) ≠ 0, mapping is immediately non-linear.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Negative vector</span>
+                <span class="explain-line-badge">Step 2 - Negative vector</span>
                 <div class="explain-line-title">T(-v) = -T(v)</div>
                 <div class="explain-line-desc">Follows either from additivity with additive inverse or scalar homogeneity with c = -1.</div>
               </div>
@@ -836,7 +836,7 @@ window.UNIT2_DATA = {
       <!-- Card A15 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill extra">Extra • Q15</span>
+          <span class="q-pill extra">Extra - Q15</span>
           <div class="q-heading">State the necessary and sufficient condition for a linear operator $T$ on a finite-dimensional space $V$ to be diagonalizable.</div>
         </div>
         <div class="solution-content">
@@ -855,12 +855,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Condition 1</span>
+                <span class="explain-line-badge">Step 1 - Condition 1</span>
                 <div class="explain-line-title">Splits completely</div>
                 <div class="explain-line-desc">All ro\dots of characteristic polynomial must lie in the working field F.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Condition 2</span>
+                <span class="explain-line-badge">Step 2 - Condition 2</span>
                 <div class="explain-line-title">GM = AM for every eigenvalue</div>
                 <div class="explain-line-desc">No defective eigenspaces; total number of linearly independent eigenvectors must equal dim(V).</div>
               </div>
@@ -895,7 +895,7 @@ window.UNIT2_DATA = {
       <!-- Card A16 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill extra">Extra • Q16</span>
+          <span class="q-pill extra">Extra - Q16</span>
           <div class="q-heading">Show that eigenvectors corresponding to distinct eigenvalues of a linear operator are linearly independent.</div>
         </div>
         <div class="solution-content">
@@ -919,12 +919,12 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1 • Induction Principle</span>
+                <span class="explain-line-badge">Step 1 - Induction Principle</span>
                 <div class="explain-line-title">Base case k = 1</div>
                 <div class="explain-line-desc">v1 ≠ 0, so c1 v1 = 0 implies c1 = 0.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2 • Inductive Step</span>
+                <span class="explain-line-badge">Step 2 - Inductive Step</span>
                 <div class="explain-line-title">Elimination using eigenvalue difference</div>
                 <div class="explain-line-desc">Multiplying by lambda_k eliminates v_k and leaves non-zero coefficients (lambda_i - lambda_k) ≠ 0.</div>
               </div>
@@ -959,7 +959,7 @@ window.UNIT2_DATA = {
 <!-- Predicted Q17 -->
       <div class="question-card" data-category="theorems">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q17</span>
+          <span class="q-pill extra">Predicted - Q17</span>
         </div>
         <div class="q-heading">State the Rank-Nullity Theorem (Dimension Theorem) for linear transformations. State its corollary when $\dim(V) = \dim(W)$.</div>
         <div class="solution-content">
@@ -976,17 +976,17 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Domain Dimension Conservation</span>
+                <span class="explain-line-badge">Step 1: Domain Dimension Conservation</span>
                 <div class="explain-line-title">Degrees of freedom in $V$ divide between collapsed and preserved</div>
                 <div class="explain-line-desc">Nullity counts vectors collapsed to zero; rank counts vectors preserved in the output image space. Their sum always equals the domain dimension.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Finite Equal Dimensions Corollary</span>
+                <span class="explain-line-badge">Step 2: Finite Equal Dimensions Corollary</span>
                 <div class="explain-line-title">Injective implies surjective when $\dim(V) = \dim(W)$</div>
                 <div class="explain-line-desc">If $\text{nullity}(T) = 0$, then $\text{rank}(T) = \dim(V) = \dim(W)$, which automatically forces $R(T) = W$, making $T$ onto.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for the exact Rank-Nullity formula $\text{nullity}(T) + \text{rank}(T) = \dim(V)$, 1 mark for the equal dimension corollary.</div>
               </div>
@@ -1035,7 +1035,7 @@ window.UNIT2_DATA = {
       <!-- Predicted Q18 -->
       <div class="question-card" data-category="linear_trans">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q18</span>
+          <span class="q-pill extra">Predicted - Q18</span>
         </div>
         <div class="q-heading">If $T: V \to W$ is a linear transformation and $\dim(V) > \dim(W)$, can $T$ be one-to-one? Justify your answer using the Dimension Theorem.</div>
         <div class="solution-content">
@@ -1057,17 +1057,17 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Range Subspace Bound</span>
+                <span class="explain-line-badge">Step 1: Range Subspace Bound</span>
                 <div class="explain-line-title">$\text{rank}(T) \le \dim(W)$</div>
                 <div class="explain-line-desc">The dimension of the image cannot exceed the dimension of the target codomain.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Pigeonhole Principle for Vector Spaces</span>
+                <span class="explain-line-badge">Step 2: Pigeonhole Principle for Vector Spaces</span>
                 <div class="explain-line-title">Compressing a larger space into a smaller space forces non-trivial kernel</div>
                 <div class="explain-line-desc">At least $\dim(V) - \dim(W)$ dimensions must collapse into the zero vector.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for stating 'No', 1 mark for the mathematical justification $\text{nullity}(T) \ge \dim(V) - \dim(W) > 0$.</div>
               </div>
@@ -1116,7 +1116,7 @@ window.UNIT2_DATA = {
       <!-- Predicted Q19 -->
       <div class="question-card" data-category="diagonalization">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q19</span>
+          <span class="q-pill extra">Predicted - Q19</span>
         </div>
         <div class="q-heading">The eigenvalues of a $3 \times 3$ matrix $A$ are $1, 2, -3$. Find the eigenvalues of $A^{-1}$, $A^3$, and $2A + 3I$.</div>
         <div class="solution-content">
@@ -1136,17 +1136,17 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Invariant Eigenvector Property</span>
+                <span class="explain-line-badge">Step 1: Invariant Eigenvector Property</span>
                 <div class="explain-line-title">$AX = \lambda X \implies A^k X = \lambda^k X$</div>
                 <div class="explain-line-desc">Applying matrix powers or polynomials leaves the eigenvector unchanged while transforming the scalar eigenvalue identically.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Inverse Multiplicative Rule</span>
+                <span class="explain-line-badge">Step 2: Inverse Multiplicative Rule</span>
                 <div class="explain-line-title">$A X = \lambda X \implies A^{-1} X = \frac{1}{\lambda} X$</div>
                 <div class="explain-line-desc">Because all eigenvalues are non-zero ($1, 2, -3 \neq 0$), $\det(A) = -6 \neq 0$, guaranteeing $A^{-1}$ exists.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for $A^{-1}$ values $\{1, 1/2, -1/3\}$, 1 mark for $A^3$ and polynomial values.</div>
               </div>
@@ -1195,7 +1195,7 @@ window.UNIT2_DATA = {
       <!-- Predicted Q20 -->
       <div class="question-card" data-category="diagonalization">
         <div class="card-top">
-          <span class="q-pill extra">Predicted • Q20</span>
+          <span class="q-pill extra">Predicted - Q20</span>
         </div>
         <div class="q-heading">State the necessary and sufficient condition for a square matrix $A$ of order $n$ to be diagonalizable in terms of its algebraic and geometric multiplicities.</div>
         <div class="solution-content">
@@ -1214,17 +1214,17 @@ window.UNIT2_DATA = {
             <div class="why-content">
               <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Splitting Criterion</span>
+                <span class="explain-line-badge">Step 1: Splitting Criterion</span>
                 <div class="explain-line-title">All $n$ roots must lie in the working scalar field $F$</div>
                 <div class="explain-line-desc">If a real matrix has complex eigenvalues with non-zero imaginary parts, it cannot be diagonalized over $\mathbb{R}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Zero Eigenspace Defect</span>
+                <span class="explain-line-badge">Step 2: Zero Eigenspace Defect</span>
                 <div class="explain-line-title">$\text{Defect}(\lambda_i) = \text{AM}(\lambda_i) - \text{GM}(\lambda_i) = 0$</div>
                 <div class="explain-line-desc">A matrix fails to diagonalize only when the eigenspace is deficient ($\text{GM} < \text{AM}$). When defect is zero for all eigenvalues, a full modal matrix $P$ exists.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scoring Rubric (2 Marks)</span>
+                <span class="explain-line-badge">Step 3: Scoring Rubric (2 Marks)</span>
                 <div class="explain-line-title">University Evaluation Breakdown</div>
                 <div class="explain-line-desc">1 mark for stating characteristic polynomial splits, 1 mark for equating geometric multiplicity to algebraic multiplicity ($\text{GM} = \text{AM}$) for each eigenvalue.</div>
               </div>
@@ -1275,7 +1275,7 @@ window.UNIT2_DATA = {
       <!-- Card B1 -->
       <div class="question-card" data-category="kernel">
         <div class="card-top">
-          <span class="q-pill">Part B • Q1 (16 Marks)</span>
+          <span class="q-pill">Part B - Q1 (16 Marks)</span>
           <div class="q-heading">Let $T: \mathbb{R}^3 \to \mathbb{R}^2$ be defined by $T(a_1, a_2, a_3) = (a_1 - a_2, 2a_3)$. Find $N(T)$, $R(T)$, check if $T$ is 1-1 or onto, and verify the Dimension Theorem.</div>
         </div>
         <div class="solution-content">
@@ -1284,22 +1284,22 @@ window.UNIT2_DATA = {
        <div class="step-title">Step 1: Compute Null Space $N(T)$ and Nullity</div>
        <p>Set $T(a_1, a_2, a_3) = (0, 0) \implies a_1 - a_2 = 0 \implies a_2 = a_1$, and $2a_3 = 0 \implies a_3 = 0$.<br>
        Vector in $N(T)$ is $(a_1, a_1, 0) = a_1 (1, 1, 0)$.<br>
-       • <strong>Basis for $N(T)$:</strong> $\{(1, 1, 0)\}$.<br>
-       • <strong>Nullity:</strong> $\operatorname{nullity}(T) = \dim N(T) = 1$.</p>
+       - <strong>Basis for $N(T)$:</strong> $\{(1, 1, 0)\}$.<br>
+       - <strong>Nullity:</strong> $\operatorname{nullity}(T) = \dim N(T) = 1$.</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 2: Compute Range Space $R(T)$ and Rank</div>
        <p>Evaluate $T$ on standard basis $\{e_1, e_2, e_3\}$ of $\mathbb{R}^3$:<br>
        $T(1, 0, 0) = (1, 0), \quad T(0, 1, 0) = (-1, 0), \quad T(0, 0, 1) = (0, 2)$.<br>
        The vectors $(1, 0)$ and $(0, 2)$ are linearly independent and span $\mathbb{R}^2$.<br>
-       • <strong>Basis for $R(T)$:</strong> $\{(1, 0), (0, 1)\}$.<br>
-       • <strong>Rank:</strong> $\operatorname{rank}(T) = \dim R(T) = 2$.</p>
+       - <strong>Basis for $R(T)$:</strong> $\{(1, 0), (0, 1)\}$.<br>
+       - <strong>Rank:</strong> $\operatorname{rank}(T) = \dim R(T) = 2$.</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 3: Verification of 1-1, Onto, and Dimension Theorem</div>
-       <p>• <strong>One-to-One:</strong> Since $\operatorname{nullity}(T) = 1 > 0$, $N(T) \neq \{0\} \implies T$ is <strong>NOT one-to-one</strong>.<br>
-       • <strong>Onto:</strong> Since $\operatorname{rank}(T) = 2 = \dim(\mathbb{R}^2)$, $T$ is <strong>ONTO (surjective)</strong>.<br>
-       • <strong>Dimension Theorem:</strong>
+       <p>- <strong>One-to-One:</strong> Since $\operatorname{nullity}(T) = 1 > 0$, $N(T) \neq \{0\} \implies T$ is <strong>NOT one-to-one</strong>.<br>
+       - <strong>Onto:</strong> Since $\operatorname{rank}(T) = 2 = \dim(\mathbb{R}^2)$, $T$ is <strong>ONTO (surjective)</strong>.<br>
+       - <strong>Dimension Theorem:</strong>
        $$\operatorname{nullity}(T) + \operatorname{rank}(T) = 1 + 2 = 3 = \dim(\mathbb{R}^3)$$
        <span class="tag-result">Dimension Theorem Verified ($1 + 2 = 3$).</span></p>
      </div>
@@ -1382,7 +1382,7 @@ window.UNIT2_DATA = {
       <!-- Card B2 -->
       <div class="question-card" data-category="transformation">
         <div class="card-top">
-          <span class="q-pill">Part B • Q2 (16 Marks)</span>
+          <span class="q-pill">Part B - Q2 (16 Marks)</span>
           <div class="q-heading">Consider the basis $S = \{v_1, v_2, v_3\}$ for $\mathbb{R}^3$, where $v_1 = (1,1,1), v_2 = (1,1,0), v_3 = (1,0,0)$. Let $T: \mathbb{R}^3 \to \mathbb{R}^2$ be the linear transformation such that $T(v_1) = (1,0), T(v_2) = (2,-1), T(v_3) = (4,3)$. Find the formula for $T(x_1, x_2, x_3)$, and compute $T(2,-3,5)$.</div>
         </div>
         <div class="solution-content">
@@ -1400,15 +1400,15 @@ window.UNIT2_DATA = {
        <p>$$T(x_1, x_2, x_3) = c_1 T(v_1) + c_2 T(v_2) + c_3 T(v_3)$$
        $$= x_3 (1, 0) + (x_2 - x_3) (2, -1) + (x_1 - x_2) (4, 3)$$
        Grouping coordinates:<br>
-       • First coordinate: $x_3 + 2(x_2 - x_3) + 4(x_1 - x_2) = 4x_1 - 2x_2 - x_3$<br>
-       • Second coordinate: $0 - 1(x_2 - x_3) + 3(x_1 - x_2) = 3x_1 - 4x_2 + x_3$<br><br>
+       - First coordinate: $x_3 + 2(x_2 - x_3) + 4(x_1 - x_2) = 4x_1 - 2x_2 - x_3$<br>
+       - Second coordinate: $0 - 1(x_2 - x_3) + 3(x_1 - x_2) = 3x_1 - 4x_2 + x_3$<br><br>
        $$\mathbf{T(x_1, x_2, x_3) = (4x_1 - 2x_2 - x_3, \; 3x_1 - 4x_2 + x_3)}$$</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 3: Compute $T(2, -3, 5)$</div>
        <p>Substitute $x_1 = 2, x_2 = -3, x_3 = 5$:<br>
-       • First component: $4(2) - 2(-3) - 5 = 8 + 6 - 5 = 9$<br>
-       • Second component: $3(2) - 4(-3) + 5 = 6 + 12 + 5 = 23$<br>
+       - First component: $4(2) - 2(-3) - 5 = 8 + 6 - 5 = 9$<br>
+       - Second component: $3(2) - 4(-3) + 5 = 6 + 12 + 5 = 23$<br>
        <span class="tag-result">T(2, -3, 5) = (9, 23)</span></p>
      </div>
           
@@ -1490,7 +1490,7 @@ window.UNIT2_DATA = {
       <!-- Card B3 -->
       <div class="question-card" data-category="kernel">
         <div class="card-top">
-          <span class="q-pill">Part B • Q3 (16 Marks)</span>
+          <span class="q-pill">Part B - Q3 (16 Marks)</span>
           <div class="q-heading">Let $T: M_{2 \times 3}(F) \to M_{2 \times 2}(F)$ be defined by $T\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \end{pmatrix} = \begin{pmatrix} 2a_{11} - a_{12} & a_{13} + 2a_{12} \\ 0 & 0 \end{pmatrix}$. Find $N(T)$, $R(T)$, check if $T$ is 1-1 or onto, and verify the Dimension Theorem.</div>
         </div>
         <div class="solution-content">
@@ -1502,22 +1502,22 @@ window.UNIT2_DATA = {
        $$a_{13} + 2a_{12} = 0 \implies a_{13} = -2(2a_{11}) = -4a_{11}$$
        Entries $a_{21}, a_{22}, a_{23}$ do not appear, so they are free.<br>
        Four free parameters: $a_{11}, a_{21}, a_{22}, a_{23}$.<br>
-       • <strong>Basis for $N(T)$:</strong>
+       - <strong>Basis for $N(T)$:</strong>
        $$\left\{ \begin{pmatrix} 1 & 2 & -4 \\ 0 & 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} \right\}$$
-       • <strong>Nullity:</strong> $\operatorname{nullity}(T) = 4$.</p>
+       - <strong>Nullity:</strong> $\operatorname{nullity}(T) = 4$.</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 2: Compute Range Space $R(T)$ and Rank</div>
        <p>Every matrix in $R(T)$ has the form:
        $$\begin{pmatrix} 2a_{11}-a_{12} & a_{13}+2a_{12} \\ 0 & 0 \end{pmatrix} = \alpha \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} + \beta \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$$
-       • <strong>Basis for $R(T)$:</strong> $\left\{ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \right\}$.<br>
-       • <strong>Rank:</strong> $\operatorname{rank}(T) = 2$.</p>
+       - <strong>Basis for $R(T)$:</strong> $\left\{ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \right\}$.<br>
+       - <strong>Rank:</strong> $\operatorname{rank}(T) = 2$.</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 3: Verification</div>
-       <p>• <strong>One-to-One:</strong> $\operatorname{nullity}(T) = 4 > 0 \implies$ NOT one-to-one.<br>
-       • <strong>Onto:</strong> Codomain dimension is $\dim(M_{2 \times 2}) = 4$. Since $\operatorname{rank}(T) = 2 < 4 \implies$ NOT onto.<br>
-       • <strong>Dimension Theorem:</strong>
+       <p>- <strong>One-to-One:</strong> $\operatorname{nullity}(T) = 4 > 0 \implies$ NOT one-to-one.<br>
+       - <strong>Onto:</strong> Codomain dimension is $\dim(M_{2 \times 2}) = 4$. Since $\operatorname{rank}(T) = 2 < 4 \implies$ NOT onto.<br>
+       - <strong>Dimension Theorem:</strong>
        $$\operatorname{nullity}(T) + \operatorname{rank}(T) = 4 + 2 = 6 = \dim(M_{2 \times 3}(F))$$
        <span class="tag-result">Dimension Theorem Verified ($4 + 2 = 6$).</span></p>
      </div>
@@ -1600,7 +1600,7 @@ window.UNIT2_DATA = {
       <!-- Card B4 -->
       <div class="question-card" data-category="kernel">
         <div class="card-top">
-          <span class="q-pill">Part B • Q4 (16 Marks)</span>
+          <span class="q-pill">Part B - Q4 (16 Marks)</span>
           <div class="q-heading">State and prove the Dimension Theorem (Rank-Nullity Theorem) for linear transformations.</div>
         </div>
         <div class="solution-content">
@@ -1717,7 +1717,7 @@ window.UNIT2_DATA = {
       <!-- Card B5 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill">Part B • Q5 (16 Marks)</span>
+          <span class="q-pill">Part B - Q5 (16 Marks)</span>
           <div class="q-heading">Let $L: \mathbb{R}^3 \to \mathbb{R}^3$ be a linear transformation whose matrix representation $A$ with respect to the standard basis is given by $A = \begin{pmatrix} 2 & 1 & 1 \\ 2 & 3 & 2 \\ 1 & 1 & 2 \end{pmatrix}$. Find the eigenvalues of $L$ and a basis of eigenvectors.</div>
         </div>
         <div class="solution-content">
@@ -1725,29 +1725,29 @@ window.UNIT2_DATA = {
      <div class="partb-step">
        <div class="step-title">Step 1: Characteristic Equation</div>
        <p>$$\det(A - \lambda I) = 0 \implies \lambda^3 - S_1 \lambda^2 + S_2 \lambda - S_3 = 0$$
-       • $S_1 = \operatorname{tr}(A) = 2 + 3 + 2 = 7$<br>
-       • $S_2 = \text{Sum of minors of diagonal elements} = \det\begin{pmatrix} 3 & 2 \\ 1 & 2 \end{pmatrix} + \det\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} + \det\begin{pmatrix} 2 & 1 \\ 2 & 3 \end{pmatrix} = (6-2) + (4-1) + (6-2) = 4 + 3 + 4 = 11$<br>
-       • $S_3 = \det(A) = 2(6-2) - 1(4-2) + 1(2-3) = 8 - 2 - 1 = 5$<br><br>
+       - $S_1 = \operatorname{tr}(A) = 2 + 3 + 2 = 7$<br>
+       - $S_2 = \text{Sum of minors of diagonal elements} = \det\begin{pmatrix} 3 & 2 \\ 1 & 2 \end{pmatrix} + \det\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} + \det\begin{pmatrix} 2 & 1 \\ 2 & 3 \end{pmatrix} = (6-2) + (4-1) + (6-2) = 4 + 3 + 4 = 11$<br>
+       - $S_3 = \det(A) = 2(6-2) - 1(4-2) + 1(2-3) = 8 - 2 - 1 = 5$<br><br>
        Characteristic Equation:
        $$\lambda^3 - 7\lambda^2 + 11\lambda - 5 = 0$$
        Testing $\lambda = 1$: $1 - 7 + 11 - 5 = 0$ (root).<br>
        Dividing: $(\lambda - 1)(\lambda^2 - 6\lambda + 5) = (\lambda - 1)^2 (\lambda - 5) = 0$.<br>
-       • <strong>Eigenvalues:</strong> $\lambda_1 = 1$ (multiplicity 2), $\quad \lambda_2 = 5$ (multiplicity 1).</p>
+       - <strong>Eigenvalues:</strong> $\lambda_1 = 1$ (multiplicity 2), $\quad \lambda_2 = 5$ (multiplicity 1).</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 2: Eigenvectors for $\lambda = 5$</div>
        <p>$$(A - 5I)X = 0 \implies \begin{pmatrix} -3 & 1 & 1 \\ 2 & -2 & 2 \\ 1 & 1 & -3 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$$
        Using equations 1 & 2 by cross-multiplication:<br>
        $\frac{x_1}{1(2) - 1(-2)} = \frac{x_2}{1(2) - (-3)(2)} = \frac{x_3}{(-3)(-2) - 1(2)} \implies \frac{x_1}{4} = \frac{x_2}{8} = \frac{x_3}{4} \implies \frac{x_1}{1} = \frac{x_2}{2} = \frac{x_3}{1}$.<br>
-       • <strong>Eigenvector $X_1$:</strong> $\begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix}$.</p>
+       - <strong>Eigenvector $X_1$:</strong> $\begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix}$.</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 3: Eigenvectors for $\lambda = 1$</div>
        <p>$$(A - 1I)X = 0 \implies \begin{pmatrix} 1 & 1 & 1 \\ 2 & 2 & 2 \\ 1 & 1 & 1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$$
        All three rows are identical: $x_1 + x_2 + x_3 = 0 \implies x_1 = -x_2 - x_3$.<br>
        Here $x_2$ and $x_3$ are two independent free variables:<br>
-       • Setting $x_2 = 1, x_3 = 0 \implies X_2 = \begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}$.<br>
-       • Setting $x_2 = 0, x_3 = 1 \implies X_3 = \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}$.<br><br>
+       - Setting $x_2 = 1, x_3 = 0 \implies X_2 = \begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}$.<br>
+       - Setting $x_2 = 0, x_3 = 1 \implies X_3 = \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}$.<br><br>
        <span class="tag-result">Basis of Eigenvectors: $\left\{ \begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix}, \; \begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}, \; \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix} \right\}$</span></p>
      </div>
           
@@ -1829,7 +1829,7 @@ window.UNIT2_DATA = {
       <!-- Card B6 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill">Part B • Q6 (16 Marks)</span>
+          <span class="q-pill">Part B - Q6 (16 Marks)</span>
           <div class="q-heading">Let $T: P_2(\mathbb{R}) \to P_2(\mathbb{R})$ be defined by $T(f(x)) = f(x) + (x+1)f'(x)$. Find the matrix of $T$ with respect to standard basis $\beta = \{1, x, x^2\}$, and compute its eigenvalues and eigenvectors.</div>
         </div>
         <div class="solution-content">
@@ -1837,9 +1837,9 @@ window.UNIT2_DATA = {
      <div class="partb-step">
        <div class="step-title">Step 1: Construct Matrix Representation $[T]_\beta$</div>
        <p>Standard basis is $\{1, x, x^2\}$:<br>
-       • $T(1) = 1 + (x+1)(0) = 1 = 1(1) + 0(x) + 0(x^2) \implies [T(1)]_\beta = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$<br>
-       • $T(x) = x + (x+1)(1) = 2x + 1 = 1(1) + 2(x) + 0(x^2) \implies [T(x)]_\beta = \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}$<br>
-       • $T(x^2) = x^2 + (x+1)(2x) = 3x^2 + 2x = 0(1) + 2(x) + 3(x^2) \implies [T(x^2)]_\beta = \begin{bmatrix} 0 \\ 2 \\ 3 \end{bmatrix}$<br><br>
+       - $T(1) = 1 + (x+1)(0) = 1 = 1(1) + 0(x) + 0(x^2) \implies [T(1)]_\beta = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$<br>
+       - $T(x) = x + (x+1)(1) = 2x + 1 = 1(1) + 2(x) + 0(x^2) \implies [T(x)]_\beta = \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}$<br>
+       - $T(x^2) = x^2 + (x+1)(2x) = 3x^2 + 2x = 0(1) + 2(x) + 3(x^2) \implies [T(x^2)]_\beta = \begin{bmatrix} 0 \\ 2 \\ 3 \end{bmatrix}$<br><br>
        $$A = [T]_\beta = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 2 & 2 \\ 0 & 0 & 3 \end{bmatrix}$$</p>
      </div>
      <div class="partb-step">
@@ -1849,9 +1849,9 @@ window.UNIT2_DATA = {
      </div>
      <div class="partb-step">
        <div class="step-title">Step 3: Eigenvectors</div>
-       <p>• <strong>For $\lambda = 1$:</strong> $(A - I)X = 0 \implies c_2 = c_3 = 0, c_1 \neq 0 \implies X_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \implies p_1(x) = 1$.<br>
-       • <strong>For $\lambda = 2$:</strong> $(A - 2I)X = 0 \implies c_3 = 0, -c_1 + c_2 = 0 \implies c_1 = c_2 \implies X_2 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} \implies p_2(x) = 1 + x$.<br>
-       • <strong>For $\lambda = 3$:</strong> $(A - 3I)X = 0 \implies -2c_1 + c_2 = 0, -c_2 + 2c_3 = 0 \implies c_2 = 2c_3, c_1 = c_3 \implies X_3 = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix} \implies p_3(x) = (x+1)^2$.<br><br>
+       <p>- <strong>For $\lambda = 1$:</strong> $(A - I)X = 0 \implies c_2 = c_3 = 0, c_1 \neq 0 \implies X_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \implies p_1(x) = 1$.<br>
+       - <strong>For $\lambda = 2$:</strong> $(A - 2I)X = 0 \implies c_3 = 0, -c_1 + c_2 = 0 \implies c_1 = c_2 \implies X_2 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} \implies p_2(x) = 1 + x$.<br>
+       - <strong>For $\lambda = 3$:</strong> $(A - 3I)X = 0 \implies -2c_1 + c_2 = 0, -c_2 + 2c_3 = 0 \implies c_2 = 2c_3, c_1 = c_3 \implies X_3 = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix} \implies p_3(x) = (x+1)^2$.<br><br>
        <span class="tag-result">Basis of Eigenvectors: $\{1, \; x+1, \; (x+1)^2\}$</span></p>
      </div>
           
@@ -1933,7 +1933,7 @@ window.UNIT2_DATA = {
       <!-- Card B7 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill">Part B • Q7 (16 Marks)</span>
+          <span class="q-pill">Part B - Q7 (16 Marks)</span>
           <div class="q-heading">Let $T$ be the linear operator on $V_3(\mathbb{R})$ defined by $T(a_1, a_2, a_3) = (4a_1 + a_3, \; 2a_1 + 3a_2 + 2a_3, \; a_1 + 4a_3)$ and $\beta$ be the standard basis. Determine the eigenspaces of $T$ corresponding to each eigenvalue.</div>
         </div>
         <div class="solution-content">
@@ -1943,7 +1943,7 @@ window.UNIT2_DATA = {
        <p>$$A = \begin{pmatrix} 4 & 0 & 1 \\ 2 & 3 & 2 \\ 1 & 0 & 4 \end{pmatrix}$$
        Characteristic Equation:
        $$\det(A - \lambda I) = (3 - \lambda) \left[ (4-\lambda)^2 - 1 \right] = (3 - \lambda)(\lambda - 3)(\lambda - 5) = -(\lambda - 3)^2 (\lambda - 5) = 0$$
-       • <strong>Eigenvalues:</strong> $\lambda_1 = 3$ (multiplicity 2), $\quad \lambda_2 = 5$ (multiplicity 1).</p>
+       - <strong>Eigenvalues:</strong> $\lambda_1 = 3$ (multiplicity 2), $\quad \lambda_2 = 5$ (multiplicity 1).</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 2: Eigenspace for $\lambda = 3$</div>
@@ -1952,14 +1952,14 @@ window.UNIT2_DATA = {
        Notice $x_2$ does not appear in the equation, so $x_2$ is free!<br>
        A generic vector in $E_3$ is:
        $$\begin{pmatrix} x_1 \\ x_2 \\ -x_1 \end{pmatrix} = x_1 \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix} + x_2 \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}$$
-       • <strong>Eigenspace $E_3$:</strong> $\operatorname{span}\left\{ \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}, \; \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \right\}$ with $\dim(E_3) = 2$.</p>
+       - <strong>Eigenspace $E_3$:</strong> $\operatorname{span}\left\{ \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}, \; \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \right\}$ with $\dim(E_3) = 2$.</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 3: Eigenspace for $\lambda = 5$</div>
        <p>$$(A - 5I)X = 0 \implies \begin{pmatrix} -1 & 0 & 1 \\ 2 & -2 & 2 \\ 1 & 0 & -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$$
        From row 1: $x_1 = x_3$.<br>
        From row 2: $2x_1 - 2x_2 + 2x_1 = 0 \implies 4x_1 = 2x_2 \implies x_2 = 2x_1$.<br>
-       • <strong>Eigenspace $E_5$:</strong> $\operatorname{span}\left\{ \begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix} \right\}$ with $\dim(E_5) = 1$.<br><br>
+       - <strong>Eigenspace $E_5$:</strong> $\operatorname{span}\left\{ \begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix} \right\}$ with $\dim(E_5) = 1$.<br><br>
        <span class="tag-result">Total independent eigenvectors = $2 + 1 = 3 = \dim(V_3(\mathbb{R})) \implies T$ is Diagonalizable.</span></p>
      </div>
           
@@ -2041,7 +2041,7 @@ window.UNIT2_DATA = {
       <!-- Card B8 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill">Part B • Q8 (16 Marks)</span>
+          <span class="q-pill">Part B - Q8 (16 Marks)</span>
           <div class="q-heading">Let $T$ be the linear operator on $P_2(\mathbb{R})$ defined by $T(f(x)) = f(1) + [f'(0)]x + [f'(0) + f''(0)]x^2$ and $\beta = \{1, x, x^2\}$ be the standard basis. Test the diagonalizability of $T$.</div>
         </div>
         <div class="solution-content">
@@ -2049,16 +2049,16 @@ window.UNIT2_DATA = {
      <div class="partb-step">
        <div class="step-title">Step 1: Construct Matrix Representation $[T]_\beta$</div>
        <p>Standard basis is $v_1 = 1, v_2 = x, v_3 = x^2$.<br>
-       • For $f(x) = 1$: $f(1) = 1, f'(0) = 0, f''(0) = 0 \implies T(1) = 1 + 0x + 0x^2 = 1 \implies [T(1)]_\beta = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$<br>
-       • For $f(x) = x$: $f(1) = 1, f'(0) = 1, f''(0) = 0 \implies T(x) = 1 + 1x + 1x^2 \implies [T(x)]_\beta = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$<br>
-       • For $f(x) = x^2$: $f(1) = 1, f'(0) = 0, f''(0) = 2 \implies T(x^2) = 1 + 0x + 2x^2 \implies [T(x^2)]_\beta = \begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix}$<br><br>
+       - For $f(x) = 1$: $f(1) = 1, f'(0) = 0, f''(0) = 0 \implies T(1) = 1 + 0x + 0x^2 = 1 \implies [T(1)]_\beta = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$<br>
+       - For $f(x) = x$: $f(1) = 1, f'(0) = 1, f''(0) = 0 \implies T(x) = 1 + 1x + 1x^2 \implies [T(x)]_\beta = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$<br>
+       - For $f(x) = x^2$: $f(1) = 1, f'(0) = 0, f''(0) = 2 \implies T(x^2) = 1 + 0x + 2x^2 \implies [T(x^2)]_\beta = \begin{bmatrix} 1 \\ 0 \\ 2 \end{bmatrix}$<br><br>
        Matrix of $T$ with respect to $\beta$:
        $$A = [T]_\beta = \begin{bmatrix} 1 & 1 & 1 \\ 0 & 1 & 0 \\ 0 & 1 & 2 \end{bmatrix}$$</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 2: Characteristic Equation and Eigenvalues</div>
        <p>$$\det(A - \lambda I) = \det\begin{bmatrix} 1-\lambda & 1 & 1 \\ 0 & 1-\lambda & 0 \\ 0 & 1 & 2-\lambda \end{bmatrix} = (1-\lambda) \cdot (1-\lambda)(2-\lambda) = (1-\lambda)^2 (2-\lambda) = 0$$
-       • <strong>Eigenvalues:</strong> $\lambda_1 = 1$ (Algebraic Multiplicity $\operatorname{AM} = 2$), $\quad \lambda_2 = 2$ ($\operatorname{AM} = 1$).</p>
+       - <strong>Eigenvalues:</strong> $\lambda_1 = 1$ (Algebraic Multiplicity $\operatorname{AM} = 2$), $\quad \lambda_2 = 2$ ($\operatorname{AM} = 1$).</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 3: Geometric Multiplicity of Repeated Eigenvalue $\lambda = 1$</div>
@@ -2151,7 +2151,7 @@ window.UNIT2_DATA = {
       <!-- Card B9 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill">Part B • Q9 (16 Marks)</span>
+          <span class="q-pill">Part B - Q9 (16 Marks)</span>
           <div class="q-heading">Test the matrix $A = \begin{pmatrix} 0 & 1 \\ -2 & 3 \end{pmatrix}$ for diagonalizability, find the invertible matrix $Q$ such that $Q^{-1}AQ = D$, and find $A^n$.</div>
         </div>
         <div class="solution-content">
@@ -2159,12 +2159,12 @@ window.UNIT2_DATA = {
      <div class="partb-step">
        <div class="step-title">Step 1: Eigenvalues of $A$</div>
        <p>$$\det(A - \lambda I) = \det\begin{pmatrix} -\lambda & 1 \\ -2 & 3-\lambda \end{pmatrix} = -\lambda(3-\lambda) - (-2) = \lambda^2 - 3\lambda + 2 = (\lambda - 1)(\lambda - 2) = 0$$
-       • <strong>Eigenvalues:</strong> $\lambda_1 = 1, \quad \lambda_2 = 2$ (distinct real eigenvalues $\implies A$ is diagonalizable!).</p>
+       - <strong>Eigenvalues:</strong> $\lambda_1 = 1, \quad \lambda_2 = 2$ (distinct real eigenvalues $\implies A$ is diagonalizable!).</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 2: Eigenvectors and Matrix $Q$</div>
-       <p>• <strong>For $\lambda = 1$:</strong> $(A - I)X = 0 \implies \begin{pmatrix} -1 & 1 \\ -2 & 2 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = 0 \implies x_1 = x_2 \implies X_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.<br>
-       • <strong>For $\lambda = 2$:</strong> $(A - 2I)X = 0 \implies \begin{pmatrix} -2 & 1 \\ -2 & 1 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = 0 \implies 2x_1 = x_2 \implies X_2 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.<br><br>
+       <p>- <strong>For $\lambda = 1$:</strong> $(A - I)X = 0 \implies \begin{pmatrix} -1 & 1 \\ -2 & 2 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = 0 \implies x_1 = x_2 \implies X_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.<br>
+       - <strong>For $\lambda = 2$:</strong> $(A - 2I)X = 0 \implies \begin{pmatrix} -2 & 1 \\ -2 & 1 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = 0 \implies 2x_1 = x_2 \implies X_2 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.<br><br>
        Modal matrix $Q$ and diagonal matrix $D$:
        $$Q = \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix}, \quad D = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$$
        Inverse of $Q$: $\det(Q) = 2 - 1 = 1 \implies Q^{-1} = \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix}$.</p>
@@ -2255,7 +2255,7 @@ window.UNIT2_DATA = {
       <!-- Card B10 -->
       <div class="question-card" data-category="eigen">
         <div class="card-top">
-          <span class="q-pill">Part B • Q10 (16 Marks)</span>
+          <span class="q-pill">Part B - Q10 (16 Marks)</span>
           <div class="q-heading">Test for diagonalizability of the matrix $A = \begin{pmatrix} -7 & -4 & 0 \\ 8 & 5 & 0 \\ 6 & 6 & 0 \end{pmatrix}$, and if $A$ is diagonalizable, find the invertible matrix $Q$ such that $Q^{-1}AQ = D$.</div>
         </div>
         <div class="solution-content">
@@ -2265,18 +2265,18 @@ window.UNIT2_DATA = {
        <p>Expand along column 3 (since two entries are 0):
        $$\det(A - \lambda I) = -\lambda \det\begin{pmatrix} -7-\lambda & -4 \\ 8 & 5-\lambda \end{pmatrix} = -\lambda \left[ (-7-\lambda)(5-\lambda) - (-32) \right]$$
        $$= -\lambda (\lambda^2 + 2\lambda - 35 + 32) = -\lambda (\lambda^2 + 2\lambda - 3) = -\lambda(\lambda + 3)(\lambda - 1) = 0$$
-       • <strong>Eigenvalues:</strong> $\lambda_1 = 0, \quad \lambda_2 = 1, \quad \lambda_3 = -3$.<br>
+       - <strong>Eigenvalues:</strong> $\lambda_1 = 0, \quad \lambda_2 = 1, \quad \lambda_3 = -3$.<br>
        Since $A$ has <strong>3 distinct real eigenvalues</strong>, $A$ is <strong>strictly DIAGONALIZABLE</strong>.</p>
      </div>
      <div class="partb-step">
        <div class="step-title">Step 2: Eigenvector for each Eigenvalue</div>
-       <p>• <strong>1. For $\lambda = 0$:</strong> $(A - 0I)X = 0 \implies -7x_1 - 4x_2 = 0, \; 6x_1 + 6x_2 = 0 \implies x_1 = x_2 = 0, \; x_3 \text{ free}$.<br>
+       <p>- <strong>1. For $\lambda = 0$:</strong> $(A - 0I)X = 0 \implies -7x_1 - 4x_2 = 0, \; 6x_1 + 6x_2 = 0 \implies x_1 = x_2 = 0, \; x_3 \text{ free}$.<br>
        $$X_1 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$$<br>
-       • <strong>2. For $\lambda = 1$:</strong> $(A - I)X = 0$:
+       - <strong>2. For $\lambda = 1$:</strong> $(A - I)X = 0$:
        $$\begin{pmatrix} -8 & -4 & 0 \\ 8 & 4 & 0 \\ 6 & 6 & -1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = 0 \implies 2x_1 + x_2 = 0 \implies x_2 = -2x_1$$
        Row 3: $6x_1 + 6(-2x_1) - x_3 = 0 \implies -6x_1 - x_3 = 0 \implies x_3 = -6x_1$.<br>
        Setting $x_1 = 1 \implies X_2 = \begin{pmatrix} 1 \\ -2 \\ -6 \end{pmatrix}$.<br><br>
-       • <strong>3. For $\lambda = -3$:</strong> $(A + 3I)X = 0$:
+       - <strong>3. For $\lambda = -3$:</strong> $(A + 3I)X = 0$:
        $$\begin{pmatrix} -4 & -4 & 0 \\ 8 & 8 & 0 \\ 6 & 6 & 3 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = 0 \implies x_1 + x_2 = 0 \implies x_2 = -x_1$$
        Row 3: $6x_1 + 6(-x_1) + 3x_3 = 0 \implies 3x_3 = 0 \implies x_3 = 0$.<br>
        Setting $x_1 = 1 \implies X_3 = \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}$.</p>
@@ -2368,7 +2368,7 @@ window.UNIT2_DATA = {
 <!-- Part B Extra Q11 -->
       <div class="question-card" data-category="diagonalization">
         <div class="card-top">
-          <span class="q-pill extra">Part B • Extra Q11 (16 Marks)</span>
+          <span class="q-pill extra">Part B - Extra Q11 (16 Marks)</span>
         </div>
         <div class="q-heading">
           Find the eigenvalues and eigenvectors of the matrix $A = \begin{bmatrix} 2 & 2 & 1 \\ 1 & 3 & 1 \\ 1 & 2 & 2 \end{bmatrix}$. Hence determine whether $A$ is diagonalizable. If diagonalizable, find the modal matrix $P$ and the diagonal matrix $D$ such that $P^{-1} A P = D$.
@@ -2509,7 +2509,7 @@ window.UNIT2_DATA = {
       <!-- Part B Extra Q12 -->
       <div class="question-card" data-category="matrix_rep">
         <div class="card-top">
-          <span class="q-pill extra">Part B • Extra Q12 (16 Marks)</span>
+          <span class="q-pill extra">Part B - Extra Q12 (16 Marks)</span>
         </div>
         <div class="q-heading">
           Let $T: \mathbb{R}^3 \to \mathbb{R}^3$ be the linear operator defined by $T(x_1, x_2, x_3) = (x_1 - x_2 + x_3, \; 2x_1 + 3x_2 - x_3, \; x_1 + x_2 + 2x_3)$. Find the matrix $[T]_B$ representing $T$ with respect to the non-standard ordered basis $B = \{v_1 = (1, 1, 0), \; v_2 = (1, 0, 1), \; v_3 = (0, 1, 1)\}$. Hence verify that $[T]_B [v]_B = [T(v)]_B$ for $v = (2, 1, 3)$.
@@ -2532,11 +2532,11 @@ window.UNIT2_DATA = {
             Solving yields the coordinate formulas:
             $$c_1 = \frac{a + b - c}{2}, \quad c_2 = \frac{a - b + c}{2}, \quad c_3 = \frac{-a + b + c}{2}$$
             Now substitute each image vector:<br>
-            • For $T(v_1) = (0, 5, 2)$:
+            - For $T(v_1) = (0, 5, 2)$:
             $$c_1 = \frac{0 + 5 - 2}{2} = \frac{3}{2}, \quad c_2 = \frac{0 - 5 + 2}{2} = -\frac{3}{2}, \quad c_3 = \frac{0 + 5 + 2}{2} = \frac{7}{2}$$
-            • For $T(v_2) = (2, 1, 3)$:
+            - For $T(v_2) = (2, 1, 3)$:
             $$c_1 = \frac{2 + 1 - 3}{2} = 0, \quad c_2 = \frac{2 - 1 + 3}{2} = 2, \quad c_3 = \frac{-2 + 1 + 3}{2} = 1$$
-            • For $T(v_3) = (0, 2, 3)$:
+            - For $T(v_3) = (0, 2, 3)$:
             $$c_1 = \frac{0 + 2 - 3}{2} = -\frac{1}{2}, \quad c_2 = \frac{0 - 2 + 3}{2} = \frac{1}{2}, \quad c_3 = \frac{0 + 2 + 3}{2} = \frac{5}{2}$$</p>
           </div>
 
@@ -2650,7 +2650,7 @@ window.UNIT2_DATA = {
       <!-- Part B Challenge Q13 -->
       <div class="question-card" data-category="theorems">
         <div class="card-top">
-          <span class="q-pill extra">Part B • Challenge Q13 (16 Marks)</span>
+          <span class="q-pill extra">Part B - Challenge Q13 (16 Marks)</span>
         </div>
         <div class="q-heading">
           Verify Cayley-Hamilton Theorem for the matrix $A = \begin{bmatrix} 1 & 0 & 3 \\ 2 & 1 & -1 \\ 1 & -1 & 1 \end{bmatrix}$. Hence evaluate the matrix polynomial expression:
@@ -2677,15 +2677,15 @@ window.UNIT2_DATA = {
             $$A^3 = A^2 \cdot A = \begin{bmatrix} 4 & -3 & 6 \\ 3 & 2 & 4 \\ 0 & -2 & 5 \end{bmatrix} \begin{bmatrix} 1 & 0 & 3 \\ 2 & 1 & -1 \\ 1 & -1 & 1 \end{bmatrix} = \begin{bmatrix} 4 & -9 & 21 \\ 11 & -2 & 11 \\ 1 & -7 & 7 \end{bmatrix}$$
             Substitute into the matrix polynomial:
             $$A^3 - 3A^2 - A + 9I = \begin{bmatrix} 4 & -9 & 21 \\ 11 & -2 & 11 \\ 1 & -7 & 7 \end{bmatrix} - 3\begin{bmatrix} 4 & -3 & 6 \\ 3 & 2 & 4 \\ 0 & -2 & 5 \end{bmatrix} - \begin{bmatrix} 1 & 0 & 3 \\ 2 & 1 & -1 \\ 1 & -1 & 1 \end{bmatrix} + \begin{bmatrix} 9 & 0 & 0 \\ 0 & 9 & 0 \\ 0 & 0 & 9 \end{bmatrix}$$
-            • Entry (1,1): $4 - 12 - 1 + 9 = 0$.<br>
-            • Entry (1,2): $-9 - (-9) - 0 + 0 = 0$.<br>
-            • Entry (1,3): $21 - 18 - 3 + 0 = 0$.<br>
-            • Entry (2,1): $11 - 9 - 2 + 0 = 0$.<br>
-            • Entry (2,2): $-2 - 6 - 1 + 9 = 0$.<br>
-            • Entry (2,3): $11 - 12 - (-1) + 0 = 0$.<br>
-            • Entry (3,1): $1 - 0 - 1 + 0 = 0$.<br>
-            • Entry (3,2): $-7 - (-6) - (-1) + 0 = 0$.<br>
-            • Entry (3,3): $7 - 15 - 1 + 9 = 0$.<br>
+            - Entry (1,1): $4 - 12 - 1 + 9 = 0$.<br>
+            - Entry (1,2): $-9 - (-9) - 0 + 0 = 0$.<br>
+            - Entry (1,3): $21 - 18 - 3 + 0 = 0$.<br>
+            - Entry (2,1): $11 - 9 - 2 + 0 = 0$.<br>
+            - Entry (2,2): $-2 - 6 - 1 + 9 = 0$.<br>
+            - Entry (2,3): $11 - 12 - (-1) + 0 = 0$.<br>
+            - Entry (3,1): $1 - 0 - 1 + 0 = 0$.<br>
+            - Entry (3,2): $-7 - (-6) - (-1) + 0 = 0$.<br>
+            - Entry (3,3): $7 - 15 - 1 + 9 = 0$.<br>
             Hence $A^3 - 3A^2 - A + 9I = O$. The Cayley-Hamilton Theorem is completely verified!</p>
           </div>
 
@@ -2805,7 +2805,7 @@ window.UNIT2_DATA = {
 <!-- Predicted Part B Q14 -->
       <div class="question-card" data-category="matrix_rep">
         <div class="card-top">
-          <span class="q-pill extra">Part B • Predicted Q14 (16 Marks)</span>
+          <span class="q-pill extra">Part B - Predicted Q14 (16 Marks)</span>
         </div>
         <div class="q-heading">
           Let $T: \mathbb{R}^2 \to \mathbb{R}^2$ be the linear transformation defined by $T(x, y) = (2x - y, \; x + 3y)$.<br>
@@ -2821,12 +2821,12 @@ window.UNIT2_DATA = {
           <div class="partb-step">
             <div class="step-title">Step 1: Compute Matrix $[T]_B$ with Respect to Basis $B$</div>
             <p>1. Compute images of $B = \{u_1=(1,1), u_2=(-1,1)\}$ under $T$:<br>
-            • $T(u_1) = T(1, 1) = (2(1) - 1, \; 1 + 3(1)) = (1, 4)$.<br>
-            • $T(u_2) = T(-1, 1) = (2(-1) - 1, \; -1 + 3(1)) = (-3, 2)$.<br>
+            - $T(u_1) = T(1, 1) = (2(1) - 1, \; 1 + 3(1)) = (1, 4)$.<br>
+            - $T(u_2) = T(-1, 1) = (2(-1) - 1, \; -1 + 3(1)) = (-3, 2)$.<br>
             2. Express $(a, b)$ in coordinates of $B = \{u_1, u_2\}$:
             $$c_1(1, 1) + c_2(-1, 1) = (a, b) \implies \begin{cases} c_1 - c_2 = a \\ c_1 + c_2 = b \end{cases} \implies c_1 = \frac{a+b}{2}, \quad c_2 = \frac{b-a}{2}$$
-            • For $T(u_1) = (1, 4)$: $c_1 = \frac{1+4}{2} = \frac{5}{2}, \quad c_2 = \frac{4-1}{2} = \frac{3}{2}$.<br>
-            • For $T(u_2) = (-3, 2)$: $c_1 = \frac{-3+2}{2} = -\frac{1}{2}, \quad c_2 = \frac{2 - (-3)}{2} = \frac{5}{2}$.<br>
+            - For $T(u_1) = (1, 4)$: $c_1 = \frac{1+4}{2} = \frac{5}{2}, \quad c_2 = \frac{4-1}{2} = \frac{3}{2}$.<br>
+            - For $T(u_2) = (-3, 2)$: $c_1 = \frac{-3+2}{2} = -\frac{1}{2}, \quad c_2 = \frac{2 - (-3)}{2} = \frac{5}{2}$.<br>
             Writing coordinate columns:
             $$[T]_B = \begin{bmatrix} 5/2 & -1/2 \\ 3/2 & 5/2 \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 5 & -1 \\ 3 & 5 \end{bmatrix}$$</p>
           </div>
@@ -2834,8 +2834,8 @@ window.UNIT2_DATA = {
           <div class="partb-step">
             <div class="step-title">Step 2: Transition Matrix $P$ from $B'$ to $B$</div>
             <p>The transition matrix $P$ expresses vectors of $B' = \{v_1=(2,1), v_2=(1,0)\}$ in terms of basis $B$:<br>
-            • For $v_1 = (2, 1)$: $c_1 = \frac{2+1}{2} = \frac{3}{2}, \quad c_2 = \frac{1-2}{2} = -\frac{1}{2}$.<br>
-            • For $v_2 = (1, 0)$: $c_1 = \frac{1+0}{2} = \frac{1}{2}, \quad c_2 = \frac{0-1}{2} = -\frac{1}{2}$.<br>
+            - For $v_1 = (2, 1)$: $c_1 = \frac{2+1}{2} = \frac{3}{2}, \quad c_2 = \frac{1-2}{2} = -\frac{1}{2}$.<br>
+            - For $v_2 = (1, 0)$: $c_1 = \frac{1+0}{2} = \frac{1}{2}, \quad c_2 = \frac{0-1}{2} = -\frac{1}{2}$.<br>
             $$P = \begin{bmatrix} 3/2 & 1/2 \\ -1/2 & -1/2 \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 3 & 1 \\ -1 & -1 \end{bmatrix}$$
             $\det(P) = \left(\frac{3}{2}\right)\left(-\frac{1}{2}\right) - \left(\frac{1}{2}\right)\left(-\frac{1}{2}\right) = -\frac{3}{4} + \frac{1}{4} = -\frac{2}{4} = -\frac{1}{2} \neq 0$.<br>
             Compute $P^{-1}$:
@@ -2845,12 +2845,12 @@ window.UNIT2_DATA = {
           <div class="partb-step">
             <div class="step-title">Step 3: Direct Computation of Matrix $[T]_{B'}$</div>
             <p>1. Images of $B' = \{v_1=(2,1), v_2=(1,0)\}$:<br>
-            • $T(v_1) = T(2, 1) = (2(2) - 1, \; 2 + 3(1)) = (3, 5)$.<br>
-            • $T(v_2) = T(1, 0) = (2(1) - 0, \; 1 + 0) = (2, 1)$.<br>
+            - $T(v_1) = T(2, 1) = (2(2) - 1, \; 2 + 3(1)) = (3, 5)$.<br>
+            - $T(v_2) = T(1, 0) = (2(1) - 0, \; 1 + 0) = (2, 1)$.<br>
             2. Express $(a, b)$ in coordinates of $B' = \{v_1=(2,1), v_2=(1,0)\}$:
             $$d_1(2, 1) + d_2(1, 0) = (a, b) \implies \begin{cases} 2d_1 + d_2 = a \\ d_1 = b \end{cases} \implies d_1 = b, \quad d_2 = a - 2b$$
-            • For $T(v_1) = (3, 5)$: $d_1 = 5, \quad d_2 = 3 - 2(5) = -7$.<br>
-            • For $T(v_2) = (2, 1)$: $d_1 = 1, \quad d_2 = 2 - 2(1) = 0$.<br>
+            - For $T(v_1) = (3, 5)$: $d_1 = 5, \quad d_2 = 3 - 2(5) = -7$.<br>
+            - For $T(v_2) = (2, 1)$: $d_1 = 1, \quad d_2 = 2 - 2(1) = 0$.<br>
             Writing coordinate columns:
             $$[T]_{B'} = \begin{bmatrix} 5 & 1 \\ -7 & 0 \end{bmatrix}$$</p>
           </div>
