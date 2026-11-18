@@ -24,12 +24,12 @@
   <script defer src="vendor/katex/auto-render.min.js"></script>
 
   <!-- Unit Data & AI Tutor Scripts -->
-  <script src="unit1_data.js?v=7.0"></script>
-  <script src="unit2_data.js?v=7.0"></script>
-  <script src="unit3_data.js?v=7.0"></script>
-  <script src="unit4_data.js?v=7.0"></script>
-  <script src="unit5_data.js?v=7.0"></script>
-  <script src="ai_tutor.js?v=7.0"></script>
+  <script src="unit1_data.js?v=8.0"></script>
+  <script src="unit2_data.js?v=8.0"></script>
+  <script src="unit3_data.js?v=8.0"></script>
+  <script src="unit4_data.js?v=8.0"></script>
+  <script src="unit5_data.js?v=8.0"></script>
+  <script src="ai_tutor.js?v=8.0"></script>
 
   <style>
     :root {
@@ -100,7 +100,7 @@
       -webkit-backdrop-filter: blur(20px);
       background: rgba(240, 247, 255, 0.85);
       border-bottom: 1px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 6px 20px rgba(191, 207, 226, 0.35);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     }
 
     
@@ -110,8 +110,8 @@
       display: flex;
       background: #e2ecf7;
       padding: 4px;
-      border-radius: 999px;
-      box-shadow: inset 4px 4px 8px #cad8e8, inset -4px -4px 8px #ffffff;
+      border-radius: 0;
+      box-shadow: none; border: 1px solid #cbd5e1;
       gap: 4px;
       overflow-x: auto;
       max-width: 100%;
@@ -123,7 +123,7 @@
       border: none;
       background: transparent;
       padding: 8px 18px;
-      border-radius: 999px;
+      border-radius: 0;
       font-family: inherit;
       font-size: 13px;
       font-weight: 700;
@@ -136,7 +136,7 @@
     .unit-btn.active {
       background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
       color: #ffffff;
-      box-shadow: 4px 4px 12px rgba(37, 99, 235, 0.35), inset 1px 1px 2px rgba(255, 255, 255, 0.5);
+      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3); border: 1px solid #1d4ed8;
     }
 
     /* Part A / Part B Switcher */
@@ -144,8 +144,8 @@
       display: flex;
       background: #e2ecf7;
       padding: 4px;
-      border-radius: 999px;
-      box-shadow: inset 4px 4px 8px #cad8e8, inset -4px -4px 8px #ffffff;
+      border-radius: 0;
+      box-shadow: none; border: 1px solid #cbd5e1;
       gap: 4px;
     }
 
@@ -153,7 +153,7 @@
       border: none;
       background: transparent;
       padding: 8px 22px;
-      border-radius: 999px;
+      border-radius: 0;
       font-family: inherit;
       font-size: 13.5px;
       font-weight: 700;
@@ -165,7 +165,7 @@
     .tab-btn.active {
       background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
       color: var(--primary-dark);
-      box-shadow: 4px 4px 10px rgba(186, 204, 226, 0.5), -2px -2px 6px #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); border: 1px solid #93c5fd;
     }
 
     
@@ -175,11 +175,11 @@
       background: linear-gradient(135deg, rgba(30, 58, 138, 0.92) 0%, rgba(37, 99, 235, 0.9) 55%, rgba(59, 130, 246, 0.88) 100%);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      border-radius: 24px;
+      border-radius: 0;
       padding: 24px 28px;
       color: white;
       margin-bottom: 22px;
-      box-shadow: 14px 14px 32px rgba(37, 99, 235, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.6);
+      box-shadow: 0 4px 16px rgba(11, 30, 66, 0.25); border: 1px solid rgba(255, 255, 255, 0.35);
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.25);
@@ -190,7 +190,7 @@
       background: rgba(255, 255, 255, 0.22);
       backdrop-filter: blur(8px);
       padding: 4px 14px;
-      border-radius: 999px;
+      border-radius: 0;
       font-size: 11.5px;
       font-weight: 700;
       letter-spacing: 0.5px;
@@ -214,7 +214,7 @@
     .banner-stat-chip {
       background: rgba(255, 255, 255, 0.22);
       border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 20px;
+      border-radius: 0;
       padding: 4px 12px;
       font-size: 11.5px;
       font-weight: 700;
@@ -246,12 +246,12 @@
       background: rgba(255, 255, 255, 0.8);
       border: 1px solid var(--border-clay);
       padding: 8px 16px;
-      border-radius: 999px;
+      border-radius: 0;
       font-size: 12.5px;
       font-weight: 600;
       color: var(--text-muted);
       cursor: pointer;
-      box-shadow: 4px 4px 10px #cad8e8, -4px -4px 10px #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); border: 1px solid #cbd5e1;
       white-space: nowrap;
       transition: all 0.2s ease;
     }
@@ -259,7 +259,7 @@
     .chip.active, .chip:hover {
       color: var(--primary-dark);
       background: #ffffff;
-      box-shadow: inset 2px 2px 5px #cad8e8, inset -2px -2px 5px #ffffff;
+      box-shadow: none; border: 1px solid #1d4ed8; background: #2563eb; color: #ffffff;
     }
 
     .section-badge {
@@ -280,15 +280,15 @@
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
       border: 1px solid rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
+      border-radius: 0;
       padding: 22px 24px;
       margin-bottom: 22px;
-      box-shadow: 14px 14px 30px rgba(150, 178, 208, 0.45), -12px -12px 28px rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.85);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .question-card:hover {
-      box-shadow: 18px 18px 36px rgba(140, 170, 205, 0.55), -14px -14px 32px #ffffff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
 
@@ -303,9 +303,9 @@
       font-size: 12px;
       font-weight: 800;
       padding: 4px 12px;
-      border-radius: 8px;
+      border-radius: 0;
       margin-bottom: 10px;
-      box-shadow: inset 1px 1px 2px rgba(255,255,255,0.8), 2px 2px 6px rgba(191, 219, 254, 0.5);
+      box-shadow: none; border: 1px solid #93c5fd;
     }
 
     .q-heading {
@@ -324,7 +324,7 @@
     .partb-step {
       background: rgba(255, 255, 255, 0.7);
       border: 1px solid rgba(219, 234, 254, 0.8);
-      border-radius: 14px;
+      border-radius: 0;
       padding: 14px 18px;
       margin-top: 14px;
     }
@@ -342,10 +342,10 @@
       color: #065f46;
       font-weight: 700;
       padding: 5px 14px;
-      border-radius: 10px;
+      border-radius: 0;
       border: 1px solid #a7f3d0;
       margin-top: 10px;
-      box-shadow: 2px 2px 6px #d0e4da;
+      box-shadow: none; border: 1px solid #a7f3d0;
       font-size: 13px;
     }
 
@@ -353,17 +353,17 @@
       background: #fef2f2;
       color: #b91c1c;
       border-color: #fecaca;
-      box-shadow: 2px 2px 6px #f2dcdc;
+      box-shadow: none; border: 1px solid #fecaca;
     }
 
     /* Interactive Line-by-Line Breakdown Accordion */
     .why-dropdown {
       margin-top: 16px;
-      border-radius: 16px;
+      border-radius: 0;
       background: linear-gradient(135deg, rgba(239, 246, 255, 0.95) 0%, rgba(219, 234, 254, 0.85) 100%);
       border: 1px solid rgba(147, 197, 253, 0.85);
       overflow: hidden;
-      box-shadow: 4px 4px 14px rgba(186, 215, 248, 0.4), -2px -2px 10px #ffffff;
+      box-shadow: none; border: 1px solid #93c5fd;
       transition: all 0.3s ease;
     }
 
@@ -429,10 +429,10 @@
     .explain-line {
       background: rgba(255, 255, 255, 0.9);
       border: 1px solid rgba(191, 219, 254, 0.9);
-      border-radius: 12px;
+      border-radius: 0;
       padding: 11px 15px;
       margin-top: 10px;
-      box-shadow: 2px 2px 8px rgba(186, 215, 248, 0.35);
+      box-shadow: none; border: 1px solid #cbd5e1;
     }
 
     .explain-line-badge {
@@ -442,7 +442,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       padding: 2px 8px;
-      border-radius: 6px;
+      border-radius: 0;
       background: #dbeafe;
       color: #1e40af;
       margin-bottom: 5px;
@@ -465,12 +465,12 @@
     /* Inline AI Matrix Dot UI inside Dropdown */
     .inline-ai-section {
       margin-top: 18px;
-      border-radius: 14px;
+      border-radius: 0;
       background-color: #f8fafc;
       background-image: radial-gradient(#94a3b8 1px, transparent 1px);
       background-size: 14px 14px;
       border: 1px solid #cbd5e1;
-      box-shadow: inset 2px 2px 5px rgba(203, 213, 225, 0.4), inset -2px -2px 5px #ffffff;
+      box-shadow: none; border: 1px solid #cbd5e1;
       padding: 16px;
     }
 
@@ -504,7 +504,7 @@
     .inline-ai-model-select {
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      border-radius: 6px;
+      border-radius: 0;
       padding: 5px 10px;
       font-family: inherit;
       font-size: 12px;
@@ -540,7 +540,7 @@
       max-width: 100%;
       box-sizing: border-box;
       padding: 10px 14px;
-      border-radius: 12px;
+      border-radius: 0;
       font-size: 13px;
       line-height: 1.6;
       word-break: break-word;
@@ -573,7 +573,7 @@
       flex: 1;
       padding: 9px 14px;
       border: 1px solid #cbd5e1;
-      border-radius: 8px;
+      border-radius: 0;
       font-family: inherit;
       font-size: 13px;
       background: #ffffff;
@@ -590,7 +590,7 @@
       background: #2563eb;
       color: #ffffff;
       border: none;
-      border-radius: 8px;
+      border-radius: 0;
       padding: 0 14px;
       display: inline-flex;
       align-items: center;
@@ -700,7 +700,7 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       margin: 10px 0;
-      border-radius: 8px;
+      border-radius: 0;
       border: 1px solid #cbd5e1;
     }
     .ai-table {
@@ -749,7 +749,7 @@
     .inline-ai-provider-select, .inline-ai-model-select {
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      border-radius: 6px;
+      border-radius: 0;
       padding: 5px 10px;
       font-family: inherit;
       font-size: 12px;
@@ -802,16 +802,16 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.95);
-      border-radius: 18px;
+      border-radius: 0;
       padding: 20px 24px;
       margin-bottom: 18px;
-      box-shadow: 6px 6px 20px rgba(160, 185, 215, 0.32), -4px -4px 16px rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.85);
       word-break: break-word;
       overflow-wrap: break-word;
     }
 
     .question-card:hover {
-      box-shadow: 10px 10px 28px rgba(150, 178, 210, 0.42), -6px -6px 20px #ffffff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
 
@@ -922,7 +922,7 @@
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        border-radius: 12px !important;
+        border-radius: 0 !important;
         padding: 14px 12px !important;
         margin: 4px 0 10px !important;
       }
@@ -986,7 +986,7 @@
         max-width: 100% !important;
         box-sizing: border-box !important;
         padding: 14px 10px !important;
-        border-radius: 12px !important;
+        border-radius: 0 !important;
         margin-bottom: 12px !important;
         word-break: break-word !important;
         overflow-wrap: anywhere !important;
@@ -1009,7 +1009,7 @@
       .partb-step {
         padding: 10px 8px !important;
         margin-top: 8px !important;
-        border-radius: 10px !important;
+        border-radius: 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
       }
@@ -1023,7 +1023,7 @@
         width: 100% !important;
         box-sizing: border-box !important;
         margin-top: 10px !important;
-        border-radius: 10px !important;
+        border-radius: 0 !important;
       }
 
       .why-toggle-btn {
@@ -1059,7 +1059,7 @@
         box-sizing: border-box !important;
         padding: 10px 8px !important;
         margin-top: 10px !important;
-        border-radius: 10px !important;
+        border-radius: 0 !important;
       }
 
       .inline-ai-header {
@@ -1125,7 +1125,7 @@
         line-height: 1.55 !important;
         word-break: break-word !important;
         overflow-wrap: anywhere !important;
-        border-radius: 8px !important;
+        border-radius: 0 !important;
       }
 
       .inline-ai-input-group, .inline-ai-input-wrap {
@@ -1502,7 +1502,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=7.0').then((reg) => {
+        navigator.serviceWorker.register('./sw.js?v=8.0').then((reg) => {
           console.log('LANA Master Offline ServiceWorker active:', reg.scope);
           reg.update();
         }).catch((err) => {

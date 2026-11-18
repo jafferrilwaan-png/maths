@@ -1,14 +1,14 @@
-const CACHE_NAME = 'lana-master-v7.0';
+const CACHE_NAME = 'lana-master-v8.0';
 
 const PRECACHE_ASSETS = [
   './',
   'index.html',
-  'unit1_data.js?v=7.0',
-  'unit2_data.js?v=7.0',
-  'unit3_data.js?v=7.0',
-  'unit4_data.js?v=7.0',
-  'unit5_data.js?v=7.0',
-  'ai_tutor.js?v=7.0',
+  'unit1_data.js?v=8.0',
+  'unit2_data.js?v=8.0',
+  'unit3_data.js?v=8.0',
+  'unit4_data.js?v=8.0',
+  'unit5_data.js?v=8.0',
+  'ai_tutor.js?v=8.0',
   'manifest.json',
   'vendor/katex/katex.min.css',
   'vendor/katex/katex.min.js',
