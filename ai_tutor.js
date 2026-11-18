@@ -412,15 +412,20 @@ Topic: ${qTitle}\n`;
     if (!str) return '';
     let s = str;
 
-    // 1. Normalize environment delimiters: \BEGIN{ALIGNED} -> \begin{aligned}
+    // 1. Fix malformed trailing backslash before closing dollar, e.g. \in \$ -> \in \mathbb{F}$
+    s = s.replace(/\\in\s*\\(?=\$)/gi, '\\in \\mathbb{F}');
+    // 2. Strip any stray backslash immediately preceding a math dollar delimiter (\$ -> $)
+    s = s.replace(/\\(?=\$)/g, '');
+
+    // 3. Normalize environment delimiters: \BEGIN{ALIGNED} -> \begin{aligned}
     s = s.replace(/\\BEGIN\{([a-zA-Z0-9*]+)\}/gi, (m, env) => '\\begin{' + env.toLowerCase() + '}');
     s = s.replace(/\\END\{([a-zA-Z0-9*]+)\}/gi, (m, env) => '\\end{' + env.toLowerCase() + '}');
 
-    // 2. Standardize bracket/parenthesis display delimiters: \[ ... \] -> $$ ... $$
+    // 4. Standardize bracket/parenthesis display delimiters: \[ ... \] -> $$ ... $$
     s = s.replace(/\\\[([\s\S]*?)\\\]/g, '$$$$ $1 $$$$');
     s = s.replace(/\\\(([\s\S]*?)\\\)/g, '$$ $1 $$');
 
-    // 3. Normalize uppercase LaTeX commands and Greek symbols
+    // 5. Normalize uppercase LaTeX commands and Greek symbols
     const cmdMap = {
       'ALPHA': 'alpha', 'BETA': 'beta', 'GAMMA': 'gamma', 'DELTA': 'delta',
       'EPSILON': 'epsilon', 'VAREPSILON': 'varepsilon', 'ZETA': 'zeta', 'ETA': 'eta',
@@ -454,7 +459,10 @@ Topic: ${qTitle}\n`;
       s = s.replace(re, '\\' + l);
     }
 
-    // 4. Auto-wrap standalone LaTeX environments in $$ ... $$ if not already delimited
+    // 6. Generic catch-all: any remaining all-caps LaTeX command with 2+ letters (\TEXT, \QUAD, \CDOT, etc.)
+    s = s.replace(/\\([A-Z]{2,})(?![a-zA-Z])/g, (m, cmd) => '\\' + cmd.toLowerCase());
+
+    // 7. Auto-wrap standalone LaTeX environments in $$ ... $$ if not already delimited
     const envs = 'aligned|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|cases|array|gather|align';
     const envPattern = new RegExp('(\\\\begin\\{(?:' + envs + ')\\}[\\s\\S]*?\\\\end\\{(?:' + envs + ')\\})', 'g');
     s = s.replace(envPattern, (match, envBody, offset, fullStr) => {
