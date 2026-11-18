@@ -89,14 +89,23 @@ window.AITutor = (function() {
     ]
   };
 
-  const SYSTEM_PROMPT = `You are an expert mathematics professor for course 23MA1302 - Linear Algebra and Numerical Analysis.
-Provide complete, rigorous, and fully worked-out step-by-step mathematical explanations.
-NEVER truncate calculations or leave equations incomplete. Always finish the final numerical values and conclusions.
-Break long equations across multiple lines using separate $$...$$ blocks or \\begin{aligned} ... \\end{aligned} so they fit comfortably on mobile screens without horizontal clipping.
-Do NOT output internal reasoning, do NOT write "thinking process" logs, and do NOT use emojis.
-Use Markdown tables (| Col 1 | Col 2 |) when presenting data points, normal equations, or property comparisons.
-Format all mathematical expressions in clean LaTeX ($...$ inline, $$...$$ display).
-Highlight essential university exam formulas, steps, and mark allocation tips.`;
+  const SYSTEM_PROMPT = `You are an expert, interactive AI mathematics tutor for university course 23MA1302 - Linear Algebra and Numerical Analysis.
+Your core mission is to help the student truly grasp, understand, and master every concept and problem.
+
+Chatbot & Tutoring Instructions:
+1. Make the Student Understand:
+   - When a student asks a doubt, says "I don't understand", asks for simple terms, or asks "why": meet them at their level like an empathetic human teacher. Break it down into simple, intuitive concepts, use visual/geometric intuition (e.g. arrows, coordinate spaces, transformations), and explain the "big picture" reason before writing formulas.
+   - Clarify common pitfalls and explicitly answer the specific question they asked.
+2. Complete, Non-Truncated Mathematics:
+   - When providing derivations, proofs, or numerical calculations: provide fully completed, rigorous, step-by-step mathematical solutions. NEVER truncate calculations or stop mid-equation. Always state final numerical answers and conclusions.
+   - Break long equations across multiple lines using separate $$...$$ blocks or \\begin{aligned} ... \\end{aligned} so they fit comfortably on mobile screens without horizontal clipping.
+3. Clean Presentation:
+   - Do NOT output internal reasoning logs, scratchpad processes, or <think> tags.
+   - Use Markdown tables (| Col 1 | Col 2 |) when presenting comparison data, normal equations, or property checks.
+   - Format all mathematical expressions in standard LaTeX ($...$ inline, $$...$$ display).
+   - Use bold text or standard headings for clean hierarchy.
+4. University Exam Standards:
+   - Highlight essential exam formulas, scoring rubrics, and mark allocation tips relevant to university semester evaluations.`;
 
   function syncDropdowns() {
     if (selectedModel.includes('/') || selectedModel.endsWith(':free')) {
@@ -162,6 +171,18 @@ Highlight essential university exam formulas, steps, and mark allocation tips.`;
     const qTitle = card ? (card.querySelector('.q-heading')?.innerText || '') : '';
     const qSolution = card ? (card.querySelector('.solution-content')?.innerText || '') : '';
 
+    // Extract prior conversation turns in this card for true multi-turn chatbot context
+    const priorMsgs = [];
+    history.querySelectorAll('.inline-ai-msg').forEach(el => {
+      if (el.classList.contains('inline-ai-msg-user')) {
+        const txt = el.querySelector('.inline-ai-bubble')?.innerText?.trim();
+        if (txt) priorMsgs.push({ role: 'student', text: txt });
+      } else if (el.classList.contains('inline-ai-msg-bot') && !el.querySelector('.ai-analyzing-bubble') && !el.querySelector('.inline-ai-error')) {
+        const txt = el.querySelector('.inline-ai-bubble')?.innerText?.trim();
+        if (txt) priorMsgs.push({ role: 'tutor', text: txt.substring(0, 500) });
+      }
+    });
+
     const userMsg = document.createElement('div');
     userMsg.className = 'inline-ai-msg inline-ai-msg-user';
     userMsg.innerHTML = `<div class="inline-ai-bubble">${escapeHtml(query)}</div>`;
@@ -176,7 +197,23 @@ Highlight essential university exam formulas, steps, and mark allocation tips.`;
     history.appendChild(loadingMsg);
     history.scrollTop = history.scrollHeight;
 
-    const contextPrompt = `Course: Linear Algebra and Numerical Analysis (23MA1302)\nQuestion: ${qTitle}\nSummary: ${qSolution.substring(0, 400)}\n\nStudent Query: ${query}`;
+    let contextPrompt = `Course: Linear Algebra and Numerical Analysis (23MA1302)\n`;
+    if (qTitle) contextPrompt += `Problem: ${qTitle}\n`;
+    if (qSolution) contextPrompt += `Reference Material/Working:\n${qSolution.substring(0, 600)}\n`;
+
+    if (priorMsgs.length > 0) {
+      contextPrompt += `\nPrior Discussion in this Thread:\n`;
+      priorMsgs.slice(-4).forEach(m => {
+        contextPrompt += `${m.role === 'student' ? 'Student' : 'Tutor'}: ${m.text}\n`;
+      });
+    }
+
+    contextPrompt += `\nStudent's Latest Doubt/Message: "${query}"\n\n`;
+    contextPrompt += `Tutor Action Required:
+- Directly address the student's doubt.
+- If they express confusion, say they don't understand, or ask for simple terms, explain the underlying intuition, geometric/physical concept, and step-by-step logic in plain, easy-to-understand terms so it clicks!
+- If they ask for steps or calculations, provide complete, fully worked-out mathematics without truncation.
+- Strictly genuine AI response only, zero fake text.`;
 
     try {
       const responseText = await callAIWithCascade(contextPrompt);
@@ -196,7 +233,7 @@ Highlight essential university exam formulas, steps, and mark allocation tips.`;
     } catch (err) {
       const target = document.getElementById(loadingId);
       if (target) {
-        target.innerHTML = `<div class="inline-ai-bubble inline-ai-error" style="color:#b91c1c; background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:10px;">Please try again. (${escapeHtml(err.message)})</div>`;
+        target.innerHTML = `<div class="inline-ai-bubble inline-ai-error" style="color:#b91c1c; background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:10px; font-size:13px; line-height:1.45;"><strong>AI Service Notice:</strong> ${escapeHtml(err.message)}.<br><span style="font-size:11.5px; color:#7f1d1d;">No fake responses are generated. Please check your internet or try selecting another free model from the model selector above.</span></div>`;
       }
     }
 
@@ -255,7 +292,7 @@ Highlight essential university exam formulas, steps, and mark allocation tips.`;
           }
         }
         if (res.status === 429) {
-          throw new Error('Rate limit (429) - auto-switching to Google Gemini');
+          throw new Error('Rate limit (429) - auto-switching to OpenRouter');
         }
         lastError = new Error(`HTTP ${res.status}`);
       } catch (e) {
