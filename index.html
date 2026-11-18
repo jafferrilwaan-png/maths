@@ -62,7 +62,9 @@
     body {
       width: 100%;
       max-width: 100%;
-      background: #e2edfa;
+      background: linear-gradient(-45deg, #0b1e42, #1e3a8a, #2563eb, #38bdf8, #1d4ed8, #0369a1, #1e40af);
+      background-size: 400% 400%;
+      animation: movingBlueMesh 14s ease infinite;
       background-attachment: fixed;
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
       color: var(--text-main);
@@ -70,6 +72,12 @@
       min-height: 100vh;
       padding-bottom: 60px;
       overflow-x: hidden;
+    }
+
+    @keyframes movingBlueMesh {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* Fluid Physics Gas Canvas */
@@ -1421,8 +1429,7 @@
       });
 
       function animate() {
-        ctx.fillStyle = '#e2edfa';
-        ctx.fillRect(0, 0, width, height);
+        ctx.clearRect(0, 0, width, height);
 
         for (let p of particles) {
           p.phase += 0.008;

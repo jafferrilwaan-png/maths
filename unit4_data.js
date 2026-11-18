@@ -1494,30 +1494,48 @@ $$z^{(k+1)} = \frac{1}{10}(41 - 3x^{(k)} + 4y^{(k)})$$
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Newton Step</span>
-                <div class="explain-line-title">Transcendental Derivation</div>
-                <div class="explain-line-desc">Evaluating trigonometric functions in radians is strictly mandatory. $f'(x) = 3 + \sin x$ is always positive on $[0, 1]$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Understanding Newton-Raphson Method</div>
+                <div class="explain-line-desc">We need to find the real positive root of f(x) = 3x - cos(x) - 1 = 0. Newton-Raphson uses the tangent line at our current guess x_n to find an improved estimate x_(n+1): x_(n+1) = x_n - f(x_n)/f'(x_n).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Diagonal Dominance</span>
-                <div class="explain-line-title">Convergence Precondition</div>
-                <div class="explain-line-desc">Verify row dominance $|a_{ii}| > \sum_{j 
-e  i} |a_{ij}|$ before commencing iterations.</div>
+                <span class="explain-line-badge">Step 2: Locating the Initial Interval</span>
+                <div class="explain-line-title">Intermediate Value Theorem</div>
+                <div class="explain-line-desc">Compute f(0) = 3(0) - cos(0) - 1 = -2 < 0. Compute f(1) = 3(1) - cos(1) - 1 = 3 - 0.5403 - 1 = 1.4597 > 0 (angles in radians!). Since f(0) is negative and f(1) is positive, a root lies strictly between 0 and 1. Choose initial guess x0 = 0.6.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Jacobi Iterates</span>
-                <div class="explain-line-title">Simultaneous Vector Update</div>
-                <div class="explain-line-desc">Update $x, y, z$ in parallel at each step, stabilizing at $(1, -2, 3)$ within 8 decimal-stable passes.</div>
+                <span class="explain-line-badge">Step 3: Derivative Formulation</span>
+                <div class="explain-line-title">Calculus Differentiation</div>
+                <div class="explain-line-desc">f'(x) = d/dx(3x - cos(x) - 1) = 3 - (-sin(x)) = 3 + sin(x). Notice that since sin(x) >= -1, f'(x) >= 2 > 0 everywhere, so division by zero is impossible!</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Part (i): 2 marks for interval, 3 marks for formula/derivative, 3 marks for iterations (8 marks total). Part (ii): 2 marks for iteration format, 4 marks for iteration table, 2 marks for final values (8 marks total).</div>
+                <span class="explain-line-badge">Step 4: Iteration 1 Computation</span>
+                <div class="explain-line-title">First Tangent Approximation</div>
+                <div class="explain-line-desc">At x0 = 0.6: f(0.6) = 3(0.6) - cos(0.6) - 1 = 1.8 - 0.8253 - 1 = -0.0253. f'(0.6) = 3 + sin(0.6) = 3 + 0.5646 = 3.5646. x1 = 0.6 - (-0.0253 / 3.5646) = 0.6 + 0.0071 = 0.6071.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Iteration 2 Computation</span>
+                <div class="explain-line-title">Refining to 4 Decimal Places</div>
+                <div class="explain-line-desc">At x1 = 0.6071: f(0.6071) = 3(0.6071) - cos(0.6071) - 1 = 1.8213 - 0.8213 - 1 = -0.00004. f'(0.6071) = 3 + sin(0.6071) = 3 + 0.5705 = 3.5705. x2 = 0.6071 - (-0.00004 / 3.5705) = 0.6071.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Convergence and Stopping Criterion</span>
+                <div class="explain-line-title">Tolerance Check</div>
+                <div class="explain-line-desc">|x2 - x1| = |0.6071 - 0.6071| < 0.0001. The sequence has stabilized to 4 decimal places in just two iterations, showcasing quadratic convergence.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Stating the Root</div>
+                <div class="explain-line-desc">The real positive root of 3x - cos(x) - 1 = 0 correct to 4 decimal places is x = 0.6071 radians.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Initial interval [0, 1] and guess x0: 3 marks; Derivative f'(x) and iteration formula: 4 marks; Iteration 1 calculations: 4 marks; Iteration 2 and convergence check: 4 marks; Final answer statement: 1 mark.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1547,7 +1565,7 @@ e  i} |a_{ij}|$ before commencing iterations.</div>
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="newton_seidel">
 <div class="card-top">
@@ -1600,29 +1618,48 @@ $$z^{(k+1)} = \frac{1}{54}(110 - x^{(k+1)} - y^{(k+1)})$$
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Log Derivative</span>
-                <div class="explain-line-title">Base-10 to Natural Log</div>
-                <div class="explain-line-desc">Critical step: $\frac{d}{dx}(\log_{10} x) = \frac{\log_{10} e}{x} = \frac{0.43429}{x}$. Forgetting the change of base constant $\ln 10$ causes total formula failure.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Transcendental Equation with Base-10 Logarithm</div>
+                <div class="explain-line-desc">We want to solve f(x) = x*log10(x) - 1.2 = 0. Remember that d/dx(log10(x)) = (1/x)*log10(e) = 0.43429/x.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Seidel Advantage</span>
-                <div class="explain-line-title">Instantaneous Propagation</div>
-                <div class="explain-line-desc">Notice in Iteration 1: $x^{(1)} = 3.1481$ is immediately plugged into $y^{(1)}$, and both are plugged into $z^{(1)}$.</div>
+                <span class="explain-line-badge">Step 2: Locating the Root Interval</span>
+                <div class="explain-line-title">Sign Change Bracketing</div>
+                <div class="explain-line-desc">f(2) = 2*log10(2) - 1.2 = 2*(0.3010) - 1.2 = -0.598 < 0. f(3) = 3*log10(3) - 1.2 = 3*(0.4771) - 1.2 = 0.231 > 0. The root lies between 2 and 3. Choose x0 = 2.7.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Convergence Rate</span>
-                <div class="explain-line-title">Stable in 4 Iterations</div>
-                <div class="explain-line-desc">Strict diagonal dominance produces 4 decimal place agreement by iteration 4.</div>
+                <span class="explain-line-badge">Step 3: Derivative Formulation</span>
+                <div class="explain-line-title">Product Rule Differentiation</div>
+                <div class="explain-line-desc">f'(x) = d/dx(x*log10(x) - 1.2) = 1*log10(x) + x*(1/x)*log10(e) = log10(x) + log10(e) = log10(x) + 0.43429.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Part (i): 8 marks (log differentiation rule 3 marks, iterations 5 marks). Part (ii): 8 marks (Seidel formulation 2 marks, 4 iteration passes 4 marks, final answers 2 marks).</div>
+                <span class="explain-line-badge">Step 4: Iteration 1 Computation</span>
+                <div class="explain-line-title">First Tangent Step</div>
+                <div class="explain-line-desc">At x0 = 2.7: log10(2.7) = 0.43136. f(2.7) = 2.7*(0.43136) - 1.2 = 1.16468 - 1.2 = -0.03532. f'(2.7) = 0.43136 + 0.43429 = 0.86565. x1 = 2.7 - (-0.03532 / 0.86565) = 2.7 + 0.0408 = 2.7408.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Iteration 2 Computation</span>
+                <div class="explain-line-title">Second Tangent Step</div>
+                <div class="explain-line-desc">At x1 = 2.7408: log10(2.7408) = 0.43787. f(2.7408) = 2.7408*(0.43787) - 1.2 = 1.2001 - 1.2 = 0.0001. f'(2.7408) = 0.43787 + 0.43429 = 0.87216. x2 = 2.7408 - (0.0001 / 0.87216) = 2.7406.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Iteration 3 and Convergence Verification</span>
+                <div class="explain-line-title">4 Decimal Agreement</div>
+                <div class="explain-line-desc">At x2 = 2.7406: f(2.7406) = 0.0000. x3 = 2.7406. Successive values agree to 4 decimal places.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Final Root Value</div>
+                <div class="explain-line-desc">The root of x*log10(x) = 1.2 correct to 4 decimal places is x = 2.7406.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Interval [2, 3] identification: 3 marks; Derivative with log10(e) = 0.43429: 4 marks; Iterations 1 and 2: 5 marks; Convergence check and final root: 4 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1652,7 +1689,7 @@ $$z^{(k+1)} = \frac{1}{54}(110 - x^{(k+1)} - y^{(k+1)})$$
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="newton_gauss_jordan">
 <div class="card-top">
@@ -1692,29 +1729,48 @@ $$\begin{bmatrix} 1 & 0 & 0.6 & \mid & 4.4 \ 0 & 1 & -1.4 & \mid & -7.6 \ 0 & 0 
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Simplified Newton Form</span>
-                <div class="explain-line-title">$x_{n+1} = \frac{2x_n^3+5}{3x_n^2-2}$</div>
-                <div class="explain-line-desc">Combining terms algebraically prior to numeric substitution saves half the calculator floating operations.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Cubic Polynomial Root Finding</div>
+                <div class="explain-line-desc">We need to find the real root of f(x) = x^3 - 2x - 5 = 0 correct to 4 decimal places using the Newton-Raphson formula x_(n+1) = x_n - f(x_n)/f'(x_n).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Diagonal Jordan Target</span>
-                <div class="explain-line-title">Elimination Above and Below</div>
-                <div class="explain-line-desc">Gauss-Jordan systematically zeros out elements both above and below each diagonal entry.</div>
+                <span class="explain-line-badge">Step 2: Locating Initial Interval</span>
+                <div class="explain-line-title">Testing Integer Values</div>
+                <div class="explain-line-desc">f(1) = 1 - 2 - 5 = -6 < 0. f(2) = 8 - 4 - 5 = -1 < 0. f(3) = 27 - 6 - 5 = 16 > 0. Since f(2) = -1 is very close to 0, the root lies between 2 and 3, closer to 2. Choose initial guess x0 = 2.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Verification</span>
-                <div class="explain-line-title">Direct Solution</div>
-                <div class="explain-line-desc">Plug $x_1=2, x_2=-1, x_3=4$ into $2(2)+4(-1)+4 = 4$, $3(2)+2(-1)-4 = 0$ confirming exact satisfaction.</div>
+                <span class="explain-line-badge">Step 3: Derivative Formulation</span>
+                <div class="explain-line-title">Power Rule</div>
+                <div class="explain-line-desc">f'(x) = d/dx(x^3 - 2x - 5) = 3x^2 - 2. At x0 = 2, f'(2) = 3(4) - 2 = 10 != 0.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Part (i): 8 marks (algebraic simplified form 2 marks, iterations 6 marks). Part (ii): 8 marks (row operations 5 marks, identity reduction and values 3 marks).</div>
+                <span class="explain-line-badge">Step 4: Iteration 1 Computation</span>
+                <div class="explain-line-title">First Step from x0 = 2</div>
+                <div class="explain-line-desc">x1 = 2 - f(2)/f'(2) = 2 - (-1 / 10) = 2 + 0.1 = 2.1.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Iteration 2 Computation</span>
+                <div class="explain-line-title">Refining Guess</div>
+                <div class="explain-line-desc">At x1 = 2.1: f(2.1) = (2.1)^3 - 2(2.1) - 5 = 9.261 - 4.2 - 5 = 0.061. f'(2.1) = 3(2.1)^2 - 2 = 3(4.41) - 2 = 11.23. x2 = 2.1 - (0.061 / 11.23) = 2.1 - 0.00543 = 2.09457.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Iteration 3 Computation and Stability</span>
+                <div class="explain-line-title">Achieving 4 Decimal Places</div>
+                <div class="explain-line-desc">At x2 = 2.09457: f(2.09457) = (2.09457)^3 - 2(2.09457) - 5 = 0.00018. f'(2.09457) = 3(2.09457)^2 - 2 = 11.1615. x3 = 2.09457 - (0.00018 / 11.1615) = 2.09455.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Root Stated</div>
+                <div class="explain-line-desc">x2 and x3 round to 2.0946. The real root of x^3 - 2x - 5 = 0 correct to 4 decimal places is x = 2.0946.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Interval [2, 3] and initial guess x0: 3 marks; Derivative f'(x) and iteration scheme: 4 marks; Iterations 1, 2, 3 calculations: 6 marks; Final answer 2.0946: 3 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1744,7 +1800,7 @@ $$\begin{bmatrix} 1 & 0 & 0.6 & \mid & 4.4 \ 0 & 1 & -1.4 & \mid & -7.6 \ 0 & 0 
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="gauss_elim_jordan">
 <div class="card-top">
@@ -1779,29 +1835,48 @@ $$\begin{bmatrix} 10 & -2 & 3 & \mid & 23 \ 0 & 10.4 & -5.6 & \mid & -37.6 \ 0 &
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Forward Elimination</span>
-                <div class="explain-line-title">Upper Triangular Form</div>
-                <div class="explain-line-desc">Multipliers $m_{21} = 0.2, m_{31} = 0.3, m_{32} = -0.32692$ reduce the augmented matrix cleanly.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">3x3 Linear System</div>
+                <div class="explain-line-desc">We are given the linear system: (1) 10x - 2y + 3z = 23; (2) 2x + 10y - 5z = -33; (3) 3x - 4y + 10z = 41. We must solve by Gauss Elimination (forward elimination and back-substitution) and verify using Gauss-Jordan (full reduction to identity).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Back-substitution</span>
-                <div class="explain-line-title">Bottom-up Extraction</div>
-                <div class="explain-line-desc">Solving $z = 3$, then substituting backwards gives $y = -2$ and $x = 1$ with zero ambiguity.</div>
+                <span class="explain-line-badge">Step 2: Augmented Matrix Representation</span>
+                <div class="explain-line-title">Initial Matrix [A | B]</div>
+                <div class="explain-line-desc">Augmented matrix is [10, -2, 3 | 23; 2, 10, -5 | -33; 3, -4, 10 | 41]. Pivot element is a11 = 10.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Gauss-Jordan Parity</span>
-                <div class="explain-line-title">Identity Verification</div>
-                <div class="explain-line-desc">Both algorithms produce identical unique solutions, validating numerical accuracy.</div>
+                <span class="explain-line-badge">Step 3: Forward Elimination Column 1</span>
+                <div class="explain-line-title">Eliminating x from Rows 2 and 3</div>
+                <div class="explain-line-desc">Row 2 <- Row 2 - (2/10)*Row 1: [0, 10 - (-0.4), -5 - 0.6 | -33 - 4.6] = [0, 10.4, -5.6 | -37.6]. Row 3 <- Row 3 - (3/10)*Row 1: [0, -4 - (-0.6), 10 - 0.9 | 41 - 6.9] = [0, -3.4, 9.1 | 34.1].</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Gauss Elimination: 8 marks (triangular form 4 marks, back-substitution 4 marks). Gauss-Jordan: 8 marks (diagonalization row operations 6 marks, solution 2 marks).</div>
+                <span class="explain-line-badge">Step 4: Forward Elimination Column 2</span>
+                <div class="explain-line-title">Eliminating y from Row 3</div>
+                <div class="explain-line-desc">Row 3 <- Row 3 - (-3.4 / 10.4)*Row 2 = Row 3 + 0.32692*Row 2: [0, 0, 9.1 - 1.8308 | 34.1 - 12.292] = [0, 0, 7.2692 | 21.808]. Upper triangular form reached!</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Back-Substitution</span>
+                <div class="explain-line-title">Solving from Bottom Up</div>
+                <div class="explain-line-desc">From Row 3: 7.2692*z = 21.808 -> z = 21.808 / 7.2692 = 3. From Row 2: 10.4*y - 5.6(3) = -37.6 -> 10.4*y = -37.6 + 16.8 = -20.8 -> y = -2. From Row 1: 10*x - 2(-2) + 3(3) = 23 -> 10*x + 4 + 9 = 23 -> 10*x = 10 -> x = 1.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Gauss-Jordan Verification</span>
+                <div class="explain-line-title">Direct Diagonalization</div>
+                <div class="explain-line-desc">Transforming augmented matrix to reduced row echelon form [I | X] yields [1, 0, 0 | 1; 0, 1, 0 | -2; 0, 0, 1 | 3] directly without back-substitution.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Solution Stated and Checked</div>
+                <div class="explain-line-desc">The unique solution is x = 1, y = -2, z = 3. Check: 10(1) - 2(-2) + 3(3) = 10 + 4 + 9 = 23, perfectly satisfying equation 1.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Augmented matrix setup: 3 marks; Forward elimination to upper triangular: 5 marks; Back-substitution steps: 4 marks; Gauss-Jordan verification: 4 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1831,7 +1906,7 @@ $$\begin{bmatrix} 10 & -2 & 3 & \mid & 23 \ 0 & 10.4 & -5.6 & \mid & -37.6 \ 0 &
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="jacobi_seidel">
 <div class="card-top">
@@ -1884,29 +1959,48 @@ $$z^{(k+1)} = \frac{1}{5}(20 - x^{(k+1)} - 2y^{(k+1)})$$
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Comparison</span>
-                <div class="explain-line-title">Jacobi vs Seidel Iterations</div>
-                <div class="explain-line-desc">Jacobi oscillates with damped amplitude requiring 11 iterations; Gauss-Seidel reaches 4-decimal convergence in only 6 iterations.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Iterative Methods for Linear Systems</div>
+                <div class="explain-line-desc">Given: (1) 5x + 2y + z = 12; (2) x + 4y + 2z = 15; (3) x + 2y + 5z = 20. We must solve by Gauss-Jacobi and Gauss-Seidel methods.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Formula Difference</span>
-                <div class="explain-line-title">Immediate Feedback</div>
-                <div class="explain-line-desc">Notice $x^{(k+1)}$ enters $y^{(k+1)}$ equation in Gauss-Seidel on the very same step.</div>
+                <span class="explain-line-badge">Step 2: Checking Strict Diagonal Dominance</span>
+                <div class="explain-line-title">Convergence Prerequisite</div>
+                <div class="explain-line-desc">Row 1: |5| > |2| + |1| (5 > 3, true). Row 2: |4| > |1| + |2| (4 > 3, true). Row 3: |5| > |1| + |2| (5 > 3, true). The system is strictly diagonally dominant, guaranteeing convergence for both methods!</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Verification</span>
-                <div class="explain-line-title">$5(1) + 2(2) + 3 = 12$</div>
-                <div class="explain-line-desc">Plugging into all 3 original equations confirms exact consistency.</div>
+                <span class="explain-line-badge">Step 3: Rewriting Equations in Iterative Form</span>
+                <div class="explain-line-title">Isolating Diagonal Variables</div>
+                <div class="explain-line-desc">x = (12 - 2y - z)/5. y = (15 - x - 2z)/4. z = (20 - x - 2y)/5. Initial guess x0 = 0, y0 = 0, z0 = 0.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Part (i) Jacobi: 8 marks (iteration relations 2 marks, table 4 marks, solution 2 marks). Part (ii) Seidel: 8 marks (iteration relations 2 marks, table 4 marks, solution 2 marks).</div>
+                <span class="explain-line-badge">Step 4: Gauss-Jacobi Method Iterations</span>
+                <div class="explain-line-title">Simultaneous Displacements</div>
+                <div class="explain-line-desc">Jacobi uses only old values from iteration k. Iteration 1: x1 = 12/5 = 2.4, y1 = 15/4 = 3.75, z1 = 20/5 = 4.0. Iteration 2: x2 = (12 - 2(3.75) - 4.0)/5 = 0.1, y2 = (15 - 2.4 - 2(4.0))/4 = 1.15, z2 = (20 - 2.4 - 2(3.75))/5 = 2.02. Continuing iterations leads to x = 1, y = 2, z = 3.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Gauss-Seidel Method Iterations</span>
+                <div class="explain-line-title">Successive Displacements</div>
+                <div class="explain-line-desc">Seidel immediately uses newly calculated values in the same turn! Iteration 1: x1 = 12/5 = 2.4. y1 = (15 - 2.4 - 2(0))/4 = 12.6/4 = 3.15 (uses x1!). z1 = (20 - 2.4 - 2(3.15))/5 = (20 - 2.4 - 6.3)/5 = 11.3/5 = 2.26 (uses x1 and y1!).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Gauss-Seidel Convergence</span>
+                <div class="explain-line-title">Faster Iteration Rate</div>
+                <div class="explain-line-desc">Iteration 2: x2 = (12 - 2(3.15) - 2.26)/5 = 0.688. y2 = (15 - 0.688 - 2(2.26))/4 = 2.448. z2 = (20 - 0.688 - 2(2.448))/5 = 2.883. After 5 iterations, Seidel converges to x = 0.9999 approx 1, y = 1.9999 approx 2, z = 2.9999 approx 3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Comparison and Final Conclusion</span>
+                <div class="explain-line-title">Seidel Twice as Fast</div>
+                <div class="explain-line-desc">Gauss-Seidel converges roughly twice as fast as Gauss-Jacobi. Both yield the exact solution x = 1, y = 2, z = 3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Diagonal dominance check: 2 marks; Iterative equations formulation: 2 marks; Gauss-Jacobi iterations and table: 6 marks; Gauss-Seidel iterations and table: 6 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1936,7 +2030,7 @@ $$z^{(k+1)} = \frac{1}{5}(20 - x^{(k+1)} - 2y^{(k+1)})$$
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="jacobi_seidel">
 <div class="card-top">
@@ -1986,24 +2080,48 @@ $$z^{(k+1)} = \frac{1}{10}(-15 - 2x^{(k+1)} + 4y^{(k+1)})$$
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Diagonally Dominant Formulation</span>
-                <div class="explain-line-title">Row Verification</div>
-                <div class="explain-line-desc">Each equation isolates the dominant variable with divisor: 9 for $x$, 10 for $y$, 10 for $z$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Diagonal Dominance Verification</div>
+                <div class="explain-line-desc">System: (1) 9x + 2y + 4z = 20; (2) x + 10y + 4z = 6; (3) 2x - 4y + 10z = -15. Check dominance: |9| > 2+4=6; |10| > 1+4=5; |10| > 2+4=6. Strictly diagonally dominant.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Rapid Convergence</span>
-                <div class="explain-line-title">Alternating Updates</div>
-                <div class="explain-line-desc">Seidel requires fewer passes to achieve stable 3rd decimal digit precision.</div>
+                <span class="explain-line-badge">Step 2: Iterative Form Equations</span>
+                <div class="explain-line-title">Isolating Unknowns</div>
+                <div class="explain-line-desc">x = (20 - 2y - 4z)/9. y = (6 - x - 4z)/10. z = (-15 - 2x + 4y)/10. Start with (0, 0, 0).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Jacobi method: 8 marks (setup 2 marks, iterations 4 marks, result 2 marks). Seidel method: 8 marks (setup 2 marks, iterations 4 marks, result 2 marks).</div>
+                <span class="explain-line-badge">Step 3: Gauss-Jacobi Iterations</span>
+                <div class="explain-line-title">Parallel Substitution</div>
+                <div class="explain-line-desc">Iter 1: x1 = 20/9 = 2.222, y1 = 6/10 = 0.600, z1 = -15/10 = -1.500. Iter 2: x2 = (20 - 2(0.6) - 4(-1.5))/9 = 24.8/9 = 2.756; y2 = (6 - 2.222 - 4(-1.5))/10 = 9.778/10 = 0.978; z2 = (-15 - 2(2.222) + 4(0.6))/10 = -1.704. Successive iterations converge to x = 2.827, y = 1.135, z = -1.611.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Gauss-Seidel Iteration 1</span>
+                <div class="explain-line-title">Immediate Update Substitution</div>
+                <div class="explain-line-desc">x1 = 20/9 = 2.222. y1 = (6 - 2.222 - 4(0))/10 = 0.378. z1 = (-15 - 2(2.222) + 4(0.378))/10 = (-15 - 4.444 + 1.512)/10 = -1.793.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Gauss-Seidel Iteration 2</span>
+                <div class="explain-line-title">Refining Estimates</div>
+                <div class="explain-line-desc">x2 = (20 - 2(0.378) - 4(-1.793))/9 = (20 - 0.756 + 7.172)/9 = 26.416/9 = 2.935. y2 = (6 - 2.935 - 4(-1.793))/10 = 10.237/10 = 1.024. z2 = (-15 - 2(2.935) + 4(1.024))/10 = -1.677.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Gauss-Seidel Iteration 3 and 4</span>
+                <div class="explain-line-title">Rapid Convergence</div>
+                <div class="explain-line-desc">Iter 3: x3 = 2.851, y3 = 0.986, z3 = -1.676. Iter 4: x4 = 2.859, y4 = 0.984, z4 = -1.678. Convergence reached.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Solution Stated</div>
+                <div class="explain-line-desc">Final solution rounded to 3 decimal places is x = 2.859, y = 0.984, z = -1.678.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Diagonal dominance proof: 2 marks; Iterative equations: 2 marks; Gauss-Jacobi step-by-step: 6 marks; Gauss-Seidel step-by-step: 6 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2033,7 +2151,7 @@ $$z^{(k+1)} = \frac{1}{10}(-15 - 2x^{(k+1)} + 4y^{(k+1)})$$
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="power_method">
 <div class="card-top">
@@ -2069,24 +2187,48 @@ $$\lambda_2 = 4, \quad \lambda_3 = -2$$
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Power Method Convergence</span>
-                <div class="explain-line-title">Dominant Extraction</div>
-                <div class="explain-line-desc">Power method extracts $\lambda_1 = 6$ and eigenvector $[1, 0, 1]^T$ as column 2 decoupling suppresses the middle coordinate.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Dominant Eigenvalue by Power Method</div>
+                <div class="explain-line-desc">Given symmetric matrix A = [[5, 0, 1], [0, -2, 0], [1, 0, 5]]. Power method computes the dominant eigenvalue (largest in absolute value) and its eigenvector by repeatedly computing X_(k+1) = A * X_k and scaling.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Trace & Determinant Shortcuts</span>
-                <div class="explain-line-title">Fast Spectral Resolution</div>
-                <div class="explain-line-desc">Once $\lambda_1$ is computed, Trace $= \sum \lambda_i$ and Det $= \prod \lambda_i$ give a 2-variable system, avoiding complex matrix deflation.</div>
+                <span class="explain-line-badge">Step 2: Initial Vector Choice</span>
+                <div class="explain-line-title">Non-Orthogonal Starting Guess</div>
+                <div class="explain-line-desc">Choose starting vector X0 = [1, 0, 0]^T or [1, 1, 1]^T. Let X0 = [1, 0, 0]^T.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Power method iterations and dominant pair: 10 marks; Trace/Det calculation and other eigenvalues: 6 marks.</div>
+                <span class="explain-line-badge">Step 3: Iteration 1 and 2</span>
+                <div class="explain-line-title">Matrix-Vector Multiplication</div>
+                <div class="explain-line-desc">Y1 = A*X0 = [5, 0, 1]^T = 5*[1, 0, 0.2]^T -> lambda_1 = 5, X1 = [1, 0, 0.2]^T. Y2 = A*X1 = [5.2, 0, 2]^T = 5.2*[1, 0, 0.3846]^T -> lambda_2 = 5.2.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Iteration 3 and 4</span>
+                <div class="explain-line-title">Stabilizing Ratios</div>
+                <div class="explain-line-desc">Y3 = A*X2 = [5.385, 0, 2.923]^T = 5.385*[1, 0, 0.5428]^T. Continuing: X_k rapidly approaches [1, 0, 1]^T, and scaling factor approaches lambda = 6.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Verifying Dominant Eigenvalue lambda = 6</span>
+                <div class="explain-line-title">Direct Check A*X = lambda*X</div>
+                <div class="explain-line-desc">A*[1, 0, 1]^T = [[5, 0, 1], [0, -2, 0], [1, 0, 5]]*[1, 0, 1]^T = [6, 0, 6]^T = 6*[1, 0, 1]^T! Exactly confirms lambda1 = 6 and eigenvector (1, 0, 1).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Finding Remaining Eigenvalues</span>
+                <div class="explain-line-title">Trace and Determinant Invariants</div>
+                <div class="explain-line-desc">Trace(A) = 5 + (-2) + 5 = 8. Sum of eigenvalues: lambda1 + lambda2 + lambda3 = 8 -> 6 + lambda2 + lambda3 = 8 -> lambda2 + lambda3 = 2. Looking at row 2, [0, -2, 0] reveals an uncoupled eigenvalue lambda2 = -2 with eigenvector (0, 1, 0). Then lambda3 = 2 - (-2) = 4.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">All Eigenvalues Stated</div>
+                <div class="explain-line-desc">Dominant eigenvalue is lambda = 6 with eigenvector (1, 0, 1). All three eigenvalues are 6, 4, -2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Power method algorithm setup: 3 marks; Iteration steps 1 to 4 with scaling: 6 marks; Dominant eigenvalue lambda = 6 and eigenvector: 4 marks; Trace property and other eigenvalues: 3 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2116,7 +2258,7 @@ $$\lambda_2 = 4, \quad \lambda_3 = -2$$
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="power_method">
 <div class="card-top">
@@ -2148,24 +2290,48 @@ $$\lambda_2 = 4, \quad \lambda_3 = -2$$
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Dominant Convergence</span>
-                <div class="explain-line-title">Rapid Ratio Decay</div>
-                <div class="explain-line-desc">Because $|25| \gg |3|, |-4|$, the ratio $|\lambda_2/\lambda_1| \approx 3/25 = 0.12$ is very small, achieving 2 decimal place accuracy in just 3 iterations.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Largest and Smallest Eigenvalues</div>
+                <div class="explain-line-desc">Given A = [[25, 1, 2], [1, 3, 0], [2, 0, -4]]. We must find: (1) largest eigenvalue lambda_max using Power method; (2) smallest eigenvalue lambda_min using Inverse Power method or Shifted Power method.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Shifted Spectrum</span>
-                <div class="explain-line-title">$B = A - \lambda_1 I$</div>
-                <div class="explain-line-desc">The shift moves $\lambda_1$ to zero and makes the most negative eigenvalue dominant in magnitude for easy extraction.</div>
+                <span class="explain-line-badge">Step 2: Dominant Eigenvalue by Power Method</span>
+                <div class="explain-line-title">Start with X0 = [1, 0, 0]^T</div>
+                <div class="explain-line-desc">Y1 = A*X0 = [25, 1, 2]^T = 25*[1, 0.04, 0.08]^T. Factor out 25: lambda_1 = 25, X1 = [1, 0.04, 0.08]^T.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Dominant eigenvalue and iterations: 10 marks; Smallest eigenvalue via shifting/inverse: 6 marks.</div>
+                <span class="explain-line-badge">Step 3: Iteration 2 and Convergence</span>
+                <div class="explain-line-title">Rapid Dominance of 25</div>
+                <div class="explain-line-desc">Y2 = A*X1 = [25 + 0.04 + 0.16, 1 + 0.12, 2 - 0.32]^T = [25.2, 1.12, 1.68]^T = 25.2*[1, 0.0444, 0.0667]^T. Continued iterations converge to lambda_max = 25.18, eigenvector = [1, 0.045, 0.068]^T.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Smallest Eigenvalue via Shifted Power Method</span>
+                <div class="explain-line-title">Eigenvalue Shifting Theorem</div>
+                <div class="explain-line-desc">Let B = A - lambda_max*I. The eigenvalues of B are (lambda_i - lambda_max). The largest magnitude in B corresponds to the smallest eigenvalue of A!</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Power Method on Shifted Matrix B</span>
+                <div class="explain-line-title">Finding Most Negative Eigenvalue</div>
+                <div class="explain-line-desc">Applying power method to B yields dominant eigenvalue mu = -29.21. Then lambda_min = mu + lambda_max = -29.21 + 25.18 = -4.03.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Trace Property Verification</span>
+                <div class="explain-line-title">Sum of Eigenvalues Check</div>
+                <div class="explain-line-desc">Trace(A) = 25 + 3 + (-4) = 24. Sum of eigenvalues = 25.18 + 2.85 + (-4.03) = 24.00. Exact agreement.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Results Stated</div>
+                <div class="explain-line-desc">Largest eigenvalue is lambda_max = 25.18 with eigenvector [1, 0.045, 0.068]^T. Smallest eigenvalue is lambda_min = -4.03 with eigenvector [0.068, 0, -1]^T.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Power method iterations for lambda_max: 6 marks; Shifted matrix B formulation: 4 marks; Iterations for lambda_min: 4 marks; Trace verification and conclusion: 2 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2195,7 +2361,7 @@ $$\lambda_2 = 4, \quad \lambda_3 = -2$$
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="power_method">
 <div class="card-top">
@@ -2229,24 +2395,48 @@ $$\lambda_1 + \lambda_2 + \lambda_3 = 6 \implies 4 + 3 + \lambda_3 = 6 \implies 
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Iteration Path</span>
-                <div class="explain-line-title">Convergence to $\lambda = 4$</div>
-                <div class="explain-line-desc">Vector coordinates converge to $[2, 1, 0]^T = 2 [1, 0.5, 0]^T$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Block Upper Triangular Matrix</div>
+                <div class="explain-line-desc">Matrix A = [[1, 6, 1], [1, 2, 0], [0, 0, 3]]. Find dominant eigenvalue and eigenvector by Power method, then find remaining two eigenvalues.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Characteristic Check</span>
-                <div class="explain-line-title">Block Matrix Inspection</div>
-                <div class="explain-line-desc">$\det(A - \lambda I) = (3-\lambda)[(1-\lambda)(2-\lambda) - 6] = (3-\lambda)(\lambda^2 - 3\lambda - 4) = (3-\lambda)(\lambda - 4)(\lambda + 1) = 0$.</div>
+                <span class="explain-line-badge">Step 2: Starting Guess and Iteration 1</span>
+                <div class="explain-line-title">X0 = [1, 1, 1]^T</div>
+                <div class="explain-line-desc">Y1 = A*X0 = [8, 3, 3]^T = 8*[1, 0.375, 0.375]^T -> lambda_1 = 8, X1 = [1, 0.375, 0.375]^T.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Power method iterations and dominant root: 10 marks; Finding $\lambda=3$ and $\lambda=-1$ via trace/determinant: 6 marks.</div>
+                <span class="explain-line-badge">Step 3: Iteration 2 and 3</span>
+                <div class="explain-line-title">Convergence to Dominant Subspace</div>
+                <div class="explain-line-desc">Y2 = A*X1 = [3.625, 1.75, 1.125]^T = 3.625*[1, 0.4828, 0.3103]^T. Y3 = A*X2 = [4.207, 1.966, 0.931]^T = 4.207*[1, 0.467, 0.221]^T.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Convergence to lambda = 4</span>
+                <div class="explain-line-title">Stable Eigenvector</div>
+                <div class="explain-line-desc">Successive iterations converge to eigenvalue lambda1 = 4 and eigenvector X = [1, 0.5, 0]^T = [2, 1, 0]^T. Check: A*[2, 1, 0]^T = [2+6+0, 2+2+0, 0+0+0]^T = [8, 4, 0]^T = 4*[2, 1, 0]^T!</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Finding Remaining Eigenvalues</span>
+                <div class="explain-line-title">Characteristic Equation of 2x2 Block</div>
+                <div class="explain-line-desc">The bottom row [0, 0, 3] gives eigenvalue lambda2 = 3. The 2x2 top-left block [[1, 6], [1, 2]] has trace = 3 and det = 2 - 6 = -4. Characteristic equation: lambda^2 - 3*lambda - 4 = (lambda - 4)*(lambda + 1) = 0.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Least Latent Root Identification</span>
+                <div class="explain-line-title">Smallest Magnitude Root</div>
+                <div class="explain-line-desc">The three eigenvalues are 4, 3, -1. The least latent root (smallest in absolute value) is lambda = -1. The dominant root is lambda = 4.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">All Roots Classified</div>
+                <div class="explain-line-desc">Dominant eigenvalue lambda = 4 (eigenvector [2, 1, 0]^T). Third eigenvalue is 3. Least latent root is -1.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Power method iterations and scaling: 6 marks; Dominant eigenvalue 4 and eigenvector: 4 marks; 2x2 block analysis and remaining roots 3, -1: 4 marks; Final summary: 2 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2276,7 +2466,7 @@ $$\lambda_1 + \lambda_2 + \lambda_3 = 6 \implies 4 + 3 + \lambda_3 = 6 \implies 
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="power_newton">
 <div class="card-top">
@@ -2314,24 +2504,48 @@ $$\lambda_1 + \lambda_2 + \lambda_3 = 6 \implies 4 + 3 + \lambda_3 = 6 \implies 
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Matrix Power Steps</span>
-                <div class="explain-line-title">Eigenvalue Iterations</div>
-                <div class="explain-line-desc">Coordinates track to $[-1, 1, 4]^T / 4$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Two Part Numerical Analysis Problem</div>
+                <div class="explain-line-desc">Part (i) requires finding the dominant eigenvalue and eigenvector of A = [[1, 3, -2], [4, 4, -1], [6, 3, 5]] using Power method. Part (ii) requires solving x = sin(x) + 1/3 using Newton-Raphson.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Newton Convergence</span>
-                <div class="explain-line-title">Trigonometric Derivation</div>
-                <div class="explain-line-desc">$f'(x) = 1 - \cos x > 0$ for $x \in (1, 2)$ guarantees monotone quadratic convergence.</div>
+                <span class="explain-line-badge">Step 2: Part (i) Power Method Iterations</span>
+                <div class="explain-line-title">Matrix Multiplications</div>
+                <div class="explain-line-desc">Start with X0 = [1, 1, 1]^T. Y1 = A*X0 = [2, 7, 14]^T = 14*[0.143, 0.500, 1.000]^T. Y2 = A*X1 = [-0.357, 1.572, 7.358]^T = 7.358*[-0.049, 0.214, 1.000]^T.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Part (i): 8 marks (iterations 6 marks, result 2 marks). Part (ii): 8 marks (interval 2 marks, derivative/formula 2 marks, iterations 4 marks).</div>
+                <span class="explain-line-badge">Step 3: Part (i) Convergence to Dominant Eigenvalue</span>
+                <div class="explain-line-title">Dominance of lambda = 6</div>
+                <div class="explain-line-desc">Iterations stabilize: Y_k approaches 6*X_k. Dominant eigenvalue is lambda approx 6 with eigenvector [-0.17, 0.28, 1.00]^T.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Part (ii) Newton-Raphson Setup</span>
+                <div class="explain-line-title">f(x) = x - sin(x) - 1/3</div>
+                <div class="explain-line-desc">Form f(x) = x - sin(x) - 1/3 = 0. Derivative f'(x) = 1 - cos(x).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Part (ii) Root Bracketing</span>
+                <div class="explain-line-title">Testing Radians</div>
+                <div class="explain-line-desc">f(0) = 0 - 0 - 1/3 = -0.333 < 0. f(1) = 1 - sin(1) - 1/3 = 1 - 0.8415 - 0.3333 = -0.1748 < 0. f(2) = 2 - sin(2) - 1/3 = 2 - 0.9093 - 0.3333 = 0.7574 > 0. Root is between 1 and 2. Choose x0 = 1.5 radians.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Part (ii) Newton Iterations</span>
+                <div class="explain-line-title">Stepwise Evaluation</div>
+                <div class="explain-line-desc">At x0 = 1.5: f(1.5) = 1.5 - 0.9975 - 0.3333 = 0.1692. f'(1.5) = 1 - cos(1.5) = 1 - 0.0707 = 0.9293. x1 = 1.5 - (0.1692 / 0.9293) = 1.5 - 0.1821 = 1.3179. Iteration 2: x2 = 1.3179 - f(1.3179)/f'(1.3179) = 1.3179 - 0.0076/0.7496 = 1.3078.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Both Solutions Stated</div>
+                <div class="explain-line-desc">Part (i): Dominant eigenvalue lambda approx 6. Part (ii): Real root of x - sin(x) - 1/3 = 0 is x = 1.3078 radians.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Part (i) power method iterations and dominant root: 8 marks; Part (ii) derivative, initial guess, and iterations: 8 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2361,7 +2575,7 @@ $$\lambda_1 + \lambda_2 + \lambda_3 = 6 \implies 4 + 3 + \lambda_3 = 6 \implies 
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="gauss_elim">
 <div class="card-top">
@@ -2398,29 +2612,48 @@ $$\begin{bmatrix} 3 & 3 & 4 & \mid & 20 \ 0 & -1 & \frac{1}{3} & \mid & -\frac{1
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Pivot Selection</span>
-                <div class="explain-line-title">Overcoming Zero-Pivot Breakdown</div>
-                <div class="explain-line-desc">Without partial pivoting, $R_2$ developed a 0 on the diagonal, crashing naive Gauss elimination. Pivoting swapped $R_2 \leftrightarrow R_3$ cleanly.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Why Partial Pivoting is Essential</div>
+                <div class="explain-line-desc">Given system: (1) x + y + z = 6; (2) 3x + 3y + 4z = 20; (3) 2x + y + 3z = 13. Without pivoting, a zero pivot may emerge in column 2 (since row 2 - 3*row 1 gives 0 for y!). Partial pivoting swaps rows so that the largest magnitude coefficient in the current column becomes the pivot, preventing division by zero and reducing round-off error.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Upper Triangular Form</span>
-                <div class="explain-line-title">Exact Fractions</div>
-                <div class="explain-line-desc">Using fractions $-1/3$ maintains zero round-off error.</div>
+                <span class="explain-line-badge">Step 2: Column 1 Pivoting</span>
+                <div class="explain-line-title">Selecting Largest Pivot in Column 1</div>
+                <div class="explain-line-desc">Column 1 entries are 1, 3, 2. The largest is 3 in Row 2! Swap Row 1 and Row 2. New Row 1 = [3, 3, 4 | 20]. New Row 2 = [1, 1, 1 | 6]. Row 3 = [2, 1, 3 | 13].</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Back-Substitution Verification</span>
-                <div class="explain-line-title">$3 + 1 + 2 = 6$</div>
-                <div class="explain-line-desc">Matches equation 1 ($6$), equation 2 ($3(3)+3(1)+4(2) = 20$), equation 3 ($2(3)+1+3(2)=13$).</div>
+                <span class="explain-line-badge">Step 3: Column 1 Elimination</span>
+                <div class="explain-line-title">Eliminating Below Pivot 3</div>
+                <div class="explain-line-desc">Row 2 <- Row 2 - (1/3)*Row 1: [0, 0, 1 - 4/3 | 6 - 20/3] = [0, 0, -1/3 | -2/3]. Row 3 <- Row 3 - (2/3)*Row 1: [0, 1 - 2, 3 - 8/3 | 13 - 40/3] = [0, -1, 1/3 | -1/3].</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Row swaps and pivot selections: 6 marks; elimination to triangular form: 6 marks; back-substitution and answer: 4 marks.</div>
+                <span class="explain-line-badge">Step 4: Column 2 Pivoting</span>
+                <div class="explain-line-title">Overcoming Zero Pivot</div>
+                <div class="explain-line-desc">In column 2 below the diagonal, entry in Row 2 is 0, while entry in Row 3 is -1! | -1 | > 0, so we MUST swap Row 2 and Row 3! New Row 2 = [0, -1, 1/3 | -1/3]. New Row 3 = [0, 0, -1/3 | -2/3].</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Upper Triangular Form Achieved</span>
+                <div class="explain-line-title">Clean Triangular Matrix</div>
+                <div class="explain-line-desc">Row 1: 3x + 3y + 4z = 20. Row 2: -y + (1/3)z = -1/3. Row 3: -(1/3)z = -2/3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Back-Substitution</span>
+                <div class="explain-line-title">Solving for z, y, x</div>
+                <div class="explain-line-desc">From Row 3: -(1/3)*z = -2/3 -> z = 2. From Row 2: -y + (1/3)*(2) = -1/3 -> -y = -1/3 - 2/3 = -1 -> y = 1. From Row 1: 3*x + 3(1) + 4(2) = 20 -> 3*x + 3 + 8 = 20 -> 3*x = 9 -> x = 3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Verification and Final Answer</span>
+                <div class="explain-line-title">Substituting in Original Equations</div>
+                <div class="explain-line-desc">Check in original equation 1: 3 + 1 + 2 = 6 (verified). Original equation 2: 3(3) + 3(1) + 4(2) = 9 + 3 + 8 = 20 (verified). Final solution: x = 3, y = 1, z = 2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Column 1 pivot swap: 3 marks; Column 1 elimination: 3 marks; Column 2 pivot swap overcoming zero: 4 marks; Back-substitution steps: 4 marks; Verification and final answer: 2 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2450,7 +2683,7 @@ $$\begin{bmatrix} 3 & 3 & 4 & \mid & 20 \ 0 & -1 & \frac{1}{3} & \mid & -\frac{1
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="gauss_jordan">
 <div class="card-top">
@@ -2485,29 +2718,48 @@ $$A^{-1} = \frac{1}{4} \begin{bmatrix} 3 & -1 & -1 \ -1 & 3 & -1 \ -1 & -1 & 3 \
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Setup $[A \mid I]$</span>
-                <div class="explain-line-title">Identity Augmentation</div>
-                <div class="explain-line-desc">Guarantees that whatever sequence of elementary row operations converts $A$ to $I$ simultaneously transforms $I$ into $A^{-1}$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Gauss-Jordan Matrix Inversion Algorithm</div>
+                <div class="explain-line-desc">Given matrix A = [[2, 1, 1], [1, 2, 1], [1, 1, 2]]. We must compute A^(-1) by applying row operations to the partitioned matrix [A | I] until the left half becomes identity matrix I: [A | I] -> [I | A^(-1)].</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Diagonal Normalization</span>
-                <div class="explain-line-title">Pivot Scaling</div>
-                <div class="explain-line-desc">Clearing columns above and below diagonal elements produces the inverse directly.</div>
+                <span class="explain-line-badge">Step 2: Initial Partitioned Matrix</span>
+                <div class="explain-line-title">Setting up [A | I_3]</div>
+                <div class="explain-line-desc">[2, 1, 1 | 1, 0, 0; 1, 2, 1 | 0, 1, 0; 1, 1, 2 | 0, 0, 1].</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Multiplication Verification</span>
-                <div class="explain-line-title">$A \cdot A^{-1} = I$</div>
-                <div class="explain-line-desc">Multiplying row 1 $[2, 1, 1]$ by column 1 $[3, -1, -1]^T$ gives $(6 - 1 - 1)/4 = 4/4 = 1$.</div>
+                <span class="explain-line-badge">Step 3: Column 1 Elimination</span>
+                <div class="explain-line-title">Creating Zeros Above and Below Pivot</div>
+                <div class="explain-line-desc">Make leading entry 1: Row 1 <- Row 1 / 2 = [1, 1/2, 1/2 | 1/2, 0, 0]. Row 2 <- Row 2 - Row 1 = [0, 3/2, 1/2 | -1/2, 1, 0]. Row 3 <- Row 3 - Row 1 = [0, 1/2, 3/2 | -1/2, 0, 1].</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Augmented setup and column 1: 4 marks; column 2 reduction: 4 marks; column 3 reduction to identity: 4 marks; final inverse: 4 marks.</div>
+                <span class="explain-line-badge">Step 4: Column 2 Elimination</span>
+                <div class="explain-line-title">Normalizing Second Pivot</div>
+                <div class="explain-line-desc">Row 2 <- (2/3)*Row 2 = [0, 1, 1/3 | -1/3, 2/3, 0]. Eliminate column 2 in Row 1: Row 1 <- Row 1 - (1/2)*Row 2 = [1, 0, 1/3 | 2/3, -1/3, 0]. Eliminate column 2 in Row 3: Row 3 <- Row 3 - (1/2)*Row 2 = [0, 0, 4/3 | -1/3, -1/3, 1].</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Column 3 Elimination</span>
+                <div class="explain-line-title">Final Identity Diagonalization</div>
+                <div class="explain-line-desc">Row 3 <- (3/4)*Row 3 = [0, 0, 1 | -1/4, -1/4, 3/4]. Eliminate column 3 in Row 1: Row 1 <- Row 1 - (1/3)*Row 3 = [1, 0, 0 | 3/4, -1/4, -1/4]. Eliminate column 3 in Row 2: Row 2 <- Row 2 - (1/3)*Row 3 = [0, 1, 0 | -1/4, 3/4, -1/4].</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Extracting Inverse Matrix</span>
+                <div class="explain-line-title">Right-Hand Partition</div>
+                <div class="explain-line-desc">The left half is now identity I. The right half is A^(-1) = (1/4) * [[3, -1, -1], [-1, 3, -1], [-1, -1, 3]].</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Verification by Direct Product A * A^(-1)</span>
+                <div class="explain-line-title">Confirming Identity</div>
+                <div class="explain-line-desc">A * A^(-1) = [[2, 1, 1], [1, 2, 1], [1, 1, 2]] * (1/4)*[[3, -1, -1], [-1, 3, -1], [-1, -1, 3]] = (1/4)*[[6-1-1, -2+3-1, -2-1+3], [-1+6-1, 3+3-1, -1-1+3], [-1-1+6, -1+3-1, -1-1+6]] = (1/4)*[[4, 0, 0], [0, 4, 0], [0, 0, 4]] = I. Correct!</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Augmented matrix [A | I] setup: 3 marks; Column 1 elimination steps: 4 marks; Column 2 elimination steps: 4 marks; Column 3 elimination and A^(-1): 3 marks; Product verification A * A^(-1) = I: 2 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2537,7 +2789,7 @@ $$A^{-1} = \frac{1}{4} \begin{bmatrix} 3 & -1 & -1 \ -1 & 3 & -1 \ -1 & -1 & 3 \
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="jacobi_symmetric">
 <div class="card-top">
@@ -2569,29 +2821,48 @@ $$R_1^T (A R_1) = \frac{1}{3} \begin{bmatrix} \sqrt{2} & 1 \ -1 & \sqrt{2} \end{
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Angle Calculation</span>
-                <div class="explain-line-title">Trigonometric Resolution</div>
-                <div class="explain-line-desc">$\tan 2\theta = 2a_{12}/(a_{11}-a_{22})$ leads to quadratic in $\tan \theta$ with roots $1/\sqrt{2}$ and $-\sqrt{2}$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Jacobi Plane Rotation for Symmetric Matrices</div>
+                <div class="explain-line-desc">Given 2x2 symmetric matrix A = [[1, sqrt(2)], [sqrt(2), 2]]. Jacobi's method eliminates the off-diagonal element a12 using an orthogonal rotation matrix R1 = [[cos theta, -sin theta], [sin theta, cos theta]] such that R1^T * A * R1 becomes diagonal.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Orthogonal Transformation</span>
-                <div class="explain-line-title">$R^T A R = D$</div>
-                <div class="explain-line-desc">Multiplying orthogonal rotation matrix annihilates off-diagonal entries exactly.</div>
+                <span class="explain-line-badge">Step 2: Rotation Angle Formula</span>
+                <div class="explain-line-title">Trigonometric Relation</div>
+                <div class="explain-line-desc">The rotation angle theta satisfies: tan(2*theta) = 2*a12 / (a11 - a22). Here a11 = 1, a22 = 2, a12 = sqrt(2). Thus tan(2*theta) = 2*sqrt(2) / (1 - 2) = -2*sqrt(2).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Trace Invariance</span>
-                <div class="explain-line-title">$\lambda_1 + \lambda_2 = 3$</div>
-                <div class="explain-line-desc">Sum of eigenvalues $0 + 3 = 3 = \text{Tr}(A) = 1 + 2$, confirming exact analytical diagonal result.</div>
+                <span class="explain-line-badge">Step 3: Solving for tan theta</span>
+                <div class="explain-line-title">Double Angle Expansion</div>
+                <div class="explain-line-desc">Using tan(2*theta) = 2*tan(theta) / (1 - tan^2(theta)): 2*tan(theta) / (1 - tan^2(theta)) = -2*sqrt(2) -> tan(theta) = -sqrt(2)*(1 - tan^2(theta)) -> sqrt(2)*tan^2(theta) + tan(theta) - sqrt(2) = 0.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Angle $\theta$ derivation: 6 marks; Rotation matrix: 4 marks; Similarity multiplication and eigenvalues: 6 marks.</div>
+                <span class="explain-line-badge">Step 4: Factoring the Quadratic</span>
+                <div class="explain-line-title">Finding Minimum Angle</div>
+                <div class="explain-line-desc">(sqrt(2)*tan(theta) - 1)*(tan(theta) + sqrt(2)) = 0 -> tan(theta) = 1/sqrt(2) (or -sqrt(2)). Choosing |tan theta| <= 1 gives tan(theta) = 1/sqrt(2).</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Evaluating cos theta and sin theta</span>
+                <div class="explain-line-title">Right Triangle Ratios</div>
+                <div class="explain-line-desc">Opposite = 1, Adjacent = sqrt(2), Hypotenuse = sqrt(1^2 + (sqrt(2))^2) = sqrt(3). Therefore cos(theta) = sqrt(2)/sqrt(3) and sin(theta) = 1/sqrt(3). Rotation matrix R1 = [[sqrt(2)/sqrt(3), -1/sqrt(3)], [1/sqrt(3), sqrt(2)/sqrt(3)]].</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Computing Diagonal Matrix D = R1^T * A * R1</span>
+                <div class="explain-line-title">Orthogonal Similarity Transformation</div>
+                <div class="explain-line-desc">Multiply A * R1: [[1, sqrt(2)], [sqrt(2), 2]] * [[sqrt(2)/sqrt(3), -1/sqrt(3)], [1/sqrt(3), sqrt(2)/sqrt(3)]] = [[2*sqrt(2)/sqrt(3), 1/sqrt(3)], [4/sqrt(3), sqrt(2)/sqrt(3)]]. Now multiply R1^T * (A * R1): produces diagonal matrix D = [[3, 0], [0, 0]].</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Verification and Eigenvalues</span>
+                <div class="explain-line-title">Trace and Determinant Check</div>
+                <div class="explain-line-desc">Trace(A) = 1 + 2 = 3 = Trace(D) = 3 + 0 = 3. Det(A) = 1*2 - 2 = 0 = Det(D) = 3*0 = 0. Eigenvalues are 3 and 0. Eigenvectors are the columns of R1.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Formula for tan(2*theta): 3 marks; Solving quadratic for tan(theta): 4 marks; Construction of rotation matrix R1: 4 marks; Product R1^T * A * R1 evaluation: 3 marks; Trace and determinant verification: 2 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2621,7 +2892,7 @@ $$R_1^T (A R_1) = \frac{1}{3} \begin{bmatrix} \sqrt{2} & 1 \ -1 & \sqrt{2} \end{
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 
 <div class="question-card" data-category="jacobi_symmetric">
 <div class="card-top">
@@ -2657,25 +2928,48 @@ $$A_2 \approx \begin{bmatrix} 3.4142 & -0.325 & 0 \ -0.325 & 1 & -0.628 \ 0 & -0
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Off-Diagonal Target Selection</span>
-                <div class="explain-line-title">Frobenius Norm Reduction</div>
-                <div class="explain-line-desc">Jacobi plane rotations systematically decrease the sum of squares of off-diagonal elements $\sum_{i 
-e  j} a_{ij}^2$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Iterative Diagonalization for 3x3 Symmetric Matrix</div>
+                <div class="explain-line-desc">Given symmetric matrix A = [[2, -1, 0], [-1, 2, -1], [0, -1, 2]]. We must perform 2 iterations of Jacobi's rotation method to systematically reduce off-diagonal elements.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Infinite Slope Case</span>
-                <div class="explain-line-title">Zero Diagonal Difference</div>
-                <div class="explain-line-desc">When $a_{11} = a_{22}$, $\tan 2\theta = \infty \implies \theta = \pi/4$ (or $-\pi/4$), giving a clean $45^\circ$ rotation.</div>
+                <span class="explain-line-badge">Step 2: Iteration 1 Selection of Largest Off-Diagonal Entry</span>
+                <div class="explain-line-title">Pivotal Off-Diagonal Search</div>
+                <div class="explain-line-desc">Off-diagonal elements are a12 = -1, a23 = -1, a13 = 0. Maximum absolute value is 1 (tie between a12 and a23). Choose to eliminate a12 first.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (16 Marks)</div>
-                <div class="explain-line-desc">Iteration 1 (rotation angle, matrix $R_1$, product $A_1$): 8 marks; Iteration 2 (angle $\theta_2$, $R_2$, transformed $A_2$): 8 marks.</div>
+                <span class="explain-line-badge">Step 3: Iteration 1 Rotation Angle theta1</span>
+                <div class="explain-line-title">Formula with a11 = a22</div>
+                <div class="explain-line-desc">tan(2*theta1) = 2*a12 / (a11 - a22) = 2*(-1) / (2 - 2) = -2 / 0 = infinity! When denominator is zero, 2*theta1 = -pi/2, so theta1 = -pi/4 (-45 degrees)!</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Iteration 1 Rotation Matrix R1</span>
+                <div class="explain-line-title">Sine and Cosine of -45 Degrees</div>
+                <div class="explain-line-desc">cos(theta1) = 1/sqrt(2), sin(theta1) = -1/sqrt(2). Rotation matrix R1 acts on rows/cols 1 and 2: R1 = [[1/sqrt(2), 1/sqrt(2), 0], [-1/sqrt(2), 1/sqrt(2), 0], [0, 0, 1]].</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Iteration 1 Transformed Matrix A1 = R1^T * A * R1</span>
+                <div class="explain-line-title">Zeroing a12</div>
+                <div class="explain-line-desc">After transformation: a12 = 0! New diagonal entries: d11 = a11 - a12 = 2 - (-1) = 3; d22 = a11 + a12 = 2 + (-1) = 1; d33 = 2. A1 = [[3, 0, 1/sqrt(2)], [0, 1, -1/sqrt(2)], [1/sqrt(2), -1/sqrt(2), 2]]. Off-diagonal entry a12 has become zero!</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Iteration 2 Eliminating Next Largest Off-Diagonal</span>
+                <div class="explain-line-title">Choosing a13 or a23</div>
+                <div class="explain-line-desc">Off-diagonal elements are now a13 = 1/sqrt(2) = 0.7071 and a23 = -1/sqrt(2) = -0.7071. Choose to eliminate a13 (acting on rows/cols 1 and 3): tan(2*theta2) = 2*a13 / (a11 - a33) = 2*(1/sqrt(2)) / (3 - 2) = sqrt(2) approx 1.4142. theta2 = (1/2)*arctan(1.4142) = 27.37 degrees. cos(theta2) = 0.8881, sin(theta2) = 0.4597.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Transformed Matrix A2 and Eigenvalue Approximations</span>
+                <div class="explain-line-title">Diagonal Elements After 2 Steps</div>
+                <div class="explain-line-desc">A2 = R2^T * A1 * R2 produces diagonal entries: 3.414, 1.000, 1.586. Trace = 3.414 + 1.000 + 1.586 = 6.000 = Trace(A) = 2+2+2=6. The diagonal entries are rapidly approaching the exact eigenvalues 2 + sqrt(2) = 3.414, 2, and 2 - sqrt(2) = 0.586.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Iteration 1 pivot selection and angle theta1 = -45 deg: 4 marks; Construction of R1 and matrix A1: 4 marks; Iteration 2 pivot selection and angle theta2: 4 marks; Transformed matrix A2 and eigenvalue estimates: 4 marks.</div>
+              </div>
+              <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
                     <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2705,6 +2999,6 @@ e  j} a_{ij}^2$.</div>
                   <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
                 </div>
               </div>
-</div></div></div></div>
+</div></div></div>
 `
 };

@@ -1243,22 +1243,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Projection Formula</span>
-            <div class="explain-line-title">Subtracting Vector Shadow</div>
-            <div class="explain-line-desc">The term $\frac{\langle v_k, u_j \rangle}{\|u_j\|^2} u_j$ represents the orthogonal vector projection of $v_k$ onto $u_j$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Induction Argument</span>
-            <div class="explain-line-title">Kronecker Delta Collapse</div>
-            <div class="explain-line-desc">Orthogonality of previous vectors collapses the summation to only the $j=i$ term, producing perfect mathematical cancellation.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • Scoring Rubric</span>
-            <div class="explain-line-title">Full 16 Marks University Guarantee</div>
-            <div class="explain-line-desc">Awarded: 4 marks for formula setup, 8 marks for mutual orthogonality proof by induction, 4 marks for normalization.</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Understanding the Gram-Schmidt Goal</div>
+                <div class="explain-line-desc">In an inner product space, we often start with an ordinary basis {v1, v2, ..., vn} where vectors are at arbitrary angles to each other and have arbitrary lengths. The Gram-Schmidt process transforms this basis into an orthogonal basis {u1, u2, ..., un} where every pair of vectors is perpendicular (<ui, uj> = 0 for i != j), and then into an orthonormal basis {e1, e2, ..., en} where each vector also has length 1.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Projection Formula Intuition</span>
+                <div class="explain-line-title">Subtracting the Shadow</div>
+                <div class="explain-line-desc">When you project a vector v onto a direction u, the projection is (<v, u> / <u, u>) * u. To make v perpendicular to u, we simply subtract this shadow: v - (<v, u> / <u, u>) * u. The remainder is strictly perpendicular to u!</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Base Step Induction</span>
+                <div class="explain-line-title">Choosing First Vector</div>
+                <div class="explain-line-desc">Set u1 = v1. Since u1 is non-zero (v1 is from a basis), <u1, u1> > 0. Clearly {u1} is an orthogonal set and span{u1} = span{v1}.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Inductive Step for uk</span>
+                <div class="explain-line-title">General Recursive Construction</div>
+                <div class="explain-line-desc">Assume we have constructed an orthogonal set {u1, ..., u_(k-1)}. We define: uk = vk - sum_{j=1}^{k-1} (<vk, uj> / <uj, uj>) * uj.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Proving Orthogonality <uk, um> = 0</span>
+                <div class="explain-line-title">Inner Product Cancellation</div>
+                <div class="explain-line-desc">Take the inner product of uk with any previous vector um (where m < k): <uk, um> = <vk, um> - sum_{j=1}^{k-1} (<vk, uj>/<uj, uj>) * <uj, um>. Because earlier vectors are already orthogonal, <uj, um> = 0 for all j != m, and <um, um> for j = m. The sum collapses to <vk, um> - (<vk, um>/<um, um>)*<um, um> = <vk, um> - <vk, um> = 0!</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Proving uk is Non-Zero and Spanning</span>
+                <div class="explain-line-title">Linear Independence Inheritance</div>
+                <div class="explain-line-desc">If uk = 0, then vk would be a linear combination of u1, ..., u_(k-1), and therefore of v1, ..., v_(k-1), which contradicts the linear independence of the original basis! Hence uk is non-zero, and span{u1, ..., uk} = span{v1, ..., vk}.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Normalization to Orthonormal Basis</span>
+                <div class="explain-line-title">Dividing by Vector Norms</div>
+                <div class="explain-line-desc">To obtain unit-length vectors, divide each orthogonal vector by its Euclidean norm: ei = ui / ||ui||. The resulting set {e1, e2, ..., en} is an orthonormal basis.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Theorem statement and projection formula: 3 marks; Base step and recursive definition: 4 marks; Orthogonality proof via inner product cancellation: 5 marks; Non-zero proof and normalization: 4 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -1332,22 +1357,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Projection 1</span>
-            <div class="explain-line-title">Coordinate Elimination</div>
-            <div class="explain-line-desc">Subtracting $\frac{3}{2}(1,1,0)$ removes the parallel projection along $u_1$, isolating the orthogonal difference.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Projection 2</span>
-            <div class="explain-line-title">Pure Z-Axis Isolation</div>
-            <div class="explain-line-desc">Because both $u_1$ and $u_2$ lie in the xy-plane, subtracting both projections isolates the pure z-axis vector $(0,0,2)$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • Verification</span>
-            <div class="explain-line-title">Check Dot Products</div>
-            <div class="explain-line-desc">Quickly verify $e_1 \cdot e_2 = -\frac{1}{2} + \frac{1}{2} = 0$, $e_1 \cdot e_3 = 0$, $e_2 \cdot e_3 = 0$ to guarantee full marks.</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Orthogonalizing a Concrete Basis in R3</div>
+                <div class="explain-line-desc">We are given the basis B = {v1 = (1,1,0), v2 = (1,2,0), v3 = (0,1,2)} in R3 under standard Euclidean dot product. We must construct an orthogonal basis {u1, u2, u3} and normalize to obtain orthonormal basis {e1, e2, e3}.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Step 1 Choice of u1</span>
+                <div class="explain-line-title">First Basis Vector</div>
+                <div class="explain-line-desc">Set u1 = v1 = (1, 1, 0). Compute its squared norm: <u1, u1> = 1^2 + 1^2 + 0^2 = 2. Norm ||u1|| = sqrt(2).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Step 2 Computing u2</span>
+                <div class="explain-line-title">Removing Projection along u1</div>
+                <div class="explain-line-desc">u2 = v2 - (<v2, u1>/<u1, u1>)*u1. Compute dot product: <v2, u1> = 1*1 + 2*1 + 0*0 = 3. Projection = (3/2)*(1, 1, 0) = (3/2, 3/2, 0). u2 = (1, 2, 0) - (3/2, 3/2, 0) = (-1/2, 1/2, 0). To simplify fractions, we can keep u2 = (-1/2, 1/2, 0) or scale to (-1, 1, 0). Let u2 = (-1/2, 1/2, 0). Compute <u2, u2> = 1/4 + 1/4 = 1/2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Step 3 Computing u3</span>
+                <div class="explain-line-title">Removing Projections along u1 and u2</div>
+                <div class="explain-line-desc">u3 = v3 - (<v3, u1>/<u1, u1>)*u1 - (<v3, u2>/<u2, u2>)*u2. <v3, u1> = 0*1 + 1*1 + 2*0 = 1. First projection = (1/2)*(1, 1, 0) = (1/2, 1/2, 0). <v3, u2> = 0*(-1/2) + 1*(1/2) + 2*0 = 1/2. Second projection = ((1/2)/(1/2))*(-1/2, 1/2, 0) = (-1/2, 1/2, 0).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Subtracting Both Projections</span>
+                <div class="explain-line-title">Isolating Third Orthogonal Vector</div>
+                <div class="explain-line-desc">u3 = (0, 1, 2) - (1/2, 1/2, 0) - (-1/2, 1/2, 0) = (0 - 1/2 + 1/2, 1 - 1/2 - 1/2, 2 - 0 - 0) = (0, 0, 2). Squared norm: <u3, u3> = 0 + 0 + 4 = 4. Norm ||u3|| = 2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Mutual Orthogonality Check</span>
+                <div class="explain-line-title">Verifying Zero Dot Products</div>
+                <div class="explain-line-desc"><u1, u2> = 1*(-1/2) + 1*(1/2) + 0 = 0. <u1, u3> = 1*0 + 1*0 + 0*2 = 0. <u2, u3> = (-1/2)*0 + (1/2)*0 + 0*2 = 0. All three vectors are mutually perpendicular.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Normalizing to Orthonormal Basis</span>
+                <div class="explain-line-title">Unit Vector Construction</div>
+                <div class="explain-line-desc">e1 = u1/||u1|| = (1/sqrt(2), 1/sqrt(2), 0). e2 = u2/||u2|| = ((-1/2)/(1/sqrt(2)), (1/2)/(1/sqrt(2)), 0) = (-1/sqrt(2), 1/sqrt(2), 0). e3 = u3/||u3|| = (0, 0, 2)/2 = (0, 0, 1).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">u1 and its norm: 3 marks; u2 derivation and inner products: 5 marks; u3 derivation and double projection subtraction: 5 marks; Orthonormal basis e1, e2, e3: 3 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -1416,22 +1466,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Definite Integration</span>
-            <div class="explain-line-title">Evaluation on $[0,1]$</div>
-            <div class="explain-line-desc">Integral of monomials $\int_0^1 x^k dx = \frac{1}{k+1}$ gives simple harmonic fractions.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Shifted Legendre</span>
-            <div class="explain-line-title">Polynomial Orthogonality</div>
-            <div class="explain-line-desc">These orthogonal polynomials are the classical shifted Legendre polynomials $P_n^*(x)$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • Verification</span>
-            <div class="explain-line-title">Check Orthogonality</div>
-            <div class="explain-line-desc">Verify $\int_0^1 (1)(x - 1/2) dx = [x^2/2 - x/2]_0^1 = 0$. Guaranteed full credit!</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Continuous Polynomial Inner Product Space</div>
+                <div class="explain-line-desc">We consider P2([0, 1]) under the integral inner product <p, q> = integral from 0 to 1 of p(x)*q(x) dx. We must apply Gram-Schmidt to the standard basis {v1 = 1, v2 = x, v3 = x^2} to find an orthogonal basis {u1, u2, u3}.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Step 1 First Polynomial u1</span>
+                <div class="explain-line-title">Base Function Integration</div>
+                <div class="explain-line-desc">Set u1(x) = v1 = 1. Compute squared norm: <u1, u1> = integral_0^1 (1)^2 dx = [x]_0^1 = 1.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Step 2 Computing u2(x)</span>
+                <div class="explain-line-title">Subtracting Average Projection</div>
+                <div class="explain-line-desc">u2(x) = v2 - (<v2, u1>/<u1, u1>)*u1. <v2, u1> = integral_0^1 x*(1) dx = [x^2/2]_0^1 = 1/2. Projection = (1/2 / 1)*1 = 1/2. Thus u2(x) = x - 1/2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Computing Norm of u2</span>
+                <div class="explain-line-title">Evaluating Integral of Square</div>
+                <div class="explain-line-desc"><u2, u2> = integral_0^1 (x - 1/2)^2 dx = [(x - 1/2)^3 / 3]_0^1 = (1/8 - (-1/8))/3 = (1/4)/3 = 1/12.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Step 3 Computing Inner Products for u3(x)</span>
+                <div class="explain-line-title">Projecting x^2 onto u1 and u2</div>
+                <div class="explain-line-desc"><v3, u1> = integral_0^1 x^2*(1) dx = [x^3/3]_0^1 = 1/3. <v3, u2> = integral_0^1 x^2*(x - 1/2) dx = integral_0^1 (x^3 - x^2/2) dx = [x^4/4 - x^3/6]_0^1 = 1/4 - 1/6 = 1/12.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Subtracting Projections to Find u3(x)</span>
+                <div class="explain-line-title">Eliminating Linear Components</div>
+                <div class="explain-line-desc">u3(x) = x^2 - (<v3, u1>/<u1, u1>)*u1 - (<v3, u2>/<u2, u2>)*u2 = x^2 - (1/3 / 1)*(1) - (1/12 / (1/12))*(x - 1/2) = x^2 - 1/3 - 1*(x - 1/2) = x^2 - x + (1/2 - 1/3) = x^2 - x + 1/6.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Verification of Orthogonality</span>
+                <div class="explain-line-title">Direct Integral Check</div>
+                <div class="explain-line-desc"><u1, u2> = integral_0^1 1*(x - 1/2) dx = [x^2/2 - x/2]_0^1 = 1/2 - 1/2 = 0. <u1, u3> = integral_0^1 (x^2 - x + 1/6) dx = 1/3 - 1/2 + 1/6 = 0. Orthogonal basis is {1, x - 1/2, x^2 - x + 1/6}.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Integral inner product setup and u1: 3 marks; u2 derivation and norm <u2, u2> = 1/12: 5 marks; u3 projection integrals and derivation: 5 marks; Orthogonality verification: 3 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -1506,22 +1581,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Quadratic Form</span>
-            <div class="explain-line-title">Real Parameter $t$</div>
-            <div class="explain-line-desc">Forming $\|tu-v\|^2 \ge 0$ creates a parabola touching or above the t-axis, enforcing $\Delta \le 0$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Binomial Expansion</span>
-            <div class="explain-line-title">Completing the Square</div>
-            <div class="explain-line-desc">Substituting the Cauchy-Schwarz bound into the middle term gives the exact perfect square $(\|u\|+\|v\|)^2$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • Marks Distribution</span>
-            <div class="explain-line-title">Scoring Scheme</div>
-            <div class="explain-line-desc">10 marks for Cauchy-Schwarz discriminant proof, 6 marks for Triangle Inequality deduction.</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Fundamental Inequalities of Geometry</div>
+                <div class="explain-line-desc">We must state and prove two cornerstone theorems in inner product spaces: (1) Cauchy-Schwarz Inequality: |<u, v>| <= ||u|| * ||v||, with equality if and only if u and v are linearly dependent; (2) Triangle Inequality: ||u + v|| <= ||u|| + ||v||.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Cauchy-Schwarz Proof Strategy</span>
+                <div class="explain-line-title">Non-Negativity of Quadratic Norm</div>
+                <div class="explain-line-desc">If v = 0, both sides equal 0 and the inequality holds trivially. Assume v != 0. For any real scalar t, the norm of u - t*v is always non-negative: ||u - t*v||^2 >= 0.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Expanding Quadratic in t</span>
+                <div class="explain-line-title">Inner Product Axiom Properties</div>
+                <div class="explain-line-desc">0 <= <u - t*v, u - t*v> = <u, u> - t*<v, u> - t*<u, v> + t^2*<v, v> = ||u||^2 - 2t*<u, v> + t^2*||v||^2. This is a real quadratic polynomial At^2 + Bt + C >= 0, where A = ||v||^2 > 0, B = -2<u, v>, and C = ||u||^2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Discriminant Analysis</span>
+                <div class="explain-line-title">Non-Positive Discriminant Criterion</div>
+                <div class="explain-line-desc">Because the quadratic expression is always >= 0 for all real t, it cannot have two distinct real roots. Its discriminant must be non-positive: Delta = B^2 - 4AC <= 0. (-2<u, v>)^2 - 4*||v||^2*||u||^2 <= 0 -> 4<u, v>^2 <= 4*||u||^2*||v||^2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Concluding Cauchy-Schwarz</span>
+                <div class="explain-line-title">Taking Square Root</div>
+                <div class="explain-line-desc">Dividing by 4 and taking square root gives: |<u, v>| <= ||u|| * ||v||. Equality holds if and only if ||u - t*v|| = 0, meaning u = t*v (u and v are collinear).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Triangle Inequality Proof Setup</span>
+                <div class="explain-line-title">Expanding ||u + v||^2</div>
+                <div class="explain-line-desc">||u + v||^2 = <u + v, u + v> = <u, u> + <u, v> + <v, u> + <v, v> = ||u||^2 + 2*Re<u, v> + ||v||^2 <= ||u||^2 + 2*|<u, v>| + ||v||^2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Applying Cauchy-Schwarz to Triangle Inequality</span>
+                <div class="explain-line-title">Factoring Perfect Square</div>
+                <div class="explain-line-desc">By Cauchy-Schwarz, |<u, v>| <= ||u||*||v||. Therefore: ||u + v||^2 <= ||u||^2 + 2*||u||*||v|| + ||v||^2 = (||u|| + ||v||)^2. Taking square root of both sides gives ||u + v|| <= ||u|| + ||v||.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Cauchy-Schwarz theorem statement and quadratic setup: 3 marks; Expansion and discriminant condition: 5 marks; Cauchy-Schwarz conclusion: 2 marks; Triangle inequality expansion and proof: 6 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -1603,22 +1703,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Gram-Schmidt Steps</span>
-            <div class="explain-line-title">Systematic Projection Subtraction</div>
-            <div class="explain-line-desc">Each orthogonal vector subtracts components along all previously calculated vectors.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Fourier Coefficients</span>
-            <div class="explain-line-title">Orthonormal Expansion Formula</div>
-            <div class="explain-line-desc">Because the basis is orthonormal, coordinates $c_i = \langle x, e_i \rangle$ are found by direct dot products without matrix inversion.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • Verification</span>
-            <div class="explain-line-title">Check Coordinate Reconstruction</div>
-            <div class="explain-line-desc">$\frac{3}{2}(1,0,1) + \frac{1}{2}(-1,2,1) = (1,1,2) = x$. Full 16 marks guaranteed!</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Subspace Basis and Fourier Expansion</div>
+                <div class="explain-line-desc">Given S = {v1 = (1,0,1), v2 = (0,1,1), v3 = (1,3,3)} in R3. We must apply Gram-Schmidt to get an orthonormal basis {e1, e2, e3}, and then express the target vector x = (1, 1, 2) as an orthonormal linear combination x = sum <x, ei> * ei.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Step 1 First Orthogonal Vector u1</span>
+                <div class="explain-line-title">Base Vector</div>
+                <div class="explain-line-desc">u1 = v1 = (1, 0, 1). Squared norm: <u1, u1> = 1^2 + 0^2 + 1^2 = 2. Norm ||u1|| = sqrt(2).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Step 2 Computing u2</span>
+                <div class="explain-line-title">Subtracting u1 Projection</div>
+                <div class="explain-line-desc"><v2, u1> = 0*1 + 1*0 + 1*1 = 1. u2 = (0, 1, 1) - (1/2)*(1, 0, 1) = (-1/2, 1, 1/2). Squared norm: <u2, u2> = 1/4 + 1 + 1/4 = 3/2. Norm ||u2|| = sqrt(3/2).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Step 3 Computing u3</span>
+                <div class="explain-line-title">Subtracting u1 and u2 Projections</div>
+                <div class="explain-line-desc"><v3, u1> = 1*1 + 3*0 + 3*1 = 4. First projection = (4/2)*(1, 0, 1) = (2, 0, 2). <v3, u2> = 1*(-1/2) + 3*(1) + 3*(1/2) = -1/2 + 3 + 3/2 = 4. Second projection = (4 / (3/2))*(-1/2, 1, 1/2) = (8/3)*(-1/2, 1, 1/2) = (-4/3, 8/3, 4/3).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Evaluating u3</span>
+                <div class="explain-line-title">Orthogonal Residue</div>
+                <div class="explain-line-desc">u3 = (1, 3, 3) - (2, 0, 2) - (-4/3, 8/3, 4/3) = (1 - 2 + 4/3, 3 - 0 - 8/3, 3 - 2 - 4/3) = (1/3, 1/3, -1/3). Squared norm: <u3, u3> = 1/9 + 1/9 + 1/9 = 3/9 = 1/3. Norm ||u3|| = 1/sqrt(3).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Normalizing to Orthonormal Basis</span>
+                <div class="explain-line-title">Dividing by Norms</div>
+                <div class="explain-line-desc">e1 = (1/sqrt(2), 0, 1/sqrt(2)). e2 = (-1/sqrt(6), 2/sqrt(6), 1/sqrt(6)). e3 = (1/sqrt(3), 1/sqrt(3), -1/sqrt(3)).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Expressing x = (1, 1, 2) in Orthonormal Basis</span>
+                <div class="explain-line-title">Fourier Coefficients <x, ei></div>
+                <div class="explain-line-desc"><x, e1> = (1*1 + 0 + 2*1)/sqrt(2) = 3/sqrt(2). <x, e2> = (-1 + 2 + 2)/sqrt(6) = 3/sqrt(6). <x, e3> = (1 + 1 - 2)/sqrt(3) = 0. Therefore x = (3/sqrt(2))*e1 + (3/sqrt(6))*e2 + 0*e3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">u1 and u2 derivations: 4 marks; u3 derivation and double projection: 5 marks; Orthonormal basis e1, e2, e3: 4 marks; Coordinate expansion of x = (1, 1, 2): 3 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -1692,22 +1817,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Normal Equations</span>
-            <div class="explain-line-title">Gaussian Normal System</div>
-            <div class="explain-line-desc">Setting the gradient of sum of squared residuals to zero yields $A^TA\hat{x} = A^Ty$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Zero Residual Recognition</span>
-            <div class="explain-line-title">Exact Quadratic Interpolation</div>
-            <div class="explain-line-desc">Recognizing that $y_i = x_i^2$ exactly eliminates solving a 3x3 normal system.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • University Scoring</span>
-            <div class="explain-line-title">Mark Allocation</div>
-            <div class="explain-line-desc">8 marks for linear fit equations and solution, 8 marks for quadratic analysis.</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Overdetermined Linear System</div>
+                <div class="explain-line-desc">We are given experimental data points (xi, yi). We want to find the line of best fit y = mx + c that minimizes the sum of squared vertical errors sum (yi - (m*xi + c))^2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Normal Equations Derivation</span>
+                <div class="explain-line-title">Orthogonality of Residuals</div>
+                <div class="explain-line-desc">In matrix form, A*[c, m]^T = Y, where A has a column of 1s and a column of x values. The least squares solution satisfies the Normal Equations: A^T * A * [c, m]^T = A^T * Y.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Writing the Normal Equations in Summation Form</span>
+                <div class="explain-line-title">Two Linear Equations in Two Unknowns</div>
+                <div class="explain-line-desc">Equation 1: n*c + m*sum(x) = sum(y). Equation 2: c*sum(x) + m*sum(x^2) = sum(xy), where n is the number of data points.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Computing Data Summations</span>
+                <div class="explain-line-title">Constructing the Summary Table</div>
+                <div class="explain-line-desc">Compute n, sum(x), sum(y), sum(x^2), and sum(xy) from the given table of points. Ensure all arithmetic additions are checked twice.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Solving the 2x2 Linear System</span>
+                <div class="explain-line-title">Matrix Elimination or Cramer Rule</div>
+                <div class="explain-line-desc">Substitute the calculated sums into Equations 1 and 2. Use substitution or elimination to solve uniquely for the slope m and intercept c.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Residual Analysis and Goodness of Fit</span>
+                <div class="explain-line-title">Checking Error Minimization</div>
+                <div class="explain-line-desc">Compute predicted values y_hat = m*xi + c and verify that the sum of residuals sum(yi - y_hat) equals zero identically (a mathematical property of least squares regression).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Stating the Equation of Best Fit</div>
+                <div class="explain-line-desc">State the final linear equation y = mx + c clearly with coefficients rounded to the requested precision.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Normal equations formulation: 4 marks; Summary calculation table: 4 marks; Solving for m and c: 5 marks; Residual verification and final equation: 3 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -1782,22 +1932,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Summary Table</span>
-            <div class="explain-line-title">Column Sums Calculation</div>
-            <div class="explain-line-desc">Form tabular summation of $x, y, x^2, x^3, x^4, xy, x^2y$ to populate Gaussian matrix entries.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Linear Elimination</span>
-            <div class="explain-line-title">Clean Solution $b=0$</div>
-            <div class="explain-line-desc">Multiplying row 2 by 3 cancels the RHS constant immediately, yielding $b = 0$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • Verification</span>
-            <div class="explain-line-title">Error Check</div>
-            <div class="explain-line-desc">For $x=1, y=1.7 \approx 2$; for $x=4, y=6.8 \approx 7$. Residuals are minimal!</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Quadratic Curve Fitting</div>
+                <div class="explain-line-desc">We are given data points (xi, yi) and need to fit the second-degree parabola y = ax^2 + bx + c minimizing the total squared error.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Normal Equations for Parabola</span>
+                <div class="explain-line-title">Three Equations in Three Unknowns</div>
+                <div class="explain-line-desc">Differentiating the sum of squared errors E = sum(yi - (ax_i^2 + bx_i + c))^2 with respect to c, b, and a yields the 3 Normal Equations: (1) n*c + b*sum(x) + a*sum(x^2) = sum(y); (2) c*sum(x) + b*sum(x^2) + a*sum(x^3) = sum(xy); (3) c*sum(x^2) + b*sum(x^3) + a*sum(x^4) = sum(x^2*y).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Constructing Summary Table</span>
+                <div class="explain-line-title">Tabulating Powers and Cross Products</div>
+                <div class="explain-line-desc">Build a table with columns: x, y, x^2, x^3, x^4, xy, x^2*y. Sum each column to obtain n, sum(x), sum(y), sum(x^2), sum(x^3), sum(x^4), sum(xy), sum(x^2*y).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Assembling the 3x3 Linear System</span>
+                <div class="explain-line-title">Symmetric Coefficient Matrix</div>
+                <div class="explain-line-desc">Substitute the column sums into the 3 equations to form the symmetric linear system [A][c, b, a]^T = [Y].</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Solving via Gaussian Elimination</span>
+                <div class="explain-line-title">Systematic Row Elimination</div>
+                <div class="explain-line-desc">Eliminate c from equations 2 and 3 using equation 1. Then eliminate b from equation 3 to obtain an upper triangular system. Solve for a, then b, then c by back-substitution.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Mathematical Consistency Verification</span>
+                <div class="explain-line-title">Checking Symmetry and Trends</div>
+                <div class="explain-line-desc">Verify that the leading coefficient a matches the visual curvature of the data (positive for concave up, negative for concave down).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Parabolic Model Stated</div>
+                <div class="explain-line-desc">Write down the resulting equation y = ax^2 + bx + c with all coefficients clearly specified.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Normal equations derivation: 4 marks; Calculation table of powers: 5 marks; Solving 3x3 system: 5 marks; Final parabolic equation: 2 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -1873,22 +2048,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Matrix Setup</span>
-            <div class="explain-line-title">Gaussian Normal System</div>
-            <div class="explain-line-desc">The coefficient matrix $\begin{pmatrix} 14 & -4 \\ -4 & 4 \end{pmatrix}$ has determinant $56 - 16 = 40 \neq 0$, ensuring unique solution.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Symmetric Residuals</span>
-            <div class="explain-line-title">Residual Symmetry</div>
-            <div class="explain-line-desc">Notice every error is exactly $\pm 0.5$, indicating optimal least-squares balance across negative and positive domains.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • Verification</span>
-            <div class="explain-line-title">Zero Sum of Residuals</div>
-            <div class="explain-line-desc">$\sum e_i = 0.5 - 0.5 - 0.5 + 0.5 = 0$. Sum of residuals for linear regression with intercept is always zero!</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Nonlinear Model Linearization</div>
+                <div class="explain-line-desc">When data follows an exponential law y = a * e^(bx) or power law y = a * x^b, we linearize the equation using natural or base-10 logarithms before applying standard least squares.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Logarithmic Transformation</span>
+                <div class="explain-line-title">Mapping to Straight Line Form</div>
+                <div class="explain-line-desc">Taking natural log: ln(y) = ln(a) + b*x. Let Y = ln(y), A = ln(a), and B = b. The model becomes the linear relation Y = A + B*x.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Normal Equations for Transformed Variables</span>
+                <div class="explain-line-title">Standard Linear Regression in Log Space</div>
+                <div class="explain-line-desc">The normal equations are: n*A + B*sum(x) = sum(Y), and A*sum(x) + B*sum(x^2) = sum(x*Y).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Computing Transformed Data Table</span>
+                <div class="explain-line-title">Calculating Y = ln(y)</div>
+                <div class="explain-line-desc">Create columns for x, y, Y = ln(y), x^2, and x*Y. Compute the sum of each column across all n data points.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Solving for Transformed Parameters A and B</span>
+                <div class="explain-line-title">Linear Elimination</div>
+                <div class="explain-line-desc">Substitute the sums into the normal equations and solve simultaneously for A and B.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Inverting Transformation to Original Parameters</span>
+                <div class="explain-line-title">Exponentiation for a</div>
+                <div class="explain-line-desc">Once A is found, compute the original amplitude: a = e^A. The parameter b = B directly.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Stating Exponential Model</div>
+                <div class="explain-line-desc">Write the final non-linear equation y = a * e^(bx) with numerical constants a and b.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Log transformation and linearized model: 3 marks; Normal equations setup: 4 marks; Data computation table: 4 marks; Solving for A, B and inverting to a, b: 5 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -1957,22 +2157,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Polynomial Expansion</span>
-            <div class="explain-line-title">Term-by-term Integration</div>
-            <div class="explain-line-desc">Expand trinomial product carefully before integrating using power rule $\int t^n dt = \frac{t^{n+1}}{n+1}$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Euclidean Metric</span>
-            <div class="explain-line-title">Pythagorean Metric in $\mathbb{R}^4$</div>
-            <div class="explain-line-desc">Sum of squared components gives exact vector norm; dot product cross-check confirms $\|\alpha+\beta\|^2 = 30 + 14 + 2(-3) = 38$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • Verification</span>
-            <div class="explain-line-title">Pythagorean Cross-Check</div>
-            <div class="explain-line-desc">$\|\alpha+\beta\|^2 = \|\alpha\|^2 + \|\beta\|^2 + 2\langle \alpha, \beta \rangle = 30 + 14 - 6 = 38$. Verified!</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Symmetric Interval Integral Inner Product</div>
+                <div class="explain-line-desc">We consider the polynomial space over [-1, 1] with inner product <p, q> = integral from -1 to 1 of p(t)*q(t) dt. We must verify inner product axioms and construct orthogonal Legendre polynomials.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Verifying Inner Product Axioms</span>
+                <div class="explain-line-title">The Four Defining Properties</div>
+                <div class="explain-line-desc">1. Linearity: <a*p + b*q, r> = integral (a*p + b*q)*r dt = a*<p, r> + b*<q, r>. 2. Symmetry: <p, q> = integral p*q dt = integral q*p dt = <q, p>. 3. Positivity: <p, p> = integral p^2 dt >= 0. 4. Definiteness: integral p^2 dt = 0 for continuous p implies p(t) = 0 identically.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Applying Gram-Schmidt to {1, t, t^2}</span>
+                <div class="explain-line-title">Even and Odd Function Symmetry</div>
+                <div class="explain-line-desc">On symmetric interval [-1, 1], the integral of any odd function is automatically ZERO! This drastically simplifies all inner products.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Step 1 Choice of u1</span>
+                <div class="explain-line-title">First Basis Element</div>
+                <div class="explain-line-desc">Set u1(t) = 1. Squared norm: <u1, u1> = integral_-1^1 1 dt = [t]_-1^1 = 2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Step 2 Computing u2</span>
+                <div class="explain-line-title">Odd Function Vanishing</div>
+                <div class="explain-line-desc">u2 = t - (<t, 1>/<1, 1>)*1. <t, 1> = integral_-1^1 t dt = 0 because t is odd! Therefore u2(t) = t directly! Norm <u2, u2> = integral_-1^1 t^2 dt = [t^3/3]_-1^1 = 2/3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Step 3 Computing u3</span>
+                <div class="explain-line-title">Projecting t^2</div>
+                <div class="explain-line-desc"><t^2, u1> = integral_-1^1 t^2 dt = 2/3. <t^2, u2> = integral_-1^1 t^3 dt = 0 (odd function!). u3 = t^2 - (<t^2, 1>/<1, 1>)*1 = t^2 - ((2/3)/2)*1 = t^2 - 1/3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Legendre Polynomials Identified</div>
+                <div class="explain-line-desc">The resulting orthogonal polynomials are {1, t, t^2 - 1/3}, which are precisely the unnormalized Legendre polynomials P0(t), P1(t), and (2/3)*P2(t).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Axioms verification: 4 marks; u1 and norm computation: 3 marks; u2 derivation using odd function symmetry: 4 marks; u3 derivation and Legendre conclusion: 5 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -2048,22 +2273,47 @@ window.UNIT3_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 1 • Trace Properties</span>
-            <div class="explain-line-title">Transpose Invariance of Trace</div>
-            <div class="explain-line-desc">Using $\text{tr}(M) = \text{tr}(M^T)$ proves symmetry $\langle A, B \rangle = \langle B, A \rangle$ without expanding indices.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Line 2 • Sum of Squares</span>
-            <div class="explain-line-title">Componentwise Frobenius Norm</div>
-            <div class="explain-line-desc">$(A^TA)_{ii}$ equals the dot product of column $i$ of $A$ with itself, proving $\text{tr}(A^TA) = \sum_{i,j} a_{ij}^2 \ge 0$.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Exam Tip • University Scoring</span>
-            <div class="explain-line-title">Full 16 Marks Rubric</div>
-            <div class="explain-line-desc">10 marks for verifying all 4 axioms rigorously, 6 marks for Triangle Inequality proof.</div>
-          </div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Frobenius Inner Product on Matrix Space</div>
+                <div class="explain-line-desc">Let V = Mn x n(R). Define <A, B> = tr(B^T * A). We must prove this defines a valid inner product on matrix space, find the norm of a matrix, and test orthogonality of given matrices.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Component Interpretation</span>
+                <div class="explain-line-title">Element-Wise Summation</div>
+                <div class="explain-line-desc">Notice that entry (i, i) of B^T * A is sum_k (B^T)_ik * A_ki = sum_k B_ki * A_ki. Therefore tr(B^T * A) = sum_{i, k} A_ki * B_ki. This is simply the standard Euclidean dot product of all n^2 matrix elements!</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Proof of Linearity</span>
+                <div class="explain-line-title">Trace Linearity Property</div>
+                <div class="explain-line-desc"><alpha*A1 + beta*A2, B> = tr(B^T * (alpha*A1 + beta*A2)) = alpha*tr(B^T * A1) + beta*tr(B^T * A2) = alpha*<A1, B> + beta*<A2, B>.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Proof of Symmetry</span>
+                <div class="explain-line-title">Trace Cyclic Property</div>
+                <div class="explain-line-desc"><B, A> = tr(A^T * B) = tr((A^T * B)^T) = tr(B^T * (A^T)^T) = tr(B^T * A) = <A, B>.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Proof of Positivity and Definiteness</span>
+                <div class="explain-line-title">Sum of Squares</div>
+                <div class="explain-line-desc"><A, A> = tr(A^T * A) = sum_{i, j} a_ij^2 >= 0. Furthermore, sum a_ij^2 = 0 if and only if each individual entry a_ij = 0, which means A is the zero matrix.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Matrix Norm and Distance</span>
+                <div class="explain-line-title">Frobenius Norm Formulation</div>
+                <div class="explain-line-desc">The induced norm is the Frobenius norm ||A|| = sqrt(<A, A>) = sqrt(sum a_ij^2). Two matrices are orthogonal if <A, B> = tr(B^T * A) = 0.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Valid Inner Product Space</div>
+                <div class="explain-line-desc">All 4 inner product axioms are rigorously satisfied. Mn x n equipped with Frobenius trace product is a complete inner product space.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Component expansion formulation: 3 marks; Linearity proof: 4 marks; Symmetry proof via transpose trace: 4 marks; Positivity and definiteness proof: 5 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -2164,29 +2414,47 @@ window.UNIT3_DATA = {
               <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
-              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Columns to Orthonormal Basis</span>
-                <div class="explain-line-title">Gram-Schmidt converts columns $a_j$ into unit vectors $q_j$</div>
-                <div class="explain-line-desc">Every matrix with linearly independent columns has a unique $QR$ decomposition with positive diagonal entries $r_{jj} = \|u_j\| > 0$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Matrix Factorization A = QR</div>
+                <div class="explain-line-desc">Given a matrix A with linearly independent columns a1, a2, ..., an. We must factor A into A = Q*R, where Q is an orthogonal matrix with orthonormal columns and R is an upper triangular invertible matrix.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Upper Triangular Entries</span>
-                <div class="explain-line-title">$r_{ij} = q_i^T a_j$ for $i < j$</div>
-                <div class="explain-line-desc">The scalar projections calculated during Gram-Schmidt directly populate the upper triangular entries of $R$ without needing separate matrix multiplication.</div>
+                <span class="explain-line-badge">Step 2: Connection to Gram-Schmidt</span>
+                <div class="explain-line-title">Column Orthonormalization</div>
+                <div class="explain-line-desc">The columns of Q are precisely the orthonormal vectors q1, q2, ..., qn obtained by applying the Gram-Schmidt process to the columns of A!</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Orthogonality Guarantee</span>
-                <div class="explain-line-title">$Q^T Q = I$ and $\det(Q) = \pm 1$</div>
-                <div class="explain-line-desc">Because the columns are orthonormal, $Q^{-1} = Q^T$, making $QR$ factorization the gold standard for solving least squares and eigenvalue algorithms.</div>
+                <span class="explain-line-badge">Step 3: Deriving Entries of Upper Triangular Matrix R</span>
+                <div class="explain-line-title">Projection Coefficients</div>
+                <div class="explain-line-desc">From Gram-Schmidt: a1 = r11*q1, a2 = r12*q1 + r22*q2, and in general aj = sum_{i=1}^j rij*qi. Therefore rij = <aj, qi> for i < j, and rjj = ||uj|| is the norm of the unnormalized vector.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
-                <div class="explain-line-title">University Evaluation Breakdown</div>
-                <div class="explain-line-desc">4 marks for $q_1$ and $r_{11}$, 5 marks for $q_2, r_{12}, r_{22}$, 5 marks for $q_3, r_{13}, r_{23}, r_{33}$, 2 marks for assembling $Q, R$ and verifying $QR = A$.</div>
+                <span class="explain-line-badge">Step 4: Stepwise Execution of Gram-Schmidt on Columns</span>
+                <div class="explain-line-title">Computing q1, q2, q3</div>
+                <div class="explain-line-desc">u1 = a1, r11 = ||u1||, q1 = u1/r11. r12 = <a2, q1>, u2 = a2 - r12*q1, r22 = ||u2||, q2 = u2/r22. r13 = <a3, q1>, r23 = <a3, q2>, u3 = a3 - r13*q1 - r23*q2, r33 = ||u3||, q3 = u3/r33.</div>
               </div>
-
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Assembling Matrix Q and Matrix R</span>
+                <div class="explain-line-title">Structural Verification</div>
+                <div class="explain-line-desc">Q has columns [q1, q2, q3]. R is upper triangular with r11, r22, r33 on the diagonal and rij above the diagonal.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Verification by Matrix Multiplication Q*R</span>
+                <div class="explain-line-title">Multiplying Factors</div>
+                <div class="explain-line-desc">Multiply Q by R directly and verify that the product recovers matrix A with zero numerical error.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Application in Least Squares</div>
+                <div class="explain-line-desc">The QR factorization A = QR decouples linear systems into R*x = Q^T*b, which can be solved instantly by back-substitution without computing matrix inverses.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">QR theorem formulation: 3 marks; Gram-Schmidt orthogonalization on columns: 5 marks; Calculation of R matrix entries: 4 marks; Product verification Q*R = A: 4 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -2297,29 +2565,47 @@ window.UNIT3_DATA = {
               <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
-              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Orthogonal Decomposition Theorem</span>
-                <div class="explain-line-title">$x = \hat{x} + x^\perp$ where $\hat{x} \in W$ and $x^\perp \in W^\perp$</div>
-                <div class="explain-line-desc">Any vector in an inner product space decomposes uniquely into a component in the subspace and a component orthogonal to the subspace.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Projection and Minimum Distance in R4</div>
+                <div class="explain-line-desc">Given subspace W of R4 spanned by vectors v1, v2, and a target point y. We must find the orthogonal projection proj_W(y) of y onto W, and compute the minimum Euclidean distance from y to W.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Direct Sum Distance Minimization</span>
-                <div class="explain-line-title">$\|x - \hat{x}\| \le \|x - w\|$ for all $w \in W$</div>
-                <div class="explain-line-desc">By Pythagoras' Theorem, $\|x - w\|^2 = \|x - \hat{x}\|^2 + \|\hat{x} - w\|^2 \ge \|x - \hat{x}\|^2$. The projection $\hat{x}$ is the unique best approximation.</div>
+                <span class="explain-line-badge">Step 2: Orthogonal Decomposition Theorem</span>
+                <div class="explain-line-title">Direct Sum Splitting</div>
+                <div class="explain-line-desc">Every vector y in R4 can be uniquely decomposed as y = y_hat + z, where y_hat is in W and z is in W_perp (perpendicular to every vector in W). The vector y_hat is the unique closest point in W to y.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scaling Trick for Integer Arithmetic</span>
-                <div class="explain-line-title">Scaling $u_2$ by 6 gives integer basis $(11, -2, 6, 7)$</div>
-                <div class="explain-line-desc">Notice that multiplying an orthogonal vector by a non-zero scalar preserves the orthogonal 1D subspace, completely eliminating nested fractional algebra!</div>
+                <span class="explain-line-badge">Step 3: Constructing Orthonormal Basis for W</span>
+                <div class="explain-line-title">Gram-Schmidt on Subspace</div>
+                <div class="explain-line-desc">Apply Gram-Schmidt to {v1, v2} to obtain an orthonormal basis {u1, u2} for the subspace W.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
-                <div class="explain-line-title">University Evaluation Breakdown</div>
-                <div class="explain-line-desc">4 marks for orthogonal basis $\{u_1, u_2'\}$, 5 marks for orthogonal projection $\hat{x}$, 4 marks for orthogonal component $x^\perp$ with verification, 3 marks for computing distance $\|x^\perp\| = \frac{2\sqrt{85}}{5}$.</div>
+                <span class="explain-line-badge">Step 4: Formula for Orthogonal Projection</span>
+                <div class="explain-line-title">Sum of Projections on Orthonormal Basis</div>
+                <div class="explain-line-desc">proj_W(y) = <y, u1>*u1 + <y, u2>*u2. (Or if {v1, v2} are orthogonal: proj_W(y) = (<y, v1>/<v1, v1>)*v1 + (<y, v2>/<v2, v2>)*v2).</div>
               </div>
-
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Calculating Projected Vector y_hat</span>
+                <div class="explain-line-title">Component-Wise Evaluation</div>
+                <div class="explain-line-desc">Compute the inner products and sum the vector components to find the explicit coordinates of y_hat.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Calculating Error Vector z = y - y_hat</span>
+                <div class="explain-line-title">Orthogonal Residue</div>
+                <div class="explain-line-desc">Compute z = y - y_hat. Verify that <z, v1> = 0 and <z, v2> = 0, confirming that the error vector is strictly perpendicular to the entire subspace W.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Minimum Distance Computation</span>
+                <div class="explain-line-title">Norm of Error Vector</div>
+                <div class="explain-line-desc">The minimum distance from y to the subspace W is the length of the perpendicular error vector: dist(y, W) = ||z|| = sqrt(z1^2 + z2^2 + z3^2 + z4^2).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Orthogonal decomposition theorem: 3 marks; Subspace basis orthogonalization: 4 marks; Projection vector y_hat computation: 5 marks; Error vector z and minimum distance: 4 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -2430,28 +2716,47 @@ window.UNIT3_DATA = {
               <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
-              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Shifted Legendre Polynomials</span>
-                <div class="explain-line-title">Orthonormal polynomials on $[0,1]$ vs $[-1,1]$</div>
-                <div class="explain-line-desc">On interval $[0,1]$, shifted Legendre polynomials have normalization factors $1, \sqrt{3}(2t-1), \sqrt{5}(6t^2-6t+1)$, distinct from the $[-1,1]$ standard formulas.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Shifted Legendre Polynomials</div>
+                <div class="explain-line-desc">In the inner product space P2([0, 1]) with inner product <f, g> = integral_0^1 f(x)*g(x) dx, we must construct the first three shifted Legendre polynomials and verify their orthogonality.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Projection Minimizes Square Integral</span>
-                <div class="explain-line-title">$p_1(t)$ minimizes $\int_0^1 (e^t - p_1(t))^2 dt$</div>
-                <div class="explain-line-desc">The orthogonal projection Theorem guarantees that Fourier polynomial synthesis yields the unique absolute minimum of the continuous least squares error integral.</div>
+                <span class="explain-line-badge">Step 2: Gram-Schmidt Process on {1, x, x^2}</span>
+                <div class="explain-line-title">Stepwise Orthogonalization</div>
+                <div class="explain-line-desc">Let v0 = 1, v1 = x, v2 = x^2. We apply Gram-Schmidt to convert {v0, v1, v2} into orthogonal polynomials {P0, P1, P2}.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Shortcut Error Calculation via Parseval</span>
-                <div class="explain-line-title">$\|f - p\|^2 = \|f\|^2 - \sum c_i^2$ eliminates polynomial integral expansion</div>
-                <div class="explain-line-desc">Subtracting squared Fourier coefficients directly avoids the arduous task of integrating the expanded difference $(e^t - 1.6903t - 0.8731)^2$.</div>
+                <span class="explain-line-badge">Step 3: Degree 0 Polynomial P0(x)</span>
+                <div class="explain-line-title">Constant Polynomial</div>
+                <div class="explain-line-desc">P0(x) = v0 = 1. Squared norm: <P0, P0> = integral_0^1 1 dx = 1.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
-                <div class="explain-line-title">University Evaluation Breakdown</div>
-                <div class="explain-line-desc">6 marks for orthonormal basis $\{q_0, q_1, q_2\}$, 6 marks for Fourier coefficients and $p_1(t) = (18-6e)t + (4e-10)$, 4 marks for error computation $\|e^t - p_1(t)\| \approx 0.0626$.</div>
+                <span class="explain-line-badge">Step 4: Degree 1 Polynomial P1(x)</span>
+                <div class="explain-line-title">Linear Polynomial</div>
+                <div class="explain-line-desc">P1(x) = x - (<x, P0>/<P0, P0>)*P0. <x, P0> = integral_0^1 x dx = 1/2. Thus P1(x) = x - 1/2. Check: <P0, P1> = integral_0^1 (x - 1/2) dx = 0.</div>
               </div>
-
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Degree 2 Polynomial P2(x)</span>
+                <div class="explain-line-title">Quadratic Polynomial</div>
+                <div class="explain-line-desc">P2(x) = x^2 - (<x^2, P0>/<P0, P0>)*P0 - (<x^2, P1>/<P1, P1>)*P1. <x^2, P0> = 1/3. <P1, P1> = integral_0^1 (x - 1/2)^2 dx = 1/12. <x^2, P1> = integral_0^1 (x^3 - x^2/2) dx = 1/4 - 1/6 = 1/12. Projection on P1 = (1/12 / 1/12)*(x - 1/2) = x - 1/2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Simplifying P2(x)</span>
+                <div class="explain-line-title">Collecting Terms</div>
+                <div class="explain-line-desc">P2(x) = x^2 - 1/3 - (x - 1/2) = x^2 - x + (1/2 - 1/3) = x^2 - x + 1/6.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Verification and Standard Normalization</span>
+                <div class="explain-line-title">Checking Inner Products</div>
+                <div class="explain-line-desc"><P0, P2> = integral_0^1 (x^2 - x + 1/6) dx = 1/3 - 1/2 + 1/6 = 0. <P1, P2> = integral_0^1 (x - 1/2)*(x^2 - x + 1/6) dx = 0. The polynomials {1, x - 1/2, x^2 - x + 1/6} form an orthogonal basis.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Inner product definition and P0: 3 marks; P1 derivation and integration: 4 marks; P2 derivation and projections: 6 marks; Orthogonality verification: 3 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">

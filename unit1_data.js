@@ -1636,30 +1636,48 @@ window.UNIT1_DATA = {
               <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Non-Standard Operations</span>
-                <div class="explain-line-title">Addition as multiplication ($x \oplus y = xy$) and Scalar multiplication as power ($k \odot x = x^k$)</div>
-                <div class="explain-line-desc">Understand that abstract vector spaces do not require ordinary addition. Any binary operations satisfying the 10 axioms constitute a valid vector space.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Understanding Positive Real Numbers under New Operations</div>
+                <div class="explain-line-desc">In this problem, the set V consists of only positive real numbers, meaning x > 0. We are given custom operations: adding two numbers means multiplying them (x + y = xy), and multiplying by a scalar k means raising to a power (k * x = x^k). We need to verify if all vector space axioms hold.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Additive Identity &amp; Inverse</span>
-                <div class="explain-line-title">Zero vector $\mathbf{0} = 1$ and Additive Inverse $-x = 1/x$</div>
-                <div class="explain-line-desc">Since $x \oplus e = x \implies x \cdot e = x \implies e = 1 \in \mathbb{R}^+$. The inverse satisfies $x \oplus x' = 1 \implies x \cdot x' = 1 \implies x' = 1/x \in \mathbb{R}^+$.</div>
+                <span class="explain-line-badge">Step 2: Core Vector Space Axioms</span>
+                <div class="explain-line-title">The 10 Rules for a Vector Space</div>
+                <div class="explain-line-desc">A set forms a vector space over real numbers if it satisfies 5 addition axioms (closure, associative, identity, inverse, commutative) and 5 scalar multiplication axioms (scalar closure, two distributive laws, scalar associative, and unity).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scalar Distributive Laws</span>
-                <div class="explain-line-title">$(k+m) \odot x = x^{k+m} = x^k \cdot x^m = (k \odot x) \oplus (m \odot x)$</div>
-                <div class="explain-line-desc">Exponent rules of real numbers establish the vector space distributive axioms identically without exceptions.</div>
+                <span class="explain-line-badge">Step 3: Verification of Addition Axioms</span>
+                <div class="explain-line-title">Testing Closure and Group Properties</div>
+                <div class="explain-line-desc">Closure holds because multiplying two positive numbers x and y gives a positive number xy. Associativity holds because (xy)z = x(yz). Commutativity holds because xy = yx.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
-                <div class="explain-line-title">University Evaluation Breakdown</div>
-                <div class="explain-line-desc">6 marks for 5 abelian addition axioms (especially identity and inverse), 8 marks for 5 scalar axioms, 2 marks for final affirmative conclusion.</div>
+                <span class="explain-line-badge">Step 4: Finding the Zero Vector and Additive Inverse</span>
+                <div class="explain-line-title">Identity Element is Number 1</div>
+                <div class="explain-line-desc">The zero vector is the element e such that x + e = x. Under our operation, x * e = x, which means e = 1. Since 1 is positive, 1 belongs to V. The additive inverse of x is x' such that x * x' = 1, so x' = 1/x. Since x is positive, 1/x is also positive and belongs to V.</div>
               </div>
-
-        <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Verification of Scalar Multiplication</span>
+                <div class="explain-line-title">Testing Power Operations</div>
+                <div class="explain-line-desc">For any real scalar k and positive x, x^k is a positive real number, so scalar closure holds. For unity scalar, 1 * x = x^1 = x, which preserves the element.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Verification of Distributive Laws</span>
+                <div class="explain-line-title">Applying Logarithm and Exponent Rules</div>
+                <div class="explain-line-desc">First distributive law: k * (x + y) = (xy)^k = x^k * y^k = (k * x) + (k * y). Second distributive law: (k + m) * x = x^(k + m) = x^k * x^m = (k * x) + (m * x). Both laws hold identically.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Confirmation of Vector Space Structure</div>
+                <div class="explain-line-desc">Since all 10 vector space axioms are satisfied under the defined operations, the set of positive real numbers forms a valid real vector space.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Operations interpretation and setup: 3 marks; Five addition axioms with zero vector and inverse: 5 marks; Five scalar axioms and distributive laws: 5 marks; Final conclusion: 3 marks.</div>
+              </div>
+              <div class="inline-ai-section">
           <div class="inline-ai-header">
             <div class="inline-ai-title-wrap">
               <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1752,29 +1770,48 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Matrix Structure</span>
-                <div class="explain-line-title">Matrices of form $\begin{bmatrix} a & a+b \\ a+b & b \end{bmatrix}$ with $a, b \in \mathbb{R}$</div>
-                <div class="explain-line-desc">Notice the key pattern: both off-diagonal entries must equal the sum of the two diagonal entries ($a+b$).</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Understanding the Matrix Set</div>
+                <div class="explain-line-desc">The set W consists of all 2x2 real matrices where the top-left element is a, the bottom-right element is b, and both off-diagonal elements equal a + b. We must check if W is a subspace of M2x2.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Addition Closure</span>
-                <div class="explain-line-title">$A + B = \begin{bmatrix} a_1+a_2 & (a_1+a_2)+(b_1+b_2) \\ (a_1+a_2)+(b_1+b_2) & b_1+b_2 \end{bmatrix}$</div>
-                <div class="explain-line-desc">Adding two matrices produces diagonal sums that match the new off-diagonals, proving closure under addition.</div>
+                <span class="explain-line-badge">Step 2: Core Subspace Criterion</span>
+                <div class="explain-line-title">The Two Step Vector Space Test</div>
+                <div class="explain-line-desc">Instead of testing all 10 axioms, a subset W is a subspace if and only if it contains the zero matrix and is closed under arbitrary linear combinations: for any matrices A, B in W and real scalars alpha, beta, the combination alpha*A + beta*B must also belong to W.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Scalar Closure</span>
-                <div class="explain-line-title">$kA = \begin{bmatrix} ka & ka+kb \\ ka+kb & kb \end{bmatrix} = \begin{bmatrix} ka & k(a+b) \\ k(a+b) & kb \end{bmatrix}$</div>
-                <div class="explain-line-desc">Multiplying by scalar $k$ preserves the property because $k(a+b) = ka + kb$.</div>
+                <span class="explain-line-badge">Step 3: Zero Matrix Verification</span>
+                <div class="explain-line-title">Checking the Additive Identity</div>
+                <div class="explain-line-desc">Setting a = 0 and b = 0 gives the 2x2 zero matrix with all entries 0. Since 0 + 0 = 0, the zero matrix matches the required form and belongs to W.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Subspace Criterion</span>
-                <div class="explain-line-title">Closed subset of $M_{2\times 2}(\mathbb{R}) \implies$ Vector Space</div>
-                <div class="explain-line-desc">Since $V$ is a non-empty subset of the known vector space $M_{2\times 2}(\mathbb{R})$ closed under addition and scalar multiplication, it is a Vector Space.</div>
+                <span class="explain-line-badge">Step 4: Setting Up Two Arbitrary Matrices</span>
+                <div class="explain-line-title">Parametric Representation</div>
+                <div class="explain-line-desc">Let matrix A have parameters a1 and b1, so its entries are a1, a1+b1, a1+b1, b1. Let matrix B have parameters a2 and b2, so its entries are a2, a2+b2, a2+b2, b2.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Computing the Linear Combination</span>
+                <div class="explain-line-title">Matrix Addition and Scalar Scaling</div>
+                <div class="explain-line-desc">Form the matrix C = alpha*A + beta*B. The top-left entry becomes alpha*a1 + beta*a2. The bottom-right entry becomes alpha*b1 + beta*b2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Checking the Off-Diagonal Constraint</span>
+                <div class="explain-line-title">Verifying the Defining Rule</div>
+                <div class="explain-line-desc">The off-diagonal entries are alpha*(a1 + b1) + beta*(a2 + b2) = (alpha*a1 + beta*a2) + (alpha*b1 + beta*b2). This is exactly the sum of the new top-left and bottom-right entries.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Confirmation of Subspace</div>
+                <div class="explain-line-desc">Because the linear combination maintains the exact structural requirement for all real scalars, W is closed under linear combinations and is a subspace of M2x2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Subspace criterion statement: 3 marks; Zero element verification: 3 marks; Linear combination setup and matrix algebra: 6 marks; Off-diagonal constraint verification and conclusion: 4 marks.</div>
+              </div>
+              <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1836,29 +1873,48 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Subspace Test Setup</span>
-                <div class="explain-line-title">Check if zero polynomial $0 \in V$</div>
-                <div class="explain-line-desc">For $p(x) = 0 + 0x + 0x^2$, $a_0 = 0, a_1 = 0, a_2 = 0$. Condition $a_0 = a_1 + a_2 \implies 0 = 0 + 0$ holds. Hence $0 \in V$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Understanding the Polynomial Set</div>
+                <div class="explain-line-desc">We consider the vector space P2 of polynomials of degree at most 2. We examine the subset W of polynomials satisfying the condition p(0) = 0, meaning the constant term must be zero.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Linear Combination</span>
-                <div class="explain-line-title">Let $p(x), q(x) \in V$ and form $r(x) = \alpha p(x) + \beta q(x)$</div>
-                <div class="explain-line-desc">Coefficients of $r(x)$ are $c_0 = \alpha a_0 + \beta b_0$, $c_1 = \alpha a_1 + \beta b_1$, $c_2 = \alpha a_2 + \beta b_2$.</div>
+                <span class="explain-line-badge">Step 2: Core Subspace Criterion</span>
+                <div class="explain-line-title">Checking Linear Combinations</div>
+                <div class="explain-line-desc">To prove W is a subspace, we must prove that the zero polynomial is in W, and whenever p(x) and q(x) are in W, their combination alpha*p(x) + beta*q(x) also satisfies the condition at x = 0.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Verify Condition</span>
-                <div class="explain-line-title">Check if $c_0 = c_1 + c_2$</div>
-                <div class="explain-line-desc">$c_1 + c_2 = (\alpha a_1 + \beta b_1) + (\alpha a_2 + \beta b_2) = \alpha(a_1 + a_2) + \beta(b_1 + b_2) = \alpha a_0 + \beta b_0 = c_0$.</div>
+                <span class="explain-line-badge">Step 3: Zero Polynomial Test</span>
+                <div class="explain-line-title">Evaluating at Origin</div>
+                <div class="explain-line-desc">For the zero polynomial zero(x) = 0, evaluating at x = 0 gives zero(0) = 0. Therefore, the zero polynomial belongs to W.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
-                <div class="explain-line-title">Condition is satisfied $\implies V$ is a Subspace</div>
-                <div class="explain-line-desc">Since closure under linear combinations holds, $V$ is a vector subspace of $P_2[x]$.</div>
+                <span class="explain-line-badge">Step 4: Algebraic Structure of Elements in W</span>
+                <div class="explain-line-title">Vanishing Constant Term</div>
+                <div class="explain-line-desc">Any polynomial p(x) in W can be written as p(x) = a1*x + a2*x^2 because p(0) = a0 = 0. Similarly, q(x) = b1*x + b2*x^2.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Forming the Linear Combination</span>
+                <div class="explain-line-title">Combining Two Polynomials</div>
+                <div class="explain-line-desc">Let r(x) = alpha*p(x) + beta*q(x). Then r(x) = (alpha*a1 + beta*b1)*x + (alpha*a2 + beta*b2)*x^2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Evaluating the Combination at Zero</span>
+                <div class="explain-line-title">Testing Closure</div>
+                <div class="explain-line-desc">Substituting x = 0 gives r(0) = (alpha*a1 + beta*b1)*(0) + (alpha*a2 + beta*b2)*(0)^2 = 0. Hence r(x) satisfies the defining condition of W.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Dimension and Basis Deduction</span>
+                <div class="explain-line-title">Finding the Size of the Subspace</div>
+                <div class="explain-line-desc">The polynomials x and x^2 span W and are linearly independent. Thus, the dimension of W is 2, which is one less than the dimension of P2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Subspace theorem definition: 3 marks; Zero polynomial check: 3 marks; Linear combination algebra: 5 marks; Dimension and basis derivation: 3 marks; Final conclusion: 2 marks.</div>
+              </div>
+              <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -1950,29 +2006,48 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Linear Combination</span>
-                <div class="explain-line-title">Set $v = c_1 v_1 + c_2 v_2 + c_3 v_3$</div>
-                <div class="explain-line-desc">Write vector equation $(1, -2, 5) = c_1(1,1,1) + c_2(1,2,3) + c_3(2,-1,1)$ as a matrix system $Ac = v$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Two Part Question Breakdown</div>
+                <div class="explain-line-desc">Part (i) asks whether the vector v = (2, -5, 7) can be expressed as a linear combination of S = {(1, 2, 0), (0, -5, -7)}. Part (ii) asks whether the set {(1, 2, 3), (2, -1, 4), (0, 0, 0)} is linearly independent.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Augmented Matrix</span>
-                <div class="explain-line-title">Row reduction of $[A \mid v]$ to Row Echelon Form</div>
-                <div class="explain-line-desc">Perform row operations: $R_2 \to R_2 - R_1, R_3 \to R_3 - 2R_1$ to eliminate lower entries.</div>
+                <span class="explain-line-badge">Step 2: Governing Mathematical Definitions</span>
+                <div class="explain-line-title">Linear Combinations and Independence</div>
+                <div class="explain-line-desc">A vector v is a linear combination of vectors u1 and u2 if there exist scalars c1 and c2 such that v = c1*u1 + c2*u2. A set of vectors is linearly dependent if any non-trivial combination equals zero, or if it contains the zero vector.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Back-Substitution</span>
-                <div class="explain-line-title">Solve for scalars $(c_1, c_2, c_3)$</div>
-                <div class="explain-line-desc">Compute exact values $c_1, c_2, c_3$ proving $v$ is an explicit linear combination.</div>
+                <span class="explain-line-badge">Step 3: Part (i) Equation Setup</span>
+                <div class="explain-line-title">Forming the Linear System</div>
+                <div class="explain-line-desc">Setting (2, -5, 7) = c1*(1, 2, 0) + c2*(0, -5, -7) leads to three scalar equations: c1 = 2, 2*c1 - 5*c2 = -5, and -7*c2 = 7.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Linear Independence</span>
-                <div class="explain-line-title">Compute determinant $|A|$</div>
-                <div class="explain-line-desc">If $|A| \neq 0$, the vectors are linearly independent; if $|A| = 0$, they are linearly dependent.</div>
+                <span class="explain-line-badge">Step 4: Part (i) Solving for Scalars</span>
+                <div class="explain-line-title">Checking Consistency</div>
+                <div class="explain-line-desc">From the first equation, c1 = 2. From the third equation, c2 = -1. Substituting these into the second equation: 2*(2) - 5*(-1) = 4 + 5 = 9, which does not equal -5. The system is inconsistent.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Part (i) Conclusion</span>
+                <div class="explain-line-title">Vector Not in Span</div>
+                <div class="explain-line-desc">Because no scalars c1 and c2 can satisfy all three equations simultaneously, the vector v cannot be written as a linear combination of the vectors in S.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Part (ii) Zero Vector Theorem</span>
+                <div class="explain-line-title">Immediate Dependence</div>
+                <div class="explain-line-desc">Any set containing the zero vector (0, 0, 0) is automatically linearly dependent. We can choose scalars c1 = 0, c2 = 0, and c3 = 1 (non-zero) such that 0*(1,2,3) + 0*(2,-1,4) + 1*(0,0,0) = (0,0,0).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Summarizing Both Parts</div>
+                <div class="explain-line-desc">Vector v is not in the span of S. The second set is linearly dependent due to the presence of the zero vector.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Part (i) vector equation setup: 3 marks; Part (i) inconsistency proof: 5 marks; Part (ii) linear independence definition: 3 marks; Part (ii) zero vector dependence proof: 5 marks.</div>
+              </div>
+              <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2071,29 +2146,48 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Necessary Condition</span>
-                <div class="explain-line-title">Assume $W$ is a subspace $\implies \alpha u + \beta v \in W$</div>
-                <div class="explain-line-desc">Since $W$ is a subspace, it is closed under scalar multiplication ($\alpha u \in W, \beta v \in W$) and vector addition ($\alpha u + \beta v \in W$).</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Theorem Statement and Proof Strategy</div>
+                <div class="explain-line-desc">We must state and prove the necessary and sufficient condition for a non-empty subset W of a vector space V to be a subspace: W is a subspace if and only if for all u, v in W and scalars a, b in F, au + bv is in W.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Sufficient Condition</span>
-                <div class="explain-line-title">Assume $\alpha u + \beta v \in W$, prove all 10 axioms</div>
-                <div class="explain-line-desc">Set $\alpha = 1, \beta = 1 \implies u + v \in W$ (Vector addition closure).</div>
+                <span class="explain-line-badge">Step 2: Understanding Necessary versus Sufficient</span>
+                <div class="explain-line-title">Two Way Implication</div>
+                <div class="explain-line-desc">A two-way theorem requires two proofs: first, assuming W is a subspace, show that au + bv is in W (necessity); second, assuming au + bv is in W, show that W satisfies all vector space axioms (sufficiency).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Zero & Inverse</span>
-                <div class="explain-line-title">Set $\alpha = 0 \implies 0 \in W$; set $\alpha = -1, \beta = 0 \implies -u \in W$</div>
-                <div class="explain-line-desc">Proves the existence of zero vector and additive inverse inside $W$.</div>
+                <span class="explain-line-badge">Step 3: Proof of Necessity</span>
+                <div class="explain-line-title">Direct Consequence of Subspace Definition</div>
+                <div class="explain-line-desc">If W is a subspace, it is by definition a vector space in its own right. Therefore, it is closed under scalar multiplication (au in W, bv in W) and closed under vector addition (au + bv in W). This proves necessity.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Scalar Closure & Axioms</span>
-                <div class="explain-line-title">Set $\beta = 0 \implies \alpha u \in W$</div>
-                <div class="explain-line-desc">All other 6 laws (commutativity, associativity, distributivity) are inherited automatically from parent space $V$. Hence $W$ is a subspace.</div>
+                <span class="explain-line-badge">Step 4: Proof of Sufficiency Setup</span>
+                <div class="explain-line-title">Rebuilding Vector Space Axioms</div>
+                <div class="explain-line-desc">Assume au + bv is in W for all u, v in W and all scalars a, b in F. We must verify that W satisfies the vector space axioms.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Establishing Zero Vector and Inverse</span>
+                <div class="explain-line-title">Specializing the Scalars</div>
+                <div class="explain-line-desc">Taking a = 0 and b = 0 gives 0*u + 0*v = 0 in W, so the zero vector exists. Taking a = -1 and b = 0 gives (-1)*u = -u in W, so additive inverses exist.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Establishing Addition and Scalar Closures</span>
+                <div class="explain-line-title">Verifying Group Operations</div>
+                <div class="explain-line-desc">Taking a = 1 and b = 1 gives 1*u + 1*v = u + v in W, proving closure under addition. Taking b = 0 gives a*u in W, proving closure under scalar multiplication.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Inherited Axioms and Final Conclusion</span>
+                <div class="explain-line-title">Inheritance from Parent Space</div>
+                <div class="explain-line-desc">Associativity, commutativity, and distributive laws hold automatically because all elements of W are elements of V. Hence W is a subspace.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Theorem statement: 2 marks; Necessity proof: 4 marks; Sufficiency zero vector and inverse derivation: 5 marks; Sufficiency closure and inherited laws: 5 marks.</div>
+              </div>
+              <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2176,29 +2270,48 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • If Direction (Easy)</span>
-                <div class="explain-line-title">If $W_1 \subseteq W_2$, then $W_1 \cup W_2 = W_2$</div>
-                <div class="explain-line-desc">Since $W_2$ is already a subspace, its union with a smaller subset is also a subspace.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Two Part Subspace Operation Theorem</div>
+                <div class="explain-line-desc">Part (i) asks to prove that the intersection of two subspaces W1 and W2 is always a subspace. Part (ii) asks to prove that the union of two subspaces is a subspace if and only if one is contained in the other.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Only-If Direction (Contradiction)</span>
-                <div class="explain-line-title">Assume $W_1 \cup W_2$ is a subspace but $W_1 \not\subseteq W_2$ and $W_2 \not\subseteq W_1$</div>
-                <div class="explain-line-desc">This means there exists $u \in W_1 \setminus W_2$ and $v \in W_2 \setminus W_1$.</div>
+                <span class="explain-line-badge">Step 2: Intersection Setup</span>
+                <div class="explain-line-title">Definition of Intersection</div>
+                <div class="explain-line-desc">Let u, v belong to W1 intersection W2, and let a, b be scalars. By definition of intersection, u, v belong to W1 and u, v belong to W2.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Sum Vector</span>
-                <div class="explain-line-title">Since $u, v \in W_1 \cup W_2$, their sum $u + v \in W_1 \cup W_2$</div>
-                <div class="explain-line-desc">Therefore, $u + v \in W_1$ OR $u + v \in W_2$.</div>
+                <span class="explain-line-badge">Step 3: Intersection Proof</span>
+                <div class="explain-line-title">Simultaneous Closure</div>
+                <div class="explain-line-desc">Since W1 is a subspace, au + bv is in W1. Since W2 is a subspace, au + bv is in W2. Therefore, au + bv belongs to W1 intersection W2, proving it is a subspace.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Two Contradictions</span>
-                <div class="explain-line-title">If $u+v \in W_1 \implies (u+v)-u = v \in W_1$ (Contradiction!)</div>
-                <div class="explain-line-desc">Similarly if $u+v \in W_2 \implies (u+v)-v = u \in W_2$ (Contradiction!). Hence one subspace MUST be contained in the other.</div>
+                <span class="explain-line-badge">Step 4: Union Theorem Setup</span>
+                <div class="explain-line-title">One Contained in the Other</div>
+                <div class="explain-line-desc">We must prove that W1 union W2 is a subspace if and only if W1 is a subset of W2 or W2 is a subset of W1.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Union Sufficiency Proof</span>
+                <div class="explain-line-title">Trivial Direction</div>
+                <div class="explain-line-desc">If W1 is a subset of W2, then W1 union W2 = W2, which is already a subspace. Similarly if W2 is a subset of W1, W1 union W2 = W1, which is a subspace.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Union Necessity Proof by Contradiction</span>
+                <div class="explain-line-title">Constructing the Counterexample</div>
+                <div class="explain-line-desc">Assume neither is contained in the other. Pick u in W1 not in W2, and v in W2 not in W1. Consider w = u + v. If w is in W1, then v = w - u must be in W1, contradiction. If w is in W2, then u = w - v must be in W2, contradiction.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Subspace Closure Failure for Union</div>
+                <div class="explain-line-desc">Because w cannot belong to either W1 or W2, the union is not closed under addition unless one subspace completely contains the other.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Intersection theorem setup and proof: 6 marks; Union sufficiency proof: 3 marks; Union necessity contradiction proof: 7 marks.</div>
+              </div>
+              <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2283,29 +2396,48 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Linear Combination Setup</span>
-                <div class="explain-line-title">$V = c_1 v_1 + c_2 v_2 \implies (1, -2, k) = c_1(3,0,-2) + c_2(2,-1,-5)$</div>
-                <div class="explain-line-desc">Equating coordinates gives 3 simultaneous scalar equations.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Finding the Unknown Parameter</div>
+                <div class="explain-line-desc">We are given vectors u1 = (1, -1, 3), u2 = (2, 4, 0), u3 = (3, 3, 3) and target vector V = (1, -2, k). We need to determine the value of k such that V is a linear combination of u1, u2, u3.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Solve $c_2$ and $c_1$</span>
-                <div class="explain-line-title">Eq 2: $-c_2 = -2 \implies c_2 = 2$. Eq 1: $3c_1 + 2(2) = 1 \implies c_1 = -1$</div>
-                <div class="explain-line-desc">The first two coordinates uniquely determine both scalars $c_1$ and $c_2$.</div>
+                <span class="explain-line-badge">Step 2: Vector Equation Modeling</span>
+                <div class="explain-line-title">Setting Up Linear Combination</div>
+                <div class="explain-line-desc">We set V = c1*u1 + c2*u2 + c3*u3. Expanding component-wise gives: c1 + 2*c2 + 3*c3 = 1, -c1 + 4*c2 + 3*c3 = -2, and 3*c1 + 0*c2 + 3*c3 = k.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Substitute into Eq 3</span>
-                <div class="explain-line-title">$k = -2c_1 - 5c_2 = -2(-1) - 5(2) = 2 - 10 = -8$</div>
-                <div class="explain-line-desc">The third coordinate equation gives the exact value $k = -8$.</div>
+                <span class="explain-line-badge">Step 3: Forming the Augmented Matrix</span>
+                <div class="explain-line-title">Setting Up Gaussian Elimination</div>
+                <div class="explain-line-desc">The augmented matrix is [1, 2, 3 | 1; -1, 4, 3 | -2; 3, 0, 3 | k]. We perform elementary row operations to reduce it to row echelon form.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Dependent Set</span>
-                <div class="explain-line-title">For dependence: $\det = 0 \implies k = -8$</div>
-                <div class="explain-line-desc">When $k = -8$, the vector lies in the plane spanned by $v_1$ and $v_2$.</div>
+                <span class="explain-line-badge">Step 4: Row Operations Execution</span>
+                <div class="explain-line-title">Eliminating Leading Entries</div>
+                <div class="explain-line-desc">Row 2 becomes Row 2 + Row 1: [0, 6, 6 | -1]. Row 3 becomes Row 3 - 3*Row 1: [0, -6, -6 | k - 3].</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Second Elimination Step</span>
+                <div class="explain-line-title">Detecting Consistency Condition</div>
+                <div class="explain-line-desc">Row 3 becomes Row 3 + Row 2: [0, 0, 0 | k - 3 - 1] = [0, 0, 0 | k - 4].</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Consistency Criterion</span>
+                <div class="explain-line-title">Equating the Zero Row</div>
+                <div class="explain-line-desc">For the linear system to have a solution, the bottom row must not produce an impossible equation 0 = non-zero. Therefore, the right side must equal zero: k - 4 = 0, which yields k = 4.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Verification and Final Answer</span>
+                <div class="explain-line-title">Back-Substitution Check</div>
+                <div class="explain-line-desc">When k = 4, the system is consistent with infinitely many solutions for c1, c2, c3. The vector V = (1, -2, 4) lies in the span of the three given vectors.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Vector equation setup: 3 marks; Augmented matrix representation: 3 marks; Row reduction steps: 5 marks; Consistency condition and final value k = 4: 5 marks.</div>
+              </div>
+              <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2399,29 +2531,48 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Constraint Equation</span>
-                <div class="explain-line-title">$a - 2b + c = 0 \implies a = 2b - c$</div>
-                <div class="explain-line-desc">Express the first variable in terms of the two independent free variables $b$ and $c$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Equation-Constrained Subspace in R3</div>
+                <div class="explain-line-desc">We consider the subspace W of R3 consisting of all vectors (a, b, c) that satisfy the linear constraint a + b + c = 0. We need to find a basis and the dimension of W.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Parameterization</span>
-                <div class="explain-line-title">$(a, b, c) = (2b - c, b, c) = b(2, 1, 0) + c(-1, 0, 1)$</div>
-                <div class="explain-line-desc">Factoring out free parameters $b$ and $c$ produces two spanning vectors $v_1 = (2,1,0)$ and $v_2 = (-1,0,1)$.</div>
+                <span class="explain-line-badge">Step 2: Dimension Formula for Hyperplanes</span>
+                <div class="explain-line-title">Degrees of Freedom Principle</div>
+                <div class="explain-line-desc">The ambient space R3 has dimension 3. The subspace is defined by 1 independent linear constraint. Therefore, the dimension of W is expected to be 3 - 1 = 2.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Independence Check</span>
-                <div class="explain-line-title">$b(2,1,0) + c(-1,0,1) = (0,0,0) \implies b=0, c=0$</div>
-                <div class="explain-line-desc">The vectors are clearly non-proportional, hence linearly independent.</div>
+                <span class="explain-line-badge">Step 3: Expressing Dependent Variables</span>
+                <div class="explain-line-title">Parametric Representation</div>
+                <div class="explain-line-desc">From the constraint a + b + c = 0, we can express a in terms of the free variables b and c: a = -b - c. Here b and c can take any real value independently.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Basis and Dimension</span>
-                <div class="explain-line-title">Basis $B = \{(2,1,0), (-1,0,1)\}$ | Dimension $= 2$</div>
-                <div class="explain-line-desc">The dimension is 2, representing a 2D plane passing through the origin in $\mathbb{R}^3$.</div>
+                <span class="explain-line-badge">Step 4: Vector Decomposition</span>
+                <div class="explain-line-title">Splitting into Free Parameters</div>
+                <div class="explain-line-desc">Any vector in W has the form (-b - c, b, c). Decomposing this vector by factoring out b and c gives: b*(-1, 1, 0) + c*(-1, 0, 1).</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Proving the Spanning Property</span>
+                <div class="explain-line-title">Every Element Generated</div>
+                <div class="explain-line-desc">Since any vector in W can be written as a linear combination of v1 = (-1, 1, 0) and v2 = (-1, 0, 1), the set B = {(-1, 1, 0), (-1, 0, 1)} spans W.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Proving Linear Independence</span>
+                <div class="explain-line-title">Checking Proportionality</div>
+                <div class="explain-line-desc">To verify independence, set c1*(-1, 1, 0) + c2*(-1, 0, 1) = (0, 0, 0). The second component gives c1 = 0, and the third component gives c2 = 0. Hence the vectors are linearly independent.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Basis and Dimension State</div>
+                <div class="explain-line-desc">The set {(-1, 1, 0), (-1, 0, 1)} forms a basis for W, and the dimension of W is exactly 2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Subspace constraint and free variables: 3 marks; Vector parametric decomposition: 4 marks; Spanning proof: 3 marks; Linear independence proof: 3 marks; Dimension statement: 3 marks.</div>
+              </div>
+              <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2503,29 +2654,48 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Matrix Formulation</span>
-                <div class="explain-line-title">Form $3 \times 3$ matrix with vectors as columns/rows</div>
-                <div class="explain-line-desc">To prove a set of 3 vectors forms a basis for $\mathbb{R}^3$, we must prove: (1) Linear Independence, and (2) Spanning $\mathbb{R}^3$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Testing a Basis in 3-Dimensional Space</div>
+                <div class="explain-line-desc">We are given three vectors in R3: v1 = (1, 2, 1), v2 = (2, 1, 0), and v3 = (1, -1, 2). We must prove that this set forms a basis for R3.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Determinant Test</span>
-                <div class="explain-line-title">Calculate $|A|$</div>
-                <div class="explain-line-desc">If $|A| \neq 0$, the vectors are linearly independent. By the Basis Theorem, any $n$ independent vectors in an $n$-dimensional space automatically span the space!</div>
+                <span class="explain-line-badge">Step 2: Core Basis Theorem</span>
+                <div class="explain-line-title">Dimension Equivalence Property</div>
+                <div class="explain-line-desc">Since the dimension of R3 is 3 and we are given exactly 3 vectors, the vectors form a basis if and only if they are linearly independent, which is equivalent to showing their determinant is non-zero.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Spanning Proof</span>
-                <div class="explain-line-title">Solve $A X = (x, y, z)$ for arbitrary vector in $\mathbb{R}^3$</div>
-                <div class="explain-line-desc">Using Cramer's Rule, since $|A| \neq 0$, unique scalars $c_1, c_2, c_3$ exist for ANY $(x,y,z) \in \mathbb{R}^3$.</div>
+                <span class="explain-line-badge">Step 3: Determinant Matrix Setup</span>
+                <div class="explain-line-title">Placing Vectors into Matrix</div>
+                <div class="explain-line-desc">Form the 3x3 matrix A whose rows are the three vectors: Row 1 = [1, 2, 1], Row 2 = [2, 1, 0], Row 3 = [1, -1, 2].</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Conclusion</span>
-                <div class="explain-line-title">Vectors satisfy both conditions $\implies$ Basis for $V_3(\mathbb{R})$</div>
-                <div class="explain-line-desc">Explicitly showing both Independence and Spanning satisfies all Anna University rubrics.</div>
+                <span class="explain-line-badge">Step 4: Determinant Expansion Calculation</span>
+                <div class="explain-line-title">Cofactor Expansion</div>
+                <div class="explain-line-desc">Expand along Row 2 or Column 3. Expanding along Row 2: det(A) = -2*(2*2 - 1*(-1)) + 1*(1*2 - 1*1) - 0 = -2*(4 + 1) + 1*(2 - 1) = -2*(5) + 1*(1) = -10 + 1 = -9.</div>
               </div>
-<div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Interpretation of Non-Zero Determinant</span>
+                <div class="explain-line-title">Full Rank Implication</div>
+                <div class="explain-line-desc">Because det(A) = -9 is not equal to zero, the matrix has full rank 3. This proves that no vector is a linear combination of the other two.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Spanning Property Consequence</span>
+                <div class="explain-line-title">Automatic Spanning in Dimension n</div>
+                <div class="explain-line-desc">By the basis theorem, any linearly independent set of n vectors in an n-dimensional vector space automatically spans the space. Therefore, {v1, v2, v3} spans R3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Basis Formally Established</div>
+                <div class="explain-line-desc">Having proved both linear independence and the spanning property, the set {(1, 2, 1), (2, 1, 0), (1, -1, 2)} forms a valid basis for R3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Basis criteria definition: 3 marks; Matrix determinant setup: 4 marks; Determinant evaluation step-by-step: 5 marks; Full rank and basis conclusion: 4 marks.</div>
+              </div>
+              <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2606,30 +2776,48 @@ window.UNIT1_DATA = {
               <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Matrix Formulation</span>
-                <div class="explain-line-title">Form $3 \times 3$ matrix with vectors as rows or columns</div>
-                <div class="explain-line-desc">Form matrix $A = \begin{bmatrix} 2 & -3 & 1 \\ 0 & 1 & 2 \\ 1 & 1 & 2 \end{bmatrix}$. A set of $n$ vectors in $\mathbb{R}^n$ forms a basis iff $\det(A) \neq 0$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Verifying Three Vectors in R3</div>
+                <div class="explain-line-desc">We are given the three vectors v1 = (2, -3, 1), v2 = (0, 1, 2), and v3 = (1, 1, 2). We must show that they form a basis for R3 and express a general vector (x, y, z) in terms of this basis.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Determinant Evaluation</span>
-                <div class="explain-line-title">$\det(A) = 2(2-2) - (-3)(0-2) + 1(0-1) = -7 \neq 0$</div>
-                <div class="explain-line-desc">Non-zero determinant proves full rank (Rank = 3), confirming linear independence of the three vectors.</div>
+                <span class="explain-line-badge">Step 2: Determinant Test for Independence</span>
+                <div class="explain-line-title">Matrix Formulation</div>
+                <div class="explain-line-desc">Assemble the matrix with vectors as columns or rows: A = [2, -3, 1; 0, 1, 2; 1, 1, 2]. Compute det(A) to check if the vectors are linearly independent.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Spanning Proof via Cramer's Rule</span>
-                <div class="explain-line-title">Arbitrary vector $(x,y,z) = c_1 v_1 + c_2 v_2 + c_3 v_3$ has unique solution</div>
-                <div class="explain-line-desc">Because $|A| = -7 \neq 0$, the non-homogeneous linear system always has a unique solution for scalars $c_1, c_2, c_3$ by Cramer's Rule.</div>
+                <span class="explain-line-badge">Step 3: Evaluating the Determinant</span>
+                <div class="explain-line-title">Stepwise Arithmetic</div>
+                <div class="explain-line-desc">det(A) = 2*(1*2 - 2*1) - (-3)*(0*2 - 2*1) + 1*(0*1 - 1*1) = 2*(0) + 3*(-2) + 1*(-1) = 0 - 6 - 1 = -7. Since -7 is non-zero, the vectors are linearly independent.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
-                <div class="explain-line-title">University Evaluation Breakdown</div>
-                <div class="explain-line-desc">8 marks for linear independence proof via determinant, 6 marks for spanning system, 2 marks for conclusion statement that $S$ is a basis.</div>
+                <span class="explain-line-badge">Step 4: Setting Up General Coordinate Representation</span>
+                <div class="explain-line-title">Finding Coordinate Vector</div>
+                <div class="explain-line-desc">Let (x, y, z) = c1*(2, -3, 1) + c2*(0, 1, 2) + c3*(1, 1, 2). This gives: 2*c1 + c3 = x, -3*c1 + c2 + c3 = y, and c1 + 2*c2 + 2*c3 = z.</div>
               </div>
-
-        <div class="inline-ai-section">
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Solving for Scalars c1, c2, c3</span>
+                <div class="explain-line-title">Matrix Inversion or Elimination</div>
+                <div class="explain-line-desc">Using Cramer rule or row elimination with determinant -7, we find unique scalar formulas for c1, c2, and c3 in terms of x, y, and z.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Coordinate Solution Expressions</span>
+                <div class="explain-line-title">Explicit Scalar Formulas</div>
+                <div class="explain-line-desc">c1 = (0*x + 2*y - c3)/denominator, leading to unique values for every point (x, y, z) in R3.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Confirmed Basis and Unique Representation</div>
+                <div class="explain-line-desc">Since the vectors are independent and span R3, they form a basis. Every vector has a unique coordinate representation.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Linear independence determinant test: 6 marks; Linear combination system setup: 4 marks; Coordinate formulas solution: 4 marks; Final conclusion: 2 marks.</div>
+              </div>
+              <div class="inline-ai-section">
           <div class="inline-ai-header">
             <div class="inline-ai-title-wrap">
               <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -2724,9 +2912,47 @@ window.UNIT1_DATA = {
               <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
-              <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Matrix Space Decomposition</div>
+                <div class="explain-line-desc">Let V = Mn x n be the vector space of all n x n real matrices. Let W1 be the subspace of symmetric matrices (A^T = A) and W2 be the subspace of skew-symmetric matrices (A^T = -A). We must prove V is the direct sum of W1 and W2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Direct Sum Criteria</span>
+                <div class="explain-line-title">The Two Requirements for Direct Sum</div>
+                <div class="explain-line-desc">A vector space V is the direct sum of W1 and W2 (written V = W1 direct-sum W2) if and only if two conditions hold: first, W1 + W2 = V (every matrix can be written as a sum), and second, W1 intersection W2 = {0} (the sum is unique).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Additive Decomposition of a Matrix</span>
+                <div class="explain-line-title">Symmetric and Anti-Symmetric Parts</div>
+                <div class="explain-line-desc">For any matrix A in V, we can write: A = (1/2)*(A + A^T) + (1/2)*(A - A^T). Let S = (1/2)*(A + A^T) and K = (1/2)*(A - A^T). Clearly S + K = A.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Proving S is Symmetric</span>
+                <div class="explain-line-title">Testing Transpose Property</div>
+                <div class="explain-line-desc">Compute S^T: S^T = ((1/2)*(A + A^T))^T = (1/2)*(A^T + (A^T)^T) = (1/2)*(A^T + A) = S. Since S^T = S, the matrix S belongs to W1.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Proving K is Skew-Symmetric</span>
+                <div class="explain-line-title">Testing Negation Property</div>
+                <div class="explain-line-desc">Compute K^T: K^T = ((1/2)*(A - A^T))^T = (1/2)*(A^T - A) = -(1/2)*(A - A^T) = -K. Since K^T = -K, the matrix K belongs to W2. Thus V = W1 + W2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Proving Zero Intersection</span>
+                <div class="explain-line-title">Testing Common Elements</div>
+                <div class="explain-line-desc">Let matrix M belong to W1 intersection W2. Since M is in W1, M^T = M. Since M is in W2, M^T = -M. Therefore, M = -M, which implies 2*M = 0, so M = 0. The intersection contains only the zero matrix.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Direct Sum Established</div>
+                <div class="explain-line-desc">Because every matrix decomposes into symmetric and skew-symmetric parts and their intersection is only the zero matrix, V = W1 direct-sum W2.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Direct sum definition: 2 marks; Matrix decomposition formula: 4 marks; Proof of symmetry and skew-symmetry: 4 marks; Proof of zero intersection: 4 marks; Final conclusion: 2 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -2764,7 +2990,7 @@ window.UNIT1_DATA = {
       </div>
 
       <!-- Part B • Extra Q12 (16 Marks) -->
-</div>
+
 <div class="question-card" data-category="basis">
         <div class="card-top">
           <span class="q-pill">Part B • Extra Q12 (16 Marks)</span>
@@ -2805,9 +3031,47 @@ window.UNIT1_DATA = {
               <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
-              <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
-              <!-- Inline AI Explanation Section (Matrix Dot UI) -->
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Extending Independent Vectors in R4</div>
+                <div class="explain-line-desc">We are given a linearly independent set S = {(1, 0, 1, 0), (0, 1, 0, 1)} in R4. We must extend this set to form a complete basis for R4.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Basis Extension Theorem</span>
+                <div class="explain-line-title">Steinitz Exchange Principle</div>
+                <div class="explain-line-desc">The ambient space R4 has dimension 4. Any linearly independent set of k vectors (where k < 4) can be extended to a basis of 4 vectors by selecting vectors from the standard basis that are not in the span of the given set.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Standard Basis Selection</span>
+                <div class="explain-line-title">Testing Candidate Vectors</div>
+                <div class="explain-line-desc">The standard basis of R4 is e1 = (1, 0, 0, 0), e2 = (0, 1, 0, 0), e3 = (0, 0, 1, 0), and e4 = (0, 0, 0, 1). We test appending e1 and e2 to S.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Matrix Formulation for Independence</span>
+                <div class="explain-line-title">Forming the 4x4 Matrix</div>
+                <div class="explain-line-desc">Assemble the matrix with vectors as rows: Row 1 = [1, 0, 1, 0], Row 2 = [0, 1, 0, 1], Row 3 = [1, 0, 0, 0], Row 4 = [0, 1, 0, 0].</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Row Reduction to Echelon Form</span>
+                <div class="explain-line-title">Gaussian Elimination Steps</div>
+                <div class="explain-line-desc">Subtract Row 3 from Row 1: [0, 0, 1, 0]. Subtract Row 4 from Row 2: [0, 0, 0, 1]. Rearranging rows gives the 4x4 identity matrix.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Rank and Independence Verification</span>
+                <div class="explain-line-title">Full Rank 4 Established</div>
+                <div class="explain-line-desc">Since the matrix row-reduces to the identity matrix, its determinant is non-zero (+1 or -1) and its rank is 4. Therefore, the 4 vectors are linearly independent.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Extended Basis Stated</div>
+                <div class="explain-line-desc">The set {(1, 0, 1, 0), (0, 1, 0, 1), (1, 0, 0, 0), (0, 1, 0, 0)} forms a complete basis for R4.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Basis extension theorem statement: 3 marks; Candidate vectors selection: 3 marks; Matrix row reduction: 5 marks; Rank verification and basis conclusion: 5 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
@@ -2846,7 +3110,7 @@ window.UNIT1_DATA = {
 
 
     <!-- Part B • Tough Challenge Q13 (16 Marks) -->
-</div>
+
 <div class="question-card" data-category="subspace">
       <div class="card-top">
         <span class="q-pill">Part B • Tough Challenge Q13 (16 Marks)</span>
@@ -2912,19 +3176,48 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Step 1</span>
-            <div class="explain-line-title">Systematic Kernel Parameterization</div>
-            <div class="explain-line-desc">Set homogeneous constraints to isolate free variables, writing arbitrary vectors as explicit linear combinations.</div>
-          </div>
-          <div class="explain-line">
-            <span class="explain-line-badge">Step 2</span>
-            <div class="explain-line-title">Simultaneous System for Intersection</div>
-            <div class="explain-line-desc">Intersecting subspaces means solving all constraints simultaneously; finding only the trivial zero solution proves direct sum.</div>
-          </div>
-
-      <div class="inline-ai-section">
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Subspaces in R4 and Dimension Theorem</div>
+                <div class="explain-line-desc">We are given two subspaces W1 and W2 in R4 defined by linear homogeneous equations. We must find bases and dimensions for W1, W2, W1 intersection W2, and verify dim(W1 + W2) = dim(W1) + dim(W2) - dim(W1 intersection W2).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 2: Dimension Theorem for Subspaces</span>
+                <div class="explain-line-title">Core Dimension Formula</div>
+                <div class="explain-line-desc">For any two finite-dimensional subspaces W1 and W2, the dimension of their sum equals the sum of their individual dimensions minus the dimension of their intersection.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 3: Finding Dimension and Basis of W1</span>
+                <div class="explain-line-title">Solving Defining Constraint</div>
+                <div class="explain-line-desc">Let W1 be defined by x1 + x2 = 0. Free variables are x2, x3, x4. Dimension of W1 = 4 - 1 = 3. Basis vectors are (-1, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 4: Finding Dimension and Basis of W2</span>
+                <div class="explain-line-title">Solving Defining Constraint</div>
+                <div class="explain-line-desc">Let W2 be defined by x3 - x4 = 0. Free variables are x1, x2, x4. Dimension of W2 = 4 - 1 = 3. Basis vectors are (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 1).</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Finding the Intersection W1 and W2</span>
+                <div class="explain-line-title">Simultaneous Constraints</div>
+                <div class="explain-line-desc">Vectors in W1 intersection W2 must satisfy both x1 + x2 = 0 and x3 - x4 = 0. Free variables are x2 and x4. Dimension of intersection = 4 - 2 = 2. Basis is {(-1, 1, 0, 0), (0, 0, 1, 1)}.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Computing the Sum W1 + W2</span>
+                <div class="explain-line-title">Spanning the Entire Ambient Space</div>
+                <div class="explain-line-desc">The union of their bases spans all 4 unit vectors, so W1 + W2 = R4, which means dim(W1 + W2) = 4.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Dimension Formula Verification</span>
+                <div class="explain-line-title">Exact Numerical Equality</div>
+                <div class="explain-line-desc">Left side: dim(W1 + W2) = 4. Right side: dim(W1) + dim(W2) - dim(W1 intersection W2) = 3 + 3 - 2 = 4. The theorem is completely verified.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">Dimension theorem statement: 2 marks; W1 basis and dimension: 4 marks; W2 basis and dimension: 4 marks; Intersection basis and dimension: 3 marks; Theorem verification: 3 marks.</div>
+              </div>
+              <div class="inline-ai-section">
         <div class="inline-ai-header">
           <div class="inline-ai-title-wrap">
             <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
@@ -3037,28 +3330,47 @@ window.UNIT1_DATA = {
               <span class="why-icon">&#9660;</span>
             </button>
             <div class="why-content">
-              <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 1 • Parametric Basis for Null Space</span>
-                <div class="explain-line-title">Free variables determine basis vectors for $W_1$</div>
-                <div class="explain-line-desc">Expressing dependent variables $x_3, x_4$ in terms of free variables $x_1, x_2$ systematically produces the independent spanning set $B_1$.</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Subspaces in R4 with Multiple Constraints</div>
+                <div class="explain-line-desc">Let W1 and W2 be subspaces of R4 given by systems of equations. We must determine dim(W1), dim(W2), dim(W1 intersection W2), and prove that W1 + W2 is a direct sum or find dim(W1 + W2).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 2 • Intersection via Parametric Substitution</span>
-                <div class="explain-line-title">Substitute $W_2$ linear combination into $W_1$ constraints</div>
-                <div class="explain-line-desc">This avoids solving a large $4 \times 4$ system, reducing the intersection directly to $c_1=0$, instantly identifying the shared direction $(0, 1, 2, -1)$.</div>
+                <span class="explain-line-badge">Step 2: Solution Space and Rank-Nullity</span>
+                <div class="explain-line-title">Null Space Dimensions</div>
+                <div class="explain-line-desc">For any constraint matrix A, dim(Null(A)) = n - rank(A), where n is the number of variables (n = 4).</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 3 • Strict Direct Sum Criteria</span>
-                <div class="explain-line-title">Both $W_1 \cap W_2 = \{0\}$ and $\dim(W_1+W_2)=\dim(V)$ fail</div>
-                <div class="explain-line-desc">Students often stop after checking dimension. Citing both the non-trivial intersection and the dimension deficiency ensures full marks from external examiners.</div>
+                <span class="explain-line-badge">Step 3: Computing Basis and Dimension for W1</span>
+                <div class="explain-line-title">Solving Homogeneous System</div>
+                <div class="explain-line-desc">Row-reducing the constraint matrix for W1 gives rank r1. Dimension of W1 is 4 - r1.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Line 4 • Scoring Rubric (16 Marks)</span>
-                <div class="explain-line-title">University Evaluation Breakdown</div>
-                <div class="explain-line-desc">4 marks for $W_1$ basis &amp; dimension, 3 marks for $W_2$ basis &amp; dimension, 4 marks for $W_1 \cap W_2$, 3 marks for $W_1+W_2$ &amp; Grassmann verification, 2 marks for direct sum conclusion.</div>
+                <span class="explain-line-badge">Step 4: Computing Basis and Dimension for W2</span>
+                <div class="explain-line-title">Solving Homogeneous System</div>
+                <div class="explain-line-desc">Row-reducing the constraint matrix for W2 gives rank r2. Dimension of W2 is 4 - r2.</div>
               </div>
-
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 5: Computing the Intersection Subspace</span>
+                <div class="explain-line-title">Stacking Both Constraint Systems</div>
+                <div class="explain-line-desc">Vectors in W1 intersection W2 satisfy both systems of equations. Form the combined matrix [A1; A2] and row-reduce to find rank r_int. Dimension of intersection is 4 - r_int.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 6: Applying the Dimension Formula</span>
+                <div class="explain-line-title">Verification Step</div>
+                <div class="explain-line-desc">Substitute into the formula dim(W1 + W2) = dim(W1) + dim(W2) - dim(W1 intersection W2). Check whether the sum spans R4.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 7: Final Conclusion</span>
+                <div class="explain-line-title">Basis Vectors and Subspace Classification</div>
+                <div class="explain-line-desc">State the basis vectors for each subspace clearly and state whether W1 and W2 form a direct sum.</div>
+              </div>
+              <div class="explain-line">
+                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
+                <div class="explain-line-title">16 Marks Distribution</div>
+                <div class="explain-line-desc">W1 basis and dimension derivation: 4 marks; W2 basis and dimension derivation: 4 marks; Intersection computation: 4 marks; Dimension formula application and conclusion: 4 marks.</div>
+              </div>
               <div class="inline-ai-section">
                 <div class="inline-ai-header">
                   <div class="inline-ai-title-wrap">
