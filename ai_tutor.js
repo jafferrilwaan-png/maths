@@ -203,23 +203,39 @@ Chatbot & Tutoring Instructions:
     history.appendChild(loadingMsg);
     history.scrollTop = history.scrollHeight;
 
-    let contextPrompt = `Course: Linear Algebra and Numerical Analysis (23MA1302)\n`;
-    if (qTitle) contextPrompt += `Problem: ${qTitle}\n`;
-    if (qSolution) contextPrompt += `Reference Material/Working:\n${qSolution.substring(0, 600)}\n`;
+    const trimmedQuery = query.trim();
+    const isGreeting = /^(hi|hello|hey|hola|good\s*(morning|afternoon|evening)|sup)\b/i.test(trimmedQuery);
 
-    if (priorMsgs.length > 0) {
-      contextPrompt += `\nPrior Discussion in this Thread:\n`;
-      priorMsgs.slice(-4).forEach(m => {
-        contextPrompt += `${m.role === 'student' ? 'Student' : 'Tutor'}: ${m.text}\n`;
-      });
-    }
+    let contextPrompt = '';
+    if (isGreeting) {
+      contextPrompt = `The student greeted: "${trimmedQuery}".
+Respond warmly, politely, and naturally as an expert, approachable mathematics tutor for course 23MA1302 (Linear Algebra and Numerical Analysis). Ask how you can help them with their studies or questions today. Do NOT force or mention any specific problem unless they ask.`;
+    } else {
+      contextPrompt = `Student's Question / Doubt: "${trimmedQuery}"\n\n`;
 
-    contextPrompt += `\nStudent's Latest Doubt/Message: "${query}"\n\n`;
-    contextPrompt += `Tutor Action Required:
-- Directly address the student's doubt.
-- If they express confusion, say they don't understand, or ask for simple terms, explain the underlying intuition, geometric/physical concept, and step-by-step logic in plain, easy-to-understand terms so it clicks!
-- If they ask for steps or calculations, provide complete, fully worked-out mathematics without truncation.
+      if (priorMsgs.length > 0) {
+        contextPrompt += `Prior Thread Context:\n`;
+        priorMsgs.slice(-4).forEach(m => {
+          contextPrompt += `${m.role === 'student' ? 'Student' : 'Tutor'}: ${m.text}\n`;
+        });
+        contextPrompt += `\n`;
+      }
+
+      if (qTitle) {
+        contextPrompt += `Card Context (only use if relevant to student's query):
+Topic: ${qTitle}\n`;
+      }
+      if (qSolution && (trimmedQuery.toLowerCase().includes('step') || trimmedQuery.toLowerCase().includes('this') || trimmedQuery.toLowerCase().includes('problem') || trimmedQuery.toLowerCase().includes('solution') || trimmedQuery.toLowerCase().includes('why') || trimmedQuery.toLowerCase().includes('explain'))) {
+        contextPrompt += `Card Working:\n${qSolution.substring(0, 500)}\n\n`;
+      }
+
+      contextPrompt += `Instructions for AI Tutor:
+- Answer the student's EXACT question above directly.
+- Do NOT force unrelated topics (such as subspace or specific card problems) if the student asked something else.
+- If the student says they don't understand, asks for simpler terms, or asks why, explain clearly using intuitive language, geometric meaning, and relatable concepts first so it clicks immediately.
+- If the student asks for calculations, proofs, or formulas, provide the full, complete step-by-step mathematical working without truncating.
 - Strictly genuine AI response only, zero fake text.`;
+    }
 
     try {
       const responseText = await callAIWithCascade(contextPrompt);
