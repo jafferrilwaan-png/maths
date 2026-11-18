@@ -102,9 +102,10 @@ Core Guidelines:
      - If they ask something simple, give a simple, direct, straightforward answer.
      - If they ask something complex, or say they don't understand, patiently break it down, use intuitive explanations and analogies, and try your best to make them truly understand.
      - If they ask for derivations, proofs, or calculations, provide the complete, step-by-step mathematical working without truncating.
-3. Clean Formatting:
+3. Clean Formatting & Reasoning:
    - Format all mathematical expressions using clean LaTeX ($...$ inline, $$...$$ display).
-   - Do not output internal thinking processes, scratchpad logs, or <think> tags. All responses should be your genuine, helpful assistance.`;
+   - If you engage in step-by-step reasoning or internal scratchpad deduction, enclose it inside <think>...</think> tags so it can be neatly placed in the Reasoning section.
+   - Provide your final tutor answer cleanly outside <think> tags.`;
 
   function buildModelSelectHTML(currentModel) {
     let html = `<optgroup label="Direct Google Gemini Production Cascade">`;
@@ -189,7 +190,8 @@ Core Guidelines:
         const txt = el.querySelector('.inline-ai-bubble')?.innerText?.trim();
         if (txt) priorMsgs.push({ role: 'student', text: txt });
       } else if (el.classList.contains('inline-ai-msg-bot') && !el.querySelector('.ai-analyzing-bubble') && !el.querySelector('.inline-ai-error')) {
-        const txt = el.querySelector('.inline-ai-bubble')?.innerText?.trim();
+        const bodyEl = el.querySelector('.ai-response-body') || el.querySelector('.inline-ai-bubble');
+        const txt = bodyEl?.innerText?.trim();
         if (txt) priorMsgs.push({ role: 'tutor', text: txt.substring(0, 500) });
       }
     });
@@ -239,10 +241,12 @@ Core Guidelines:
 - If they ask for working, derivations, or calculations, provide complete, step-by-step mathematical working without truncating.`;
 
     try {
-      const responseText = await callAIWithCascade(contextPrompt);
+      const aiResult = await callAIWithCascade(contextPrompt);
+      const responseText = (typeof aiResult === 'object' && aiResult !== null) ? aiResult.text : aiResult;
+      const reasoningText = (typeof aiResult === 'object' && aiResult !== null) ? aiResult.reasoning : '';
       const target = document.getElementById(loadingId);
       if (target) {
-        target.innerHTML = `<div class="inline-ai-bubble">${formatResponse(responseText)}</div>`;
+        target.innerHTML = `<div class="inline-ai-bubble">${formatResponse(responseText, reasoningText)}</div>`;
         if (window.renderMathInElement) {
           renderMathInElement(target, {
             delimiters: [
@@ -320,9 +324,28 @@ Core Guidelines:
 
         if (res.ok) {
           const data = await res.json();
-          let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          let rawText = '';
+          let reasoning = '';
+          const parts = data.candidates?.[0]?.content?.parts || [];
+          for (const part of parts) {
+            if (part.thought) {
+              reasoning += (reasoning ? '\n' : '') + part.text;
+            } else if (part.text) {
+              rawText += part.text;
+            }
+          }
+          if (!rawText && reasoning) {
+            rawText = reasoning;
+            reasoning = '';
+          }
+          const extracted = extractThinking(rawText);
+          if (extracted.reasoning) {
+            reasoning = reasoning ? (reasoning + '\n' + extracted.reasoning) : extracted.reasoning;
+          }
+          rawText = extracted.text;
+
           if (rawText) {
-            return cleanAIOutput(rawText);
+            return { text: cleanAIOutput(rawText), reasoning: cleanAIOutput(reasoning) };
           }
         }
         if (res.status === 429) {
@@ -373,12 +396,20 @@ Core Guidelines:
         if (res.ok) {
           const data = await res.json();
           const choice = data.choices?.[0];
-          let rawText = choice?.message?.content;
-          if (!rawText && choice?.message?.reasoning) {
-            rawText = choice.message.reasoning;
+          let rawText = choice?.message?.content || '';
+          let reasoning = choice?.message?.reasoning || '';
+          if (!rawText && reasoning) {
+            rawText = reasoning;
+            reasoning = '';
           }
+          const extracted = extractThinking(rawText);
+          if (extracted.reasoning) {
+            reasoning = reasoning ? (reasoning + '\n' + extracted.reasoning) : extracted.reasoning;
+          }
+          rawText = extracted.text;
+
           if (rawText) {
-            return cleanAIOutput(rawText);
+            return { text: cleanAIOutput(rawText), reasoning: cleanAIOutput(reasoning) };
           }
         }
         if (res.status === 429) {
@@ -392,13 +423,37 @@ Core Guidelines:
     throw lastError || new Error("Connection busy.");
   }
 
+  function extractThinking(text) {
+    if (!text) return { text: '', reasoning: '' };
+    let content = text;
+    let reasoning = '';
+
+    const tagMatch = content.match(/<(?:think|thought|reasoning)>([\s\S]*?)<\/(?:think|thought|reasoning)>/i);
+    if (tagMatch) {
+      reasoning = tagMatch[1].trim();
+      content = content.replace(/<(?:think|thought|reasoning)>[\s\S]*?<\/(?:think|thought|reasoning)>/gi, '').trim();
+    }
+
+    const tpMatch = content.match(/^(?:Here's a thinking process:|Thinking Process:)\s*\n([\s\S]*?)(?=\n\n(?:[A-Z0-9#*]|\b(?:To|Let|Given|We|Step|Solution|Answer)\b)|$)/i);
+    if (tpMatch && !reasoning) {
+      reasoning = tpMatch[1].trim();
+      content = content.substring(tpMatch[0].length).trim();
+    }
+
+    return { text: content, reasoning };
+  }
+
   function cleanAIOutput(text) {
     if (!text) return "";
     let cleaned = text;
-
-    cleaned = cleaned.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+    cleaned = cleaned.replace(/<(?:think|thought|reasoning)>[\s\S]*?<\/(?:think|thought|reasoning)>/gi, '').trim();
 
     if (cleaned.startsWith("Here's a thinking process:")) {
+      const doubleBreak = cleaned.indexOf("\n\n");
+      if (doubleBreak !== -1) {
+        cleaned = cleaned.substring(doubleBreak + 2).trim();
+      }
+    } else if (cleaned.startsWith("Thinking Process:")) {
       const doubleBreak = cleaned.indexOf("\n\n");
       if (doubleBreak !== -1) {
         cleaned = cleaned.substring(doubleBreak + 2).trim();
@@ -408,7 +463,7 @@ Core Guidelines:
     return cleaned || text;
   }
 
-  // Auto-normalizes uppercase LaTeX syntax and wraps standalone math environments
+  // Auto-normalizes uppercase LaTeX syntax, wraps standalone math environments, and purges dangling math dollars
   function normalizeLatexSyntax(str) {
     if (!str) return '';
     let s = str;
@@ -426,7 +481,14 @@ Core Guidelines:
     s = s.replace(/\\\[([\s\S]*?)\\\]/g, '$$$$ $1 $$$$');
     s = s.replace(/\\\(([\s\S]*?)\\\)/g, '$$ $1 $$');
 
-    // 5. Normalize uppercase LaTeX commands and Greek symbols
+    // 5. Strip redundant single/double dollars immediately preceding or following environment tags
+    // e.g. "$ \begin{pmatrix}" -> "\begin{pmatrix}" and "\end{pmatrix} $" -> "\end{pmatrix}"
+    const envs = 'aligned|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|cases|array|gather|align';
+    const envList = envs + '|' + envs.split('|').map(e => e + '\\*').join('|');
+    s = s.replace(new RegExp('\\${1,2}\\s*(\\\\begin\\{(?:' + envList + ')\\})', 'gi'), '$1');
+    s = s.replace(new RegExp('(\\\\end\\{(?:' + envList + ')\\})\\s*\\${1,2}', 'gi'), '$1');
+
+    // 6. Normalize uppercase LaTeX commands and Greek symbols
     const cmdMap = {
       'ALPHA': 'alpha', 'BETA': 'beta', 'GAMMA': 'gamma', 'DELTA': 'delta',
       'EPSILON': 'epsilon', 'VAREPSILON': 'varepsilon', 'ZETA': 'zeta', 'ETA': 'eta',
@@ -460,11 +522,10 @@ Core Guidelines:
       s = s.replace(re, '\\' + l);
     }
 
-    // 6. Generic catch-all: any remaining all-caps LaTeX command with 2+ letters (\TEXT, \QUAD, \CDOT, etc.)
+    // 7. Generic catch-all: any remaining all-caps LaTeX command with 2+ letters
     s = s.replace(/\\([A-Z]{2,})(?![a-zA-Z])/g, (m, cmd) => '\\' + cmd.toLowerCase());
 
-    // 7. Auto-wrap standalone LaTeX environments in $$ ... $$ if not already delimited
-    const envs = 'aligned|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|cases|array|gather|align';
+    // 8. Auto-wrap standalone LaTeX environments in $$ ... $$ if not already delimited
     const envPattern = new RegExp('(\\\\begin\\{(?:' + envs + ')\\}[\\s\\S]*?\\\\end\\{(?:' + envs + ')\\})', 'g');
     s = s.replace(envPattern, (match, envBody, offset, fullStr) => {
       const before = fullStr.substring(Math.max(0, offset - 10), offset).trim();
@@ -474,6 +535,13 @@ Core Guidelines:
       }
       return '\n\n$$\n' + match.trim() + '\n$$\n\n';
     });
+
+    // 9. Clean dangling $ immediately before punctuation (e.g. "$. Then" -> ". Then")
+    s = s.replace(/(^|\s)\$\s*([.,;:!?])/g, '$1$2');
+    // 10. Clean trailing $ preceded by punctuation at end of line (e.g. "e.g., $" -> "e.g.,")
+    s = s.replace(/([,;:]|\be\.g\.)\s*\$\s*(?=\n|$)/g, '$1');
+    // 11. Clean empty lines with only $
+    s = s.replace(/^\s*\$\s*$/gm, '');
 
     return s;
   }
@@ -503,7 +571,7 @@ Core Guidelines:
     }
 
     // Check inline math $
-    const withoutDouble = repaired.replace(/\$\$/g, '');
+    const withoutDouble = repaired.replace(/\$\$[\s\S]*?\$\$/g, '');
     const singleDollarCount = (withoutDouble.match(/(?<!\\)\$/g) || []).length;
     if (singleDollarCount % 2 !== 0) {
       repaired += '$';
@@ -513,7 +581,7 @@ Core Guidelines:
   }
 
   // Full Rich Markdown, Table, and Prose Formatter (preserves LaTeX $...$ and $$...$$)
-  function formatResponse(text) {
+  function formatMarkdownProse(text) {
     if (!text) return "";
 
     // 0. Auto-normalize uppercase LaTeX and wrap standalone environments
@@ -522,7 +590,7 @@ Core Guidelines:
     // 1. Repair any unclosed mathematical environments first
     processed = repairUnclosedMath(processed);
 
-    // 2. Stash Math blocks ($$...$$ and $...$) so regex doesn't interfere
+    // 2. Stash valid Math blocks ($$...$$ and $...$) so markdown regex doesn't interfere
     const mathBlocks = [];
     processed = processed.replace(/\$\$[\s\S]*?\$\$/g, (match) => {
       mathBlocks.push(match);
@@ -533,7 +601,14 @@ Core Guidelines:
       return `%%%MATHBLOCK_${mathBlocks.length - 1}%%%`;
     });
 
-    // 2. Parse Markdown Tables
+    // 3. Purge any orphan / stray dollar signs that were NOT part of valid math blocks
+    processed = processed.replace(/\$/g, '');
+
+    // 4. Clean up headings:
+    // Strip bold markers enclosing heading hashes, e.g. **#### Heading** -> #### Heading
+    processed = processed.replace(/^\s*\*\*\s*(#{1,6}\s*[^*]+?)\s*\*\*\s*$/gm, '$1');
+
+    // Parse Markdown Tables
     const lines = processed.split('\n');
     const newLines = [];
     let inTable = false;
@@ -575,7 +650,7 @@ Core Guidelines:
 
     processed = newLines.join('\n');
 
-    // 3. Headings (supports # through ###### with optional leading whitespace)
+    // Headings (supports # through ###### with optional leading whitespace)
     processed = processed.replace(/^\s*######\s*(.*?)$/gm, '<h6 class="ai-h6">$1</h6>');
     processed = processed.replace(/^\s*#####\s*(.*?)$/gm, '<h5 class="ai-h5">$1</h5>');
     processed = processed.replace(/^\s*####\s*(.*?)$/gm, '<h4 class="ai-h4">$1</h4>');
@@ -583,36 +658,67 @@ Core Guidelines:
     processed = processed.replace(/^\s*##\s*(.*?)$/gm, '<h3 class="ai-h3">$1</h3>');
     processed = processed.replace(/^\s*#\s*(.*?)$/gm, '<h2 class="ai-h2">$1</h2>');
 
-    // Any remaining stray markdown header hashes at start of line
+    // Any remaining stray markdown header hashes inside tags or start of lines
+    processed = processed.replace(/<([a-z0-9]+)>#{1,6}\s*/gi, '<$1>');
     processed = processed.replace(/^\s*#{1,6}\s*/gm, '');
 
-    // 4. Horizontal Rules
+    // Horizontal Rules
     processed = processed.replace(/^---+\s*$/gm, '<hr class="ai-hr">');
 
-    // 5. Bold & Italic
+    // Bold & Italic
     processed = processed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     processed = processed.replace(/\*(.*?)\*/g, '<em>$1</em>');
 
-    // 6. Bullet lists
+    // Bullet lists
     processed = processed.replace(/^[*\-]\s+(.*?)$/gm, '<li class="ai-li">$1</li>');
     processed = processed.replace(/((?:<li class="ai-li">.*?<\/li>\s*)+)/g, '<ul class="ai-ul">$1</ul>');
 
-    // 7. Numbered lists
+    // Numbered lists
     processed = processed.replace(/^\d+\.\s+(.*?)$/gm, '<li class="ai-oli">$1</li>');
     processed = processed.replace(/((?:<li class="ai-oli">.*?<\/li>\s*)+)/g, '<ol class="ai-ol">$1</ol>');
 
-    // 8. Paragraph spacing & clean breaks
+    // Paragraph spacing & clean breaks
     processed = processed.replace(/\n{2,}/g, '<br><br>');
     processed = processed.replace(/(?<!<br>)\n/g, '<br>');
-    processed = processed.replace(/<br>\s*<(h[2-6]|ul|ol|div|hr)/g, '<$1');
-    processed = processed.replace(/<\/(h[2-6]|ul|ol|div|hr)>\s*<br>/g, '</$1>');
+    processed = processed.replace(/<br>\s*<(h[2-6]|ul|ol|div|hr|details)/g, '<$1');
+    processed = processed.replace(/<\/(h[2-6]|ul|ol|div|hr|details)>\s*<br>/g, '</$1>');
 
-    // 9. Restore Math blocks (split/join ensures $$ is never swallowed by regex escape)
+    // Restore Math blocks (split/join ensures $$ is never swallowed by regex escape)
     mathBlocks.forEach((block, idx) => {
       processed = processed.split(`%%%MATHBLOCK_${idx}%%%`).join(block);
     });
 
     return processed;
+  }
+
+  // Formats final AI response: renders collapsible Reasoning dropdown if thinking exists, followed by clean response
+  function formatResponse(resultOrText, optionalReasoning) {
+    let text = '';
+    let reasoning = '';
+
+    if (typeof resultOrText === 'object' && resultOrText !== null) {
+      text = resultOrText.text || '';
+      reasoning = resultOrText.reasoning || '';
+    } else {
+      text = resultOrText || '';
+      reasoning = optionalReasoning || '';
+    }
+
+    const extracted = extractThinking(text);
+    text = extracted.text;
+    if (extracted.reasoning) {
+      reasoning = reasoning ? (reasoning + '\n' + extracted.reasoning) : extracted.reasoning;
+    }
+
+    let html = '';
+    if (reasoning && reasoning.trim()) {
+      const formattedReasoning = formatMarkdownProse(cleanAIOutput(reasoning.trim()));
+      html += `<details class="ai-reasoning"><summary class="ai-reasoning-summary">Reasoning</summary><div class="ai-reasoning-body">${formattedReasoning}</div></details>`;
+    }
+
+    const formattedContent = formatMarkdownProse(cleanAIOutput(text));
+    html += `<div class="ai-response-body">${formattedContent}</div>`;
+    return html;
   }
 
   function escapeHtml(str) {

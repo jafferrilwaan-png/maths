@@ -24,12 +24,12 @@
   <script defer src="vendor/katex/auto-render.min.js"></script>
 
   <!-- Unit Data & AI Tutor Scripts -->
-  <script src="unit1_data.js?v=5.0"></script>
-  <script src="unit2_data.js?v=5.0"></script>
-  <script src="unit3_data.js?v=5.0"></script>
-  <script src="unit4_data.js?v=5.0"></script>
-  <script src="unit5_data.js?v=5.0"></script>
-  <script src="ai_tutor.js?v=5.0"></script>
+  <script src="unit1_data.js?v=6.0"></script>
+  <script src="unit2_data.js?v=6.0"></script>
+  <script src="unit3_data.js?v=6.0"></script>
+  <script src="unit4_data.js?v=6.0"></script>
+  <script src="unit5_data.js?v=6.0"></script>
+  <script src="ai_tutor.js?v=6.1"></script>
 
   <style>
     :root {
@@ -661,6 +661,37 @@
       border: none;
       border-top: 1px solid #cbd5e1;
       margin: 12px 0;
+    }
+
+    /* Minimal Collapsible AI Reasoning Dropdown */
+    details.ai-reasoning {
+      margin: 0 0 10px 0;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+    }
+    summary.ai-reasoning-summary {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #64748b;
+      cursor: pointer;
+      user-select: none;
+      outline: none;
+      letter-spacing: 0.2px;
+    }
+    summary.ai-reasoning-summary:hover {
+      color: #334155;
+    }
+    .ai-reasoning-body {
+      margin-top: 6px;
+      padding: 6px 0 6px 12px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #64748b;
+      border-left: 2px solid #cbd5e1;
+    }
+    .ai-response-body {
+      color: #1e293b;
+      line-height: 1.6;
     }
 
     /* Responsive AI Markdown Tables */
@@ -1471,8 +1502,9 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').then((reg) => {
+        navigator.serviceWorker.register('./sw.js?v=6.1').then((reg) => {
           console.log('LANA Master Offline ServiceWorker active:', reg.scope);
+          reg.update();
         }).catch((err) => {
           console.warn('LANA Master ServiceWorker registration:', err);
         });
