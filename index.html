@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="data:,">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>23MA1302 • Linear Algebra &amp; Numerical Analysis Master App</title>
   
   <!-- Fonts -->
@@ -59,8 +59,8 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       z-index: -1;
       pointer-events: none;
     }
@@ -791,128 +791,280 @@
     }
 
     @media (max-width: 768px) {
-      body {
-        padding-bottom: 30px;
+      html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
       }
-      main {
-        width: 100%;
-        max-width: 100%;
-        margin: 6px 0 0 0;
-        padding: 0 10px 40px;
+
+      #gas-canvas {
+        width: 100% !important;
+        height: 100% !important;
       }
+
+      header {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+      }
+
       .nav-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 8px 8px;
-        gap: 8px;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 6px 6px !important;
+        gap: 6px !important;
+        box-sizing: border-box !important;
       }
+
       .unit-switcher {
-        width: 100%;
-        justify-content: flex-start;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        white-space: nowrap !important;
+        padding: 2px 2px 4px !important;
+        scrollbar-width: none !important;
       }
+      .unit-switcher::-webkit-scrollbar { display: none; }
+
       .unit-btn {
-        padding: 6px 12px;
-        font-size: 11.5px;
-        flex-shrink: 0;
+        padding: 6px 11px !important;
+        font-size: 11.5px !important;
+        flex-shrink: 0 !important;
       }
+
       .tab-switcher {
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        padding: 2px !important;
+        gap: 4px !important;
       }
+
       .tab-btn {
-        padding: 6px 14px;
-        font-size: 12px;
-        white-space: nowrap;
+        flex: 1 1 50% !important;
+        padding: 7px 10px !important;
+        font-size: 12px !important;
+        white-space: nowrap !important;
+        text-align: center !important;
       }
+
+      /* Edge-to-Edge Hero Banner */
+      .hero-banner {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        border-radius: 12px !important;
+        padding: 14px 12px !important;
+        margin: 4px 0 10px !important;
+      }
+      .hero-banner h2 {
+        font-size: 16px !important;
+        line-height: 1.35 !important;
+        margin-bottom: 4px !important;
+      }
+      .hero-banner p {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        max-width: 100% !important;
+      }
+      .banner-stat-row {
+        gap: 5px !important;
+        margin-top: 8px !important;
+      }
+      .banner-stat-chip {
+        padding: 3px 8px !important;
+        font-size: 10.5px !important;
+      }
+
+      /* Edge-to-Edge Filter Bar */
       .filter-bar {
-        width: 100%;
-        margin-bottom: 14px;
-        padding-bottom: 6px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-bottom: 10px !important;
+        padding: 2px 4px 6px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        white-space: nowrap !important;
+        scrollbar-width: none !important;
       }
+      .filter-bar::-webkit-scrollbar { display: none; }
       .chip {
-        padding: 6px 12px;
-        font-size: 11.5px;
-        flex-shrink: 0;
+        padding: 5px 10px !important;
+        font-size: 11px !important;
+        flex-shrink: 0 !important;
       }
+
+      /* 100% Edge-to-Edge Main Layout (Zero Wasted Side Space) */
+      main {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 4px 40px !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+      }
+
+      .unit-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Edge-to-Edge Question Cards */
       .question-card {
-        padding: 16px 14px;
-        border-radius: 14px;
-        margin-bottom: 14px;
-        word-break: break-word;
-        overflow-wrap: anywhere;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 14px 10px !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
       }
+
       .q-heading {
-        font-size: 14.5px;
-        line-height: 1.45;
-        word-break: break-word;
-        overflow-wrap: anywhere;
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
       }
+
       .solution-content {
-        font-size: 13.5px;
-        line-height: 1.55;
-        word-break: break-word;
-        overflow-wrap: anywhere;
+        font-size: 13px !important;
+        line-height: 1.55 !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
       }
+
       .partb-step {
-        padding: 12px 12px;
-        margin-top: 10px;
-        border-radius: 12px;
+        padding: 10px 8px !important;
+        margin-top: 8px !important;
+        border-radius: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
+
       .step-title {
-        font-size: 13.5px;
+        font-size: 13px !important;
       }
+
+      /* Dropdown & Line-by-Line Breakdown */
       .why-dropdown {
-        margin-top: 12px;
-        border-radius: 12px;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin-top: 10px !important;
+        border-radius: 10px !important;
       }
+
       .why-toggle-btn {
-        padding: 10px 14px;
-        font-size: 12.5px;
-        gap: 8px;
-        text-align: left;
+        padding: 10px 10px !important;
+        font-size: 12px !important;
+        gap: 6px !important;
+        text-align: left !important;
       }
+
       .why-dropdown.open .why-content {
-        padding: 4px 12px 14px;
+        padding: 4px 6px 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
+
       .explain-line {
-        padding: 9px 12px;
-        margin-top: 8px;
+        padding: 8px 8px !important;
+        margin-top: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
+
       .explain-line-desc {
-        font-size: 12.5px;
-        word-break: break-word;
-        overflow-wrap: anywhere;
+        font-size: 12px !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
       }
+
+      /* Full Edge-to-Edge Inline AI Tutor */
       .inline-ai-section {
-        padding: 12px 10px;
-        margin-top: 12px;
-        border-radius: 12px;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px 8px !important;
+        margin-top: 10px !important;
+        border-radius: 10px !important;
       }
+
       .inline-ai-header {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 6px !important;
+        margin-bottom: 8px !important;
       }
+
+      .inline-ai-title-wrap {
+        width: 100% !important;
+      }
+
+      .inline-ai-title {
+        font-size: 13px !important;
+      }
+
+      .inline-ai-desc {
+        font-size: 11px !important;
+      }
+
       .inline-ai-controls {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 6px;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
       }
+
       .inline-ai-provider-select, .inline-ai-model-select, .inline-ai-model {
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
         font-size: 11.5px !important;
-        padding: 7px 10px !important;
-        margin-top: 4px !important;
+        padding: 7px 8px !important;
+        margin: 0 !important;
         display: block !important;
       }
+
+      .inline-ai-chat-history {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        margin-bottom: 8px !important;
+        gap: 8px !important;
+        max-height: 420px !important;
+      }
+
+      .inline-ai-msg {
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* AI Bubbles: 100% Usable Width, No Squeezing, Clear Normal Equations */
+      .inline-ai-bubble, .inline-ai-msg-bot .inline-ai-bubble, .inline-ai-msg-user .inline-ai-bubble {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px 10px !important;
+        font-size: 13px !important;
+        line-height: 1.55 !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+        border-radius: 8px !important;
+      }
+
       .inline-ai-input-group, .inline-ai-input-wrap {
         display: flex !important;
         flex-direction: row !important;
@@ -920,6 +1072,7 @@
         width: 100% !important;
         box-sizing: border-box !important;
       }
+
       .inline-ai-input {
         min-width: 0 !important;
         flex: 1 1 auto !important;
@@ -927,54 +1080,25 @@
         padding: 8px 10px !important;
         box-sizing: border-box !important;
       }
+
       .inline-ai-send, .inline-ai-send-btn {
         flex-shrink: 0 !important;
         padding: 0 14px !important;
         font-size: 12px !important;
         height: 38px !important;
       }
-      .inline-ai-input-group {
-        display: flex;
-        flex-direction: row;
-        gap: 6px;
-        width: 100%;
-      }
-      .inline-ai-input {
-        min-width: 0;
-        flex: 1;
-        font-size: 12.5px;
-        padding: 8px 10px;
-      }
-      .inline-ai-send-btn {
-        flex-shrink: 0;
-        padding: 0 14px;
-        font-size: 12px;
-      }
-      .inline-ai-bubble {
-        max-width: 95%;
-        font-size: 12.5px;
-        padding: 8px 12px;
-        word-break: break-word;
-        overflow-wrap: anywhere;
-      }
-      .hero-banner {
-        padding: 16px 14px;
-        border-radius: 16px;
-        margin-bottom: 14px;
-      }
-      .hero-banner h2 {
-        font-size: 18px;
-        line-height: 1.35;
-      }
-      .hero-banner p {
-        font-size: 12.5px;
-      }
+
+      /* KaTeX Formulas on Mobile: Full Horizontal Breathing Room */
       .katex-display {
-        font-size: 0.92em;
-        padding: 4px 0 !important;
+        max-width: 100% !important;
+        font-size: 0.92em !important;
+        padding: 6px 2px !important;
+        margin: 6px 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
       }
     }
-
 </style>
 </head>
 <body>
