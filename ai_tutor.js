@@ -93,18 +93,24 @@ window.AITutor = (function() {
 Your core mission is to help the student truly grasp, understand, and master every concept and problem.
 
 Chatbot & Tutoring Instructions:
-1. Make the Student Understand:
+1. Listen & Answer Directly:
+   - Always respond directly to what the student is asking in their current message.
+   - Do NOT default to, assume, or force specific topics (such as subspaces, vectors, etc.) unless the student's question specifically asks about them.
+   - If the student sends a greeting ("hi", "hello"), reply warmly, helpfully, and ask what math concept or problem they would like to explore today.
+2. Make the Student Understand:
    - When a student asks a doubt, says "I don't understand", asks for simple terms, or asks "why": meet them at their level like an empathetic human teacher. Break it down into simple, intuitive concepts, use visual/geometric intuition (e.g. arrows, coordinate spaces, transformations), and explain the "big picture" reason before writing formulas.
    - Clarify common pitfalls and explicitly answer the specific question they asked.
-2. Complete, Non-Truncated Mathematics:
+3. Complete, Non-Truncated Mathematics:
    - When providing derivations, proofs, or numerical calculations: provide fully completed, rigorous, step-by-step mathematical solutions. NEVER truncate calculations or stop mid-equation. Always state final numerical answers and conclusions.
    - Break long equations across multiple lines using separate $$...$$ blocks or \\begin{aligned} ... \\end{aligned} so they fit comfortably on mobile screens without horizontal clipping.
-3. Clean Presentation:
+4. Clean Presentation:
    - Do NOT output internal reasoning logs, scratchpad processes, or <think> tags.
    - Use Markdown tables (| Col 1 | Col 2 |) when presenting comparison data, normal equations, or property checks.
    - Format all mathematical expressions in standard LaTeX ($...$ inline, $$...$$ display).
+   - ALWAYS use standard lowercase LaTeX syntax (e.g. \\alpha, \\beta, \\in, \\mathbb{R}, \\frac, \\begin{aligned} ... \\end{aligned}). NEVER write LaTeX commands in uppercase like \\BEGIN{ALIGNED} or \\ALPHA.
+   - ALWAYS enclose multi-line equations in $$ ... $$ and inline expressions in $ ... $.
    - Use bold text or standard headings for clean hierarchy.
-4. University Exam Standards:
+5. University Exam Standards:
    - Highlight essential exam formulas, scoring rubrics, and mark allocation tips relevant to university semester evaluations.`;
 
   function syncDropdowns() {
@@ -224,7 +230,18 @@ Chatbot & Tutoring Instructions:
           renderMathInElement(target, {
             delimiters: [
               { left: '$$', right: '$$', display: true },
-              { left: '$', right: '$', display: false }
+              { left: '$', right: '$', display: false },
+              { left: '\\[', right: '\\]', display: true },
+              { left: '\\(', right: '\\)', display: false },
+              { left: '\\begin{aligned}', right: '\\end{aligned}', display: true },
+              { left: '\\begin{matrix}', right: '\\end{matrix}', display: true },
+              { left: '\\begin{pmatrix}', right: '\\end{pmatrix}', display: true },
+              { left: '\\begin{bmatrix}', right: '\\end{bmatrix}', display: true },
+              { left: '\\begin{vmatrix}', right: '\\end{vmatrix}', display: true },
+              { left: '\\begin{cases}', right: '\\end{cases}', display: true },
+              { left: '\\begin{array}', right: '\\end{array}', display: true },
+              { left: '\\begin{gather}', right: '\\end{gather}', display: true },
+              { left: '\\begin{align}', right: '\\end{align}', display: true }
             ],
             throwOnError: false
           });
@@ -374,6 +391,68 @@ Chatbot & Tutoring Instructions:
     return cleaned || text;
   }
 
+  // Auto-normalizes uppercase LaTeX syntax and wraps standalone math environments
+  function normalizeLatexSyntax(str) {
+    if (!str) return '';
+    let s = str;
+
+    // 1. Normalize environment delimiters: \BEGIN{ALIGNED} -> \begin{aligned}
+    s = s.replace(/\\BEGIN\{([a-zA-Z0-9*]+)\}/gi, (m, env) => '\\begin{' + env.toLowerCase() + '}');
+    s = s.replace(/\\END\{([a-zA-Z0-9*]+)\}/gi, (m, env) => '\\end{' + env.toLowerCase() + '}');
+
+    // 2. Standardize bracket/parenthesis display delimiters: \[ ... \] -> $$ ... $$
+    s = s.replace(/\\\[([\s\S]*?)\\\]/g, '$$$$ $1 $$$$');
+    s = s.replace(/\\\(([\s\S]*?)\\\)/g, '$$ $1 $$');
+
+    // 3. Normalize uppercase LaTeX commands and Greek symbols
+    const cmdMap = {
+      'ALPHA': 'alpha', 'BETA': 'beta', 'GAMMA': 'gamma', 'DELTA': 'delta',
+      'EPSILON': 'epsilon', 'VAREPSILON': 'varepsilon', 'ZETA': 'zeta', 'ETA': 'eta',
+      'THETA': 'theta', 'VARTHETA': 'vartheta', 'IOTA': 'iota', 'KAPPA': 'kappa',
+      'LAMBDA': 'lambda', 'MU': 'mu', 'NU': 'nu', 'XI': 'xi', 'PI': 'pi',
+      'RHO': 'rho', 'VARHO': 'varrho', 'SIGMA': 'sigma', 'VARSIGMA': 'varsigma',
+      'TAU': 'tau', 'UPSILON': 'upsilon', 'PHI': 'phi', 'VARPHI': 'varphi',
+      'CHI': 'chi', 'PSI': 'psi', 'OMEGA': 'omega',
+      'IN': 'in', 'NOTIN': 'notin', 'SUBSET': 'subset', 'SUBSETEQ': 'subseteq',
+      'SUPSET': 'supset', 'SUPSETEQ': 'supseteq',
+      'CUP': 'cup', 'CAP': 'cap', 'SETMINUS': 'setminus', 'TIMES': 'times',
+      'CDOT': 'cdot', 'LEQ': 'le', 'GEQ': 'ge', 'NEQ': 'ne', 'APPROX': 'approx',
+      'EQUIV': 'equiv', 'PM': 'pm', 'MP': 'mp', 'FORALL': 'forall',
+      'EXISTS': 'exists', 'NOT': 'neg', 'TO': 'to', 'RIGHTARROW': 'rightarrow',
+      'LEFTARROW': 'leftarrow', 'LRARROW': 'leftrightarrow', 'IFF': 'iff',
+      'IMPLIES': 'implies', 'MATHBB': 'mathbb', 'MATHCAL': 'mathcal',
+      'MATHRM': 'mathrm', 'MATHBF': 'mathbf', 'TEXT': 'text',
+      'FRAC': 'frac', 'DFRAC': 'dfrac', 'SQRT': 'sqrt', 'SUM': 'sum',
+      'PROD': 'prod', 'INT': 'int', 'PARTIAL': 'partial', 'NABLA': 'nabla',
+      'INFTY': 'infty', 'LEFT': 'left', 'RIGHT': 'right',
+      'OVERLINE': 'overline', 'HAT': 'hat', 'VEC': 'vec',
+      'DET': 'det', 'DIM': 'dim', 'KER': 'ker', 'RAN': 'operatorname{Ran}',
+      'RANK': 'operatorname{rank}', 'SPAN': 'operatorname{span}',
+      'COL': 'operatorname{Col}', 'ROW': 'operatorname{Row}',
+      'NULL': 'operatorname{Null}', 'TRACE': 'operatorname{Tr}',
+      'QUAD': 'quad', 'QQUAD': 'qquad'
+    };
+
+    for (const [u, l] of Object.entries(cmdMap)) {
+      const re = new RegExp('\\\\(' + u + ')(?![a-zA-Z])', 'g');
+      s = s.replace(re, '\\' + l);
+    }
+
+    // 4. Auto-wrap standalone LaTeX environments in $$ ... $$ if not already delimited
+    const envs = 'aligned|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|cases|array|gather|align';
+    const envPattern = new RegExp('(\\\\begin\\{(?:' + envs + ')\\}[\\s\\S]*?\\\\end\\{(?:' + envs + ')\\})', 'g');
+    s = s.replace(envPattern, (match, envBody, offset, fullStr) => {
+      const before = fullStr.substring(Math.max(0, offset - 10), offset).trim();
+      const after = fullStr.substring(offset + match.length, offset + match.length + 10).trim();
+      if (before.endsWith('$$') || after.startsWith('$$')) {
+        return match;
+      }
+      return '\n\n$$\n' + match.trim() + '\n$$\n\n';
+    });
+
+    return s;
+  }
+
   // Auto-repairs cut-off LaTeX equations (e.g. unclosed \begin{pmatrix} or unclosed $)
   function repairUnclosedMath(text) {
     if (!text) return "";
@@ -412,10 +491,13 @@ Chatbot & Tutoring Instructions:
   function formatResponse(text) {
     if (!text) return "";
 
-    // 0. Repair any unclosed mathematical environments first
-    let processed = repairUnclosedMath(text);
+    // 0. Auto-normalize uppercase LaTeX and wrap standalone environments
+    let processed = normalizeLatexSyntax(text);
 
-    // 1. Stash Math blocks ($$...$$ and $...$) so regex doesn't interfere
+    // 1. Repair any unclosed mathematical environments first
+    processed = repairUnclosedMath(processed);
+
+    // 2. Stash Math blocks ($$...$$ and $...$) so regex doesn't interfere
     const mathBlocks = [];
     processed = processed.replace(/\$\$[\s\S]*?\$\$/g, (match) => {
       mathBlocks.push(match);
@@ -500,9 +582,9 @@ Chatbot & Tutoring Instructions:
     processed = processed.replace(/<br>\s*<(h[2-6]|ul|ol|div|hr)/g, '<$1');
     processed = processed.replace(/<\/(h[2-6]|ul|ol|div|hr)>\s*<br>/g, '</$1>');
 
-    // 9. Restore Math blocks
+    // 9. Restore Math blocks (split/join ensures $$ is never swallowed by regex escape)
     mathBlocks.forEach((block, idx) => {
-      processed = processed.replace(`%%%MATHBLOCK_${idx}%%%`, block);
+      processed = processed.split(`%%%MATHBLOCK_${idx}%%%`).join(block);
     });
 
     return processed;
