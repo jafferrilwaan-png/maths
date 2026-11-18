@@ -456,96 +456,25 @@ window.UNIT3_DATA = {
 
       <!-- Q7 -->
 </div>
-<div class="question-card" data-category="innerproduct">
-        <div class="card-top">
-          <span class="q-pill">QB - Q7</span>
-          <div class="q-heading">Let $\mathbb{R}^2$ have the weighted Euclidean inner product $\langle u, v \rangle = 2u_1 v_1 + 3u_2 v_2$. If $u = (1, 1), v = (3, 2), w = (0, -1)$, compute $\langle u + v, 3w \rangle$.</div>
-        </div>
-        <div class="solution-content">
-          <p><strong>Step 1: Compute vectors:</strong><br>
-          - $u + v = (1+3, 1+2) = (4, 3)$<br>
-          - $3w = 3(0, -1) = (0, -3)$<br><br>
-          <strong>Step 2: Apply weighted inner product formula:</strong>
-          $$\langle u + v, 3w \rangle = 2(u+v)_1 (3w)_1 + 3(u+v)_2 (3w)_2$$
-          Substitute values:
-          $$\langle u + v, 3w \rangle = 2(4)(0) + 3(3)(-3) = 0 + 3(-9) = -27$$
-          <span class="tag-result">Final Answer: $\langle u + v, 3w \rangle = -27$</span></p>
-
-          <div class="why-dropdown">
-            <button class="why-toggle-btn" onclick="toggleWhy(this)">
-              <span>Mathematical Explanation &amp; Step Reasoning</span>
-              <span class="why-icon">&#9660;</span>
-            </button>
-            <div class="why-content">
-              <div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
-
-              <div class="explain-line">
-                <span class="explain-line-badge">Step 1 - Conjugate Operation</span>
-                <div class="explain-line-title">Complex Conjugation of Entries</div>
-                <div class="explain-line-desc">Replace each entry $a_{ij}$ with its complex conjugate $\overline{a_{ij}}$: $\overline{1-2i} = 1+2i, \overline{4i} = -4i, \overline{5+i} = 5-i$.</div>
-              </div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Step 2 - Matrix Transpose</span>
-                <div class="explain-line-title">Interchange Rows and Columns</div>
-                <div class="explain-line-desc">Swap rows and columns to obtain $A^* = (\overline{A})^T = \begin{pmatrix} 1+2i & -4i \\ 3 & 5-i \end{pmatrix}$.</div>
-              </div>
-              <div class="explain-line">
-                <span class="explain-line-badge">Exam Tip</span>
-                <div class="explain-line-title">Scoring Rubric (2 Marks)</div>
-                <div class="explain-line-desc">1 mark for conjugation, 1 mark for transpose.</div>
-              </div>
-<div class="inline-ai-section">
-                <div class="inline-ai-header">
-                  <div class="inline-ai-title-wrap">
-                    <span class="inline-ai-title">AI Assistant &amp; Step Inquiries</span>
-                    <span class="inline-ai-desc">Ask doubts, request alternative derivations, or verify calculations for this problem</span>
-                  </div>
-                  <div class="inline-ai-controls">
-                    <select class="inline-ai-provider-select" onchange="window.AITutor.setProvider(this.value)">
-                      <option value="openrouter" selected>OpenRouter (Free Cloud)</option>
-                      <option value="gemini">Google Gemini API</option>
-                      <option value="ollama">Ollama (Local Offline)</option>
-                    </select>
-                    <select class="inline-ai-model-select" onchange="window.AITutor.setModel(this.value)">
-                      <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash Exp (Free)</option>
-                      <option value="google/gemini-2.0-flash-thinking-exp:free">Gemini 2.0 Flash Thinking (Free)</option>
-                      <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B (Free)</option>
-                      <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
-                      <option value="qwen/qwen-2.5-coder-32b-instruct:free">Qwen 2.5 Coder 32B (Free)</option>
-                      <option value="liquid/lfm-40b:free">Liquid LFM 40B (Free)</option>
-                      <option value="mistralai/mistral-small-24b-instruct-2501:free">Mistral Small 24B (Free)</option>
-                      <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="inline-ai-chat-history"></div>
-                <div class="inline-ai-input-group">
-                  <input type="text" class="inline-ai-input" placeholder="Ask a doubt about this step..." onkeypress="window.AITutor.handleKey(event, this)">
-                  <button class="inline-ai-send-btn" onclick="window.AITutor.askInline(this)" aria-label="Send" title="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-  
-  
-    <!-- QB - Q8 -->
-</div>
 <div class="question-card" data-category="orthogonality">
       <div class="card-top">
         <span class="q-pill">QB - Q8</span>
-        <div class="q-heading">For any non-zero vector $x \in V$, prove that $y = \frac{x}{\|x\|}$ is a unit vector, i.e., $\|y\| = 1$.</div>
+        <div class="q-heading">Define the Orthogonal Complement $W^\perp$ of a subspace $W$ of an inner product space $V$, and state the Direct Sum Decomposition theorem.</div>
       </div>
       <div class="solution-content">
-        <p><strong>Proof:</strong><br>
-        Let $x \neq 0 \implies \|x\| > 0$. Consider the scalar $c = \frac{1}{\|x\|} \in \mathbb{R}$.<br>
-        By the scalar homogeneity property of norm:
-        $$\|y\| = \left\| \frac{1}{\|x\|} x \right\| = \left| \frac{1}{\|x\|} \right| \|x\|$$
-        Since $\|x\| > 0$, $\left| \frac{1}{\|x\|} \right| = \frac{1}{\|x\|}$:
-        $$\|y\| = \frac{1}{\|x\|} \cdot \|x\| = 1$$
-        Hence, $y = \frac{x}{\|x\|}$ is a unit vector. Q.E.D.</p>
+        <p><strong>Aim:</strong> Formulate the algebraic definition of orthogonal complement $W^\perp$ and its direct sum decomposition of the ambient inner product space $V$.</p>
+        <p><strong>Definition of Orthogonal Complement:</strong><br>
+        Let $W$ be a subspace of an inner product space $V$. The <em>orthogonal complement</em> of $W$, denoted by $W^\perp$, is the set of all vectors in $V$ that are orthogonal to every vector in $W$:
+        $$W^\perp = \{v \in V \mid \langle v, w \rangle = 0 \text{ for all } w \in W\}$$</p>
+        <p><strong>Fundamental Properties:</strong><br>
+        1. $W^\perp$ is always a subspace of $V$, even if $W$ is merely a subset.<br>
+        2. $W \cap W^\perp = \{0\}$.</p>
+        <p><strong>Direct Sum Decomposition Theorem:</strong><br>
+        If $W$ is a finite-dimensional subspace of an inner product space $V$, then:
+        $$V = W \oplus W^\perp$$
+        Consequently, $\dim(V) = \dim(W) + \dim(W^\perp)$, and every vector $v \in V$ can be uniquely decomposed as:
+        $$v = w + w^\perp \quad (w \in W, \; w^\perp \in W^\perp)$$</p>
+        <div class="tag-result">Orthogonal Complement: $W^\perp = \{v \in V \mid \langle v, w \rangle = 0, \; \forall w \in W\}$ and $V = W \oplus W^\perp$</div>
       </div>
       <div class="why-dropdown">
         <button class="why-toggle-btn" onclick="toggleWhy(this)">

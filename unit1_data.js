@@ -175,19 +175,19 @@ window.UNIT1_DATA = {
 <div class="question-card" data-category="subspace">
 <div class="card-top">
 <span class="q-pill">QB - Q3</span>
-<div class="q-heading">If $V = \mathbb{R}^3$, verify whether $W = \{(a_1, a_2, a_3) \mid 2a_1 - 7a_2 + a_3 = 0\}$ is a subspace.</div>
+<div class="q-heading">If $V = \mathbb{R}^3$, verify whether $W = \{(a_1, a_2, a_3) \mid 2a_1 - 7a_2 + a_3 = 0\}$ is a subspace or not.</div>
 </div>
 <div class="solution-content">
-<p><strong>Step 1 (Zero Vector Check):</strong> Put $(0,0,0)$: $2(0) - 7(0) + (0) = 0 \implies (0,0,0) \in W$.</p>
-<p><strong>Step 2 (Linear Combination Check):</strong> Let $u, v \in W$. For any scalars $\alpha, \beta \in \mathbb{R}$:</p>
+<p><strong>Step 1 (Zero Vector Check):</strong> Substitute $(0,0,0)$: $2(0) - 7(0) + (0) = 0 \implies (0,0,0) \in W$.</p>
+<p><strong>Step 2 (Linear Combination Check):</strong> Let $u = (a_1, a_2, a_3) \in W$ and $v = (b_1, b_2, b_3) \in W$. Then $2a_1 - 7a_2 + a_3 = 0$ and $2b_1 - 7b_2 + b_3 = 0$. For any scalars $\alpha, \beta \in \mathbb{R}$, consider $w = \alpha u + \beta v = (\alpha a_1 + \beta b_1, \alpha a_2 + \beta b_2, \alpha a_3 + \beta b_3)$:</p>
 <div class="math-panel">
             $$\begin{aligned}
-            &amp;2(\alpha a_1 + \beta b_1) - 7(\alpha a_2 + \beta b_2) + (\alpha a_3 + \beta b_3) \\
-            &amp;= \alpha(2a_1 - 7a_2 + a_3) + \beta(2b_1 - 7b_2 + b_3) \\
-            &amp;= \alpha(0) + \beta(0) = 0
+            &2(\alpha a_1 + \beta b_1) - 7(\alpha a_2 + \beta b_2) + (\alpha a_3 + \beta b_3) \\
+            &= \alpha(2a_1 - 7a_2 + a_3) + \beta(2b_1 - 7b_2 + b_3) \\
+            &= \alpha(0) + \beta(0) = 0
             \end{aligned}$$
           </div>
-<div class="tag-result">Conclusion: $W$ is a subspace of $\mathbb{R}^3$</div>
+<div class="tag-result">Conclusion: $W$ satisfies both conditions and IS a subspace of $\mathbb{R}^3$.</div>
 </div>
 
 <div class="why-dropdown">
@@ -196,27 +196,27 @@ window.UNIT1_DATA = {
 <span class="why-icon">&#9660;</span>
 </button>
 <div class="why-content">
-<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:
+<div class="explain-intro">Step-by-step breakdown of equations, operations, and exam marks:</div>
 
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1: Inspection</span>
-                <div class="explain-line-title">Identify the defining condition $a_1 \ge 0$</div>
-                <div class="explain-line-desc">Subspaces in $\mathbb{R}^3$ must be closed under multiplication by ANY scalar in the field $\mathbb{R}$ (positive, zero, or negative).</div>
+                <span class="explain-line-badge">Step 1: Problem Setup</span>
+                <div class="explain-line-title">Defining Linear Constraint</div>
+                <div class="explain-line-desc">The subset $W$ is defined by the single homogeneous linear equation $2a_1 - 7a_2 + a_3 = 0$ in $\mathbb{R}^3$. To verify if $W$ is a subspace, we use the standard two-step criterion: (1) zero vector inclusion, and (2) closure under linear combinations.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2: Counterexample</span>
-                <div class="explain-line-title">Choose $u = (1, 0, 0) \in W$ and scalar $\alpha = -1 \in \mathbb{R}$</div>
-                <div class="explain-line-desc">Since $a_1 = 1 \ge 0$, vector $u$ is inside $W$. Since field is $\mathbb{R}$, $-1$ is a valid scalar.</div>
+                <span class="explain-line-badge">Step 2: Zero Vector Test</span>
+                <div class="explain-line-title">Evaluating $(0, 0, 0)$</div>
+                <div class="explain-line-desc">Substituting coordinates $a_1=0, a_2=0, a_3=0$ gives $2(0) - 7(0) + 0 = 0$. Since the equation is strictly satisfied, the additive identity $(0, 0, 0)$ belongs to $W$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 3: Contradiction</span>
-                <div class="explain-line-title">Compute $\alpha u = -1 \cdot (1,0,0) = (-1, 0, 0)$</div>
-                <div class="explain-line-desc">The first coordinate is now $-1 < 0$, which violates the requirement $a_1 \ge 0$. Thus $\alpha u \notin W$.</div>
+                <span class="explain-line-badge">Step 3: Linear Combination Closure</span>
+                <div class="explain-line-title">Algebraic Linearity</div>
+                <div class="explain-line-desc">For any two vectors $u, v \in W$ and real scalars $\alpha, \beta \in \mathbb{R}$, substituting the components of $\alpha u + \beta v$ into the linear equation factors cleanly as $\alpha(2a_1 - 7a_2 + a_3) + \beta(2b_1 - 7b_2 + b_3) = \alpha(0) + \beta(0) = 0$. Thus $\alpha u + \beta v \in W$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 4: Conclusion</span>
-                <div class="explain-line-title">Fails Scalar Closure $\implies$ Not a Subspace</div>
-                <div class="explain-line-desc">A single counterexample is sufficient in mathematics to disprove subspace status.</div>
+                <span class="explain-line-badge">Step 4: Final Verdict &amp; Scoring Rubric</span>
+                <div class="explain-line-title">2 Marks University Breakdown</div>
+                <div class="explain-line-desc">Zero vector verification: 1 mark; Linear combination closure proof: 1 mark. Affirmative conclusion: $W$ is a valid subspace of $\mathbb{R}^3$.</div>
               </div>
 <div class="inline-ai-section">
                 <div class="inline-ai-header">
@@ -250,7 +250,7 @@ window.UNIT1_DATA = {
               </div>
 
             </div>
-</div></div>
+</div>
 <!-- Q4 -->
 </div>
 <div class="question-card" data-category="subspace">
@@ -1883,26 +1883,89 @@ window.UNIT1_DATA = {
 <div class="question-card" data-category="axioms">
         <div class="card-top">
           <span class="q-pill">Part B - Q3 (16 Marks)</span>
-          <div class="q-heading">Consider $V = \{p(x) = a_0 + a_1 x + a_2 x^2 \mid a_0, a_1, a_2 \in \mathbb{R}\}$, the set of all polynomials of degree $\le 2$. Prove that $V$ is a vector space over $\mathbb{R}$ under usual polynomial addition and scalar multiplication.</div>
+          <div class="q-heading">Consider $V = \{p(x) = a_0 + a_1 x + a_2 x^2 \mid a_0, a_1, a_2 \in \mathbb{R}\}$, the set of all polynomials of degree $\le 2$ with real coefficients. Prove that $V$ is a vector space over the field $\mathbb{R}$ with respect to standard polynomial addition and scalar multiplication.</div>
         </div>
         <div class="solution-content">
-          <p>Let $p(x) = a_0 + a_1 x + a_2 x^2, \; q(x) = b_0 + b_1 x + b_2 x^2, \; r(x) = c_0 + c_1 x + c_2 x^2 \in V$ where $a_i, b_i, c_i \in \mathbb{R}$.</p>
+          <p><strong>Aim:</strong> Rigorously verify all 10 vector space axioms (5 Abelian group axioms for polynomial addition and 5 scalar multiplication axioms) for the set $V = P_2(\mathbb{R})$ over the field $\mathbb{R}$.</p>
+
+          <p>Let $p(x) = a_0 + a_1 x + a_2 x^2$, $q(x) = b_0 + b_1 x + b_2 x^2$, and $r(x) = c_0 + c_1 x + c_2 x^2$ be arbitrary elements in $V$, where $a_i, b_i, c_i \in \mathbb{R}$. Let $k, m \in \mathbb{R}$ be arbitrary real scalars.</p>
 
           <div class="partb-step">
-            <div class="step-title">Verification of All 10 Vector Space Axioms</div>
-            <p><strong>1. Closure under addition:</strong> $p(x) + q(x) = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2$. Since $a_i + b_i \in \mathbb{R}$, degree is $\le 2$, so $p(x) + q(x) \in V$.</p>
-            <p><strong>2. Commutative:</strong> $p(x) + q(x) = \sum (a_i + b_i)x^i = \sum (b_i + a_i)x^i = q(x) + p(x)$.</p>
-            <p><strong>3. Associative:</strong> $(p(x) + q(x)) + r(x) = \sum ((a_i + b_i) + c_i)x^i = \sum (a_i + (b_i + c_i))x^i = p(x) + (q(x) + r(x))$.</p>
-            <p><strong>4. Additive Identity:</strong> $0(x) = 0 + 0x + 0x^2 \in V$. Then $p(x) + 0(x) = p(x)$.</p>
-            <p><strong>5. Additive Inverse:</strong> $-p(x) = (-a_0) + (-a_1)x + (-a_2)x^2 \in V$. Then $p(x) + (-p(x)) = 0(x)$.</p>
-            <p><strong>6. Scalar Closure:</strong> For $k \in \mathbb{R}$, $k \cdot p(x) = (ka_0) + (ka_1)x + (ka_2)x^2 \in V$.</p>
-            <p><strong>7. Distributive over polynomials:</strong> $k(p(x) + q(x)) = \sum k(a_i + b_i)x^i = \sum (ka_i + kb_i)x^i = k p(x) + k q(x)$.</p>
-            <p><strong>8. Distributive over scalars:</strong> $(k + m)p(x) = \sum (k + m)a_i x^i = \sum (ka_i + ma_i)x^i = k p(x) + m p(x)$.</p>
-            <p><strong>9. Scalar Associativity:</strong> $(km)p(x) = \sum (km)a_i x^i = \sum k(ma_i)x^i = k(m p(x))$.</p>
-            <p><strong>10. Unit Scalar:</strong> $1 \cdot p(x) = \sum (1 \cdot a_i)x^i = \sum a_i x^i = p(x)$.</p>
+            <div class="step-title">Part I: Verification of the 5 Abelian Group Addition Axioms</div>
+            <p><strong>Axiom A1 (Closure under Addition):</strong><br>
+            Add polynomials $p(x)$ and $q(x)$ by combining like powers of $x$:
+            $$p(x) + q(x) = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2$$
+            Since real numbers are closed under addition, $(a_0 + b_0), (a_1 + b_1), (a_2 + b_2) \in \mathbb{R}$. The resulting sum is a polynomial of degree at most 2. Therefore, $p(x) + q(x) \in V$.</p>
+
+            <p><strong>Axiom A2 (Associativity of Addition):</strong><br>
+            Evaluate $((p + q) + r)(x)$:
+            $$\begin{aligned}
+            ((p(x) + q(x)) + r(x) &= [((a_0 + b_0) + c_0) + ((a_1 + b_1) + c_1)x + ((a_2 + b_2) + c_2)x^2] \\
+            &= [(a_0 + (b_0 + c_0)) + (a_1 + (b_1 + c_1))x + (a_2 + (b_2 + c_2))x^2] \\
+            &= p(x) + (q(x) + r(x))
+            \end{aligned}$$
+            Associativity holds identically due to real number associativity.</p>
+
+            <p><strong>Axiom A3 (Commutativity of Addition):</strong><br>
+            Since $a_i + b_i = b_i + a_i$ for all real numbers:
+            $$p(x) + q(x) = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 = (b_0 + a_0) + (b_1 + a_1)x + (b_2 + a_2)x^2 = q(x) + p(x)$$
+            Hence addition is commutative.</p>
+
+            <p><strong>Axiom A4 (Existence of Additive Identity - Zero Polynomial):</strong><br>
+            Define the zero polynomial $z(x) = 0 + 0x + 0x^2 \in V$ (coefficients $a_0 = 0, a_1 = 0, a_2 = 0 \in \mathbb{R}$):
+            $$p(x) + z(x) = (a_0 + 0) + (a_1 + 0)x + (a_2 + 0)x^2 = a_0 + a_1 x + a_2 x^2 = p(x)$$
+            Thus, $z(x) = 0$ is the unique additive identity in $V$.</p>
+
+            <p><strong>Axiom A5 (Existence of Additive Inverse - Negative Polynomial):</strong><br>
+            For any $p(x) = a_0 + a_1 x + a_2 x^2 \in V$, define $-p(x) = (-a_0) + (-a_1)x + (-a_2)x^2$. Since $-a_i \in \mathbb{R}$, $-p(x) \in V$:
+            $$p(x) + (-p(x)) = (a_0 - a_0) + (a_1 - a_1)x + (a_2 - a_2)x^2 = 0 + 0x + 0x^2 = z(x)$$
+            Thus, every polynomial in $V$ possesses an additive inverse in $V$.</p>
           </div>
 
-          <div class="tag-result"> Hence proved: $P_2(\mathbb{R})$ is a vector space over $\mathbb{R}$ with standard basis $\{1, x, x^2\}$ and $\dim(P_2(\mathbb{R})) = 3$.</div>
+          <div class="partb-step">
+            <div class="step-title">Part II: Verification of the 5 Scalar Multiplication Axioms</div>
+            <p><strong>Axiom M1 (Closure under Scalar Multiplication):</strong><br>
+            For any scalar $k \in \mathbb{R}$ and $p(x) \in V$:
+            $$k \cdot p(x) = (k a_0) + (k a_1)x + (k a_2)x^2$$
+            Since real numbers are closed under multiplication, $k a_0, k a_1, k a_2 \in \mathbb{R}$. The degree remains at most 2, so $k \cdot p(x) \in V$.</p>
+
+            <p><strong>Axiom M2 (Distributivity over Polynomial Addition):</strong><br>
+            $$\begin{aligned}
+            k(p(x) + q(x)) &= k[(a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2] \\
+            &= k(a_0 + b_0) + k(a_1 + b_1)x + k(a_2 + b_2)x^2 \\
+            &= (k a_0 + k b_0) + (k a_1 + k b_1)x + (k a_2 + k b_2)x^2 \\
+            &= [(k a_0 + k a_1 x + k a_2 x^2)] + [(k b_0 + k b_1 x + k b_2 x^2)] \\
+            &= k p(x) + k q(x)
+            \end{aligned}$$</p>
+
+            <p><strong>Axiom M3 (Distributivity over Field Scalar Addition):</strong><br>
+            $$\begin{aligned}
+            (k + m)p(x) &= (k + m)a_0 + (k + m)a_1 x + (k + m)a_2 x^2 \\
+            &= (k a_0 + m a_0) + (k a_1 + m a_1)x + (k a_2 + m a_2)x^2 \\
+            &= [k a_0 + k a_1 x + k a_2 x^2] + [m a_0 + m a_1 x + m a_2 x^2] \\
+            &= k p(x) + m p(x)
+            \end{aligned}$$</p>
+
+            <p><strong>Axiom M4 (Associativity of Scalar Multiplication):</strong><br>
+            $$\begin{aligned}
+            (k m)p(x) &= (k m)a_0 + (k m)a_1 x + (k m)a_2 x^2 \\
+            &= k(m a_0) + k(m a_1)x + k(m a_2)x^2 \\
+            &= k[m a_0 + m a_1 x + m a_2 x^2] = k(m p(x))
+            \end{aligned}$$</p>
+
+            <p><strong>Axiom M5 (Unitary Scalar Identity Action):</strong><br>
+            For the multiplicative unit $1 \in \mathbb{R}$:
+            $$1 \cdot p(x) = (1 \cdot a_0) + (1 \cdot a_1)x + (1 \cdot a_2)x^2 = a_0 + a_1 x + a_2 x^2 = p(x)$$</p>
+          </div>
+
+          <div class="partb-step">
+            <div class="step-title">Part III: Basis and Dimension Deduction</div>
+            <p>Any polynomial $p(x) = a_0(1) + a_1(x) + a_2(x^2)$ is uniquely expressed as a linear combination of the ordered set $B = \{1, x, x^2\}$.<br>
+            Setting $c_0(1) + c_1(x) + c_2(x^2) = 0$ implies $c_0 = c_1 = c_2 = 0$, proving linear independence.<br>
+            Therefore, $B = \{1, x, x^2\}$ forms the standard basis for $V$, and $\dim(V) = 3$.</p>
+          </div>
+
+          <div class="tag-result">Final Conclusion: All 10 vector space axioms are strictly satisfied. Hence, $V = P_2(\mathbb{R})$ is a 3-dimensional vector space over the field $\mathbb{R}$.</div>
         </div>
       
       <div class="why-dropdown">
@@ -1911,46 +1974,46 @@ window.UNIT1_DATA = {
           <span class="why-icon">&#9660;</span>
         </button>
         <div class="why-content">
-<div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
+          <div class="explain-intro">Step-by-Step Pedagogical Logic &amp; University Scoring Breakdown:</div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 1: Problem Setup</span>
-                <div class="explain-line-title">Understanding the Polynomial Set</div>
-                <div class="explain-line-desc">We consider the vector space P2 of polynomials of degree at most 2. We examine the subset W of polynomials satisfying the condition p(0) = 0, meaning the constant term must be zero.</div>
+                <span class="explain-line-badge">Step 1: Problem Understanding</span>
+                <div class="explain-line-title">Abstract Vector Space Verification for Polynomials</div>
+                <div class="explain-line-desc">A vector space requires two algebraic structures: an abelian group under addition $(V, +)$ and compatible scalar multiplication over the underlying field $(V, \mathbb{R}, \cdot)$. Every polynomial $a_0 + a_1 x + a_2 x^2$ acts as a vector whose coordinates in the standard basis are $(a_0, a_1, a_2)$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 2: Core Subspace Criterion</span>
-                <div class="explain-line-title">Checking Linear Combinations</div>
-                <div class="explain-line-desc">To prove W is a subspace, we must prove that the zero polynomial is in W, and whenever p(x) and q(x) are in W, their combination alpha*p(x) + beta*q(x) also satisfies the condition at x = 0.</div>
+                <span class="explain-line-badge">Step 2: Addition Closure &amp; Abelian Properties</span>
+                <div class="explain-line-title">Component-wise Addition Inherits Real Field Laws</div>
+                <div class="explain-line-desc">Adding two polynomials of degree at most 2 yields another polynomial of degree at most 2 whose coefficients are sums of real numbers $(a_i + b_i)$. Since addition in $\mathbb{R}$ is associative and commutative, polynomial addition inherits associativity and commutativity directly.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 3: Zero Polynomial Test</span>
-                <div class="explain-line-title">Evaluating at Origin</div>
-                <div class="explain-line-desc">For the zero polynomial zero(x) = 0, evaluating at x = 0 gives zero(0) = 0. Therefore, the zero polynomial belongs to W.</div>
+                <span class="explain-line-badge">Step 3: Identity &amp; Inverse Elements</span>
+                <div class="explain-line-title">Zero Polynomial and Negative Polynomial</div>
+                <div class="explain-line-desc">The additive identity is the zero polynomial $0(x) = 0 + 0x + 0x^2$. For every $p(x) \in V$, the additive inverse is $-p(x) = -a_0 - a_1 x - a_2 x^2 \in V$. Their sum yields identically the zero polynomial.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 4: Algebraic Structure of Elements in W</span>
-                <div class="explain-line-title">Vanishing Constant Term</div>
-                <div class="explain-line-desc">Any polynomial p(x) in W can be written as p(x) = a1*x + a2*x^2 because p(0) = a0 = 0. Similarly, q(x) = b1*x + b2*x^2.</div>
+                <span class="explain-line-badge">Step 4: Scalar Multiplication Closure</span>
+                <div class="explain-line-title">Degree Preservation Under Scalar Scaling</div>
+                <div class="explain-line-desc">Multiplying a polynomial by any real number $k$ scales each coefficient $k a_i \in \mathbb{R}$. The degree does not exceed 2. If $k = 0$, it collapses to the zero polynomial $0 \in V$, maintaining closure.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 5: Forming the Linear Combination</span>
-                <div class="explain-line-title">Combining Two Polynomials</div>
-                <div class="explain-line-desc">Let r(x) = alpha*p(x) + beta*q(x). Then r(x) = (alpha*a1 + beta*b1)*x + (alpha*a2 + beta*b2)*x^2.</div>
+                <span class="explain-line-badge">Step 5: Distributive Laws Verification</span>
+                <div class="explain-line-title">Two Separate Distributive Axioms</div>
+                <div class="explain-line-desc">University evaluators award distinct marks for: (1) Vector distributivity: $k(p + q) = k p + k q$ using real distributivity $k(a_i + b_i) = k a_i + k b_i$; and (2) Scalar distributivity: $(k + m)p = k p + m p$ using $(k + m)a_i = k a_i + m a_i$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 6: Evaluating the Combination at Zero</span>
-                <div class="explain-line-title">Testing Closure</div>
-                <div class="explain-line-desc">Substituting x = 0 gives r(0) = (alpha*a1 + beta*b1)*(0) + (alpha*a2 + beta*b2)*(0)^2 = 0. Hence r(x) satisfies the defining condition of W.</div>
+                <span class="explain-line-badge">Step 6: Associativity of Multiplication and Unit Element</span>
+                <div class="explain-line-title">Axioms M4 and M5</div>
+                <div class="explain-line-desc">Scalar associativity $(km)p(x) = k(m p(x))$ holds because real multiplication is associative $(km)a_i = k(m a_i)$. Unit scalar $1 \cdot p(x) = p(x)$ holds because $1 \cdot a_i = a_i$ for all real coefficients.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 7: Dimension and Basis Deduction</span>
-                <div class="explain-line-title">Finding the Size of the Subspace</div>
-                <div class="explain-line-desc">The polynomials x and x^2 span W and are linearly independent. Thus, the dimension of W is 2, which is one less than the dimension of P2.</div>
+                <span class="explain-line-badge">Step 7: Coordinate Isomorphism with R^3</span>
+                <div class="explain-line-title">Structural Equivalence to R^3</div>
+                <div class="explain-line-desc">The map $T: P_2(\mathbb{R}) \to \mathbb{R}^3$ defined by $T(a_0 + a_1 x + a_2 x^2) = (a_0, a_1, a_2)$ is a bijective linear isomorphism. This proves immediately that $P_2(\mathbb{R})$ has dimension 3 with basis $\{1, x, x^2\}$.</div>
               </div>
               <div class="explain-line">
-                <span class="explain-line-badge">Step 8: University Scoring Rubric</span>
-                <div class="explain-line-title">16 Marks Distribution</div>
-                <div class="explain-line-desc">Subspace theorem definition: 3 marks; Zero polynomial check: 3 marks; Linear combination algebra: 5 marks; Dimension and basis derivation: 3 marks; Final conclusion: 2 marks.</div>
+                <span class="explain-line-badge">Step 8: Anna University Scoring Rubric (16 Marks)</span>
+                <div class="explain-line-title">Complete 16-Mark University Allocation</div>
+                <div class="explain-line-desc">6 marks for 5 addition axioms (especially identity zero polynomial and inverse polynomial derivation); 6 marks for 5 scalar axioms (closure, two distributive laws, associativity, unitary action); 2 marks for standard basis $\{1, x, x^2\}$ and dimension 3; 2 marks for affirmative concluding statement.</div>
               </div>
               <div class="inline-ai-section">
         <div class="inline-ai-header">
@@ -3291,14 +3354,14 @@ window.UNIT1_DATA = {
       <div class="question-card" data-category="theorems">
         <div class="card-top">
           <span class="q-pill extra">Part B - Predicted Q14 (16 Marks)</span>
-        </div>
-        <div class="q-heading">
+          <div class="q-heading">
           Let $W_1$ and $W_2$ be subspaces of $\mathbb{R}^4$ defined by:<br>
           $W_1 = \{(x_1, x_2, x_3, x_4) \in \mathbb{R}^4 : x_1 + 2x_2 - x_3 = 0 \text{ and } x_2 + x_4 = 0\}$<br>
           $W_2 = \text{span}\{(1, -1, 1, 1), (0, 1, 2, -1)\}$.<br>
           (a) Find bases and dimensions for $W_1$, $W_2$, $W_1 \cap W_2$, and $W_1 + W_2$.<br>
           (b) Verify the dimension theorem: $\dim(W_1 + W_2) = \dim(W_1) + \dim(W_2) - \dim(W_1 \cap W_2)$.<br>
           (c) Determine whether $\mathbb{R}^4$ is the direct sum $W_1 \oplus W_2$.
+        </div>
         </div>
         <div class="solution-content">
           <p><strong>Aim:</strong> Solve linear homogeneous systems to find bases and dimensions of subspaces $W_1, W_2$, their intersection $W_1 \cap W_2$, their sum $W_1 + W_2$, verify Grassmann's formula, and assess the direct sum condition.</p>

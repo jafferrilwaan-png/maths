@@ -470,27 +470,19 @@ Core Guidelines:
     if (!str) return '';
     let s = str;
 
-    // 1. Fix malformed trailing backslash before closing dollar, e.g. \in \$ -> \in \mathbb{F}$
-    s = s.replace(/\\in\s*\\(?=\$)/gi, '\\in \\mathbb{F}');
-    // 2. Strip any stray backslash immediately preceding a math dollar delimiter (\$ -> $)
+    // 1. Fix malformed trailing backslash before closing dollar, e.g. \in \$ -> \in \mathbb{R}$
+    s = s.replace(/\\in\s*\\(?=\$)/gi, '\\in \\mathbb{R}');
     s = s.replace(/\\(?=\$)/g, '');
 
-    // 3. Normalize environment delimiters: \BEGIN{ALIGNED} -> \begin{aligned}
-    s = s.replace(/\\BEGIN\{([a-zA-Z0-9*]+)\}/gi, (m, env) => '\\begin{' + env.toLowerCase() + '}');
-    s = s.replace(/\\END\{([a-zA-Z0-9*]+)\}/gi, (m, env) => '\\end{' + env.toLowerCase() + '}');
-
-    // 4. Standardize bracket/parenthesis display delimiters: \[ ... \] -> $$ ... $$
+    // 2. Standardize bracket/parenthesis display delimiters: \[ ... \] -> $$ ... $$
     s = s.replace(/\\\[([\s\S]*?)\\\]/g, '$$$$ $1 $$$$');
     s = s.replace(/\\\(([\s\S]*?)\\\)/g, '$$ $1 $$');
 
-    // 5. Strip redundant single/double dollars immediately preceding or following environment tags
-    // e.g. "$ \begin{pmatrix}" -> "\begin{pmatrix}" and "\end{pmatrix} $" -> "\end{pmatrix}"
-    const envs = 'aligned|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|cases|array|gather|align';
-    const envList = envs + '|' + envs.split('|').map(e => e + '\\*').join('|');
-    s = s.replace(new RegExp('\\${1,2}\\s*(\\\\begin\\{(?:' + envList + ')\\})', 'gi'), '$1');
-    s = s.replace(new RegExp('(\\\\end\\{(?:' + envList + ')\\})\\s*\\${1,2}', 'gi'), '$1');
+    // 3. Normalize environment delimiters to strictly lowercase: \BEGIN{ALIGNED} -> \begin{aligned}
+    s = s.replace(/\\begin\s*\{\s*([a-zA-Z0-9*]+)\s*\}/gi, (m, env) => '\\begin{' + env.toLowerCase() + '}');
+    s = s.replace(/\\end\s*\{\s*([a-zA-Z0-9*]+)\s*\}/gi, (m, env) => '\\end{' + env.toLowerCase() + '}');
 
-    // 6. Normalize uppercase LaTeX commands and Greek symbols
+    // 4. Normalize uppercase LaTeX commands and Greek symbols
     const cmdMap = {
       'ALPHA': 'alpha', 'BETA': 'beta', 'GAMMA': 'gamma', 'DELTA': 'delta',
       'EPSILON': 'epsilon', 'VAREPSILON': 'varepsilon', 'ZETA': 'zeta', 'ETA': 'eta',
@@ -520,35 +512,34 @@ Core Guidelines:
     };
 
     for (const [u, l] of Object.entries(cmdMap)) {
-      const re = new RegExp('\\\\(' + u + ')(?![a-zA-Z])', 'g');
+      const re = new RegExp('\\(' + u + ')(?![a-zA-Z])', 'g');
       s = s.replace(re, '\\' + l);
     }
 
-    // 7. Generic catch-all: any remaining all-caps LaTeX command with 2+ letters
+    // 5. Generic catch-all: any remaining all-caps LaTeX command with 2+ letters
     s = s.replace(/\\([A-Z]{2,})(?![a-zA-Z])/g, (m, cmd) => '\\' + cmd.toLowerCase());
 
-    // 8. Auto-wrap standalone LaTeX environments in $$ ... $$ if not already delimited
-    const envPattern = new RegExp('(\\\\begin\\{(?:' + envs + ')\\}[\\s\\S]*?\\\\end\\{(?:' + envs + ')\\})', 'g');
-    s = s.replace(envPattern, (match, envBody, offset, fullStr) => {
-      const before = fullStr.substring(Math.max(0, offset - 10), offset).trim();
-      const after = fullStr.substring(offset + match.length, offset + match.length + 10).trim();
-      if (before.endsWith('$$') || after.startsWith('$$')) {
-        return match;
-      }
-      return '\n\n$$\n' + match.trim() + '\n$$\n\n';
-    });
+    // 6. Ensure all LaTeX math environments are strictly enclosed inside $$ ... $$ display blocks
+    const envs = 'aligned|matrix|pmatrix|bmatrix|vmatrix|Vmatrix|cases|array|gather|align';
+    const envList = envs + '|' + envs.split('|').map(e => e + '\\*').join('|');
+    // Strip redundant adjacent single/double dollars to prevent quadrupled $$$$
+    s = s.replace(new RegExp('\\${1,2}\\s*(\\\\begin\\{(?:' + envList + ')\\})', 'gi'), '$1');
+    s = s.replace(new RegExp('(\\\\end\\{(?:' + envList + ')\\})\\s*\\${1,2}', 'gi'), '$1');
 
-    // 9. Clean dangling $ immediately before punctuation (e.g. "$. Then" -> ". Then")
+    // Auto-wrap any standalone environment in $$ ... $$
+    const envPattern = new RegExp('(\\\\begin\\{(?:' + envList + ')\\}[\\s\\S]*?\\\\end\\{(?:' + envList + ')\\})', 'gi');
+    s = s.replace(envPattern, (match) => '\n\n$$\n' + match.trim() + '\n$$\n\n');
+
+    // 7. Clean dangling $ immediately before punctuation (e.g. "$. Then" -> ". Then")
     s = s.replace(/(^|\s)\$\s*([.,;:!?])/g, '$1$2');
-    // 10. Clean trailing $ preceded by punctuation at end of line (e.g. "e.g., $" -> "e.g.,")
+    // 8. Clean trailing $ preceded by punctuation at end of line (e.g. "e.g., $" -> "e.g.,")
     s = s.replace(/([,;:]|\be\.g\.)\s*\$\s*(?=\n|$)/g, '$1');
-    // 11. Clean empty lines with only $
+    // 9. Clean empty lines with only $
     s = s.replace(/^\s*\$\s*$/gm, '');
 
     return s;
   }
 
-  // Auto-repairs cut-off LaTeX equations (e.g. unclosed \begin{pmatrix} or unclosed $)
   function repairUnclosedMath(text) {
     if (!text) return "";
     let repaired = text;
