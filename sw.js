@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lana-master-v9.0';
+const CACHE_NAME = 'lana-master-v9.1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -8,7 +8,7 @@ const PRECACHE_ASSETS = [
   'unit3_data.js?v=9.0',
   'unit4_data.js?v=9.0',
   'unit5_data.js?v=9.0',
-  'ai_tutor.js?v=9.0',
+  'ai_tutor.js?v=9.1',
   'manifest.json',
   'vendor/katex/katex.min.css',
   'vendor/katex/katex.min.js',

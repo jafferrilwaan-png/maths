@@ -511,10 +511,8 @@ Core Guidelines:
       'QUAD': 'quad', 'QQUAD': 'qquad'
     };
 
-    for (const [u, l] of Object.entries(cmdMap)) {
-      const re = new RegExp('\\(' + u + ')(?![a-zA-Z])', 'g');
-      s = s.replace(re, '\\' + l);
-    }
+    const cmdRegex = new RegExp('\\\\(' + Object.keys(cmdMap).join('|') + ')(?![a-zA-Z])', 'g');
+    s = s.replace(cmdRegex, (match, cmd) => '\\' + (cmdMap[cmd] || cmd.toLowerCase()));
 
     // 5. Generic catch-all: any remaining all-caps LaTeX command with 2+ letters
     s = s.replace(/\\([A-Z]{2,})(?![a-zA-Z])/g, (m, cmd) => '\\' + cmd.toLowerCase());

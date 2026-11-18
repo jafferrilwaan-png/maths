@@ -29,7 +29,7 @@
   <script src="unit3_data.js?v=9.0"></script>
   <script src="unit4_data.js?v=9.0"></script>
   <script src="unit5_data.js?v=9.0"></script>
-  <script src="ai_tutor.js?v=9.0"></script>
+  <script src="ai_tutor.js?v=9.1"></script>
 
   <style>
     :root {
@@ -1503,7 +1503,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=9.0').then((reg) => {
+        navigator.serviceWorker.register('./sw.js?v=9.1').then((reg) => {
           console.log('LANA Master Offline ServiceWorker active:', reg.scope);
           reg.update();
         }).catch((err) => {
