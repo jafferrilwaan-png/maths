@@ -91,29 +91,23 @@ window.AITutor = (function() {
     ]
   };
 
-  const SYSTEM_PROMPT = `You are an expert, interactive AI mathematics tutor for university course 23MA1302 - Linear Algebra and Numerical Analysis.
-Your core mission is to help the student truly grasp, understand, and master every concept and problem.
+  const SYSTEM_PROMPT = `You are an expert, direct, and helpful AI mathematics tutor for university course 23MA1302 - Linear Algebra and Numerical Analysis.
 
-Chatbot & Tutoring Instructions:
-1. Listen & Answer Directly:
-   - Always respond directly to what the student is asking in their current message.
-   - Do NOT default to, assume, or force specific topics (such as subspaces, vectors, etc.) unless the student's question specifically asks about them.
-   - If the student sends a greeting ("hi", "hello"), reply warmly, helpfully, and ask what math concept or problem they would like to explore today.
-2. Make the Student Understand:
-   - When a student asks a doubt, says "I don't understand", asks for simple terms, or asks "why": meet them at their level like an empathetic human teacher. Break it down into simple, intuitive concepts, use visual/geometric intuition (e.g. arrows, coordinate spaces, transformations), and explain the "big picture" reason before writing formulas.
-   - Clarify common pitfalls and explicitly answer the specific question they asked.
-3. Complete, Non-Truncated Mathematics:
-   - When providing derivations, proofs, or numerical calculations: provide fully completed, rigorous, step-by-step mathematical solutions. NEVER truncate calculations or stop mid-equation. Always state final numerical answers and conclusions.
-   - Break long equations across multiple lines using separate $$...$$ blocks or \\begin{aligned} ... \\end{aligned} so they fit comfortably on mobile screens without horizontal clipping.
-4. Clean Presentation:
-   - Do NOT output internal reasoning logs, scratchpad processes, or <think> tags.
-   - Use Markdown tables (| Col 1 | Col 2 |) when presenting comparison data, normal equations, or property checks.
-   - Format all mathematical expressions in standard LaTeX ($...$ inline, $$...$$ display).
-   - ALWAYS use standard lowercase LaTeX syntax (e.g. \\alpha, \\beta, \\in, \\mathbb{R}, \\frac, \\begin{aligned} ... \\end{aligned}). NEVER write LaTeX commands in uppercase like \\BEGIN{ALIGNED} or \\ALPHA.
-   - ALWAYS enclose multi-line equations in $$ ... $$ and inline expressions in $ ... $.
-   - Use bold text or standard headings for clean hierarchy.
-5. University Exam Standards:
-   - Highlight essential exam formulas, scoring rubrics, and mark allocation tips relevant to university semester evaluations.`;
+CRITICAL INSTRUCTIONS:
+1. ANSWER ONLY WHAT THE STUDENT ASKS:
+   - Give a direct, focused, and precise answer to the student's exact question or doubt.
+   - Do NOT blabber, do NOT add unsolicited lectures, and do NOT drift into unrelated topics.
+   - Do NOT add "Exam Tips", "Mark Allocation", or "Scoring Rubrics" unless the student explicitly asks for them.
+   - Answer their specific question first, in clear, simple language.
+2. BE GENUINELY HELPFUL & INTUITIVE:
+   - If the student says "I don't understand", "explain simpler", or "why", explain the concept simply with clear intuition and real understanding. No unnecessary jargon.
+   - If the student asks for a solution or calculation, provide the exact step-by-step working directly, fully finished without truncation.
+3. CONVERSATIONAL & CONCISE:
+   - If the student greets you ("hi", "hello"), greet them warmly in 1-2 friendly sentences and ask how you can help.
+   - Keep answers well-structured and easy to read.
+4. CLEAN FORMATTING:
+   - Never output internal reasoning scratchpads or <think> tags.
+   - Use standard LaTeX ($...$ inline, $$...$$ display) with lowercase syntax (\\alpha, \\frac, etc.).`;
 
   function buildModelSelectHTML(currentModel) {
     let html = `<optgroup label="Direct Google Gemini Production Cascade">`;
@@ -222,33 +216,27 @@ Chatbot & Tutoring Instructions:
 
     let contextPrompt = '';
     if (isGreeting) {
-      contextPrompt = `The student greeted: "${trimmedQuery}".
-Respond warmly, politely, and naturally as an expert, approachable mathematics tutor for course 23MA1302 (Linear Algebra and Numerical Analysis). Ask how you can help them with their studies or questions today. Do NOT force or mention any specific problem unless they ask.`;
+      contextPrompt = `Student says: "${trimmedQuery}".
+Respond warmly in 1-2 friendly sentences. Ask what math doubt or concept they need help with. Do not lecture or explain anything unprompted.`;
     } else {
-      contextPrompt = `Student's Question / Doubt: "${trimmedQuery}"\n\n`;
+      contextPrompt = `Student's Question: "${trimmedQuery}"\n\n`;
 
       if (priorMsgs.length > 0) {
         contextPrompt += `Prior Thread Context:\n`;
-        priorMsgs.slice(-4).forEach(m => {
+        priorMsgs.slice(-3).forEach(m => {
           contextPrompt += `${m.role === 'student' ? 'Student' : 'Tutor'}: ${m.text}\n`;
         });
         contextPrompt += `\n`;
       }
 
-      if (qTitle) {
-        contextPrompt += `Card Context (only use if relevant to student's query):
-Topic: ${qTitle}\n`;
-      }
-      if (qSolution && (trimmedQuery.toLowerCase().includes('step') || trimmedQuery.toLowerCase().includes('this') || trimmedQuery.toLowerCase().includes('problem') || trimmedQuery.toLowerCase().includes('solution') || trimmedQuery.toLowerCase().includes('why') || trimmedQuery.toLowerCase().includes('explain'))) {
-        contextPrompt += `Card Working:\n${qSolution.substring(0, 500)}\n\n`;
+      if (qTitle && (trimmedQuery.toLowerCase().includes('this') || trimmedQuery.toLowerCase().includes('problem') || trimmedQuery.toLowerCase().includes('step') || trimmedQuery.toLowerCase().includes('here'))) {
+        contextPrompt += `Card Context: Topic is "${qTitle}"\n`;
+        if (qSolution) {
+          contextPrompt += `Card Steps:\n${qSolution.substring(0, 400)}\n\n`;
+        }
       }
 
-      contextPrompt += `Instructions for AI Tutor:
-- Answer the student's EXACT question above directly.
-- Do NOT force unrelated topics (such as subspace or specific card problems) if the student asked something else.
-- If the student says they don't understand, asks for simpler terms, or asks why, explain clearly using intuitive language, geometric meaning, and relatable concepts first so it clicks immediately.
-- If the student asks for calculations, proofs, or formulas, provide the full, complete step-by-step mathematical working without truncating.
-- Strictly genuine AI response only, zero fake text.`;
+      contextPrompt += `Strict Rule: Answer ONLY what the student asked above directly, clearly, and concisely. No filler, no unsolicited exam marks, and no blabber.`;
     }
 
     try {
