@@ -31,17 +31,18 @@ window.AITutor = (function() {
   // OpenRouter Free Endpoints
   const OPENROUTER_CASCADE = [
     "openrouter/free",
+    "google/gemma-4-31b-it:free",
+    "google/gemma-4-26b-a4b-it:free",
     "nvidia/nemotron-3-ultra-550b-a55b:free",
     "nvidia/nemotron-3.5-super-vl:free",
     "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-    "google/gemma-4-31b-it:free",
-    "google/gemma-4-26b-a4b-it:free",
-    "baidu/ernie-5.5-flash-preview:free",
-    "cohere/north-mini-code:free",
-    "liquid/lfm-3-1.7b:free",
-    "recursive/flint-v1.0:free",
     "nvidia/nemotron-3.5-lightning:free",
     "thinkingmachines/inkling-2-small:free",
+    "cohere/north-mini-code:free",
+    "baidu/ernie-5.5-flash-preview:free",
+    "liquid/lfm-2.5-2.6b:free",
+    "liquid/lfm-3-1.7b:free",
+    "recursive/flint-v1.0:free",
     "meta-llama/llama-3.2-11b-vision-instruct:free",
     "meta-llama/llama-3.2-90b-vision-instruct:free",
     "google/gemini-2.0-flash-exp:free",
@@ -49,43 +50,44 @@ window.AITutor = (function() {
     "qwen/qwen-2-vl-72b-instruct:free"
   ];
 
-  // UI Model Catalog
+  // UI Model Catalog (All Active Production & Free Models)
   const MODEL_CATALOG = {
     gemini: [
-      { id: "gemini-3.5-flash-lite", name: "Gemini 3.5 Flash Lite (Active Production - Ultra Fast)" },
-      { id: "gemini-flash-lite-latest", name: "Gemini Flash Lite Latest (Stabilized Checkpoint)" },
-      { id: "gemini-3-flash-preview", name: "Gemini 3 Flash Preview" },
-      { id: "gemini-2.5-flash", name: "Gemini 2.5 Flash (Production Endpoint)" },
-      { id: "gemini-2.5-flash-lite", name: "Gemini 2.5 Flash Lite" },
-      { id: "gemini-flash-latest", name: "Gemini Flash Latest" },
-      { id: "gemini-3.1-flash-lite-preview", name: "Gemini 3.1 Flash Lite Preview" },
-      { id: "gemini-2.5-pro", name: "Gemini 2.5 Pro (Advanced Reasoning)" },
-      { id: "gemini-4-hydrogen", name: "Gemini 4 Hydrogen" },
-      { id: "gemini-omni", name: "Gemini Omni" },
-      { id: "gemini-3.6-flash", name: "Gemini 3.6 Flash" },
-      { id: "gemini-3.5-flash", name: "Gemini 3.5 Flash" },
-      { id: "gemini-robotics-er-2-preview", name: "Gemini Robotics ER 2" },
-      { id: "gemma-4-31b-it", name: "Google Gemma 4 31B IT" },
-      { id: "gemma-4-26b-a4b-it", name: "Google Gemma 4 26B IT" }
+      { id: "gemini-2.5-flash", name: "gemini-2.5-flash (Primary Stable Production Endpoint)" },
+      { id: "gemini-2.5-flash-lite", name: "gemini-2.5-flash-lite (Ultra Low-Latency Fallback)" },
+      { id: "gemini-flash-latest", name: "gemini-flash-latest (Google Stabilized Checkpoint)" },
+      { id: "gemini-3.1-flash-lite-preview", name: "gemini-3.1-flash-lite-preview (Preview-Tier Lightweight)" },
+      { id: "gemini-2.5-pro", name: "gemini-2.5-pro (Advanced Reasoning Tier Fallback)" },
+      { id: "gemini-3.5-flash-lite", name: "gemini-3.5-flash-lite (Active High Throughput)" },
+      { id: "gemini-3.5-flash", name: "gemini-3.5-flash" },
+      { id: "gemini-3.6-flash", name: "gemini-3.6-flash" },
+      { id: "gemini-3-flash-preview", name: "gemini-3-flash-preview (Fast Preview Checkpoint)" },
+      { id: "gemini-flash-lite-latest", name: "gemini-flash-lite-latest (Stabilized Checkpoint)" },
+      { id: "gemini-4-hydrogen", name: "gemini-4-hydrogen" },
+      { id: "gemini-omni", name: "gemini-omni" },
+      { id: "gemini-robotics-er-2-preview", name: "gemini-robotics-er-2-preview" },
+      { id: "gemma-4-31b-it", name: "gemma-4-31b-it" },
+      { id: "gemma-4-26b-a4b-it", name: "gemma-4-26b-a4b-it" }
     ],
     openrouter: [
-      { id: "openrouter/free", name: "OpenRouter Auto Free (Auto-Routed Zero-404)" },
-      { id: "nvidia/nemotron-3-ultra-550b-a55b:free", name: "Nemotron 3 Ultra 550B (Free)" },
-      { id: "nvidia/nemotron-3.5-super-vl:free", name: "Nemotron 3.5 Super VL (Free)" },
-      { id: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", name: "Nemotron 3 Nano Omni (Free)" },
-      { id: "google/gemma-4-31b-it:free", name: "Google Gemma 4 31B IT (Free)" },
-      { id: "google/gemma-4-26b-a4b-it:free", name: "Google Gemma 4 26B IT (Free)" },
-      { id: "baidu/ernie-5.5-flash-preview:free", name: "Baidu Ernie 5.5 Flash (Free)" },
-      { id: "cohere/north-mini-code:free", name: "Cohere North Mini Code (Free)" },
-      { id: "liquid/lfm-3-1.7b:free", name: "Liquid LFM 3 1.7B (Free)" },
-      { id: "recursive/flint-v1.0:free", name: "Recursive Flint v1.0 (Free)" },
-      { id: "nvidia/nemotron-3.5-lightning:free", name: "Nemotron 3.5 Lightning (Free)" },
-      { id: "thinkingmachines/inkling-2-small:free", name: "Inkling 2 Small (Free)" },
-      { id: "meta-llama/llama-3.2-11b-vision-instruct:free", name: "Llama 3.2 11B Vision (Free)" },
-      { id: "meta-llama/llama-3.2-90b-vision-instruct:free", name: "Llama 3.2 90B Vision (Free)" },
-      { id: "google/gemini-2.0-flash-exp:free", name: "Gemini 2.0 Flash Exp (Free)" },
-      { id: "google/gemini-flash-1.5-exp:free", name: "Gemini Flash 1.5 Exp (Free)" },
-      { id: "qwen/qwen-2-vl-72b-instruct:free", name: "Qwen 2 VL 72B (Free)" }
+      { id: "openrouter/free", name: "openrouter/free (Auto-Routed Free Fallback)" },
+      { id: "google/gemma-4-31b-it:free", name: "google/gemma-4-31b-it:free" },
+      { id: "google/gemma-4-26b-a4b-it:free", name: "google/gemma-4-26b-a4b-it:free" },
+      { id: "nvidia/nemotron-3-ultra-550b-a55b:free", name: "nvidia/nemotron-3-ultra-550b-a55b:free" },
+      { id: "nvidia/nemotron-3.5-super-vl:free", name: "nvidia/nemotron-3.5-super-vl:free" },
+      { id: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", name: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free" },
+      { id: "nvidia/nemotron-3.5-lightning:free", name: "nvidia/nemotron-3.5-lightning:free" },
+      { id: "thinkingmachines/inkling-2-small:free", name: "thinkingmachines/inkling-2-small:free" },
+      { id: "cohere/north-mini-code:free", name: "cohere/north-mini-code:free" },
+      { id: "baidu/ernie-5.5-flash-preview:free", name: "baidu/ernie-5.5-flash-preview:free" },
+      { id: "liquid/lfm-2.5-2.6b:free", name: "liquid/lfm-2.5-2.6b:free" },
+      { id: "liquid/lfm-3-1.7b:free", name: "liquid/lfm-3-1.7b:free" },
+      { id: "recursive/flint-v1.0:free", name: "recursive/flint-v1.0:free" },
+      { id: "meta-llama/llama-3.2-11b-vision-instruct:free", name: "meta-llama/llama-3.2-11b-vision-instruct:free" },
+      { id: "meta-llama/llama-3.2-90b-vision-instruct:free", name: "meta-llama/llama-3.2-90b-vision-instruct:free" },
+      { id: "google/gemini-2.0-flash-exp:free", name: "google/gemini-2.0-flash-exp:free" },
+      { id: "google/gemini-flash-1.5-exp:free", name: "google/gemini-flash-1.5-exp:free" },
+      { id: "qwen/qwen-2-vl-72b-instruct:free", name: "qwen/qwen-2-vl-72b-instruct:free" }
     ]
   };
 
@@ -113,14 +115,27 @@ Chatbot & Tutoring Instructions:
 5. University Exam Standards:
    - Highlight essential exam formulas, scoring rubrics, and mark allocation tips relevant to university semester evaluations.`;
 
+  function buildModelSelectHTML(currentModel) {
+    let html = `<optgroup label="Direct Google Gemini Production Cascade">`;
+    MODEL_CATALOG.gemini.forEach(m => {
+      html += `<option value="${m.id}" ${m.id === currentModel ? 'selected' : ''}>${m.name}</option>`;
+    });
+    html += `</optgroup><optgroup label="OpenRouter Free Endpoints (Zero-404 Cascade)">`;
+    MODEL_CATALOG.openrouter.forEach(m => {
+      html += `<option value="${m.id}" ${m.id === currentModel ? 'selected' : ''}>${m.name}</option>`;
+    });
+    html += `</optgroup>`;
+    return html;
+  }
+
   function syncDropdowns() {
     if (selectedModel.includes('/') || selectedModel.endsWith(':free')) {
       selectedProvider = 'openrouter';
-    } else if (selectedModel.startsWith('gemini-') || selectedModel.startsWith('gemma-')) {
+    } else {
       selectedProvider = 'gemini';
     }
 
-    const models = MODEL_CATALOG[selectedProvider] || MODEL_CATALOG.gemini;
+    const fullDropdownHTML = buildModelSelectHTML(selectedModel);
 
     document.querySelectorAll('.inline-ai-provider-select').forEach(sel => {
       Array.from(sel.options).forEach(opt => {
@@ -130,7 +145,7 @@ Chatbot & Tutoring Instructions:
     });
 
     document.querySelectorAll('.inline-ai-model-select').forEach(sel => {
-      sel.innerHTML = models.map(m => `<option value="${m.id}" ${m.id === selectedModel ? 'selected' : ''}>${m.name}</option>`).join('');
+      sel.innerHTML = fullDropdownHTML;
       sel.value = selectedModel;
     });
   }
@@ -138,8 +153,7 @@ Chatbot & Tutoring Instructions:
   function setProvider(provider) {
     selectedProvider = (provider === 'openrouter') ? 'openrouter' : 'gemini';
     localStorage.setItem("lana_ai_provider", selectedProvider);
-    const models = MODEL_CATALOG[selectedProvider] || MODEL_CATALOG.gemini;
-    selectedModel = models[0].id;
+    selectedModel = (selectedProvider === 'openrouter') ? MODEL_CATALOG.openrouter[0].id : MODEL_CATALOG.gemini[0].id;
     localStorage.setItem("lana_ai_model", selectedModel);
     syncDropdowns();
   }
