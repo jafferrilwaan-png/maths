@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KFC - Finger Lickin' Good</title>
+  <title>KFC - 3D WebGL Experience</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,8 +24,9 @@
       --border: #e0e0e0;
     }
 
-    html {
-      scroll-behavior: smooth;
+    html, body {
+      height: 100%;
+      overflow: hidden;
     }
 
     body {
@@ -33,7 +34,6 @@
       line-height: 1.6;
       color: var(--text-dark);
       background-color: var(--secondary);
-      overflow-x: hidden;
     }
 
     /* Header */
@@ -97,21 +97,6 @@
       color: var(--primary);
     }
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: var(--primary);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
     .cta-button {
       background-color: var(--primary);
       color: var(--secondary);
@@ -140,50 +125,65 @@
       color: var(--text-dark);
     }
 
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, #FF3333 100%);
-      color: var(--secondary);
-      padding: 120px 20px 80px;
+    /* Main Canvas */
+    #canvas-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* UI Overlay */
+    .ui-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .ui-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      color: white;
+      pointer-events: auto;
+      width: 90%;
+      max-width: 800px;
     }
 
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 {
+    .ui-content h1 {
       font-size: 4rem;
       font-weight: 800;
       margin-bottom: 20px;
-      animation: fadeInDown 1s ease-out;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+      background: linear-gradient(135deg, #FF0000, #FF8C00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .hero p {
+    .ui-content p {
       font-size: 1.5rem;
       margin-bottom: 40px;
-      opacity: 0.95;
-      animation: fadeIn 1.5s ease-out;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
-    .hero-buttons {
+    .ui-buttons {
       display: flex;
       gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
-      animation: fadeInUp 2s ease-out;
+      pointer-events: auto;
     }
 
-    .btn-outline {
+    .btn-outline-light {
       background: transparent;
       color: var(--secondary);
       border: 2px solid var(--secondary);
@@ -197,343 +197,146 @@
       display: inline-block;
     }
 
-    .btn-outline:hover {
+    .btn-outline-light:hover {
       background-color: var(--secondary);
       color: var(--primary);
       transform: translateY(-2px);
     }
 
-    /* 3D Canvas Container */
-    #canvas-container {
+    /* Info Panel */
+    .info-panel {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      max-width: 300px;
+      pointer-events: auto;
     }
 
-    /* About Section */
-    .about {
-      padding: 80px 20px;
-      background-color: var(--bg-light);
+    .info-panel h3 {
+      margin-bottom: 10px;
+      color: #FFD700;
     }
 
-    .about-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+    .info-panel p {
+      margin: 5px 0;
+      font-size: 0.85rem;
     }
 
-    .about-image {
-      width: 100%;
-      height: 400px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .about-content h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--text-dark);
-    }
-
-    .about-content p {
-      font-size: 1.1rem;
-      color: var(--text-light);
-      margin-bottom: 20px;
-    }
-
-    .about-features {
-      display: flex;
-      gap: 30px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-
-    .feature {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .feature-icon {
-      width: 40px;
-      height: 40px;
-      background-color: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--secondary);
-      font-weight: bold;
+    /* Controls Hint */
+    .controls-hint {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      pointer-events: auto;
     }
 
     /* Menu Section */
-    .menu {
-      padding: 80px 20px;
-      background-color: var(--secondary);
+    .menu-section {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      pointer-events: auto;
+      opacity: 0;
+      transition: opacity 0.5s ease;
     }
 
-    .menu-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 10px;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), #FF3333);
-      margin: 15px auto;
-      border-radius: 2px;
+    .menu-section.visible {
+      opacity: 1;
     }
 
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .menu-card {
-      background-color: var(--secondary);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid var(--border);
-    }
-
-    .menu-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .menu-image {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .menu-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .menu-card:hover .menu-image img {
-      transform: scale(1.05);
-    }
-
-    .menu-info {
-      padding: 20px;
-    }
-
-    .menu-info h3 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: var(--text-dark);
-    }
-
-    .menu-info p {
-      color: var(--text-light);
-      margin-bottom: 15px;
-      font-size: 0.95rem;
-    }
-
-    .menu-price {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    /* Stats Section */
-    .stats {
-      padding: 60px 20px;
-      background: linear-gradient(135deg, var(--primary) 0%, #FF3333 100%);
-      color: var(--secondary);
-    }
-
-    .stats-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      text-align: center;
-    }
-
-    .stat-item {
-      padding: 20px;
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .stat-label {
-      font-size: 1.1rem;
-      font-weight: 500;
-      opacity: 0.9;
-    }
-
-    /* Footer */
-    .footer {
-      background-color: var(--text-dark);
-      color: var(--secondary);
-      padding: 60px 20px 20px;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .footer-column h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .footer-column h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background-color: var(--primary);
-    }
-
-    .footer-column ul {
-      list-style: none;
-    }
-
-    .footer-column ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer-column ul li a {
-      color: #cccccc;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-size: 0.95rem;
-    }
-
-    .footer-column ul li a:hover {
-      color: var(--primary);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #333333;
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
       gap: 20px;
     }
 
-    .footer-logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
+    .menu-item {
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
-    .copyright {
-      font-size: 0.9rem;
-      color: #999999;
+    .menu-item:hover {
+      transform: translateY(-5px);
     }
 
-    .social-links {
-      display: flex;
-      gap: 15px;
-    }
-
-    .social-link {
-      width: 40px;
-      height: 40px;
-      background-color: #333333;
+    .menu-item-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 10px;
+      background: linear-gradient(135deg, #FF0000, #FF8C00);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--secondary);
-      text-decoration: none;
-      transition: background-color 0.3s ease;
+      font-size: 1.5rem;
+      color: white;
     }
 
-    .social-link:hover {
-      background-color: var(--primary);
+    .menu-item h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .menu-item p {
+      font-size: 0.85rem;
+      color: #666;
     }
 
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Loading Screen */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FF0000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: opacity 0.5s ease;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .loading.hidden {
+      opacity: 0;
+      pointer-events: none;
     }
 
-    /* Responsive Design */
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -543,60 +346,45 @@
         display: block;
       }
 
-      .hero h1 {
+      .ui-content h1 {
         font-size: 2.5rem;
       }
 
-      .hero p {
+      .ui-content p {
         font-size: 1.2rem;
       }
 
-      .hero {
-        padding: 100px 20px 60px;
-        min-height: auto;
+      .menu-section {
+        width: 95%;
+        padding: 20px;
       }
 
-      .about-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 480px) {
-      .hero h1 {
+      .ui-content h1 {
         font-size: 2rem;
       }
 
-      .hero p {
+      .ui-content p {
         font-size: 1rem;
-      }
-
-      .section-title h2 {
-        font-size: 2rem;
       }
 
       .menu-grid {
         grid-template-columns: 1fr;
       }
-      
-      .logo {
-        font-size: 1.5rem;
-      }
-      
-      .logo-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 0.8rem;
-      }
     }
   </style>
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div class="loading" id="loading">
+    <div class="loader"></div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <div class="nav-container">
@@ -607,9 +395,8 @@
       <nav>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
-          <li><a href="#menu">Menu</a></li>
+          <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <a href="#order" class="cta-button">Order Now</a>
@@ -617,262 +404,417 @@
     </div>
   </header>
 
-  <!-- Hero Section with 3D Background -->
-  <section class="hero" id="home">
-    <div id="canvas-container"></div>
-    <div class="hero-container">
-      <h1>Finger Lickin' Good</h1>
-      <p>Experience the world-famous taste of KFC's Original Recipe chicken</p>
-      <div class="hero-buttons">
-        <a href="#menu" class="cta-button">View Menu</a>
-        <a href="#order" class="btn-outline">Order Online</a>
-      </div>
-    </div>
-  </section>
+  <!-- 3D Canvas -->
+  <div id="canvas-container"></div>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div class="about-container">
-      <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1599490659213-e2b982c28c43?w=800&h=600&fit=crop" alt="KFC Chicken Bucket">
-      </div>
-      <div class="about-content">
-        <h2>About KFC</h2>
-        <p>Founded by Colonel Harland Sanders in 1930, KFC has been serving up the world's most famous fried chicken for over 90 years.</p>
-        <p>Our secret blend of 11 herbs and spices has made KFC a global phenomenon, loved by millions in over 145 countries worldwide.</p>
-        <div class="about-features">
-          <div class="feature">
-            <div class="feature-icon">✓</div>
-            <span>Secret Recipe</span>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">✓</div>
-            <span>Quality Ingredients</span>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">✓</div>
-            <span>Worldwide Presence</span>
-          </div>
-        </div>
+  <!-- UI Overlay -->
+  <div class="ui-overlay">
+    <div class="ui-content">
+      <h1>KFC</h1>
+      <p>Finger Lickin' Good - Experience in 3D</p>
+      <div class="ui-buttons">
+        <a href="#menu" class="cta-button" onclick="toggleMenu()">View Menu</a>
+        <a href="#order" class="btn-outline-light">Order Now</a>
       </div>
     </div>
-  </section>
+
+    <div class="info-panel">
+      <h3>🍗 KFC 3D Scene</h3>
+      <p>• 3D KFC Logo</p>
+      <p>• 3D Chicken Bucket</p>
+      <p>• 3D Chicken Pieces</p>
+      <p>• Realistic Materials</p>
+    </div>
+
+    <div class="controls-hint">
+      🖱️ Drag to Rotate | 🖱️ Scroll to Zoom
+    </div>
+  </div>
 
   <!-- Menu Section -->
-  <section class="menu" id="menu">
-    <div class="menu-container">
-      <div class="section-title">
-        <h2>Our Menu</h2>
+  <div class="menu-section" id="menu-section">
+    <h2 style="text-align: center; margin-bottom: 20px; font-size: 1.5rem; color: #FF0000;">Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item" onclick="selectItem('Original Recipe')">
+        <div class="menu-item-icon">🍗</div>
+        <h4>Original Recipe</h4>
+        <p>11 Herbs & Spices</p>
       </div>
-      <div class="menu-grid">
-        <div class="menu-card">
-          <div class="menu-image">
-            <img src="https://images.unsplash.com/photo-1626078297422-533f88423962?w=400&h=300&fit=crop" alt="Original Recipe Chicken">
-          </div>
-          <div class="menu-info">
-            <h3>Original Recipe Chicken</h3>
-            <p>Our signature fried chicken with the Colonel's secret blend of 11 herbs and spices.</p>
-            <div class="menu-price">$12.99</div>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-image">
-            <img src="https://images.unsplash.com/photo-1568278182961-844463513427?w=400&h=300&fit=crop" alt="Hot Wings">
-          </div>
-          <div class="menu-info">
-            <h3>Hot Wings</h3>
-            <p>Spicy, crispy wings coated in our signature hot sauce.</p>
-            <div class="menu-price">$10.99</div>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-image">
-            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=300&fit=crop" alt="Zinger Burger">
-          </div>
-          <div class="menu-info">
-            <h3>Zinger Burger</h3>
-            <p>Spicy crispy chicken fillet with lettuce and mayo in a bun.</p>
-            <div class="menu-price">$8.99</div>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-image">
-            <img src="https://images.unsplash.com/photo-1625944022799-41813d129841?w=400&h=300&fit=crop" alt="Tender Strips">
-          </div>
-          <div class="menu-info">
-            <h3>Tender Strips</h3>
-            <p>Juicy, tender chicken strips perfect for dipping.</p>
-            <div class="menu-price">$9.99</div>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-image">
-            <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop" alt="Popcorn Chicken">
-          </div>
-          <div class="menu-info">
-            <h3>Popcorn Chicken</h3>
-            <p>Bite-sized pieces of our famous fried chicken.</p>
-            <div class="menu-price">$7.99</div>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-image">
-            <img src="https://images.unsplash.com/photo-1553322391-945a33323793?w=400&h=300&fit=crop" alt="Twister Wrap">
-          </div>
-          <div class="menu-info">
-            <h3>Twister Wrap</h3>
-            <p>Crispy chicken strips wrapped in a tortilla with veggies and sauce.</p>
-            <div class="menu-price">$8.49</div>
-          </div>
-        </div>
+      <div class="menu-item" onclick="selectItem('Hot Wings')">
+        <div class="menu-item-icon">🌶️</div>
+        <h4>Hot Wings</h4>
+        <p>Spicy & Crispy</p>
+      </div>
+      <div class="menu-item" onclick="selectItem('Zinger Burger')">
+        <div class="menu-item-icon">🍔</div>
+        <h4>Zinger Burger</h4>
+        <p>Signature Spicy</p>
+      </div>
+      <div class="menu-item" onclick="selectItem('Tender Strips')">
+        <div class="menu-item-icon">🍢</div>
+        <h4>Tender Strips</h4>
+        <p>Juicy & Tender</p>
+      </div>
+      <div class="menu-item" onclick="selectItem('Popcorn Chicken')">
+        <div class="menu-item-icon">🥘</div>
+        <h4>Popcorn Chicken</h4>
+        <p>Bite-Sized</p>
+      </div>
+      <div class="menu-item" onclick="selectItem('Twister Wrap')">
+        <div class="menu-item-icon">🌯</div>
+        <h4>Twister Wrap</h4>
+        <p>Wrapped Goodness</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="stats-container">
-      <div class="stat-item">
-        <div class="stat-number">145+</div>
-        <div class="stat-label">Countries</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">24K+</div>
-        <div class="stat-label">Restaurants</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">1930</div>
-        <div class="stat-label">Founded</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">11</div>
-        <div class="stat-label">Secret Spices</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer" id="contact">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h3>KFC</h3>
-          <p style="color: #cccccc; font-size: 0.95rem; margin-bottom: 20px;">Finger Lickin' Good since 1930</p>
-          <div class="social-links">
-            <a href="#" class="social-link">f</a>
-            <a href="#" class="social-link">t</a>
-            <a href="#" class="social-link">ig</a>
-            <a href="#" class="social-link">yt</a>
-          </div>
-        </div>
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#">Locations</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3>Menu</h3>
-          <ul>
-            <li><a href="#">Chicken</a></li>
-            <li><a href="#">Burgers</a></li>
-            <li><a href="#">Wraps</a></li>
-            <li><a href="#">Sides</a></li>
-            <li><a href="#">Desserts</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3>Contact</h3>
-          <ul>
-            <li><a href="#">Customer Service</a></li>
-            <li><a href="#">Feedback</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Franchising</a></li>
-            <li><a href="#">Nutrition</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-logo">KFC</div>
-        <div class="copyright">
-          &copy; 2024 KFC. All Rights Reserved. | Privacy Policy | Terms of Service
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Three.js for minimal 3D animation -->
+  <!-- Three.js for REAL 3D WebGL -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FontLoader.js"></script>
   <script>
-    // Minimal 3D WebGL animation - simple geometric shapes
+    // Scene setup
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    scene.background = new THREE.Color(0x1a1a1a);
     
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(0, 5, 15);
+    
+    const renderer = new THREE.WebGLRenderer({ 
+      alpha: true, 
+      antialias: true,
+      powerPreference: "high-performance"
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     document.getElementById('canvas-container').appendChild(renderer.domElement);
 
+    // Orbit Controls - allows user to rotate, zoom, pan
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.screenSpacePanning = false;
+    controls.minDistance = 5;
+    controls.maxDistance = 50;
+    controls.maxPolarAngle = Math.PI / 2 - 0.1;
+
     // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(1, 1, 1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(10, 20, 10);
+    directionalLight.castShadow = true;
+    directionalLight.shadow.mapSize.width = 2048;
+    directionalLight.shadow.mapSize.height = 2048;
+    directionalLight.shadow.camera.near = 0.5;
+    directionalLight.shadow.camera.far = 100;
+    directionalLight.shadow.camera.left = -50;
+    directionalLight.shadow.camera.right = 50;
+    directionalLight.shadow.camera.top = 50;
+    directionalLight.shadow.camera.bottom = -50;
     scene.add(directionalLight);
 
-    // Create simple, minimal geometric shapes
-    const shapes = [];
-    const geometry = new THREE.IcosahedronGeometry(0.8, 0);
-    
-    // Create 5-6 simple shapes with KFC colors
-    const colors = [0xFF0000, 0xFFFFFF, 0xFFD700];
-    
-    for (let i = 0; i < 6; i++) {
-      const material = new THREE.MeshPhongMaterial({
-        color: colors[i % colors.length],
-        shininess: 30,
+    // Add hemisphere light for better lighting
+    const hemiLight = new THREE.HemisphereLight(0xffffbb, 0x080820, 0.6);
+    scene.add(hemiLight);
+
+    // Create ground plane
+    const groundGeometry = new THREE.PlaneGeometry(100, 100);
+    const groundMaterial = new THREE.MeshStandardMaterial({
+      color: 0x333333,
+      roughness: 0.8,
+      metalness: 0.2
+    });
+    const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+    ground.rotation.x = -Math.PI / 2;
+    ground.receiveShadow = true;
+    scene.add(ground);
+
+    // Add grid helper
+    const gridHelper = new THREE.GridHelper(50, 50, 0x444444, 0x666666);
+    scene.add(gridHelper);
+
+    // Create 3D KFC Logo
+    function create3DLogo() {
+      const fontLoader = new THREE.FontLoader();
+      fontLoader.load('https://threejs.org/examples/fonts/helvetiker_bold.typeface.json', function(font) {
+        const textGeometry = new THREE.TextGeometry('KFC', {
+          font: font,
+          size: 3,
+          height: 0.8,
+          curveSegments: 12,
+          bevelEnabled: true,
+          bevelThickness: 0.3,
+          bevelSize: 0.3,
+          bevelOffset: 0,
+          bevelSegments: 5
+        });
+        
+        textGeometry.center();
+        
+        const textMaterial = new THREE.MeshPhongMaterial({
+          color: 0xFF0000,
+          shininess: 100,
+          specular: 0xFF0000
+        });
+        
+        const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+        textMesh.position.set(0, 4, -5);
+        textMesh.castShadow = true;
+        textMesh.receiveShadow = true;
+        scene.add(textMesh);
+
+        // Add glow effect
+        const glowMaterial = new THREE.MeshBasicMaterial({
+          color: 0xFF4500,
+          transparent: true,
+          opacity: 0.3
+        });
+        const glowMesh = new THREE.Mesh(textGeometry, glowMaterial);
+        glowMesh.position.copy(textMesh.position);
+        glowMesh.position.z -= 0.1;
+        glowMesh.scale.multiplyScalar(1.05);
+        scene.add(glowMesh);
+      });
+    }
+    create3DLogo();
+
+    // Create 3D Chicken Bucket
+    function createBucket() {
+      const bucketGroup = new THREE.Group();
+      
+      // Bucket base (cylinder)
+      const bucketGeometry = new THREE.CylinderGeometry(3, 2.5, 3, 32, 1, false);
+      const bucketMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFF0000,
+        roughness: 0.4,
+        metalness: 0.1
+      });
+      const bucket = new THREE.Mesh(bucketGeometry, bucketMaterial);
+      bucket.castShadow = true;
+      bucket.receiveShadow = true;
+      bucketGroup.add(bucket);
+
+      // Bucket lid
+      const lidGeometry = new THREE.CylinderGeometry(3.2, 3.2, 0.3, 32, 1, false);
+      const lidMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFF0000,
+        roughness: 0.3,
+        metalness: 0.2
+      });
+      const lid = new THREE.Mesh(lidGeometry, lidMaterial);
+      lid.position.y = 1.65;
+      lid.castShadow = true;
+      bucketGroup.add(lid);
+
+      // Handle
+      const handleGeometry = new THREE.TorusGeometry(0.8, 0.15, 16, 32);
+      const handleMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFFFFFF,
+        roughness: 0.6
+      });
+      const handle = new THREE.Mesh(handleGeometry, handleMaterial);
+      handle.rotation.x = Math.PI / 2;
+      handle.rotation.z = Math.PI / 4;
+      handle.position.set(2.5, 1.5, 0);
+      handle.castShadow = true;
+      bucketGroup.add(handle);
+
+      // KFC logo on bucket
+      const logoGeometry = new THREE.BoxGeometry(1.5, 0.8, 0.1);
+      const logoMaterial = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
+      const logo = new THREE.Mesh(logoGeometry, logoMaterial);
+      logo.position.set(0, 1.5, 0.51);
+      bucketGroup.add(logo);
+
+      bucketGroup.position.set(-8, 0, -3);
+      bucketGroup.rotation.y = Math.PI / 4;
+      scene.add(bucketGroup);
+
+      return bucketGroup;
+    }
+    const bucket = createBucket();
+
+    // Create 3D Chicken Pieces
+    function createChickenPiece() {
+      const chickenGroup = new THREE.Group();
+      
+      // Chicken body (ellipsoid using sphere with scaling)
+      const bodyGeometry = new THREE.SphereGeometry(1.2, 32, 32);
+      const bodyMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFFD700,
+        roughness: 0.6,
+        metalness: 0.05
+      });
+      const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+      body.scale.set(1.2, 1, 0.8);
+      body.castShadow = true;
+      chickenGroup.add(body);
+
+      // Breading texture effect
+      const breadingGeometry = new THREE.SphereGeometry(1.25, 32, 32);
+      const breadingMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFFA500,
+        roughness: 0.8,
+        metalness: 0.02,
+        transparent: true,
+        opacity: 0.7
+      });
+      const breading = new THREE.Mesh(breadingGeometry, breadingMaterial);
+      breading.scale.set(1.22, 1.02, 0.82);
+      chickenGroup.add(breading);
+
+      // Bone sticking out
+      const boneGeometry = new THREE.CylinderGeometry(0.1, 0.2, 1.5, 16);
+      const boneMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFFFFFF,
+        roughness: 0.3
+      });
+      const bone = new THREE.Mesh(boneGeometry, boneMaterial);
+      bone.rotation.x = Math.PI / 4;
+      bone.position.set(0, 0, -1.2);
+      bone.castShadow = true;
+      chickenGroup.add(bone);
+
+      chickenGroup.castShadow = true;
+      return chickenGroup;
+    }
+
+    // Create multiple chicken pieces
+    const chickenPieces = [];
+    for (let i = 0; i < 5; i++) {
+      const piece = createChickenPiece();
+      piece.position.x = (i - 2) * 4;
+      piece.position.y = 0.5 + Math.random() * 0.5;
+      piece.position.z = -2 - Math.random() * 4;
+      piece.rotation.y = Math.random() * Math.PI * 2;
+      piece.scale.multiplyScalar(0.8 + Math.random() * 0.4);
+      scene.add(piece);
+      chickenPieces.push(piece);
+    }
+
+    // Create 3D Drink Cup
+    function createDrink() {
+      const cupGroup = new THREE.Group();
+      
+      // Cup body
+      const cupGeometry = new THREE.CylinderGeometry(1, 0.8, 4, 32, 1, false);
+      const cupMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFF0000,
+        roughness: 0.3,
+        metalness: 0.1
+      });
+      const cup = new THREE.Mesh(cupGeometry, cupMaterial);
+      cup.castShadow = true;
+      cupGroup.add(cup);
+
+      // Cup lid
+      const lidGeometry = new THREE.CylinderGeometry(1.1, 1.1, 0.2, 32, 1, false);
+      const lidMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFF0000,
+        roughness: 0.2
+      });
+      const lid = new THREE.Mesh(lidGeometry, lidMaterial);
+      lid.position.y = 2.1;
+      lid.castShadow = true;
+      cupGroup.add(lid);
+
+      // Straw
+      const strawGeometry = new THREE.CylinderGeometry(0.08, 0.08, 5, 16);
+      const strawMaterial = new THREE.MeshStandardMaterial({
+        color: 0x00FF00,
+        roughness: 0.7
+      });
+      const straw = new THREE.Mesh(strawGeometry, strawMaterial);
+      straw.position.set(0.5, 3.5, 0);
+      straw.rotation.x = Math.PI / 6;
+      cupGroup.add(straw);
+
+      // Liquid inside
+      const liquidGeometry = new THREE.CylinderGeometry(0.75, 0.75, 1.5, 32, 1, false);
+      const liquidMaterial = new THREE.MeshStandardMaterial({
+        color: 0x8B4513,
+        roughness: 0.1,
+        metalness: 0.05,
         transparent: true,
         opacity: 0.8
       });
-      const mesh = new THREE.Mesh(geometry, material);
-      
-      mesh.position.x = (Math.random() - 0.5) * 15;
-      mesh.position.y = (Math.random() - 0.5) * 10;
-      mesh.position.z = (Math.random() - 0.5) * 5 - 5;
-      
-      mesh.userData = {
-        rotationSpeed: {
-          x: (Math.random() - 0.5) * 0.005,
-          y: (Math.random() - 0.5) * 0.005
-        },
-        floatOffset: Math.random() * Math.PI * 2
-      };
-      
-      shapes.push(mesh);
-      scene.add(mesh);
+      const liquid = new THREE.Mesh(liquidGeometry, liquidMaterial);
+      liquid.position.y = -0.75;
+      liquid.castShadow = false;
+      cupGroup.add(liquid);
+
+      cupGroup.position.set(8, 0, -2);
+      cupGroup.rotation.y = -Math.PI / 6;
+      scene.add(cupGroup);
+
+      return cupGroup;
     }
+    const drink = createDrink();
 
-    // Camera position
-    camera.position.z = 8;
-    camera.position.y = 2;
-    camera.lookAt(0, 0, -5);
+    // Create 3D Fries Box
+    function createFriesBox() {
+      const boxGroup = new THREE.Group();
+      
+      // Box base
+      const boxGeometry = new THREE.BoxGeometry(3, 0.5, 2);
+      const boxMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFF0000,
+        roughness: 0.5
+      });
+      const box = new THREE.Mesh(boxGeometry, boxMaterial);
+      box.castShadow = true;
+      boxGroup.add(box);
 
-    // Animation
+      // Fries (multiple thin boxes)
+      for (let i = 0; i < 20; i++) {
+        const fryGeometry = new THREE.BoxGeometry(0.1, 0.05, 2 + Math.random() * 0.5);
+        const fryMaterial = new THREE.MeshStandardMaterial({
+          color: 0xFFD700,
+          roughness: 0.7
+        });
+        const fry = new THREE.Mesh(fryGeometry, fryMaterial);
+        fry.position.x = (Math.random() - 0.5) * 2.5;
+        fry.position.y = 0.6 + Math.random() * 0.3;
+        fry.position.z = (Math.random() - 0.5) * 1.5;
+        fry.rotation.x = Math.random() * Math.PI;
+        fry.rotation.z = Math.random() * Math.PI;
+        boxGroup.add(fry);
+      }
+
+      boxGroup.position.set(5, 0, 2);
+      scene.add(boxGroup);
+
+      return boxGroup;
+    }
+    const fries = createFriesBox();
+
+    // Animation variables
+    let time = 0;
+
+    // Animation loop
     function animate() {
       requestAnimationFrame(animate);
       
-      shapes.forEach((shape, index) => {
-        shape.rotation.x += shape.userData.rotationSpeed.x;
-        shape.rotation.y += shape.userData.rotationSpeed.y;
-        
-        // Subtle floating
-        shape.position.y += Math.sin(Date.now() * 0.0005 + shape.userData.floatOffset) * 0.005;
+      time += 0.01;
+      
+      // Animate chicken pieces slightly
+      chickenPieces.forEach((piece, index) => {
+        piece.position.y = 0.5 + Math.sin(time * 0.5 + index) * 0.1;
+        piece.rotation.y += 0.002;
       });
+
+      // Rotate bucket slightly
+      bucket.rotation.y += 0.001;
+      
+      // Rotate drink
+      drink.rotation.y += 0.0015;
+      
+      // Update controls
+      controls.update();
       
       renderer.render(scene, camera);
     }
@@ -884,19 +826,32 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
+    // Hide loading screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+        animate();
+      }, 500);
+    });
+
     // Start animation
     animate();
 
-    // Smooth scroll for anchor links
+    // Menu toggle
+    function toggleMenu() {
+      const menuSection = document.getElementById('menu-section');
+      menuSection.classList.toggle('visible');
+    }
+
+    function selectItem(name) {
+      alert('You selected: ' + name);
+    }
+
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+        if (this.getAttribute('href') !== '#menu') {
+          e.preventDefault();
         }
       });
     });
