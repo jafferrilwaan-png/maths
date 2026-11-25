@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KFC - Finger Lickin' Good</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -11,136 +14,444 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    :root {
+      --primary: #FF0000;
+      --primary-dark: #CC0000;
+      --secondary: #FFFFFF;
+      --text-dark: #1a1a1a;
+      --text-light: #666666;
+      --bg-light: #f8f9fa;
+      --border: #e0e0e0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: linear-gradient(135deg, #FF0000 0%, #FF4500 50%, #FF8C00 100%);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--secondary);
     }
 
-    #canvas-container {
-      position: fixed;
+    /* Header */
+    .header {
+      background-color: var(--secondary);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+      z-index: 1000;
     }
 
-    .content {
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      height: 100%;
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.4);
     }
 
     .logo {
-      font-size: 4rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-      animation: fadeInDown 1s ease-out;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
     }
 
-    .tagline {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      animation: fadeIn 1.5s ease-out;
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .cta-button {
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      background: #FF0000;
-      color: white;
+      background-color: var(--primary);
+      color: var(--secondary);
+      padding: 12px 25px;
       border: none;
-      border-radius: 50px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
-      animation: fadeInUp 2s ease-out;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .cta-button:hover {
-      background: #CC0000;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
     }
 
-    .menu-preview {
-      display: flex;
-      gap: 30px;
-      margin-top: 50px;
-      animation: fadeIn 2.5s ease-out;
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-dark);
     }
 
-    .menu-item {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
-      padding: 20px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .menu-item:hover {
-      transform: translateY(-10px);
-    }
-
-    .menu-item img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-
-    .menu-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-
-    .menu-item p {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin-top: 50px;
-      animation: fadeIn 3s ease-out;
-    }
-
-    .stat {
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #FF3333 100%);
+      color: var(--secondary);
+      padding: 80px 20px;
       text-align: center;
     }
 
-    .stat-number {
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      opacity: 0.95;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--secondary);
+      border: 2px solid var(--secondary);
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* About Section */
+    .about {
+      padding: 80px 20px;
+      background-color: var(--bg-light);
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-content h2 {
       font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .about-features {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--secondary);
       font-weight: bold;
-      margin-bottom: 5px;
+    }
+
+    /* Menu Section */
+    .menu {
+      padding: 80px 20px;
+      background-color: var(--secondary);
+    }
+
+    .menu-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), #FF3333);
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .menu-card {
+      background-color: var(--secondary);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border);
+    }
+
+    .menu-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .menu-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, #FFD700, #FFA500);
+    }
+
+    .menu-info {
+      padding: 20px;
+    }
+
+    .menu-info h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+
+    .menu-info p {
+      color: var(--text-light);
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .menu-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* Stats Section */
+    .stats {
+      padding: 60px 20px;
+      background: linear-gradient(135deg, var(--primary) 0%, #FF3333 100%);
+      color: var(--secondary);
+    }
+
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 20px;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
 
     .stat-label {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
       opacity: 0.9;
     }
 
+    /* Footer */
+    .footer {
+      background-color: var(--text-dark);
+      color: var(--secondary);
+      padding: 60px 20px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--primary);
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333333;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #999999;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background-color: #333333;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--secondary);
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-link:hover {
+      background-color: var(--primary);
+    }
+
+    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -168,292 +479,271 @@
       }
     }
 
-    .floating-text {
-      position: absolute;
-      font-size: 0.8rem;
-      opacity: 0.7;
-      animation: float 6s ease-in-out infinite;
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
 
-    .loading {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #FF0000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-      transition: opacity 0.5s ease;
-    }
+      .hero p {
+        font-size: 1rem;
+      }
 
-    .loading.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
+      .section-title h2 {
+        font-size: 2rem;
+      }
 
-    .loader {
-      width: 50px;
-      height: 50px;
-      border: 5px solid rgba(255, 255, 255, 0.3);
-      border-top-color: white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="loading" id="loading">
-    <div class="loader"></div>
-  </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">KFC</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#order" class="cta-button">Order Now</a>
+      <button class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
 
-  <div id="canvas-container"></div>
-
-  <div class="content">
-    <div class="logo">KFC</div>
-    <div class="tagline">Finger Lickin' Good</div>
-    <button class="cta-button" onclick="orderNow()">ORDER NOW</button>
-
-    <div class="menu-preview">
-      <div class="menu-item">
-        <div style="width: 100px; height: 100px; background: linear-gradient(45deg, #FFD700, #FFA500); border-radius: 50%; margin: 0 auto 10px;"></div>
-        <h3>Original Recipe</h3>
-        <p>11 Herbs & Spices</p>
-      </div>
-      <div class="menu-item">
-        <div style="width: 100px; height: 100px; background: linear-gradient(45deg, #FF6347, #FF4500); border-radius: 50%; margin: 0 auto 10px;"></div>
-        <h3>Hot Wings</h3>
-        <p>Spicy & Crispy</p>
-      </div>
-      <div class="menu-item">
-        <div style="width: 100px; height: 100px; background: linear-gradient(45deg, #FFD700, #FF8C00); border-radius: 50%; margin: 0 auto 10px;"></div>
-        <h3>Zinger Burger</h3>
-        <p>Signature Spicy</p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <h1>Finger Lickin' Good</h1>
+      <p>Experience the world-famous taste of KFC's Original Recipe chicken</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="cta-button">View Menu</a>
+        <a href="#order" class="btn-outline">Order Online</a>
       </div>
     </div>
+  </section>
 
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-number">120+</div>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-image"></div>
+      <div class="about-content">
+        <h2>About KFC</h2>
+        <p>Founded by Colonel Harland Sanders in 1930, KFC has been serving up the world's most famous fried chicken for over 90 years.</p>
+        <p>Our secret blend of 11 herbs and spices has made KFC a global phenomenon, loved by millions in over 145 countries worldwide.</p>
+        <div class="about-features">
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <span>Secret Recipe</span>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <span>Quality Ingredients</span>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <span>Worldwide Presence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <div class="menu-container">
+      <div class="section-title">
+        <h2>Our Menu</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-image" style="background: linear-gradient(45deg, #FFD700, #FFA500);"></div>
+          <div class="menu-info">
+            <h3>Original Recipe Chicken</h3>
+            <p>Our signature fried chicken with the Colonel's secret blend of 11 herbs and spices.</p>
+            <div class="menu-price">$12.99</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-image" style="background: linear-gradient(45deg, #FF6347, #FF4500);"></div>
+          <div class="menu-info">
+            <h3>Hot Wings</h3>
+            <p>Spicy, crispy wings coated in our signature hot sauce.</p>
+            <div class="menu-price">$10.99</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-image" style="background: linear-gradient(45deg, #FFD700, #FF8C00);"></div>
+          <div class="menu-info">
+            <h3>Zinger Burger</h3>
+            <p>Spicy crispy chicken fillet with lettuce and mayo in a bun.</p>
+            <div class="menu-price">$8.99</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-image" style="background: linear-gradient(45deg, #FFB6C1, #FFA07A);"></div>
+          <div class="menu-info">
+            <h3>Tender Strips</h3>
+            <p>Juicy, tender chicken strips perfect for dipping.</p>
+            <div class="menu-price">$9.99</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-image" style="background: linear-gradient(45deg, #F0E68C, #FFD700);"></div>
+          <div class="menu-info">
+            <h3>Popcorn Chicken</h3>
+            <p>Bite-sized pieces of our famous fried chicken.</p>
+            <div class="menu-price">$7.99</div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-image" style="background: linear-gradient(45deg, #E6E6FA, #DDA0DD);"></div>
+          <div class="menu-info">
+            <h3>Twister Wrap</h3>
+            <p>Crispy chicken strips wrapped in a tortilla with veggies and sauce.</p>
+            <div class="menu-price">$8.49</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number">145+</div>
         <div class="stat-label">Countries</div>
       </div>
-      <div class="stat">
-        <div class="stat-number">20K+</div>
+      <div class="stat-item">
+        <div class="stat-number">24,000+</div>
         <div class="stat-label">Restaurants</div>
       </div>
-      <div class="stat">
+      <div class="stat-item">
         <div class="stat-number">1930</div>
         <div class="stat-label">Founded</div>
       </div>
+      <div class="stat-item">
+        <div class="stat-number">11</div>
+        <div class="stat-label">Secret Spices</div>
+      </div>
     </div>
+  </section>
 
-    <div class="floating-text" style="top: 10%; left: 5%;">It's Finger Lickin' Good!</div>
-    <div class="floating-text" style="top: 20%; right: 5%;">Try Our New Menu!</div>
-    <div class="floating-text" style="bottom: 10%; left: 10%;">Secret Recipe</div>
-    <div class="floating-text" style="bottom: 20%; right: 10%;">Since 1930</div>
-  </div>
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>KFC</h3>
+          <p style="color: #cccccc; font-size: 0.95rem; margin-bottom: 20px;">Finger Lickin' Good since 1930</p>
+          <div class="social-links">
+            <a href="#" class="social-link">f</a>
+            <a href="#" class="social-link">t</a>
+            <a href="#" class="social-link">ig</a>
+            <a href="#" class="social-link">yt</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="#">Chicken</a></li>
+            <li><a href="#">Burgers</a></li>
+            <li><a href="#">Wraps</a></li>
+            <li><a href="#">Sides</a></li>
+            <li><a href="#">Desserts</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="#">Customer Service</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Franching</a></li>
+            <li><a href="#">Nutrition</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-logo">KFC</div>
+        <div class="copyright">
+          &copy; 2024 KFC. All Rights Reserved. | Privacy Policy | Terms of Service
+        </div>
+      </div>
+    </div>
+  </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
-    // Scene setup
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    document.getElementById('canvas-container').appendChild(renderer.domElement);
-
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    directionalLight.position.set(1, 1, 1);
-    scene.add(directionalLight);
-
-    const pointLight = new THREE.PointLight(0xff0000, 1, 100);
-    pointLight.position.set(0, 0, 0);
-    scene.add(pointLight);
-
-    // Create floating chicken pieces
-    const chickenGroup = new THREE.Group();
-    scene.add(chickenGroup);
-
-    function createChickenPiece() {
-      const geometry = new THREE.DodecahedronGeometry(0.5, 0);
-      const material = new THREE.MeshPhongMaterial({
-        color: 0xFFD700,
-        shininess: 100,
-        specular: 0xFFD700
-      });
-      const mesh = new THREE.Mesh(geometry, material);
-      
-      // Add some texture variation
-      const edges = new THREE.EdgesGeometry(geometry);
-      const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xFFA500, linewidth: 2 }));
-      mesh.add(line);
-      
-      return mesh;
-    }
-
-    // Create multiple chicken pieces
-    for (let i = 0; i < 15; i++) {
-      const piece = createChickenPiece();
-      piece.position.x = (Math.random() - 0.5) * 20;
-      piece.position.y = (Math.random() - 0.5) * 20;
-      piece.position.z = (Math.random() - 0.5) * 20;
-      piece.rotation.x = Math.random() * Math.PI;
-      piece.rotation.y = Math.random() * Math.PI;
-      piece.userData = {
-        rotationSpeed: {
-          x: (Math.random() - 0.5) * 0.01,
-          y: (Math.random() - 0.5) * 0.01,
-          z: (Math.random() - 0.5) * 0.01
-        },
-        floatSpeed: Math.random() * 0.5 + 0.5,
-        floatOffset: Math.random() * Math.PI * 2
-      };
-      chickenGroup.add(piece);
-    }
-
-    // Create KFC logo as 3D text
-    function createLogo() {
-      const fontLoader = new THREE.FontLoader();
-      
-      fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function(font) {
-        const textGeometry = new THREE.TextGeometry('KFC', {
-          font: font,
-          size: 3,
-          height: 0.5,
-          curveSegments: 12,
-          bevelEnabled: true,
-          bevelThickness: 0.2,
-          bevelSize: 0.2,
-          bevelOffset: 0,
-          bevelSegments: 5
-        });
-        
-        const textMaterial = new THREE.MeshPhongMaterial({
-          color: 0xFF0000,
-          shininess: 100,
-          specular: 0xFF0000
-        });
-        
-        const textMesh = new THREE.Mesh(textGeometry, textMaterial);
-        textMesh.position.z = -5;
-        textMesh.position.y = 2;
-        textMesh.rotation.x = -0.1;
-        
-        // Add glowing effect
-        const glowMaterial = new THREE.MeshBasicMaterial({
-          color: 0xFF4500,
-          transparent: true,
-          opacity: 0.3
-        });
-        const glowMesh = new THREE.Mesh(textGeometry, glowMaterial);
-        glowMesh.position.copy(textMesh.position);
-        glowMesh.rotation.copy(textMesh.rotation);
-        glowMesh.scale.multiplyScalar(1.05);
-        
-        chickenGroup.add(textMesh);
-        chickenGroup.add(glowMesh);
-      });
-    }
-
-    createLogo();
-
-    // Add particles for atmosphere
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 500;
-    const posArray = new Float32Array(particlesCount * 3);
-    
-    for (let i = 0; i < particlesCount * 3; i++) {
-      posArray[i] = (Math.random() - 0.5) * 50;
-    }
-    
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    
-    const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.1,
-      color: 0xFFD700,
-      transparent: true,
-      opacity: 0.8
+    // Simple mobile menu toggle (if needed)
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
     });
-    
-    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particlesMesh);
 
-    // Camera position
-    camera.position.z = 10;
-    camera.position.y = 5;
-    camera.lookAt(0, 0, 0);
-
-    // Animation
-    function animate() {
-      requestAnimationFrame(animate);
-      
-      // Rotate chicken group
-      chickenGroup.rotation.y += 0.002;
-      
-      // Animate individual pieces
-      chickenGroup.children.forEach(child => {
-        if (child.userData && child.userData.rotationSpeed) {
-          child.rotation.x += child.userData.rotationSpeed.x;
-          child.rotation.y += child.userData.rotationSpeed.y;
-          child.rotation.z += child.userData.rotationSpeed.z;
-          
-          // Float up and down
-          child.position.y += Math.sin(Date.now() * 0.001 + child.userData.floatOffset) * 0.01 * child.userData.floatSpeed;
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }
       });
-      
-      // Rotate particles
-      particlesMesh.rotation.y += 0.001;
-      
-      // Add subtle camera movement
-      camera.position.x = Math.sin(Date.now() * 0.0005) * 2;
-      camera.position.z = 10 + Math.cos(Date.now() * 0.0005) * 2;
-      camera.lookAt(0, 0, 0);
-      
-      renderer.render(scene, camera);
-    }
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
     });
-
-    // Hide loading screen after everything is ready
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('loading').classList.add('hidden');
-        animate();
-      }, 500);
-    });
-
-    // Order now function
-    function orderNow() {
-      alert('Redirecting to KFC ordering page...');
-      // In a real implementation, this would redirect to the actual ordering page
-      window.location.href = 'https://www.kfc.com';
-    }
-
-    // Start animation immediately
-    animate();
   </script>
 </body>
 </html>
